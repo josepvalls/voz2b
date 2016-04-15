@@ -1,0 +1,7 @@
+Hero	Hero
+Villain	Villain
+Tester	Other
+Prize	Other
+FalseHero	Other
+Other	Other
+NA	NA

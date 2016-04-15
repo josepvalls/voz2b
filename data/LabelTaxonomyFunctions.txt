@@ -1,0 +1,248 @@
+Function 0: introduction & setup = initial situation - alpha
+	alpha - introduction of protagonist(s) and setup for story (context)
+Function 1: member(s) of family absents themselves from home = absentation - beta
+	beta1 - absentation (departure) of elder(s)
+	beta2 - death of parent(s)
+	beta3 - absentation (departure) of sibling(s)
+Function 2: an interdiction is addressed to protagonist(s) = interdiction - gamma
+	gamma1 - interdiction issued
+	gamma2 - inverted form of interdiction issued as order or suggestion
+Function 3: interdiction is violated = violation - delta
+	delta1 - interdiction violated
+	delta2 - order or suggestion executed
+Function 4: antagonist(s) makes attempt at reconnaissance = reconnaissance - epsilon
+	epsilon1 - reconnaissance by antagonist(s) to obtain information about victim(s) / protagonist(s)
+	epsilon2 - inverted form of reconnaissance by victim(s) / protagonist(s) to obtain information about antagonist(s)
+	epsilon3 - reconnaissance by other person(s)
+Function 5: antagonist(s) receives information about victim(s) / protagonist(s) = delivery - zeta
+	zeta1 - antagonist(s) receives information about victim(s) / protagonist(s)
+	zeta2 - inverted form of delivery as victim(s) / protagonist(s) receives information about antagonist(s)
+	zeta3 - information received by other means
+Function 6: antagonist(s) attempts to deceive victim(s) / protagonist(s) in order to take possession of them or their belongings = trickery - eta
+	eta1 - deceitful persuasions by antagonist(s)
+	eta2 - direct application of magical agents by antagonist(s)
+	eta3 - use of other forms of deception or coercion
+Function 7: victim(s) / protagonist(s) accept deception and unwittingly help antagonist(s) = complicity - theta/lambda
+	theta1 - victim(s) / protagonist(s) reacts to persuasions of antagonist(s)
+	theta2 - victim(s) / protagonist(s) mechanically falls victim to influence of magical agent
+	theta3 - victim(s) / protagonist(s) gives in or reacts mechanically to deceit of antagonist(s)
+	lambda - preliminary misfortune caused by deceitful agreement
+Function 8: antagonist(s) causes harm or injury to victim(s)/member of protagonist's family = villainy - A
+	A1 - kidnapping of person
+	A2 - seizure of magical agent or helper
+	Aii - forcible seizure of magical helper
+	A3 - pillaging or ruining of crops
+	A4 - theft of daylight
+	A5 - plundering in other forms
+	A6 - bodily injury, maiming, mutilation
+	A7 - causes sudden disappearance
+	Avii - bride is forgotten
+	A8 - demand for delivery or enticement, abduction
+	A9 - expulsion
+	A10 - casting into body of water
+	A11 - casting of a spell, transformation
+	A12 - false substitution
+	A13 - issues order to kill [requires proof]
+	A14 - commits murder
+	A15 - imprisonment, detention
+	A16 - threat of forced matrimony
+	Axvi - threat of forced matrimony between relatives
+	A17 - threat of cannibalism
+	Axvii - threat of cannibalism among relatives
+	A18 - tormenting at night (visitaion, vampirism)
+	A19 - declaration of war
+Function 8a: one member of family lacks/desires something = lack - a
+	a1 - lack of bride, friend, or an individual
+	a2 - lack of helper or magical agent
+	a3 - lack of wondrous object(s)
+	a4 - lack of egg of death or love
+	a5 - lack of money or means of existence
+	a6 - lacks in other forms
+Function 9: misfortune/lack made known, protagonist(s) approached with request/command, they are allowed to go/dispatched = mediation, the connective incident - B
+	B1 - call for help received, protagonist(s) as seeker(s) dispatched
+	B2 - protagonist(s) as seeker(s) dispatched directly
+	B3 - protagonist(s) as seeker(s) released, allowed to depart
+	B4 - annoucement of misfortune in other forms, protagonist(s) as seeker(s) departs
+	B5 - transportation of banished protagonist(s) as victim(s)
+	B6 - condemned protagonist(s) as victim(s) released, spared
+	B7 - lamment or plaintive song by/about victim(s), heard/sung by protagonist(s)
+Function 10: protagonist(s) agrees to or decides on counteraction = beginning counteraction - C
+	C - protagonist(s) as seeker consents to counteraction
+Function 11: protagonist(s) leaves home = departure - depart
+	depart - departure, dispatch of protagonist(s) from home
+Function 12: protagonist(s) tested, interogates, attacked, etc. which prepares way for receiving magical agent or helper = first function of donor - D
+	D1 - donor tests protagonist(s)
+	D2 - donor greets and interrogates protagonist(s)
+	D3 - request of favor after death
+	D4 - entreaty of prisoner for freedom
+	*D4 - entreaty of prisoner for freedom, with preliminary imprisonment
+	D5 - request for mercy
+	D6 - request for division
+	d6 - argument without express request for division
+	D7 - other requests
+	*D7 - other requests, with preliminary helpless situation of person making request
+	d7 - helpless situation of donor without stated request, possibility of rendering service
+	D8 - attempt to destroy
+	D9 - combat with hostile donor
+	D10 - offer of magical agent as an exchange
+Function 13: protagonist(s) reacts to actions of future donor = protagonist's reaction - E
+	E1 - protagonist(s) withstands ordeal (or not)
+	E_1 - protagonist(s) withstands ordeal (or not)
+	E2 - protagonist(s) answers greeting (or not)
+	E_2 - protagonist(s) answers greeting (or not)
+	E3 - protagonist(s) renders service to dead person (or not)
+	E_3 - protagonist(s) renders service to dead person (or not)
+	E4 - protagonist(s) frees of captive
+	E5 - mercy to suppliant
+	E6 - protagonist completes apportinment and reconciles disputants
+	Evi - protagonist(s) deceives disputants
+	E7 - performance of some other service, fulfillment of request, pious deeds
+	E8 - attempt at destruction averted by turnabout
+	E9 - protagonist(s) vanquishes hostile donor (or not)
+	E_9 - protagonist(s) vanquishes hostile donor (or not)
+	E10 - deception in an exchange, protagonist(s) employs magical agent on donor
+Function 14: protagonist(s) acquires use of magical agent = acquisition of magical agent - F
+	F1 - agent is directly transferred
+	f1 - gift is of a material nature
+	F- - agent is not transferred
+	F= - protagonist's negative reaction provokes cruel retribution
+	F2 - agent is pointed out
+	F3 - agent is prepared
+	F4 - agent is sold and purchased
+	F43 - agent is made on order
+	F5 - agent is found by chance
+	F6 - agent suddenly appears of its own accord
+	Fvi - agent appears from out of earth
+	F7 - agent is drunk or eaten
+	F8 - agent is seized
+	F9 - agent offers its services, places itself at someone's disposal
+	F_9 - agent offers its services, places itself at someone's disposal
+	f9 - agent indicates it will appear of its own accord in some time of need
+	F96 - meeting with magical helper(s) who offers their services from entry of helper to end of first move
+Function 15: protagonist(s) transferred, delivered or led to vicinity of object of search = transference, guidance - G
+	G1 - protagonist(s) flies thru air
+	G2 - protagonist(s) travels on ground or water
+	G3 - protagonist(s) is led
+	G4 - route is shown to protagonist(s)
+	G5 - protagonist(s) makes use of stationary means of communication (stairs, bridge, passageway. etc.)
+	G6 - marked trail shows the way (blood, tracks, yarn, etc.)
+Function 16: protagonist(s) and antagonist(s) join in direct combat = struggle - H
+	H1 - fight in an open field
+	H2 - contest, competition
+	H3 - game of cards
+	H4 - weighing with scales
+Function 17: protagonist(s) branded = branding - J
+	J1 - application of mark to body of protagonist(s)
+	J2 - transference of token (ring, towel, etc.)
+Function 18: antagonist(s) defeated = victory - I
+	I1 - antagonist(s) defeated in open battle
+	*I1 - antagonist(s) defeated by one protagonist(s) while the other(s) hide
+	I2 - antagonist(s) defeated in contest
+	I3 - antagonist(s) defeated at cards
+	I4 - antagonist(s) defeated in weighing with scales
+	I5 - protagonist(s) kills antagonist(s) without preliminary fight
+	I6 - expulsion of antagonist(s)
+Function 19: initial misfortune or lack is liquidated = liquidation - K
+	K1 - direct acquistion thru application of force or cunning
+	Ki - direct acquistion thru application of force or cunning, with one person compelling another
+	K2 - acquisition accomplished by several helpers at once
+	K3 - acquisition achieved with help of an enticement or decoy(s)
+	K4 - liquidation of misfortune as direct result of previous actions
+	K5 - object of search attained instantly thru use of magical agent
+	K6 - poverty done away with thru use of magical agent
+	K7 - object of search captured
+	K8 - breaking of spell on victim
+	K9 - resuscitation of slain
+	Kix - resuscitation, with preliminary obtaining of water of life
+	K10 - release from captivity
+	KF1 - liquidation in form F: object of search is transferred
+	KF2 - liquidation in form F: object of search is pointed out
+	KF3 - liquidation in form F: object of search is prepared
+	KF4 - liquidation in form F: object of search is sold, purchased
+	KF43 - liquidation in form F: object of search is made on order
+	KF5 - liquidation in form F: object of search is found
+	KF6 - liquidation in form F: object of search appears of its own accord
+	KFvi - liquidation in form F: object of search appears from out of earth
+	KF7 - liquidation in form F: object of search is drunk or eaten
+	KF8 - liquidation in form F: object of search is seized
+	KF9 - liquidation in form F: object of search offers its services, places itself at someone's disposal
+	KF96 - liquidation in form F: object of search are helpers who offers their services
+Function 20: protagonist(s) returns = return - return
+	return - return of protagonist(s)
+Function 21: protagonist(s) pursued = pursuit - Pr
+	Pr1 - antagonist(s) flies thru air
+	Pr2 - antagonist(s) demands guilty person
+	Pr3 - antagonist(s) pursues, accompanied by series of transformations into animals
+	Pr4 - antagonist(s) pursues, with tranformations into enticing objects
+	Pr5 - antagonist(s) attempts to devour protagonist(s)
+	Pr6 - antagonist(s) attempts to destroy protagonist(s)
+	Pr7 - antagonist(s) attempts to gnaw thru tree with protagonist(s) up in it
+Function 22: rescue of protagonist(s) from pursuit = rescue - Rs
+	Rs1 - protagonist(s) carried thru air or runs quickly
+	Rs2 - protagonist(s) places obstacles in path of pursuers [with transformation]
+	Rs3 - fleeing, with transformation to escape recognition
+	Rs4 - fleeing with concealment of escapee
+	Rs5 - concealment of escapee by blacksmiths
+	Rs6 - escapee goes thru series of transformations into animals, plants & stones
+	Rs7 - warding of temptation of enticing object(s)
+	Rs8 - rescue or salvation from being devoured
+	Rs9 - rescue or salvation from being destroyed
+	Rs10 - leap into another tree
+Function 23: protagonist, unrecognized, arrives home or another country = unrecognized arrival - o
+	o - unrecognized arrival
+Function 24: false protagonist(s) presents unfounded claims = unfounded claims - L
+	L - claims of false protagonist(s)
+Function 25: difficult task proposed to protagonist(s) = difficult task - M
+	M1 - ordeal by food and drink
+	M2 - ordeal by fire
+	M3 - riddle guessing
+	M4 - ordeal of choice
+	M5 - hide and seek
+	M6 - test of strength
+	M7 - test of adroitness
+	M8 - test of fortitude
+	M9 - test of endurance
+	M10 - tasks of supply
+	Mx - tasks of manufacture
+	M11 - sorting tasks
+	M12 - other tasks
+Function 26: task resolved = solution - N
+	N1 - food and drink consumed
+	N2 - fire survived
+	N3 - riddle guessed
+	N4 - correct choice selected
+	N5 - protagonist(s) not found
+	N6 - test of strength passed
+	N7 - test of adroitness passed
+	N8 - test of fortitude passed
+	N9 - test of endurance passed
+	N10 - object(s) supplied
+	Nx - object(s) manufactured
+	N11 - sorting tasks completed
+	N12 - other tasks completed
+	*N - solution before deadline
+Function 27: protagonist(s) recognized = recognition - Q
+	Q1 - recognition of protagonist(s) by mark on body
+	Q2 - recognition of protagonist(s) by token
+	Q3 - recognition of protagonist(s) by accomplishment of difficult task
+	Q4 - recognition of protagonist(s) by family member
+Function 28: false protagonist(s) or antagonist(s) exposed = exposure - Ex
+	Ex1 - exposure of false protagonist(s) or antagonist(s) by lack of mark on body
+	Ex2 - exposure of false protagonist(s) or antagonist(s) by lack of token
+	Ex3 - exposure of false protagonist(s) or antagonist(s) by failure to accomplish difficult task
+	Ex4 - exposure of false protagonist(s) or antagonist(s) thru song / lament
+Function 29: protagonist(s) given new appearance = transfiguration - T
+	T1 - new physical appearance by magical action of helper
+	T2 - protagonist(s) builds palace
+	T3 - protagonist(s) puts on new garments
+	T4 - humorous and rationalized forms, new appearance achieved by deception
+Function 30: false protagonist(s) or antagonist(s) punished = punishment - U
+	U - punishment of false protagonist(s) or antagonist(s)
+	U- - false protagonist(s) or antagonist(s) pardoned
+Function 31: protagonist(s) marries and ascends throne = wedding - W
+	W#* - protagonist(s) weds and ascends throne
+	W# - protagonist(s) weds
+	W* - protagonist(s) ascends throne
+	w1 - protagonist(s) promised marriage
+	w2 - protagonist(s) resumes marriage
+	wo - protagonist(s) given monetary reward or other forms of material gain

@@ -1,0 +1,19 @@
+CHaracters
+    MAle
+    FEmale
+    Antropomorphic Animal
+    Antropomorphic Object
+    GRoup of characters, association or abstract set (e.g. people, pirates, all the devils)
+    Magical Being
+NC parts
+    Part of an Animated being (his soul, his fingers) - annotate to who it belongs
+NC events
+    HAppening
+NC props
+    ANimal
+    OBject
+    SCenery - surroundings and decorations that are talked about but no one goes there or nothing happens there (e.g the fields surrounding the hill)
+    Part of an Object, animal or scenery (it's bark, the bed's blankets, the horse's back) - annotate to what it belongs
+NC settings
+    SSpatial - spatial settings are places where the action happens, places the characters visit, etc. (e.g. the hill where the fox goes)
+    STemporal

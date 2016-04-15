@@ -1,1 +1,8 @@
 *.pyc
+temp_*.json
+temp_*.arff
+temp_*.csv
+temp_*.tsv
+temp_*.txt
+.DS_Store
+.idea/
