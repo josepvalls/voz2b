@@ -146,14 +146,14 @@ class StyFile(object):
         tokens = []
         pos_tag_dict = [(i.text.strip().split(),int(i.attrs.get('id'))) for i in self.d.select('rep#edu.mit.parsing.pos')[0].select('desc')]
         pos_tag_dict = dict([(int(i[0][0]),(i[0][1],i[1])) for i in pos_tag_dict])
-        stem_tag_dict = [i.text.strip().split() for i in self.d.select('rep#edu.mit.parsing.pos')[0].select('desc')]
+        stem_tag_dict = [i.text.strip().split() for i in self.d.select('rep#edu.mit.parsing.stem')[0].select('desc')]
         stem_tag_dict = dict([(int(i[0]),i[1]) for i in stem_tag_dict])
 
         for i in self.d.select('rep#edu.mit.parsing.token')[0].select('desc'):
             token_id = int(i.attrs.get('id'))
             token_text = i.text.strip()
             pos,pos_id = pos_tag_dict[token_id]
-            lemma = stem_tag_dict.get(pos_id,token_text)
+            lemma = stem_tag_dict.get(pos_id,token_text.lower())
             tokens.append(voz.Token(token_id,int(i.attrs.get('off')),int(i.attrs.get('len')),pos,lemma,token_text))
         self.document._tokens_list = tokens
         self.document._tokens_dict = dict([(i.id,i) for i in tokens])

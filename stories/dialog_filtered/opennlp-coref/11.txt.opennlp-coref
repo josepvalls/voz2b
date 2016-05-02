@@ -1,0 +1,586 @@
+Once upon a time there was an old couple, and they had three Sons.
+Two of these had their wits about them, but the third was a simpleton, Ivan by name, surnamed Popyalof.
+For twelve whole years Ivan lay among the ashes from the stove; but then he arose, and shook himself, so that six poods of ashes fell off from him.
+Now in the land in which Ivan lived there was never any day, but always night.
+That was a Snake's doing.
+And when he had got the mace, he went out into the fields, and flung it straight up in the air, and then he went home.
+The next day he went out into the fields to the spot from which he had flung the mace on high, and stood there with his head thrown back.
+So when the mace fell down again it hit him on the forehead.
+And the mace broke in two.
+And when he had got it he went out into the fields, and flung it aloft.
+And the mace went flying through the air for three days and three nights.
+On the fourth day Ivan went out to the same spot, and when the mace came tumbling down, he put his knee in the way, and the mace broke over it into three pieces.
+Ivan went home and told his father to make him a third mace, one of fifteen poods weight.
+And when he had got it, he went out into the fields and flung it aloft.
+And the mace was up in the air six days.
+On the seventh Ivan went to the same spot as before.
+Down fell the mace, and when it struck Ivan's forehead, the forehead bowed under it.
+So when he had got everything ready, he went forth with his brothers to fight the Snake.
+He rode and rode, and presently there stood before him a hut on fowl's legs, and in that hut lived the Snake.
+There all the party came to a standstill.
+When he had said this he went into the hut and sat down under the boarding.
+Presently there rode up a Snake with three heads.
+His steed stumbled, his hound howled, his falcon clamored.
+Ivan came forth, and they began to fight.
+And Ivan killed the Snake, and then sat down again beneath the boarding.
+Presently there came another Snake, a six-headed one, and him, too, Ivan killed.
+And then there came a third, which had twelve heads.
+Well, Ivan began to fight with him, and lopped off nine of his heads.
+The Snake had no strength left in him.
+And the Raven gave ear to what Ivan said, and flew to his brothers and began to croak above their heads.
+The brothers awoke, and when they heard the cry of the Raven, they hastened to their brother's aid.
+And they killed the Snake, and then, having taken his heads, they went into his hut and destroyed them.
+And immediately there was bright light throughout the whole land.
+After killing the Snake, Ivan Popyalof and his brothers set off on their way home.
+But he had forgotten to take away his gloves, so he went back to fetch them, telling his brothers to wait for him meanwhile.
+Now when he had reached the hut and was going to take away his gloves, he heard the voices of the Snake's wife and daughters, who were talking with each other.
+So he turned himself into a cat, and began to mew outside the door.
+They let him in, and he listened to everything they said.
+Then he got his gloves and hastened away.
+As soon as he came to where his brothers were, he mounted his horse, and they all started afresh.
+They rode and rode; presently they saw before them a green meadow, and on that meadow lay silken cushions.
+And out of those cushions there streamed blood.
+So they all went on further.
+They rode and rode; presently there stood before them an apple-tree, and upon it were gold and silver apples.
+And out of the tree streamed blood.
+So they went on further.
+They rode and rode, and by and by they saw a spring in front of them.
+For the meadow, the silken cushions, the apple-tree, and the spring, were all of them daughters of the Snake.
+After killing the Snake's daughters, Ivan and his brothers went on homewards.
+Presently came the Snake's Wife flying after them, and she opened her jaws from the sky to the earth, and tried to swallow up Ivan.
+But Ivan and his brothers threw three poods of salt into her mouth.
+She swallowed the salt, thinking it was Ivan Popyalof, but afterwards - when she had tasted the salt, and found out it was not Ivan - she flew after him again.
+Then he perceived that danger was at hand, and so he let his horse go free, and hid himself behind twelve doors in the forge of Kuzma and Demian.
+So the Snake's Wife began licking the doors.
+But meanwhile they all heated iron pincers, and as soon as she had sent her tongue through into the smithy, they caught tight hold of her by the tongue, and began thumping her with hammers.
+And when the Snake's Wife was dead they consumed her with fire, and scattered her ashes to the winds.
+And then they went home, and there they lived and enjoyed themselves, feasting and revelling, and drinking mead and wine.
+
+Sentence index	Text offset
+0	0
+1	66
+2	169
+3	316
+4	394
+5	419
+6	537
+7	674
+8	734
+9	760
+10	831
+11	904
+12	1065
+13	1154
+14	1225
+15	1265
+16	1317
+17	1401
+18	1489
+19	1598
+20	1639
+21	1714
+22	1763
+23	1821
+24	1862
+25	1934
+26	2014
+27	2066
+28	2135
+29	2173
+30	2277
+31	2376
+32	2479
+33	2544
+34	2626
+35	2750
+36	2909
+37	2976
+38	3033
+39	3074
+40	3171
+41	3277
+42	3324
+43	3352
+44	3461
+45	3496
+46	3520
+47	3589
+48	3698
+49	3775
+50	3906
+51	3973
+52	4132
+53	4277
+54	4321
+55	4510
+56	4611
+Coreference groups:	156
+[ wine ]:1
+	wine	wine	56:116-120;
+[ mead ]:1
+	mead	mead	56:107-111;
+[ mead and wine ]:1
+	mead and wine	mead and wine	56:107-111;56:112-115;56:116-120;
+[ revelling ]:1
+	revelling	revelling	56:83-92;
+[ feasting ]:1
+	feasting	feasting	56:70-78;
+[ feasting and revelling ]:1
+	feasting and revelling	feasting and revelling	56:70-78;56:79-82;56:83-92;
+[ the Snake, the Snake's, the Snake's, the Snake's, them, her, her, She, she, she, the Snake's, they all, she, her, they, her, her, the Snake's, they, her, they, they, themselves, feasting and revelling ]:23
+	the Snake	the Snake	33:14-17;33:18-23;
+	the Snake's	the Snake 's	35:94-97;35:98-103;35:103-105;
+	the Snake's	the Snake 's	48:14-17;48:18-23;48:23-25;
+	the Snake's	the Snake 's	49:15-18;49:19-24;49:24-26;
+	them	them	49:45-49;
+	her	her	49:66-69;
+	her	her	50:57-60;
+	She	She	51:0-3;
+	she	she	51:77-80;
+	she	she	51:134-137;
+	the Snake's	the Snake 's	53:3-6;53:7-12;53:12-14;
+	they all	they	54:14-18;
+	she	she	54:59-62;
+	her	her	54:72-75;
+	they	they	54:108-112;
+	her	her	54:134-137;
+	her	her	54:172-175;
+	the Snake's	the Snake 's	55:9-12;55:13-18;55:18-20;
+	they	they	55:35-39;
+	her	her	55:78-81;
+	they	they	56:9-13;
+	they	they	56:35-39;
+	themselves, feasting and revelling	themselves	56:58-68;
+[ the winds ]:1
+	the winds	the winds	55:91-94;55:95-100;
+[ her ashes ]:1
+	her ashes	her ashes	55:78-81;55:82-87;
+[ fire ]:1
+	fire	fire	55:58-62;
+[ the Snake's Wife flying after them, and she opened her jaws from the sky to the earth, and tried to swallow up Ivan, the Snake's Wife, the Snake's Wife ]:3
+	the Snake's Wife flying after them, and she opened her jaws from the sky to the earth, and tried to swallow up Ivan	the Snake 's Wife flying after them , and she opened her jaws from the sky to the earth , and tried to swallow up Ivan	49:15-18;49:19-24;49:24-26;49:27-31;49:32-38;49:39-44;49:45-49;49:49-50;49:51-54;49:55-58;49:59-65;49:66-69;49:70-74;49:75-79;49:80-83;49:84-87;49:88-90;49:91-94;49:95-100;49:100-101;49:102-105;49:106-111;49:112-114;49:115-122;49:123-125;49:126-130;
+	the Snake's Wife	the Snake 's Wife	53:3-6;53:7-12;53:12-14;53:15-19;
+	the Snake's Wife	the Snake 's Wife	55:9-12;55:13-18;55:18-20;55:21-25;
+[ hammers ]:1
+	hammers	hammers	54:181-188;
+[ the tongue ]:1
+	the tongue	the tongue	54:141-144;54:145-151;
+[ tight hold of her ]:1
+	tight hold of her	tight hold	54:120-125;54:126-130;
+[ the smithy ]:1
+	the smithy	the smithy	54:96-99;54:100-106;
+[ her tongue ]:1
+	her tongue	her tongue	54:72-75;54:76-82;
+[ iron pincers ]:1
+	iron pincers	iron pincers	54:30-34;54:35-42;
+[ the doors ]:1
+	the doors	the doors	53:34-37;53:38-43;
+[ Demian ]:1
+	Demian	Demian	52:138-144;
+[ Kuzma ]:1
+	Kuzma	Kuzma	52:128-133;
+[ Kuzma and Demian ]:1
+	Kuzma and Demian	Kuzma and Demian	52:128-133;52:134-137;52:138-144;
+[ the forge of Kuzma and Demian ]:1
+	the forge of Kuzma and Demian	the forge	52:115-118;52:119-124;
+[ twelve doors ]:1
+	twelve doors	twelve doors	52:99-105;52:106-111;
+[ a simpleton, Ivan by name, Ivan, he, himself, him, Ivan, he, he, he, he, he, his, him, he, he, Ivan, he, his, Ivan, his, him, Ivan, they, Ivan, him, Ivan, Ivan, him, his, him, Ivan, his, his, his, their, he, his, he, his, him, he, his, he, he, himself, They, him, he, they, he, his, he, his, he, his, Ivan, his, Ivan, Ivan, his, Ivan, him, he, he, his, himself ]:66
+	a simpleton, Ivan by name	a simpleton , Ivan	1:58-59;1:60-69;1:69-70;1:71-75;
+	Ivan	Ivan	2:23-27;
+	he	he	2:73-75;
+	himself	himself	2:93-100;
+	him	him	2:143-146;
+	Ivan	Ivan	3:25-29;
+	he	he	5:9-11;
+	he	he	5:30-32;
+	he	he	5:105-107;
+	he	he	6:13-15;
+	he	he	6:64-66;
+	his	his	6:116-119;
+	him	him	7:40-43;
+	he	he	9:9-11;
+	he	he	9:23-25;
+	Ivan	Ivan	11:18-22;
+	he	he	11:88-90;
+	his	his	11:95-98;
+	Ivan	Ivan	12:0-4;
+	his	his	12:24-27;
+	him	him	12:43-46;
+	Ivan	Ivan	23:0-4;
+	they	they	23:21-25;
+	Ivan	Ivan	24:4-8;
+	him	him	25:58-61;
+	Ivan	Ivan	25:68-72;
+	Ivan	Ivan	27:6-10;
+	him	him	27:31-34;
+	his	his	27:59-62;
+	him	him	28:34-37;
+	Ivan	Ivan	29:31-35;
+	his	his	29:54-57;
+	his	his	31:76-79;
+	his	his	33:43-46;
+	their	their	33:67-72;
+	he	he	34:4-6;
+	his	his	34:34-37;
+	he	he	34:49-51;
+	his	his	34:85-88;
+	him	him	34:110-113;
+	he	he	35:9-11;
+	his	his	35:59-62;
+	he	he	35:71-73;
+	he	he	36:3-5;
+	himself	himself	36:13-20;
+	They	They	37:0-4;
+	him	him	37:9-12;
+	he	he	37:21-23;
+	they	they	37:47-51;
+	he	he	38:5-7;
+	his	his	38:12-15;
+	he	he	39:11-13;
+	his	his	39:28-31;
+	he	he	39:47-49;
+	his	his	39:58-61;
+	Ivan	Ivan	48:37-41;
+	his	his	48:46-49;
+	Ivan	Ivan	49:126-130;
+	Ivan	Ivan	50:4-8;
+	his	his	50:13-16;
+	Ivan	Ivan	51:127-131;
+	him	him	51:149-152;
+	he	he	52:5-7;
+	he	he	52:50-52;
+	his	his	52:57-60;
+	himself	himself	52:84-91;
+[ his horse ]:1
+	his horse	his horse	52:57-60;52:61-66;
+[ hand ]:1
+	hand	hand	52:37-41;
+[ danger ]:1
+	danger	danger	52:23-29;
+[ salt, the salt, it, the salt, it ]:5
+	salt	salt	50:47-51;
+	the salt	the salt	51:14-17;51:18-22;
+	it	it	51:33-35;
+	the salt	the salt	51:92-95;51:96-100;
+	it	it	51:116-118;
+[ Ivan Popyalof, Ivan Popyalof ]:2
+	Ivan Popyalof	Ivan Popyalof	33:25-29;33:30-38;
+	Ivan Popyalof	Ivan Popyalof	51:40-44;51:45-53;
+[ her mouth ]:1
+	her mouth	her mouth	50:57-60;50:61-66;
+[ three poods of salt ]:1
+	three poods of salt	three poods	50:32-37;50:38-43;
+[ his brothers, his brothers, his brothers ]:3
+	his brothers	his brothers	17:56-59;17:60-68;
+	his brothers	his brothers	48:46-49;48:50-58;
+	his brothers	his brothers	50:13-16;50:17-25;
+[ Ivan and his brothers ]:1
+	Ivan and his brothers	Ivan and his brothers	50:4-8;50:9-12;50:13-16;50:17-25;
+[ the earth ]:1
+	the earth	the earth	49:91-94;49:95-100;
+[ the sky ]:1
+	the sky	the sky	49:80-83;49:84-87;
+[ her jaws ]:1
+	her jaws	her jaws	49:66-69;49:70-74;
+[ homewards ]:1
+	homewards	homewards	48:67-76;
+[ the Snake's daughters ]:1
+	the Snake's daughters	the Snake 's daughters	48:14-17;48:18-23;48:23-25;48:26-35;
+[ the Snake's daughters, Ivan and his brothers ]:1
+	the Snake's daughters, Ivan and his brothers	the Snake 's daughters , Ivan and his brothers	48:14-17;48:18-23;48:23-25;48:26-35;48:35-36;48:37-41;48:42-45;48:46-49;48:50-58;
+[ the Snake ]:1
+	the Snake	the Snake	47:99-102;47:103-108;
+[ the silken cushions, the apple-tree, and the spring, them ]:2
+	the silken cushions, the apple-tree, and the spring	the silken cushions , the apple-tree , and the spring	47:16-19;47:20-26;47:27-35;47:35-36;47:37-40;47:41-51;47:51-52;47:53-56;47:57-60;47:61-67;
+	them	them	47:81-85;
+[ them daughters of the Snake ]:1
+	them daughters of the Snake	them daughters	47:81-85;47:86-95;
+[ the spring ]:1
+	the spring	the spring	47:57-60;47:61-67;
+[ the apple-tree ]:1
+	the apple-tree	the apple-tree	47:37-40;47:41-51;
+[ the silken cushions ]:1
+	the silken cushions	the silken cushions	47:16-19;47:20-26;47:27-35;
+[ the meadow ]:1
+	the meadow	the meadow	47:4-7;47:8-14;
+[ the tree, they, They, they, them ]:5
+	the tree	the tree	44:11-14;44:15-19;
+	they	they	45:3-7;
+	They	They	46:0-4;
+	they	they	46:34-38;
+	them	them	46:64-68;
+[ front of them ]:1
+	front of them	front	46:55-60;
+[ a spring ]:1
+	a spring	a spring	46:43-44;46:45-51;
+[ further ]:1
+	further	further	45:16-23;
+[ blood ]:1
+	blood	blood	44:29-34;
+[ gold and silver apples ]:1
+	gold and silver apples	gold and silver apples	43:86-90;43:91-94;43:95-101;43:102-108;
+[ an apple-tree, it ]:2
+	an apple-tree	an apple-tree	43:54-56;43:57-67;
+	it	it	43:78-80;
+[ those cushions there, they all, They, them ]:4
+	those cushions there	those cushions	41:11-16;41:17-25;
+	they all	they	42:3-7;
+	They	They	43:0-4;
+	them	them	43:49-53;
+[ further ]:1
+	further	further	42:20-27;
+[ blood ]:1
+	blood	blood	41:41-46;
+[ silken cushions ]:1
+	silken cushions	silken cushions	40:90-96;40:97-105;
+[ that meadow ]:1
+	that meadow	that meadow	40:74-78;40:79-85;
+[ a green meadow ]:1
+	a green meadow	a green meadow	40:51-52;40:53-58;40:59-65;
+[ his brothers, their, The brothers, they, they, their, they, his, they, them, his brothers, they all, They, they, them ]:15
+	his brothers	his brothers	29:54-57;29:58-66;
+	their	their	29:92-97;
+	The brothers	The brothers	30:0-3;30:4-12;
+	they	they	30:29-33;
+	they	they	30:62-66;
+	their	their	30:79-84;
+	they	they	31:4-8;
+	his	his	31:50-53;
+	they	they	31:61-65;
+	them	them	31:98-102;
+	his brothers	his brothers	39:28-31;39:32-40;
+	they all	they	39:73-77;
+	They	They	40:0-4;
+	they	they	40:30-34;
+	them	them	40:46-50;
+[ his horse ]:1
+	his horse	his horse	39:58-61;39:62-67;
+[ his gloves ]:1
+	his gloves	his gloves	38:12-15;38:16-22;
+[ everything they said ]:1
+	everything they said	everything	37:36-46;
+[ the door ]:1
+	the door	the door	36:58-61;36:62-66;
+[ a cat ]:1
+	a cat	a cat	36:26-27;36:28-31;
+[ daughters ]:1
+	daughters	daughters	35:115-124;
+[ the Snake's wife ]:1
+	the Snake's wife	the Snake 's wife	35:94-97;35:98-103;35:103-105;35:106-110;
+[ the Snake's wife and daughters, who were talking with each other ]:1
+	the Snake's wife and daughters, who were talking with each other	the Snake 's wife and daughters	35:94-97;35:98-103;35:103-105;35:106-110;35:111-114;35:115-124;
+[ the voices of the Snake's wife and daughters, who were talking with each other ]:1
+	the voices of the Snake's wife and daughters, who were talking with each other	the voices	35:80-83;35:84-90;
+[ his gloves ]:1
+	his gloves	his gloves	35:59-62;35:63-69;
+[ the hut ]:1
+	the hut	the hut	35:24-27;35:28-31;
+[ his brothers set off on their way home, his brothers ]:2
+	his brothers set off on their way home	his brothers	33:43-46;33:47-55;
+	his brothers	his brothers	34:85-88;34:89-97;
+[ his gloves, them ]:2
+	his gloves	his gloves	34:34-37;34:38-44;
+	them	them	34:71-75;
+[ their way home ]:1
+	their way home	their way	33:67-72;33:73-76;
+[ the Snake, Ivan Popyalof and his brothers set off on their way home ]:1
+	the Snake, Ivan Popyalof and his brothers set off on their way home	the Snake , Ivan Popyalof and his brothers set off on their way home	33:14-17;33:18-23;33:23-24;33:25-29;33:30-38;33:39-42;33:43-46;33:47-55;33:56-59;33:60-63;33:64-66;33:67-72;33:73-76;33:77-81;
+[ the whole land ]:1
+	the whole land	the whole land	32:50-53;32:54-59;32:60-64;
+[ bright light throughout the whole land ]:1
+	bright light throughout the whole land	bright light	32:26-32;32:33-38;
+[ his hut ]:1
+	his hut	his hut	31:76-79;31:80-83;
+[ his heads ]:1
+	his heads	his heads	31:50-53;31:54-59;
+[ the Snake, the Snake, the Snake, The Snake, the Snake ]:5
+	the Snake	the Snake	17:78-81;17:82-87;
+	the Snake	the Snake	18:99-102;18:103-108;
+	the Snake	the Snake	24:16-19;24:20-25;
+	The Snake	The Snake	28:0-3;28:4-9;
+	the Snake	the Snake	31:16-19;31:20-25;
+[ their brother's ]:1
+	their brother's	their brother 's	30:79-84;30:85-92;30:92-94;
+[ their brother's aid ]:1
+	their brother's aid	their brother 's aid	30:79-84;30:85-92;30:92-94;30:95-98;
+[ the Raven, the Raven ]:2
+	the Raven	the Raven	29:4-7;29:8-13;
+	the Raven	the Raven	30:51-54;30:55-60;
+[ the cry of the Raven ]:1
+	the cry of the Raven	the cry	30:40-43;30:44-47;
+[ their heads ]:1
+	their heads	their heads	29:92-97;29:98-103;
+[ ear ]:1
+	ear	ear	29:19-22;
+[ no strength ]:1
+	no strength	no strength	28:14-16;28:17-25;
+[ his heads ]:1
+	his heads	his heads	27:59-62;27:63-68;
+[ nine of his heads ]:1
+	nine of his heads	nine	27:51-55;
+[ twelve heads ]:1
+	twelve heads	twelve heads	26:39-45;26:46-51;
+[ a six-headed one ]:1
+	a six-headed one	a six-headed one	25:36-37;25:38-48;25:49-52;
+[ another Snake, a six-headed one ]:1
+	another Snake, a six-headed one	another Snake	25:21-28;25:29-34;
+[ the boarding ]:1
+	the boarding	the boarding	24:59-62;24:63-71;
+[ a Snake, His, his, his ]:4
+	a Snake	a Snake	21:24-25;21:26-31;
+	His	His	22:0-3;
+	his	his	22:20-23;
+	his	his	22:38-41;
+[ his falcon ]:1
+	his falcon	his falcon	22:38-41;22:42-48;
+[ his hound ]:1
+	his hound	his hound	22:20-23;22:24-29;
+[ His steed ]:1
+	His steed	His steed	22:0-3;22:4-9;
+[ three heads ]:1
+	three heads	three heads	21:37-42;21:43-48;
+[ the boarding ]:1
+	the boarding	the boarding	20:62-65;20:66-74;
+[ the hut ]:1
+	the hut	the hut	20:35-38;20:39-42;
+[ all the party, he, he ]:3
+	all the party	all the party	19:6-9;19:10-13;19:14-19;
+	he	he	20:5-7;
+	he	he	20:22-24;
+[ a standstill ]:1
+	a standstill	a standstill	19:28-29;19:30-40;
+[ that hut ]:1
+	that hut	that hut	18:84-88;18:89-92;
+[ fowl's ]:1
+	fowl's	fowl 's	18:64-68;18:68-70;
+[ fowl's legs ]:1
+	fowl's legs	fowl 's legs	18:64-68;18:68-70;18:71-75;
+[ a hut on fowl's legs ]:1
+	a hut on fowl's legs	a hut	18:55-56;18:57-60;
+[ the forehead, he, he, his, He, him ]:6
+	the forehead	the forehead	16:56-59;16:60-68;
+	he	he	17:8-10;
+	he	he	17:37-39;
+	his	his	17:56-59;
+	He	He	18:0-2;
+	him	him	18:51-54;
+[ everything ]:1
+	everything	everything	17:19-29;
+[ the mace, it, the mace, the mace, it, the mace, it, it, the mace, the mace, the mace, it, the mace, the mace, it, it ]:16
+	the mace	the mace	5:20-23;5:24-28;
+	it	it	5:69-71;
+	the mace	the mace	6:77-80;6:81-85;
+	the mace	the mace	7:8-11;7:12-16;
+	it	it	7:33-35;
+	the mace	the mace	8:4-7;8:8-12;
+	it	it	9:20-22;
+	it	it	9:62-64;
+	the mace	the mace	10:4-7;10:8-12;
+	the mace	the mace	11:59-62;11:63-67;
+	the mace	the mace	11:120-123;11:124-128;
+	it	it	11:140-142;
+	the mace	the mace	14:4-7;14:8-12;
+	the mace	the mace	16:10-13;16:14-18;
+	it	it	16:29-31;
+	it	it	16:81-83;
+[ the seventh Ivan, Ivan's ]:2
+	the seventh Ivan	the seventh Ivan	15:3-6;15:7-14;15:15-19;
+	Ivan's	Ivan 's	16:39-43;16:43-45;
+[ Ivan's forehead ]:1
+	Ivan's forehead	Ivan 's forehead	16:39-43;16:43-45;16:46-54;
+[ Down ]:1
+	Down	Down	16:0-4;
+[ the same spot ]:1
+	the same spot	the same spot	15:28-31;15:32-36;15:37-41;
+[ six days ]:1
+	six days	six days	14:31-34;14:35-39;
+[ the air ]:1
+	the air	the air	14:23-26;14:27-30;
+[ the fields ]:1
+	the fields	the fields	13:41-44;13:45-51;
+[ his father, he, he ]:3
+	his father	his father	12:24-27;12:28-34;
+	he	he	13:9-11;
+	he	he	13:24-26;
+[ fifteen poods weight ]:1
+	fifteen poods weight	fifteen poods weight	12:68-75;12:76-81;12:82-88;
+[ one of fifteen poods weight ]:1
+	one of fifteen poods weight	one	12:61-64;
+[ a third mace, one of fifteen poods weight ]:1
+	a third mace, one of fifteen poods weight	a third mace	12:47-48;12:49-54;12:55-59;
+[ three pieces ]:1
+	three pieces	three pieces	11:148-153;11:154-160;
+[ the way ]:1
+	the way	the way	11:107-110;11:111-114;
+[ his knee ]:1
+	his knee	his knee	11:95-98;11:99-103;
+[ the same spot ]:1
+	the same spot	the same spot	11:35-38;11:39-43;11:44-48;
+[ the fourth day ]:1
+	the fourth day	the fourth day	11:3-6;11:7-13;11:14-17;
+[ three nights ]:1
+	three nights	three nights	10:60-65;10:66-72;
+[ three days ]:1
+	three days	three days	10:45-50;10:51-55;
+[ three days and three nights ]:1
+	three days and three nights	three days and three nights	10:45-50;10:51-55;10:56-59;10:60-65;10:66-72;
+[ the air ]:1
+	the air	the air	10:33-36;10:37-40;
+[ the fields ]:1
+	the fields	the fields	9:40-43;9:44-50;
+[ two ]:1
+	two	two	8:22-25;
+[ the forehead ]:1
+	the forehead	the forehead	7:47-50;7:51-59;
+[ his head thrown back ]:1
+	his head thrown back	his head	6:116-119;6:120-124;
+[ the spot from which he had flung the mace on high ]:1
+	the spot from which he had flung the mace on high	the spot	6:44-47;6:48-52;
+[ the fields ]:1
+	the fields	the fields	6:30-33;6:34-40;
+[ The next day ]:1
+	The next day	The next day	6:0-3;6:4-8;6:9-12;
+[ the air ]:1
+	the air	the air	5:87-90;5:91-94;
+[ the fields ]:1
+	the fields	the fields	5:47-50;5:51-57;
+[ a Snake's ]:1
+	a Snake's	a Snake 's	4:9-10;4:11-16;4:16-18;
+[ a Snake's doing ]:1
+	a Snake's doing	a Snake 's doing	4:9-10;4:11-16;4:16-18;4:19-24;
+[ night ]:1
+	night	night	3:72-77;
+[ any day ]:1
+	any day	any day	3:52-55;3:56-59;
+[ the land in which Ivan lived there was never any day, but always night ]:1
+	the land in which Ivan lived there was never any day, but always night	the land	3:7-10;3:11-15;
+[ ashes ]:1
+	ashes	ashes	2:123-128;
+[ six poods of ashes ]:1
+	six poods of ashes	six poods	2:110-113;2:114-119;
+[ the stove ]:1
+	the stove	the stove	2:53-56;2:57-62;
+[ the ashes ]:1
+	the ashes	the ashes	2:38-41;2:42-47;
+[ twelve whole years ]:1
+	twelve whole years	twelve whole years	2:4-10;2:11-16;2:17-22;
+[ Popyalof ]:1
+	Popyalof	Popyalof	1:94-102;
+[ name ]:1
+	name	name	1:79-83;
+[ the third ]:1
+	the third	the third	1:44-47;1:48-53;
+[ a time, they, their, them ]:4
+	a time	a time	0:10-11;0:12-16;
+	they	they	0:46-50;
+	their	their	1:17-22;
+	them	them	1:34-38;
+[ their wits about them ]:1
+	their wits about them	their wits	1:17-22;1:23-27;
+[ Two of these ]:1
+	Two of these	Two	1:0-3;
+[ three Sons ]:1
+	three Sons	three Sons	0:55-60;0:61-65;
+[ an old couple ]:1
+	an old couple	an old couple	0:27-29;0:30-33;0:34-40;

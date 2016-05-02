@@ -1,0 +1,266 @@
+An old man lived with his old wife; they had a daughter and a little son.
+The parents went away and the daughter forgot what they had told her; she put her brother on the grass beneath the window, ran out into the street, and became absorbed in games.
+Some magic swan geese came, seized the little boy, and carried him off on their wings.
+The girl came back and found her brother gone.
+She gasped, and rushed to look in every corner, but could not find him.
+She called him, wept, and lamented that her father and mother would scold her severely; still her little brother did not answer.
+She ran into the open field; the swan geese flashed in the distance and vanished behind a dark forest.
+The swan geese had long had a bad reputation; they had done a great deal of damage and stolen many little children.
+The girl guessed that they had carried off her brother, and rushed after them.
+She ran and ran and saw a stove.
+The stove did not tell her.
+She ran farther and saw an apple tree.
+She ran farther and saw a river of milk with shores of pudding.
+She ran and saw a little hut that stood on chicken legs and turned round and round.
+In the little hut lay Baba Yaga with veined snout and clay legs, and the little brother was sitting on a bench, playing with golden apples.
+His sister saw him, crept near him, seized him, and carried him away.
+There flowed the river of milk with shores of pudding.
+There was nothing to be done; she ate it, and the river hid her beneath the shore, and the geese flew by.
+There was the apple tree.
+She ate it quickly.
+The apple tree covered her with branches and leaves; the geese flew by.
+She went out again and ran on with her brother.
+The geese saw her and flew after her.
+They came quite close, they began to strike her with their wings; at any moment they would tear her brother from her hands.
+Luckily there was the stove on her path.
+The girl quickly stuck the cake in her mouth, went into the stove, and sat there.
+The geese whirred and whirred, quacked and quacked, and finally flew away without recovering their prey.
+And the girl ran home, and it was a good thing that she came when she did, for soon afterward her mother and father arrived.
+
+Sentence index	Text offset
+0	0
+1	73
+2	250
+3	336
+4	382
+5	453
+6	581
+7	683
+8	798
+9	876
+10	908
+11	935
+12	973
+13	1036
+14	1119
+15	1258
+16	1327
+17	1381
+18	1486
+19	1511
+20	1530
+21	1601
+22	1648
+23	1685
+24	1808
+25	1848
+26	1929
+27	2033
+Coreference groups:	75
+[ father ]:1
+	father	father	27:109-115;
+[ The girl, her, the girl, she, she, her ]:6
+	The girl	The girl	25:0-3;25:4-8;
+	her	her	25:35-38;
+	the girl	the girl	27:4-7;27:8-12;
+	she	she	27:52-55;
+	she	she	27:66-69;
+	her	her	27:94-97;
+[ her mother ]:1
+	her mother	her mother	27:94-97;27:98-104;
+[ her mother and father ]:1
+	her mother and father	her mother and father	27:94-97;27:98-104;27:105-108;27:109-115;
+[ a good thing ]:1
+	a good thing	a good thing	27:34-35;27:36-40;27:41-46;
+[ The geese whirred and whirred, quacked and quacked, and finally, their ]:2
+	The geese whirred and whirred, quacked and quacked, and finally	The geese whirred and whirred , quacked and quacked , and finally	26:0-3;26:4-9;26:10-17;26:18-21;26:22-29;26:29-30;26:31-38;26:39-42;26:43-50;26:50-51;26:52-55;26:56-63;
+	their	their	26:93-98;
+[ their prey ]:1
+	their prey	their prey	26:93-98;26:99-103;
+[ the stove ]:1
+	the stove	the stove	25:56-59;25:60-65;
+[ her mouth ]:1
+	her mouth	her mouth	25:35-38;25:39-44;
+[ the cake in her mouth ]:1
+	the cake in her mouth	the cake	25:23-26;25:27-31;
+[ the apple tree, The apple tree, her, She, her, her, her, her, her, her, her ]:11
+	the apple tree	the apple tree	18:10-13;18:14-19;18:20-24;
+	The apple tree	The apple tree	20:0-3;20:4-9;20:10-14;
+	her	her	20:23-26;
+	She	She	21:0-3;
+	her	her	21:35-38;
+	her	her	22:14-17;
+	her	her	22:33-36;
+	her	her	23:44-47;
+	her	her	23:96-99;
+	her	her	23:113-116;
+	her	her	24:31-34;
+[ her path ]:1
+	her path	her path	24:31-34;24:35-39;
+[ the stove on her path ]:1
+	the stove on her path	the stove	24:18-21;24:22-27;
+[ her hands ]:1
+	her hands	her hands	23:113-116;23:117-122;
+[ her brother, her brother, her brother ]:3
+	her brother	her brother	1:78-81;1:82-89;
+	her brother	her brother	21:35-38;21:39-46;
+	her brother	her brother	23:96-99;23:100-107;
+[ any moment, they ]:2
+	any moment	any moment	23:69-72;23:73-79;
+	they	they	23:80-84;
+[ the geese, The geese, They, they, their ]:5
+	the geese	the geese	20:53-56;20:57-62;
+	The geese	The geese	22:0-3;22:4-9;
+	They	They	23:0-4;
+	they	they	23:23-27;
+	their	their	23:53-58;
+[ their wings ]:1
+	their wings	their wings	23:53-58;23:59-64;
+[ leaves ]:1
+	leaves	leaves	20:45-51;
+[ branches ]:1
+	branches	branches	20:32-40;
+[ branches and leaves ]:1
+	branches and leaves	branches and leaves	20:32-40;20:41-44;20:45-51;
+[ the geese ]:1
+	the geese	the geese	17:87-90;17:91-96;
+[ the shore ]:1
+	the shore	the shore	17:72-75;17:76-81;
+[ the river ]:1
+	the river	the river	17:46-49;17:50-55;
+[ nothing to be done ]:1
+	nothing to be done	nothing	17:10-17;
+[ pudding ]:1
+	pudding	pudding	16:46-53;
+[ shores of pudding ]:1
+	shores of pudding	shores	16:36-42;
+[ milk ]:1
+	milk	milk	16:26-30;
+[ the river of milk ]:1
+	the river of milk	the river	16:13-16;16:17-22;
+[ the little brother, His, him, him ]:4
+	the little brother	the little brother	14:69-72;14:73-79;14:80-87;
+	His	His	15:0-3;
+	him	him	15:15-18;
+	him	him	15:60-63;
+[ His sister, him, him ]:3
+	His sister	His sister	15:0-3;15:4-10;
+	him	him	15:31-34;
+	him	him	15:43-46;
+[ golden apples ]:1
+	golden apples	golden apples	14:125-131;14:132-138;
+[ a bench ]:1
+	a bench	a bench	14:103-104;14:105-110;
+[ clay legs ]:1
+	clay legs	clay legs	14:54-58;14:59-63;
+[ veined snout ]:1
+	veined snout	veined snout	14:37-43;14:44-49;
+[ veined snout and clay legs ]:1
+	veined snout and clay legs	veined snout and clay legs	14:37-43;14:44-49;14:50-53;14:54-58;14:59-63;
+[ Baba Yaga with veined snout and clay legs ]:1
+	Baba Yaga with veined snout and clay legs	Baba Yaga	14:22-26;14:27-31;
+[ Baba Yaga with veined snout and clay legs, and the little brother was sitting on a bench, playing with golden apples ]:1
+	Baba Yaga with veined snout and clay legs, and the little brother was sitting on a bench, playing with golden apples	Baba Yaga with veined snout and clay legs , and the little brother	14:22-26;14:27-31;14:32-36;14:37-43;14:44-49;14:50-53;14:54-58;14:59-63;14:63-64;14:65-68;14:69-72;14:73-79;14:80-87;
+[ the little hut ]:1
+	the little hut	the little hut	14:3-6;14:7-13;14:14-17;
+[ chicken legs ]:1
+	chicken legs	chicken legs	13:43-50;13:51-55;
+[ a little hut that stood on chicken legs ]:1
+	a little hut that stood on chicken legs	a little hut	13:16-17;13:18-24;13:25-28;
+[ a stove, The stove, She, She, She ]:5
+	a stove	a stove	9:24-25;9:26-31;
+	The stove	The stove	10:0-3;10:4-9;
+	She	She	11:0-3;
+	She	She	12:0-3;
+	She	She	13:0-3;
+[ pudding ]:1
+	pudding	pudding	12:55-62;
+[ shores of pudding ]:1
+	shores of pudding	shores	12:45-51;
+[ milk with shores of pudding ]:1
+	milk with shores of pudding	milk	12:35-39;
+[ a river of milk with shores of pudding ]:1
+	a river of milk with shores of pudding	a river	12:24-25;12:26-31;
+[ an apple tree ]:1
+	an apple tree	an apple tree	11:24-26;11:27-32;11:33-37;
+[ The girl, She, She, her, her, her, She, The girl, they, her, them, She, her ]:13
+	The girl	The girl	3:0-3;3:4-8;
+	She	She	4:0-3;
+	She	She	5:0-3;
+	her	her	5:40-43;
+	her	her	5:74-77;
+	her	her	5:94-97;
+	She	She	6:0-3;
+	The girl	The girl	8:0-3;8:4-8;
+	they	they	8:22-26;
+	her	her	8:43-46;
+	them	them	8:73-77;
+	She	She	9:0-3;
+	her	her	10:23-26;
+[ her brother ]:1
+	her brother	her brother	8:43-46;8:47-54;
+[ many little children ]:1
+	many little children	many little children	7:94-98;7:99-105;7:106-114;
+[ damage ]:1
+	damage	damage	7:76-82;
+[ a great deal of damage ]:1
+	a great deal of damage	a great deal	7:60-61;7:62-67;7:68-72;
+[ the swan geese, The swan geese, they ]:3
+	the swan geese	the swan geese	6:29-32;6:33-37;6:38-43;
+	The swan geese	The swan geese	7:0-3;7:4-8;7:9-14;
+	they	they	7:46-50;
+[ a bad reputation ]:1
+	a bad reputation	a bad reputation	7:28-29;7:30-33;7:34-44;
+[ a dark forest ]:1
+	a dark forest	a dark forest	6:88-89;6:90-94;6:95-101;
+[ the distance ]:1
+	the distance	the distance	6:55-58;6:59-67;
+[ the open field ]:1
+	the open field	the open field	6:13-16;6:17-21;6:22-27;
+[ her brother, him, him, her little brother ]:4
+	her brother	her brother	3:29-32;3:33-40;
+	him	him	4:67-70;
+	him	him	5:11-14;
+	her little brother	her little brother	5:94-97;5:98-104;5:105-112;
+[ mother ]:1
+	mother	mother	5:55-61;
+[ her father ]:1
+	her father	her father	5:40-43;5:44-50;
+[ her father and mother ]:1
+	her father and mother	her father and mother	5:40-43;5:44-50;5:51-54;5:55-61;
+[ every corner ]:1
+	every corner	every corner	4:34-39;4:40-46;
+[ The parents, they, their ]:3
+	The parents	The parents	1:0-3;1:4-11;
+	they	they	1:51-55;
+	their	their	2:74-79;
+[ their wings ]:1
+	their wings	their wings	2:74-79;2:80-85;
+[ the little boy, him ]:2
+	the little boy	the little boy	2:35-38;2:39-45;2:46-49;
+	him	him	2:63-66;
+[ Some magic swan geese ]:1
+	Some magic swan geese	Some magic swan geese	2:0-4;2:5-10;2:11-15;2:16-21;
+[ games ]:1
+	games	games	1:171-176;
+[ the street ]:1
+	the street	the street	1:136-139;1:140-146;
+[ the window ]:1
+	the window	the window	1:111-114;1:115-121;
+[ the grass ]:1
+	the grass	the grass	1:93-96;1:97-102;
+[ a daughter, the daughter, she, her ]:4
+	a daughter	a daughter	0:45-46;0:47-55;
+	the daughter	the daughter	1:26-29;1:30-38;
+	she	she	1:70-73;
+	her	her	1:78-81;
+[ a little son ]:1
+	a little son	a little son	0:60-61;0:62-68;0:69-72;
+[ a daughter and a little son ]:1
+	a daughter and a little son	a daughter and a little son	0:45-46;0:47-55;0:56-59;0:60-61;0:62-68;0:69-72;
+[ An old man, his, they ]:3
+	An old man	An old man	0:0-2;0:3-6;0:7-10;
+	his	his	0:22-25;
+	they	they	0:36-40;
+[ his old wife ]:1
+	his old wife	his old wife	0:22-25;0:26-29;0:30-34;

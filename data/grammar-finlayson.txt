@@ -1,0 +1,68 @@
+FOLKTALE -> PI U
+FOLKTALE -> U
+#Y -> M U (wtf is Y?)
+U -> M
+U -> M U
+#FOLKTALE -> M U
+#M -> KAPPA MU UPSILON LAMBDA
+#M_n -> KAPPA MU M_m UPSILON
+#M -> KAPPA MU M UPSILON
+#U -> KAPPA KAPPA MU UPSILON LAMBDA MU UPSILON LAMBDA
+#U -> KAPPA MU UPSILON KAPPA LAMBDA UPSILON
+
+PI -> 'alpha' PI2
+PI -> PI2
+PI2 -> 'beta' PI3
+PI3 -> 'gamma' 'delta' PI4
+PI3 -> PI4
+PI5 -> 'epsilon' 'zeta' PI6
+PI6 -> 'eta' 'theta'
+PI6 ->
+
+#M_n -> DELTA?AB?C?DELTA?G?... functions usually occur in alphabetical order
+M -> DELTA M2
+M -> M2
+M2 -> 'A' 'B' M3
+M2 -> 'A' M3
+M3 -> 'C' M4
+# the next I added
+M3 -> 'C' 'depart' M4
+M3 -> M4
+M4 -> DELTA MOVE8
+M4 -> MOVE8
+DELTA -> 'D' DELTA2
+DELTA -> DELTA2
+DELTA2 -> 'E' DELTA3
+DELTA2 -> DELTA3
+DELTA3 -> 'F' DELTA4
+MOVE8 -> 'G' MOVE9
+MOVE8 -> MOVE9
+MOVE9 -> PHI MOVE11
+MOVE9 -> MOVE11
+PHI -> 'H' 'I'
+PHI -> 'H'
+PHI -> 'I'
+MOVE11 -> 'J' MOVE12
+MOVE11 -> MOVE12
+MOVE12 -> 'K' MOVE13
+MOVE12 -> MOVE13
+MOVE13 -> 'return' MOVE14
+MOVE13 -> MOVE14
+MOVE14 -> 'Pr' MOVE15
+MOVE14 -> MOVE15
+MOVE14 -> 'Pr' 'Rs' MOVE15
+MOVE15 -> 'o' MOVE16
+MOVE15 -> MOVE16
+MOVE16 -> 'L' MOVE17
+MOVE16 -> MOVE17
+MOVE17 -> SIGMA MOVE20
+MOVE17 -> MOVE20
+SIGMA -> 'M' 'N'
+SIGMA -> 'M'
+SIGMA -> 'N'
+MOVE20 -> 'Q' MOVE21
+MOVE21 -> 'Ex' MOVE22
+MOVE22 -> 'T' MOVE23
+MOVE23 -> 'U' MOVE24
+MOVE24 -> 'W'
+MOVE24 ->

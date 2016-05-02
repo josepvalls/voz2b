@@ -1,0 +1,280 @@
+T1	Mention 2 8	dragon
+A1	EntityType T1 COMMON
+A2	NumberType T1 SINGULAR
+A3	GenderType T1 UNKNOWN
+T2	Mention 23 27	Kiev
+A4	EntityType T2 GEOPOLITICAL
+A5	NumberType T2 SINGULAR
+A6	GenderType T2 UNKNOWN
+T3	Mention 30 32	he
+A7	EntityType T3 PRONOUN
+A8	NumberType T3 SINGULAR
+A9	GenderType T3 MALE
+A10	PronounType T3 SUBJECT
+T4	Mention 44 51	tribute
+A11	EntityType T4 COMMON
+A12	NumberType T4 SINGULAR
+A13	GenderType T4 UNKNOWN
+T5	Mention 61 67	people
+A14	EntityType T5 COMMON
+A15	NumberType T5 PLURAL
+A16	GenderType T5 UNKNOWN
+T6	Mention 79 85	maiden
+A17	EntityType T6 COMMON
+A18	NumberType T6 SINGULAR
+A19	GenderType T6 UNKNOWN
+T7	Mention 97 102	house
+A20	EntityType T7 COMMON
+A21	NumberType T7 SINGULAR
+A22	GenderType T7 UNKNOWN
+T8	Mention 105 109	whom
+A23	EntityType T8 PRONOUN
+A24	NumberType T8 UNKNOWN
+A25	GenderType T8 NEUTRAL
+A26	PronounType T8 RELATIVE
+T9	Mention 110 112	he
+A27	EntityType T9 PRONOUN
+A28	NumberType T9 SINGULAR
+A29	GenderType T9 MALE
+A30	PronounType T9 SUBJECT
+T10	Mention 139 141	it
+A31	EntityType T10 PRONOUN
+A32	NumberType T10 SINGULAR
+A33	GenderType T10 NEUTRAL
+A34	PronounType T10 SUBJECT
+T11	Mention 150 154	fate
+A35	EntityType T11 COMMON
+A36	NumberType T11 SINGULAR
+A37	GenderType T11 UNKNOWN
+T12	Mention 162 166	tsar
+A38	EntityType T12 COMMON
+A39	NumberType T12 SINGULAR
+A40	GenderType T12 UNKNOWN
+T13	Mention 170 178	daughter
+A41	EntityType T13 COMMON
+A42	NumberType T13 SINGULAR
+A43	GenderType T13 FEMALE
+T14	Mention 192 198	dragon
+A44	EntityType T14 COMMON
+A45	NumberType T14 SINGULAR
+A46	GenderType T14 UNKNOWN
+T15	Mention 201 203	He
+A47	EntityType T15 PRONOUN
+A48	NumberType T15 SINGULAR
+A49	GenderType T15 MALE
+A50	PronounType T15 SUBJECT
+T16	Mention 211 214	her
+A51	EntityType T16 PRONOUN
+A52	NumberType T16 SINGULAR
+A53	GenderType T16 FEMALE
+A54	PronounType T16 OBJECT
+T17	Mention 227 230	her
+A55	EntityType T17 PRONOUN
+A56	NumberType T17 SINGULAR
+A57	GenderType T17 FEMALE
+A58	PronounType T17 OBJECT
+T18	Mention 234 237	his
+A59	EntityType T18 PRONOUN
+A60	NumberType T18 SINGULAR
+A61	GenderType T18 MALE
+A62	PronounType T18 POSSESSIVE
+T19	Mention 238 242	lair
+A63	EntityType T19 COMMON
+A64	NumberType T19 SINGULAR
+A65	GenderType T19 UNKNOWN
+T20	Mention 262 265	her
+A66	EntityType T20 PRONOUN
+A67	NumberType T20 SINGULAR
+A68	GenderType T20 FEMALE
+A69	PronounType T20 OBJECT
+T21	Mention 276 279	she
+A70	EntityType T21 PRONOUN
+A71	NumberType T21 SINGULAR
+A72	GenderType T21 FEMALE
+A73	PronounType T21 SUBJECT
+T22	Mention 286 292	beauty
+A74	EntityType T22 COMMON
+A75	NumberType T22 SINGULAR
+A76	GenderType T22 UNKNOWN
+T23	Mention 305 307	he
+A77	EntityType T23 PRONOUN
+A78	NumberType T23 SINGULAR
+A79	GenderType T23 MALE
+A80	PronounType T23 SUBJECT
+T24	Mention 313 316	her
+A81	EntityType T24 PRONOUN
+A82	NumberType T24 SINGULAR
+A83	GenderType T24 FEMALE
+A84	PronounType T24 OBJECT
+T25	Mention 320 324	wife
+A85	EntityType T25 COMMON
+A86	NumberType T25 SINGULAR
+A87	GenderType T25 FEMALE
+T26	Mention 336 338	he
+A88	EntityType T26 PRONOUN
+A89	NumberType T26 SINGULAR
+A90	GenderType T26 MALE
+A91	PronounType T26 SUBJECT
+T27	Mention 350 352	he
+A92	EntityType T27 PRONOUN
+A93	NumberType T27 SINGULAR
+A94	GenderType T27 MALE
+A95	PronounType T27 SUBJECT
+T28	Mention 364 367	his
+A96	EntityType T28 PRONOUN
+A97	NumberType T28 SINGULAR
+A98	GenderType T28 MALE
+A99	PronounType T28 POSSESSIVE
+T29	Mention 368 373	house
+A100	EntityType T29 COMMON
+A101	NumberType T29 SINGULAR
+A102	GenderType T29 UNKNOWN
+T30	Mention 389 397	princess
+A103	EntityType T30 COMMON
+A104	NumberType T30 SINGULAR
+A105	GenderType T30 FEMALE
+T31	Mention 418 426	princess
+A106	EntityType T31 COMMON
+A107	NumberType T31 SINGULAR
+A108	GenderType T31 FEMALE
+T32	Mention 440 443	dog
+A109	EntityType T32 COMMON
+A110	NumberType T32 SINGULAR
+A111	GenderType T32 MALE
+T33	Mention 444 448	that
+A112	EntityType T33 PRONOUN
+A113	NumberType T33 SINGULAR
+A114	GenderType T33 NEUTRAL
+A115	PronounType T33 DEMOSTRATIVE
+T34	Mention 462 465	her
+A116	EntityType T34 PRONOUN
+A117	NumberType T34 SINGULAR
+A118	GenderType T34 FEMALE
+A119	PronounType T34 OBJECT
+T35	Mention 473 479	dragon
+A120	EntityType T35 COMMON
+A121	NumberType T35 SINGULAR
+A122	GenderType T35 UNKNOWN
+T36	Mention 483 487	lair
+A123	EntityType T36 COMMON
+A124	NumberType T36 SINGULAR
+A125	GenderType T36 UNKNOWN
+T37	Mention 494 502	princess
+A126	EntityType T37 COMMON
+A127	NumberType T37 SINGULAR
+A128	GenderType T37 FEMALE
+T38	Mention 518 521	her
+A129	EntityType T38 PRONOUN
+A130	NumberType T38 SINGULAR
+A131	GenderType T38 FEMALE
+A132	PronounType T38 OBJECT
+T39	Mention 522 528	father
+A133	EntityType T39 COMMON
+A134	NumberType T39 SINGULAR
+A135	GenderType T39 MALE
+T40	Mention 533 539	mother
+A136	EntityType T40 COMMON
+A137	NumberType T40 SINGULAR
+A138	GenderType T40 FEMALE
+R1	Coreference Arg1:T3 Arg2:T9
+R2	Coreference Arg1:T7 Arg2:T10
+R3	Coreference Arg1:T13 Arg2:T16
+R4	Coreference Arg1:T16 Arg2:T17
+R5	Coreference Arg1:T17 Arg2:T20
+R6	Coreference Arg1:T13 Arg2:T21
+R7	Coreference Arg1:T9 Arg2:T23
+R8	Coreference Arg1:T20 Arg2:T24
+R9	Coreference Arg1:T23 Arg2:T26
+R10	Coreference Arg1:T26 Arg2:T27
+R11	Coreference Arg1:T18 Arg2:T28
+R12	Coreference Arg1:T31 Arg2:T34
+R13	Coreference Arg1:T31 Arg2:T37
+R14	Coreference Arg1:T34 Arg2:T38
+R15	Coreference Arg1:T40 Arg2:T42
+R16	Coreference Arg1:T40 Arg2:T43
+R17	Coreference Arg1:T47 Arg2:T48
+R18	Coreference Arg1:T41 Arg2:T49
+R19	Coreference Arg1:T54 Arg2:T55
+R20	Coreference Arg1:T56 Arg2:T57
+R21	Coreference Arg1:T14 Arg2:T61
+R22	Coreference Arg1:T37 Arg2:T62
+R23	Coreference Arg1:T61 Arg2:T63
+R24	Coreference Arg1:T47 Arg2:T64
+R25	Coreference Arg1:T47 Arg2:T66
+R26	Coreference Arg1:T66 Arg2:T69
+R27	Coreference Arg1:T2 Arg2:T72
+R28	Coreference Arg1:T47 Arg2:T73
+R29	Coreference Arg1:T30 Arg2:T74
+R30	Coreference Arg1:T59 Arg2:T75
+R31	Coreference Arg1:T74 Arg2:T76
+R32	Coreference Arg1:T74 Arg2:T77
+R33	Coreference Arg1:T72 Arg2:T81
+R34	Coreference Arg1:T80 Arg2:T82
+R35	Coreference Arg1:T80 Arg2:T83
+R36	Coreference Arg1:T75 Arg2:T85
+R37	Coreference Arg1:T79 Arg2:T89
+R38	Coreference Arg1:T80 Arg2:T90
+R39	Coreference Arg1:T90 Arg2:T91
+R40	Coreference Arg1:T74 Arg2:T94
+R41	Coreference Arg1:T33 Arg2:T95
+R42	Coreference Arg1:T89 Arg2:T97
+R43	Coreference Arg1:T97 Arg2:T100
+R44	Coreference Arg1:T97 Arg2:T102
+R45	Coreference Arg1:T87 Arg2:T103
+R46	Coreference Arg1:T88 Arg2:T104
+R47	Coreference Arg1:T97 Arg2:T105
+R48	Coreference Arg1:T102 Arg2:T106
+R49	Coreference Arg1:T100 Arg2:T108
+R50	Coreference Arg1:T101 Arg2:T109
+R51	Coreference Arg1:T106 Arg2:T110
+R52	Coreference Arg1:T52 Arg2:T112
+R53	Coreference Arg1:T53 Arg2:T113
+R54	Coreference Arg1:T105 Arg2:T115
+R55	Coreference Arg1:T110 Arg2:T116
+R56	Coreference Arg1:T63 Arg2:T117
+R57	Coreference Arg1:T114 Arg2:T118
+R58	Coreference Arg1:T119 Arg2:T120
+R59	Coreference Arg1:T115 Arg2:T121
+R60	Coreference Arg1:T119 Arg2:T122
+R61	Coreference Arg1:T121 Arg2:T124
+R62	Coreference Arg1:T97 Arg2:T127
+R63	Coreference Arg1:T124 Arg2:T128
+R64	Coreference Arg1:T117 Arg2:T130
+R65	Coreference Arg1:T131 Arg2:T132
+R66	Coreference Arg1:T129 Arg2:T133
+R67	Coreference Arg1:T131 Arg2:T134
+R68	Coreference Arg1:T133 Arg2:T135
+R69	Coreference Arg1:T131 Arg2:T136
+R70	Coreference Arg1:T138 Arg2:T139
+R71	Coreference Arg1:T140 Arg2:T141
+R72	Coreference Arg1:T132 Arg2:T142
+R73	Coreference Arg1:T130 Arg2:T143
+R74	Coreference Arg1:T131 Arg2:T144
+R75	Coreference Arg1:T144 Arg2:T145
+R76	Coreference Arg1:T127 Arg2:T147
+R77	Coreference Arg1:T35 Arg2:T148
+R78	Coreference Arg1:T36 Arg2:T149
+R79	Coreference Arg1:T143 Arg2:T150
+R80	Coreference Arg1:T142 Arg2:T151
+R81	Coreference Arg1:T134 Arg2:T152
+R82	Coreference Arg1:T152 Arg2:T155
+R83	Coreference Arg1:T147 Arg2:T158
+R84	Coreference Arg1:T145 Arg2:T159
+R85	Coreference Arg1:T155 Arg2:T165
+R86	Coreference Arg1:T159 Arg2:T166
+R87	Coreference Arg1:T136 Arg2:T167
+R88	Coreference Arg1:T95 Arg2:T169
+R89	Coreference Arg1:T137 Arg2:T170
+R90	Coreference Arg1:T150 Arg2:T171
+R91	Coreference Arg1:T171 Arg2:T172
+R92	Coreference Arg1:T171 Arg2:T173
+R93	Coreference Arg1:T81 Arg2:T175
+R94	Coreference Arg1:T165 Arg2:T176
+R95	Coreference Arg1:T175 Arg2:T178
+R96	Coreference Arg1:T158 Arg2:T183
+R97	Coreference Arg1:T166 Arg2:T184
+R98	Coreference Arg1:T184 Arg2:T185
+R99	Coreference Arg1:T182 Arg2:T186
+R100	Coreference Arg1:T183 Arg2:T187
+R101	Coreference Arg1:T108 Arg2:T188
+R102	Coreference Arg1:T163 Arg2:T190

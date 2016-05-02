@@ -1,0 +1,3763 @@
+1	0	A dragon	MB	ACTOR	Villain	Villain
+1	2	Kiev	SS	NONACTOR	?	?
+1	4	he	MB	ACTOR	Villain	Villain
+1	5	heavy tribute	?	NONACTOR	?	?
+1	7	the people	GR	ACTOR	Other	Other
+1	10	a lovely maiden	FE	ACTOR	Other	Other
+1	13	every house	SS	NONACTOR	?	?
+1	15	he	MB	ACTOR	Villain	Villain
+1	16	it	?	NONACTOR	?	?
+1	18	the fate	?	NONACTOR	?	?
+1	21	the tsar 's	MA	ACTOR	Other	Dispatcher,FamilyPrize
+1	23	daughter	FE	ACTOR	Prize	Prize
+1	24	the dragon	MB	ACTOR	Villain	Villain
+1	26	He	MB	ACTOR	Villain	Villain
+1	27	her	FE	ACTOR	Prize	Prize
+1	28	her	FE	ACTOR	Prize	Prize
+1	29	his lair	SS	NONACTOR	?	?
+1	31	her	FE	ACTOR	Prize	Prize
+1	32	she	FE	ACTOR	Prize	Prize
+1	33	a beauty	FE	ACTOR	Prize	Prize
+1	35	he	MB	ACTOR	Villain	Villain
+1	36	her	FE	ACTOR	Prize	Prize
+1	37	wife	FE	ACTOR	Prize	Prize
+1	39	Whenever	?	NONACTOR	?	?
+1	41	he	MB	ACTOR	Villain	Villain
+1	42	he	MB	ACTOR	Villain	Villain
+1	44	house	SS	NONACTOR	?	?
+1	45	the princess	FE	ACTOR	Prize	Prize
+1	47	The princess	FE	ACTOR	Prize	Prize
+1	50	a little dog	AA	ACTOR	?	?
+1	52	her	FE	ACTOR	Prize	Prize
+1	53	the dragon 's lair	SS	NONACTOR	?	?
+1	57	The princess	FE	ACTOR	Prize	Prize
+1	60	father	MA	ACTOR	Other	Dispatcher,FamilyPrize
+1	61	mother	FE	ACTOR	Other	FamilyPrize
+1	62	She	FE	ACTOR	Prize	Prize
+1	63	her letter	OB	NONACTOR	?	?
+1	65	the dog 's neck	PA	NONACTOR	?	?
+1	69	the dog	AA	ACTOR	?	?
+1	71	it	OB	NONACTOR	?	?
+1	72	them	MA,FE	NONACTOR	?	?
+1	73	the answer	OB	NONACTOR	?	?
+1	75	day	ST	NONACTOR	?	?
+1	77	tsar	MA	ACTOR	Other	Dispatcher,FamilyPrize
+1	78	tsarina	FE	ACTOR	Other	FamilyPrize
+1	79	their daughter	FE	ACTOR	Prize	Prize
+1	81	her	FE	ACTOR	Prize	Prize
+1	82	this world	SC	NONACTOR	?	?
+1	84	the dragon	MB	ACTOR	Villain	Villain
+1	86	The princess	FE	ACTOR	Prize	Prize
+1	88	kindlier	?	NONACTOR	?	?
+1	89	the dragon	MB	ACTOR	Villain	Villain
+1	91	him	MB	ACTOR	Villain	Villain
+1	92	a long time	ST	NONACTOR	?	?
+1	94	he	MB	ACTOR	Villain	Villain
+1	95	day	ST	NONACTOR	?	?
+1	96	he	MB	ACTOR	Villain	Villain
+1	98	a tanner	MA	ACTOR	Hero	Hero
+1	101	the city	SS	NONACTOR	?	?
+1	103	Kiev	SS	NONACTOR	?	?
+1	105	he	MB	ACTOR	Villain	Villain
+1	106	the princess	FE	ACTOR	Prize	Prize
+1	108	this	?	NONACTOR	?	?
+1	109	she	FE	ACTOR	Prize	Prize
+1	111	father	MA	ACTOR	Other	Dispatcher,FamilyPrize
+1	113	Nikita the Tanner	MA	ACTOR	Hero	Hero
+1	116	Kiev	SS	NONACTOR	?	?
+1	118	him	MA	ACTOR	Hero	Hero
+1	119	her	FE	ACTOR	Prize	Prize
+1	120	captivity	HA	NONACTOR	?	?
+1	122	this letter	OB	NONACTOR	?	?
+1	124	the tsar	MA	ACTOR	Other	Dispatcher,FamilyPrize
+1	126	person	?	NONACTOR	?	?
+1	128	Nikita the Tanner	MA	ACTOR	Hero	Hero
+1	131	his land	SS	NONACTOR	?	?
+1	134	the wicked dragon	MB	ACTOR	Villain	Villain
+1	136	rescue the princess	FE	ACTOR	Prize	Prize
+1	141	that moment	ST	NONACTOR	?	?
+1	143	Nikita	MA	ACTOR	Hero	Hero
+1	145	hides	OB	NONACTOR	?	?
+1	147	twelve hides	OB	NONACTOR	?	?
+1	149	his hands	PA	NONACTOR	Hero	Hero
+1	151	he	MA	ACTOR	Hero	Hero
+1	153	the tsar	MA	ACTOR	Other	Dispatcher,FamilyPrize
+1	155	person	?	NONACTOR	?	?
+1	157	him	MA	ACTOR	Hero	Hero
+1	158	he	MA	ACTOR	Hero	Hero
+1	159	fear	HA	NONACTOR	?	?
+1	161	his hands	PA	NONACTOR	Hero	Hero
+1	163	he	MA	ACTOR	Hero	Hero
+1	164	the twelve hides	OB	NONACTOR	?	?
+1	166	matter	OB	NONACTOR	?	?
+1	168	tsar	MA	ACTOR	Other	Dispatcher,FamilyPrize
+1	169	tsarina	FE	ACTOR	Other	FamilyPrize
+1	170	him	MA	ACTOR	Hero	Hero
+1	171	he	MA	ACTOR	Hero	Hero
+1	172	the dragon	MB	ACTOR	Villain	Villain
+1	174	they	MA,FE	NONACTOR	?	?
+1	175	five thousand little children	GR	ACTOR	Other	Other
+1	177	them	GR	ACTOR	Other	Other
+1	178	him	MA	ACTOR	Hero	Hero
+1	179	their tears	OB	NONACTOR	?	?
+1	181	him	MA	ACTOR	Hero	Hero
+1	182	pity	?	NONACTOR	?	?
+1	184	The little children	GR	ACTOR	Other	Other
+1	186	Nikita	MA	ACTOR	Hero	Hero
+1	188	him	MA	ACTOR	Hero	Hero
+1	189	tears	OB	NONACTOR	?	?
+1	191	the dragon	MB	ACTOR	Villain	Villain
+1	193	Nikita himself	MA	ACTOR	Hero	Hero
+1	195	tears	OB	NONACTOR	?	?
+1	197	he	MA	ACTOR	Hero	Hero
+1	198	theirs	OB	NONACTOR	?	?
+1	199	He	MA	ACTOR	Hero	Hero
+1	201	twelve thousand pounds	OB	NONACTOR	?	?
+1	203	hemp	OB	NONACTOR	?	?
+1	205	it	OB	NONACTOR	?	?
+1	206	pitch	OB	NONACTOR	?	?
+1	208	it	OB	NONACTOR	?	?
+1	209	himself	MA	ACTOR	Hero	Hero
+1	210	the dragon	MB	ACTOR	Villain	Villain
+1	212	him	MA	ACTOR	Hero	Hero
+1	213	him	MA	ACTOR	Hero	Hero
+1	214	battle	HA	NONACTOR	?	?
+1	216	Nikita	MA	ACTOR	Hero	Hero
+1	218	the dragon 's lair	SS	NONACTOR	?	?
+1	223	the dragon	MB	ACTOR	Villain	Villain
+1	225	himself	MB	ACTOR	Villain	Villain
+1	226	Nikita	MA	ACTOR	Hero	Hero
+1	228	he	MA	ACTOR	Hero	Hero
+1	229	the door	OB	NONACTOR	?	?
+1	231	The dragon	MB	ACTOR	Villain	Villain
+1	233	he	MB	ACTOR	Villain	Villain
+1	234	trouble	HA	NONACTOR	?	?
+1	236	the open field	SS	NONACTOR	?	?
+1	238	Nikita	MA	ACTOR	Hero	Hero
+1	240	him	MB	ACTOR	Villain	Villain
+1	242	a long time	ST	NONACTOR	?	?
+1	244	a short time	ST	NONACTOR	?	?
+1	246	any event	ST	NONACTOR	?	?
+1	248	he	MA	ACTOR	Hero	Hero
+1	249	him	MB	ACTOR	Villain	Villain
+1	250	the dragon	MB	ACTOR	Villain	Villain
+1	252	Nikita	MA	ACTOR	Hero	Hero
+1	254	Nikita	MA	ACTOR	Hero	Hero
+1	256	He	MA	ACTOR	Hero	Hero
+1	257	a	OB	NONACTOR	?	?
+1	258	that	?	NONACTOR	?	?
+1	259	twelve thousand pounds	?	NONACTOR	?	?
+1	261	the dragon	MB	ACTOR	Villain	Villain
+1	263	it	OB	NONACTOR	?	?
+1	264	the dragon	MB	ACTOR	Villain	Villain
+1	266	a boundary	SC	NONACTOR	?	?
+1	268	Kiev	SS	NONACTOR	?	?
+1	270	he	MA	ACTOR	Hero	Hero
+1	271	a furrow	SC	NONACTOR	?	?
+1	273	Kiev	SS	NONACTOR	?	?
+1	275	the Caspian Sea	SS	NONACTOR	?	?
+1	278	the dragon	MB	ACTOR	Villain	Villain
+1	280	Nikita	MA	ACTOR	Hero	Hero
+1	282	The dragon	MB	ACTOR	Villain	Villain
+1	285	the middle	SS	NONACTOR	?	?
+1	287	the sea	SS	NONACTOR	?	?
+1	289	Nikita	MA	ACTOR	Hero	Hero
+1	291	him	MB	ACTOR	Villain	Villain
+1	292	him	MB	ACTOR	Villain	Villain
+1	293	the sea	SS	NONACTOR	?	?
+1	295	Nikita	MA	ACTOR	Hero	Hero
+1	297	his heroic deed	HA	NONACTOR	?	?
+1	299	any reward	OB	NONACTOR	?	?
+1	301	currying hides	HA	NONACTOR	?	?
+2	0	An old man	MA	ACTOR	Other	FamilyHero
+2	2	his old wife	FE	ACTOR	Other	FamilyHero
+2	4	they	MA,FE	NONACTOR	?	?
+2	6	a daughter	FE	ACTOR	Hero	Hero
+2	8	a little son	MA	ACTOR	Other	Victim,FamilyHero
+2	10	the mother	FE	ACTOR	Other	FamilyHero
+2	12	The parents	MA,FE	NONACTOR	?	?
+2	14	the daughter	FE	ACTOR	Hero	Hero
+2	16	they	MA,FE	NONACTOR	?	?
+2	17	her	FE	ACTOR	Hero	Hero
+2	18	she	FE	ACTOR	Hero	Hero
+2	19	her brother	MA	ACTOR	Other	Victim,FamilyHero
+2	21	the grass	SS	NONACTOR	?	?
+2	23	the window	OB	NONACTOR	?	?
+2	25	the street	SS	NONACTOR	?	?
+2	27	games	OB	NONACTOR	?	?
+2	29	Some magic swan geese	MB	ACTOR	Villain	Villain
+2	32	the little boy	MA	ACTOR	Other	Victim,FamilyHero
+2	34	him	MA	ACTOR	Other	Victim,FamilyHero
+2	35	their wings	PA	NONACTOR	Villain	Villain
+2	37	The girl	FE	ACTOR	Hero	Hero
+2	40	her brother	MA	ACTOR	Other	Victim,FamilyHero
+2	42	She	FE	ACTOR	Hero	Hero
+2	43	every corner	SS	NONACTOR	?	?
+2	45	him	MA	ACTOR	Other	Victim,FamilyHero
+2	46	She	FE	ACTOR	Hero	Hero
+2	47	him	MA	ACTOR	Other	Victim,FamilyHero
+2	49	father	MA	ACTOR	Other	FamilyHero
+2	50	mother	FE	ACTOR	Other	FamilyHero
+2	51	her	FE	ACTOR	Hero	Hero
+2	52	her little brother	MA	ACTOR	Other	Victim,FamilyHero
+2	54	She	FE	ACTOR	Hero	Hero
+2	55	the open field	SS	NONACTOR	?	?
+2	57	the swan geese	MB	ACTOR	Villain	Villain
+2	60	the distance	SC	NONACTOR	?	?
+2	62	a dark forest	SS	NONACTOR	?	?
+2	64	The swan geese	MB	ACTOR	Villain	Villain
+2	67	a bad reputation	HA	NONACTOR	?	?
+2	69	they	MB	ACTOR	Villain	Villain
+2	71	a great deal	?	NONACTOR	?	?
+2	73	damage	?	NONACTOR	?	?
+2	75	many little children	GR	ACTOR	Other	Other
+2	77	The girl	FE	ACTOR	Hero	Hero
+2	79	they	MB	ACTOR	Villain	Villain
+2	80	her brother	MA	ACTOR	Other	Victim,FamilyHero
+2	82	them	MB	ACTOR	Villain	Villain
+2	83	She	FE	ACTOR	Hero	Hero
+2	84	a stove	MB	ACTOR	Tester	Helper
+2	86	The stove	MB	ACTOR	Tester	Helper
+2	88	her	FE	ACTOR	Hero	Hero
+2	89	She	FE	ACTOR	Hero	Hero
+2	90	an apple tree	MB	ACTOR	Tester	Helper
+2	93	She	FE	ACTOR	Hero	Hero
+2	95	a river	MB	ACTOR	Tester	Helper
+2	97	milk	OB	NONACTOR	?	?
+2	100	shores	PA	NONACTOR	Tester	Helper
+2	102	pudding	OB	NONACTOR	?	?
+2	104	She	FE	ACTOR	Hero	Hero
+2	105	nudge	?	NONACTOR	?	?
+2	106	him	MB	ACTOR	Tester	Helper
+2	107	he	MB	ACTOR	Tester	Helper
+2	108	her	FE	ACTOR	Hero	Hero
+2	109	she	FE	ACTOR	Hero	Hero
+2	110	he	MB	ACTOR	Tester	Helper
+2	111	her	FE	ACTOR	Hero	Hero
+2	112	She	FE	ACTOR	Hero	Hero
+2	114	a little hut	SS	NONACTOR	?	?
+2	116	chicken legs	OB	NONACTOR	?	?
+2	120	round	?	NONACTOR	?	?
+2	121	round	?	NONACTOR	?	?
+2	123	the little hut lay Baba Yaga	MB	ACTOR	Villain	Villain
+2	128	snout	OB	NONACTOR	?	?
+2	129	clay	OB	NONACTOR	?	?
+2	130	legs	OB	NONACTOR	?	?
+2	131	the little brother	MA	ACTOR	Other	Victim,FamilyHero
+2	133	a bench	OB	NONACTOR	?	?
+2	135	golden apples	OB	NONACTOR	?	?
+2	137	His sister	FE	ACTOR	Hero	Hero
+2	139	him	MA	ACTOR	Other	Victim,FamilyHero
+2	140	him	MA	ACTOR	Other	Victim,FamilyHero
+2	141	him	MA	ACTOR	Other	Victim,FamilyHero
+2	142	him	MA	ACTOR	Other	Victim,FamilyHero
+2	143	the geese	MB	ACTOR	Villain	Villain
+2	145	her	FE	ACTOR	Hero	Hero
+2	146	There	?	NONACTOR	?	?
+2	148	the river	MB	ACTOR	Tester	Helper
+2	150	milk	OB	NONACTOR	?	?
+2	153	shores	OB	NONACTOR	?	?
+2	155	pudding	OB	NONACTOR	?	?
+2	157	she	FE	ACTOR	Hero	Hero
+2	158	There	?	NONACTOR	?	?
+2	159	nothing	?	NONACTOR	?	?
+2	160	she	FE	ACTOR	Hero	Hero
+2	161	it	MB	ACTOR	Tester	Helper
+2	162	the river	MB	ACTOR	Tester	Helper
+2	164	her	FE	ACTOR	Hero	Hero
+2	165	the shore	PA	NONACTOR	Tester	Helper
+2	167	the geese	MB	ACTOR	Villain	Villain
+2	169	She	FE	ACTOR	Hero	Hero
+2	170	her brother	MA	ACTOR	Other	Victim,FamilyHero
+2	172	the geese	MB	ACTOR	Villain	Villain
+2	174	her	FE	ACTOR	Hero	Hero
+2	175	There	?	NONACTOR	?	?
+2	176	the apple tree	MB	ACTOR	Tester	Helper
+2	179	she	FE	ACTOR	Hero	Hero
+2	180	She	FE	ACTOR	Hero	Hero
+2	181	it	MB	ACTOR	Tester	Helper
+2	182	The apple tree	MB	ACTOR	Tester	Helper
+2	185	her	FE	ACTOR	Hero	Hero
+2	186	branches	PA	NONACTOR	Tester	Helper
+2	188	the geese	MB	ACTOR	Villain	Villain
+2	190	She	FE	ACTOR	Hero	Hero
+2	191	her brother	MA	ACTOR	Other	Victim,FamilyHero
+2	193	The geese	MB	ACTOR	Villain	Villain
+2	195	her	FE	ACTOR	Hero	Hero
+2	196	her	FE	ACTOR	Hero	Hero
+2	197	They	MB	ACTOR	Villain	Villain
+2	198	they	MB	ACTOR	Villain	Villain
+2	199	her	FE	ACTOR	Hero	Hero
+2	200	their wings	PA	NONACTOR	Villain	Villain
+2	202	any moment	ST	NONACTOR	?	?
+2	204	they	MB	ACTOR	Villain	Villain
+2	205	her brother	MA	ACTOR	Other	Victim,FamilyHero
+2	207	her hands	PA	NONACTOR	Hero	Hero
+2	209	there	?	NONACTOR	?	?
+2	211	the stove	MB	ACTOR	Tester	Helper
+2	213	her path	SS	NONACTOR	?	?
+2	215	she	FE	ACTOR	Hero	Hero
+2	216	The girl	FE	ACTOR	Hero	Hero
+2	218	the cake	OB	NONACTOR	?	?
+2	220	her mouth	PA	NONACTOR	Hero	Hero
+2	222	the stove	MB	ACTOR	Tester	Helper
+2	224	The geese	MB	ACTOR	Villain	Villain
+2	226	their prey	FE,MA	NONACTOR	?	?
+2	228	the girl	FE	ACTOR	Hero	Hero
+2	230	home	SS	NONACTOR	?	?
+2	232	it	HA	NONACTOR	?	?
+2	233	a good thing	HA	NONACTOR	?	?
+2	235	she	FE	ACTOR	Hero	Hero
+2	236	she	FE	ACTOR	Hero	Hero
+2	238	mother	FE	ACTOR	Other	FamilyHero
+2	239	father	MA	ACTOR	Other	FamilyHero
+3	1	a certain kingdom	SS	NONACTOR	?	?
+3	3	a certain land	SS	NONACTOR	?	?
+3	5	one	?	NONACTOR	?	?
+3	7	Bukhtan Bukhtanovich	MA	ACTOR	Hero	Hero
+3	11	a stove	OB	NONACTOR	?	?
+3	14	pillars	OB	NONACTOR	?	?
+3	17	the middle	?	NONACTOR	?	?
+3	19	a field	SS	NONACTOR	?	?
+3	21	He	MA	ACTOR	Hero	Hero
+3	23	the stove	OB	NONACTOR	?	?
+3	25	cockroach milk	OB	NONACTOR	?	?
+3	28	his elbows	PA	NONACTOR	Hero	Hero
+3	30	A fox	AA	ACTOR	Other	Dispatcher,Donor
+3	32	him	MA	ACTOR	Hero	Hero
+3	33	The fox	AA	ACTOR	Other	Dispatcher,Donor
+3	35	the coin	OB	NONACTOR	?	?
+3	37	it	OB	NONACTOR	?	?
+3	39	smaller coins	OB	NONACTOR	?	?
+3	41	kopeks	OB	NONACTOR	?	?
+3	43	pennies	OB	NONACTOR	?	?
+3	45	halfpennies	PO	NONACTOR	?	?
+3	47	the tsar	MA	ACTOR	Other	FamilyPrize
+3	49	The tsar	MA	ACTOR	Other	FamilyPrize
+3	51	The fox	AA	ACTOR	Other	Dispatcher,Donor
+3	53	it	OB	NONACTOR	?	?
+3	54	one kopek	OB	NONACTOR	?	?
+3	57	the hoop	OB	NONACTOR	?	?
+3	59	the measure	OB	NONACTOR	?	?
+3	61	it	OB	NONACTOR	?	?
+3	62	the tsar	MA	ACTOR	Other	FamilyPrize
+3	64	The fox	AA	ACTOR	Other	Dispatcher,Donor
+3	66	it	OB	NONACTOR	?	?
+3	67	a kopek	OB	NONACTOR	?	?
+3	70	the hoop	OB	NONACTOR	?	?
+3	72	the measure	OB	NONACTOR	?	?
+3	74	it	OB	NONACTOR	?	?
+3	75	the tsar	MA	ACTOR	Other	FamilyPrize
+3	77	The Fox	AA	ACTOR	Other	Dispatcher,Donor
+3	79	it	OB	NONACTOR	?	?
+3	80	his coins	OB	NONACTOR	?	?
+3	82	the hoop	OB	NONACTOR	?	?
+3	84	it	OB	NONACTOR	?	?
+3	85	the tsar	MA	ACTOR	Other	FamilyPrize
+3	87	He	MA	ACTOR	Other	FamilyPrize
+3	88	fox	AA	ACTOR	Other	Dispatcher,Donor
+3	90	The fox	AA	ACTOR	Other	Dispatcher,Donor
+3	92	home	SS	NONACTOR	?	?
+3	94	He	MA	ACTOR	Hero	Hero
+3	95	the fox	AA	ACTOR	Other	Dispatcher,Donor
+3	97	the tsar	MA	ACTOR	Other	FamilyPrize
+3	99	They	MA,AA	NONACTOR	?	?
+3	100	the market place	SS	NONACTOR	?	?
+3	104	a board	SS	NONACTOR	?	?
+3	106	a muddy ditch	SS	NONACTOR	?	?
+3	108	The fox	AA	ACTOR	Other	Dispatcher,Donor
+3	110	Bukhtan	MA	ACTOR	Hero	Hero
+3	112	a push	?	NONACTOR	?	?
+3	114	he	MA	ACTOR	Hero	Hero
+3	115	the mud	SS	NONACTOR	?	?
+3	117	The fox	AA	ACTOR	Other	Dispatcher,Donor
+3	119	him	MA	ACTOR	Hero	Hero
+3	120	this	?	NONACTOR	?	?
+3	121	the fox	AA	ACTOR	Other	Dispatcher,Donor
+3	123	him	MA	ACTOR	Hero	Hero
+3	124	mud	OB	NONACTOR	?	?
+3	126	The fox	AA	ACTOR	Other	Dispatcher,Donor
+3	128	the tsar	MA	ACTOR	Other	FamilyPrize
+3	130	The fox	AA	ACTOR	Other	Dispatcher,Donor
+3	132	the clothes	OB	NONACTOR	?	?
+3	134	Bukhtan Bukhtanovich	MA	ACTOR	Hero	Hero
+3	137	They	MA,AA	NONACTOR	?	?
+3	138	the tsar	MA	ACTOR	Other	FamilyPrize
+3	140	the tsar 's palace	SS	NONACTOR	?	?
+3	144	the table	OB	NONACTOR	?	?
+3	146	Bukhtan	MA	ACTOR	Hero	Hero
+3	149	anything	?	NONACTOR	?	?
+3	151	himself	MA	ACTOR	Hero	Hero
+3	152	he	MA	ACTOR	Hero	Hero
+3	153	such clothes	OB	NONACTOR	?	?
+3	155	his life	PA	NONACTOR	Hero	Hero
+3	157	The tsar	MA	ACTOR	Other	FamilyPrize
+3	159	the fox	AA	ACTOR	Other	Dispatcher,Donor
+3	161	the fox	AA	ACTOR	Other	Dispatcher,Donor
+3	163	Bukhtan Bukhtanovich	MA	ACTOR	Hero	Hero
+3	166	a chair	OB	NONACTOR	?	?
+3	168	it	OB	NONACTOR	?	?
+3	169	a gilded one	OB	NONACTOR	?	?
+3	170	The tsar	MA	ACTOR	Other	FamilyPrize
+3	172	the fox	AA	ACTOR	Other	Dispatcher,Donor
+3	174	The tsar	MA	ACTOR	Other	FamilyPrize
+3	176	the chair	OB	NONACTOR	?	?
+3	178	the room	SS	NONACTOR	?	?
+3	180	The fox	AA	ACTOR	Other	Dispatcher,Donor
+3	182	Bukhtan	MA	ACTOR	Hero	Hero
+3	184	They	MA,AA	NONACTOR	?	?
+3	186	the purpose	?	NONACTOR	?	?
+3	189	their visit	?	NONACTOR	?	?
+3	191	the match	?	NONACTOR	?	?
+3	193	then they	?	NONACTOR	?	?
+3	194	the wedding	ST	NONACTOR	?	?
+3	196	Three ships	SS	NONACTOR	?	?
+3	198	Bukhtan Bukhtanovich	MA	ACTOR	Hero	Hero
+3	201	they	SS	NONACTOR	?	?
+3	203	Bukhtan Bukhtanovich	MA	ACTOR	Hero	Hero
+3	206	his wife	FE	ACTOR	Prize	Prize
+3	209	one	SS	NONACTOR	?	?
+3	210	the ships	SS	NONACTOR	?	?
+3	212	the fox	AA	ACTOR	Other	Dispatcher,Donor
+3	214	the shore	SS	NONACTOR	?	?
+3	216	Bukhtan	MA	ACTOR	Hero	Hero
+3	218	his stove	OB	NONACTOR	?	?
+3	220	Bukhtan Bukhtanovich	MA	ACTOR	Hero	Hero
+3	223	the fox	AA	ACTOR	Other	Dispatcher,Donor
+3	225	him	MA	ACTOR	Hero	Hero
+3	226	the shore	SS	NONACTOR	?	?
+3	228	He	AA	ACTOR	Other	Dispatcher,Donor
+3	229	a hill	SS	NONACTOR	?	?
+3	231	it	OB	NONACTOR	?	?
+3	233	the hill	SS	NONACTOR	?	?
+3	236	a huge stone house	SS	NONACTOR	?	?
+3	239	it	SS	NONACTOR	?	?
+3	240	an enormous kingdom	SS	NONACTOR	?	?
+3	242	The fox	AA	ACTOR	Other	Dispatcher,Donor
+3	244	the house	SS	NONACTOR	?	?
+3	246	first saw	?	NONACTOR	?	?
+3	248	no one	?	NONACTOR	?	?
+3	250	he	AA	ACTOR	Other	Dispatcher,Donor
+3	251	a chamber	SS	NONACTOR	?	?
+3	254	there	SS	NONACTOR	?	?
+3	255	the best bed	OB	NONACTOR	?	?
+3	259	Dragon	MB	ACTOR	Villain	Villain
+3	260	Son	?	NONACTOR	?	?
+3	261	the Dragon	MB	ACTOR	Villain	Villain
+3	263	himself	MB	ACTOR	Villain	Villain
+3	265	Raven	MB	ACTOR	Villain	Villain
+3	268	Son	?	NONACTOR	?	?
+3	270	the Raven	MB	ACTOR	Villain	Villain
+3	272	the chimney	OB	NONACTOR	?	?
+3	275	Cat	MB	ACTOR	Villain	Villain
+3	278	Son	?	NONACTOR	?	?
+3	280	the Cat	MB	ACTOR	Villain	Villain
+3	282	a throne	OB	NONACTOR	?	?
+3	284	The fox	AA	ACTOR	Other	Dispatcher,Donor
+3	286	the fox	AA	ACTOR	Other	Dispatcher,Donor
+3	288	him	MB	ACTOR	Villain	Villain
+3	289	the barrel	OB	NONACTOR	?	?
+3	291	the fox	AA	ACTOR	Other	Dispatcher,Donor
+3	293	him	MB	ACTOR	Villain	Villain
+3	294	the mortar	OB	NONACTOR	?	?
+3	296	he	AA	ACTOR	Other	Dispatcher,Donor
+3	298	Dragon	MB	ACTOR	Villain	Villain
+3	301	Son	?	NONACTOR	?	?
+3	303	the Dragon	MB	ACTOR	Villain	Villain
+3	305	straw	OB	NONACTOR	?	?
+3	307	him	MB	ACTOR	Villain	Villain
+3	308	the street	SS	NONACTOR	?	?
+3	310	The ships	SS	NONACTOR	?	?
+3	312	The fox	AA	ACTOR	Other	Dispatcher,Donor
+3	314	all the beasts	MB	ACTOR	?	?
+3	316	the water	SS	NONACTOR	?	?
+3	318	the Cossacks	GR	ACTOR	?	?
+3	320	them	MB	ACTOR	?	?
+3	321	once	?	NONACTOR	?	?
+3	322	Bukhtan Bukhtanovich	MA	ACTOR	Hero	Hero
+3	325	all his possessions	OB	NONACTOR	?	?
+3	327	that house	SS	NONACTOR	?	?
+3	329	there	SS	NONACTOR	?	?
+3	330	he	MA	ACTOR	Hero	Hero
+3	331	he	MA	ACTOR	Hero	Hero
+3	332	his life	PA	NONACTOR	Hero	Hero
+4	1	a certain kingdom	?	NONACTOR	?	?
+4	3	a certain land	?	NONACTOR	?	?
+4	5	there	?	NONACTOR	?	?
+4	7	a king	MA	ACTOR	Other	FamilyHero
+4	9	three sons	MA	ACTOR	Other	FamilyHero
+4	11	day	ST	NONACTOR	?	?
+4	12	they	MA	ACTOR	Other	FamilyHero
+4	13	him :	MA	ACTOR	Other	FamilyHero
+4	15	The father	MA	ACTOR	Other	FamilyHero
+4	17	them	MA	ACTOR	Other	FamilyHero
+4	18	his blessing	PA	NONACTOR	Other	FamilyHero
+4	20	they	MA	ACTOR	Other	FamilyHero
+4	21	different directions	?	NONACTOR	?	?
+4	23	The youngest son	MA	ACTOR	Hero	Hero
+4	25	his way	?	NONACTOR	?	?
+4	27	he	MA	ACTOR	Hero	Hero
+4	28	a clearing	SS	NONACTOR	?	?
+4	30	there	SS	NONACTOR	?	?
+4	31	a dead horse	OB	NONACTOR	?	?
+4	34	beasts	AN	NONACTOR	?	?
+4	37	many kinds	?	NONACTOR	?	?
+4	39	birds	AN	NONACTOR	?	?
+4	41	reptiles	AN	NONACTOR	?	?
+4	43	A falcon	AA	ACTOR	Tester	Donor
+4	46	the prince	MA	ACTOR	Hero	Hero
+4	48	his shoulder	PA	NONACTOR	Hero	Hero
+4	50	The prince	MA	ACTOR	Hero	Hero
+4	52	his good steed	?	NONACTOR	?	?
+4	54	the carcass	OB	NONACTOR	?	?
+4	56	he	MA	ACTOR	Hero	Hero
+4	57	the bones	OB	NONACTOR	?	?
+4	59	the beasts	AN	NONACTOR	?	?
+4	63	the flesh	OB	NONACTOR	?	?
+4	65	the birds	AN	NONACTOR	?	?
+4	68	the skin	OB	NONACTOR	?	?
+4	70	the reptiles	AN	NONACTOR	?	?
+4	73	the head	OB	NONACTOR	?	?
+4	75	the ants	AN	NONACTOR	?	?
+4	77	the falcon	AA	ACTOR	Tester	Donor
+4	79	Prince Ivan	MA	ACTOR	Hero	Hero
+4	82	the damp earth	OB	NONACTOR	?	?
+4	84	a bright falcon	AA	ACTOR	Hero	Hero
+4	86	the air	?	NONACTOR	?	?
+4	88	the thrice tenth kingdom	?	NONACTOR	?	?
+4	93	More than half	?	NONACTOR	?	?
+4	95	that kingdom	?	NONACTOR	?	?
+4	97	a crystal mountain	SS	NONACTOR	?	?
+4	100	The prince	MA	ACTOR	Hero	Hero
+4	102	the royal palace	SS	NONACTOR	?	?
+4	104	a goodly youth	MA	ACTOR	Hero	Hero
+4	106	the palace guards	GR	ACTOR	Other	Other
+4	109	they	GR	ACTOR	Other	Other
+4	110	he	MA	ACTOR	Hero	Hero
+4	112	the service	?	NONACTOR	?	?
+4	114	that king	MA	ACTOR	Other	Dispatcher
+4	116	his palace	SS	NONACTOR	?	?
+4	118	one week	?	NONACTOR	?	?
+4	121	a second	?	NONACTOR	?	?
+4	122	then a third	?	NONACTOR	?	?
+4	123	The king 's daughter	FE	ACTOR	Prize	Prize
+4	127	her father	MA	ACTOR	Other	Dispatcher
+4	129	The king	MA	ACTOR	Other	Dispatcher
+4	131	her leave	?	NONACTOR	?	?
+4	133	They	MA,FE	NONACTOR	?	?
+4	134	good steeds	?	NONACTOR	?	?
+4	136	they	MA,FE	NONACTOR	?	?
+4	137	the crystal mountain	SS	NONACTOR	?	?
+4	140	a golden goat	AN	NONACTOR	Other	Other
+4	142	nowhere	?	NONACTOR	?	?
+4	143	The prince	MA	ACTOR	Hero	Hero
+4	145	it	AN	NONACTOR	Other	Other
+4	146	he	MA	ACTOR	Hero	Hero
+4	147	the goat	AN	NONACTOR	Other	Other
+4	149	he	MA	ACTOR	Hero	Hero
+4	150	the princess	FE	ACTOR	Prize	Prize
+4	152	He	MA	ACTOR	Hero	Hero
+4	153	himself	MA	ACTOR	Hero	Hero
+4	154	a very old man	MA	ACTOR	Hero	Hero
+4	156	he	MA	ACTOR	Hero	Hero
+4	157	the palace	SS	NONACTOR	?	?
+4	159	the king	MA	ACTOR	Other	Dispatcher
+4	162	the king	MA	ACTOR	Other	Dispatcher
+4	166	Prince Ivan	MA	ACTOR	Hero	Hero
+4	169	his herd	GR	ACTOR	?	?
+4	172	mountains	SS	NONACTOR	?	?
+4	173	valleys	SS	NONACTOR	?	?
+4	174	the three-headed dragon	MB	ACTOR	Villain	Villain
+4	176	a lake	SS	NONACTOR	?	?
+4	178	the prince	MA	ACTOR	Hero	Hero
+4	180	The dragon	MB	ACTOR	Villain	Villain
+4	182	a rage	?	NONACTOR	?	?
+4	184	three cows	AN	NONACTOR	?	?
+4	186	six	?	NONACTOR	?	?
+4	187	Prince Ivan straightway	MA	ACTOR	Hero	Hero
+4	191	a bright falcon	AA	ACTOR	Hero	Hero
+4	194	all the three heads	PA	NONACTOR	Villain	Villain
+4	196	the dragon	MB	ACTOR	Villain	Villain
+4	198	the cattle home	GR	ACTOR	?	?
+4	202	the king	MA	ACTOR	Other	Dispatcher
+4	206	Prince	MA	ACTOR	Hero	Hero
+4	209	Ivan	MA	ACTOR	Hero	Hero
+4	210	day	?	NONACTOR	?	?
+4	211	the prince	MA	ACTOR	Hero	Hero
+4	213	his herd	GR	ACTOR	?	?
+4	216	mountains	SS	NONACTOR	?	?
+4	217	valleys	SS	NONACTOR	?	?
+4	218	the six	?	NONACTOR	?	?
+4	219	dragon	MB	ACTOR	Villain	Villain
+4	221	the lake	SS	NONACTOR	?	?
+4	223	six cows	AN	NONACTOR	?	?
+4	226	the prince	MA	ACTOR	Hero	Hero
+4	228	The dragon	MB	ACTOR	Villain	Villain
+4	230	a rage	?	NONACTOR	?	?
+4	232	six	?	NONACTOR	?	?
+4	233	twelve cows	AN	NONACTOR	?	?
+4	235	the prince	MA	ACTOR	Hero	Hero
+4	237	a bright falcon	AA	ACTOR	Hero	Hero
+4	239	the dragon	MB	ACTOR	Villain	Villain
+4	241	his six heads	PA	NONACTOR	Villain	Villain
+4	243	He	MA	ACTOR	Hero	Hero
+4	245	the herd home	GR	ACTOR	?	?
+4	248	the king	MA	ACTOR	Other	Dispatcher
+4	250	him	MA	ACTOR	Hero	Hero
+4	251	the prince	MA	ACTOR	Hero	Hero
+4	253	night	ST	NONACTOR	?	?
+4	255	Prince Ivan	MA	ACTOR	Hero	Hero
+4	258	an ant	AA	ACTOR	Hero	Hero
+4	260	the crystal mountain	SS	NONACTOR	?	?
+4	263	a little crack	PO	NONACTOR	?	?
+4	266	Lo	?	NONACTOR	?	?
+4	268	the princess	FE	ACTOR	Prize	Prize
+4	270	the crystal mountain	SS	NONACTOR	?	?
+4	273	Prince Ivan	MA	ACTOR	Hero	Hero
+4	276	the princess	FE	ACTOR	Prize	Prize
+4	278	Prince Ivan	MA	ACTOR	Hero	Hero
+4	281	the mountain	SS	NONACTOR	?	?
+4	283	a herdsman	MA	ACTOR	Hero	Hero
+4	285	his herd	GR	ACTOR	?	?
+4	287	the twelve-headed dragon	MB	ACTOR	Villain	Villain
+4	289	him	MA	ACTOR	Hero	Hero
+4	290	the prince	MA	ACTOR	Hero	Hero
+4	292	They	MA,MB	NONACTOR	?	?
+4	294	a long struggle	?	NONACTOR	?	?
+4	296	a short struggle	?	NONACTOR	?	?
+4	298	Prince Ivan	MA	ACTOR	Hero	Hero
+4	301	the twelve-headed dragon	MB	ACTOR	Villain	Villain
+4	303	his trunk	OB	NONACTOR	?	?
+4	305	the coffer	OB	NONACTOR	?	?
+4	307	his right side	?	NONACTOR	?	?
+4	309	the coffer	OB	NONACTOR	?	?
+4	311	he	MA	ACTOR	Hero	Hero
+4	312	a hare	AN	NONACTOR	?	?
+4	314	the hare a duck	AN	NONACTOR	?	?
+4	319	the duck an egg	OB	NONACTOR	?	?
+4	324	the egg a seed	OB	NONACTOR	?	?
+4	329	He	MA	ACTOR	Hero	Hero
+4	330	the seed	OB	NONACTOR	?	?
+4	332	it	OB	NONACTOR	?	?
+4	333	it	OB	NONACTOR	?	?
+4	335	the crystal mountain	SS	NONACTOR	?	?
+4	338	Prince Ivan	MA	ACTOR	Hero	Hero
+4	341	the princess	FE	ACTOR	Prize	Prize
+4	344	her father	MA	ACTOR	Other	Dispatcher
+4	346	the prince	MA	ACTOR	Hero	Hero
+4	348	The wedding	ST	NONACTOR	?	?
+4	350	once	?	NONACTOR	?	?
+5	0	There	?	NONACTOR	?	?
+5	3	marvels	?	NONACTOR	?	?
+5	5	wondrous wonders	?	NONACTOR	?	?
+5	7	the laborer Shabarsha	MA	ACTOR	?	?
+5	11	Shabarsha	MA	ACTOR	?	?
+5	14	a rogue	?	NONACTOR	?	?
+5	16	rogues	?	NONACTOR	?	?
+5	19	a penny	OB	NONACTOR	?	?
+5	21	a pound	OB	NONACTOR	?	?
+5	24	So Shabarsha	MA	ACTOR	?	?
+5	26	a laborer	MA	ACTOR	?	?
+5	28	times	?	NONACTOR	?	?
+5	30	There	?	NONACTOR	?	?
+5	32	no grain	OB	NONACTOR	?	?
+5	34	all	?	NONACTOR	?	?
+5	35	the vegetables	OB	NONACTOR	?	?
+5	38	one owner thought	MA	ACTOR	Other	Dispatcher
+5	41	a deep thought	?	NONACTOR	?	?
+5	43	Shabarsha	MA	ACTOR	?	?
+5	45	him	MA	ACTOR	Other	Dispatcher
+5	46	Shabarsha	MA	ACTOR	?	?
+5	48	the millpond	SS	NONACTOR	?	?
+5	50	He	MA	ACTOR	?	?
+5	51	the miller	MA	ACTOR	Other	Other
+5	54	a handful	?	NONACTOR	?	?
+5	56	hemp	OB	NONACTOR	?	?
+5	58	the shore	SS	NONACTOR	?	?
+5	60	his	MA	ACTOR	?	?
+5	61	He	MA	ACTOR	?	?
+5	63	a boy	MB	ACTOR	Villain	Villain
+5	66	a black shirt	OB	NONACTOR	?	?
+5	68	red hat	OB	NONACTOR	?	?
+5	70	the water	SS	NONACTOR	?	?
+5	72	he	MB	ACTOR	Villain	Villain
+5	73	The imp	MB	ACTOR	Villain	Villain
+5	75	Shabarsha	MA	ACTOR	?	?
+5	77	his work	?	NONACTOR	?	?
+5	79	he	MB	ACTOR	Villain	Villain
+5	80	Shabarsha	MA	ACTOR	?	?
+5	82	digging	?	NONACTOR	?	?
+5	84	a pit	SS	NONACTOR	?	?
+5	86	he	MA	ACTOR	?	?
+5	87	it	SS	NONACTOR	?	?
+5	88	he	MA	ACTOR	?	?
+5	89	his hat	OB	NONACTOR	?	?
+5	91	a cutout hole	PO	NONACTOR	?	?
+5	94	it	OB	NONACTOR	?	?
+5	95	The imp	MB	ACTOR	Villain	Villain
+5	97	the water	SS	NONACTOR	?	?
+5	99	He	MB	ACTOR	Villain	Villain
+5	100	The imp	MB	ACTOR	Villain	Villain
+5	102	the ravine	SS	NONACTOR	?	?
+5	104	the bear	AN	NONACTOR	?	?
+5	106	him	AN	NONACTOR	?	?
+5	108	the side	?	NONACTOR	?	?
+5	110	his club	OB	NONACTOR	?	?
+5	112	Misha	AN	NONACTOR	?	?
+5	114	his hind legs	PA	NONACTOR	?	?
+5	116	the imp	MB	ACTOR	Villain	Villain
+5	118	all his bones	PA	NONACTOR	Villain	Villain
+5	120	He	MB	ACTOR	Villain	Villain
+5	121	himself	MB	ACTOR	Villain	Villain
+5	122	the bear 's claws	PA	NONACTOR	?	?
+5	126	the old man	MA	ACTOR	?	?
+5	128	the water	SS	NONACTOR	?	?
+5	130	he	MB	ACTOR	Villain	Villain
+5	131	his fright	?	NONACTOR	?	?
+5	134	the boy	MB	ACTOR	Villain	Villain
+5	136	the red hat once more	OB	NONACTOR	?	?
+5	139	Shabarsha	MA	ACTOR	?	?
+5	141	He	MB	ACTOR	Villain	Villain
+5	142	his grandfather 's words	?	NONACTOR	?	?
+5	146	Shabarsha	MA	ACTOR	?	?
+5	148	The imp	MB	ACTOR	Villain	Villain
+5	150	Bunny	AN	NONACTOR	?	?
+5	152	him	AN	NONACTOR	?	?
+5	153	the ear	PA	NONACTOR	?	?
+5	155	the hare	AN	NONACTOR	?	?
+5	157	the imp right	MB	ACTOR	Villain	Villain
+5	160	him	AN	NONACTOR	?	?
+5	161	he	MB	ACTOR	Villain	Villain
+5	163	the water spirit	MB	ACTOR	Villain	Villain
+5	166	the old man	MB	ACTOR	Villain	Villain
+5	168	his eyebrows	PA	NONACTOR	Villain	Villain
+5	170	The imp	MB	ACTOR	Villain	Villain
+5	172	Shabarsha	MA	ACTOR	?	?
+5	174	his own two feet	PA	NONACTOR	?	?
+5	176	the leaves	PO	NONACTOR	?	?
+5	178	the trees	SC	NONACTOR	?	?
+5	181	Shabarsha	MA	ACTOR	?	?
+5	182	The imp lay face	MB	ACTOR	Villain	Villain
+5	184	the ground	SS	NONACTOR	?	?
+5	186	his fingers	PA	NONACTOR	Villain	Villain
+5	188	his ears	PA	NONACTOR	Villain	Villain
+5	190	Shabarsha	MA	ACTOR	?	?
+5	192	his club	OB	NONACTOR	?	?
+5	195	all	?	NONACTOR	?	?
+5	196	his	?	NONACTOR	?	?
+5	197	he	MA	ACTOR	?	?
+5	198	him	MB	ACTOR	Villain	Villain
+5	199	the neck	?	NONACTOR	?	?
+5	201	He	MB	ACTOR	Villain	Villain
+5	202	The imp	MB	ACTOR	Villain	Villain
+5	204	the club	OB	NONACTOR	?	?
+5	206	it	OB	NONACTOR	?	?
+5	207	his shoulder	PA	NONACTOR	Villain	Villain
+5	209	Shabarsha	MA	ACTOR	?	?
+5	211	The devil	MB	ACTOR	Villain	Villain
+5	213	the club	OB	NONACTOR	?	?
+5	215	it	OB	NONACTOR	?	?
+5	216	it	OB	NONACTOR	?	?
+5	218	a black dot	?	NONACTOR	?	?
+5	220	the sky	SC	NONACTOR	?	?
+5	222	They	MB,MA	NONACTOR	?	?
+5	223	it	OB	NONACTOR	?	?
+5	224	earth	SC	NONACTOR	?	?
+5	226	Shabarsha	MA	ACTOR	?	?
+5	228	the club	OB	NONACTOR	?	?
+5	230	it	OB	NONACTOR	?	?
+5	231	He	MA	ACTOR	?	?
+5	232	it	OB	NONACTOR	?	?
+5	234	the toes	PA	NONACTOR	?	?
+5	237	one foot	PA	NONACTOR	?	?
+5	239	it	OB	NONACTOR	?	?
+5	240	his palm	PA	NONACTOR	?	?
+5	242	the sky	SC	NONACTOR	?	?
+5	244	the imp	MB	ACTOR	Villain	Villain
+5	246	The devil	MB	ACTOR	Villain	Villain
+5	248	the club	OB	NONACTOR	?	?
+5	250	his grandfather	MB	ACTOR	Villain	Villain
+5	252	The grandfather	MB	ACTOR	Villain	Villain
+5	254	his grandson	MB	ACTOR	Villain	Villain
+5	256	Shabarsha	MA	ACTOR	?	?
+5	258	his club	OB	NONACTOR	?	?
+5	260	sight	?	NONACTOR	?	?
+5	262	he	MB	ACTOR	Villain	Villain
+5	263	them	MB	ACTOR	Villain	Villain
+5	264	the money	OB	NONACTOR	?	?
+5	266	the pool	SS	NONACTOR	?	?
+5	268	him	MA	ACTOR	?	?
+5	269	The imp	MB	ACTOR	Villain	Villain
+5	272	money	OB	NONACTOR	?	?
+5	273	he	MB	ACTOR	Villain	Villain
+5	274	a whole lot	?	NONACTOR	?	?
+5	276	the hat	OB	NONACTOR	?	?
+5	278	there	?	NONACTOR	?	?
+5	279	nothing	?	NONACTOR	?	?
+5	280	the imp	MB	ACTOR	Villain	Villain
+5	282	the secret chest	OB	NONACTOR	?	?
+5	284	Shabarsha 's hat	OB	NONACTOR	?	?
+5	288	He	MB	ACTOR	Villain	Villain
+5	289	it	OB	NONACTOR	?	?
+5	290	he	MB	ACTOR	Villain	Villain
+5	291	it	OB	NONACTOR	?	?
+6	0	a certain village	SS	NONACTOR	?	?
+6	2	there	?	NONACTOR	?	?
+6	4	a wealthy peasant	MA	ACTOR	Other	FamilyHero
+6	6	his wife	FE	ACTOR	Other	FamilyHero
+6	8	day	ST	NONACTOR	?	?
+6	9	the wife	FE	ACTOR	Other	FamilyHero
+6	11	the forest	SS	NONACTOR	?	?
+6	13	mushrooms	OB	NONACTOR	?	?
+6	15	her way	?	NONACTOR	?	?
+6	17	a bear 's den	SS	NONACTOR	?	?
+6	21	The bear	AA	ACTOR	Other	Other
+6	23	her	FE	ACTOR	Other	FamilyHero
+6	24	him	AA	ACTOR	Other	Other
+6	26	some time	ST	NONACTOR	?	?
+6	28	a long time	ST	NONACTOR	?	?
+6	30	a short time	ST	NONACTOR	?	?
+6	32	she	FE	ACTOR	Other	FamilyHero
+6	34	a son	MA	ACTOR	Hero	Hero
+6	36	him	AA	ACTOR	Other	Other
+6	37	This son	MA	ACTOR	Hero	Hero
+6	39	a man	?	NONACTOR	?	?
+6	42	the waist	?	NONACTOR	?	?
+6	44	a bear	?	NONACTOR	?	?
+6	46	the waist	?	NONACTOR	?	?
+6	48	his mother	FE	ACTOR	Other	FamilyHero
+6	50	him	MA	ACTOR	Hero	Hero
+6	51	Ivanko the Bearlet	MA	ACTOR	Hero	Hero
+6	54	Years	?	NONACTOR	?	?
+6	56	Ivan	MA	ACTOR	Hero	Hero
+6	58	he	MA	ACTOR	Hero	Hero
+6	59	his mother	FE	ACTOR	Other	FamilyHero
+6	62	the peasants	GR	ACTOR	Other	Other
+6	64	the village	SS	NONACTOR	?	?
+6	66	they	GR	ACTOR	Other	Other
+6	67	the bear	AN	NONACTOR	Other	Other
+6	69	a beehive	SS	NONACTOR	?	?
+6	71	They	GR	ACTOR	Other	Other
+6	72	their own village	SS	NONACTOR	?	?
+6	74	The peasant	MA	ACTOR	Other	FamilyHero
+6	76	his wife	FE	ACTOR	Other	FamilyHero
+6	78	he	MA	ACTOR	Other	FamilyHero
+6	79	hope	?	NONACTOR	?	?
+6	81	she	FE	ACTOR	Other	FamilyHero
+6	82	he	MA	ACTOR	Other	FamilyHero
+6	83	her son	MA	ACTOR	Hero	Hero
+6	85	His wife	FE	ACTOR	Other	FamilyHero
+6	87	him	MA	ACTOR	Other	FamilyHero
+6	89	all	?	NONACTOR	?	?
+6	90	she	FE	ACTOR	Other	FamilyHero
+6	91	the bear 's den	SS	NONACTOR	?	?
+6	95	a son	MA	ACTOR	Hero	Hero
+6	97	him	?	NONACTOR	?	?
+6	98	this son	MA	ACTOR	Hero	Hero
+6	101	the waist	?	NONACTOR	?	?
+6	103	a bear	AN	NONACTOR	Other	Other
+6	105	the waist	?	NONACTOR	?	?
+6	108	the peasant	MA	ACTOR	Other	FamilyHero
+6	112	Ivanko the Bearlet	MA	ACTOR	Hero	Hero
+6	115	a knife	OB	NONACTOR	?	?
+6	117	the yard	?	NONACTOR	?	?
+6	119	the sheep	AN	NONACTOR	?	?
+6	122	all	?	NONACTOR	?	?
+6	123	them	?	NONACTOR	?	?
+6	124	him	?	NONACTOR	?	?
+6	125	He	MA	ACTOR	Hero	Hero
+6	126	them	AN	NONACTOR	?	?
+6	127	all	?	NONACTOR	?	?
+6	128	them	?	NONACTOR	?	?
+6	129	the peasant	MA	ACTOR	Other	FamilyHero
+6	131	he	MA	ACTOR	Hero	Hero
+6	133	the skins	OB	NONACTOR	?	?
+6	135	the meat	OB	NONACTOR	?	?
+6	137	the peasant	MA	ACTOR	Other	FamilyHero
+6	139	It	?	NONACTOR	?	?
+6	140	that night	?	NONACTOR	?	?
+6	142	a storm	?	NONACTOR	?	?
+6	144	the rain	?	NONACTOR	?	?
+6	146	buckets	?	NONACTOR	?	?
+6	148	Ivanko the Bearlet	MA	ACTOR	Hero	Hero
+6	151	the door	OB	NONACTOR	?	?
+6	153	the barn	?	NONACTOR	?	?
+6	155	it	OB	NONACTOR	?	?
+6	156	the bath house	?	NONACTOR	?	?
+6	159	the night	ST	NONACTOR	?	?
+6	161	Thieves	GR	ACTOR	Villain	Villain
+6	164	advantage	?	NONACTOR	?	?
+6	166	the darkness	?	NONACTOR	?	?
+6	168	they	GR	ACTOR	Villain	Villain
+6	169	the barn	SS	NONACTOR	?	?
+6	172	a guard	?	NONACTOR	?	?
+6	174	they	GR	ACTOR	Villain	Villain
+6	175	they	GR	ACTOR	Villain	Villain
+6	176	morning	ST	NONACTOR	?	?
+6	177	the peasant	MA	ACTOR	Other	FamilyHero
+6	179	everything	?	NONACTOR	?	?
+6	181	order	?	NONACTOR	?	?
+6	183	nothing	?	NONACTOR	?	?
+6	185	the thieves	GR	ACTOR	Villain	Villain
+6	187	the dogs	AN	NONACTOR	?	?
+6	189	He	MA	ACTOR	Other	FamilyHero
+6	190	the guard	?	NONACTOR	?	?
+6	192	him	MA	ACTOR	Hero	Hero
+6	193	the bath house	?	NONACTOR	?	?
+6	196	him	MA	ACTOR	Hero	Hero
+6	197	the first time	?	NONACTOR	?	?
+6	199	Ivanko	MA	ACTOR	Hero	Hero
+6	201	the peasant	MA	ACTOR	Other	FamilyHero
+6	203	himself	?	NONACTOR	?	?
+6	204	he	MA	ACTOR	Other	FamilyHero
+6	205	an idea	?	NONACTOR	?	?
+6	207	day	?	NONACTOR	?	?
+6	208	he	MA	ACTOR	Other	FamilyHero
+6	209	Ivanko	MA	ACTOR	Hero	Hero
+6	211	the lake	?	NONACTOR	?	?
+6	213	him	MA	ACTOR	Hero	Hero
+6	215	ropes	OB	NONACTOR	?	?
+6	217	sand	?	NONACTOR	?	?
+6	219	that lake dwelt	?	NONACTOR	?	?
+6	223	many devils	MB	ACTOR	Villain	Villain
+6	225	the peasant	MA	ACTOR	Other	FamilyHero
+6	227	they	MB	ACTOR	Villain	Villain
+6	228	him	MA	ACTOR	Hero	Hero
+6	229	the water	?	NONACTOR	?	?
+6	231	Ivanko the Bearlet	MA	ACTOR	Hero	Hero
+6	234	the lake	?	NONACTOR	?	?
+6	236	the shore	?	NONACTOR	?	?
+6	239	ropes	OB	NONACTOR	?	?
+6	241	sand	?	NONACTOR	?	?
+6	243	a little devil	MB	ACTOR	Villain	Villain
+6	245	the water	?	NONACTOR	?	?
+6	247	the little devil	MB	ACTOR	Villain	Villain
+6	249	he	MB	ACTOR	Villain	Villain
+6	250	the water	?	NONACTOR	?	?
+6	252	Five minutes	?	NONACTOR	?	?
+6	254	he	MB	ACTOR	Villain	Villain
+6	255	Ivanko	MA	ACTOR	Hero	Hero
+6	257	the Bearlet	MA	ACTOR	Hero	Hero
+6	259	a hare	?	NONACTOR	?	?
+6	261	The hare	AN	NONACTOR	?	?
+6	263	the open field	?	NONACTOR	?	?
+6	265	a trice	?	NONACTOR	?	?
+6	267	sight	?	NONACTOR	?	?
+6	269	the devil	MB	ACTOR	Villain	Villain
+6	271	him	?	NONACTOR	?	?
+6	272	it	AN	NONACTOR	?	?
+6	273	no use	?	NONACTOR	?	?
+6	275	he	MB	ACTOR	Villain	Villain
+6	276	half a verst	?	NONACTOR	?	?
+6	279	Ivanko	MA	ACTOR	Hero	Hero
+6	280	the devil	MB	ACTOR	Villain	Villain
+6	282	the water	?	NONACTOR	?	?
+6	284	a while	?	NONACTOR	?	?
+6	286	he	MB	ACTOR	Villain	Villain
+6	287	his grandfather 's iron crutch	OB	NONACTOR	?	?
+6	292	The devil	MB	ACTOR	Villain	Villain
+6	294	the crutch	OB	NONACTOR	?	?
+6	296	it	OB	NONACTOR	?	?
+6	297	it	OB	NONACTOR	?	?
+6	298	a terrible	?	NONACTOR	?	?
+6	299	half its length	?	NONACTOR	?	?
+6	301	the ground	?	NONACTOR	?	?
+6	303	the devil	MB	ACTOR	Villain	Villain
+6	305	The Bearlet	MA	ACTOR	Hero	Hero
+6	307	the crutch	OB	NONACTOR	?	?
+6	309	his hand	PA	NONACTOR	Hero	Hero
+6	311	it	OB	NONACTOR	?	?
+6	312	he	MA	ACTOR	Hero	Hero
+6	313	the little devil	MB	ACTOR	Villain	Villain
+6	315	He	MB	ACTOR	Villain	Villain
+6	316	the crutch	OB	NONACTOR	?	?
+6	318	the water	?	NONACTOR	?	?
+6	320	a while	?	NONACTOR	?	?
+6	322	he	MB	ACTOR	Villain	Villain
+6	323	Ivanko	MA	ACTOR	Hero	Hero
+6	325	The devil	MB	ACTOR	Villain	Villain
+6	327	the horse	AN	NONACTOR	?	?
+6	329	his back	PO	NONACTOR	?	?
+6	331	it	AN	NONACTOR	?	?
+6	332	the lake	SS	NONACTOR	?	?
+6	334	he	MB	ACTOR	Villain	Villain
+6	335	it	AN	NONACTOR	?	?
+6	336	times	?	NONACTOR	?	?
+6	337	he	MB	ACTOR	Villain	Villain
+6	338	his snout	PA	NONACTOR	Villain	Villain
+6	340	Ivanko	MA	ACTOR	Hero	Hero
+6	342	He	MA	ACTOR	Hero	Hero
+6	343	the horse	AN	NONACTOR	?	?
+6	345	the lake	SS	NONACTOR	?	?
+6	347	he	MA	ACTOR	Hero	Hero
+6	348	the horse	AN	NONACTOR	?	?
+6	350	him	MA	ACTOR	Hero	Hero
+6	351	he	MA	ACTOR	Hero	Hero
+6	352	the little devil	MB	ACTOR	Villain	Villain
+6	355	devil	MB	ACTOR	Villain	Villain
+6	356	The little devil	MB	ACTOR	Villain	Villain
+6	358	the gold	OB	NONACTOR	?	?
+6	360	Ivanko	MA	ACTOR	Hero	Hero
+6	362	the bottom	PO	NONACTOR	?	?
+6	364	his hat	OB	NONACTOR	?	?
+6	366	it	OB	NONACTOR	?	?
+6	367	a deep pit	OB	NONACTOR	?	?
+6	369	the devil	MB	ACTOR	Villain	Villain
+6	371	gold	OB	NONACTOR	?	?
+6	373	it	OB	NONACTOR	?	?
+6	374	the hat	OB	NONACTOR	?	?
+6	376	He	MB	ACTOR	Villain	Villain
+6	378	this	?	NONACTOR	?	?
+6	380	day	ST	NONACTOR	?	?
+6	382	evening	ST	NONACTOR	?	?
+6	385	the hat	OB	NONACTOR	?	?
+6	387	Ivanko the Bearlet	MA	ACTOR	Hero	Hero
+6	390	a cart	OB	NONACTOR	?	?
+6	392	it	OB	NONACTOR	?	?
+6	393	gold coins	OB	NONACTOR	?	?
+6	397	the devil drag	MB	ACTOR	Villain	Villain
+6	400	it	OB	NONACTOR	?	?
+6	401	the peasant	MA	ACTOR	Other	FamilyHero
+7	0	This soldier	MA	ACTOR	Hero	Hero
+7	2	permission	?	NONACTOR	?	?
+7	4	leave	HA	NONACTOR	?	?
+7	6	He	MA	ACTOR	Hero	Hero
+7	7	the way	?	NONACTOR	?	?
+7	9	He	MA	ACTOR	Hero	Hero
+7	10	nowhere	?	NONACTOR	?	?
+7	11	he	MA	ACTOR	Hero	Hero
+7	12	any water	?	NONACTOR	?	?
+7	14	he	MA	ACTOR	Hero	Hero
+7	15	his hardtack	?	NONACTOR	?	?
+7	17	a little	?	NONACTOR	?	?
+7	19	way	?	NONACTOR	?	?
+7	20	road	SS	NONACTOR	?	?
+7	21	His belly	PA	NONACTOR	Hero	Hero
+7	23	There	?	NONACTOR	?	?
+7	24	nothing	?	NONACTOR	?	?
+7	25	he	MA	ACTOR	Hero	Hero
+7	26	himself	MA	ACTOR	Hero	Hero
+7	27	a bit further	?	NONACTOR	?	?
+7	29	he	MA	ACTOR	Hero	Hero
+7	30	a creek running	SS	NONACTOR	?	?
+7	33	He	MA	ACTOR	Hero	Hero
+7	34	this creek	SS	NONACTOR	?	?
+7	36	three biscuits	OB	NONACTOR	?	?
+7	38	his pack	OB	NONACTOR	?	?
+7	40	them	OB	NONACTOR	?	?
+7	41	the water	SS	NONACTOR	?	?
+7	43	the hardtack	?	NONACTOR	?	?
+7	45	the soldier	MA	ACTOR	Hero	Hero
+7	47	this fiddle	?	NONACTOR	?	?
+7	49	his free time	?	NONACTOR	?	?
+7	51	he	MA	ACTOR	Hero	Hero
+7	52	various songs	?	NONACTOR	?	?
+7	54	his boredom	?	NONACTOR	?	?
+7	56	the soldier	MA	ACTOR	Hero	Hero
+7	58	the stream	SS	NONACTOR	?	?
+7	60	nowhere	?	NONACTOR	?	?
+7	62	the Unclean One	MB	ACTOR	Villain	Villain
+7	64	the appearance	?	NONACTOR	?	?
+7	66	an old man	MB	ACTOR	Villain	Villain
+7	68	him	MA	ACTOR	Hero	Hero
+7	70	a book	OB	NONACTOR	?	?
+7	72	his hands	PA	NONACTOR	Villain	Villain
+7	74	The devil	MB	ACTOR	Villain	Villain
+7	76	his face	PA	NONACTOR	Villain	Villain
+7	78	the soldier	MA	ACTOR	Hero	Hero
+7	80	him	MB	ACTOR	Villain	Villain
+7	81	The soldier	MA	ACTOR	Hero	Hero
+7	83	the book	OB	NONACTOR	?	?
+7	85	he	MA	ACTOR	Hero	Hero
+7	86	his early years	ST	NONACTOR	?	?
+7	88	He	MA	ACTOR	Hero	Hero
+7	89	his fiddle	OB	NONACTOR	?	?
+7	91	The Unclean One	MB	ACTOR	Villain	Villain
+7	92	it	OB	NONACTOR	?	?
+7	93	it	OB	NONACTOR	?	?
+7	94	the bow	OB	NONACTOR	?	?
+7	96	no way	?	NONACTOR	?	?
+7	98	things	?	NONACTOR	?	?
+7	100	He	MB	ACTOR	Villain	Villain
+7	101	it	OB	NONACTOR	?	?
+7	102	anything	?	NONACTOR	?	?
+7	104	he	MB	ACTOR	Villain	Villain
+7	106	the soldier	MA	ACTOR	Hero	Hero
+7	109	the soldier	MA	ACTOR	Hero	Hero
+7	111	The soldier	MA	ACTOR	Hero	Hero
+7	113	He	MA	ACTOR	Hero	Hero
+7	114	the hardtack	OB	NONACTOR	?	?
+7	116	the stream	SS	NONACTOR	?	?
+7	118	he	MA	ACTOR	Hero	Hero
+7	119	something	?	NONACTOR	?	?
+7	121	the Unclean One	MB	ACTOR	Villain	Villain
+7	122	He	MA	ACTOR	Hero	Hero
+7	123	his sack	OB	NONACTOR	?	?
+7	127	some white bread	OB	NONACTOR	?	?
+7	129	some roast beef	OB	NONACTOR	?	?
+7	132	vodka	OB	NONACTOR	?	?
+7	135	all sorts	?	NONACTOR	?	?
+7	137	other things	?	NONACTOR	?	?
+7	139	The soldier	MA	ACTOR	Hero	Hero
+7	141	his fill	PA	NONACTOR	?	?
+7	143	he	MA	ACTOR	Hero	Hero
+7	144	this unknown old man	MB	ACTOR	Villain	Villain
+7	146	the fiddle	OB	NONACTOR	?	?
+7	148	He	MA	ACTOR	Hero	Hero
+7	149	him	MB	ACTOR	Villain	Villain
+7	150	three days	ST	NONACTOR	?	?
+7	152	he	MA	ACTOR	Hero	Hero
+7	153	home	SS	NONACTOR	?	?
+7	155	The devil	MB	ACTOR	Villain	Villain
+7	157	him	MA	ACTOR	Hero	Hero
+7	158	there	SS	NONACTOR	?	?
+7	159	the porch	SS	NONACTOR	?	?
+7	162	a troika	AN	NONACTOR	?	?
+7	164	fine horses	AN	NONACTOR	?	?
+7	166	The soldier	MA	ACTOR	Hero	Hero
+7	168	the cart	OB	NONACTOR	?	?
+7	170	they	MA	ACTOR	Hero	Hero
+7	171	the horses	AN	NONACTOR	?	?
+7	173	he	MA	ACTOR	Hero	Hero
+7	174	home	SS	NONACTOR	?	?
+7	176	He	MA	ACTOR	Hero	Hero
+7	177	there	?	NONACTOR	?	?
+7	178	nothing	?	NONACTOR	?	?
+7	179	the Unclean One	MB	ACTOR	Villain	Villain
+7	180	the soldier	MA	ACTOR	Hero	Hero
+7	182	The soldier	MA	ACTOR	Hero	Hero
+7	184	the cart	OB	NONACTOR	?	?
+7	186	his relatives	GR	ACTOR	?	?
+7	188	they	GR	ACTOR	?	?
+7	189	greetings	?	NONACTOR	?	?
+7	191	each other	?	NONACTOR	?	?
+7	192	how long	?	NONACTOR	?	?
+7	193	he	MA	ACTOR	Hero	Hero
+7	194	leave	HA	NONACTOR	?	?
+7	196	It	?	NONACTOR	?	?
+7	197	him	MA	ACTOR	Hero	Hero
+7	198	he	MA	ACTOR	Hero	Hero
+7	199	the Unclean One	MB	ACTOR	Villain	Villain
+7	201	no more than three days	ST	NONACTOR	?	?
+7	203	fact	?	NONACTOR	?	?
+7	205	it	?	NONACTOR	?	?
+7	206	three years	ST	NONACTOR	?	?
+7	208	His leave	HA	NONACTOR	?	?
+7	210	he	MA	ACTOR	Hero	Hero
+7	211	a runaway	?	NONACTOR	?	?
+7	212	his regiment	GR	ACTOR	?	?
+7	214	The soldier	MA	ACTOR	Hero	Hero
+7	216	He	MA	ACTOR	Hero	Hero
+7	217	His stupidity	MA	ACTOR	Hero	Hero
+7	219	him	MA	ACTOR	Hero	Hero
+7	220	He	MA	ACTOR	Hero	Hero
+7	221	He	MA	ACTOR	Hero	Hero
+7	222	these words	?	NONACTOR	?	?
+7	224	the Unclean One	MB	ACTOR	Villain	Villain
+7	226	The Unclean One	MB	ACTOR	Villain	Villain
+7	227	him	MA	ACTOR	Hero	Hero
+7	228	a merchant	MA	ACTOR	Hero	Hero
+7	230	him	MA	ACTOR	Hero	Hero
+7	232	a large shop	SS	NONACTOR	?	?
+7	235	the capital city	SS	NONACTOR	?	?
+7	239	all sorts	?	NONACTOR	?	?
+7	241	valuable goods	OB	NONACTOR	?	?
+7	243	he	MA	ACTOR	Hero	Hero
+7	244	our merchant	MA	ACTOR	Hero	Hero
+7	246	nothing	?	NONACTOR	?	?
+7	248	Happiness	HA	NONACTOR	?	?
+7	250	his household	SS	NONACTOR	?	?
+7	252	his trading	HA	NONACTOR	?	?
+7	254	he	MA	ACTOR	Hero	Hero
+7	256	just one task	?	NONACTOR	?	?
+7	258	The other merchants	GR	ACTOR	?	?
+7	260	they	GR	ACTOR	?	?
+7	261	him	MA	ACTOR	Hero	Hero
+7	262	him	MA	ACTOR	Hero	Hero
+7	263	he	MA	ACTOR	Hero	Hero
+7	264	them	GR	ACTOR	?	?
+7	265	The merchants	GR	ACTOR	?	?
+7	267	their separate ways	?	NONACTOR	?	?
+7	269	their own homes	SS	NONACTOR	?	?
+7	271	The soldier thought	MA	ACTOR	Hero	Hero
+7	274	He	MA	ACTOR	Hero	Hero
+7	275	he	MA	ACTOR	Hero	Hero
+7	276	his shop	SS	NONACTOR	?	?
+7	279	the town	SS	NONACTOR	?	?
+7	281	he	MA	ACTOR	Hero	Hero
+7	283	all his money	OB	NONACTOR	?	?
+7	285	hand	PA	NONACTOR	?	?
+7	286	the thrice-ten kingdom	SS	NONACTOR	?	?
+7	289	He	MA	ACTOR	Hero	Hero
+7	290	he	MA	ACTOR	Hero	Hero
+7	291	a barrier	OB	NONACTOR	?	?
+7	293	the sentry	MA	ACTOR	Other	Other
+7	295	he	MA	ACTOR	Hero	Hero
+7	296	The sentry	MA	ACTOR	Other	Other
+7	298	this	HA	NONACTOR	?	?
+7	300	the courtiers	GR	ACTOR	?	?
+7	302	the courtiers	GR	ACTOR	?	?
+7	304	this	HA	NONACTOR	?	?
+7	305	the king	MA	ACTOR	Other	FamilyPrize
+7	307	himself	MA	ACTOR	Other	FamilyPrize
+7	308	The king	MA	ACTOR	Other	FamilyPrize
+7	310	the soldier	MA	ACTOR	Hero	Hero
+7	312	The soldier	MA	ACTOR	Hero	Hero
+7	314	evening	ST	NONACTOR	?	?
+7	316	himself	MA	ACTOR	Hero	Hero
+7	317	a fiddle	OB	NONACTOR	?	?
+7	319	the princess 's	FE	ACTOR	Prize	Prize
+7	321	her rooms	SS	NONACTOR	?	?
+7	323	he	MA	ACTOR	Hero	Hero
+7	324	the candles	OB	NONACTOR	?	?
+7	326	his fiddle	OB	NONACTOR	?	?
+7	328	midnight	ST	NONACTOR	?	?
+7	330	the Unclean One	MB	ACTOR	Villain	Villain
+7	332	the music	?	NONACTOR	?	?
+7	334	the soldier	MA	ACTOR	Hero	Hero
+7	336	he	MA	ACTOR	Hero	Hero
+7	337	him	MB	ACTOR	Villain	Villain
+7	339	a full glass	OB	NONACTOR	?	?
+7	341	the strong spirits	OB	NONACTOR	?	?
+7	343	The devil	MB	ACTOR	Villain	Villain
+7	345	it	OB	NONACTOR	?	?
+7	347	all	?	NONACTOR	?	?
+7	349	his eyes	PA	NONACTOR	?	?
+7	351	his forehead	PA	NONACTOR	?	?
+7	353	the soldier	MA	ACTOR	Hero	Hero
+7	355	he	MA	ACTOR	Hero	Hero
+7	356	him	MB	ACTOR	Villain	Villain
+7	357	some bullets	OB	NONACTOR	?	?
+7	359	The devil	MB	ACTOR	Villain	Villain
+7	361	he	MB	ACTOR	Villain	Villain
+7	362	his teeth	PA	NONACTOR	?	?
+7	364	they	GR	ACTOR	?	?
+7	365	cards	OB	NONACTOR	?	?
+7	367	time	ST	NONACTOR	?	?
+7	369	the cocks	AN	NONACTOR	?	?
+7	371	the Unclean One	MB	ACTOR	Villain	Villain
+7	373	The king	MA	ACTOR	Other	FamilyPrize
+7	375	the princess	FE	ACTOR	Prize	Prize
+7	377	The next night	ST	NONACTOR	?	?
+7	379	the same way	HA	NONACTOR	?	?
+7	381	the third night	ST	NONACTOR	?	?
+7	383	the soldier	MA	ACTOR	Hero	Hero
+7	385	the king	MA	ACTOR	Other	FamilyPrize
+7	387	deepest midnight	ST	NONACTOR	?	?
+7	389	the Unclean One	MB	ACTOR	Villain	Villain
+7	391	They	GR	ACTOR	?	?
+7	392	The Unclean One	MB	ACTOR	Villain	Villain
+7	393	the pincers	OB	NONACTOR	?	?
+7	395	the Unclean One	MB	ACTOR	Villain	Villain
+7	396	The devil	MB	ACTOR	Villain	Villain
+7	398	both hands	PA	NONACTOR	?	?
+7	400	the pincers	OB	NONACTOR	?	?
+7	402	the soldier	MA	ACTOR	Hero	Hero
+7	404	them	OB	NONACTOR	?	?
+7	405	he	MA	ACTOR	Hero	Hero
+7	406	the rods	OB	NONACTOR	?	?
+7	408	the devil	MB	ACTOR	Villain	Villain
+7	410	it	HA	NONACTOR	?	?
+7	411	He	MA	ACTOR	Hero	Hero
+7	412	him	MB	ACTOR	Villain	Villain
+7	413	The devil	MB	ACTOR	Villain	Villain
+7	415	the devil	MB	ACTOR	Villain	Villain
+7	417	he	MA	ACTOR	Hero	Hero
+7	418	him	MB	ACTOR	Villain	Villain
+7	419	The devil	MB	ACTOR	Villain	Villain
+7	421	He	MB	ACTOR	Villain	Villain
+7	423	all	?	NONACTOR	?	?
+7	424	his	?	NONACTOR	?	?
+7	425	he	MB	ACTOR	Villain	Villain
+7	427	the soldier	MA	ACTOR	Hero	Hero
+7	429	he	MA	ACTOR	Hero	Hero
+7	430	this	?	NONACTOR	?	?
+7	431	he	MA	ACTOR	Hero	Hero
+7	432	the soldier	MA	ACTOR	Hero	Hero
+7	434	the princess	FE	ACTOR	Prize	Prize
+7	436	her	FE	ACTOR	Prize	Prize
+7	438	love	?	NONACTOR	?	?
+7	439	harmony	?	NONACTOR	?	?
+7	440	several years	ST	NONACTOR	?	?
+7	442	the king	MA	ACTOR	Other	FamilyPrize
+7	444	he	MA	ACTOR	Hero	Hero
+7	445	the entire tsardom	SS	NONACTOR	?	?
+7	448	the new king	MA	ACTOR	Hero	Hero
+7	450	his wife	FE	ACTOR	Prize	Prize
+7	452	the garden	SS	NONACTOR	?	?
+7	454	he	MA	ACTOR	Hero	Hero
+7	455	the princess	FE	ACTOR	Prize	Prize
+7	457	The king	MA	ACTOR	Hero	Hero
+7	459	there	SS	NONACTOR	?	?
+7	460	the queen	FE	ACTOR	Prize	Prize
+7	462	he	MA	ACTOR	Hero	Hero
+7	463	the carriage	OB	NONACTOR	?	?
+7	465	the Unclean One	MB	ACTOR	Villain	Villain
+8	0	There	?	NONACTOR	?	?
+8	3	a king	MA	ACTOR	Other	FamilyPrize
+8	5	three daughters	GR	ACTOR	Other	FamilyPrize
+8	8	such beauties	GR	ACTOR	Other	FamilyPrize
+8	10	they	GR	ACTOR	Other	FamilyPrize
+8	11	no tongue	?	NONACTOR	?	?
+8	15	pen	?	NONACTOR	?	?
+8	16	Their garden	SS	NONACTOR	?	?
+8	18	they	GR	ACTOR	Other	FamilyPrize
+8	19	night	ST	NONACTOR	?	?
+8	22	A dragon	MB	ACTOR	Villain	Villain
+8	24	the Black Sea	SS	NONACTOR	?	?
+8	27	this garden	SS	NONACTOR	?	?
+8	29	night	ST	NONACTOR	?	?
+8	30	the king 's daughters	GR	ACTOR	Other	FamilyPrize
+8	34	the garden	SS	NONACTOR	?	?
+8	36	they	GR	ACTOR	Other	FamilyPrize
+8	37	their eyes	PA	NONACTOR	Other	FamilyPrize
+8	39	the flowers	OB	NONACTOR	?	?
+8	41	the dragon	MB	ACTOR	Villain	Villain
+8	43	them	GR	ACTOR	Other	FamilyPrize
+8	44	his fiery wings	PA	NONACTOR	Villain	Villain
+8	46	The king	MA	ACTOR	Other	FamilyPrize
+8	48	his daughters	GR	ACTOR	Other	FamilyPrize
+8	50	He	MA	ACTOR	Other	FamilyPrize
+8	51	his maidservants	GR	ACTOR	Other	Other
+8	53	them	GR	ACTOR	Other	FamilyPrize
+8	54	the garden	SS	NONACTOR	?	?
+8	56	vain	?	NONACTOR	?	?
+8	57	the maidservants	GR	ACTOR	Other	Other
+8	59	the princesses	GR	ACTOR	Other	FamilyPrize
+8	61	morning	ST	NONACTOR	?	?
+8	62	the king	MA	ACTOR	Other	FamilyPrize
+8	66	a state	?	NONACTOR	?	?
+8	68	emergency	?	NONACTOR	?	?
+8	71	a great multitude	GR	ACTOR	Other	Other
+8	74	people	GR	ACTOR	Other	Other
+8	76	The king	MA	ACTOR	Other	FamilyPrize
+8	78	Three men	GR	ACTOR	Other	Other
+8	81	this task	?	NONACTOR	?	?
+8	84	a soldier	MA	ACTOR	Other	Other
+8	87	a drunkard	MA	ACTOR	Other	Other
+8	89	Frolka Stay-at-Home	MA	ACTOR	Hero	Hero
+8	90	Erema	MA	ACTOR	Other	Other
+8	92	they	GR	ACTOR	Other	Other
+8	93	the princesses	GR	ACTOR	Other	FamilyPrize
+8	95	They	GR	ACTOR	Other	Other
+8	96	they	GR	ACTOR	Other	Other
+8	97	a deep forest	SS	NONACTOR	?	?
+8	99	they	GR	ACTOR	Other	Other
+8	100	it	SS	NONACTOR	?	?
+8	101	they	GR	ACTOR	Other	Other
+8	102	drowsiness	?	NONACTOR	?	?
+8	105	Frolka Stay-at-Home	MA	ACTOR	Hero	Hero
+8	107	a snuffbox	OB	NONACTOR	?	?
+8	109	his pocket	OB	NONACTOR	?	?
+8	111	it	OB	NONACTOR	?	?
+8	112	it	OB	NONACTOR	?	?
+8	114	a pinch	?	NONACTOR	?	?
+8	116	tobacco	OB	NONACTOR	?	?
+8	118	his nose	PA	NONACTOR	Hero	Hero
+8	120	they	GR	ACTOR	Other	Other
+8	121	they	GR	ACTOR	Other	Other
+8	122	an enormous house	SS	NONACTOR	?	?
+8	124	that house	SS	NONACTOR	?	?
+8	126	a five-headed dragon	MB	ACTOR	Villain	Villain
+8	128	a long time	ST	NONACTOR	?	?
+8	130	they	GR	ACTOR	Other	Other
+8	131	the gate	OB	NONACTOR	?	?
+8	133	no one	?	NONACTOR	?	?
+8	136	soldier	MA	ACTOR	Other	Other
+8	137	Erema	MA	ACTOR	Other	Other
+8	138	He	MA	ACTOR	Hero	Hero
+8	139	some tobacco	OB	NONACTOR	?	?
+8	141	such a	?	NONACTOR	?	?
+8	142	the gate	OB	NONACTOR	?	?
+8	144	he	MA	ACTOR	Hero	Hero
+8	145	it	OB	NONACTOR	?	?
+8	146	They	GR	ACTOR	Other	Other
+8	147	the yard	SS	NONACTOR	?	?
+8	149	a circle	?	NONACTOR	?	?
+8	151	they	GR	ACTOR	Other	Other
+8	153	a maiden	FE	ACTOR	Other	Other
+8	155	great beauty	?	NONACTOR	?	?
+8	157	the house	SS	NONACTOR	?	?
+8	159	Frolka	MA	ACTOR	Hero	Hero
+8	161	her	FE	ACTOR	Other	Other
+8	162	He	MA	ACTOR	Hero	Hero
+8	163	these words	?	NONACTOR	?	?
+8	165	the dragon	MB	ACTOR	Villain	Villain
+8	168	Frolka	MA	ACTOR	Hero	Hero
+8	170	The dragon	MB	ACTOR	Villain	Villain
+8	172	this	?	NONACTOR	?	?
+8	173	Frolka	MA	ACTOR	Hero	Hero
+8	175	They	GR	ACTOR	Other	Other
+8	176	each other	?	NONACTOR	?	?
+8	177	one	?	NONACTOR	?	?
+8	178	stroke Frolka	MA	ACTOR	Hero	Hero
+8	182	all the five heads	PA	NONACTOR	Villain	Villain
+8	184	the dragon	MB	ACTOR	Villain	Villain
+8	186	he	MA	ACTOR	Hero	Hero
+8	187	them	PA	NONACTOR	Villain	Villain
+8	188	a stone	OB	NONACTOR	?	?
+8	191	the body	PA	NONACTOR	Villain	Villain
+8	193	the ground	SS	NONACTOR	?	?
+8	195	The maiden	FE	ACTOR	Other	Other
+8	197	the three	GR	ACTOR	Other	Other
+8	198	men	GR	ACTOR	Other	Other
+8	200	they	GR	ACTOR	Other	Other
+8	201	She	FE	ACTOR	Other	Other
+8	202	she	FE	ACTOR	Other	Other
+8	203	the king 's eldest daughter	FE	ACTOR	Other	Other
+8	207	Frolka	MA	ACTOR	Hero	Hero
+8	209	her	FE	ACTOR	Other	Other
+8	210	task	?	NONACTOR	?	?
+8	211	he	MA	ACTOR	Hero	Hero
+8	212	they	GR	ACTOR	Other	Other
+8	213	The princess	FE	ACTOR	Other	Other
+8	215	them	GR	ACTOR	Other	Other
+8	216	the house	SS	NONACTOR	?	?
+8	218	them	MA	ACTOR	Hero	Hero
+8	220	meat	OB	NONACTOR	?	?
+8	221	drink	OB	NONACTOR	?	?
+8	222	them	GR	ACTOR	Other	Other
+8	223	her sisters	GR	ACTOR	Other	FamilyPrize
+8	225	Frolka	MA	ACTOR	Hero	Hero
+8	227	The princess	FE	ACTOR	Other	Other
+8	229	them	GR	ACTOR	Other	Other
+8	230	her sisters	GR	ACTOR	Other	FamilyPrize
+8	232	she	FE	ACTOR	Other	Other
+8	233	Frolka	MA	ACTOR	Hero	Hero
+8	235	They	GR	ACTOR	Other	Other
+8	236	farewell	?	NONACTOR	?	?
+8	238	they	GR	ACTOR	Other	Other
+8	240	the abode	SS	NONACTOR	?	?
+8	242	the second sister	FE	ACTOR	Other	Other
+8	245	The house	SS	NONACTOR	?	?
+8	247	she	FE	ACTOR	Other	Other
+8	248	it	SS	NONACTOR	?	?
+8	249	there	?	NONACTOR	?	?
+8	250	a high iron fence	OB	NONACTOR	?	?
+8	253	They	GR	ACTOR	Other	Other
+8	254	it	OB	NONACTOR	?	?
+8	255	the gate	OB	NONACTOR	?	?
+8	257	they	GR	ACTOR	Other	Other
+8	258	it	OB	NONACTOR	?	?
+8	260	Frolka banged	MA	ACTOR	Hero	Hero
+8	262	the gate	OB	NONACTOR	?	?
+8	265	his strength	?	NONACTOR	?	?
+8	267	it	OB	NONACTOR	?	?
+8	268	they	GR	ACTOR	Other	Other
+8	269	the yard	SS	NONACTOR	?	?
+8	271	they	GR	ACTOR	Other	Other
+8	272	the seven-headed dragon	MB	ACTOR	Villain	Villain
+8	274	he	MB	ACTOR	Villain	Villain
+8	275	Frolka	MA	ACTOR	Hero	Hero
+8	277	He	MA	ACTOR	Hero	Hero
+8	278	the dragon	MB	ACTOR	Villain	Villain
+8	281	one stroke	?	NONACTOR	?	?
+8	284	all seven	PA	NONACTOR	Villain	Villain
+8	285	his heads	PA	NONACTOR	Villain	Villain
+8	287	them	PA	NONACTOR	Villain	Villain
+8	288	a stone	OB	NONACTOR	?	?
+8	291	the body	MB	ACTOR	Villain	Villain
+8	293	the ground	SS	NONACTOR	?	?
+8	295	they	GR	ACTOR	Other	Other
+8	296	the house	SS	NONACTOR	?	?
+8	298	they	GR	ACTOR	Other	Other
+8	300	one room	SS	NONACTOR	?	?
+8	302	a second	SS	NONACTOR	?	?
+8	303	a third	SS	NONACTOR	?	?
+8	304	the fourth	SS	NONACTOR	?	?
+8	305	they	GR	ACTOR	Other	Other
+8	307	the king 's second daughter	FE	ACTOR	Other	FamilyPrize
+8	311	a sofa	OB	NONACTOR	?	?
+8	313	they	GR	ACTOR	Other	Other
+8	314	her	FE	ACTOR	Other	FamilyPrize
+8	315	they	GR	ACTOR	Other	Other
+8	316	she	FE	ACTOR	Other	FamilyPrize
+8	317	them	GR	ACTOR	Other	Other
+8	319	food	OB	NONACTOR	?	?
+8	320	drink	OB	NONACTOR	?	?
+8	321	them	GR	ACTOR	Other	Other
+8	322	her youngest sister	FE	ACTOR	Other	FamilyPrize
+8	324	the twelve-headed dragon	MB	ACTOR	Villain	Villain
+8	326	Frolka	MA	ACTOR	Hero	Hero
+8	328	They	GR	ACTOR	Other	Other
+8	329	they	GR	ACTOR	Other	Other
+8	330	they	GR	ACTOR	Other	Other
+8	331	a very steep ravine	SS	NONACTOR	?	?
+8	334	the other side	SS	NONACTOR	?	?
+8	336	the ravine	OB	NONACTOR	?	?
+8	338	there	SS	NONACTOR	?	?
+8	339	enormous pillars	OB	NONACTOR	?	?
+8	341	a gate	OB	NONACTOR	?	?
+8	344	the pillars	OB	NONACTOR	?	?
+8	347	chained two ferocious lions	AN	NONACTOR	?	?
+8	349	Frolka	MA	ACTOR	Hero	Hero
+8	350	standing	?	NONACTOR	?	?
+8	352	his feet	PA	NONACTOR	?	?
+8	354	his two companions	GR	ACTOR	Other	Other
+8	356	the ground	SS	NONACTOR	?	?
+8	358	fear	?	NONACTOR	?	?
+8	360	Frolka	MA	ACTOR	Hero	Hero
+8	362	them	GR	ACTOR	Other	Other
+8	363	they	GR	ACTOR	Other	Other
+8	365	an old man	MA	ACTOR	Other	Other
+8	367	seventy	?	NONACTOR	?	?
+8	368	the castle	SS	NONACTOR	?	?
+8	370	he	MA	ACTOR	Other	Other
+8	371	them	GR	ACTOR	Other	Other
+8	372	them	GR	ACTOR	Other	Other
+8	373	Frolka	MA	ACTOR	Hero	Hero
+8	375	the old man	MA	ACTOR	Other	Other
+8	377	Frolka	MA	ACTOR	Hero	Hero
+8	379	the old man	MA	ACTOR	Other	Other
+8	381	The old man	MA	ACTOR	Other	Other
+8	383	the lions	AN	NONACTOR	?	?
+8	385	stroke	?	NONACTOR	?	?
+8	387	them	AN	NONACTOR	?	?
+8	389	Frolka	MA	ACTOR	Hero	Hero
+8	391	his companions	GR	ACTOR	Other	Other
+8	393	the courtyard	SS	NONACTOR	?	?
+8	395	They	GR	ACTOR	Other	Other
+8	396	the castle	SS	NONACTOR	?	?
+8	398	the old man	MA	ACTOR	Other	Other
+8	400	them	GR	ACTOR	Other	Other
+8	401	the room	SS	NONACTOR	?	?
+8	403	the princess	FE	ACTOR	Other	FamilyPrize
+8	405	them	GR	ACTOR	Other	Other
+8	406	she	FE	ACTOR	Other	FamilyPrize
+8	407	her bed	OB	NONACTOR	?	?
+8	409	them	GR	ACTOR	Other	Other
+8	410	they	GR	ACTOR	Other	Other
+8	411	they	GR	ACTOR	Other	Other
+8	412	They	GR	ACTOR	Other	Other
+8	413	her	FE	ACTOR	Other	FamilyPrize
+8	414	The princess	FE	ACTOR	Other	FamilyPrize
+8	416	them	GR	ACTOR	Other	Other
+8	418	food	OB	NONACTOR	?	?
+8	419	drink	OB	NONACTOR	?	?
+8	420	they	GR	ACTOR	Other	Other
+8	421	the house	SS	NONACTOR	?	?
+8	423	they	GR	ACTOR	Other	Other
+8	425	the dragon	MB	ACTOR	Villain	Villain
+8	427	a verst 's distance	?	NONACTOR	?	?
+8	431	them	GR	ACTOR	Other	Other
+8	432	The king 's daughter	FE	ACTOR	Other	FamilyPrize
+8	437	house	SS	NONACTOR	?	?
+8	438	Frolka	MA	ACTOR	Hero	Hero
+8	439	his companions	GR	ACTOR	Other	Other
+8	441	the dragon	MB	ACTOR	Villain	Villain
+8	443	the dragon	MB	ACTOR	Villain	Villain
+8	445	them	GR	ACTOR	Other	Other
+8	446	great force	?	NONACTOR	?	?
+8	449	Frolka	MA	ACTOR	Hero	Hero
+8	451	a clever fellow	MA	ACTOR	Hero	Hero
+8	453	him	MB	ACTOR	Villain	Villain
+8	455	all	?	NONACTOR	?	?
+8	456	his twelve heads	PA	NONACTOR	Villain	Villain
+8	458	them	PA	NONACTOR	Villain	Villain
+8	459	the ravine	SS	NONACTOR	?	?
+8	461	they	GR	ACTOR	Other	Other
+8	462	the house	SS	NONACTOR	?	?
+8	465	their joy	?	NONACTOR	?	?
+8	467	this feast	?	NONACTOR	?	?
+8	469	they	GR	ACTOR	Other	Other
+8	470	their way	?	NONACTOR	?	?
+8	472	the other princesses	GR	ACTOR	Other	FamilyPrize
+8	474	they	GR	ACTOR	Other	FamilyPrize
+8	475	their native land	SS	NONACTOR	?	?
+8	477	The king	MA	ACTOR	Other	FamilyPrize
+8	479	his royal treasury	?	NONACTOR	?	?
+8	482	them	GR	ACTOR	Other	Other
+8	483	Frolka	MA	ACTOR	Hero	Hero
+8	485	he	MA	ACTOR	Hero	Hero
+8	486	his big three-flapped cap	OB	NONACTOR	?	?
+8	488	the soldier	MA	ACTOR	Other	Other
+8	490	his knapsack	OB	NONACTOR	?	?
+8	492	Erema	MA	ACTOR	Other	Other
+8	494	a basket	OB	NONACTOR	?	?
+8	496	Frolka	MA	ACTOR	Hero	Hero
+8	497	his cap	OB	NONACTOR	?	?
+8	499	he	MA	ACTOR	Hero	Hero
+8	500	the cap	OB	NONACTOR	?	?
+8	502	the silver	OB	NONACTOR	?	?
+8	504	the mud	SS	NONACTOR	?	?
+8	506	Frolka	MA	ACTOR	Hero	Hero
+8	507	he	MA	ACTOR	Hero	Hero
+8	508	the money	OB	NONACTOR	?	?
+8	510	the cap	OB	NONACTOR	?	?
+8	512	Frolka	MA	ACTOR	Hero	Hero
+8	514	his companions	GR	ACTOR	Other	Other
+8	516	Frolka	MA	ACTOR	Hero	Hero
+8	518	there	?	NONACTOR	?	?
+8	519	money	OB	NONACTOR	?	?
+8	521	Erema	MA	ACTOR	Other	Other
+8	524	his basket	OB	NONACTOR	?	?
+8	526	the soldier his knapsack	OB	NONACTOR	?	?
+8	531	this	?	NONACTOR	?	?
+8	532	they	GR	ACTOR	Other	Other
+8	533	home	SS	NONACTOR	?	?
+8	535	Frolka	MA	ACTOR	Hero	Hero
+8	537	the royal treasury	OB	NONACTOR	?	?
+8	539	his cap	OB	NONACTOR	?	?
+8	541	this	?	NONACTOR	?	?
+8	542	day	ST	NONACTOR	?	?
+8	543	he	MA	ACTOR	Hero	Hero
+8	545	money	OB	NONACTOR	?	?
+8	547	himself	MA	ACTOR	Hero	Hero
+9	0	There	?	NONACTOR	?	?
+9	2	an old couple	MA,FE	NONACTOR	?	?
+9	5	one son	MA	NONACTOR	Hero	Hero
+9	7	Ivashko	MA	NONACTOR	Hero	Hero
+9	9	day	ST	NONACTOR	?	?
+9	10	Ivashko	MA	NONACTOR	Hero	Hero
+9	13	father	MA	ACTOR	Tester	Donor
+9	14	mother	FE	ACTOR	Tester	Donor
+9	15	his mother	FE	ACTOR	Tester	Donor
+9	17	a white shirt	OB	NONACTOR	?	?
+9	19	him	MA	NONACTOR	Hero	Hero
+9	20	a red girdle round	OB	NONACTOR	?	?
+9	23	him	MA	NONACTOR	Hero	Hero
+9	24	him	MA	NONACTOR	Hero	Hero
+9	25	a boat	OB	NONACTOR	?	?
+9	27	he	MA	NONACTOR	Hero	Hero
+9	28	the canoe	OB	NONACTOR	?	?
+9	30	Ivashko	MA	NONACTOR	Hero	Hero
+9	32	fish	AN	NONACTOR	?	?
+9	34	some little time	ST	NONACTOR	?	?
+9	36	the old woman	FE	ACTOR	Tester	Donor
+9	38	the river side	SS	NONACTOR	?	?
+9	41	her son	MA	NONACTOR	Hero	Hero
+9	43	Ivashko	MA	NONACTOR	Hero	Hero
+9	45	The boat	OB	NONACTOR	?	?
+9	47	the shore	SS	NONACTOR	?	?
+9	49	the woman	FE	ACTOR	Tester	Donor
+9	51	the fish	AN	NONACTOR	?	?
+9	53	her boy	MA	NONACTOR	Hero	Hero
+9	56	food	OB	NONACTOR	?	?
+9	57	drink	OB	NONACTOR	?	?
+9	58	his shirt	OB	NONACTOR	?	?
+9	61	him	MA	NONACTOR	Hero	Hero
+9	62	his girdle	OB	NONACTOR	?	?
+9	64	him	MA	NONACTOR	Hero	Hero
+9	65	his fishing	HA	NONACTOR	?	?
+9	67	he	MA	NONACTOR	Hero	Hero
+9	68	his boat	OB	NONACTOR	?	?
+9	70	the canoe	OB	NONACTOR	?	?
+9	72	Ivashko	MA	NONACTOR	Hero	Hero
+9	74	fish	AN	NONACTOR	?	?
+9	76	a little time	ST	NONACTOR	?	?
+9	78	the old man	MA	ACTOR	Tester	Donor
+9	80	the bank	SS	NONACTOR	?	?
+9	82	his son	MA	NONACTOR	Hero	Hero
+9	84	Ivashko	MA	NONACTOR	Hero	Hero
+9	86	The canoe	OB	NONACTOR	?	?
+9	88	the shore	SS	NONACTOR	?	?
+9	90	The old man	MA	ACTOR	Tester	Donor
+9	92	the fish	AN	NONACTOR	?	?
+9	94	his boy	MA	NONACTOR	Hero	Hero
+9	97	food	OB	NONACTOR	?	?
+9	98	drink	OB	NONACTOR	?	?
+9	99	his shirt	OB	NONACTOR	?	?
+9	102	him	MA	NONACTOR	Hero	Hero
+9	103	his girdle	OB	NONACTOR	?	?
+9	105	him	MA	NONACTOR	Hero	Hero
+9	106	his fishing	HA	NONACTOR	?	?
+9	108	a certain witch	FE	ACTOR	Villain	Villain
+9	110	Ivashko 's parents	MA,FE	NONACTOR	?	?
+9	114	him	MA	NONACTOR	Hero	Hero
+9	115	she	FE	ACTOR	Villain	Villain
+9	117	hold	?	NONACTOR	?	?
+9	119	the boy	MA	NONACTOR	Hero	Hero
+9	121	she	FE	ACTOR	Villain	Villain
+9	122	the bank	SS	NONACTOR	?	?
+9	124	a hoarse voice	?	NONACTOR	?	?
+9	126	Ivashko	MA	NONACTOR	Hero	Hero
+9	128	the voice	?	NONACTOR	?	?
+9	131	his mother 's	FE	ACTOR	Tester	Donor
+9	134	that	?	NONACTOR	?	?
+9	135	a witch	FE	ACTOR	Villain	Villain
+9	137	he	MA	NONACTOR	Hero	Hero
+9	138	The witch	FE	ACTOR	Villain	Villain
+9	140	she	FE	ACTOR	Villain	Villain
+9	141	Ivashko	MA	NONACTOR	Hero	Hero
+9	144	just such	?	NONACTOR	?	?
+9	146	a voice	?	NONACTOR	?	?
+9	148	his mother	FE	ACTOR	Tester	Donor
+9	150	she	FE	ACTOR	Tester	Donor
+9	151	a smith	MA	ACTOR	Other	Other
+9	153	him	MA	ACTOR	Other	Other
+9	155	the smith	MA	ACTOR	Other	Other
+9	158	her a little voice	?	NONACTOR	?	?
+9	160	Ivashko 's mother	FE	ACTOR	Tester	Donor
+9	164	's	PA	NONACTOR	Tester	Donor
+9	165	the witch	FE	ACTOR	Villain	Villain
+9	167	night	ST	NONACTOR	?	?
+9	169	the shore	SS	NONACTOR	?	?
+9	171	Ivashko	MA	NONACTOR	Hero	Hero
+9	173	she	FE	ACTOR	Villain	Villain
+9	174	the fish	AN	NONACTOR	?	?
+9	176	the boy	MA	NONACTOR	Hero	Hero
+9	178	him	MA	NONACTOR	Hero	Hero
+9	179	home	SS	NONACTOR	?	?
+9	180	her	FE	ACTOR	Villain	Villain
+9	181	she	FE	ACTOR	Villain	Villain
+9	182	she	FE	ACTOR	Villain	Villain
+9	183	her daughter	FE	ACTOR	Villain	Villain
+9	186	Alenka	FE	ACTOR	Villain	Villain
+9	189	Alenka	FE	ACTOR	Villain	Villain
+9	192	the stove	OB	NONACTOR	?	?
+9	194	Ivashko	MA	NONACTOR	Hero	Hero
+9	196	Ivashko	MA	NONACTOR	Hero	Hero
+9	198	Alenka	FE	ACTOR	Villain	Villain
+9	200	moment	ST	NONACTOR	?	?
+9	201	she	FE	ACTOR	Villain	Villain
+9	202	the shovel	OB	NONACTOR	?	?
+9	204	Ivashko	MA	NONACTOR	Hero	Hero
+9	206	her	FE	ACTOR	Villain	Villain
+9	207	the oven	OB	NONACTOR	?	?
+9	209	the iron plate	OB	NONACTOR	?	?
+9	213	front	SS	NONACTOR	?	?
+9	215	it	OB	NONACTOR	?	?
+9	216	the hut	SS	NONACTOR	?	?
+9	218	the door	OB	NONACTOR	?	?
+9	221	ever so high an oak-tree	OB	NONACTOR	?	?
+9	223	the witch	FE	ACTOR	Villain	Villain
+9	225	her guests	GR	ACTOR	Other	Other
+9	228	the door	OB	NONACTOR	?	?
+9	230	the hut	SS	NONACTOR	?	?
+9	232	nobody	?	NONACTOR	?	?
+9	234	it	OB	NONACTOR	?	?
+9	235	her	FE	ACTOR	Villain	Villain
+9	236	she	FE	ACTOR	Villain	Villain
+9	237	she	FE	ACTOR	Villain	Villain
+9	239	the window	OB	NONACTOR	?	?
+9	241	the door	OB	NONACTOR	?	?
+9	243	her guests	GR	ACTOR	Other	Other
+9	245	They	GR	ACTOR	Other	Other
+9	246	table	OB	NONACTOR	?	?
+9	248	the witch	FE	ACTOR	Villain	Villain
+9	250	the oven	OB	NONACTOR	?	?
+9	252	Alenka 's baked body	PA	NONACTOR	Villain	Villain
+9	256	it	PA	NONACTOR	Villain	Villain
+9	257	They	GR	ACTOR	Other	Other
+9	258	their fill	PA	NONACTOR	Other	Other
+9	260	their fill	PA	NONACTOR	Other	Other
+9	262	they	GR	ACTOR	Other	Other
+9	263	the courtyard	SS	NONACTOR	?	?
+9	265	the grass	OB	NONACTOR	?	?
+9	267	the witch	FE	ACTOR	Villain	Villain
+9	269	Ivashko	MA	NONACTOR	Hero	Hero
+9	271	her	FE	ACTOR	Villain	Villain
+9	273	the top	SS	NONACTOR	?	?
+9	275	the oak	OB	NONACTOR	?	?
+9	277	the witch	FE	ACTOR	Villain	Villain
+9	279	the witch	FE	ACTOR	Villain	Villain
+9	281	Ivashko	MA	NONACTOR	Hero	Hero
+9	283	the witch	FE	ACTOR	Villain	Villain
+9	285	Ivashko	MA	NONACTOR	Hero	Hero
+9	288	the oak	OB	NONACTOR	?	?
+9	290	Ivashko	MA	NONACTOR	Hero	Hero
+9	292	it	OB	NONACTOR	?	?
+9	293	she	FE	ACTOR	Villain	Villain
+9	294	last	?	NONACTOR	?	?
+9	295	she	FE	ACTOR	Villain	Villain
+9	296	two front teeth	PA	NONACTOR	Villain	Villain
+9	298	she	FE	ACTOR	Villain	Villain
+9	299	she	FE	ACTOR	Villain	Villain
+9	300	it	SS	NONACTOR	?	?
+9	301	she	FE	ACTOR	Villain	Villain
+9	302	the smith	MA	ACTOR	Other	Other
+9	304	her two iron teeth	PA	NONACTOR	Villain	Villain
+9	307	The witch	FE	ACTOR	Villain	Villain
+9	309	gnawing	HA	NONACTOR	?	?
+9	311	the oak	OB	NONACTOR	?	?
+9	313	She	FE	ACTOR	Villain	Villain
+9	315	the point	?	NONACTOR	?	?
+9	317	gnawing	HA	NONACTOR	?	?
+9	318	it	OB	NONACTOR	?	?
+9	319	Ivashko	MA	NONACTOR	Hero	Hero
+9	321	it	OB	NONACTOR	?	?
+9	323	another tree	OB	NONACTOR	?	?
+9	325	it	OB	NONACTOR	?	?
+9	327	The oak	OB	NONACTOR	?	?
+9	329	the witch	FE	ACTOR	Villain	Villain
+9	331	the ground	SS	NONACTOR	?	?
+9	333	she	FE	ACTOR	Villain	Villain
+9	334	Ivashko	MA	NONACTOR	Hero	Hero
+9	336	another tree	OB	NONACTOR	?	?
+9	338	she	FE	ACTOR	Villain	Villain
+9	339	her teeth	PA	NONACTOR	Villain	Villain
+9	341	spite	?	NONACTOR	?	?
+9	343	that tree	OB	NONACTOR	?	?
+9	345	She	FE	ACTOR	Villain	Villain
+9	346	two lower teeth	PA	NONACTOR	Villain	Villain
+9	348	the	?	NONACTOR	?	?
+9	349	she	FE	ACTOR	Villain	Villain
+9	350	she	FE	ACTOR	Villain	Villain
+9	352	there	SS	NONACTOR	?	?
+9	354	The smith	MA	ACTOR	Other	Other
+9	357	two more iron teeth	PA	NONACTOR	Villain	Villain
+9	360	her	FE	ACTOR	Villain	Villain
+9	361	She	FE	ACTOR	Villain	Villain
+9	362	the oak	OB	NONACTOR	?	?
+9	364	Ivashko	MA	NONACTOR	Hero	Hero
+9	366	he	MA	NONACTOR	Hero	Hero
+9	367	He	MA	NONACTOR	Hero	Hero
+9	369	swans	AA	ACTOR	?	?
+9	370	geese	AA	ACTOR	?	?
+9	371	he	MA	NONACTOR	Hero	Hero
+9	372	them	AA	ACTOR	?	?
+9	373	the birds	AA	ACTOR	?	?
+9	375	Ivashko	MA	NONACTOR	Hero	Hero
+9	377	a second flock	AA	ACTOR	?	?
+9	379	he	MA	NONACTOR	Hero	Hero
+9	380	the birds	AA	ACTOR	?	?
+9	382	Ivashko	MA	NONACTOR	Hero	Hero
+9	384	A third flock	AA	ACTOR	?	?
+9	386	he	MA	NONACTOR	Hero	Hero
+9	388	swans	AA	ACTOR	?	?
+9	389	geese	AA	ACTOR	?	?
+9	391	hold	?	NONACTOR	?	?
+9	393	him	MA	NONACTOR	Hero	Hero
+9	394	him	MA	NONACTOR	Hero	Hero
+9	395	the cottage	SS	NONACTOR	?	?
+9	397	him	MA	NONACTOR	Hero	Hero
+9	398	the upper room	SS	NONACTOR	?	?
+9	400	Early the next morning his mother	ST	NONACTOR	?	?
+9	405	pancakes	OB	NONACTOR	?	?
+9	407	baked	OB	NONACTOR	?	?
+9	408	them	GR	ACTOR	?	?
+9	410	all	?	NONACTOR	?	?
+9	411	a sudden	?	NONACTOR	?	?
+9	412	her boy	MA	NONACTOR	Hero	Hero
+9	414	she	FE	ACTOR	Tester	Donor
+9	415	his father	MA	ACTOR	Tester	Donor
+9	417	she	FE	ACTOR	Tester	Donor
+9	418	the pancakes	OB	NONACTOR	?	?
+9	420	she	FE	ACTOR	Tester	Donor
+9	421	Ivashko	MA	NONACTOR	Hero	Hero
+9	423	the old woman	FE	ACTOR	Tester	Donor
+9	425	the boy	MA	NONACTOR	Hero	Hero
+9	427	the wife	FE	ACTOR	Tester	Donor
+9	429	The father	MA	ACTOR	Tester	Donor
+9	431	the upper room	SS	NONACTOR	?	?
+9	433	he	MA	NONACTOR	Hero	Hero
+9	434	Ivashko	MA	NONACTOR	Hero	Hero
+9	436	The old people	MA,FE	NONACTOR	?	?
+9	438	their boy	MA	NONACTOR	Hero	Hero
+9	441	everything	?	NONACTOR	?	?
+9	443	that	?	NONACTOR	?	?
+10	0	a far away land	SS	NONACTOR	?	?
+10	2	there	?	NONACTOR	?	?
+10	4	a man	MA	ACTOR	Other	FamilyHero
+10	7	seven sons	GR	ACTOR	Other	FamilyHero
+10	10	the name	?	NONACTOR	?	?
+10	12	Simeon	?	NONACTOR	?	?
+10	14	They	GR	ACTOR	Other	FamilyHero
+10	16	loafers	?	NONACTOR	?	?
+10	17	They	GR	ACTOR	Other	FamilyHero
+10	18	a single useful thing	?	NONACTOR	?	?
+10	20	This	?	NONACTOR	?	?
+10	21	their father	MA	ACTOR	Other	FamilyHero
+10	23	it	?	NONACTOR	?	?
+10	24	the point	HA	NONACTOR	?	?
+10	26	he	MA	ACTOR	Other	FamilyHero
+10	27	all seven Simeons	GR	ACTOR	Other	FamilyHero
+10	29	the czar	MA	ACTOR	Other	Dispatcher
+10	31	them	GR	ACTOR	Other	FamilyHero
+10	32	his service	?	NONACTOR	?	?
+10	34	The czar	MA	ACTOR	Other	Dispatcher
+10	37	the father	MA	ACTOR	Other	FamilyHero
+10	39	him	MA	ACTOR	Other	Dispatcher
+10	41	so many fine	?	NONACTOR	?	?
+10	43	able men	GR	ACTOR	Other	FamilyHero
+10	45	He	MA	ACTOR	Other	Dispatcher
+10	46	the father	MA	ACTOR	Other	FamilyHero
+10	48	their skills	?	NONACTOR	?	?
+10	50	their father	MA	ACTOR	Other	FamilyHero
+10	52	the czar	MA	ACTOR	Other	Dispatcher
+10	54	the oldest	MA	ACTOR	Hero	Hero
+10	55	Simeon	MA	ACTOR	Hero	Hero
+10	57	him	MA	ACTOR	Hero	Hero
+10	58	He	MA	ACTOR	Other	Dispatcher
+10	59	the second	MA	ACTOR	Tester	Helper,FamilyHero
+10	60	He	MA	ACTOR	Other	Dispatcher
+10	61	the third Simeon	MA	ACTOR	Tester	Helper,FamilyHero
+10	63	the czar	MA	ACTOR	Other	Dispatcher
+10	65	He	MA	ACTOR	Other	Dispatcher
+10	66	the fourth	MA	ACTOR	Tester	Helper,FamilyHero
+10	67	he	MA	ACTOR	Other	Dispatcher
+10	68	the fifth	MA	ACTOR	Tester	Helper,FamilyHero
+10	69	the fifth Simeon	MA	ACTOR	Tester	Helper,FamilyHero
+10	71	he	MA	ACTOR	Other	Dispatcher
+10	72	the sixth	MA	ACTOR	Tester	Helper,FamilyHero
+10	73	the seventh	MA	ACTOR	Tester	Helper,FamilyHero
+10	74	the czar	MA	ACTOR	Other	Dispatcher
+10	76	he	MA	ACTOR	Other	Dispatcher
+10	77	them	GR	ACTOR	Other	FamilyHero
+10	78	all	GR	ACTOR	Other	FamilyHero
+10	79	some time	ST	NONACTOR	?	?
+10	82	the czar	MA	ACTOR	Other	Dispatcher
+10	84	the seven Simeons	GR	ACTOR	Other	FamilyHero
+10	87	one	?	NONACTOR	?	?
+10	89	skills	?	NONACTOR	?	?
+10	90	The king	MA	ACTOR	Other	Dispatcher
+10	92	the fifth Simeon	MA	ACTOR	Tester	Helper,FamilyHero
+10	94	Simeon	MA	ACTOR	Tester	Helper,FamilyHero
+10	96	a high place	SS	NONACTOR	?	?
+10	98	They	GR	ACTOR	Other	FamilyHero
+10	99	his statements	OB	NONACTOR	?	?
+10	101	the newspapers	OB	NONACTOR	?	?
+10	103	he	MA	ACTOR	Other	Dispatcher
+10	104	another long period	ST	NONACTOR	?	?
+10	106	the czar	MA	ACTOR	Other	Dispatcher
+10	108	a certain princess	FE	ACTOR	Prize	Prize
+10	110	He	MA	ACTOR	Other	Dispatcher
+10	111	there	?	NONACTOR	?	?
+10	113	no one	?	NONACTOR	?	?
+10	115	the job	?	NONACTOR	?	?
+10	117	he	MA	ACTOR	Other	Dispatcher
+10	118	the seven Simeons	GR	ACTOR	Other	FamilyHero
+10	120	them	GR	ACTOR	Other	FamilyHero
+10	121	he	MA	ACTOR	Other	Dispatcher
+10	122	them	GR	ACTOR	Other	FamilyHero
+10	123	soldiers	GR	ACTOR	Other	FamilyHero
+10	126	assignment	?	NONACTOR	?	?
+10	127	him	MA	ACTOR	Other	Dispatcher
+10	128	princess	FE	ACTOR	Prize	Prize
+10	130	The Simeons	GR	ACTOR	Other	FamilyHero
+10	132	expert craftsmen	GR	ACTOR	Other	FamilyHero
+10	136	they	GR	ACTOR	Other	FamilyHero
+10	137	slam-bam	?	NONACTOR	?	?
+10	138	a boat	OB	NONACTOR	?	?
+10	141	the kingdom	SS	NONACTOR	?	?
+10	143	the bride-to-be - princess	FE	ACTOR	Prize	Prize
+10	147	One	MA	ACTOR	Tester	Helper,FamilyHero
+10	148	the high mast	OB	NONACTOR	?	?
+10	150	the princess	FE	ACTOR	Prize	Prize
+10	153	The maker	MA	ACTOR	Hero	Hero
+10	155	valuables	OB	NONACTOR	?	?
+10	158	his brother	MA	ACTOR	Tester	Helper,FamilyHero
+10	160	the thief	MA	ACTOR	Tester	Helper,FamilyHero
+10	162	his wares	OB	NONACTOR	?	?
+10	164	the palace	SS	NONACTOR	?	?
+10	166	They	GR	ACTOR	Other	FamilyHero
+10	167	the thief	MA	ACTOR	Tester	Helper,FamilyHero
+10	169	the princess	FE	ACTOR	Prize	Prize
+10	171	They	GR	ACTOR	Other	FamilyHero
+10	173	anchor	OB	NONACTOR	?	?
+10	175	set sail	HA	NONACTOR	?	?
+10	177	the princess	FE	ACTOR	Prize	Prize
+10	179	they	GR	ACTOR	Other	FamilyHero
+10	180	her	FE	ACTOR	Prize	Prize
+10	181	she	FE	ACTOR	Prize	Prize
+10	182	a white swan	AA	ACTOR	Prize	Prize
+10	184	the boat	OB	NONACTOR	?	?
+10	186	The marksman	MA	ACTOR	Tester	Helper,FamilyHero
+10	188	delay	ST	NONACTOR	?	?
+10	190	his gun	OB	NONACTOR	?	?
+10	192	a shot	HA	NONACTOR	?	?
+10	194	her left wing	AA	ACTOR	Prize	Prize
+10	196	Simeon number four	MA	ACTOR	Tester	Helper,FamilyHero
+10	199	the water	SS	NONACTOR	?	?
+10	202	the swan	AA	ACTOR	Prize	Prize
+10	204	any good dog	AN	NONACTOR	?	?
+10	206	her back	AA	ACTOR	Prize	Prize
+10	208	the boat	OB	NONACTOR	?	?
+10	210	The swan	AA	ACTOR	Prize	Prize
+10	212	a princess	FE	ACTOR	Prize	Prize
+10	214	her left arm	PA	NONACTOR	Prize	Prize
+10	216	Healer Simeon	MA	ACTOR	Tester	Helper,FamilyHero
+10	219	the princess ' arm	PA	NONACTOR	Prize	Prize
+10	224	return	?	NONACTOR	?	?
+10	225	their own kingdom	SS	NONACTOR	?	?
+10	227	the Simeons	GR	ACTOR	Other	FamilyHero
+10	229	a round	HA	NONACTOR	?	?
+10	231	the cannon	OB	NONACTOR	?	?
+10	233	The czar	MA	ACTOR	Other	Dispatcher
+10	235	it	HA	NONACTOR	?	?
+10	236	the Simeons	GR	ACTOR	Other	FamilyHero
+10	238	He	MA	ACTOR	Other	Dispatcher
+10	239	himself	MA	ACTOR	Other	Dispatcher
+10	240	he	MA	ACTOR	Other	Dispatcher
+10	241	somebody	GR	ACTOR	Other	Other
+10	243	they	GR	ACTOR	Other	Other
+10	245	news	HA	NONACTOR	?	?
+10	248	the seven Simeons	GR	ACTOR	Other	FamilyHero
+10	250	the czar 's future bride	FE	ACTOR	Prize	Prize
+10	254	The czar	MA	ACTOR	Other	Dispatcher
+10	256	the Simeons ' success	HA	NONACTOR	?	?
+10	260	they	GR	ACTOR	Other	FamilyHero
+10	262	honor	?	NONACTOR	?	?
+10	264	cannon-fire	HA	NONACTOR	?	?
+10	267	the beating	HA	NONACTOR	?	?
+10	269	drums	OB	NONACTOR	?	?
+10	271	Only the princess	FE	ACTOR	Prize	Prize
+10	273	the czar	MA	ACTOR	Other	Dispatcher
+10	275	He	MA	ACTOR	Other	Dispatcher
+10	276	he	MA	ACTOR	Other	Dispatcher
+10	277	her	FE	ACTOR	Prize	Prize
+10	278	she	FE	ACTOR	Prize	Prize
+10	281	The princess	FE	ACTOR	Prize	Prize
+10	284	Afterall	?	NONACTOR	?	?
+10	286	the thief	MA	ACTOR	Tester	Helper,FamilyHero
+10	289	a dashing fellow	?	NONACTOR	?	?
+10	291	nobility	?	NONACTOR	?	?
+10	292	the princess	FE	ACTOR	Prize	Prize
+10	294	The czar	MA	ACTOR	Other	Dispatcher
+10	296	another word	?	NONACTOR	?	?
+10	298	them	MA,FE	NONACTOR	?	?
+10	299	Years	ST	NONACTOR	?	?
+10	301	he	MA	ACTOR	Tester	Helper,FamilyHero
+10	302	some peace	?	NONACTOR	?	?
+10	304	he	MA	ACTOR	Other	Dispatcher
+10	305	Simeon	MA	ACTOR	Tester	Helper,FamilyHero
+10	308	the Thief	MA	ACTOR	Tester	Helper,FamilyHero
+10	310	the throne	OB	NONACTOR	?	?
+10	313	all	GR	ACTOR	Other	FamilyHero
+10	314	his brothers	GR	ACTOR	Other	FamilyHero
+10	316	great noblemen	?	NONACTOR	?	?
+11	0	a time	?	NONACTOR	?	?
+11	2	there	?	NONACTOR	?	?
+11	3	an old couple	MA,FE	NONACTOR	?	?
+11	5	they	MA,FE	NONACTOR	?	?
+11	6	three Sons	MA,MA,MA	NONACTOR	?	?
+11	9	Two	MA,MA	NONACTOR	?	?
+11	10	these	?	NONACTOR	?	?
+11	12	their wits	?	NONACTOR	?	?
+11	14	them	MA,MA	NONACTOR	?	?
+11	15	the third	MA	ACTOR	Hero	Hero
+11	17	a simpleton	?	NONACTOR	?	?
+11	20	Ivan	MA	ACTOR	Hero	Hero
+11	22	name	?	NONACTOR	?	?
+11	24	Popyalof	MA	ACTOR	Hero	Hero
+11	26	twelve whole years	ST	NONACTOR	?	?
+11	28	Ivan	MA	ACTOR	Hero	Hero
+11	30	the ashes	OB	NONACTOR	?	?
+11	32	the stove	OB	NONACTOR	?	?
+11	34	he	MA	ACTOR	Hero	Hero
+11	35	himself	MA	ACTOR	Hero	Hero
+11	37	six poods	OB	NONACTOR	?	?
+11	39	ashes	OB	NONACTOR	?	?
+11	41	him	MA	ACTOR	Hero	Hero
+11	43	the land	SS	NONACTOR	?	?
+11	45	Ivan	MA	ACTOR	Hero	Hero
+11	47	there	SS	NONACTOR	?	?
+11	49	any day	ST	NONACTOR	?	?
+11	51	night	ST	NONACTOR	?	?
+11	53	That	HA	NONACTOR	?	?
+11	54	a Snake 's	AA	ACTOR	Villain	Villain
+11	56	Ivan	MA	ACTOR	Hero	Hero
+11	58	Snake	AA	ACTOR	Villain	Villain
+11	60	he	MA	ACTOR	Hero	Hero
+11	61	his father	MA	ACTOR	Other	FamilyHero
+11	63	he	MA	ACTOR	Hero	Hero
+11	64	the mace	OB	NONACTOR	?	?
+11	66	he	MA	ACTOR	Hero	Hero
+11	67	the fields	SS	NONACTOR	?	?
+11	69	it	OB	NONACTOR	?	?
+11	70	the air	SC	NONACTOR	?	?
+11	72	he	MA	ACTOR	Hero	Hero
+11	73	home	SS	NONACTOR	?	?
+11	75	day	ST	NONACTOR	?	?
+11	76	he	MA	ACTOR	Hero	Hero
+11	77	the fields	SS	NONACTOR	?	?
+11	80	the spot	SS	NONACTOR	?	?
+11	82	he	MA	ACTOR	Hero	Hero
+11	83	the mace	OB	NONACTOR	?	?
+11	85	there	SS	NONACTOR	?	?
+11	87	his head	PA	NONACTOR	Hero	Hero
+11	89	the mace	OB	NONACTOR	?	?
+11	91	it	OB	NONACTOR	?	?
+11	92	him	MA	ACTOR	Hero	Hero
+11	93	the forehead	PA	NONACTOR	Hero	Hero
+11	95	the mace	OB	NONACTOR	?	?
+11	97	two	OB	NONACTOR	?	?
+11	98	Ivan	MA	ACTOR	Hero	Hero
+11	100	home	SS	NONACTOR	?	?
+11	102	his father	MA	ACTOR	Other	FamilyHero
+11	104	he	MA	ACTOR	Hero	Hero
+11	105	it	OB	NONACTOR	?	?
+11	106	he	MA	ACTOR	Hero	Hero
+11	107	the fields	SS	NONACTOR	?	?
+11	109	it	OB	NONACTOR	?	?
+11	110	the mace	OB	NONACTOR	?	?
+11	113	the air	SC	NONACTOR	?	?
+11	116	three days	ST	NONACTOR	?	?
+11	118	three nights	ST	NONACTOR	?	?
+11	120	the fourth day	ST	NONACTOR	?	?
+11	122	Ivan	MA	ACTOR	Hero	Hero
+11	124	the same spot	SS	NONACTOR	?	?
+11	126	the mace	OB	NONACTOR	?	?
+11	128	he	MA	ACTOR	Hero	Hero
+11	129	his knee	PA	NONACTOR	Hero	Hero
+11	131	the way	?	NONACTOR	?	?
+11	133	the mace	OB	NONACTOR	?	?
+11	135	it	OB	NONACTOR	?	?
+11	136	three pieces	OB	NONACTOR	?	?
+11	138	Ivan	MA	ACTOR	Hero	Hero
+11	140	home	SS	NONACTOR	?	?
+11	142	his father	MA	ACTOR	Other	FamilyHero
+11	144	him	MA	ACTOR	Hero	Hero
+11	146	a third mace	OB	NONACTOR	?	?
+11	149	one	OB	NONACTOR	?	?
+11	150	fifteen poods weight	?	NONACTOR	?	?
+11	153	he	MA	ACTOR	Hero	Hero
+11	154	it	OB	NONACTOR	?	?
+11	155	he	MA	ACTOR	Hero	Hero
+11	156	the fields	SS	NONACTOR	?	?
+11	158	it	OB	NONACTOR	?	?
+11	159	the mace	OB	NONACTOR	?	?
+11	161	the air six days	ST	NONACTOR	?	?
+11	165	the seventh	ST	NONACTOR	?	?
+11	166	Ivan	MA	ACTOR	Hero	Hero
+11	168	the same spot	SS	NONACTOR	?	?
+11	170	Down	HA	NONACTOR	?	?
+11	172	the mace	OB	NONACTOR	?	?
+11	174	it	OB	NONACTOR	?	?
+11	175	Ivan 's forehead	PA	NONACTOR	Hero	Hero
+11	179	the forehead	PA	NONACTOR	Hero	Hero
+11	181	it	OB	NONACTOR	?	?
+11	182	Thereupon he	MA	ACTOR	Hero	Hero
+11	184	he	MA	ACTOR	Hero	Hero
+11	185	everything	ST	NONACTOR	?	?
+11	187	he	MA	ACTOR	Hero	Hero
+11	188	his brothers	MA,MA	NONACTOR	?	?
+11	190	the Snake	AA	ACTOR	Villain	Villain
+11	192	He	MA	ACTOR	Hero	Hero
+11	193	there	?	NONACTOR	?	?
+11	194	him	MA	ACTOR	Hero	Hero
+11	195	a hut	SS	NONACTOR	?	?
+11	197	fowl 's legs	OB	NONACTOR	?	?
+11	201	that hut	SS	NONACTOR	?	?
+11	203	the Snake	AA	ACTOR	Villain	Villain
+11	205	There	SS	NONACTOR	?	?
+11	206	all the party	MA,MA,MA	NONACTOR	?	?
+11	208	a standstill	HA	NONACTOR	?	?
+11	210	Ivan	MA	ACTOR	Hero	Hero
+11	212	his gloves	OB	NONACTOR	?	?
+11	215	his brothers	MA,MA	NONACTOR	?	?
+11	217	he	MA	ACTOR	Hero	Hero
+11	219	this	?	NONACTOR	?	?
+11	220	he	MA	ACTOR	Hero	Hero
+11	221	the hut	SS	NONACTOR	?	?
+11	223	the boarding	SS	NONACTOR	?	?
+11	224	there	?	NONACTOR	?	?
+11	226	a Snake	AA	ACTOR	Villain	Villain
+11	228	three heads	PA	NONACTOR	Villain	Villain
+11	230	His steed	AN	NONACTOR	?	?
+11	232	his hound	AN	NONACTOR	?	?
+11	234	his falcon	AN	NONACTOR	?	?
+11	236	the Snake	AA	ACTOR	Villain	Villain
+11	238	the Steed	AN	NONACTOR	?	?
+11	240	the Snake	AA	ACTOR	?	?
+11	242	Ivan	MA	ACTOR	Hero	Hero
+11	244	they	AA,MA	NONACTOR	?	?
+11	245	Ivan	MA	ACTOR	Hero	Hero
+11	247	the Snake	AA	ACTOR	Villain	Villain
+11	249	the boarding	SS	NONACTOR	?	?
+11	250	there	?	NONACTOR	?	?
+11	252	another Snake	AA	ACTOR	Villain	Villain
+11	254	a six-headed one	PA	NONACTOR	Villain	Villain
+11	255	him	AA	ACTOR	Villain	Villain
+11	256	Ivan	MA	ACTOR	Hero	Hero
+11	258	there	?	NONACTOR	?	?
+11	260	a third	AA	ACTOR	Villain	Villain
+11	261	twelve heads	PA	NONACTOR	Villain	Villain
+11	263	Ivan	MA	ACTOR	Hero	Hero
+11	265	him	AA	ACTOR	Villain	Villain
+11	267	nine	PA	NONACTOR	Villain	Villain
+11	268	his heads	PA	NONACTOR	Villain	Villain
+11	270	The Snake	AA	ACTOR	Villain	Villain
+11	273	no strength	?	NONACTOR	?	?
+11	275	him	AA	ACTOR	Villain	Villain
+11	276	a raven	AA	ACTOR	Other	Dispatcher
+11	278	it	AA	ACTOR	Other	Dispatcher
+11	279	the Snake	AA	ACTOR	Villain	Villain
+11	281	the Raven	AA	ACTOR	Other	Dispatcher
+11	283	Ivan	MA	ACTOR	Hero	Hero
+11	285	the Raven	AA	ACTOR	Other	Dispatcher
+11	287	ear	HA	NONACTOR	?	?
+11	289	Ivan	MA	ACTOR	Hero	Hero
+11	291	his brothers	MA,MA	NONACTOR	?	?
+11	293	their heads	PA,PA	NONACTOR	?	?
+11	295	The brothers	MA,MA	NONACTOR	?	?
+11	297	they	MA,MA	NONACTOR	?	?
+11	299	the cry	HA	NONACTOR	?	?
+11	301	the Raven	AA	ACTOR	Other	Dispatcher
+11	303	they	MA,MA	NONACTOR	?	?
+11	304	their brother 's aid	HA	NONACTOR	?	?
+11	308	they	MA,MA,MA	NONACTOR	?	?
+11	309	the Snake	AA	ACTOR	Villain	Villain
+11	311	his heads	PA	NONACTOR	Villain	Villain
+11	313	they	MA,MA,MA	NONACTOR	?	?
+11	314	his hut	SS	NONACTOR	?	?
+11	316	them	PA	NONACTOR	Villain	Villain
+11	317	there	?	NONACTOR	?	?
+11	319	bright light	SC	NONACTOR	?	?
+11	321	the whole land	SC	NONACTOR	?	?
+11	323	the Snake	AA	ACTOR	Villain	Villain
+11	326	Ivan Popyalof	MA	ACTOR	Hero	Hero
+11	329	his brothers	MA,MA	NONACTOR	?	?
+11	331	their way home	SS	NONACTOR	?	?
+11	334	he	MA	ACTOR	Hero	Hero
+11	335	his gloves	OB	NONACTOR	?	?
+11	337	he	MA	ACTOR	Hero	Hero
+11	338	them	MA,MA	NONACTOR	?	?
+11	339	his brothers	MA,MA	NONACTOR	?	?
+11	341	him	MA	ACTOR	Hero	Hero
+11	342	he	MA	ACTOR	Hero	Hero
+11	343	the hut	SS	NONACTOR	?	?
+11	345	his gloves	OB	NONACTOR	?	?
+11	347	he	MA	ACTOR	Hero	Hero
+11	349	the voices	PA	NONACTOR	Villain	Villain
+11	352	the Snake 's	AA	ACTOR	Villain	Villain
+11	354	wife	AA	ACTOR	Villain	Villain
+11	355	daughters	AA	ACTOR	Villain	Villain
+11	356	each other	AA	ACTOR	Villain	Villain
+11	357	he	MA	ACTOR	Hero	Hero
+11	358	himself	MA	ACTOR	Hero	Hero
+11	359	a cat	AA	ACTOR	Hero	Hero
+11	361	the door	SS	NONACTOR	?	?
+11	363	They	AA	ACTOR	?	?
+11	364	him	MA	ACTOR	Hero	Hero
+11	365	he	MA	ACTOR	Hero	Hero
+11	366	everything	?	NONACTOR	?	?
+11	368	they	AA	ACTOR	?	?
+11	369	he	MA	ACTOR	Hero	Hero
+11	370	his gloves	OB	NONACTOR	?	?
+11	372	he	MA	ACTOR	Hero	Hero
+11	373	his brothers	MA,MA	NONACTOR	?	?
+11	375	he	MA	ACTOR	Hero	Hero
+11	376	his horse	AA	ACTOR	?	?
+11	378	they	MA,MA,MA	NONACTOR	?	?
+11	379	They	MA,MA,MA	NONACTOR	?	?
+11	380	they	MA,MA,MA	NONACTOR	?	?
+11	381	them	MA,MA,MA	NONACTOR	?	?
+11	382	a green meadow	SS	NONACTOR	?	?
+11	384	that meadow	SS	NONACTOR	?	?
+11	386	silken cushions	OB	NONACTOR	?	?
+11	388	the elder brothers	MA,MA	NONACTOR	?	?
+11	390	Ivan	MA	ACTOR	Hero	Hero
+11	392	he	MA	ACTOR	Hero	Hero
+11	393	his mace	OB	NONACTOR	?	?
+11	395	the cushions	OB	NONACTOR	?	?
+11	397	it	OB	NONACTOR	?	?
+11	398	those cushions	OB	NONACTOR	?	?
+11	400	blood	OB	NONACTOR	?	?
+11	402	they	MA,MA,MA	NONACTOR	?	?
+11	403	all	MA,MA,MA	NONACTOR	?	?
+11	404	They	MA,MA,MA	NONACTOR	?	?
+11	405	there	?	NONACTOR	?	?
+11	406	them	MA,MA,MA	NONACTOR	?	?
+11	408	an apple-tree	OB	NONACTOR	Other	Other
+11	410	it	OB	NONACTOR	Other	Other
+11	412	apples	OB	NONACTOR	?	?
+11	413	the elder brothers	MA,MA,MA	NONACTOR	?	?
+11	415	Ivan	MA	ACTOR	Hero	Hero
+11	417	he	MA	ACTOR	Hero	Hero
+11	418	his mace	OB	NONACTOR	?	?
+11	420	the apple - tree	OB	NONACTOR	Other	Other
+11	423	it	OB	NONACTOR	?	?
+11	425	out	?	NONACTOR	?	?
+11	426	the tree	OB	NONACTOR	Other	Other
+11	428	blood	OB	NONACTOR	?	?
+11	430	they	MA,MA,MA	NONACTOR	?	?
+11	431	They	MA,MA,MA	NONACTOR	?	?
+11	432	they	MA,MA,MA	NONACTOR	?	?
+11	434	a spring	OB	NONACTOR	?	?
+11	436	front	SS	NONACTOR	?	?
+11	438	them	MA,MA,MA	NONACTOR	?	?
+11	439	the elder brothers	MA,MA,MA	NONACTOR	?	?
+11	441	Ivan Popyalof	MA	ACTOR	Hero	Hero
+11	444	he	MA	ACTOR	Hero	Hero
+11	445	his mace	OB	NONACTOR	?	?
+11	447	spring	OB	NONACTOR	?	?
+11	448	its waters	OB	NONACTOR	?	?
+11	450	blood	OB	NONACTOR	?	?
+11	452	the meadow	SS	NONACTOR	?	?
+11	455	the silken cushions	OB	NONACTOR	?	?
+11	458	the apple-tree	OB	NONACTOR	?	?
+11	460	the spring	OB	NONACTOR	?	?
+11	463	all	GR	ACTOR	Villain	Villain
+11	465	them daughters	GR	ACTOR	Villain	Villain
+11	467	the Snake	AA	ACTOR	Villain	Villain
+11	469	the Snake 's daughters	GR	ACTOR	Villain	Villain
+11	474	Ivan	MA	ACTOR	Hero	Hero
+11	476	his brothers	MA,MA	NONACTOR	?	?
+11	478	homewards	SS	NONACTOR	?	?
+11	481	the Snake 's Wife	AA	ACTOR	Villain	Villain
+11	485	them	MA,MA,MA	NONACTOR	?	?
+11	486	she	AA	ACTOR	Villain	Villain
+11	487	her jaws	PA	NONACTOR	Villain	Villain
+11	489	the sky	SC	NONACTOR	?	?
+11	491	the earth	SC	NONACTOR	?	?
+11	493	Ivan	MA	ACTOR	Hero	Hero
+11	496	Ivan	MA	ACTOR	Hero	Hero
+11	498	his brothers	MA,MA	NONACTOR	?	?
+11	501	three poods	OB	NONACTOR	?	?
+11	503	salt	OB	NONACTOR	?	?
+11	505	her mouth	PA	NONACTOR	Villain	Villain
+11	507	She	AA	ACTOR	Villain	Villain
+11	508	the salt	OB	NONACTOR	?	?
+11	510	it	OB	NONACTOR	?	?
+11	511	Ivan Popyalof	MA	ACTOR	Hero	Hero
+11	514	she	AA	ACTOR	Villain	Villain
+11	515	the salt	OB	NONACTOR	?	?
+11	517	it	OB	NONACTOR	?	?
+11	518	Ivan	MA	ACTOR	Hero	Hero
+11	520	she	AA	ACTOR	Villain	Villain
+11	521	him	MA	ACTOR	Hero	Hero
+11	522	he	MA	ACTOR	Hero	Hero
+11	523	danger	HA	NONACTOR	?	?
+11	525	hand	?	NONACTOR	?	?
+11	527	he	MA	ACTOR	Hero	Hero
+11	528	his horse	AA	ACTOR	?	?
+11	530	himself	MA	ACTOR	Hero	Hero
+11	532	twelve doors	OB	NONACTOR	?	?
+11	534	the	?	NONACTOR	?	?
+11	536	Kuzma	MA	ACTOR	Other	FamilyHero
+11	537	Demian	MA	ACTOR	Other	FamilyHero
+11	538	The Snake 's Wife	AA	ACTOR	Villain	Villain
+11	543	Kuzma	MA	ACTOR	Other	FamilyHero
+11	544	Demian	MA	ACTOR	Other	FamilyHero
+11	545	they	MA,MA,MA	NONACTOR	?	?
+11	546	the Snake 's Wife	AA	ACTOR	Villain	Villain
+11	550	the doors	OB	NONACTOR	?	?
+11	552	they	MA,MA,MA	NONACTOR	?	?
+11	554	heated iron pincers	OB	NONACTOR	?	?
+11	558	as soon as	ST	NONACTOR	?	?
+11	559	she	AA	ACTOR	Villain	Villain
+11	560	her tongue	PA	NONACTOR	Villain	Villain
+11	562	the smithy	OB	NONACTOR	?	?
+11	564	they	MA,MA,MA	NONACTOR	?	?
+11	566	tight hold	HA	NONACTOR	?	?
+11	568	her	AA	ACTOR	Villain	Villain
+11	569	the tongue	PA	NONACTOR	Villain	Villain
+11	571	her	AA	ACTOR	Villain	Villain
+11	572	hammers	OB	NONACTOR	?	?
+11	574	the Snake 's Wife	AA	ACTOR	Villain	Villain
+11	578	they	MA,MA,MA	NONACTOR	?	?
+11	579	her	AA	ACTOR	Villain	Villain
+11	580	fire	OB	NONACTOR	?	?
+11	582	her ashes	OB	NONACTOR	?	?
+11	584	the winds	SC	NONACTOR	?	?
+11	586	they	MA,MA,MA	NONACTOR	?	?
+11	588	home	SS	NONACTOR	?	?
+11	591	there	SS	NONACTOR	?	?
+11	592	they	MA,MA,MA	NONACTOR	?	?
+11	593	themselves	MA,MA,MA	NONACTOR	?	?
+11	595	drinking	HA	NONACTOR	?	?
+11	596	mead	OB	NONACTOR	?	?
+11	597	wine	OB	NONACTOR	?	?
+12	0	old times	ST	NONACTOR	?	?
+12	2	there	?	NONACTOR	?	?
+12	4	a village	SS	NONACTOR	?	?
+12	6	a serpent	MB	ACTOR	Villain	Villain
+12	8	He	MB	ACTOR	Villain	Villain
+12	11	the villagers	GR	ACTOR	Other	Other
+12	13	that time	ST	NONACTOR	?	?
+12	15	a gypsy	MA	ACTOR	Hero	Hero
+12	17	the village	SS	NONACTOR	?	?
+12	19	He	MA	ACTOR	Hero	Hero
+12	20	night	ST	NONACTOR	?	?
+12	22	matter	?	NONACTOR	?	?
+12	23	he	MA	ACTOR	Hero	Hero
+12	24	he	MA	ACTOR	Hero	Hero
+12	25	anyone	GR	ACTOR	Other	Other
+12	27	He	MA	ACTOR	Hero	Hero
+12	28	the last hut	SS	NONACTOR	?	?
+12	30	the last man	MA	ACTOR	Other	Other
+12	32	they	MA,MA	NONACTOR	?	?
+12	33	night	ST	NONACTOR	?	?
+12	34	morning	ST	NONACTOR	?	?
+12	35	a strong windstorm	HA	NONACTOR	?	?
+12	37	The hut	SS	NONACTOR	?	?
+12	39	the serpent	MB	ACTOR	Villain	Villain
+12	41	the serpent	MB	ACTOR	Villain	Villain
+12	43	the gypsy	MA	ACTOR	Hero	Hero
+12	45	The serpent	MB	ACTOR	Villain	Villain
+12	47	a millstone	OB	NONACTOR	?	?
+12	49	The serpent	MB	ACTOR	Villain	Villain
+12	51	the stone	OB	NONACTOR	?	?
+12	54	the palm	PA	NONACTOR	Villain	Villain
+12	56	his hand	PA	NONACTOR	Villain	Villain
+12	58	it	OB	NONACTOR	?	?
+12	59	it	OB	NONACTOR	?	?
+12	60	fine sand	OB	NONACTOR	?	?
+12	63	a cloud	OB	NONACTOR	?	?
+12	65	dust	OB	NONACTOR	?	?
+12	67	his fist	PA	NONACTOR	Villain	Villain
+12	69	the gypsy	MA	ACTOR	Hero	Hero
+12	71	There	?	NONACTOR	?	?
+12	73	a chunk	OB	NONACTOR	?	?
+12	76	cheese curd	OB	NONACTOR	?	?
+12	79	the table	OB	NONACTOR	?	?
+12	81	the gypsy	MA	ACTOR	Hero	Hero
+12	83	it	OB	NONACTOR	?	?
+12	84	it	OB	NONACTOR	?	?
+12	85	a squeeze	HA	NONACTOR	?	?
+12	87	Whey	OB	NONACTOR	?	?
+12	89	the ground	SS	NONACTOR	?	?
+12	92	The serpent	MB	ACTOR	Villain	Villain
+12	94	all the trees	SC	NONACTOR	?	?
+12	96	the gypsy	MA	ACTOR	Hero	Hero
+12	98	The serpent	MB	ACTOR	Villain	Villain
+12	100	it	HA	NONACTOR	?	?
+12	101	his eyes	PA	NONACTOR	Villain	Villain
+12	103	a scarf	OB	NONACTOR	?	?
+12	105	The gypsy	MA	ACTOR	Hero	Hero
+12	107	a club	OB	NONACTOR	?	?
+12	109	he	MA	ACTOR	Hero	Hero
+12	110	he	MA	ACTOR	Hero	Hero
+12	112	the serpent	MB	ACTOR	Villain	Villain
+12	115	the top	PA	NONACTOR	Villain	Villain
+12	117	his voice	PA	NONACTOR	Villain	Villain
+12	119	the serpent	MB	ACTOR	Villain	Villain
+12	121	There	?	NONACTOR	?	?
+12	122	nothing	?	NONACTOR	?	?
+12	123	the gypsy	MA	ACTOR	Hero	Hero
+12	125	the meadow	SS	NONACTOR	?	?
+12	127	He	MA	ACTOR	Hero	Hero
+12	129	a large herd	AN	NONACTOR	?	?
+12	131	oxen grazing	AN	NONACTOR	?	?
+12	133	He	MA	ACTOR	Hero	Hero
+12	134	them	AN	NONACTOR	?	?
+12	135	their tails	OB	NONACTOR	?	?
+12	137	The serpent	MB	ACTOR	Villain	Villain
+12	139	He	MB	ACTOR	Villain	Villain
+12	140	the meadow	SS	NONACTOR	?	?
+12	142	the serpent	MB	ACTOR	Villain	Villain
+12	144	the biggest oxen	AN	NONACTOR	?	?
+12	146	the tale	OB	NONACTOR	?	?
+12	149	the	?	NONACTOR	?	?
+12	150	the meat	OB	NONACTOR	?	?
+12	152	it	OB	NONACTOR	?	?
+12	153	home	SS	NONACTOR	?	?
+12	154	They	MB,MA	NONACTOR	?	?
+12	155	the hut	SS	NONACTOR	?	?
+12	158	two cauldrons	OB	NONACTOR	?	?
+12	160	the beef	OB	NONACTOR	?	?
+12	162	there	?	NONACTOR	?	?
+12	163	no water	OB	NONACTOR	?	?
+12	165	the serpent	MB	ACTOR	Villain	Villain
+12	167	the gypsy	MA	ACTOR	Hero	Hero
+12	169	The gypsy	MA	ACTOR	Hero	Hero
+12	171	the	OB	NONACTOR	?	?
+12	172	it	OB	NONACTOR	?	?
+12	173	the well	SS	NONACTOR	?	?
+12	175	he	MA	ACTOR	Hero	Hero
+12	176	it	OB	NONACTOR	?	?
+12	178	nothing	?	NONACTOR	?	?
+12	180	it	OB	NONACTOR	?	?
+12	181	water	OB	NONACTOR	?	?
+12	183	He	MA	ACTOR	Hero	Hero
+12	184	the well	SS	NONACTOR	?	?
+12	186	a deep trench	SC	NONACTOR	?	?
+12	188	it	SS	NONACTOR	?	?
+12	189	The serpent	MB	ACTOR	Villain	Villain
+12	191	He	MB	ACTOR	Villain	Villain
+12	193	himself	MB	ACTOR	Villain	Villain
+12	194	The serpent	MB	ACTOR	Villain	Villain
+12	196	the	MB	ACTOR	Villain	Villain
+12	197	the well	SS	NONACTOR	?	?
+12	198	it	SS	NONACTOR	?	?
+12	199	water	OB	NONACTOR	?	?
+12	201	it	OB	NONACTOR	?	?
+12	202	it	OB	NONACTOR	?	?
+12	203	home	SS	NONACTOR	?	?
+12	204	he	MB	ACTOR	Villain	Villain
+12	205	the gypsy	MA	ACTOR	Hero	Hero
+12	207	The gypsy	MA	ACTOR	Hero	Hero
+12	209	the forest	SS	NONACTOR	?	?
+12	211	bark fiber	OB	NONACTOR	?	?
+12	214	twist	?	NONACTOR	?	?
+12	216	a rope	OB	NONACTOR	?	?
+12	218	He	MA	ACTOR	Hero	Hero
+12	219	an extremely long rope	OB	NONACTOR	?	?
+12	221	the oak trees	OB	NONACTOR	?	?
+12	224	The serpent	MB	ACTOR	Villain	Villain
+12	226	He	MB	ACTOR	Villain	Villain
+12	228	himself	MB	ACTOR	Villain	Villain
+12	229	the serpent	MB	ACTOR	Villain	Villain
+12	231	he	MB	ACTOR	Villain	Villain
+12	233	the widest oak	OB	NONACTOR	?	?
+12	235	its roots	OB	NONACTOR	?	?
+12	237	it	OB	NONACTOR	?	?
+12	238	the hut	SS	NONACTOR	?	?
+12	240	The gypsy	MA	ACTOR	Hero	Hero
+12	242	he	MA	ACTOR	Hero	Hero
+12	243	he	MA	ACTOR	Hero	Hero
+12	244	The serpent	MB	ACTOR	Villain	Villain
+12	246	the beef	OB	NONACTOR	?	?
+12	248	the gypsy	MA	ACTOR	Hero	Hero
+12	250	lunch	HA	NONACTOR	?	?
+12	252	the gypsy	MA	ACTOR	Hero	Hero
+12	254	the serpent	MB	ACTOR	Villain	Villain
+12	256	a whole ox	OB	NONACTOR	?	?
+12	259	a whole oxen-skin	OB	NONACTOR	?	?
+12	261	water	OB	NONACTOR	?	?
+12	263	the gypsy	MA	ACTOR	Hero	Hero
+12	265	the serpent	MB	ACTOR	Villain	Villain
+12	267	his wagon	OB	NONACTOR	?	?
+12	270	three	OB	NONACTOR	?	?
+12	271	the best stallions	OB	NONACTOR	?	?
+12	273	they	MB,MA	NONACTOR	?	?
+12	274	the gypsy camp	SS	NONACTOR	?	?
+12	277	They	MB,MA	NONACTOR	?	?
+12	278	the little gypsy children	GR	ACTOR	Other	HeroFamily
+12	281	their father	MA	ACTOR	Hero	Hero
+12	283	they	GR	ACTOR	Other	HeroFamily
+12	284	him	MA	ACTOR	Hero	Hero
+12	286	the top	?	NONACTOR	?	?
+12	288	their voices	?	NONACTOR	?	?
+12	290	they	GR	ACTOR	Other	HeroFamily
+12	291	The serpent	MB	ACTOR	Villain	Villain
+12	293	the gypsy	MA	ACTOR	Hero	Hero
+12	295	The serpent	MB	ACTOR	Villain	Villain
+12	297	the wagon	OB	NONACTOR	?	?
+12	299	The gypsy	MA	ACTOR	Hero	Hero
+12	302	the trio	AN	NONACTOR	?	?
+12	304	horses	AN	NONACTOR	?	?
+12	306	the wagon	OB	NONACTOR	?	?
+12	308	the good life	HA	NONACTOR	?	?
+13	0	There	?	NONACTOR	?	?
+13	1	an old princess	FE	ACTOR	Other	FamilyHero
+13	3	she	FE	ACTOR	Other	FamilyHero
+13	5	a son	MA	ACTOR	Other	FamilyHero
+13	7	a daughter	FE	ACTOR	?	?
+13	9	both handsome	MA,FE	NONACTOR	?	?
+13	10	A wicked witch	FE	ACTOR	Villain	Villain
+13	12	them	MA,FE	NONACTOR	?	?
+13	13	she	FE	ACTOR	Villain	Villain
+13	14	she	FE	ACTOR	Villain	Villain
+13	15	them	MA,FE	NONACTOR	?	?
+13	16	evil ways	?	NONACTOR	?	?
+13	18	them	MA,FE	NONACTOR	?	?
+13	19	the end	?	NONACTOR	?	?
+13	21	she	FE	ACTOR	Villain	Villain
+13	22	a plan	?	NONACTOR	?	?
+13	24	a cunning fox	AA	ACTOR	Villain	Villain
+13	26	she	FE	ACTOR	Villain	Villain
+13	27	their mother	FE	ACTOR	Other	FamilyHero
+13	29	The old woman	FE	ACTOR	Other	FamilyHero
+13	31	her	FE	ACTOR	Villain	Villain
+13	32	her death	HA	NONACTOR	?	?
+13	34	she	FE	ACTOR	Other	FamilyHero
+13	35	her son	MA	ACTOR	Other	FamilyHero
+13	37	he	MA	ACTOR	Other	FamilyHero
+13	38	wife a woman	FE	ACTOR	Other	Other
+13	43	the ring	OB	NONACTOR	?	?
+13	45	Time	ST	NONACTOR	?	?
+13	47	the little son	MA	ACTOR	Other	FamilyHero
+13	49	He	MA	ACTOR	Other	FamilyHero
+13	50	a bride	FE	ACTOR	Other	Other
+13	52	he	MA	ACTOR	Other	FamilyHero
+13	54	one girl	FE	ACTOR	Other	Other
+13	57	the ring	OB	NONACTOR	?	?
+13	59	he	MA	ACTOR	Other	FamilyHero
+13	60	it	OB	NONACTOR	?	?
+13	61	it	OB	NONACTOR	?	?
+13	63	the one	FE	ACTOR	Other	Other
+13	64	the other	FE	ACTOR	Other	Other
+13	65	He	MA	ACTOR	Other	FamilyHero
+13	67	villages	SS	NONACTOR	?	?
+13	68	cities	SS	NONACTOR	?	?
+13	69	the ring	OB	NONACTOR	?	?
+13	71	all the lovely maidens	GR	ACTOR	Other	Other
+13	74	one	FE	ACTOR	Other	Other
+13	75	he	MA	ACTOR	Other	FamilyHero
+13	76	his	MA	ACTOR	Other	FamilyHero
+13	77	he	MA	ACTOR	Other	FamilyHero
+13	78	home	SS	NONACTOR	?	?
+13	80	his sister	FE	ACTOR	Hero	Hero
+13	82	him	MA	ACTOR	Other	FamilyHero
+13	83	He	MA	ACTOR	Other	FamilyHero
+13	84	her	FE	ACTOR	Hero	Hero
+13	85	his trouble	HA	NONACTOR	?	?
+13	87	the sister	FE	ACTOR	Hero	Hero
+13	89	She	FE	ACTOR	Hero	Hero
+13	90	it	OB	NONACTOR	?	?
+13	91	her finger	PA	NONACTOR	Hero	Hero
+13	93	the ring	OB	NONACTOR	?	?
+13	95	it	OB	NONACTOR	?	?
+13	96	it	OB	NONACTOR	?	?
+13	97	her	FE	ACTOR	Hero	Hero
+13	98	her size	?	NONACTOR	?	?
+13	100	the brother	MA	ACTOR	Other	FamilyHero
+13	102	her brother	MA	ACTOR	Other	FamilyHero
+13	104	her	FE	ACTOR	Hero	Hero
+13	105	he	MA	ACTOR	Other	FamilyHero
+13	106	joy	?	NONACTOR	?	?
+13	108	preparations	HA	NONACTOR	?	?
+13	110	the wedding	HA	NONACTOR	?	?
+13	112	The sister burst	FE	ACTOR	Hero	Hero
+13	115	bitter tears	OB	NONACTOR	?	?
+13	117	her room	SS	NONACTOR	?	?
+13	119	the threshold	OB	NONACTOR	?	?
+13	121	Some old women	FE	ACTOR	Tester	Helper
+13	123	she	FE	ACTOR	Hero	Hero
+13	124	them	FE	ACTOR	Tester	Helper
+13	125	them	FE	ACTOR	Tester	Helper
+13	127	food	OB	NONACTOR	?	?
+13	128	drink	OB	NONACTOR	?	?
+13	129	They	FE	ACTOR	Tester	Helper
+13	130	her	FE	ACTOR	Hero	Hero
+13	131	her grief	HA	NONACTOR	?	?
+13	133	she	FE	ACTOR	Hero	Hero
+13	134	It	HA	NONACTOR	?	?
+13	136	use	HA	NONACTOR	?	?
+13	137	it	?	NONACTOR	?	?
+13	138	she	FE	ACTOR	Hero	Hero
+13	139	them	FE	ACTOR	Tester	Helper
+13	140	everything	?	NONACTOR	?	?
+13	142	the old women	FE	ACTOR	Tester	Helper
+13	144	The old women	FE	ACTOR	Tester	Helper
+13	147	The brother	MA	ACTOR	Other	FamilyHero
+13	149	his sister	FE	ACTOR	Hero	Hero
+13	151	the room	SS	NONACTOR	?	?
+13	153	She	FE	ACTOR	Hero	Hero
+13	155	the dolls	MB	ACTOR	Tester	Helper
+13	157	the four corners	SS	NONACTOR	?	?
+13	159	cuckoos	AN	NONACTOR	?	?
+13	161	The earth	SC	NONACTOR	?	?
+13	163	the sister	FE	ACTOR	Hero	Hero
+13	165	Her brother	MA	ACTOR	Other	FamilyHero
+13	167	The dolls	MB	ACTOR	Tester	Helper
+13	169	the sister 's head	PA	NONACTOR	Hero	Hero
+13	173	ground	SC	NONACTOR	?	?
+13	175	The brother	MA	ACTOR	Other	FamilyHero
+13	177	her	FE	ACTOR	Hero	Hero
+13	178	The dolls	MB	ACTOR	Tester	Helper
+13	180	she	FE	ACTOR	Hero	Hero
+13	181	the earth	SC	NONACTOR	?	?
+13	183	The brother	MA	ACTOR	Other	FamilyHero
+13	185	her	FE	ACTOR	Hero	Hero
+13	186	he	MA	ACTOR	Other	FamilyHero
+13	187	her	FE	ACTOR	Hero	Hero
+13	188	a louder voice	?	NONACTOR	?	?
+13	191	she	FE	ACTOR	Hero	Hero
+13	192	He	MA	ACTOR	Other	FamilyHero
+13	193	her room	SS	NONACTOR	?	?
+13	195	the door	OB	NONACTOR	?	?
+13	197	the door	OB	NONACTOR	?	?
+13	199	He	MA	ACTOR	Other	FamilyHero
+13	200	his sister	FE	ACTOR	Hero	Hero
+13	202	Only the dolls	MB	ACTOR	Tester	Helper
+13	204	the corners	SS	NONACTOR	?	?
+13	206	He	MA	ACTOR	Other	FamilyHero
+13	207	an ax	OB	NONACTOR	?	?
+13	209	their heads	PA	NONACTOR	Tester	Helper
+13	211	them	MB	ACTOR	Tester	Helper
+13	212	the stove	OB	NONACTOR	?	?
+13	214	The sister	FE	ACTOR	Hero	Hero
+13	216	underground	SS	NONACTOR	?	?
+13	217	a little hut	SS	NONACTOR	?	?
+13	219	chicken legs	OB	NONACTOR	?	?
+13	223	round	HA	NONACTOR	?	?
+13	224	round	HA	NONACTOR	?	?
+13	225	she	FE	ACTOR	Hero	Hero
+13	226	The little hut	SS	NONACTOR	?	?
+13	228	the door	OB	NONACTOR	?	?
+13	231	a lovely maiden	FE	ACTOR	Tester	Helper
+13	233	a towel	OB	NONACTOR	?	?
+13	236	silver	OB	NONACTOR	?	?
+13	237	gold	OB	NONACTOR	?	?
+13	238	She	FE	ACTOR	Tester	Helper
+13	239	her guest	FE	ACTOR	Hero	Hero
+13	241	kindness	HA	NONACTOR	?	?
+13	243	The guest	FE	ACTOR	Hero	Hero
+13	245	these words	?	NONACTOR	?	?
+13	247	she	FE	ACTOR	Hero	Hero
+13	248	she	FE	ACTOR	Hero	Hero
+13	249	her hostess	FE	ACTOR	Tester	Helper
+13	251	the embroidery frame	OB	NONACTOR	?	?
+13	254	they	FE,FE	NONACTOR	?	?
+13	255	the towel	OB	NONACTOR	?	?
+13	258	a long time	ST	NONACTOR	?	?
+13	260	a short time	ST	NONACTOR	?	?
+13	262	the hostess	FE	ACTOR	Tester	Helper
+13	264	her mother	FE	ACTOR	Villain	Villain
+13	266	she	FE	ACTOR	Tester	Helper
+13	267	the time	ST	NONACTOR	?	?
+13	269	she	FE	ACTOR	Tester	Helper
+13	270	her guest	FE	ACTOR	Hero	Hero
+13	272	a needle	MB	ACTOR	Hero	Hero
+13	274	the needle	MB	ACTOR	Hero	Hero
+13	276	a birch broom	SS	NONACTOR	?	?
+13	278	the broom	OB	NONACTOR	?	?
+13	280	a corner	SS	NONACTOR	?	?
+13	282	She	FE	ACTOR	Tester	Helper
+13	283	all this	HA	NONACTOR	?	?
+13	284	the witch	FE	ACTOR	Villain	Villain
+13	286	the door	OB	NONACTOR	?	?
+13	288	the witch	FE	ACTOR	Villain	Villain
+13	290	She	FE	ACTOR	Villain	Villain
+13	291	the maidens	FE,FE	NONACTOR	?	?
+13	293	the frame	OB	NONACTOR	?	?
+13	295	the towel	OB	NONACTOR	?	?
+13	297	The witch	FE	ACTOR	Villain	Villain
+13	299	home	SS	NONACTOR	?	?
+13	301	she	FE	ACTOR	Villain	Villain
+13	302	the house	SS	NONACTOR	?	?
+13	304	she	FE	ACTOR	Villain	Villain
+13	305	The witch	FE	ACTOR	Villain	Villain
+13	307	she	FE	ACTOR	Villain	Villain
+13	308	her	FE	ACTOR	Tester	Helper
+13	309	daughter	FE	ACTOR	Tester	Helper
+13	311	The guest	FE	ACTOR	Hero	Hero
+13	313	the broom	OB	NONACTOR	?	?
+13	315	They	FE,FE	NONACTOR	?	?
+13	316	the towel	OB	NONACTOR	?	?
+13	318	they	FE,FE	NONACTOR	?	?
+13	319	their trouble	HA	NONACTOR	?	?
+13	321	the wicked witch	FE	ACTOR	Villain	Villain
+13	323	They	FE,FE	NONACTOR	?	?
+13	324	time	ST	NONACTOR	?	?
+13	326	a few whispers	?	NONACTOR	?	?
+13	328	the witch	FE	ACTOR	Villain	Villain
+13	330	the doorway	SS	NONACTOR	?	?
+13	332	them	FE,FE	NONACTOR	?	?
+13	333	surprise	HA	NONACTOR	?	?
+13	335	she	FE	ACTOR	Villain	Villain
+13	336	her daughter	FE	ACTOR	Tester	Helper
+13	338	The maiden	FE	ACTOR	Tester	Helper
+13	340	the witch	FE	ACTOR	Villain	Villain
+13	342	her heart	PA	NONACTOR	Tester	Helper
+13	344	her	FE	ACTOR	Tester	Helper
+13	345	her	FE	ACTOR	Tester	Helper
+13	346	Baba Yaga	FE	ACTOR	Villain	Villain
+13	350	the Bony-legged	PA	NONACTOR	Villain	Villain
+13	352	her nose	PA	NONACTOR	Villain	Villain
+13	354	the ceiling	SC	NONACTOR	?	?
+13	356	the witch	FE	ACTOR	Villain	Villain
+13	358	They	FE,FE	NONACTOR	?	?
+13	360	wood	OB	NONACTOR	?	?
+13	361	oak	OB	NONACTOR	?	?
+13	362	maple	OB	NONACTOR	?	?
+13	363	a fire	OB	NONACTOR	?	?
+13	365	the flame	OB	NONACTOR	?	?
+13	367	the stove	OB	NONACTOR	?	?
+13	369	The witch	FE	ACTOR	Villain	Villain
+13	371	a broad shovel	OB	NONACTOR	?	?
+13	373	her guest	FE	ACTOR	Hero	Hero
+13	375	The beauty	FE	ACTOR	Hero	Hero
+13	377	it	OB	NONACTOR	?	?
+13	378	The witch	FE	ACTOR	Villain	Villain
+13	380	her	FE	ACTOR	Hero	Hero
+13	382	the mouth	SS	NONACTOR	?	?
+13	384	the stove	OB	NONACTOR	?	?
+13	386	the maiden	FE	ACTOR	Hero	Hero
+13	388	one leg	PA	NONACTOR	Hero	Hero
+13	391	the stove	OB	NONACTOR	?	?
+13	393	the other	PA	NONACTOR	Villain	Villain
+13	395	top	?	NONACTOR	?	?
+13	397	it	OB	NONACTOR	?	?
+13	398	the witch	FE	ACTOR	Villain	Villain
+13	400	The maiden	FE	ACTOR	Hero	Hero
+13	401	her posture	?	NONACTOR	?	?
+13	403	the right way	?	NONACTOR	?	?
+13	405	the witch	FE	ACTOR	Villain	Villain
+13	407	her	FE	ACTOR	Hero	Hero
+13	408	she	FE	ACTOR	Hero	Hero
+13	409	one leg	PA	NONACTOR	Hero	Hero
+13	412	the stove	OB	NONACTOR	?	?
+13	414	the other	PA	NONACTOR	Hero	Hero
+13	415	it	OB	NONACTOR	?	?
+13	416	The witch	FE	ACTOR	Villain	Villain
+13	418	her	FE	ACTOR	Hero	Hero
+13	419	she	FE	ACTOR	Villain	Villain
+13	420	She	FE	ACTOR	Villain	Villain
+13	421	herself	FE	ACTOR	Villain	Villain
+13	422	the shovel	OB	NONACTOR	?	?
+13	424	her legs	PA	NONACTOR	Villain	Villain
+13	426	the two maidens	FE,FE	NONACTOR	?	?
+13	428	her	FE	ACTOR	Villain	Villain
+13	430	the stove	OB	NONACTOR	?	?
+13	432	her	FE	ACTOR	Villain	Villain
+13	433	her	FE	ACTOR	Villain	Villain
+13	434	logs	OB	NONACTOR	?	?
+13	436	the opening	SS	NONACTOR	?	?
+13	439	the embroidered towel	OB	NONACTOR	?	?
+13	442	brush	OB	NONACTOR	?	?
+13	443	comb	OB	NONACTOR	?	?
+13	444	them	FE,FE	NONACTOR	?	?
+13	445	They	FE,FE	NONACTOR	?	?
+13	446	the wicked witch	FE	ACTOR	Villain	Villain
+13	448	she	FE	ACTOR	Villain	Villain
+13	449	herself	FE	ACTOR	Villain	Villain
+13	451	sight	?	NONACTOR	?	?
+13	453	them	FE,FE	NONACTOR	?	?
+13	454	They	FE,FE	NONACTOR	?	?
+13	455	the brush	OB	NONACTOR	?	?
+13	458	a marsh	OB	NONACTOR	?	?
+13	460	reeds	OB	NONACTOR	?	?
+13	462	The witch	FE	ACTOR	Villain	Villain
+13	464	it	OB	NONACTOR	?	?
+13	465	she	FE	ACTOR	Villain	Villain
+13	466	her claws	PA	NONACTOR	Villain	Villain
+13	468	a path	SS	NONACTOR	?	?
+13	470	They	FE,FE	NONACTOR	?	?
+13	471	the comb	OB	NONACTOR	?	?
+13	474	forest	SS	NONACTOR	?	?
+13	475	a fly	AN	NONACTOR	?	?
+13	477	it	SS	NONACTOR	?	?
+13	478	The witch	FE	ACTOR	Villain	Villain
+13	480	her teeth	PA	NONACTOR	Villain	Villain
+13	482	each time	ST	NONACTOR	?	?
+13	484	she	FE	ACTOR	Villain	Villain
+13	486	her teeth	PA	NONACTOR	Villain	Villain
+13	488	she	FE	ACTOR	Villain	Villain
+13	489	a tree	OB	NONACTOR	?	?
+13	491	its roots	OB	NONACTOR	?	?
+13	494	She	FE	ACTOR	Villain	Villain
+13	495	the trees	OB	NONACTOR	?	?
+13	497	one side	SC	NONACTOR	?	?
+13	499	a path	SS	NONACTOR	?	?
+13	501	The maidens	FE,FE	NONACTOR	?	?
+13	503	they	FE,FE	NONACTOR	?	?
+13	504	they	FE,FE	NONACTOR	?	?
+13	505	all their strength	PA,PA	NONACTOR	?	?
+13	507	They	FE,FE	NONACTOR	?	?
+13	508	the gold-embroidered towel	OB	NONACTOR	?	?
+13	510	there	?	NONACTOR	?	?
+13	513	them	FE,FE	NONACTOR	?	?
+13	514	a sea	SS	NONACTOR	?	?
+13	517	a sea	SS	NONACTOR	?	?
+13	519	fire	OB	NONACTOR	?	?
+13	521	The witch	FE	ACTOR	Villain	Villain
+13	523	she	FE	ACTOR	Villain	Villain
+13	524	the sea	SS	NONACTOR	?	?
+13	526	the fire	OB	NONACTOR	?	?
+13	528	The maidens	FE,FE	NONACTOR	?	?
+13	531	little doves	FE,FE	NONACTOR	?	?
+13	533	a home	SS	NONACTOR	?	?
+13	535	they	FE,FE	NONACTOR	?	?
+13	536	They	FE,FE	NONACTOR	?	?
+13	537	A servant	MA	ACTOR	Other	Other
+13	539	them	FE,FE	NONACTOR	?	?
+13	540	them	FE,FE	NONACTOR	?	?
+13	541	they	FE,FE	NONACTOR	?	?
+13	543	his master	MA	ACTOR	Other	Other
+13	545	his domain	SS	NONACTOR	?	?
+13	549	two little birds	FE,FE	NONACTOR	?	?
+13	551	passage	?	NONACTOR	?	?
+13	553	two	FE,FE	NONACTOR	?	?
+13	555	beauties	FE,FE	NONACTOR	?	?
+13	558	one exactly	FE	ACTOR	Hero	Hero
+13	559	the other	FE	ACTOR	Tester	Helper
+13	560	they	FE,FE	NONACTOR	?	?
+13	562	the same brows	PA,PA	NONACTOR	?	?
+13	564	the same eyes	PA,PA	NONACTOR	?	?
+13	566	the servant	MA	ACTOR	Other	Other
+13	568	The master	MA	ACTOR	Other	Other
+13	570	them	FE,FE	NONACTOR	?	?
+13	571	them	FE,FE	NONACTOR	?	?
+13	572	his home	MA	ACTOR	Other	Other
+13	574	He	MA	ACTOR	Other	FamilyHero
+13	575	his sister	FE	ACTOR	Hero	Hero
+13	577	the two	FE,FE	NONACTOR	?	?
+13	578	she	FE	ACTOR	Hero	Hero
+13	579	he	MA	ACTOR	Other	FamilyHero
+13	580	his servant	MA	ACTOR	Other	Other
+13	582	the truth	?	NONACTOR	?	?
+13	584	She	FE	ACTOR	Hero	Hero
+13	585	him	MA	ACTOR	Other	FamilyHero
+13	586	herself	FE	ACTOR	Hero	Hero
+13	587	the servant	MA	ACTOR	Other	Other
+13	589	They	FE,FE	NONACTOR	?	?
+13	590	they	FE,FE	NONACTOR	?	?
+13	591	the servant	MA	ACTOR	Other	Other
+13	593	his master	MA	ACTOR	Other	Other
+13	596	side	?	NONACTOR	?	?
+13	597	blood	?	NONACTOR	?	?
+13	598	The brother	MA	ACTOR	Other	FamilyHero
+13	600	the sister	FE	ACTOR	Hero	Hero
+13	602	him	MA	ACTOR	Other	FamilyHero
+13	603	she	FE	ACTOR	Hero	Hero
+13	604	The brother	MA	ACTOR	Other	FamilyHero
+13	606	his sister	FE	ACTOR	Hero	Hero
+13	608	her	FE	ACTOR	Hero	Hero
+13	609	a good man	MA	ACTOR	Other	Other
+13	611	he	MA	ACTOR	Other	FamilyHero
+13	613	himself	MA	ACTOR	Other	FamilyHero
+13	614	her friend	FE	ACTOR	Tester	Helper
+13	616	finger	PA	NONACTOR	Tester	Helper
+13	617	the ring	OB	NONACTOR	?	?
+13	620	all	?	NONACTOR	?	?
+13	621	them	?	NONACTOR	?	?
+14	0	There	?	NONACTOR	?	?
+14	2	a very wealthy merchant	MA	ACTOR	Other	FamilyHero
+14	5	a marvelously beautiful daughter	MA	ACTOR	Hero	Hero
+14	7	This merchant	MA	ACTOR	Other	FamilyHero
+14	9	goods	OB	NONACTOR	?	?
+14	11	various provinces	SC	NONACTOR	?	?
+14	13	day	ST	NONACTOR	?	?
+14	14	he	MA	ACTOR	Other	FamilyHero
+14	15	a certain kingdom	SS	NONACTOR	?	?
+14	17	precious cloths	OB	NONACTOR	?	?
+14	19	the king	MA	ACTOR	Other	Other
+14	22	a gift	OB	NONACTOR	?	?
+14	24	The king	MA	ACTOR	Other	Other
+14	26	him	MA	ACTOR	Other	FamilyHero
+14	27	The merchant	MA	ACTOR	Other	FamilyHero
+14	29	The king	MA	ACTOR	Other	Other
+14	31	a letter	OB	NONACTOR	?	?
+14	33	his guards	GR	ACTOR	Other	Other
+14	35	he	MA	ACTOR	Other	FamilyHero
+14	36	them	GR	ACTOR	Other	Other
+14	37	The letter	OB	NONACTOR	?	?
+14	39	The merchant 's daughter	FE	ACTOR	Hero	Hero
+14	44	the letter	OB	NONACTOR	?	?
+14	47	burst	HA	NONACTOR	?	?
+14	49	tears	OB	NONACTOR	?	?
+14	51	her maidservant	FE	ACTOR	Villain	Villain
+14	53	no one	?	NONACTOR	?	?
+14	55	this maid	FE	ACTOR	Villain	Villain
+14	57	the merchant 's daughter	FE	ACTOR	Hero	Hero
+14	61	they	FE,FE	NONACTOR	?	?
+14	62	each other	FE,FE	NONACTOR	?	?
+14	64	They	FE,FE	NONACTOR	?	?
+14	66	dresses	OB	NONACTOR	?	?
+14	69	the king	MA	ACTOR	Other	Other
+14	72	the marriage	HA	NONACTOR	?	?
+14	74	The maid	FE	ACTOR	Villain	Villain
+14	76	spite	?	NONACTOR	?	?
+14	78	They	FE,FE	NONACTOR	?	?
+14	79	the island	SS	NONACTOR	?	?
+14	81	there	?	NONACTOR	?	?
+14	82	the maidservant	FE	ACTOR	Villain	Villain
+14	85	the merchant 's	FE	ACTOR	Hero	Hero
+14	87	daughter	FE	ACTOR	Hero	Hero
+14	88	potions	OB	NONACTOR	?	?
+14	90	her eyes	PA	NONACTOR	Hero	Hero
+14	92	them	PA	NONACTOR	Hero	Hero
+14	94	her pocket	OB	NONACTOR	?	?
+14	96	she	FE	ACTOR	Villain	Villain
+14	97	the guards	GR	ACTOR	Other	Other
+14	99	They	GR	ACTOR	Other	Other
+14	100	They	GR	ACTOR	Other	Other
+14	101	the king	MA	ACTOR	Other	Other
+14	103	he	MA	ACTOR	Other	Other
+14	104	the maid	FE	ACTOR	Villain	Villain
+14	106	once	ST	NONACTOR	?	?
+14	107	they	MA,FE	NONACTOR	?	?
+14	108	The king	MA	ACTOR	Other	Other
+14	110	himself	MA	ACTOR	Other	Other
+14	111	the merchant 's daughter	FE	ACTOR	Hero	Hero
+14	115	the illness	HA	NONACTOR	?	?
+14	117	her maid	FE	ACTOR	Villain	Villain
+14	119	her	FE	ACTOR	Villain	Villain
+14	120	She	FE	ACTOR	Hero	Hero
+14	121	she	FE	ACTOR	Hero	Hero
+14	122	she	FE	ACTOR	Hero	Hero
+14	123	an old man	MA	ACTOR	Tester	Helper
+14	126	cattle	AN	NONACTOR	?	?
+14	128	She	FE	ACTOR	Hero	Hero
+14	129	him	MA	ACTOR	Tester	Helper
+14	130	The old man	MA	ACTOR	Tester	Helper
+14	132	her	FE	ACTOR	Hero	Hero
+14	133	She	FE	ACTOR	Hero	Hero
+14	134	the old man	MA	ACTOR	Tester	Helper
+14	136	He	MA	ACTOR	Tester	Helper
+14	137	her	FE	ACTOR	Hero	Hero
+14	139	the cattle	AN	NONACTOR	?	?
+14	141	She	FE	ACTOR	Hero	Hero
+14	142	the old man	MA	ACTOR	Tester	Helper
+14	144	a shop	SS	NONACTOR	?	?
+14	146	The old man	MA	ACTOR	Tester	Helper
+14	149	none	?	NONACTOR	?	?
+14	151	the wealthy merchants	GR	ACTOR	Other	Other
+14	153	him	MA	ACTOR	Tester	Helper
+14	155	goods	OB	NONACTOR	?	?
+14	157	credit	OB	NONACTOR	?	?
+14	159	a poor shopkeeper	MA	ACTOR	Other	Other
+14	161	him	MA	ACTOR	Tester	Helper
+14	163	some	OB	NONACTOR	?	?
+14	164	He	MA	ACTOR	Tester	Helper
+14	166	velvet	OB	NONACTOR	?	?
+14	167	silk	OB	NONACTOR	?	?
+14	168	the blind maiden	FE	ACTOR	Hero	Hero
+14	169	She	FE	ACTOR	Hero	Hero
+14	170	him	MA	ACTOR	Tester	Helper
+14	171	she	FE	ACTOR	Hero	Hero
+14	173	a royal crown	OB	NONACTOR	?	?
+14	176	velvet	OB	NONACTOR	?	?
+14	177	silk	OB	NONACTOR	?	?
+14	178	she	FE	ACTOR	Hero	Hero
+14	179	such a beautiful crown	OB	NONACTOR	?	?
+14	181	it	OB	NONACTOR	?	?
+14	183	pleasure	OB	NONACTOR	?	?
+14	184	it	OB	NONACTOR	?	?
+14	185	morning	ST	NONACTOR	?	?
+14	186	the blind maiden	FE	ACTOR	Hero	Hero
+14	188	the old man	MA	ACTOR	Tester	Helper
+14	190	The old man	MA	ACTOR	Tester	Helper
+14	192	the palace	SS	NONACTOR	?	?
+14	194	the crown	OB	NONACTOR	?	?
+14	196	Everyone	GR	ACTOR	Other	Other
+14	198	it	OB	NONACTOR	?	?
+14	199	it	OB	NONACTOR	?	?
+14	200	him	MA	ACTOR	Tester	Helper
+14	201	the old man	MA	ACTOR	Tester	Helper
+14	203	an eye	OB	NONACTOR	?	?
+14	205	payment	OB	NONACTOR	?	?
+14	207	Straightway the king	MA	ACTOR	Other	Other
+14	212	he	MA	ACTOR	Tester	Helper
+14	213	an eye	OB	NONACTOR	?	?
+14	215	The king	MA	ACTOR	Other	Other
+14	217	the crown	OB	NONACTOR	?	?
+14	219	it	OB	NONACTOR	?	?
+14	220	the old man	MA	ACTOR	Tester	Helper
+14	222	an eye	OB	NONACTOR	?	?
+14	224	The king	MA	ACTOR	Other	Other
+14	226	curse	HA	NONACTOR	?	?
+14	228	him	MA	ACTOR	Tester	Helper
+14	229	prison	SC	NONACTOR	?	?
+14	231	matter	?	NONACTOR	?	?
+14	232	the king	MA	ACTOR	Other	Other
+14	234	the old man	MA	ACTOR	Tester	Helper
+14	236	his ground	SS	NONACTOR	?	?
+14	238	the king	MA	ACTOR	Other	Other
+14	240	his guards	GR	ACTOR	Other	Other
+14	243	Just then his wife	FE	ACTOR	Villain	Villain
+14	245	the queen	FE	ACTOR	Villain	Villain
+14	247	an eye	OB	NONACTOR	?	?
+14	249	her pocket	OB	NONACTOR	?	?
+14	251	it	OB	NONACTOR	?	?
+14	252	the king	MA	ACTOR	Other	Other
+14	254	The king	MA	ACTOR	Other	Other
+14	256	he	MA	ACTOR	Other	Other
+14	257	the eye	OB	NONACTOR	?	?
+14	260	the old man	MA	ACTOR	Tester	Helper
+14	262	it	OB	NONACTOR	?	?
+14	263	the palace	SS	NONACTOR	?	?
+14	265	his hut	SS	NONACTOR	?	?
+14	267	The blind maiden	FE	ACTOR	Hero	Hero
+14	268	him	MA	ACTOR	Other	Other
+14	269	He	MA	ACTOR	Tester	Helper
+14	270	She	FE	ACTOR	Hero	Hero
+14	271	it	OB	NONACTOR	?	?
+14	272	him	MA	ACTOR	Tester	Helper
+14	274	twilight	ST	NONACTOR	?	?
+14	277	spat	HA	NONACTOR	?	?
+14	279	it	OB	NONACTOR	?	?
+14	280	it	OB	NONACTOR	?	?
+14	281	its socket	PA	NONACTOR	Hero	Hero
+14	283	she	FE	ACTOR	Hero	Hero
+14	284	the old man	MA	ACTOR	Tester	Helper
+14	286	the shops	SS	NONACTOR	?	?
+14	288	him	MA	ACTOR	Tester	Helper
+14	289	money	OB	NONACTOR	?	?
+14	291	him	MA	ACTOR	Tester	Helper
+14	292	he	MA	ACTOR	Tester	Helper
+14	294	silk	OB	NONACTOR	?	?
+14	295	velvet	OB	NONACTOR	?	?
+14	297	more velvet	OB	NONACTOR	?	?
+14	299	gold thread	OB	NONACTOR	?	?
+14	302	He	MA	ACTOR	Tester	Helper
+14	303	he	MA	ACTOR	Tester	Helper
+14	304	the poor shopkeeper	MA	ACTOR	Other	Other
+14	306	these things	OB	NONACTOR	?	?
+14	308	the merchant 's daughter	FE	ACTOR	Hero	Hero
+14	312	She	FE	ACTOR	Hero	Hero
+14	313	another crown	OB	NONACTOR	?	?
+14	315	it	OB	NONACTOR	?	?
+14	316	the old man	MA	ACTOR	Tester	Helper
+14	318	the same king	MA	ACTOR	Other	Other
+14	320	she	FE	ACTOR	Hero	Hero
+14	321	him	MA	ACTOR	Tester	Helper
+14	322	The old man	MA	ACTOR	Tester	Helper
+14	324	the palace	SS	NONACTOR	?	?
+14	326	There	SS	NONACTOR	?	?
+14	327	everyone	GR	ACTOR	Other	Other
+14	329	the first crown	OB	NONACTOR	?	?
+14	331	the second	OB	NONACTOR	?	?
+14	334	king	MA	ACTOR	Other	Other
+14	335	the old man	MA	ACTOR	Tester	Helper
+14	337	The king	MA	ACTOR	Other	Other
+14	340	guard	MA	ACTOR	Other	Other
+14	342	an eye	OB	NONACTOR	?	?
+14	344	a prisoner	MA	ACTOR	Other	Other
+14	346	his wife	FE	ACTOR	Villain	Villain
+14	348	him	MA	ACTOR	Other	Other
+14	349	an eye	OB	NONACTOR	?	?
+14	351	The king	MA	ACTOR	Other	Other
+14	353	her	FE	ACTOR	Villain	Villain
+14	354	The king	MA	ACTOR	Other	Other
+14	356	the old man	MA	ACTOR	Tester	Helper
+14	358	He	MA	ACTOR	Tester	Helper
+14	359	he	MA	ACTOR	Tester	Helper
+14	360	the palace	SS	NONACTOR	?	?
+14	362	He	MA	ACTOR	Tester	Helper
+14	363	his hut	SS	NONACTOR	?	?
+14	365	the eye	OB	NONACTOR	?	?
+14	367	the blind maiden	FE	ACTOR	Hero	Hero
+14	369	She	FE	ACTOR	Hero	Hero
+14	371	twilight	ST	NONACTOR	?	?
+14	374	spat	HA	NONACTOR	?	?
+14	376	the eye	OB	NONACTOR	?	?
+14	378	it	OB	NONACTOR	?	?
+14	379	its socket	PA	NONACTOR	Hero	Hero
+14	381	both eyes	PA	NONACTOR	Hero	Hero
+14	383	She	PA	NONACTOR	Hero	Hero
+14	384	the hut	SS	NONACTOR	?	?
+14	386	she	PA	NONACTOR	Hero	Hero
+14	387	herself	PA	NONACTOR	Hero	Hero
+14	388	a glass house	SS	NONACTOR	?	?
+14	391	magnificent style	?	NONACTOR	?	?
+14	393	The king	MA	ACTOR	Other	Other
+14	395	this	?	NONACTOR	?	?
+14	396	such a fine house	SS	NONACTOR	?	?
+14	398	He	MA	ACTOR	Tester	Helper
+14	399	the yard	SS	NONACTOR	?	?
+14	401	the merchant 's daughter	FE	ACTOR	Hero	Hero
+14	405	She	FE	ACTOR	Hero	Hero
+14	406	him	MA	ACTOR	Other	Other
+14	407	him	MA	ACTOR	Other	Other
+14	408	table	OB	NONACTOR	?	?
+14	410	He	MA	ACTOR	Other	Other
+14	412	maiden	FE	ACTOR	Hero	Hero
+14	413	him	MA	ACTOR	Other	Other
+14	414	He	MA	ACTOR	Other	Other
+14	415	his palace	SS	NONACTOR	?	?
+14	417	his queen	FE	ACTOR	Villain	Villain
+14	419	The queen	FE	ACTOR	Villain	Villain
+14	421	it	OB	NONACTOR	?	?
+14	422	herself	FE	ACTOR	Villain	Villain
+14	423	The king	MA	ACTOR	Other	Other
+14	425	the maiden	FE	ACTOR	Hero	Hero
+14	427	the queen	FE	ACTOR	Villain	Villain
+14	429	spite	?	NONACTOR	?	?
+14	431	The king	MA	ACTOR	Other	Other
+14	433	her	FE	ACTOR	Hero	Hero
+14	434	his palace	SS	NONACTOR	?	?
+14	436	She	FE	ACTOR	Hero	Hero
+14	437	the old man	MA	ACTOR	Tester	Helper
+14	439	The old man	MA	ACTOR	Tester	Helper
+14	441	her	FE	ACTOR	Hero	Hero
+14	442	the guards	GR	ACTOR	Other	Other
+14	444	her	FE	ACTOR	Hero	Hero
+14	445	a carriage	OB	NONACTOR	?	?
+14	447	They	GR	ACTOR	Other	Other
+14	448	her	FE	ACTOR	Hero	Hero
+14	449	the king 's palace	SS	NONACTOR	?	?
+14	453	the queen	FE	ACTOR	Villain	Villain
+14	455	her	FE	ACTOR	Hero	Hero
+14	456	she	FE	ACTOR	Villain	Villain
+14	457	her	FE	ACTOR	Hero	Hero
+14	458	the spot	?	NONACTOR	?	?
+14	460	She	FE	ACTOR	Villain	Villain
+14	461	the courtyard	SS	NONACTOR	?	?
+14	463	the guards	GR	ACTOR	Other	Other
+14	465	They	GR	ACTOR	Other	Other
+14	466	the merchant 's daughter home	FE	ACTOR	Hero	Hero
+14	471	her	FE	ACTOR	Hero	Hero
+14	472	she	FE	ACTOR	Hero	Hero
+14	473	they	GR	ACTOR	Other	Other
+14	474	them	GR	ACTOR	Other	Other
+14	475	They	GR	ACTOR	Other	Other
+14	476	her	FE	ACTOR	Hero	Hero
+14	478	pieces	PA	NONACTOR	Hero	Hero
+14	480	her heart	PA	NONACTOR	Hero	Hero
+14	482	her	FE	ACTOR	Hero	Hero
+14	483	the ground	SS	NONACTOR	?	?
+14	485	the palace	SS	NONACTOR	?	?
+14	487	The queen	FE	ACTOR	Villain	Villain
+14	489	them	GR	ACTOR	Other	Other
+14	490	the heart	PA	NONACTOR	Hero	Hero
+14	492	it	PA	NONACTOR	Hero	Hero
+14	493	an egg	OB	NONACTOR	?	?
+14	495	it	OB	NONACTOR	?	?
+14	496	her pocket	OB	NONACTOR	?	?
+14	498	The old man	MA	ACTOR	Tester	Helper
+14	500	a glass house	SS	NONACTOR	?	?
+14	504	hut	SS	NONACTOR	?	?
+14	505	burst	HA	NONACTOR	?	?
+14	506	tears	OB	NONACTOR	?	?
+14	508	He	MA	ACTOR	Tester	Helper
+14	509	he	MA	ACTOR	Tester	Helper
+14	510	his appointed task	HA	NONACTOR	?	?
+14	512	He	MA	ACTOR	Tester	Helper
+14	513	a coffin	OB	NONACTOR	?	?
+14	515	the maiden	FE	ACTOR	Hero	Hero
+14	517	he	MA	ACTOR	Tester	Helper
+14	518	her	FE	ACTOR	Hero	Hero
+14	519	the earth	SS	NONACTOR	?	?
+14	521	her	FE	ACTOR	Hero	Hero
+14	522	all the pieces	PA	NONACTOR	Hero	Hero
+14	524	them	PA	NONACTOR	Hero	Hero
+14	525	the coffin	OB	NONACTOR	?	?
+14	527	them	PA	NONACTOR	Hero	Hero
+14	528	his own land	SS	NONACTOR	?	?
+14	530	The king	MA	ACTOR	Other	Other
+14	532	all this	?	NONACTOR	?	?
+14	533	he	MA	ACTOR	Other	Other
+14	534	the merchant 's daughter	FE	ACTOR	Hero	Hero
+14	538	he	MA	ACTOR	Other	Other
+14	539	the place	SS	NONACTOR	?	?
+14	541	there	?	NONACTOR	?	?
+14	543	no house	SS	NONACTOR	?	?
+14	545	no maiden	FE	ACTOR	Hero	Hero
+14	548	the spot	SS	NONACTOR	?	?
+14	550	she	FE	ACTOR	Hero	Hero
+14	551	a garden	SS	NONACTOR	?	?
+14	553	He	MA	ACTOR	Other	Other
+14	554	the palace	SS	NONACTOR	?	?
+14	556	the queen	FE	ACTOR	Villain	Villain
+14	558	the queen	FE	ACTOR	Villain	Villain
+14	560	this	?	NONACTOR	?	?
+14	561	she	FE	ACTOR	Villain	Villain
+14	562	the courtyard	SS	NONACTOR	?	?
+14	564	the guards	GR	ACTOR	Other	Other
+14	566	They	GR	ACTOR	Other	Other
+14	567	the garden	SS	NONACTOR	?	?
+14	569	it	OB	NONACTOR	?	?
+14	570	it	OB	NONACTOR	?	?
+14	571	stone	OB	NONACTOR	?	?
+14	573	The king	MA	ACTOR	Other	Other
+14	575	the garden	SS	NONACTOR	?	?
+14	577	that place	SS	NONACTOR	?	?
+14	579	he	MA	ACTOR	Other	Other
+14	580	he	MA	ACTOR	Other	Other
+14	582	a boy	MA	ACTOR	Other	Other
+14	584	what a handsome boy	MA	ACTOR	Other	Other
+14	588	he	MA	ACTOR	Other	Other
+14	589	he	MA	ACTOR	Other	Other
+14	590	He	MA	ACTOR	Other	Other
+14	591	the boy	MA	ACTOR	Other	Other
+14	593	his palace	SS	NONACTOR	?	?
+14	595	his queen	FE	ACTOR	Villain	Villain
+14	597	the boy	MA	ACTOR	Other	Other
+14	599	there	?	NONACTOR	?	?
+14	601	no way	?	NONACTOR	?	?
+14	603	him	MA	ACTOR	Other	Other
+14	604	matter	?	NONACTOR	?	?
+14	605	they	MA,FE	NONACTOR	?	?
+14	606	him	MA	ACTOR	Other	Other
+14	607	he	MA	ACTOR	Other	Other
+14	608	the queen	FE	ACTOR	Villain	Villain
+14	610	her pocket	OB	NONACTOR	?	?
+14	613	the egg	OB	NONACTOR	?	?
+14	615	she	FE	ACTOR	Villain	Villain
+14	616	the maiden 's heart	PA	NONACTOR	Hero	Hero
+14	620	it	OB	NONACTOR	?	?
+14	621	the boy	MA	ACTOR	Other	Other
+14	623	he	MA	ACTOR	Other	Other
+14	624	the rooms	SS	NONACTOR	?	?
+14	626	the king	MA	ACTOR	Other	Other
+14	628	the queen	FE	ACTOR	Villain	Villain
+14	630	The boy	MA	ACTOR	Other	Other
+14	632	the yard	SS	NONACTOR	?	?
+14	634	the king	MA	ACTOR	Other	Other
+14	636	him	MA	ACTOR	Other	Other
+14	637	the boy	MA	ACTOR	Other	Other
+14	639	the street	SS	NONACTOR	?	?
+14	641	the king	MA	ACTOR	Other	Other
+14	643	the street	SS	NONACTOR	?	?
+14	645	the boy	MA	ACTOR	Other	Other
+14	647	the field	SS	NONACTOR	?	?
+14	649	the king	MA	ACTOR	Other	Other
+14	651	the field	SS	NONACTOR	?	?
+14	653	the boy	MA	ACTOR	Other	Other
+14	655	the garden	SS	NONACTOR	?	?
+14	657	the king	MA	ACTOR	Other	Other
+14	659	the garden	SS	NONACTOR	?	?
+14	661	There	SS	NONACTOR	?	?
+14	662	the king	MA	ACTOR	Other	Other
+14	664	the maiden	FE	ACTOR	Hero	Hero
+14	666	She	FE	ACTOR	Hero	Hero
+14	667	him	MA	ACTOR	Other	Other
+14	668	They	MA,FE	NONACTOR	?	?
+14	669	the palace	SS	NONACTOR	?	?
+14	671	The queen	FE	ACTOR	Villain	Villain
+14	673	her feet	PA	NONACTOR	Hero	Hero
+14	675	she	FE	ACTOR	Villain	Villain
+14	676	the merchant 's daughter	FE	ACTOR	Hero	Hero
+14	680	The king	MA	ACTOR	Other	Other
+14	682	The maidservant 's eyes	PA	NONACTOR	Villain	Villain
+14	686	she	FE	ACTOR	Villain	Villain
+14	687	a horse	AN	NONACTOR	?	?
+14	689	her death	HA	NONACTOR	?	?
+14	691	the open field	SS	NONACTOR	?	?
+14	693	the king	MA	ACTOR	Other	Other
+14	695	the young queen	FE	ACTOR	Hero	Hero
+14	697	The king	MA	ACTOR	Other	Other
+14	699	her	FE	ACTOR	Hero	Hero
+14	700	her	FE	ACTOR	Hero	Hero
+14	701	gold	OB	NONACTOR	?	?
+15	0	a certain kingdom	SC	NONACTOR	?	?
+15	2	there	?	NONACTOR	?	?
+15	4	a king	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	7	three daughters	GR	ACTOR	Other	FamilyPrize
+15	9	beauty	?	NONACTOR	?	?
+15	11	The king	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	13	them	GR	ACTOR	Other	FamilyPrize
+15	15	his most precious treasure	OB	NONACTOR	?	?
+15	17	he	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	18	underground chambers	SS	NONACTOR	?	?
+15	20	his daughters	GR	ACTOR	Other	FamilyPrize
+15	23	birds	AN	NONACTOR	?	?
+15	25	a cage	OB	NONACTOR	?	?
+15	27	rough winds	SC	NONACTOR	?	?
+15	29	them	GR	ACTOR	Other	FamilyPrize
+15	30	the red sun	SC	NONACTOR	?	?
+15	32	them	GR	ACTOR	Other	FamilyPrize
+15	33	his rays	SC	NONACTOR	?	?
+15	35	day	ST	NONACTOR	?	?
+15	36	the princesses	GR	ACTOR	Other	FamilyPrize
+15	38	a certain book	OB	NONACTOR	?	?
+15	40	there	?	NONACTOR	?	?
+15	41	a marvelous bright world	SC	NONACTOR	?	?
+15	43	the king	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	45	them	GR	ACTOR	Other	FamilyPrize
+15	46	they	GR	ACTOR	Other	FamilyPrize
+15	47	him	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	49	tears	OB	NONACTOR	?	?
+15	51	their eyes	PA	NONACTOR	Other	FamilyPrize
+15	53	The king	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	55	them	GR	ACTOR	Other	FamilyPrize
+15	56	no avail	?	NONACTOR	?	?
+15	58	They	GR	ACTOR	Other	FamilyPrize
+15	59	him	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	60	he	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	61	they	GR	ACTOR	Other	FamilyPrize
+15	62	him	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	63	There	?	NONACTOR	?	?
+15	64	nothing	?	NONACTOR	?	?
+15	65	the king	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	67	their insistent prayer	HA	NONACTOR	?	?
+15	69	the beautiful princesses	GR	ACTOR	Other	FamilyPrize
+15	71	the garden	SS	NONACTOR	?	?
+15	73	They	GR	ACTOR	Other	FamilyPrize
+15	75	the red sun	SC	NONACTOR	?	?
+15	77	the trees	OB	NONACTOR	?	?
+15	79	the flowers	OB	NONACTOR	?	?
+15	81	they	GR	ACTOR	Other	FamilyPrize
+15	83	the freedom	?	NONACTOR	?	?
+15	85	the bright world	SC	NONACTOR	?	?
+15	87	They	GR	ACTOR	Other	FamilyPrize
+15	88	the garden	SS	NONACTOR	?	?
+15	90	themselves	GR	ACTOR	Other	FamilyPrize
+15	91	a sudden whirlwind	HA	NONACTOR	?	?
+15	92	them	GR	ACTOR	Other	FamilyPrize
+15	93	them	GR	ACTOR	Other	FamilyPrize
+15	94	no one	GR	ACTOR	Other	Other
+15	96	whither	?	NONACTOR	?	?
+15	99	The alarmed nurses	GR	ACTOR	Other	Other
+15	101	governesses	?	NONACTOR	?	?
+15	103	this	?	NONACTOR	?	?
+15	104	the king	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	106	the king straightway	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	109	his faithful servants	GR	ACTOR	Other	Other
+15	112	all directions	?	NONACTOR	?	?
+15	115	a great reward	OB	NONACTOR	?	?
+15	117	him	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	119	traces	?	NONACTOR	?	?
+15	121	the princesses	GR	ACTOR	Other	FamilyPrize
+15	123	The servants	GR	ACTOR	Other	Other
+15	125	anything	?	NONACTOR	?	?
+15	127	no wiser	?	NONACTOR	?	?
+15	128	they	GR	ACTOR	Other	Other
+15	129	The king	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	131	his grand council	SS	NONACTOR	?	?
+15	134	councilors	GR	ACTOR	Other	Other
+15	135	boyars	GR	ACTOR	Other	Other
+15	137	anyone	GR	ACTOR	Other	Other
+15	139	them	GR	ACTOR	Other	FamilyPrize
+15	140	his daughters	GR	ACTOR	Other	FamilyPrize
+15	143	any man	GR	ACTOR	Other	Other
+15	145	them	GR	ACTOR	Other	FamilyPrize
+15	146	he	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	147	he	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	149	the princess	FE	ACTOR	Other	FamilyPrize
+15	151	his choice	FE	ACTOR	Other	FamilyPrize
+15	153	marriage	HA	NONACTOR	?	?
+15	155	a rich dowry	OB	NONACTOR	?	?
+15	157	The king	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	159	the boyars	GR	ACTOR	Other	Other
+15	161	he	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	162	a second time	ST	NONACTOR	?	?
+15	164	they	GR	ACTOR	Other	Other
+15	165	he	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	166	a third time	ST	NONACTOR	?	?
+15	168	no one	GR	ACTOR	Other	Other
+15	170	a sound	HA	NONACTOR	?	?
+15	172	The king burst	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	175	tears	OB	NONACTOR	?	?
+15	177	he	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	178	a call	HA	NONACTOR	?	?
+15	180	the kingdom	SS	NONACTOR	?	?
+15	182	He	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	184	someone	GR	ACTOR	Other	Other
+15	186	the common people	GR	ACTOR	Other	Other
+15	188	the heavy task	?	NONACTOR	?	?
+15	190	that time	ST	NONACTOR	?	?
+15	192	there	?	NONACTOR	?	?
+15	193	one village	SS	NONACTOR	?	?
+15	196	a poor widow	FE	ACTOR	Other	FamilyHero
+15	198	three sons	MA,MA,MA	NONACTOR	?	?
+15	200	they	MA,MA,MA	NONACTOR	?	?
+15	201	mighty champions	MA,MA,MA	NONACTOR	?	?
+15	204	All	MA,MA,MA	NONACTOR	?	?
+15	205	them	MA,MA,MA	NONACTOR	?	?
+15	208	one night	ST	NONACTOR	?	?
+15	211	the eldest	MA	ACTOR	Other	Helper,FamilyHero
+15	212	the evening	ST	NONACTOR	?	?
+15	215	the second	MA	ACTOR	Other	Helper,FamilyHero
+15	216	midnight	ST	NONACTOR	?	?
+15	219	the youngest	MA	ACTOR	Hero	Hero
+15	220	the early dawn	ST	NONACTOR	?	?
+15	222	they	MA,MA,MA	NONACTOR	?	?
+15	224	Evening	MA	ACTOR	Other	Helper,FamilyHero
+15	225	Midnight	MA	ACTOR	Other	Helper,FamilyHero
+15	226	Dawn	MA	ACTOR	Hero	Hero
+15	227	the king 's call	HA	NONACTOR	?	?
+15	231	them	MA,MA,MA	NONACTOR	?	?
+15	232	they	MA,MA,MA	NONACTOR	?	?
+15	233	their mother 's blessing	FE	ACTOR	Other	FamilyHero
+15	237	their journey	HA	NONACTOR	?	?
+15	239	the capital city	SS	NONACTOR	?	?
+15	242	They	MA,MA,MA	NONACTOR	?	?
+15	243	the king	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	245	The king	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	247	the old woman	FE	ACTOR	Other	FamilyHero
+15	249	his palace	SS	NONACTOR	?	?
+15	251	she	FE	ACTOR	Other	FamilyHero
+15	253	food	OB	NONACTOR	?	?
+15	254	drink	OB	NONACTOR	?	?
+15	256	his table	OB	NONACTOR	?	?
+15	259	clothes	OB	NONACTOR	?	?
+15	260	shoes	OB	NONACTOR	?	?
+15	261	his stores	OB	NONACTOR	?	?
+15	263	The good youths	MA,MA,MA	NONACTOR	?	?
+15	265	their way	?	NONACTOR	?	?
+15	267	They	MA,MA,MA	NONACTOR	?	?
+15	269	one month	ST	NONACTOR	?	?
+15	271	a second	ST	NONACTOR	?	?
+15	272	a third	ST	NONACTOR	?	?
+15	273	they	MA,MA,MA	NONACTOR	?	?
+15	274	a wide desert steppe	SS	NONACTOR	?	?
+15	277	that	?	NONACTOR	?	?
+15	278	steppe	SS	NONACTOR	?	?
+15	280	a thick forest	SS	NONACTOR	?	?
+15	282	the forest	SS	NONACTOR	?	?
+15	284	a little hut	SS	NONACTOR	?	?
+15	286	They	MA,MA,MA	NONACTOR	?	?
+15	287	the window	OB	NONACTOR	?	?
+15	289	there	?	NONACTOR	?	?
+15	290	no answer	HA	NONACTOR	?	?
+15	292	they	MA,MA,MA	NONACTOR	?	?
+15	293	no one	?	NONACTOR	?	?
+15	295	the hut	SS	NONACTOR	?	?
+15	298	one	MA	ACTOR	Other	Helper,FamilyHero
+15	299	the three	MA,MA,MA	NONACTOR	?	?
+15	300	They	MA,MA,MA	NONACTOR	?	?
+15	301	God	MB	ACTOR	Other	Other
+15	304	Next morning Dawn	MA	ACTOR	Hero	Hero
+15	307	the youngest brother	MA	ACTOR	Hero	Hero
+15	310	Evening	MA	ACTOR	Other	Helper,FamilyHero
+15	312	his eldest brother	MA	ACTOR	Other	Helper,FamilyHero
+15	314	The eldest brother	MA	ACTOR	Other	Helper,FamilyHero
+15	316	the hut	SS	NONACTOR	?	?
+15	318	there	?	NONACTOR	?	?
+15	320	a shed	?	NONACTOR	?	?
+15	322	sheep	AN	NONACTOR	?	?
+15	324	he	MA	ACTOR	Hero	Hero
+15	326	the best ram	AN	NONACTOR	?	?
+15	328	it	AN	NONACTOR	?	?
+15	329	it	AN	NONACTOR	?	?
+15	330	roast	HA	NONACTOR	?	?
+15	332	dinner	HA	NONACTOR	?	?
+15	334	He	MA	ACTOR	Hero	Hero
+15	335	everything	?	NONACTOR	?	?
+15	337	a bench	OB	NONACTOR	?	?
+15	339	there	?	NONACTOR	?	?
+15	340	a rumbling noise	HA	NONACTOR	?	?
+15	342	the door	OB	NONACTOR	?	?
+15	344	there	?	NONACTOR	?	?
+15	345	a little man	MA	ACTOR	Villain	Villain
+15	347	big	?	NONACTOR	?	?
+15	348	a thumb	?	NONACTOR	?	?
+15	350	a beard a cubit long	PA	NONACTOR	Villain	Villain
+15	355	He	MA	ACTOR	Villain	Villain
+15	356	an angry look	HA	NONACTOR	?	?
+15	358	Evening	MA	ACTOR	Other	Helper,FamilyHero
+15	361	The old man	MA	ACTOR	Villain	Villain
+15	364	big	?	NONACTOR	?	?
+15	365	a thumb	?	NONACTOR	?	?
+15	367	He	MA	ACTOR	Villain	Villain
+15	369	a crust	OB	NONACTOR	?	?
+15	371	bread	OB	NONACTOR	?	?
+15	374	the head	PA	NONACTOR	Villain	Villain
+15	376	it	PA	NONACTOR	Villain	Villain
+15	377	he	MA	ACTOR	Villain	Villain
+15	378	him	MA	ACTOR	Other	Helper,FamilyHero
+15	379	he	MA	ACTOR	Other	Helper,FamilyHero
+15	380	half	?	NONACTOR	?	?
+15	381	him	MA	ACTOR	Other	Helper,FamilyHero
+15	382	the bench	OB	NONACTOR	?	?
+15	384	the little old man	MA	ACTOR	Villain	Villain
+15	386	the roasted ram	OB	NONACTOR	?	?
+15	388	the woods	SS	NONACTOR	?	?
+15	390	Evening	MA	ACTOR	Other	Helper,FamilyHero
+15	392	a rag	OB	NONACTOR	?	?
+15	394	his head	PA	NONACTOR	Other	Helper,FamilyHero
+15	396	The brothers	MA,MA	NONACTOR	?	?
+15	398	him	MA	ACTOR	Other	Helper,FamilyHero
+15	399	day	ST	NONACTOR	?	?
+15	401	Dawn	MA	ACTOR	Hero	Hero
+15	402	Evening	MA	ACTOR	Hero	Hero
+15	403	hunting	HA	NONACTOR	?	?
+15	405	Midnight	MA	ACTOR	Other	Helper,FamilyHero
+15	407	home	SS	NONACTOR	?	?
+15	409	the dinner	HA	NONACTOR	?	?
+15	411	Midnight	MA	ACTOR	Other	Helper,FamilyHero
+15	413	a fire	OB	NONACTOR	?	?
+15	416	the fattest ram	AN	NONACTOR	?	?
+15	418	it	AN	NONACTOR	?	?
+15	419	it	AN	NONACTOR	?	?
+15	420	the oven	OB	NONACTOR	?	?
+15	422	he	MA	ACTOR	Other	Helper,FamilyHero
+15	423	the bench	OB	NONACTOR	?	?
+15	425	there	?	NONACTOR	?	?
+15	426	a rumbling noise	HA	NONACTOR	?	?
+15	429	the old man	MA	ACTOR	Villain	Villain
+15	432	big	?	NONACTOR	?	?
+15	433	a thumb	?	NONACTOR	?	?
+15	435	a beard a cubit long	OB	NONACTOR	?	?
+15	440	him	MA	ACTOR	Other	Helper,FamilyHero
+15	441	he	MA	ACTOR	Villain	Villain
+15	442	him	MA	ACTOR	Other	Helper,FamilyHero
+15	443	death	?	NONACTOR	?	?
+15	445	he	MA	ACTOR	Villain	Villain
+15	446	the roasted ram	OB	NONACTOR	?	?
+15	448	the woods	SS	NONACTOR	?	?
+15	450	Midnight	MA	ACTOR	Other	Helper,FamilyHero
+15	452	his head	PA	NONACTOR	Other	Helper,FamilyHero
+15	454	a handkerchief	OB	NONACTOR	?	?
+15	456	the bench	OB	NONACTOR	?	?
+15	458	The brothers	MA,MA	NONACTOR	?	?
+15	460	Dawn	MA	ACTOR	Hero	Hero
+15	462	him	MA	ACTOR	Other	Helper,FamilyHero
+15	463	the third day	ST	NONACTOR	?	?
+15	466	the two elder brothers	MA,MA	NONACTOR	?	?
+15	469	hunting	HA	NONACTOR	?	?
+15	470	Dawn	MA	ACTOR	Hero	Hero
+15	471	home	SS	NONACTOR	?	?
+15	473	he	MA	ACTOR	Hero	Hero
+15	475	the best ram	AN	NONACTOR	?	?
+15	477	it	AN	NONACTOR	?	?
+15	478	it	AN	NONACTOR	?	?
+15	479	roast	OB	NONACTOR	?	?
+15	481	he	MA	ACTOR	Hero	Hero
+15	482	the bench	OB	NONACTOR	?	?
+15	484	there	?	NONACTOR	?	?
+15	485	a rumbling noise	HA	NONACTOR	?	?
+15	487	he	MA	ACTOR	Hero	Hero
+15	488	the old man	MA	ACTOR	Villain	Villain
+15	490	big	?	NONACTOR	?	?
+15	491	a thumb	?	NONACTOR	?	?
+15	493	a beard a cubit long	OB	NONACTOR	?	?
+15	498	a whole hayrick	OB	NONACTOR	?	?
+15	500	his head	PA	NONACTOR	Villain	Villain
+15	503	a huge cask	OB	NONACTOR	?	?
+15	506	water	OB	NONACTOR	?	?
+15	508	his hand	PA	NONACTOR	Villain	Villain
+15	511	The little old man	MA	ACTOR	Villain	Villain
+15	514	the cask	OB	NONACTOR	?	?
+15	516	water	OB	NONACTOR	?	?
+15	518	the hay	OB	NONACTOR	?	?
+15	520	the yard	OB	NONACTOR	?	?
+15	522	his sheep	AN	NONACTOR	?	?
+15	524	He	MA	ACTOR	Villain	Villain
+15	525	another ram	AN	NONACTOR	?	?
+15	527	the house	SS	NONACTOR	?	?
+15	529	Dawn	MA	ACTOR	Hero	Hero
+15	531	him	MA	ACTOR	Hero	Hero
+15	533	the head	PA	NONACTOR	Hero	Hero
+15	535	all his strength	PA	NONACTOR	Villain	Villain
+15	537	Dawn	MA	ACTOR	Hero	Hero
+15	539	the little old man	MA	ACTOR	Villain	Villain
+15	541	his long beard	PA	NONACTOR	Villain	Villain
+15	543	him	MA	ACTOR	Villain	Villain
+15	545	The old man	MA	ACTOR	Villain	Villain
+15	548	big	?	NONACTOR	?	?
+15	549	a thumb	?	NONACTOR	?	?
+15	551	a beard a cubit long	?	NONACTOR	?	?
+15	556	him	MA	ACTOR	Hero	Hero
+15	557	Dawn	MA	ACTOR	Hero	Hero
+15	559	him	MA	ACTOR	Hero	Hero
+15	560	the yard	SS	NONACTOR	?	?
+15	562	him	MA	ACTOR	Villain	Villain
+15	563	an oaken pillar	OB	NONACTOR	?	?
+15	565	his beard	PA	NONACTOR	Villain	Villain
+15	567	the pillar	OB	NONACTOR	?	?
+15	569	a big iron spike	OB	NONACTOR	?	?
+15	572	he	MA	ACTOR	Hero	Hero
+15	573	the house	SS	NONACTOR	?	?
+15	575	his brothers	MA,MA	NONACTOR	?	?
+15	577	The brothers	MA,MA	NONACTOR	?	?
+15	579	their hunting	HA	NONACTOR	?	?
+15	581	him	MA	ACTOR	Hero	Hero
+15	582	sound	?	NONACTOR	?	?
+15	584	Dawn	MA	ACTOR	Hero	Hero
+15	586	They	MA,MA	NONACTOR	?	?
+15	587	the yard	SS	NONACTOR	?	?
+15	589	they	MA,MA	NONACTOR	?	?
+15	591	the old man	MA	ACTOR	Villain	Villain
+15	594	big	?	NONACTOR	?	?
+15	595	a thumb	?	NONACTOR	?	?
+15	598	half	?	NONACTOR	?	?
+15	599	his beard	PA	NONACTOR	Villain	Villain
+15	601	the pillar	OB	NONACTOR	?	?
+15	603	blood	OB	NONACTOR	?	?
+15	605	his tracks	OB	NONACTOR	?	?
+15	607	this clue	OB	NONACTOR	?	?
+15	609	the brothers	MA,MA,MA	NONACTOR	?	?
+15	611	a deep hole	SS	NONACTOR	?	?
+15	613	the ground	SC	NONACTOR	?	?
+15	615	Dawn	MA	ACTOR	Hero	Hero
+15	617	the woods	SS	NONACTOR	?	?
+15	619	lime bast	OB	NONACTOR	?	?
+15	622	a rope	OB	NONACTOR	?	?
+15	624	his brothers	MA,MA	NONACTOR	?	?
+15	626	him	MA	ACTOR	Hero	Hero
+15	628	Evening	MA	ACTOR	Other	Helper,FamilyHero
+15	629	Midnight	MA	ACTOR	Other	Helper,FamilyHero
+15	630	him	MA	ACTOR	Hero	Hero
+15	631	the hole	SS	NONACTOR	?	?
+15	633	He	MA	ACTOR	Hero	Hero
+15	634	himself	MA	ACTOR	Hero	Hero
+15	635	the other world	SS	NONACTOR	?	?
+15	637	himself	MA	ACTOR	Hero	Hero
+15	638	the rope	OB	NONACTOR	?	?
+15	640	He	MA	ACTOR	Hero	Hero
+15	641	a copper castle	SS	NONACTOR	?	?
+15	644	He	MA	ACTOR	Hero	Hero
+15	646	the castle	SS	NONACTOR	?	?
+15	648	the youngest princess	FE	ACTOR	Prize	Prize
+15	650	a pink	SC	NONACTOR	?	?
+15	652	white snow	SC	NONACTOR	?	?
+15	654	him	MA	ACTOR	Hero	Hero
+15	655	him	MA	ACTOR	Hero	Hero
+15	656	She	FE	ACTOR	Prize	Prize
+15	657	him	MA	ACTOR	Hero	Hero
+15	658	the table	OB	NONACTOR	?	?
+15	660	him	MA	ACTOR	Hero	Hero
+15	662	meat	OB	NONACTOR	?	?
+15	663	drink	OB	NONACTOR	?	?
+15	664	him	MA	ACTOR	Hero	Hero
+15	665	a phial	OB	NONACTOR	?	?
+15	667	the water	OB	NONACTOR	?	?
+15	669	strength	PA	NONACTOR	Hero	Hero
+15	671	she	FE	ACTOR	Prize	Prize
+15	672	Dawn	MA	ACTOR	Hero	Hero
+15	675	the phial	OB	NONACTOR	?	?
+15	677	water	OB	NONACTOR	?	?
+15	679	great power	PA	NONACTOR	Hero	Hero
+15	681	himself	MA	ACTOR	Hero	Hero
+15	682	he	MA	ACTOR	Hero	Hero
+15	683	this moment	ST	NONACTOR	?	?
+15	685	a wild wind	HA	NONACTOR	?	?
+15	687	the princess	FE	ACTOR	Prize	Prize
+15	689	she	FE	ACTOR	Prize	Prize
+15	690	she	FE	ACTOR	Prize	Prize
+15	691	Dawn	MA	ACTOR	Hero	Hero
+15	693	his hand	PA	NONACTOR	Hero	Hero
+15	695	him	MA	ACTOR	Hero	Hero
+15	696	the adjoining room	ST	NONACTOR	?	?
+15	698	A three-headed dragon	MB	ACTOR	Other	Other
+15	700	the damp earth	HA	NONACTOR	?	?
+15	702	a youth	MB	ACTOR	Other	Other
+15	704	The dragon	MB	ACTOR	Other	Other
+15	707	food	OB	NONACTOR	?	?
+15	708	drink	OB	NONACTOR	?	?
+15	709	the princess	FE	ACTOR	Prize	Prize
+15	711	him	MB	ACTOR	Other	Other
+15	713	a variety	OB	NONACTOR	?	?
+15	716	meats	OB	NONACTOR	?	?
+15	717	drink	OB	NONACTOR	?	?
+15	718	a sleeping potion	OB	NONACTOR	?	?
+15	720	the wine	OB	NONACTOR	?	?
+15	722	The dragon	MB	ACTOR	Other	Other
+15	724	his fill	PA	NONACTOR	Other	Other
+15	726	drowsiness	HA	NONACTOR	?	?
+15	728	he	MB	ACTOR	Other	Other
+15	729	the princess pick	FE	ACTOR	Prize	Prize
+15	732	the lice	AN	NONACTOR	?	?
+15	734	his hair	PA	NONACTOR	Other	Other
+15	736	her knees	PA	NONACTOR	Prize	Prize
+15	738	sound	?	NONACTOR	?	?
+15	739	The princess	FE	ACTOR	Prize	Prize
+15	741	Dawn	MA	ACTOR	Hero	Hero
+15	743	He	MA	ACTOR	Hero	Hero
+15	744	his sword	OB	NONACTOR	?	?
+15	747	all	PA	NONACTOR	Other	Other
+15	748	the dragon 's three heads	PA	NONACTOR	Other	Other
+15	752	he	MA	ACTOR	Hero	Hero
+15	753	a bonfire	OB	NONACTOR	?	?
+15	755	the foul dragon	MB	ACTOR	Other	Other
+15	757	his ashes	OB	NONACTOR	?	?
+15	759	the open field	SS	NONACTOR	?	?
+15	761	Dawn	MA	ACTOR	Hero	Hero
+15	763	He	MA	ACTOR	Hero	Hero
+15	764	a silver castle	SS	NONACTOR	?	?
+15	767	that castle	SS	NONACTOR	?	?
+15	769	the second princess	FE	ACTOR	Other	FamilyPrize
+15	771	Dawn	MA	ACTOR	Hero	Hero
+15	773	a six-headed dragon	MB	ACTOR	Villain	Villain
+15	776	a long time	ST	NONACTOR	?	?
+15	778	a short time	ST	NONACTOR	?	?
+15	780	he	MA	ACTOR	Hero	Hero
+15	781	a golden castle	SS	NONACTOR	?	?
+15	783	that castle	SS	NONACTOR	?	?
+15	785	the eldest princess	FE	ACTOR	Other	FamilyPrize
+15	787	Dawn	MA	ACTOR	Hero	Hero
+15	789	a twelve-headed dragon	MB	ACTOR	Villain	Villain
+15	791	princess	FE	ACTOR	Other	FamilyPrize
+15	793	captivity	HA	NONACTOR	?	?
+15	795	The princess	FE	ACTOR	Other	FamilyPrize
+15	797	home	SS	NONACTOR	?	?
+15	799	the wide courtyard	SS	NONACTOR	?	?
+15	801	a red handkerchief	OB	NONACTOR	?	?
+15	803	the golden kingdom	SS	NONACTOR	?	?
+15	805	an egg	OB	NONACTOR	?	?
+15	807	she	FE	ACTOR	Other	FamilyPrize
+15	808	the egg	OB	NONACTOR	?	?
+15	810	it	OB	NONACTOR	?	?
+15	811	her pocket	OB	NONACTOR	?	?
+15	813	Dawn	MA	ACTOR	Hero	Hero
+15	815	her sisters	GR	ACTOR	Other	FamilyPrize
+15	817	These princesses	GR	ACTOR	Other	FamilyPrize
+15	819	the same thing	HA	NONACTOR	?	?
+15	821	they	GR	ACTOR	Other	FamilyPrize
+15	822	their kingdoms	OB	NONACTOR	?	?
+15	824	eggs	OB	NONACTOR	?	?
+15	826	them	GR	ACTOR	Other	FamilyPrize
+15	828	all	?	NONACTOR	?	?
+15	829	them	GR	ACTOR	Other	FamilyPrize
+15	830	the hole	?	NONACTOR	?	?
+15	833	Evening	MA	ACTOR	Other	Helper,FamilyHero
+15	834	Midnight	MA	ACTOR	Other	Helper,FamilyHero
+15	836	their brother	MA	ACTOR	Hero	Hero
+15	838	the three princesses	GR	ACTOR	Other	FamilyPrize
+15	840	the bright world	SC	NONACTOR	?	?
+15	842	They	GR	ACTOR	Other	FamilyPrize
+15	843	their own land	SS	NONACTOR	?	?
+15	845	the princesses	GR	ACTOR	Other	FamilyPrize
+15	847	their eggs	OB	NONACTOR	?	?
+15	849	the open field	SS	NONACTOR	?	?
+15	851	straightway three kingdoms	SS	NONACTOR	?	?
+15	857	a copper	SS	NONACTOR	?	?
+15	859	a silver	SS	NONACTOR	?	?
+15	861	a golden one	SS	NONACTOR	?	?
+15	863	The king	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	865	any tongue	?	NONACTOR	?	?
+15	867	he	MA	ACTOR	Other	Dispatcher,FamilyPrize
+15	869	Dawn	MA	ACTOR	Hero	Hero
+15	871	Evening	MA	ACTOR	Other	Helper,FamilyHero
+15	874	Midnight	MA	ACTOR	Other	Helper,FamilyHero
+15	876	his daughters	GR	ACTOR	Other	FamilyPrize
+15	878	his death	HA	NONACTOR	?	?
+15	880	Dawn	MA	ACTOR	Hero	Hero
+15	882	his heir	MA	ACTOR	Hero	Hero

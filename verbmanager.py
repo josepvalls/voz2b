@@ -54,10 +54,10 @@ class VerbMapper(object):
     _verb_mapping_levin = None
     _verb_mapping_100 = None
     _verb_mapping_50 = None
-    def __init__(self):
+    def __init__(self,mode=None):
         self._verb_mapping_cache = {}
-        self._default_mode = VerbMapper.MODE_NO_MAP
-    def map(self,verb,mode=None):
+        self._default_mode = mode or VerbMapper.MODE_NO_MAP
+    def map(self,verb,mode=None,fallback=True):
         if not mode:
             mode = self._default_mode
 
@@ -73,15 +73,28 @@ class VerbMapper(object):
                     self._verb_mapping_cache[mode][verb] = VerbMapper.verb_mapping_wordnet(verb)
                 elif mode==VerbMapper.MODE_LEVIN_TEXT:
                     # if not found in cache, not in file
-                    return verb
-            return self._verb_mapping_cache[mode][verb] or verb
-        pass
+                    pass
+            verb_return = self._verb_mapping_cache[mode].get(verb,None)
+            if verb_return:
+                return verb_return
+            else:
+                return verb if fallback else None
 
     def _load_cache(self,mode):
         if mode == VerbMapper.MODE_LEVIN_TEXT:
             self._verb_mapping_cache[mode] = self._verb_mapping_levin_load()
         else:
-            self._verb_mapping_cache[mode]={}
+            try:
+                0/0
+                cache = vozbase.unserialize_file('/Users/josepvalls/temp/voz2/VerbMapperCache-%s.json' % mode)
+            except:
+                cache = {}
+            self._verb_mapping_cache[mode]=cache
+    def save_cache(self,mode=None):
+        if not mode:
+            mode = self._default_mode
+        vozbase.serialize_to_file(self._verb_mapping_cache[mode],'/Users/josepvalls/temp/voz2/VerbMapperCache-%s.json' % mode)
+
     @classmethod
     def verb_mapping_framenet(cls,verb):
         if not cls._fn:
@@ -90,10 +103,10 @@ class VerbMapper(object):
                 cls._fn = fn
             except:
                 print "Cannot load NLTK.CORPUS"
-            try:
-                return [f for f in cls._fn.frames() if any(luName==verb+'.v' for luName in f.lexUnit)][0].name
-            except:
-                return verb
+        try:
+            return [f for f in cls._fn.frames() if any(luName==verb+'.v' for luName in f.lexUnit)][0].name
+        except:
+            return None
     @classmethod
     def verb_mapping_wordnet(cls,verb):
         if not cls._wn:

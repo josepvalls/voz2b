@@ -1,0 +1,270 @@
+In a certain kingdom in a certain land there lived one Bukhtan Bukhtanovich, who had a stove built on pillars in the middle of a field.
+He lay on the stove in cockroach milk up to his elbows.
+The fox took it home, stuck a kopek behind the hoop of the measure, and brought it back to the tsar.
+The Fox took it home, stuck what remained of his coins behind the hoop, and brought it back to the tsar.
+The fox ran home.
+He dressed and, accompanied by the fox, went to the tsar.
+They walked along the market place and had to cross on a board over a muddy ditch.
+The fox gave Bukhtan a push and he fell into the mud.
+The fox ran to him.
+Saying this, the fox smeared him with mud all over.
+The fox took the clothes and came to Bukhtan Bukhtanovich.
+They came to the tsar, and at the tsar's palace the table was already set.
+Bukhtan did not look at anything except himself: he had never seen such clothes in his life.
+Bukhtan Bukhtanovich stared at a chair - it was a gilded one.
+The tsar flung the chair out of the room.
+They began to talk about the purpose of their visit, the match.
+Three ships were loaded for Bukhtan Bukhtanovich and they traveled homeward.
+Bukhtan Bukhtanovich and his wife were on one of the ships, and the fox ran along the shore.
+Bukhtan Bukhtanovich sailed on, and the fox ran ahead of him on the shore.
+He came to a hill and climbed it.
+On the hill stood a huge stone house, and around it was an enormous kingdom.
+The fox went into the house and at first saw no one; then he ran into a chamber, and there in the best bed lay Dragon, Son of the Dragon, stretching himself.
+Raven, Son of the Raven, was perched on the chimney, and Cat, Son of the Cat, sat on a throne.
+And the fox sealed him up in the barrel.
+And the fox sealed him up in the mortar; then he wrapped Dragon, Son of the Dragon, in straw and took him out into the street.
+The ships arrived.
+The fox ordered all the beasts to be thrown into the water; the Cossacks threw them in at once.
+Bukhtan Bukhtanovich moved all his possessions into that house; there he lived happily and prospered, ruled and governed, and there he ended his life.
+
+Sentence index	Text offset
+0	0
+1	135
+2	190
+3	290
+4	394
+5	411
+6	468
+7	550
+8	603
+9	622
+10	673
+11	731
+12	805
+13	897
+14	958
+15	999
+16	1062
+17	1138
+18	1230
+19	1304
+20	1337
+21	1413
+22	1570
+23	1664
+24	1704
+25	1830
+26	1848
+27	1943
+Coreference groups:	74
+[ cockroach milk, his, The fox, his, The fox, He, the fox, The fox, he, The fox, him, the fox, him, The fox, the fox, the fox, him, The fox, he, Son of the Dragon, himself, Son of the Raven, Son of the Cat, the fox, him, the fox, him, he, Son of the Dragon, him, The fox, his, he, he, his ]:35
+	cockroach milk	cockroach milk	1:23-32;1:33-37;
+	his	his	1:44-47;
+	The fox	The fox	2:0-3;2:4-7;
+	his	his	3:45-48;
+	The fox	The fox	4:0-3;4:4-7;
+	He	He	5:0-2;
+	the fox	the fox	5:31-34;5:35-38;
+	The fox	The fox	7:0-3;7:4-7;
+	he	he	7:32-34;
+	The fox	The fox	8:0-3;8:4-7;
+	him	him	8:15-18;
+	the fox	the fox	9:13-16;9:17-20;
+	him	him	9:29-32;
+	The fox	The fox	10:0-3;10:4-7;
+	the fox	the fox	17:64-67;17:68-71;
+	the fox	the fox	18:36-39;18:40-43;
+	him	him	18:57-60;
+	The fox	The fox	21:0-3;21:4-7;
+	he	he	21:58-60;
+	Son of the Dragon	Son	21:119-122;
+	himself	himself	21:149-156;
+	Son of the Raven	Son	22:7-10;
+	Son of the Cat	Son	22:62-65;
+	the fox	the fox	23:4-7;23:8-11;
+	him	him	23:19-22;
+	the fox	the fox	24:4-7;24:8-11;
+	him	him	24:19-22;
+	he	he	24:46-48;
+	Son of the Dragon	Son	24:65-68;
+	him	him	24:102-105;
+	The fox	The fox	26:0-3;26:4-7;
+	his	his	27:31-34;
+	he	he	27:70-72;
+	he	he	27:132-134;
+	his	his	27:141-144;
+[ his life ]:1
+	his life	his life	27:141-144;27:145-149;
+[ that house ]:1
+	that house	that house	27:52-56;27:57-62;
+[ all his possessions ]:1
+	all his possessions	all his possessions	27:27-30;27:31-34;27:35-46;
+[ one Bukhtan Bukhtanovich, who had a stove built on pillars in the middle of a field, Bukhtan Bukhtanovich, Bukhtan Bukhtanovich, it, Bukhtan Bukhtanovich, Bukhtan Bukhtanovich, Bukhtan Bukhtanovich, it, it, Bukhtan Bukhtanovich ]:10
+	one Bukhtan Bukhtanovich, who had a stove built on pillars in the middle of a field	one Bukhtan Bukhtanovich	0:51-54;0:55-62;0:63-75;
+	Bukhtan Bukhtanovich	Bukhtan Bukhtanovich	10:37-44;10:45-57;
+	Bukhtan Bukhtanovich	Bukhtan Bukhtanovich	13:0-7;13:8-20;
+	it	it	13:41-43;
+	Bukhtan Bukhtanovich	Bukhtan Bukhtanovich	16:28-35;16:36-48;
+	Bukhtan Bukhtanovich	Bukhtan Bukhtanovich	17:0-7;17:8-20;
+	Bukhtan Bukhtanovich	Bukhtan Bukhtanovich	18:0-7;18:8-20;
+	it	it	19:30-32;
+	it	it	20:49-51;
+	Bukhtan Bukhtanovich	Bukhtan Bukhtanovich	27:0-7;27:8-20;
+[ the Cossacks, them ]:2
+	the Cossacks	the Cossacks	26:60-63;26:64-72;
+	them	them	26:79-83;
+[ the water ]:1
+	the water	the water	26:49-52;26:53-58;
+[ all the beasts ]:1
+	all the beasts	all the beasts	26:16-19;26:20-23;26:24-30;
+[ The ships ]:1
+	The ships	The ships	25:0-3;25:4-9;
+[ the street ]:1
+	the street	the street	24:115-118;24:119-125;
+[ straw ]:1
+	straw	straw	24:87-92;
+[ Dragon, Son of the Dragon, the Dragon ]:2
+	Dragon, Son of the Dragon	Dragon	21:111-117;
+	the Dragon	the Dragon	24:72-75;24:76-82;
+[ the Dragon, Dragon, Son of the Dragon ]:2
+	the Dragon	the Dragon	21:126-129;21:130-136;
+	Dragon, Son of the Dragon	Dragon	24:57-63;
+[ the mortar ]:1
+	the mortar	the mortar	24:29-32;24:33-39;
+[ the barrel ]:1
+	the barrel	the barrel	23:29-32;23:33-39;
+[ a throne ]:1
+	a throne	a throne	22:85-86;22:87-93;
+[ the Cat ]:1
+	the Cat	the Cat	22:69-72;22:73-76;
+[ Cat, Son of the Cat ]:1
+	Cat, Son of the Cat	Cat	22:57-60;
+[ the chimney ]:1
+	the chimney	the chimney	22:40-43;22:44-51;
+[ the Raven ]:1
+	the Raven	the Raven	22:14-17;22:18-23;
+[ Raven, Son of the Raven ]:1
+	Raven, Son of the Raven	Raven	22:0-5;
+[ the best bed ]:1
+	the best bed	the best bed	21:94-97;21:98-102;21:103-106;
+[ a chamber ]:1
+	a chamber	a chamber	21:70-71;21:72-79;
+[ no one ]:1
+	no one	no one	21:45-47;21:48-51;
+[ the house ]:1
+	the house	the house	21:18-21;21:22-27;
+[ an enormous kingdom ]:1
+	an enormous kingdom	an enormous kingdom	20:56-58;20:59-67;20:68-75;
+[ a huge stone house ]:1
+	a huge stone house	a huge stone house	20:18-19;20:20-24;20:25-30;20:31-36;
+[ a hill, the hill ]:2
+	a hill	a hill	19:11-12;19:13-17;
+	the hill	the hill	20:3-6;20:7-11;
+[ the tsar, the tsar's, The tsar, They, their, his, He ]:7
+	the tsar	the tsar	11:13-16;11:17-21;
+	the tsar's	the tsar 's	11:30-33;11:34-38;11:38-40;
+	The tsar	The tsar	14:0-3;14:4-8;
+	They	They	15:0-4;
+	their	their	15:40-45;
+	his	his	17:25-28;
+	He	He	19:0-2;
+[ the shore ]:1
+	the shore	the shore	18:64-67;18:68-73;
+[ the shore ]:1
+	the shore	the shore	17:82-85;17:86-91;
+[ the ships ]:1
+	the ships	the ships	17:49-52;17:53-58;
+[ one of the ships ]:1
+	one of the ships	one	17:42-45;
+[ his wife ]:1
+	his wife	his wife	17:25-28;17:29-33;
+[ Bukhtan Bukhtanovich and his wife ]:1
+	Bukhtan Bukhtanovich and his wife	Bukhtan Bukhtanovich and his wife	17:0-7;17:8-20;17:21-24;17:25-28;17:29-33;
+[ Three ships, they ]:2
+	Three ships	Three ships	16:0-5;16:6-11;
+	they	they	16:53-57;
+[ the match ]:1
+	the match	the match	15:53-56;15:57-62;
+[ their visit, the match ]:1
+	their visit, the match	their visit	15:40-45;15:46-51;
+[ the purpose of their visit, the match ]:1
+	the purpose of their visit, the match	the purpose	15:25-28;15:29-36;
+[ the room ]:1
+	the room	the room	14:32-35;14:36-40;
+[ the chair ]:1
+	the chair	the chair	14:15-18;14:19-24;
+[ a gilded one ]:1
+	a gilded one	a gilded one	13:48-49;13:50-56;13:57-60;
+[ a chair ]:1
+	a chair	a chair	13:31-32;13:33-38;
+[ Bukhtan, Bukhtan, himself, he, his ]:5
+	Bukhtan	Bukhtan	7:13-20;
+	Bukhtan	Bukhtan	12:0-7;
+	himself	himself	12:40-47;
+	he	he	12:49-51;
+	his	his	12:83-86;
+[ his life ]:1
+	his life	his life	12:83-86;12:87-91;
+[ such clothes ]:1
+	such clothes	such clothes	12:67-71;12:72-79;
+[ anything except himself ]:1
+	anything except himself	anything	12:24-32;
+[ the table ]:1
+	the table	the table	11:48-51;11:52-57;
+[ the tsar's palace ]:1
+	the tsar's palace	the tsar 's palace	11:30-33;11:34-38;11:38-40;11:41-47;
+[ the clothes, They ]:2
+	the clothes	the clothes	10:13-16;10:17-24;
+	They	They	11:0-4;
+[ all over ]:1
+	all over	all over	9:42-45;9:46-50;
+[ mud ]:1
+	mud	mud	9:38-41;
+[ the mud ]:1
+	the mud	the mud	7:45-48;7:49-52;
+[ a push ]:1
+	a push	a push	7:21-22;7:23-27;
+[ a muddy ditch ]:1
+	a muddy ditch	a muddy ditch	6:68-69;6:70-75;6:76-81;
+[ a board ]:1
+	a board	a board	6:55-56;6:57-62;
+[ the market place ]:1
+	the market place	the market place	6:18-21;6:22-28;6:29-34;
+[ They ]:1
+	They	They	6:0-4;
+[ the tsar ]:1
+	the tsar	the tsar	5:48-51;5:52-56;
+[ the tsar ]:1
+	the tsar	the tsar	3:95-98;3:99-103;
+[ The Fox, it, it ]:3
+	The Fox	The Fox	3:0-3;3:4-7;
+	it	it	3:13-15;
+	it	it	3:84-86;
+[ the hoop of the measure, it, the hoop ]:3
+	the hoop of the measure	the hoop	2:43-46;2:47-51;
+	it	it	2:80-82;
+	the hoop	the hoop	3:62-65;3:66-70;
+[ his coins behind the hoop ]:1
+	his coins behind the hoop	his coins	3:45-48;3:49-54;
+[ the tsar ]:1
+	the tsar	the tsar	2:91-94;2:95-99;
+[ the measure ]:1
+	the measure	the measure	2:55-58;2:59-66;
+[ a kopek behind the hoop of the measure ]:1
+	a kopek behind the hoop of the measure	a kopek	2:28-29;2:30-35;
+[ his elbows ]:1
+	his elbows	his elbows	1:44-47;1:48-54;
+[ the stove in cockroach milk ]:1
+	the stove in cockroach milk	the stove	1:10-13;1:14-19;
+[ a field ]:1
+	a field	a field	0:127-128;0:129-134;
+[ the middle of a field ]:1
+	the middle of a field	the middle	0:113-116;0:117-123;
+[ pillars ]:1
+	pillars	pillars	0:102-109;
+[ a stove built on pillars in the middle of a field ]:1
+	a stove built on pillars in the middle of a field	a stove	0:85-86;0:87-92;
+[ a certain land ]:1
+	a certain land	a certain land	0:24-25;0:26-33;0:34-38;
+[ a certain kingdom in a certain land ]:1
+	a certain kingdom in a certain land	a certain kingdom	0:3-4;0:5-12;0:13-20;

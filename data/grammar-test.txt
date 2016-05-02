@@ -1,0 +1,18 @@
+alpha A B C depart H I K W return
+alpha gamma beta delta A C depart D E F G K return Pr D E F Rs
+alpha F A C depart T G W return I W
+alpha D E F A A C B depart I H H I K K return W
+alpha A B C depart H I K return
+alpha A depart H I K return return
+depart D E F G T A C depart F H I K W
+alpha A B C depart H I K return W
+alpha gamma beta zeta eta theta A depart D E return Pr Rs Pr Rs
+alpha A B F C depart G K return
+alpha A C F H I K return Pr Rs Pr Rs
+A B C depart H I return I K W
+alpha beta eta A D E F Pr Rs depart D E return F Pr Rs o Q W
+alpha A o F K T Pr Rs Q Ex U W
+alpha gamma delta beta A B C depart D E G F I K return W
+alpha theta theta A depart D E F return K
+alpha eta beta A depart G H I W return Q
+alpha A B alpha A K alpha depart D E D E D E E F K L Q W

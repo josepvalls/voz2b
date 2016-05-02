@@ -1,0 +1,32 @@
+T1	Mention 0 4	John
+A1	EntityType T1 PERSON
+A2	NumberType T1 SINGULAR
+A3	GenderType T1 NEUTRAL
+T2	Mention 11 15	Mary
+A4	EntityType T2 PERSON
+A5	NumberType T2 SINGULAR
+A6	GenderType T2 FEMALE
+T3	Mention 23 26	she
+A7	EntityType T3 PRONOUN
+A8	NumberType T3 SINGULAR
+A9	GenderType T3 FEMALE
+A10	PronounType T3 SUBJECT
+T4	Mention 36 38	He
+A11	EntityType T4 PRONOUN
+A12	NumberType T4 SINGULAR
+A13	GenderType T4 MALE
+A14	PronounType T4 SUBJECT
+T5	Mention 56 59	she
+A15	EntityType T5 PRONOUN
+A16	NumberType T5 SINGULAR
+A17	GenderType T5 FEMALE
+A18	PronounType T5 SUBJECT
+T6	Mention 66 69	him
+A19	EntityType T6 PRONOUN
+A20	NumberType T6 SINGULAR
+A21	GenderType T6 MALE
+A22	PronounType T6 OBJECT
+R1	Coreference Arg1:T2 Arg2:T3
+R2	Coreference Arg1:T1 Arg2:T4
+R3	Coreference Arg1:T3 Arg2:T5
+R4	Coreference Arg1:T1 Arg2:T6

@@ -70,7 +70,7 @@ Function 10: protagonist(s) agrees to or decides on counteraction = beginning co
 	C - protagonist(s) as seeker consents to counteraction
 Function 11: protagonist(s) leaves home = departure - depart
 	depart - departure, dispatch of protagonist(s) from home
-Function 12: protagonist(s) tested, interogates, attacked, etc. which prepares way for receiving magical agent or helper = first function of donor - D
+Function 12: protagonist(s) tested, interogates, attacked, etc. which prepares way for receiving magical agent or helper = first function of donor - D/d
 	D1 - donor tests protagonist(s)
 	D2 - donor greets and interrogates protagonist(s)
 	D3 - request of favor after death
@@ -101,7 +101,7 @@ Function 13: protagonist(s) reacts to actions of future donor = protagonist's re
 	E9 - protagonist(s) vanquishes hostile donor (or not)
 	E_9 - protagonist(s) vanquishes hostile donor (or not)
 	E10 - deception in an exchange, protagonist(s) employs magical agent on donor
-Function 14: protagonist(s) acquires use of magical agent = acquisition of magical agent - F
+Function 14: protagonist(s) acquires use of magical agent = acquisition of magical agent - F/f
 	F1 - agent is directly transferred
 	f1 - gift is of a material nature
 	F- - agent is not transferred
@@ -239,7 +239,7 @@ Function 29: protagonist(s) given new appearance = transfiguration - T
 Function 30: false protagonist(s) or antagonist(s) punished = punishment - U
 	U - punishment of false protagonist(s) or antagonist(s)
 	U- - false protagonist(s) or antagonist(s) pardoned
-Function 31: protagonist(s) marries and ascends throne = wedding - W
+Function 31: protagonist(s) marries and ascends throne = wedding - W/w
 	W#* - protagonist(s) weds and ascends throne
 	W# - protagonist(s) weds
 	W* - protagonist(s) ascends throne

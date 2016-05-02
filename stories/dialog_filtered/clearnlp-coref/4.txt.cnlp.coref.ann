@@ -1,0 +1,142 @@
+T1	Mention 13 20	kingdom
+A1	EntityType T1 COMMON
+A2	NumberType T1 SINGULAR
+A3	GenderType T1 UNKNOWN
+T2	Mention 34 38	land
+A4	EntityType T2 COMMON
+A5	NumberType T2 SINGULAR
+A6	GenderType T2 UNKNOWN
+T3	Mention 53 57	king
+A7	EntityType T3 COMMON
+A8	NumberType T3 SINGULAR
+A9	GenderType T3 MALE
+T4	Mention 58 61	who
+A10	EntityType T4 PRONOUN
+A11	NumberType T4 UNKNOWN
+A12	GenderType T4 NEUTRAL
+A13	PronounType T4 RELATIVE
+T5	Mention 72 76	sons
+A14	EntityType T5 COMMON
+A15	NumberType T5 PLURAL
+A16	GenderType T5 MALE
+T6	Mention 83 89	father
+A17	EntityType T6 COMMON
+A18	NumberType T6 SINGULAR
+A19	GenderType T6 MALE
+T7	Mention 95 99	them
+A20	EntityType T7 PRONOUN
+A21	NumberType T7 PLURAL
+A22	GenderType T7 NEUTRAL
+A23	PronounType T7 OBJECT
+T8	Mention 100 103	his
+A24	EntityType T8 PRONOUN
+A25	NumberType T8 SINGULAR
+A26	GenderType T8 MALE
+A27	PronounType T8 POSSESSIVE
+T9	Mention 104 112	blessing
+A28	EntityType T9 COMMON
+A29	NumberType T9 SINGULAR
+A30	GenderType T9 UNKNOWN
+T10	Mention 117 121	they
+A31	EntityType T10 PRONOUN
+A32	NumberType T10 PLURAL
+A33	GenderType T10 NEUTRAL
+A34	PronounType T10 SUBJECT
+T11	Mention 143 153	directions
+A35	EntityType T11 COMMON
+A36	NumberType T11 PLURAL
+A37	GenderType T11 UNKNOWN
+T12	Mention 169 172	son
+A38	EntityType T12 COMMON
+A39	NumberType T12 SINGULAR
+A40	GenderType T12 MALE
+T13	Mention 196 199	his
+A41	EntityType T13 PRONOUN
+A42	NumberType T13 SINGULAR
+A43	GenderType T13 MALE
+A44	PronounType T13 POSSESSIVE
+T14	Mention 200 203	way
+A45	EntityType T14 COMMON
+A46	NumberType T14 SINGULAR
+A47	GenderType T14 UNKNOWN
+T15	Mention 206 208	he
+A48	EntityType T15 PRONOUN
+A49	NumberType T15 SINGULAR
+A50	GenderType T15 MALE
+A51	PronounType T15 SUBJECT
+T16	Mention 219 227	clearing
+A52	EntityType T16 COMMON
+A53	NumberType T16 SINGULAR
+A54	GenderType T16 UNKNOWN
+T17	Mention 251 256	horse
+A55	EntityType T17 COMMON
+A56	NumberType T17 SINGULAR
+A57	GenderType T17 UNKNOWN
+T18	Mention 266 271	which
+A58	EntityType T18 PRONOUN
+A59	NumberType T18 UNKNOWN
+A60	GenderType T18 NEUTRAL
+A61	PronounType T18 RELATIVE
+T19	Mention 286 292	beasts
+A62	EntityType T19 COMMON
+A63	NumberType T19 PLURAL
+A64	GenderType T19 UNKNOWN
+T20	Mention 301 306	kinds
+A65	EntityType T20 COMMON
+A66	NumberType T20 PLURAL
+A67	GenderType T20 UNKNOWN
+T21	Mention 309 314	birds
+A68	EntityType T21 COMMON
+A69	NumberType T21 PLURAL
+A70	GenderType T21 UNKNOWN
+T22	Mention 321 329	reptiles
+A71	EntityType T22 COMMON
+A72	NumberType T22 PLURAL
+A73	GenderType T22 UNKNOWN
+R1	Coreference Arg1:T5 Arg2:T7
+R2	Coreference Arg1:T6 Arg2:T8
+R3	Coreference Arg1:T5 Arg2:T10
+R4	Coreference Arg1:T12 Arg2:T13
+R5	Coreference Arg1:T12 Arg2:T15
+R6	Coreference Arg1:T24 Arg2:T25
+R7	Coreference Arg1:T24 Arg2:T28
+R8	Coreference Arg1:T38 Arg2:T47
+R9	Coreference Arg1:T44 Arg2:T49
+R10	Coreference Arg1:T50 Arg2:T51
+R11	Coreference Arg1:T37 Arg2:T59
+R12	Coreference Arg1:T60 Arg2:T61
+R13	Coreference Arg1:T24 Arg2:T64
+R14	Coreference Arg1:T64 Arg2:T65
+R15	Coreference Arg1:T64 Arg2:T66
+R16	Coreference Arg1:T66 Arg2:T68
+R17	Coreference Arg1:T38 Arg2:T70
+R18	Coreference Arg1:T70 Arg2:T71
+R19	Coreference Arg1:T40 Arg2:T80
+R20	Coreference Arg1:T86 Arg2:T87
+R21	Coreference Arg1:T72 Arg2:T88
+R22	Coreference Arg1:T73 Arg2:T89
+R23	Coreference Arg1:T74 Arg2:T90
+R24	Coreference Arg1:T76 Arg2:T95
+R25	Coreference Arg1:T77 Arg2:T96
+R26	Coreference Arg1:T86 Arg2:T98
+R27	Coreference Arg1:T80 Arg2:T99
+R28	Coreference Arg1:T83 Arg2:T100
+R29	Coreference Arg1:T87 Arg2:T101
+R30	Coreference Arg1:T70 Arg2:T104
+R31	Coreference Arg1:T62 Arg2:T106
+R32	Coreference Arg1:T69 Arg2:T109
+R33	Coreference Arg1:T106 Arg2:T110
+R34	Coreference Arg1:T104 Arg2:T111
+R35	Coreference Arg1:T111 Arg2:T114
+R36	Coreference Arg1:T88 Arg2:T115
+R37	Coreference Arg1:T102 Arg2:T116
+R38	Coreference Arg1:T111 Arg2:T120
+R39	Coreference Arg1:T114 Arg2:T122
+R40	Coreference Arg1:T122 Arg2:T125
+R41	Coreference Arg1:T124 Arg2:T127
+R42	Coreference Arg1:T120 Arg2:T128
+R43	Coreference Arg1:T120 Arg2:T136
+R44	Coreference Arg1:T137 Arg2:T138
+R45	Coreference Arg1:T138 Arg2:T139
+R46	Coreference Arg1:T110 Arg2:T140
+R47	Coreference Arg1:T18 Arg2:T141

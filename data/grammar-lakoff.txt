@@ -1,0 +1,55 @@
+FOLKTALE -> CS RS
+# this one I added myself
+CS -> PREPARATION C L
+CS -> HS C L
+CS -> C L
+L -> 'B' 'C' 'depart'
+L -> 'C' 'depart'
+L -> 'B' 'depart'
+L -> 'B' 'C'
+L -> 'B'
+L -> 'C'
+L -> 'depart'
+L ->
+RS -> DS EP R K Rew
+RS -> EP R 'K' Rew
+RS -> DS R 'K' Rew
+RS -> R 'K' Rew
+DS -> 'D' 'E' 'F' 'G'
+R -> 'H' 'I'
+R -> 'M' 'N'
+HS -> Int Vio
+# These all seem to be forms of A
+#Vio -> WVio
+#Vio -> DEC SUB
+#C -> C_V
+#C -> C_L
+#C_V -> C_V1
+#C_V -> C_Vi ...
+#C_L -> C_L1
+#C_L -> C_Li ...
+#C_V -> 'A'
+#C_L -> 'a'
+C -> 'A'
+Int -> 'gamma'
+Vio -> 'delta'
+Rew -> 'W'
+# this I added myself
+PREPARATION -> 'alpha' PREPARATION2
+PREPARATION -> PREPARATION2
+PREPARATION2 -> 'beta' PREPARATION3
+PREPARATION2 -> PREPARATION3
+PREPARATION3 -> 'gamma' PREPARATION4
+PREPARATION3 -> PREPARATION4
+PREPARATION4 -> 'delta' PREPARATION5
+PREPARATION4 -> PREPARATION5
+PREPARATION5 -> 'epsilon' PREPARATION6
+PREPARATION5 -> PREPARATION6
+PREPARATION6 -> 'zeta' PREPARATION7
+PREPARATION6 -> PREPARATION7
+PREPARATION7 -> 'eta' PREPARATION8
+PREPARATION7 -> PREPARATION8
+PREPARATION8 -> 'theta' PREPARATION9
+PREPARATION8 -> PREPARATION9
+PREPARATION9 -> 'lambda'
+PREPARATION9 -> 

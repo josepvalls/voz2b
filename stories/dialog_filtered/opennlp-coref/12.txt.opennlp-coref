@@ -1,0 +1,290 @@
+In old times there was a village where a serpent frequently flew.
+He had devoured all but one of the villagers.
+At that time a gypsy came to the village.
+He came at night and no matter where he looked, he couldn't find anyone!
+He finally entered the last hut where the last man was sitting and crying.
+So, they spent the night.
+The next morning, a strong windstorm suddenly arose.
+The hut shook when the serpent landed.
+The serpent grabbed a millstone.
+The serpent grabbed the stone with the palm of his hand and squeezed it so tightly that it turned into fine sand - a cloud of dust arose from his fist.
+There was a chunk of cheese curd on the table, the gypsy grabbed it and really gave it a squeeze.
+Whey dripped out onto the ground.
+The serpent whistled so loudly that leaves fell from all the trees.
+The serpent believed it and covered his eyes with a scarf.
+There was nothing to be done - the gypsy went to the meadow.
+He saw a large herd of oxen grazing.
+He started to tie them together by their tails.
+The serpent waited and waited and couldn't wait any longer.
+He ran out to the meadow to see what was going on.
+Then the serpent grabbed the biggest oxen by the tale, ripped off the hide, shouldered the meat and dragged it home.
+They returned to the hut, and set up two cauldrons for the beef, but there was no water.
+The gypsy grabbed the hide and dragged it to the well.
+Completely empty he could barely drag it, to say nothing of it when filled with water.
+He got to the well and started to dig a deep trench around it.
+The serpent again waited and waited and couldn't wait any longer.
+He ran out to see for himself what was taking so long.
+The serpent dropped the hide into the well, filled it with water, dragged it out and carried it home.
+The gypsy went into the forest and pulled out bark fiber to twist into a rope.
+He braided an extremely long rope and set to wrapping up the oak trees.
+The serpent waited and waited and couldn't wait any longer.
+He ran out to see for himself what was taking so long.
+The gypsy pretended like he was extremely angry.
+Pouting, he sat silently.
+The serpent cooked the beef, and called the gypsy to lunch.
+Right away, the serpent got his wagon, harnessed three of the best stallions, and they left together for the gypsy camp.
+They were just approaching, when the little gypsy children saw their father.
+Barely dressed, they ran to meet him.
+The serpent jumped out of the wagon and ran away.
+The gypsy sold the trio of horses with the wagon and began to live the good life.
+
+Sentence index	Text offset
+0	0
+1	65
+2	110
+3	151
+4	223
+5	297
+6	322
+7	374
+8	412
+9	444
+10	595
+11	692
+12	725
+13	792
+14	850
+15	910
+16	946
+17	993
+18	1052
+19	1102
+20	1218
+21	1306
+22	1360
+23	1446
+24	1508
+25	1573
+26	1627
+27	1728
+28	1806
+29	1877
+30	1936
+31	1990
+32	2038
+33	2063
+34	2122
+35	2242
+36	2318
+37	2355
+38	2404
+Coreference groups:	74
+[ the good life ]:1
+	the good life	the good life	38:67-70;38:71-75;38:76-80;
+[ the wagon ]:1
+	the wagon	the wagon	38:39-42;38:43-48;
+[ horses ]:1
+	horses	horses	38:27-33;
+[ the trio of horses ]:1
+	the trio of horses	the trio	38:15-18;38:19-23;
+[ the gypsy, the gypsy, He, He, The gypsy, he, He, The gypsy, He, The gypsy, he, he, the gypsy, The gypsy ]:14
+	the gypsy	the gypsy	10:47-50;10:51-56;
+	the gypsy	the gypsy	14:31-34;14:35-40;
+	He	He	15:0-2;
+	He	He	16:0-2;
+	The gypsy	The gypsy	21:0-3;21:4-9;
+	he	he	22:17-19;
+	He	He	23:0-2;
+	The gypsy	The gypsy	27:0-3;27:4-9;
+	He	He	28:0-2;
+	The gypsy	The gypsy	31:0-3;31:4-9;
+	he	he	31:25-27;
+	he	he	32:9-11;
+	the gypsy	the gypsy	33:40-43;33:44-49;
+	The gypsy	The gypsy	38:0-3;38:4-9;
+[ the wagon ]:1
+	the wagon	the wagon	37:26-29;37:30-35;
+[ a serpent, He, He, he, he, He, the serpent, The serpent, The serpent, his, his, The serpent, The serpent, his, The serpent, He, the serpent, The serpent, He, himself, The serpent, The serpent, He, himself, The serpent, the serpent, his, they, They, him, The serpent ]:31
+	a serpent	a serpent	0:39-40;0:41-48;
+	He	He	1:0-2;
+	He	He	3:0-2;
+	he	he	3:37-39;
+	he	he	3:48-50;
+	He	He	4:0-2;
+	the serpent	the serpent	7:19-22;7:23-30;
+	The serpent	The serpent	8:0-3;8:4-11;
+	The serpent	The serpent	9:0-3;9:4-11;
+	his	his	9:47-50;
+	his	his	9:142-145;
+	The serpent	The serpent	12:0-3;12:4-11;
+	The serpent	The serpent	13:0-3;13:4-11;
+	his	his	13:36-39;
+	The serpent	The serpent	17:0-3;17:4-11;
+	He	He	18:0-2;
+	the serpent	the serpent	19:5-8;19:9-16;
+	The serpent	The serpent	24:0-3;24:4-11;
+	He	He	25:0-2;
+	himself	himself	25:22-29;
+	The serpent	The serpent	26:0-3;26:4-11;
+	The serpent	The serpent	29:0-3;29:4-11;
+	He	He	30:0-2;
+	himself	himself	30:22-29;
+	The serpent	The serpent	33:0-3;33:4-11;
+	the serpent	the serpent	34:12-15;34:16-23;
+	his	his	34:28-31;
+	they	they	34:82-86;
+	They	They	35:0-4;
+	him	him	36:33-36;
+	The serpent	The serpent	37:0-3;37:4-11;
+[ the little gypsy children, their, they ]:3
+	the little gypsy children	the little gypsy children	35:33-36;35:37-43;35:44-49;35:50-58;
+	their	their	35:63-68;
+	they	they	36:16-20;
+[ their father ]:1
+	their father	their father	35:63-68;35:69-75;
+[ the gypsy camp ]:1
+	the gypsy camp	the gypsy camp	34:105-108;34:109-114;34:115-119;
+[ the best stallions ]:1
+	the best stallions	the best stallions	34:58-61;34:62-66;34:67-76;
+[ harnessed three of the best stallions ]:1
+	harnessed three of the best stallions	harnessed three	34:39-48;34:49-54;
+[ his wagon, harnessed three of the best stallions ]:1
+	his wagon, harnessed three of the best stallions	his wagon	34:28-31;34:32-37;
+[ lunch ]:1
+	lunch	lunch	33:53-58;
+[ the beef ]:1
+	the beef	the beef	33:19-22;33:23-27;
+[ Pouting ]:1
+	Pouting	Pouting	32:0-7;
+[ the oak trees ]:1
+	the oak trees	the oak trees	28:57-60;28:61-64;28:65-70;
+[ an extremely long rope ]:1
+	an extremely long rope	an extremely long rope	28:11-13;28:14-23;28:24-28;28:29-33;
+[ a rope ]:1
+	a rope	a rope	27:71-72;27:73-77;
+[ bark fiber ]:1
+	bark fiber	bark fiber	27:46-50;27:51-56;
+[ the forest ]:1
+	the forest	the forest	27:20-23;27:24-30;
+[ the hide, the hide, it, it, the hide, it, it, it ]:8
+	the hide	the hide	19:66-69;19:70-74;
+	the hide	the hide	21:18-21;21:22-26;
+	it	it	21:39-41;
+	it	it	22:60-62;
+	the hide	the hide	26:20-23;26:24-28;
+	it	it	26:51-53;
+	it	it	26:74-76;
+	it	it	26:93-95;
+[ water ]:1
+	water	water	26:59-64;
+[ the well, it, the well ]:3
+	the well	the well	23:10-13;23:14-18;
+	it	it	23:59-61;
+	the well	the well	26:34-37;26:38-42;
+[ a deep trench ]:1
+	a deep trench	a deep trench	23:38-39;23:40-44;23:45-51;
+[ water ]:1
+	water	water	22:80-85;
+[ nothing of it ]:1
+	nothing of it	nothing	22:49-56;
+[ the well ]:1
+	the well	the well	21:45-48;21:49-53;
+[ no water ]:1
+	no water	no water	20:79-81;20:82-87;
+[ the beef ]:1
+	the beef	the beef	20:55-58;20:59-63;
+[ two cauldrons for the beef ]:1
+	two cauldrons for the beef	two cauldrons	20:37-40;20:41-50;
+[ the hut ]:1
+	the hut	the hut	20:17-20;20:21-24;
+[ the biggest oxen, They ]:2
+	the biggest oxen	the biggest oxen	19:25-28;19:29-36;19:37-41;
+	They	They	20:0-4;
+[ the meat ]:1
+	the meat	the meat	19:87-90;19:91-95;
+[ the tale ]:1
+	the tale	the tale	19:45-48;19:49-53;
+[ the meadow ]:1
+	the meadow	the meadow	18:14-17;18:18-24;
+[ oxen, them, their ]:3
+	oxen	oxen	15:23-27;
+	them	them	16:18-22;
+	their	their	16:35-40;
+[ their tails ]:1
+	their tails	their tails	16:35-40;16:41-46;
+[ a large herd of oxen ]:1
+	a large herd of oxen	a large herd	15:7-8;15:9-14;15:15-19;
+[ the meadow ]:1
+	the meadow	the meadow	14:49-52;14:53-59;
+[ nothing to be done - the gypsy went to the meadow ]:1
+	nothing to be done - the gypsy went to the meadow	nothing	14:10-17;
+[ a scarf ]:1
+	a scarf	a scarf	13:50-51;13:52-57;
+[ his eyes ]:1
+	his eyes	his eyes	13:36-39;13:40-44;
+[ all the trees ]:1
+	all the trees	all the trees	12:53-56;12:57-60;12:61-66;
+[ leaves ]:1
+	leaves	leaves	12:36-42;
+[ the ground ]:1
+	the ground	the ground	11:22-25;11:26-32;
+[ a squeeze ]:1
+	a squeeze	a squeeze	10:87-88;10:89-96;
+[ a chunk of cheese curd, it, it ]:3
+	a chunk of cheese curd	a chunk	10:10-11;10:12-17;
+	it	it	10:65-67;
+	it	it	10:84-86;
+[ the table ]:1
+	the table	the table	10:36-39;10:40-45;
+[ cheese curd ]:1
+	cheese curd	cheese curd	10:21-27;10:28-32;
+[ his fist ]:1
+	his fist	his fist	9:142-145;9:146-150;
+[ dust ]:1
+	dust	dust	9:126-130;
+[ a cloud of dust ]:1
+	a cloud of dust	a cloud	9:115-116;9:117-122;
+[ fine sand ]:1
+	fine sand	fine sand	9:103-107;9:108-112;
+[ The hut, it ]:2
+	The hut	The hut	7:0-3;7:4-7;
+	it	it	9:88-90;
+[ his hand ]:1
+	his hand	his hand	9:47-50;9:51-55;
+[ the palm of his hand ]:1
+	the palm of his hand	the palm	9:35-38;9:39-43;
+[ the stone ]:1
+	the stone	the stone	9:20-23;9:24-29;
+[ a millstone ]:1
+	a millstone	a millstone	8:20-21;8:22-31;
+[ a strong windstorm ]:1
+	a strong windstorm	a strong windstorm	6:18-19;6:20-26;6:27-36;
+[ The next morning ]:1
+	The next morning	The next morning	6:0-3;6:4-8;6:9-16;
+[ the night ]:1
+	the night	the night	5:15-18;5:19-24;
+[ the last man, they ]:2
+	the last man	the last man	4:38-41;4:42-46;4:47-50;
+	they	they	5:4-8;
+[ the last hut ]:1
+	the last hut	the last hut	4:19-22;4:23-27;4:28-31;
+[ anyone ]:1
+	anyone	anyone	3:65-71;
+[ no matter where he looked ]:1
+	no matter where he looked	no matter	3:21-23;3:24-30;
+[ night ]:1
+	night	night	3:11-16;
+[ the village ]:1
+	the village	the village	2:29-32;2:33-40;
+[ a gypsy ]:1
+	a gypsy	a gypsy	2:13-14;2:15-20;
+[ that time ]:1
+	that time	that time	2:3-7;2:8-12;
+[ the villagers ]:1
+	the villagers	the villagers	1:31-34;1:35-44;
+[ all but one of the villagers ]:1
+	all but one of the villagers	all but one	1:16-19;1:20-23;1:24-27;
+[ a village where a serpent frequently flew ]:1
+	a village where a serpent frequently flew	a village	0:23-24;0:25-32;
+[ old times ]:1
+	old times	old times	0:3-6;0:7-12;

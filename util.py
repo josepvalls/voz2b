@@ -1,5 +1,6 @@
 import operator
 import itertools
+import math
 
 def all_combinations_with_len(lst,min_len,max_len):
     for i in xrange(min_len,max_len+1):
@@ -116,25 +117,44 @@ def is_any_a_in_b(a,b):
     return False
 
 
+def describe_distribution(data):
+    mean = average(data)
+    sqd = [(i-mean)**2 for i in data]
+    variance = average(sqd)
+    std = math.sqrt(variance)
+    median = sorted(data)[int(len(data)/2)]
+    return mean,std
+
 def partition_data(dataset,test_set,id_column=0):
     """
-    Partition the input dataset and returns two datasets containing and excluding the items in test_set
-    :param dataset: list[list]
+    Partition the input dataset (as lists) and returns two datasets containing and excluding the items in test_set
+    :param dataset: list[object]
     :param test_set: set
     :param id_column: int
     :return:
     """
-    # dataset is a list of lists
+    # this interface is left for legacy compatibility
+    return partition_dataset(dataset,test_set,operator.itemgetter(id_column))
+
+
+def partition_dataset(dataset,test_set,key):
+    """
+    Partition the input dataset (as objects) and returns two datasets containing and excluding the items in test_set
+    :param dataset: list[object]
+    :param test_set: set
+    :param key: from operator import itemgetter,attrgetter
+    :return:
+    """
+    # dataset is a list of objects
     # test_set is a list of ids to move to test set
     train = []
     test = []
     for i in dataset:
-        if i[id_column] in test_set:
+        if key(i) in test_set:
             test.append(i)
         else:
             train.append(i)
     return train,test
-
 
 def most_common(lst):
     return max(set(lst), key=lst.count)
@@ -264,4 +284,4 @@ class SentinelValue(object):
     pass
 
 def format_list(lst,glue=' ',options={}):
-    return glue.join([i.format(options) for i in lst])
+    return glue.join([i.format(options=options) for i in lst])

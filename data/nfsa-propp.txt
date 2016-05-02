@@ -1,0 +1,7 @@
+START alpha,beta,gamma,delta,epsilon,zeta,eta,theta,lambda PREPARATION
+PREPARATION alpha,beta,gamma,delta,epsilon,zeta,eta,theta,lambda PREPARATION
+START A,a ACTION
+PREPARATION A,a ACTION
+ACTION A,a,B,C,D,E,F,G,H,I,J,K,depart ACTION
+ACTION Pr,o,L,M,N,Q,Ex,T,U,W CLOSURE
+CLOSURE return,Pr,Rs,o,L,M,N,Q,Ex,T,U,W CLOSURE

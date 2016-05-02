@@ -1,0 +1,121 @@
+1001					alpha	grumble(old) !ache(old)	Night and day a certain old stepmother grumbled - one wondered why her tongue did not ache!
+1001					lambda	grumble(old,girl) !clever(girl) !pretty(girl) go(girl) sit(girl)	She grumbled always at her stepdaughter: the girl was not clever enough and not pretty enough; no matter where she went or sat or stood, it was never right, never as it should be!
+1001					lambda	grumble(old)	And so the stepmother grumbled from dawn to dark like a gusla all wound up.
+1001					lambda	wear(old,husband)	She wearied her husband to death, and everyone else too felt like running away from the house.
+1001					lambda A9	harness(man) cry(old) take(man,girl)	One day the husband harnessed a horse to carry millet to town, and his wife cried: Take your daughter too, take her anywhere you want, to the dark forest, only get her out of my way!
+1001					up	take(man,girl)	The old man took his daughter.
+1001					up		It was a long and difficult road, with woods and swamps all around; where could he leave the maiden?
+1001					up	spy(man)	He spied a little hut on chicken legs, supported by a cake and covered with a pancake; and the little hut turned round and round.
+1001					up	think(man) leabe(man,girl) put(man,girl) give(man,girl) whip(man) vanish(man)	He thought it would be best to leave his daughter in this little hut; so he put her down from his cart, gave her some millet for gruel, whipped his horse, and vanished from sight.
+1001					D1	pound(girl) cook(girl)	The maiden remained alone; she pounded some millet and cooked a great deal of gruel, but there was no one to eat it.
+1001					D1	feel(girl) look(girl) exchange(girl)	Night came, long and terrifying; she felt that to sleep would wear out her sides, to look at the dark would tire her eyes, and there was no one to exchange a word with.
+1001					D1		It was boring and fearsome.
+1001					E7	stand(girl) open(girl) call(girl)	She stood on the threshold, opened the door nearest the forest, and called out: Whoever is in the forest, in the dark night, let him come be my guest!
+1001					E7	anwser(goblin,girl) turn(goblin,goblin) come(goblin) bring(goblin,girl)	A wood goblin answered her call and turned into a brave youth, a Novgorod merchant; he came into the little hut and brought a present for his hostess.
+1001					f1	come(goblin) bring(goblin,girl)	After that he came in for a chat quite often and sometimes he would bring her a gift; he brought her so many gifts that there was not place to put them.
+1001					down	find(old)	Meanwhile the grumbling old woman found life empty without her setpdaughter; it was quiet in her house, she felt queasy, and her tongue was parched.
+1001					down	get(man,girl) raise(man,girl) snatch(man,girl)	Go, husband, she said, get my stepdaughter, raise her up from the bottom of the sea, snatch her out of the fire!
+1001					down	old(old) sick(old) tend(old)	I am old, I am sickly, there is no one to tend me.
+1001					down	do(man) return(girl)	The husband did as she asked; the stepdaughter returned.
+1001					K4	open(girl,girl) open(old) greet(old,girl) purse(old,old) seat(old,girl) say(old,girl)	When she opened her coffer and hung out her things on a rope that stretched form the house to the gate, the old woman, who had opened her mouth to greet her in her customary abusive way, pursed up her lips, seated the welcome guest under the icon, and said to her civilly: What is your pleasure, madam?
+							
+							
+1002					alpha	be(merchant) be(wife) be(vasili)	In a certain city there was a merchant and his wife and their son, who was wise beyond his years ; he was called Vasili.
+1002					eta3	lunch(merchant) lunch(wife) lunch(vasili) sing(nightingale) tell(merchant,wife) tell(merchant,vasili) tell(man,merchant) give(merchant,man) meet(merchant,man) bequeath(merchant,man)	Once all three were lunching together, and in a cage there was a Nightingale singing over the table, singing so woefully that the merchant could not bear it, and he said,  If there ever were a man who could really tell me what that Nightingale is saying and the doom he is foreboding, I should like to meet him : I would give him in my life half of my possessions, and after in my death I would bequeath him many goods.
+1002					eta3	look(vasili,merchant) look(vasili,wife) say(vasili) know(vasili,nightingale)	Then the little boy, who was only six years old, looked his father and mother fixedly in the eyes and said,  I know what the Nightingale is singing, only I am fright- ened of saying it. 
+1002					eta3	say(wife) say(merchant)	Speak out openly, said the mother and father.
+1002					beta3  A10	say(vasili) foretell(nightingale) make(merchant) make(wife) build(merchant) build(wife) decide(merchant) decide(wife) put(merchant,vasili) put(wife,vasili) sail(vasili)	And then Vasili said with tears,  The Nightingale is foretelling that a time and season is coming when you will be my servants, when father will draw me water and mother will give me the towel to wipe my face and hands These words made the merchant and his wife very angry, so they decided to get rid of their child ; they built a little boat, and in the dark of night, put the sleeping boy into it and let it sail into the open sea.
+1002					up	fly(nightingale) sit(nightingale,vasili)	Just then the prophetic Nightingale flew out of its cage into the boat and sat on the boy's shoulder.
+1002					up		Then the boat came to the sea-shore, and a ship came to meet it with all its sails spread.
+1002					G2	see(master,vasili) pity(master,vasili) adopt(master,vasili) ask(master,vasili) keep(master,vasili) love(master,vasili)	The master of the ship saw the boy, pitied him, adopted him, asked him questions, promised to keep and love him as if he were his own son.
+1002					G2	say(vasili,master) foretell(nightingale)	Next day the boy said to his new father,  The Nightingale foretells that a storm is brewing which will break the masts and shatter the sails.
+1002					G2	go(master)	You must go back to the haven.
+1002					G2	!go(master)	But the master of the ship would not go.
+1002					G2		And a storm arose at once, and the masts were shattered, and the sails torn down.
+1002					G2		It was no good, what is ended cannot be mended, so new masts were built and new sails were rigged.
+1002					G2		And they sailed on further.
+1002					G2	say(vasili,master) foretell(nightingale) meet(pirates,vasili) meet(pirates,master) take(pirates,vasili) take(pirates,master)	Again Vasili said,  The Nightingale sings that there are twelve ships coming to meet us, all pirate ships, and they will take us prisoner.
+1002					G2	believe(master,vasili) return(master) sail(pirates)	This time the master of the ship believed him, and returned to the island, and he saw the twelve bold pirates go sailing by.
+1002					G2	wait(master) sail(master)	So the master of the ship waited as long as need be, and then sailed further.
+1002					H2	fly(crow) fly(childcrow) fly(wifecrow) screech(crow) screech(childcrow) screech(wifecrow)	Some time went by, not too much, not too little, and the ship arrived at the city of Khvalynsk; and, for very many years, in front of the palace of the King of Khvalynsk, a Crow, with his wife and child, had been flying and screeching, giving no rest either by day or night.
+1002					H2	do(people) set(people) drive(people,crow) drive(people,wifecrow) drive(people,childcrow)	Whatever they did, whatever gins they might set, they could not drive them off from the window.
+1002					H2		Small shot was not any good.
+1002					H2	ordain(king) 	And so that King ordained that at every cross-road and at all the harbours this notice should be exhibited :  If any man can drive away the Crow, with his wife and child, from the royal windows, the king will grant him as a reward half of his kingdom, and his youngest daughter as wife but if any shall undertake the work and shall not fulfil it he shall forfeit his head.
+1002					H2	eager(hunters) hew(king,hunters) hang(king,hunters)	Very many were the hunters eager to become kinsmen of the King, and all of their heads had been hewn off and hung on stakes.
+1002					H2	hear(vasili) ask(vasili,master) chase(vasili,crow) chase(vasili,wifecrow)	Now Vasili heard of this, went up and asked the master of the ship,  Let me go to the King ; possibly I can chase away the Crow and his wife.
+1002					H2	deter(master,vasili) fail(master)	They endeavored to deter him, but failed. 
+1002					H2		Very well, go.
+1002					H2	come(vasili) blame(vasili,vasili)	And if you come by any harm, put the blame on yourself ! 
+1002					H2	come(vasili) tell(vasili,king) order(king)	So Vasili came into the palace, told the King, and ordered the windows to be opened in front of which the Crows were flying.
+1002					I2	listen(vasili) tell(vasili,king) dispute(crow,wifecrow) ask(crow) ask(wifecrow)	He then listened to what the birds were saying, and told the King,  Your Majesty, you see that there are three flying here, the Crow, Madam Crow, and Master Crow : the Crow is disputing with his wife as to which of them the son belongs, whether to the father or to the mother ; and they are asking for a decision.
+1002					I2	decide(king)	Your Majesty, decide to whom it is the son belongs.
+1002					I2	answer(king)	The King answered,  To the father.
+1002					I2	say(king) sail(crow) sail(wifecrow)	As soon as the King had said this, the Crow with Master Crow sailed to the right, but Madam Crow to the left.
+1002					W#	take(king,vasili) live(vasili) receive(vasili) grow(vasili) marry(vasili,princess)	After this the King took the youth unto himself, and he lived at the royal court and received the greatest kindness and honor, grew up and became a youth of youths, married the Princess, and received half of the kingdom as a dowry.
+1002					down	think(vasili) show(vasili,vasili)	One day he thought he would like to journey to foreign parts and see strange lands, view the folks of the world, and show himself.
+1002					down	set(vasili)	So he set out to roam through the world.
+1002					down	stay(vasili) get(vasili) say(vasili)	In one city he stayed for a night, passed the night there, got up in the morning and said he wished to wash.
+1002					down	bring(merchant,vasili) bring(wife,vasili)	So the master brought him water and the mistress brought him the towel.
+1002					Q4	speak(vasili,merchant) speak(vasili,wife) see(vasili,merchant) see(vasili,wife) fall(vasili,merchant) fall(vasili,wife)	The King's son spoke with them, and then saw that they were his father and mother, wept for joy, and fell at the feet of his parents.
+1002					Q4	take(vasili,merchant) take(vasili,wife) live(vasili) live(merchant) live(wife)	Afterwards he took them with him to his own city of Khvalynsk, and they lived together long, and lived to enjoy good.
+							
+							
+1003					alpha	think(you) judge(lord) overlook(lord)	If you think of it, what a big world God's world is: in it rich and poor folk live, and there is room enough for them all; and the Lord overlooks and judges them all.
+1003					alpha	has(man)	There are fine folk who have holidays, there are wailful folk who must moil; every man has his lot.
+1003					a6	grow(princess)	In the Tsar's palace, in the Prince's chamber every day the Princess Without a Smile grew fairer.
+1003					a6	has(princess)	What a life she had, what plenty, what beauty round her!
+1003					a6	!smile(princess) !laugh(princess)	There was enough of everything that exists that the soul may desire, but she never smiled, never laughed, and it seemed as though her heart could not rejoice at anything.
+1003					B1	gaze(tsar,princess)	It was a bitter thing for the Tsar her father to gaze at his doleful daughter.
+1003					B1	open(tsar,tsar)	He used to open his imperial palace to whatever would be his guest.
+1003					B1	say(tsar,people)	Come, he said, come and try to enliven the Princess Without a Smile: any one who succeeds shall gain her as his wife.
+1003					B1	say(tsar) throng(people)	And as soon as he had said this all folk thronged up at the gates of the palace, driving up from all sides, coming on foot, Tsarevichi and princes' sons, boyars and nobleman, military folk and civil.
+1003					B1	celebrate(people) !smile(princess)	Feats were celebrated, rivers of mead flowed, and the Princess would not smile.
+1003					alpha	dwell(laborer)	But, at the other end of the town, in his own little hut, there dwelt an honourable laborer.
+1003					alpha	sweep(laborer) pasture(laborer)	Every morning he used to sweep out the courtyard: every evening he used to pasture the cattle, and he was engaged in ceaseless labor.
+1003					a5	rich(master) begrudge(master)	His master was a rich man, a just man, and he did not begrudge pay.
+1003					a5	put(master) say(master,laborer) go(master)	When the year came to an end he put a purse of money on the table, Take, he said, as much as you like; and the master went outside.
+1003					a5	go(laborer) be(laborer) take(laborer)	The workman went up to the table and thought, How shall I not be guilty in the eyes of God if I take too much for my labour?
+1003					a5	take(laborer) put(laborer,laborer) think(laborer)	So he took only one little coin, put it into the hollow of his hand and thought he would have alittle drink.
+1003					a5	go(laborer) slip(coin,laborer)	So he went to the well, and the coin slipped through his fingers and fell to the bottom.
+1003					a5	!have(laborer)	So the poor fellow had nothing left.
+1003					a5	cry(people) become(people) put(people)	Now, anybody else in his place would have cried out, would have become melancholy and angry, might have put his hands up.
+1003					a5	!do(laborer)	He did nothing of the sort.
+1003					a5	say(laborer)	Everything, he said, comes from God.
+1003					a5	know(lord) give(lord,people) divide(lord) take(lord)	the Lord knows what He gives to each man, whose money He divides, from whom He takes the last money.
+1003					a5	give(laborer) do(laborer)	Evidently I have given bad care, I have done little work; and now am I to become angry?
+1003					a5	set(laborer)	So he set to work once more.
+1003					a5	touch(laborer)	And all that his hand touched flew like fire.
+1003					a5	put(master) say(master,laborer) go(master)	Then, when the term was over, when one year more had gone by, the master again put a purse of money on the table: Take, he said, as much as your soul desires; and he himself went outside.
+1003					a5	think(laborer) take(laborer)	Then again the labourer thought how he should not offend God, how he should not take too much for his work.
+1003					a5	take(laborer) go(laborer)	So he took one coin and he went to have alittle drink at the well.
+1003					a5	fell(coin,laborer) tumble(coin)	In some way or other the money fell from his hands and the coin tumbled into the well and was lost.
+1003					a5	set(laborer) !sleep(laborer) !eat(laborer)	So he set to work even more obstinately: at night he would not sleep and by day he would not eat.
+1003					a5	see(people)	Other men saw their corn grow dry and yellow, but his master's corn prospered amain.
+1003					a5		Some men's cattle became bowlegged, but his master's gambolled in the street.
+1003					a5		And the horses of some masters fell downhill, but his master's could not be kept to the bridle.
+1003					a5	know(master)	The master knew very well whom he must thank, to whom he must render gratitude.
+1003					a5	lay(master) say(master,laborer)	So, when the third year came to an end, he laid a pile of money on the table: Take, my dear man, as much as your soul desires.
+1003					a5	go(master)	It is your work, and it is your money ; and he went out of the room.
+1003					K4	take(laborer) go(laborer) take(laborer) know(laborer)	Once more the workman took a single coin, went to the well for a drink of water and looked, and the lost money floated up to the surface: so he took them, and he then felt sure that God had rewarded him for his labour.
+1003					alpha	joyous(laborer) go(laborer) look(laborer)	He was joyous and thought,  It is now the time for me to go and look at the white world and to learn of people.
+1003					alpha	think(laborer) go(laborer)	So he thought this, and he went out whither his eyes gazed.
+1003					up D7	go(laborer) see(laborer,mouse)	He went on to the field, and he saw a mouse running: my friend, my dear gossip, give me a coin; I will be of service to you.
+1003					E1	give(laborer,mouse)	So he gave the mouse a coin.
+1003					D7	creep(beetle) say(beetle,laborer)	Then he went to the forest and a beetle crept up and said, My friend, my dear gossip, give me a coin; I will be of service to you.
+1003					E1	give(laborer,beetle)	So he gave him the second coin.
+1003					D7	come(laborer) meet(laborer,sheatfish)	Then he came up to the stream, and he met a sheatfish.
+1003					D7		My friend, my dear gossip, give me a coin; I shall be of service to you.
+1003					E1	give(laborer,sheatfish)	And he could not refuse him, so he gave his last coin.
+1003					E	come(laborer)	So then he came into the city.
+1003					E		Oh, it was so thronged!
+1003					E	look(laborer,people) !know(laborer)	All the doors were opened, and he looked, and the workman turning in all directions, and he did not know where to go.
+1003					E	sit(princess) gaze(princess,laborer)	In front of him stood the Tsar's palace decked with gold and silver, and at the window the Tsarevna Without a Smile sat and gazed on him straight.
+1003					E	do(laborer)	What should he do?
+1003					E	fall(laborer)	The light in his eyes turned dark, and a sleep fell on him, and he fell straight into the mud.
+1003					F96	come(sheatfish) come(beetle) come(mouse) run(sheatfish,laborer) run(mouse,laborer) run(beetle,laborer) press(sheatfish,laborer) press(mouse,laborer) press(beetle,laborer) do(sheatfish) do(mouse) do(beetle)	Up came the sheat-fish with his big whiskers, and after him the beetle and the mouse: they all ran up, they all pressed round him and did all the service they could.
+1003					F96	take(mouse,laborer) clean(beetle,laborer) drive(sheatfish)	The little mouse took his coat: the beetle cleaned his boots, and the sheat-fish drove away the flies.
+1003					K8	gaze(princess,mouse) gaze(princess,beetle) gaze(princess,sheatfish) gaze(princess,laborer) smile(princess)	The Princess Without a Smile gazed on their services, and she smiled.
+1003					K8		who is he who has enlivened my daughter?
+1003					K8	cry(tsar)	cried the King.
+1003					L	say(man) say(princess) point(princess,laborer)	One man said I, and another man said I. - - No, said the Princess, that is the man there; and she pointed out the workman.
+1003					Q3 W#	take(people,laborer) stand(laborer) keep(tsar)	Instantly he was taked into the palace, and the workman stood in the imperial presence, a youth such as never was: then the Tsar kept his princely word and gave what he had promised.

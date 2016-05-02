@@ -1,0 +1,556 @@
+T1	Mention 7 12	times
+A1	EntityType T1 COMMON
+A2	NumberType T1 PLURAL
+A3	GenderType T1 UNKNOWN
+T2	Mention 25 32	village
+A4	EntityType T2 COMMON
+A5	NumberType T2 SINGULAR
+A6	GenderType T2 UNKNOWN
+T3	Mention 41 48	serpent
+A7	EntityType T3 COMMON
+A8	NumberType T3 SINGULAR
+A9	GenderType T3 UNKNOWN
+T4	Mention 67 69	He
+A10	EntityType T4 PRONOUN
+A11	NumberType T4 SINGULAR
+A12	GenderType T4 MALE
+A13	PronounType T4 SUBJECT
+T5	Mention 91 94	one
+A14	EntityType T5 PRONOUN
+A15	NumberType T5 SINGULAR
+A16	GenderType T5 NEUTRAL
+A17	PronounType T5 INDEFINITE
+T6	Mention 102 111	villagers
+A18	EntityType T6 COMMON
+A19	NumberType T6 PLURAL
+A20	GenderType T6 UNKNOWN
+T7	Mention 117 121	that
+A21	EntityType T7 PRONOUN
+A22	NumberType T7 SINGULAR
+A23	GenderType T7 NEUTRAL
+A24	PronounType T7 DEMOSTRATIVE
+T8	Mention 122 126	time
+A25	EntityType T8 COMMON
+A26	NumberType T8 SINGULAR
+A27	GenderType T8 UNKNOWN
+T9	Mention 129 134	gypsy
+A28	EntityType T9 COMMON
+A29	NumberType T9 SINGULAR
+A30	GenderType T9 UNKNOWN
+T10	Mention 147 154	village
+A31	EntityType T10 COMMON
+A32	NumberType T10 SINGULAR
+A33	GenderType T10 UNKNOWN
+T11	Mention 157 159	He
+A34	EntityType T11 PRONOUN
+A35	NumberType T11 SINGULAR
+A36	GenderType T11 MALE
+A37	PronounType T11 SUBJECT
+T12	Mention 168 173	night
+A38	EntityType T12 COMMON
+A39	NumberType T12 SINGULAR
+A40	GenderType T12 UNKNOWN
+T13	Mention 194 196	he
+A41	EntityType T13 PRONOUN
+A42	NumberType T13 SINGULAR
+A43	GenderType T13 MALE
+A44	PronounType T13 SUBJECT
+T14	Mention 206 208	he
+A45	EntityType T14 PRONOUN
+A46	NumberType T14 SINGULAR
+A47	GenderType T14 MALE
+A48	PronounType T14 SUBJECT
+T15	Mention 224 230	anyone
+A49	EntityType T15 PRONOUN
+A50	NumberType T15 SINGULAR
+A51	GenderType T15 NEUTRAL
+A52	PronounType T15 INDEFINITE
+T16	Mention 233 235	He
+A53	EntityType T16 PRONOUN
+A54	NumberType T16 SINGULAR
+A55	GenderType T16 MALE
+A56	PronounType T16 SUBJECT
+T17	Mention 261 264	hut
+A57	EntityType T17 COMMON
+A58	NumberType T17 SINGULAR
+A59	GenderType T17 UNKNOWN
+T18	Mention 280 283	man
+A60	EntityType T18 COMMON
+A61	NumberType T18 SINGULAR
+A62	GenderType T18 MALE
+T19	Mention 314 318	they
+A63	EntityType T19 PRONOUN
+A64	NumberType T19 PLURAL
+A65	GenderType T19 NEUTRAL
+A66	PronounType T19 SUBJECT
+T20	Mention 329 334	night
+A67	EntityType T20 COMMON
+A68	NumberType T20 SINGULAR
+A69	GenderType T20 UNKNOWN
+T21	Mention 346 353	morning
+A70	EntityType T21 COMMON
+A71	NumberType T21 SINGULAR
+A72	GenderType T21 UNKNOWN
+T22	Mention 365 374	windstorm
+A73	EntityType T22 COMMON
+A74	NumberType T22 SINGULAR
+A75	GenderType T22 UNKNOWN
+T23	Mention 396 399	hut
+A76	EntityType T23 COMMON
+A77	NumberType T23 SINGULAR
+A78	GenderType T23 UNKNOWN
+T24	Mention 415 422	serpent
+A79	EntityType T24 COMMON
+A80	NumberType T24 SINGULAR
+A81	GenderType T24 UNKNOWN
+T25	Mention 436 443	serpent
+A82	EntityType T25 COMMON
+A83	NumberType T25 SINGULAR
+A84	GenderType T25 UNKNOWN
+T26	Mention 454 463	millstone
+A85	EntityType T26 COMMON
+A86	NumberType T26 SINGULAR
+A87	GenderType T26 UNKNOWN
+T27	Mention 470 477	serpent
+A88	EntityType T27 COMMON
+A89	NumberType T27 SINGULAR
+A90	GenderType T27 UNKNOWN
+T28	Mention 490 495	stone
+A91	EntityType T28 COMMON
+A92	NumberType T28 SINGULAR
+A93	GenderType T28 UNKNOWN
+T29	Mention 505 509	palm
+A94	EntityType T29 COMMON
+A95	NumberType T29 SINGULAR
+A96	GenderType T29 UNKNOWN
+T30	Mention 513 516	his
+A97	EntityType T30 PRONOUN
+A98	NumberType T30 SINGULAR
+A99	GenderType T30 MALE
+A100	PronounType T30 POSSESSIVE
+T31	Mention 517 521	hand
+A101	EntityType T31 COMMON
+A102	NumberType T31 SINGULAR
+A103	GenderType T31 UNKNOWN
+T32	Mention 535 537	it
+A104	EntityType T32 PRONOUN
+A105	NumberType T32 SINGULAR
+A106	GenderType T32 NEUTRAL
+A107	PronounType T32 SUBJECT
+T33	Mention 554 556	it
+A108	EntityType T33 PRONOUN
+A109	NumberType T33 SINGULAR
+A110	GenderType T33 NEUTRAL
+A111	PronounType T33 SUBJECT
+T34	Mention 574 578	sand
+A112	EntityType T34 COMMON
+A113	NumberType T34 SINGULAR
+A114	GenderType T34 UNKNOWN
+T35	Mention 583 588	cloud
+A115	EntityType T35 COMMON
+A116	NumberType T35 SINGULAR
+A117	GenderType T35 UNKNOWN
+T36	Mention 592 596	dust
+A118	EntityType T36 COMMON
+A119	NumberType T36 SINGULAR
+A120	GenderType T36 UNKNOWN
+T37	Mention 608 611	his
+A121	EntityType T37 PRONOUN
+A122	NumberType T37 SINGULAR
+A123	GenderType T37 MALE
+A124	PronounType T37 POSSESSIVE
+T38	Mention 612 616	fist
+A125	EntityType T38 COMMON
+A126	NumberType T38 SINGULAR
+A127	GenderType T38 UNKNOWN
+T39	Mention 631 636	chunk
+A128	EntityType T39 COMMON
+A129	NumberType T39 SINGULAR
+A130	GenderType T39 UNKNOWN
+T40	Mention 647 651	curd
+A131	EntityType T40 COMMON
+A132	NumberType T40 SINGULAR
+A133	GenderType T40 UNKNOWN
+T41	Mention 659 664	table
+A134	EntityType T41 COMMON
+A135	NumberType T41 SINGULAR
+A136	GenderType T41 UNKNOWN
+T42	Mention 671 676	gypsy
+A137	EntityType T42 COMMON
+A138	NumberType T42 SINGULAR
+A139	GenderType T42 UNKNOWN
+T43	Mention 685 687	it
+A140	EntityType T43 PRONOUN
+A141	NumberType T43 SINGULAR
+A142	GenderType T43 NEUTRAL
+A143	PronounType T43 SUBJECT
+T44	Mention 704 706	it
+A144	EntityType T44 PRONOUN
+A145	NumberType T44 SINGULAR
+A146	GenderType T44 NEUTRAL
+A147	PronounType T44 SUBJECT
+T45	Mention 709 716	squeeze
+A148	EntityType T45 COMMON
+A149	NumberType T45 SINGULAR
+A150	GenderType T45 UNKNOWN
+T46	Mention 719 723	Whey
+A151	EntityType T46 ORGANIZATION
+A152	NumberType T46 SINGULAR
+A153	GenderType T46 UNKNOWN
+T47	Mention 745 751	ground
+A154	EntityType T47 COMMON
+A155	NumberType T47 SINGULAR
+A156	GenderType T47 UNKNOWN
+T48	Mention 758 765	serpent
+A157	EntityType T48 COMMON
+A158	NumberType T48 SINGULAR
+A159	GenderType T48 UNKNOWN
+T49	Mention 790 796	leaves
+A160	EntityType T49 COMMON
+A161	NumberType T49 PLURAL
+A162	GenderType T49 UNKNOWN
+T50	Mention 807 810	all
+A163	EntityType T50 PRONOUN
+A164	NumberType T50 PLURAL
+A165	GenderType T50 NEUTRAL
+A166	PronounType T50 INDEFINITE
+T51	Mention 815 820	trees
+A167	EntityType T51 COMMON
+A168	NumberType T51 PLURAL
+A169	GenderType T51 UNKNOWN
+T52	Mention 827 834	serpent
+A170	EntityType T52 COMMON
+A171	NumberType T52 SINGULAR
+A172	GenderType T52 UNKNOWN
+T53	Mention 844 846	it
+A173	EntityType T53 PRONOUN
+A174	NumberType T53 SINGULAR
+A175	GenderType T53 NEUTRAL
+A176	PronounType T53 SUBJECT
+T54	Mention 859 862	his
+A177	EntityType T54 PRONOUN
+A178	NumberType T54 SINGULAR
+A179	GenderType T54 MALE
+A180	PronounType T54 POSSESSIVE
+T55	Mention 863 867	eyes
+A181	EntityType T55 COMMON
+A182	NumberType T55 PLURAL
+A183	GenderType T55 UNKNOWN
+T56	Mention 875 880	scarf
+A184	EntityType T56 COMMON
+A185	NumberType T56 SINGULAR
+A186	GenderType T56 UNKNOWN
+T57	Mention 893 900	nothing
+A187	EntityType T57 PRONOUN
+A188	NumberType T57 SINGULAR
+A189	GenderType T57 NEUTRAL
+A190	PronounType T57 INDEFINITE
+T58	Mention 918 923	gypsy
+A191	EntityType T58 COMMON
+A192	NumberType T58 SINGULAR
+A193	GenderType T58 UNKNOWN
+T59	Mention 936 942	meadow
+A194	EntityType T59 COMMON
+A195	NumberType T59 SINGULAR
+A196	GenderType T59 UNKNOWN
+T60	Mention 945 947	He
+A197	EntityType T60 PRONOUN
+A198	NumberType T60 SINGULAR
+A199	GenderType T60 MALE
+A200	PronounType T60 SUBJECT
+T61	Mention 960 964	herd
+A201	EntityType T61 COMMON
+A202	NumberType T61 SINGULAR
+A203	GenderType T61 UNKNOWN
+T62	Mention 973 980	grazing
+A204	EntityType T62 COMMON
+A205	NumberType T62 SINGULAR
+A206	GenderType T62 UNKNOWN
+T63	Mention 983 985	He
+A207	EntityType T63 PRONOUN
+A208	NumberType T63 SINGULAR
+A209	GenderType T63 MALE
+A210	PronounType T63 SUBJECT
+T64	Mention 1001 1005	them
+A211	EntityType T64 PRONOUN
+A212	NumberType T64 PLURAL
+A213	GenderType T64 NEUTRAL
+A214	PronounType T64 OBJECT
+T65	Mention 1018 1023	their
+A215	EntityType T65 PRONOUN
+A216	NumberType T65 PLURAL
+A217	GenderType T65 NEUTRAL
+A218	PronounType T65 POSSESSIVE
+T66	Mention 1024 1029	tails
+A219	EntityType T66 COMMON
+A220	NumberType T66 PLURAL
+A221	GenderType T66 UNKNOWN
+T67	Mention 1036 1043	serpent
+A222	EntityType T67 COMMON
+A223	NumberType T67 SINGULAR
+A224	GenderType T67 UNKNOWN
+T68	Mention 1094 1096	He
+A225	EntityType T68 PRONOUN
+A226	NumberType T68 SINGULAR
+A227	GenderType T68 MALE
+A228	PronounType T68 SUBJECT
+T69	Mention 1112 1118	meadow
+A229	EntityType T69 COMMON
+A230	NumberType T69 SINGULAR
+A231	GenderType T69 UNKNOWN
+T70	Mention 1126 1130	what
+A232	EntityType T70 PRONOUN
+A233	NumberType T70 UNKNOWN
+A234	GenderType T70 NEUTRAL
+A235	PronounType T70 RELATIVE
+T71	Mention 1155 1162	serpent
+A236	EntityType T71 COMMON
+A237	NumberType T71 SINGULAR
+A238	GenderType T71 UNKNOWN
+T72	Mention 1183 1187	oxen
+A239	EntityType T72 COMMON
+A240	NumberType T72 SINGULAR
+A241	GenderType T72 UNKNOWN
+T73	Mention 1195 1199	tale
+A242	EntityType T73 COMMON
+A243	NumberType T73 SINGULAR
+A244	GenderType T73 UNKNOWN
+T74	Mention 1217 1221	hide
+A245	EntityType T74 COMMON
+A246	NumberType T74 SINGULAR
+A247	GenderType T74 UNKNOWN
+T75	Mention 1239 1243	meat
+A248	EntityType T75 COMMON
+A249	NumberType T75 SINGULAR
+A250	GenderType T75 UNKNOWN
+T76	Mention 1256 1258	it
+A251	EntityType T76 PRONOUN
+A252	NumberType T76 SINGULAR
+A253	GenderType T76 NEUTRAL
+A254	PronounType T76 SUBJECT
+T77	Mention 1266 1270	They
+A255	EntityType T77 PRONOUN
+A256	NumberType T77 PLURAL
+A257	GenderType T77 NEUTRAL
+A258	PronounType T77 SUBJECT
+T78	Mention 1287 1290	hut
+A259	EntityType T78 COMMON
+A260	NumberType T78 SINGULAR
+A261	GenderType T78 UNKNOWN
+T79	Mention 1308 1317	cauldrons
+A262	EntityType T79 COMMON
+A263	NumberType T79 PLURAL
+A264	GenderType T79 UNKNOWN
+T80	Mention 1326 1330	beef
+A265	EntityType T80 COMMON
+A266	NumberType T80 SINGULAR
+A267	GenderType T80 UNKNOWN
+T81	Mention 1350 1355	water
+A268	EntityType T81 COMMON
+A269	NumberType T81 SINGULAR
+A270	GenderType T81 UNKNOWN
+T82	Mention 1362 1367	gypsy
+A271	EntityType T82 COMMON
+A272	NumberType T82 SINGULAR
+A273	GenderType T82 UNKNOWN
+T83	Mention 1380 1384	hide
+A274	EntityType T83 COMMON
+A275	NumberType T83 SINGULAR
+A276	GenderType T83 UNKNOWN
+T84	Mention 1397 1399	it
+A277	EntityType T84 PRONOUN
+A278	NumberType T84 SINGULAR
+A279	GenderType T84 NEUTRAL
+A280	PronounType T84 SUBJECT
+T85	Mention 1407 1411	well
+A281	EntityType T85 COMMON
+A282	NumberType T85 SINGULAR
+A283	GenderType T85 UNKNOWN
+T86	Mention 1431 1433	he
+A284	EntityType T86 PRONOUN
+A285	NumberType T86 SINGULAR
+A286	GenderType T86 MALE
+A287	PronounType T86 SUBJECT
+T87	Mention 1452 1454	it
+A288	EntityType T87 PRONOUN
+A289	NumberType T87 SINGULAR
+A290	GenderType T87 NEUTRAL
+A291	PronounType T87 SUBJECT
+T88	Mention 1464 1471	nothing
+A292	EntityType T88 PRONOUN
+A293	NumberType T88 SINGULAR
+A294	GenderType T88 NEUTRAL
+A295	PronounType T88 INDEFINITE
+T89	Mention 1475 1477	it
+A296	EntityType T89 PRONOUN
+A297	NumberType T89 SINGULAR
+A298	GenderType T89 NEUTRAL
+A299	PronounType T89 SUBJECT
+T90	Mention 1495 1500	water
+A300	EntityType T90 COMMON
+A301	NumberType T90 SINGULAR
+A302	GenderType T90 UNKNOWN
+T91	Mention 1503 1505	He
+A303	EntityType T91 PRONOUN
+A304	NumberType T91 SINGULAR
+A305	GenderType T91 MALE
+A306	PronounType T91 SUBJECT
+T92	Mention 1517 1521	well
+A307	EntityType T92 COMMON
+A308	NumberType T92 SINGULAR
+A309	GenderType T92 UNKNOWN
+T93	Mention 1548 1554	trench
+A310	EntityType T93 COMMON
+A311	NumberType T93 SINGULAR
+A312	GenderType T93 UNKNOWN
+T94	Mention 1562 1564	it
+A313	EntityType T94 PRONOUN
+A314	NumberType T94 SINGULAR
+A315	GenderType T94 NEUTRAL
+A316	PronounType T94 SUBJECT
+T95	Mention 1571 1578	serpent
+A317	EntityType T95 COMMON
+A318	NumberType T95 SINGULAR
+A319	GenderType T95 UNKNOWN
+T96	Mention 1635 1637	He
+A320	EntityType T96 PRONOUN
+A321	NumberType T96 SINGULAR
+A322	GenderType T96 MALE
+A323	PronounType T96 SUBJECT
+T97	Mention 1657 1664	himself
+A324	EntityType T97 PRONOUN
+A325	NumberType T97 SINGULAR
+A326	GenderType T97 MALE
+A327	PronounType T97 REFLEXIVE
+T98	Mention 1665 1669	what
+A328	EntityType T98 PRONOUN
+A329	NumberType T98 UNKNOWN
+A330	GenderType T98 NEUTRAL
+A331	PronounType T98 RELATIVE
+T99	Mention 1695 1702	serpent
+A332	EntityType T99 COMMON
+A333	NumberType T99 SINGULAR
+A334	GenderType T99 UNKNOWN
+T100	Mention 1715 1719	hide
+A335	EntityType T100 COMMON
+A336	NumberType T100 SINGULAR
+A337	GenderType T100 UNKNOWN
+T101	Mention 1729 1733	well
+A338	EntityType T101 COMMON
+A339	NumberType T101 SINGULAR
+A340	GenderType T101 UNKNOWN
+T102	Mention 1743 1745	it
+A341	EntityType T102 PRONOUN
+A342	NumberType T102 SINGULAR
+A343	GenderType T102 NEUTRAL
+A344	PronounType T102 SUBJECT
+T103	Mention 1751 1756	water
+A345	EntityType T103 COMMON
+A346	NumberType T103 SINGULAR
+A347	GenderType T103 UNKNOWN
+T104	Mention 1767 1769	it
+A348	EntityType T104 PRONOUN
+A349	NumberType T104 SINGULAR
+A350	GenderType T104 NEUTRAL
+A351	PronounType T104 SUBJECT
+T105	Mention 1786 1788	it
+A352	EntityType T105 PRONOUN
+A353	NumberType T105 SINGULAR
+A354	GenderType T105 NEUTRAL
+A355	PronounType T105 SUBJECT
+T106	Mention 1800 1805	gypsy
+A356	EntityType T106 COMMON
+A357	NumberType T106 SINGULAR
+A358	GenderType T106 UNKNOWN
+T107	Mention 1820 1826	forest
+A359	EntityType T107 COMMON
+A360	NumberType T107 SINGULAR
+A361	GenderType T107 UNKNOWN
+T108	Mention 1847 1852	fiber
+A362	EntityType T108 COMMON
+A363	NumberType T108 SINGULAR
+A364	GenderType T108 UNKNOWN
+T109	Mention 1869 1873	rope
+A365	EntityType T109 COMMON
+A366	NumberType T109 SINGULAR
+A367	GenderType T109 UNKNOWN
+T110	Mention 1876 1878	He
+A368	EntityType T110 PRONOUN
+A369	NumberType T110 SINGULAR
+A370	GenderType T110 MALE
+A371	PronounType T110 SUBJECT
+T111	Mention 1905 1909	rope
+A372	EntityType T111 COMMON
+A373	NumberType T111 SINGULAR
+A374	GenderType T111 UNKNOWN
+T112	Mention 1914 1917	set
+A375	EntityType T112 COMMON
+A376	NumberType T112 SINGULAR
+A377	GenderType T112 UNKNOWN
+R1	Coreference Arg1:T4 Arg2:T11
+R2	Coreference Arg1:T13 Arg2:T14
+R3	Coreference Arg1:T11 Arg2:T16
+R4	Coreference Arg1:T6 Arg2:T19
+R5	Coreference Arg1:T25 Arg2:T27
+R6	Coreference Arg1:T18 Arg2:T30
+R7	Coreference Arg1:T31 Arg2:T32
+R8	Coreference Arg1:T32 Arg2:T33
+R9	Coreference Arg1:T30 Arg2:T37
+R10	Coreference Arg1:T42 Arg2:T43
+R11	Coreference Arg1:T43 Arg2:T44
+R12	Coreference Arg1:T27 Arg2:T48
+R13	Coreference Arg1:T48 Arg2:T52
+R14	Coreference Arg1:T52 Arg2:T53
+R15	Coreference Arg1:T37 Arg2:T54
+R16	Coreference Arg1:T42 Arg2:T58
+R17	Coreference Arg1:T18 Arg2:T60
+R18	Coreference Arg1:T60 Arg2:T63
+R19	Coreference Arg1:T55 Arg2:T64
+R20	Coreference Arg1:T55 Arg2:T65
+R21	Coreference Arg1:T52 Arg2:T67
+R22	Coreference Arg1:T63 Arg2:T68
+R23	Coreference Arg1:T59 Arg2:T69
+R24	Coreference Arg1:T24 Arg2:T71
+R25	Coreference Arg1:T75 Arg2:T76
+R26	Coreference Arg1:T66 Arg2:T77
+R27	Coreference Arg1:T74 Arg2:T83
+R28	Coreference Arg1:T83 Arg2:T84
+R29	Coreference Arg1:T18 Arg2:T86
+R30	Coreference Arg1:T85 Arg2:T87
+R31	Coreference Arg1:T87 Arg2:T89
+R32	Coreference Arg1:T68 Arg2:T91
+R33	Coreference Arg1:T85 Arg2:T92
+R34	Coreference Arg1:T93 Arg2:T94
+R35	Coreference Arg1:T67 Arg2:T95
+R36	Coreference Arg1:T91 Arg2:T96
+R37	Coreference Arg1:T18 Arg2:T97
+R38	Coreference Arg1:T70 Arg2:T98
+R39	Coreference Arg1:T95 Arg2:T99
+R40	Coreference Arg1:T83 Arg2:T100
+R41	Coreference Arg1:T92 Arg2:T101
+R42	Coreference Arg1:T101 Arg2:T102
+R43	Coreference Arg1:T90 Arg2:T103
+R44	Coreference Arg1:T103 Arg2:T104
+R45	Coreference Arg1:T104 Arg2:T105
+R46	Coreference Arg1:T82 Arg2:T106
+R47	Coreference Arg1:T96 Arg2:T110
+R48	Coreference Arg1:T99 Arg2:T115
+R49	Coreference Arg1:T110 Arg2:T116
+R50	Coreference Arg1:T97 Arg2:T117
+R51	Coreference Arg1:T98 Arg2:T118
+R52	Coreference Arg1:T106 Arg2:T119
+R53	Coreference Arg1:T86 Arg2:T120
+R54	Coreference Arg1:T120 Arg2:T121
+R55	Coreference Arg1:T115 Arg2:T122
+R56	Coreference Arg1:T80 Arg2:T123
+R57	Coreference Arg1:T58 Arg2:T124
+R58	Coreference Arg1:T71 Arg2:T126
+R59	Coreference Arg1:T54 Arg2:T127
+R60	Coreference Arg1:T129 Arg2:T130
+R61	Coreference Arg1:T129 Arg2:T132
+R62	Coreference Arg1:T133 Arg2:T134
+R63	Coreference Arg1:T133 Arg2:T136
+R64	Coreference Arg1:T135 Arg2:T137
+R65	Coreference Arg1:T122 Arg2:T138
+R66	Coreference Arg1:T119 Arg2:T140
+R67	Coreference Arg1:T139 Arg2:T143

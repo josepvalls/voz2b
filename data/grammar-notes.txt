@@ -1,0 +1,203 @@
+http://michaelpaulukonis.github.io/malepropp/
+http://tz69.3x.ro/Generator/gen.html
+https://github.com/MichaelPaulukonis/malepropp
+http://www.jacobpedia.com/nhhl/FairyTaleGenerator/index.htm
+http://www.springhole.net/writing_roleplaying_randomators/plotgens.htm
+
+
+http://nil.fdi.ucm.es/sites/default/files/PropperAISB2014_CRC.pdf
+ - the existence of long range dependencies between character functions is noted by Propp, but not actually addressed in terms of how it should affect the computational procedure described for story generation
+ - distribution of endings changes, get distributions
+
+
+Propp's lexicon
+alpha beta gamma delta epsilon zeta eta theta lambda A a B C depart D d E E_ F f G H J I K return Pr Rs o L M N Q Ex T U W w
+
+Propp's grammar?
+FOLKTALE -> PREPARATION MOVES
+MOVES -> MOVE
+MOVES -> MOVES MOVE
+PREPARATION ->  alpha* beta* gamma* delta* epsilon* zeta* eta* theta* lambda* 
+MOVE = (A|a)* B* (C depart)* (D|d)* (E|E_)* (F|f)* G* H* I* J* K* return* (Pr|Pr Rs)* o* L* M* N* Q* Ex* T* U* (W|w)*
+
+
+
+http://groups.csail.mit.edu/genesis/papers/Finlayson%202011.pdf
+ - 20, 21
+
+FINLAYSON LEXICON 2.1
+T full tale
+U tale sans preparation
+M_n move number n
+
+π preparatory sequence
+κ complication
+µ first part of a move
+ν second part of a move
+λ liquidation
+
+finlayson grammar 2.1
+T → π U
+T → U
+Y → M U (wtf is Y?)
+M → κ µ ν λ
+M_n → κ µ M_m ν
+U → κ κ µ ν λ µ ν λ
+U → κ µ ν κ λ ν
+
+finlayson lexicon 2.4
+Π preparatory sequence (see Table 2.1)
+M_n move number n (see Table 2.1)
+∆ encounter with a donor
+Φ fight and victory
+Σ difficult task and solution
+
+finlayson grammar 2.4
+Π → α?β(γδ)?(€ζ)?(ηθ)? pairs of preparation functions occur together
+M_n → ∆?AB?C?∆?G?... functions usually occur in alphabetical order
+∆ → (DE?F?)|(D?EF?)|(D?E?F) donor encounter
+Σ → MN difficult task/solution pair (this M is not for move but for function task M)
+Φ → (HI?)|(H?I) struggle/victory pair
+
+https://georgelakoff.files.wordpress.com/2010/12/structural-complexity-in-fairy-tales-lakoff-1972.pdf
+ - 144
+lakoff lexicon
+CS complicating sequence
+RS resolving sequence
+HS helplessness sequence
+DS donor sequence
+Int interdiction
+Vio violation
+R resolution
+C commplication (equivalent to Propp's A)
+M propose difficult task
+N complete difficult task
+V_V villany
+C_L lack
+WVio #willful violation
+DEC deception by villain
+SUB submission of the hero
+ D
+ E
+ F
+ G
+ H
+ I
+ K
+Rew reward
+
+lakoff grammar
+Plot = CS RS
+CS = (HS) C L
+RS = (DS) (EP) R K Rew
+DS = D E F G
+R = (H I)
+R = (M N)
+HS = Int Vio
+Vio = WVio
+Vio = DEC SUB
+C = C_V
+C = C_L
+C_V = C_V1
+C_V = C_Vi ...
+C_L = C_L1
+C_L = C_Li ...
+
+
+http://drops.dagstuhl.de/opus/volltexte/2013/4156/pdf/p106-gervas.pdf
+ - 110
+FOLKTALE = COMPLICATION DONOR COURSE_OF_ACTION CLOSURE
+FOLKTALE = COMPLICATION DONOR COURSE_OF_ACTION
+FOLKTALE = COMPLICATION COURSE_OF_ACTION CLOSURE
+FOLKTALE = COMPLICATION COURSE_OF_ACTION
+FOLKTALE = ↑ DONOR T COMPLICATION DONOR COURSE_OF_ACTION CLOSURE
+COMPLICATION = TRIGGER
+COMPLICATION = TRIGGER MEDIATION ↑
+COMPLICATION = TRIGGER MEDIATION
+COMPLICATION = TRIGGER M MEDIATION
+TRIGGER = A
+TRIGGER = a
+MEDIATION = C
+MEDIATION = B C
+DONOR = F
+DONOR = F G
+DONOR = D E
+DONOR = D E F
+DONOR = D E F G
+DONOR = D E G F
+COURSE_OF_ACTION = TASK
+COURSE_OF_ACTION = ↓ PURSUIT
+COURSE_OF_ACTION = K ↓ PURSUIT
+COURSE_OF_ACTION = ↓ PURSUIT o
+COURSE_OF_ACTION = o DONOR K T PURSUIT
+COURSE_OF_ACTION = CONFRONTATION K ↓
+COURSE_OF_ACTION = CONFRONTATION K ↓ PURSUIT
+COURSE_OF_ACTION = K ↓
+COURSE_OF_ACTION = CONFRONTATION
+COURSE_OF_ACTION = CONFRONTATION K
+PURSUIT = Pr Rs
+PURSUIT = Pr DONOR Rs
+CONFRONTATION = H I
+CONFRONTATION = I
+TASK = M N
+CLOSURE = W
+CLOSURE = Q W
+CLOSURE = Q Ex U W
+CLOSURE = T W
+CLOSURE = X U W ↓ X
+
+
+
+
+all functions
+Narrative:  alpha A B C depart H I K W return
+Narrative:  alpha gamma beta delta A C depart D E F G K return Pr D E F Rs
+Narrative:  alpha F a C depart T G W return I W
+Narrative:  alpha D E F A A C B depart I H H I K K return W
+Narrative:  alpha a B C depart H I K return
+Narrative:  alpha A depart H I K return return
+Narrative:  depart D E F G T A C depart F H I K W
+Narrative:  alpha A B C depart H I K return W
+Narrative:  alpha gamma beta zeta eta theta A depart D E return Pr Rs Pr Rs
+Narrative:  alpha a B F C depart G K return
+Narrative:  alpha A C F H I K return Pr Rs Pr Rs
+Narrative:  A B C depart H I return I K W
+Narrative:  alpha beta eta A D E F Pr Rs depart D E return F Pr Rs o Q W
+Narrative:  alpha A o F K T Pr Rs Q Ex U W
+Narrative:  alpha gamma delta beta A B C depart D E G F I K return W
+Narrative:  alpha theta theta A depart D E F return K
+Narrative:  alpha eta beta A depart G H I W return Q
+Narrative:  alpha a B alpha a K alpha depart D E D E D E E F K L Q W
+
+
+only actual
+Narrative:  alpha A B depart H I W return
+Narrative:  alpha gamma beta delta A depart D E F G K return Pr D E F Rs
+Narrative:  alpha F C depart G W return I W
+Narrative:  alpha D E F A A B depart I H I K K return W
+Narrative:  alpha a depart H I K
+Narrative:  alpha A depart I K return
+Narrative:  depart D E F G T C depart F H K W
+Narrative:  alpha A B C depart H I return W
+Narrative:  alpha gamma zeta eta theta A depart D E return Pr Rs Pr Rs
+Narrative:  alpha B F depart G K
+Narrative:  alpha C H I K return Pr Rs Pr Rs
+Narrative:  A B C depart H I return I K W
+Narrative:  alpha eta A D E F Pr Rs depart D E return F Rs o Q W
+Narrative:  alpha A o F K T Pr Rs Q Ex U W
+Narrative:  alpha gamma delta beta A B C depart D E G F I K return W
+Narrative:  alpha theta theta A depart D E F return K
+Narrative:  alpha eta beta A depart G H I W return Q
+Narrative:  alpha a B alpha a K alpha depart D E D E D E E F K L Q W
+
+
+
+
+X -> AB C DE
+X -> C DE
+X -> C
+AB -> 'a'
+AB -> 'b'
+C -> 'c'
+DE -> 'd'
+DE -> 'e'

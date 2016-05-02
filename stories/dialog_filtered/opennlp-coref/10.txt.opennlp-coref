@@ -1,0 +1,309 @@
+Once, in a far away land, there was a man who had seven sons - all by the name of Simeon.
+They were seven lazy, good-for-nothing loafers.
+They never did a single useful thing.
+This was unbearable for their father.
+Eventually, it got to the point that he simply brought all seven Simeons to the czar and enlisted them in his service.
+The czar was grateful to the father for bringing him so many fine, able men.
+After the fifth Simeon, he questioned the sixth.
+Then he dismissed them all.
+After some time passed, the czar remembering the seven Simeons, decided to put one of their skills to use.
+They checked his statements with the newspapers and found he was exactly right!
+After another long period passed, the czar decided to marry a certain princess.
+He just didn't know; there was no one suitable for the job.
+Then he remembered the seven Simeons.
+Summoning them, he commissioned them as soldiers, with the assignment to bring him that princess.
+The Simeons quickly convened.
+As expert craftsmen they, slam-bam, built a boat, boarded and sailed off to the kingdom of the bride-to-be-princess.
+One, looking from the high mast, said the princess was currently alone and so vulnerable.
+The maker of valuables went with his brother, the thief, to sell his wares in the palace.
+They barely arrived when the thief stole the princess.
+They immediately cut anchor and set sail.
+When the princess realized they were carrying her away, she turned into a white swan and flew from the boat.
+The marksman, without delay, grabbed his gun and fired a shot into her left wing.
+Simeon number four darted into the water, retrieved the swan, as any good dog would, bringing her back to the boat.
+The swan turned back into a princess, but her left arm was still injured.
+Healer Simeon immediately cured the princess' arm.
+With their healthy and successful return to their own kingdom, the Simeons fired a round from the cannon.
+The czar heard it, but had already forgotten about the Simeons.
+Whether somebody ran or rode, they quickly returned with news concerning the seven Simeons and the czar's future bride.
+The czar rejoiced in the Simeons' success and commanded they be met with honor, cannon-fire, and the beating of drums.
+Only the princess didn't want marry the czar.
+He was already too old!
+Therefore, he asked her who she wanted to marry.
+Afterall, the thief was a dashing fellow whose nobility appealed to the princess.
+The czar, without another word, ordered them to be married.
+Years later, he wanted some peace and quiet, so he placed Simeon the Thief on the throne, and made all of his brothers great noblemen.
+
+Sentence index	Text offset
+0	0
+1	89
+2	136
+3	173
+4	210
+5	328
+6	404
+7	452
+8	479
+9	585
+10	664
+11	743
+12	802
+13	839
+14	936
+15	965
+16	1171
+17	1260
+18	1314
+19	1355
+20	1463
+21	1544
+22	1659
+23	1732
+24	1782
+25	1887
+26	1950
+27	2069
+28	2187
+29	2232
+30	2255
+31	2303
+32	2384
+33	2443
+Coreference groups:	85
+[ the czar, The czar, him, he, he, them all, the czar, their, They, his, he, the czar, He, he, he, them, him, The czar, the czar's, The czar, they, the czar, The czar, without another word, them, he, he, his ]:27
+	the czar	the czar	4:76-79;4:80-84;
+	The czar	The czar	5:0-3;5:4-8;
+	him	him	5:49-52;
+	he	he	6:24-26;
+	he	he	7:5-7;
+	them all	them	7:18-22;
+	the czar	the czar	8:24-27;8:28-32;
+	their	their	8:86-91;
+	They	They	9:0-4;
+	his	his	9:13-16;
+	he	he	9:58-60;
+	the czar	the czar	10:34-37;10:38-42;
+	He	He	11:0-2;
+	he	he	12:5-7;
+	he	he	13:16-18;
+	them	them	13:32-36;
+	him	him	13:79-82;
+	The czar	The czar	25:0-3;25:4-8;
+	the czar's	the czar 's	26:95-98;26:99-103;26:103-105;
+	The czar	The czar	27:0-3;27:4-8;
+	they	they	27:56-60;
+	the czar	the czar	28:36-39;28:40-44;
+	The czar, without another word	The czar	32:0-3;32:4-8;
+	them	them	32:40-44;
+	he	he	33:13-15;
+	he	he	33:48-50;
+	his	his	33:106-109;
+[ his brothers great noblemen ]:1
+	his brothers great noblemen	his brothers great noblemen	33:106-109;33:110-118;33:119-124;33:125-133;
+[ the throne ]:1
+	the throne	the throne	33:78-81;33:82-88;
+[ the Thief on the throne ]:1
+	the Thief on the throne	the Thief	33:65-68;33:69-74;
+[ quiet ]:1
+	quiet	quiet	33:38-43;
+[ some peace ]:1
+	some peace	some peace	33:23-27;33:28-33;
+[ some peace and quiet ]:1
+	some peace and quiet	some peace and quiet	33:23-27;33:28-33;33:34-37;33:38-43;
+[ Years ]:1
+	Years	Years	33:0-5;
+[ another word ]:1
+	another word	another word	32:18-25;32:26-30;
+[ the princess ]:1
+	the princess	the princess	31:68-71;31:72-80;
+[ a dashing fellow whose nobility appealed to the princess ]:1
+	a dashing fellow whose nobility appealed to the princess	a dashing fellow	31:24-25;31:26-33;31:34-40;
+[ the thief, the thief, her, she, her, her, her, the thief ]:8
+	the thief	the thief	16:46-49;16:50-55;
+	the thief	the thief	17:25-28;17:29-34;
+	her	her	19:46-49;
+	she	she	19:56-59;
+	her	her	20:67-70;
+	her	her	21:94-97;
+	her	her	22:42-45;
+	the thief	the thief	31:10-13;31:14-19;
+[ Only the princess, He, he ]:3
+	Only the princess	Only the princess	28:0-4;28:5-8;28:9-17;
+	He	He	29:0-2;
+	he	he	30:11-13;
+[ drums ]:1
+	drums	drums	27:112-117;
+[ the beating of drums ]:1
+	the beating of drums	the beating	27:97-100;27:101-108;
+[ cannon-fire ]:1
+	cannon-fire	cannon-fire	27:80-91;
+[ honor ]:1
+	honor	honor	27:73-78;
+[ honor, cannon-fire, and the beating of drums ]:1
+	honor, cannon-fire, and the beating of drums	honor , cannon-fire , and the beating of drums	27:73-78;27:78-79;27:80-91;27:91-92;27:93-96;27:97-100;27:101-108;27:109-111;27:112-117;
+[ the seven Simeons, The Simeons, the Simeons, it, the Simeons, the Simeons' ]:6
+	the seven Simeons	the seven Simeons	8:45-48;8:49-54;8:55-62;
+	The Simeons	The Simeons	14:0-3;14:4-11;
+	the Simeons	the Simeons	24:63-66;24:67-74;
+	it	it	25:15-17;
+	the Simeons	the Simeons	25:51-54;25:55-62;
+	the Simeons'	the Simeons '	27:21-24;27:25-32;27:32-33;
+[ the Simeons' success ]:1
+	the Simeons' success	the Simeons ' success	27:21-24;27:25-32;27:32-33;27:34-41;
+[ the czar's future bride ]:1
+	the czar's future bride	the czar 's future bride	26:95-98;26:99-103;26:103-105;26:106-112;26:113-118;
+[ the seven Simeons ]:1
+	the seven Simeons	the seven Simeons	26:73-76;26:77-82;26:83-90;
+[ the seven Simeons and the czar's future bride ]:1
+	the seven Simeons and the czar's future bride	the seven Simeons and the czar 's future bride	26:73-76;26:77-82;26:83-90;26:91-94;26:95-98;26:99-103;26:103-105;26:106-112;26:113-118;
+[ news concerning the seven Simeons and the czar's future bride ]:1
+	news concerning the seven Simeons and the czar's future bride	news	26:57-61;
+[ Healer Simeon, somebody, they ]:3
+	Healer Simeon	Healer Simeon	23:0-6;23:7-13;
+	somebody	somebody	26:8-16;
+	they	they	26:30-34;
+[ the cannon ]:1
+	the cannon	the cannon	24:94-97;24:98-104;
+[ a round from the cannon ]:1
+	a round from the cannon	a round	24:81-82;24:83-88;
+[ a princess, the princess', their, their ]:4
+	a princess	a princess	22:26-27;22:28-36;
+	the princess'	the princess '	23:32-35;23:36-44;23:44-45;
+	their	their	24:5-10;
+	their	their	24:44-49;
+[ their own kingdom ]:1
+	their own kingdom	their own kingdom	24:44-49;24:50-53;24:54-61;
+[ their healthy and successful return to their own kingdom ]:1
+	their healthy and successful return to their own kingdom	their healthy and successful return	24:5-10;24:11-18;24:19-22;24:23-33;24:34-40;
+[ the princess' arm ]:1
+	the princess' arm	the princess ' arm	23:32-35;23:36-44;23:44-45;23:46-49;
+[ her left arm ]:1
+	her left arm	her left arm	22:42-45;22:46-50;22:51-54;
+[ the swan, The swan ]:2
+	the swan	the swan	21:52-55;21:56-60;
+	The swan	The swan	22:0-3;22:4-8;
+[ the boat ]:1
+	the boat	the boat	21:106-109;21:110-114;
+[ any good dog ]:1
+	any good dog	any good dog	21:65-68;21:69-73;21:74-77;
+[ the water ]:1
+	the water	the water	21:31-34;21:35-40;
+[ Simeon number four ]:1
+	Simeon number four	Simeon number four	21:0-6;21:7-13;21:14-18;
+[ her left wing ]:1
+	her left wing	her left wing	20:67-70;20:71-75;20:76-80;
+[ a shot ]:1
+	a shot	a shot	20:55-56;20:57-61;
+[ The marksman, without delay, his ]:2
+	The marksman, without delay	The marksman	20:0-3;20:4-12;
+	his	his	20:37-40;
+[ his gun ]:1
+	his gun	his gun	20:37-40;20:41-44;
+[ delay ]:1
+	delay	delay	20:22-27;
+[ the boat ]:1
+	the boat	the boat	19:99-102;19:103-107;
+[ a white swan ]:1
+	a white swan	a white swan	19:72-73;19:74-79;19:80-84;
+[ that princess, the princess, his, his, the princess, the princess, they ]:7
+	that princess	that princess	13:83-87;13:88-96;
+	the princess	the princess	15:155-158;15:159-167;
+	his	his	16:33-36;
+	his	his	16:65-68;
+	the princess	the princess	17:41-44;17:45-53;
+	the princess	the princess	19:5-8;19:9-17;
+	they	they	19:27-31;
+[ sail ]:1
+	sail	sail	18:36-40;
+[ anchor ]:1
+	anchor	anchor	18:21-27;
+[ his wares, They, They ]:3
+	his wares	his wares	16:65-68;16:69-74;
+	They	They	17:0-4;
+	They	They	18:0-4;
+[ the palace ]:1
+	the palace	the palace	16:78-81;16:82-88;
+[ his brother, the thief ]:1
+	his brother, the thief	his brother	16:33-36;16:37-44;
+[ valuables ]:1
+	valuables	valuables	16:13-22;
+[ The maker of valuables ]:1
+	The maker of valuables	The maker	16:0-3;16:4-9;
+[ the high mast ]:1
+	the high mast	the high mast	15:135-138;15:139-143;15:144-148;
+[ the bride-to-be-princess.
+One ]:1
+	the bride-to-be-princess.
+One	the bride-to-be-princess . One	15:91-94;15:95-115;15:115-116;15:117-120;
+[ the kingdom of the bride-to-be-princess.
+One ]:1
+	the kingdom of the bride-to-be-princess.
+One	the kingdom	15:76-79;15:80-87;
+[ a boat ]:1
+	a boat	a boat	15:42-43;15:44-48;
+[ slam-bam ]:1
+	slam-bam	slam-bam	15:26-34;
+[ expert craftsmen, they, slam-bam ]:2
+	expert craftsmen	expert craftsmen	15:3-9;15:10-19;
+	they, slam-bam	they	15:20-24;
+[ the assignment ]:1
+	the assignment	the assignment	13:55-58;13:59-69;
+[ soldiers ]:1
+	soldiers	soldiers	13:40-48;
+[ the seven Simeons, them ]:2
+	the seven Simeons	the seven Simeons	12:19-22;12:23-28;12:29-36;
+	them	them	13:10-14;
+[ the job ]:1
+	the job	the job	11:51-54;11:55-58;
+[ no one suitable for the job ]:1
+	no one suitable for the job	no one suitable	11:31-33;11:34-37;11:38-46;
+[ a certain princess ]:1
+	a certain princess	a certain princess	10:60-61;10:62-69;10:70-78;
+[ another long period ]:1
+	another long period	another long period	10:6-13;10:14-18;10:19-25;
+[ the newspapers ]:1
+	the newspapers	the newspapers	9:33-36;9:37-47;
+[ his statements with the newspapers ]:1
+	his statements with the newspapers	his statements	9:13-16;9:17-27;
+[ their skills to use ]:1
+	their skills to use	their skills	8:86-91;8:92-98;
+[ one of their skills to use ]:1
+	one of their skills to use	one	8:79-82;
+[ some time ]:1
+	some time	some time	8:6-10;8:11-15;
+[ the sixth ]:1
+	the sixth	the sixth	6:38-41;6:42-47;
+[ the fifth Simeon ]:1
+	the fifth Simeon	the fifth Simeon	6:6-9;6:10-15;6:16-22;
+[ many fine, able men ]:1
+	many fine, able men	many fine , able men	5:56-60;5:61-65;5:65-66;5:67-71;5:72-75;
+[ the father ]:1
+	the father	the father	5:25-28;5:29-35;
+[ their father, he, his ]:3
+	their father	their father	3:24-29;3:30-36;
+	he	he	4:37-39;
+	his	his	4:106-109;
+[ his service ]:1
+	his service	his service	4:106-109;4:110-117;
+[ all seven Simeons, them ]:2
+	all seven Simeons	all seven Simeons	4:55-58;4:59-64;4:65-72;
+	them	them	4:98-102;
+[ the point ]:1
+	the point	the point	4:22-25;4:26-31;
+[ seven sons - all by the name of Simeon, They, They, their ]:4
+	seven sons - all by the name of Simeon	seven sons	0:50-55;0:56-60;
+	They	They	1:0-4;
+	They	They	2:0-4;
+	their	their	3:24-29;
+[ a single useful thing ]:1
+	a single useful thing	a single useful thing	2:15-16;2:17-23;2:24-30;2:31-36;
+[ seven lazy, good-for-nothing loafers ]:1
+	seven lazy, good-for-nothing loafers	seven lazy , good-for-nothing loafers	1:10-15;1:16-20;1:20-21;1:22-38;1:39-46;
+[ Simeon ]:1
+	Simeon	Simeon	0:82-88;
+[ the name of Simeon ]:1
+	the name of Simeon	the name	0:70-73;0:74-78;
+[ a man who had seven sons - all by the name of Simeon ]:1
+	a man who had seven sons - all by the name of Simeon	a man	0:36-37;0:38-41;
+[ a far away land ]:1
+	a far away land	land	0:20-24;

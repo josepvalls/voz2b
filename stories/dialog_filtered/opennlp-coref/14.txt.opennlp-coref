@@ -1,0 +1,589 @@
+There was once a very wealthy merchant who had a marvelously beautiful daughter.
+This merchant carried goods to various provinces, and one day he came to a certain kingdom and brought precious cloths to the king as a gift.
+The king immediately wrote a letter and called his guards.
+The merchant's daughter took the letter, burst into tears, and prepared to go, taking also her maidservant; and no one could distinguish this maid from the merchant's daughter, they were so like each other.
+They dressed in dresses that were alike and went to the king for the marriage.
+They went to the island; there the maidservant gave the merchant's daughter sleeping potions, cut out her eyes, and put them in her pocket.
+They went to the king; he married the maid at once, and they began to live together.
+Meanwhile the merchant's daughter recovered from the illness that her maid had brought upon her.
+She could not see; she could only hear and she heard an old man tending cattle.
+The old man took her in.
+He heeded her and drove away the cattle.
+The old man went; none of the wealthy merchants would give him goods on credit but a poor shopkeeper gave him some.
+He brought the velvet and silk to the blind maiden.
+And she began to sew a royal crown of velvet and silk; she embroidered such a beautiful crown that it was a pleasure to behold it.
+The old man went to the palace with the crown.
+Everyone admired it and wanted to buy it from him, but the old man asked for an eye in payment.
+Straightway the king was told that he was asking for an eye.
+The king came out, was delighted with the crown, and began to bargain for it, but the old man still asked for an eye.
+The king began to curse and threatened to put him in prison; but no matter what the king said, the old man held his ground.
+Just then his wife, the queen, rushed out, took an eye from her pocket, and gave it to the king.
+The king was overjoyed.
+She took it from him, went outside at twilight, spat upon it, put it into its socket, and was able to see once more.
+Then again she sent the old man to the shops, giving him money, and asked him to pay what he owed for the silk and velvet and to bring more velvet and gold thread.
+He got what he needed from the poor shopkeeper and brought these things to the merchant's daughter.
+She sat down to sew another crown, finished it, and sent the old man to the same king.
+The old man came to the palace.
+There everyone was amazed, for although the first crown was beautiful, the second was even lovelier.
+The king at once ordered a guard to cut away an eye from a prisoner; but his wife again gave him an eye.
+And he left the palace.
+He came to his hut and gave the eye to the blind maiden.
+She again went outside at twilight, spat on the eye, put it in its socket, and could see with both eyes.
+She lay down to sleep in the hut, but upon awakening she suddenly found herself in a glass house and began to live in magnificent style.
+The king went to see this marvel, wondering who had built such a fine house.
+He drove into the yard and the merchant's daughter was delighted.
+She received him hospitably and bade him sit down at table.
+He feasted there and upon leaving asked the maiden to come to see him.
+The king again went to visit the maiden, and the queen was full of spite.
+The king came, feasted, and invited her to his palace.
+The old man wept for her.
+Soon the guards came, seated her in a carriage, and drove away.
+They brought her to the king's palace, and the queen did not even look at her; she wanted to shoot her on the spot.
+They cut her in pieces, took out her heart, buried her in the ground, and returned to the palace.
+The queen came out to meet them, took the heart, rolled it up into an egg, and put it in her pocket.
+The old man went to sleep in a glass house but awoke in a hut and burst into tears.
+He wept and wept, then he set about his appointed task.
+He made a coffin and went to seek the maiden; he found her in the earth, dug her up, gathered all the pieces, put them in the coffin, and buried them in his own land.
+The king did not know of all this, so he went again to visit the merchant's daughter.
+When he arrived at the place, there was no house, no maiden; but at the spot where she was buried a garden had grown.
+They came to the garden and began to cut it but it turned into stone.
+The king longed to see the garden again and went to that place.
+When he came he beheld a boy there - and what a handsome boy he was!
+Meanwhile the boy began to cry and there was no way of appeasing him: no matter what they gave him, he kept on crying.
+Then the queen took from her pocket the egg she had made from the maiden's heart and gave it to the boy; he ceased crying and began to skip around the rooms.
+The boy ran to the yard and the king ran after him; the boy ran into the street and the king ran into the street; the boy ran to the field and the king ran to the field; the boy ran to the garden and the king ran to the garden.
+There the king saw the maiden and was overjoyed.
+They went to the palace.
+The queen fell at her feet.
+The maidservant's eyes were cut out, she was tied to a horse, and dragged to her death over the open field.
+And the king began to live happily with the young queen and to prosper.
+The king always delighted in her and dressed her in gold.
+
+Sentence index	Text offset
+0	0
+1	80
+2	221
+3	279
+4	485
+5	563
+6	702
+7	786
+8	882
+9	961
+10	985
+11	1025
+12	1140
+13	1191
+14	1321
+15	1367
+16	1462
+17	1522
+18	1639
+19	1762
+20	1858
+21	1881
+22	1997
+23	2160
+24	2259
+25	2345
+26	2376
+27	2476
+28	2580
+29	2603
+30	2659
+31	2763
+32	2899
+33	2975
+34	3040
+35	3099
+36	3169
+37	3242
+38	3296
+39	3321
+40	3384
+41	3499
+42	3596
+43	3696
+44	3779
+45	3834
+46	4000
+47	4085
+48	4202
+49	4271
+50	4334
+51	4402
+52	4520
+53	4677
+54	4904
+55	4952
+56	4976
+57	5003
+58	5110
+59	5181
+Coreference groups:	158
+[ gold ]:1
+	gold	gold	59:52-56;
+[ the queen, the queen, her, she, her, They, her, her, her, The queen, them, her, the queen, her, she, The queen, her, she, her, her, her ]:21
+	the queen	the queen	19:20-23;19:24-29;
+	the queen	the queen	40:43-46;40:47-52;
+	her	her	40:74-77;
+	she	she	40:79-82;
+	her	her	40:99-102;
+	They	They	41:0-4;
+	her	her	41:9-12;
+	her	her	41:33-36;
+	her	her	41:51-54;
+	The queen	The queen	42:0-3;42:4-9;
+	them	them	42:27-31;
+	her	her	42:89-92;
+	the queen	the queen	52:5-8;52:9-14;
+	her	her	52:25-28;
+	she	she	52:44-47;
+	The queen	The queen	56:0-3;56:4-9;
+	her	her	56:18-21;
+	she	she	57:37-40;
+	her	her	57:77-80;
+	her	her	59:29-32;
+	her	her	59:45-48;
+[ the king, The king, his, the king, the king, he, the king, he, The king, The king, him, the king, his, the king, The king, him, The king, his, him, he, He, his, The king, He, him, him, He, him, The king, The king, his, the king's, The king, he, he, The king, he, he, he, the king, the king, the king, the king, the king, They, the king, The king ]:47
+	the king	the king	1:122-125;1:126-130;
+	The king	The king	2:0-3;2:4-8;
+	his	his	2:47-50;
+	the king	the king	4:52-55;4:56-60;
+	the king	the king	6:13-16;6:17-21;
+	he	he	6:23-25;
+	the king	the king	16:12-15;16:16-20;
+	he	he	16:35-37;
+	The king	The king	17:0-3;17:4-8;
+	The king	The king	18:0-3;18:4-8;
+	him	him	18:46-49;
+	the king	the king	18:80-83;18:84-88;
+	his	his	18:112-115;
+	the king	the king	19:87-90;19:91-95;
+	The king	The king	20:0-3;20:4-8;
+	him	him	21:17-20;
+	The king	The king	27:0-3;27:4-8;
+	his	his	27:73-76;
+	him	him	27:93-96;
+	he	he	28:4-6;
+	He	He	29:0-2;
+	his	his	29:11-14;
+	The king	The king	32:0-3;32:4-8;
+	He	He	33:0-2;
+	him	him	34:13-16;
+	him	him	34:37-40;
+	He	He	35:0-2;
+	him	him	35:66-69;
+	The king	The king	36:0-3;36:4-8;
+	The king	The king	37:0-3;37:4-8;
+	his	his	37:43-46;
+	the king's	the king 's	40:20-23;40:24-28;40:28-30;
+	The king	The king	46:0-3;46:4-8;
+	he	he	46:38-40;
+	he	he	47:5-7;
+	The king	The king	49:0-3;49:4-8;
+	he	he	50:5-7;
+	he	he	50:13-15;
+	he	he	50:61-63;
+	the king	the king	53:28-31;53:32-36;
+	the king	the king	53:84-87;53:88-92;
+	the king	the king	53:143-146;53:147-151;
+	the king	the king	53:200-203;53:204-208;
+	the king	the king	54:6-9;54:10-14;
+	They	They	55:0-4;
+	the king	the king	58:4-7;58:8-12;
+	The king	The king	59:0-3;59:4-8;
+[ the young queen ]:1
+	the young queen	the young queen	58:40-43;58:44-49;58:50-55;
+[ the open field ]:1
+	the open field	the open field	57:92-95;57:96-100;57:101-106;
+[ her death ]:1
+	her death	her death	57:77-80;57:81-86;
+[ a horse ]:1
+	a horse	a horse	57:53-54;57:55-60;
+[ The maidservant's ]:1
+	The maidservant's	The maidservant 's	57:0-3;57:4-15;57:15-17;
+[ The maidservant's eyes ]:1
+	The maidservant's eyes	The maidservant 's eyes	57:0-3;57:4-15;57:15-17;57:18-22;
+[ her feet ]:1
+	her feet	her feet	56:18-21;56:22-26;
+[ the palace ]:1
+	the palace	the palace	55:13-16;55:17-23;
+[ the maiden ]:1
+	the maiden	the maiden	54:19-22;54:23-29;
+[ the garden ]:1
+	the garden	the garden	53:216-219;53:220-226;
+[ the garden ]:1
+	the garden	the garden	53:185-188;53:189-195;
+[ a boy there, a handsome boy, the boy, him, they, him, he, the boy, he, The boy, him, the boy, the boy, the boy ]:14
+	a boy there	a boy	50:23-24;50:25-28;
+	a handsome boy	a handsome boy	50:46-47;50:48-56;50:57-60;
+	the boy	the boy	51:10-13;51:14-17;
+	him	him	51:65-68;
+	they	they	51:85-89;
+	him	him	51:95-98;
+	he	he	51:100-102;
+	the boy	the boy	52:96-99;52:100-103;
+	he	he	52:105-107;
+	The boy	The boy	53:0-3;53:4-7;
+	him	him	53:47-50;
+	the boy	the boy	53:52-55;53:56-59;
+	the boy	the boy	53:114-117;53:118-121;
+	the boy	the boy	53:170-173;53:174-177;
+[ the field ]:1
+	the field	the field	53:159-162;53:163-168;
+[ the field ]:1
+	the field	the field	53:129-132;53:133-138;
+[ the street ]:1
+	the street	the street	53:102-105;53:106-112;
+[ the street ]:1
+	the street	the street	53:69-72;53:73-79;
+[ the yard ]:1
+	the yard	the yard	53:15-18;53:19-23;
+[ the rooms ]:1
+	the rooms	the rooms	52:147-150;52:151-156;
+[ the blind maiden, the maiden's ]:2
+	the blind maiden	the blind maiden	29:39-42;29:43-48;29:49-55;
+	the maiden's	the maiden 's	52:62-65;52:66-72;52:72-74;
+[ the maiden's heart ]:1
+	the maiden's heart	the maiden 's heart	52:62-65;52:66-72;52:72-74;52:75-80;
+[ the egg she had made from the maiden's heart ]:1
+	the egg she had made from the maiden's heart	the egg	52:36-39;52:40-43;
+[ her pocket ]:1
+	her pocket	her pocket	52:25-28;52:29-35;
+[ no way of appeasing him: no matter what they gave him, he kept on crying ]:1
+	no way of appeasing him: no matter what they gave him, he kept on crying	no way	51:45-47;51:48-51;
+[ that place ]:1
+	that place	that place	49:52-56;49:57-62;
+[ the garden, it, it, the garden ]:4
+	the garden	the garden	48:13-16;48:17-23;
+	it	it	48:41-43;
+	it	it	48:48-50;
+	the garden	the garden	49:23-26;49:27-33;
+[ stone ]:1
+	stone	stone	48:63-68;
+[ no maiden, she, They ]:3
+	no maiden	no maiden	47:50-52;47:53-59;
+	she	she	47:83-86;
+	They	They	48:0-4;
+[ a garden ]:1
+	a garden	a garden	47:98-99;47:100-106;
+[ the spot where she was buried a garden had grown ]:1
+	the spot where she was buried a garden had grown	the spot	47:68-71;47:72-76;
+[ no house, no maiden ]:1
+	no house, no maiden	no house	47:40-42;47:43-48;
+[ the place ]:1
+	the place	the place	47:19-22;47:23-28;
+[ This merchant, he, The merchant's, the merchant's, the merchant's, the merchant's, the merchant's, the merchant's, the merchant's ]:9
+	This merchant	This merchant	1:0-4;1:5-13;
+	he	he	1:62-64;
+	The merchant's	The merchant 's	3:0-3;3:4-12;3:12-14;
+	the merchant's	the merchant 's	3:152-155;3:156-164;3:164-166;
+	the merchant's	the merchant 's	5:52-55;5:56-64;5:64-66;
+	the merchant's	the merchant 's	7:10-13;7:14-22;7:22-24;
+	the merchant's	the merchant 's	23:75-78;23:79-87;23:87-89;
+	the merchant's	the merchant 's	33:27-30;33:31-39;33:39-41;
+	the merchant's	the merchant 's	46:61-64;46:65-73;46:73-75;
+[ the merchant's daughter ]:1
+	the merchant's daughter	the merchant 's daughter	46:61-64;46:65-73;46:73-75;46:76-84;
+[ The old man, He, The old man, him, him, He, The old man, him, the old man, the old man, the old man, his, the old man, him, him, he, He, he, the old man, The old man, The old man, The old man, He, he, his, He, he, his ]:28
+	The old man	The old man	9:0-3;9:4-7;9:8-11;
+	He	He	10:0-2;
+	The old man	The old man	11:0-3;11:4-7;11:8-11;
+	him	him	11:59-62;
+	him	him	11:106-109;
+	He	He	12:0-2;
+	The old man	The old man	14:0-3;14:4-7;14:8-11;
+	him	him	15:46-49;
+	the old man	the old man	15:55-58;15:59-62;15:63-66;
+	the old man	the old man	17:82-85;17:86-89;17:90-93;
+	the old man	the old man	18:95-98;18:99-102;18:103-106;
+	his	his	19:10-13;
+	the old man	the old man	22:20-23;22:24-27;22:28-31;
+	him	him	22:53-56;
+	him	him	22:74-77;
+	he	he	22:90-92;
+	He	He	23:0-2;
+	he	he	23:12-14;
+	the old man	the old man	24:57-60;24:61-64;24:65-68;
+	The old man	The old man	25:0-3;25:4-7;25:8-11;
+	The old man	The old man	38:0-3;38:4-7;38:8-11;
+	The old man	The old man	43:0-3;43:4-7;43:8-11;
+	He	He	44:0-2;
+	he	he	44:23-25;
+	his	his	44:36-39;
+	He	He	45:0-2;
+	he	he	45:46-48;
+	his	his	45:153-156;
+[ his own land ]:1
+	his own land	his own land	45:153-156;45:157-160;45:161-165;
+[ all the pieces, them, them ]:3
+	all the pieces	all the pieces	45:94-97;45:98-101;45:102-108;
+	them	them	45:114-118;
+	them	them	45:145-149;
+[ the coffin ]:1
+	the coffin	the coffin	45:122-125;45:126-132;
+[ the earth ]:1
+	the earth	the earth	45:62-65;45:66-71;
+[ the maiden ]:1
+	the maiden	the maiden	45:34-37;45:38-44;
+[ a coffin ]:1
+	a coffin	a coffin	45:8-9;45:10-16;
+[ his appointed task ]:1
+	his appointed task	his appointed task	44:36-39;44:40-49;44:50-54;
+[ tears ]:1
+	tears	tears	43:77-82;
+[ a hut ]:1
+	a hut	a hut	43:56-57;43:58-61;
+[ a glass house ]:1
+	a glass house	a glass house	43:29-30;43:31-36;43:37-42;
+[ her pocket ]:1
+	her pocket	her pocket	42:89-92;42:93-99;
+[ an egg ]:1
+	an egg	an egg	42:67-69;42:70-73;
+[ the heart ]:1
+	the heart	the heart	42:38-41;42:42-47;
+[ the palace ]:1
+	the palace	the palace	41:86-89;41:90-96;
+[ the ground ]:1
+	the ground	the ground	41:58-61;41:62-68;
+[ her heart ]:1
+	her heart	her heart	41:33-36;41:37-42;
+[ pieces ]:1
+	pieces	pieces	41:16-22;
+[ the spot ]:1
+	the spot	the spot	40:106-109;40:110-114;
+[ the king's palace ]:1
+	the king's palace	the king 's palace	40:20-23;40:24-28;40:28-30;40:31-37;
+[ the guards, They, her ]:3
+	the guards	the guards	39:5-8;39:9-15;
+	They	They	40:0-4;
+	her	her	40:13-16;
+[ a carriage ]:1
+	a carriage	a carriage	39:36-37;39:38-46;
+[ his palace ]:1
+	his palace	his palace	37:43-46;37:47-53;
+[ spite ]:1
+	spite	spite	36:67-72;
+[ the queen ]:1
+	the queen	the queen	36:45-48;36:49-54;
+[ the blind maiden, the maiden, the maiden ]:3
+	the blind maiden	the blind maiden	12:34-37;12:38-43;12:44-50;
+	the maiden	the maiden	35:40-43;35:44-50;
+	the maiden	the maiden	36:29-32;36:33-39;
+[ table ]:1
+	table	table	34:53-58;
+[ the merchant's daughter ]:1
+	the merchant's daughter	the merchant 's daughter	33:27-30;33:31-39;33:39-41;33:42-50;
+[ the yard ]:1
+	the yard	the yard	33:14-17;33:18-22;
+[ such a fine house ]:1
+	such a fine house	such a fine house	32:58-62;32:63-64;32:65-69;32:70-75;
+[ this marvel ]:1
+	this marvel	this marvel	32:21-25;32:26-32;
+[ magnificent style ]:1
+	magnificent style	magnificent style	31:118-129;31:130-135;
+[ a glass house ]:1
+	a glass house	a glass house	31:83-84;31:85-90;31:91-96;
+[ the hut ]:1
+	the hut	the hut	31:25-28;31:29-32;
+[ both eyes ]:1
+	both eyes	both eyes	30:94-98;30:99-103;
+[ twilight, its ]:2
+	twilight	twilight	30:26-34;
+	its	its	30:63-66;
+[ its socket ]:1
+	its socket	its socket	30:63-66;30:67-73;
+[ the eye ]:1
+	the eye	the eye	30:44-47;30:48-51;
+[ the eye ]:1
+	the eye	the eye	29:28-31;29:32-35;
+[ his hut ]:1
+	his hut	his hut	29:11-14;29:15-18;
+[ the palace ]:1
+	the palace	the palace	28:12-15;28:16-22;
+[ an eye ]:1
+	an eye	an eye	27:97-99;27:100-103;
+[ his wife ]:1
+	his wife	his wife	27:73-76;27:77-81;
+[ a prisoner ]:1
+	a prisoner	a prisoner	27:57-58;27:59-67;
+[ an eye ]:1
+	an eye	an eye	27:45-47;27:48-51;
+[ a guard ]:1
+	a guard	a guard	27:25-26;27:27-32;
+[ the second ]:1
+	the second	the second	26:71-74;26:75-81;
+[ the first crown ]:1
+	the first crown	the first crown	26:40-43;26:44-49;26:50-55;
+[ everyone ]:1
+	everyone	everyone	26:6-14;
+[ the palace ]:1
+	the palace	the palace	25:20-23;25:24-30;
+[ the same king ]:1
+	the same king	the same king	24:72-75;24:76-80;24:81-85;
+[ another crown ]:1
+	another crown	another crown	24:20-27;24:28-33;
+[ his wife, the queen, her, She, she, She ]:5
+	his wife, the queen	his wife	19:10-13;19:14-18;
+	her	her	19:60-63;
+	She	She	21:0-3;
+	she	she	22:11-14;
+	She	She	24:0-3;
+[ the merchant's daughter ]:1
+	the merchant's daughter	the merchant 's daughter	23:75-78;23:79-87;23:87-89;23:90-98;
+[ these things ]:1
+	these things	these things	23:59-64;23:65-71;
+[ the poor shopkeeper ]:1
+	the poor shopkeeper	the poor shopkeeper	23:27-30;23:31-35;23:36-46;
+[ gold thread ]:1
+	gold thread	gold thread	22:151-155;22:156-162;
+[ more velvet ]:1
+	more velvet	more velvet	22:135-139;22:140-146;
+[ more velvet and gold thread ]:1
+	more velvet and gold thread	more velvet and gold thread	22:135-139;22:140-146;22:147-150;22:151-155;22:156-162;
+[ velvet ]:1
+	velvet	velvet	22:115-121;
+[ the silk ]:1
+	the silk	the silk	22:102-105;22:106-110;
+[ the silk and velvet ]:1
+	the silk and velvet	the silk and velvet	22:102-105;22:106-110;22:111-114;22:115-121;
+[ money ]:1
+	money	money	22:57-62;
+[ the shops ]:1
+	the shops	the shops	22:35-38;22:39-44;
+[ twilight, its ]:2
+	twilight	twilight	21:38-46;
+	its	its	21:74-77;
+[ its socket ]:1
+	its socket	its socket	21:74-77;21:78-84;
+[ her pocket ]:1
+	her pocket	her pocket	19:60-63;19:64-70;
+[ an eye ]:1
+	an eye	an eye	19:48-50;19:51-54;
+[ his ground ]:1
+	his ground	his ground	18:112-115;18:116-122;
+[ prison ]:1
+	prison	prison	18:53-59;
+[ an eye ]:1
+	an eye	an eye	17:110-112;17:113-116;
+[ the crown ]:1
+	the crown	the crown	17:38-41;17:42-47;
+[ an eye ]:1
+	an eye	an eye	16:53-55;16:56-59;
+[ Straightway the king was told that he was asking for an eye. ]:1
+	Straightway the king was told that he was asking for an eye.	Straightway	16:0-11;
+[ payment ]:1
+	payment	payment	15:87-94;
+[ an eye in payment ]:1
+	an eye in payment	an eye	15:77-79;15:80-83;
+[ Everyone ]:1
+	Everyone	Everyone	15:0-8;
+[ the crown ]:1
+	the crown	the crown	14:36-39;14:40-45;
+[ the palace ]:1
+	the palace	the palace	14:20-23;14:24-30;
+[ a pleasure to behold it ]:1
+	a pleasure to behold it	a pleasure	13:106-107;13:108-116;
+[ such a beautiful crown ]:1
+	such a beautiful crown	such a beautiful crown	13:71-75;13:76-77;13:78-87;13:88-93;
+[ silk ]:1
+	silk	silk	13:49-53;
+[ velvet ]:1
+	velvet	velvet	13:38-44;
+[ velvet and silk ]:1
+	velvet and silk	velvet and silk	13:38-44;13:45-48;13:49-53;
+[ a royal crown of velvet and silk ]:1
+	a royal crown of velvet and silk	a royal crown	13:21-22;13:23-28;13:29-34;
+[ silk ]:1
+	silk	silk	12:26-30;
+[ the velvet ]:1
+	the velvet	the velvet	12:11-14;12:15-21;
+[ the velvet and silk ]:1
+	the velvet and silk	the velvet and silk	12:11-14;12:15-21;12:22-25;12:26-30;
+[ a poor shopkeeper ]:1
+	a poor shopkeeper	a poor shopkeeper	11:83-84;11:85-89;11:90-100;
+[ credit ]:1
+	credit	credit	11:72-78;
+[ goods on credit ]:1
+	goods on credit	goods	11:63-68;
+[ the wealthy merchants ]:1
+	the wealthy merchants	the wealthy merchants	11:26-29;11:30-37;11:38-47;
+[ none of the wealthy merchants ]:1
+	none of the wealthy merchants	none	11:18-22;
+[ the cattle ]:1
+	the cattle	the cattle	10:29-32;10:33-39;
+[ the merchant's daughter, her, her, She, she, she, her, her ]:8
+	the merchant's daughter	the merchant 's daughter	7:10-13;7:14-22;7:22-24;7:25-33;
+	her	her	7:66-69;
+	her	her	7:92-95;
+	She	She	8:0-3;
+	she	she	8:19-22;
+	she	she	8:43-46;
+	her	her	9:17-20;
+	her	her	10:10-13;
+[ her in ]:1
+	her in	her in	9:17-20;9:21-23;
+[ an old man tending cattle ]:1
+	an old man tending cattle	an old man tending cattle	8:53-55;8:56-59;8:60-63;8:64-71;8:72-78;
+[ this maid, the maid, her maid ]:3
+	this maid	this maid	3:137-141;3:142-146;
+	the maid	the maid	6:34-37;6:38-42;
+	her maid	her maid	7:66-69;7:70-74;
+[ the illness ]:1
+	the illness	the illness	7:49-52;7:53-60;
+[ tears, they, They, They, them, They, they ]:7
+	tears	tears	3:52-57;
+	they	they	3:177-181;
+	They	They	4:0-4;
+	They	They	5:0-4;
+	them	them	5:120-124;
+	They	They	6:0-4;
+	they	they	6:56-60;
+[ The merchant's daughter, her, her, her ]:4
+	The merchant's daughter	The merchant 's daughter	3:0-3;3:4-12;3:12-14;3:15-23;
+	her	her	3:91-94;
+	her	her	5:102-105;
+	her	her	5:128-131;
+[ her pocket ]:1
+	her pocket	her pocket	5:128-131;5:132-138;
+[ her eyes ]:1
+	her eyes	her eyes	5:102-105;5:106-110;
+[ the merchant's daughter sleeping potions ]:1
+	the merchant's daughter sleeping potions	the merchant 's daughter sleeping potions	5:52-55;5:56-64;5:64-66;5:67-75;5:76-84;5:85-92;
+[ the maidservant ]:1
+	the maidservant	the maidservant	5:31-34;5:35-46;
+[ the island ]:1
+	the island	the island	5:13-16;5:17-23;
+[ the marriage ]:1
+	the marriage	the marriage	4:65-68;4:69-77;
+[ dresses that were alike and went to the king for the marriage ]:1
+	dresses that were alike and went to the king for the marriage	dresses	4:16-23;
+[ the merchant's daughter ]:1
+	the merchant's daughter	the merchant 's daughter	3:152-155;3:156-164;3:164-166;3:167-175;
+[ no one ]:1
+	no one	no one	3:112-114;3:115-118;
+[ her maidservant ]:1
+	her maidservant	her maidservant	3:91-94;3:95-106;
+[ the letter ]:1
+	the letter	the letter	3:29-32;3:33-39;
+[ his guards ]:1
+	his guards	his guards	2:47-50;2:51-57;
+[ a letter ]:1
+	a letter	a letter	2:27-28;2:29-35;
+[ a gift ]:1
+	a gift	a gift	1:134-135;1:136-140;
+[ precious cloths ]:1
+	precious cloths	precious cloths	1:103-111;1:112-118;
+[ a certain kingdom ]:1
+	a certain kingdom	a certain kingdom	1:73-74;1:75-82;1:83-90;
+[ one day ]:1
+	one day	one day	1:54-57;1:58-61;
+[ various provinces ]:1
+	various provinces	various provinces	1:31-38;1:39-48;
+[ goods ]:1
+	goods	goods	1:22-27;
+[ a marvelously beautiful daughter ]:1
+	a marvelously beautiful daughter	a marvelously beautiful daughter	0:47-48;0:49-60;0:61-70;0:71-79;
+[ a very wealthy merchant who had a marvelously beautiful daughter ]:1
+	a very wealthy merchant who had a marvelously beautiful daughter	a very wealthy merchant	0:15-16;0:17-21;0:22-29;0:30-38;

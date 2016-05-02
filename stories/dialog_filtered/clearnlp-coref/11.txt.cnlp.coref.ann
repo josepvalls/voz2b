@@ -1,0 +1,437 @@
+T1	Mention 12 16	time
+A1	EntityType T1 COMMON
+A2	NumberType T1 SINGULAR
+A3	GenderType T1 UNKNOWN
+T2	Mention 34 40	couple
+A4	EntityType T2 COMMON
+A5	NumberType T2 SINGULAR
+A6	GenderType T2 UNKNOWN
+T3	Mention 47 51	they
+A7	EntityType T3 PRONOUN
+A8	NumberType T3 PLURAL
+A9	GenderType T3 NEUTRAL
+A10	PronounType T3 SUBJECT
+T4	Mention 62 66	Sons
+A11	EntityType T4 COMMON
+A12	NumberType T4 PLURAL
+A13	GenderType T4 MALE
+T5	Mention 76 81	these
+A14	EntityType T5 PRONOUN
+A15	NumberType T5 PLURAL
+A16	GenderType T5 NEUTRAL
+A17	PronounType T5 DEMOSTRATIVE
+T6	Mention 86 91	their
+A18	EntityType T6 PRONOUN
+A19	NumberType T6 PLURAL
+A20	GenderType T6 NEUTRAL
+A21	PronounType T6 POSSESSIVE
+T7	Mention 92 96	wits
+A22	EntityType T7 COMMON
+A23	NumberType T7 PLURAL
+A24	GenderType T7 UNKNOWN
+T8	Mention 103 107	them
+A25	EntityType T8 PRONOUN
+A26	NumberType T8 PLURAL
+A27	GenderType T8 NEUTRAL
+A28	PronounType T8 OBJECT
+T9	Mention 130 139	simpleton
+A29	EntityType T9 COMMON
+A30	NumberType T9 SINGULAR
+A31	GenderType T9 UNKNOWN
+T10	Mention 142 146	Ivan
+A32	EntityType T10 PERSON
+A33	NumberType T10 SINGULAR
+A34	GenderType T10 MALE
+T11	Mention 150 154	name
+A35	EntityType T11 COMMON
+A36	NumberType T11 SINGULAR
+A37	GenderType T11 UNKNOWN
+T12	Mention 166 174	Popyalof
+A38	EntityType T12 PERSON
+A39	NumberType T12 SINGULAR
+A40	GenderType T12 NEUTRAL
+T13	Mention 194 199	years
+A41	EntityType T13 COMMON
+A42	NumberType T13 PLURAL
+A43	GenderType T13 UNKNOWN
+T14	Mention 200 204	Ivan
+A44	EntityType T14 PERSON
+A45	NumberType T14 SINGULAR
+A46	GenderType T14 MALE
+T15	Mention 219 224	ashes
+A47	EntityType T15 COMMON
+A48	NumberType T15 PLURAL
+A49	GenderType T15 UNKNOWN
+T16	Mention 234 239	stove
+A50	EntityType T16 COMMON
+A51	NumberType T16 SINGULAR
+A52	GenderType T16 UNKNOWN
+T17	Mention 251 253	he
+A53	EntityType T17 PRONOUN
+A54	NumberType T17 SINGULAR
+A55	GenderType T17 MALE
+A56	PronounType T17 SUBJECT
+T18	Mention 272 279	himself
+A57	EntityType T18 PRONOUN
+A58	NumberType T18 SINGULAR
+A59	GenderType T18 MALE
+A60	PronounType T18 REFLEXIVE
+T19	Mention 294 299	poods
+A61	EntityType T19 COMMON
+A62	NumberType T19 PLURAL
+A63	GenderType T19 UNKNOWN
+T20	Mention 303 308	ashes
+A64	EntityType T20 COMMON
+A65	NumberType T20 PLURAL
+A66	GenderType T20 UNKNOWN
+T21	Mention 323 326	him
+A67	EntityType T21 PRONOUN
+A68	NumberType T21 SINGULAR
+A69	GenderType T21 MALE
+A70	PronounType T21 OBJECT
+T22	Mention 340 344	land
+A71	EntityType T22 COMMON
+A72	NumberType T22 SINGULAR
+A73	GenderType T22 UNKNOWN
+T23	Mention 348 353	which
+A74	EntityType T23 PRONOUN
+A75	NumberType T23 UNKNOWN
+A76	GenderType T23 NEUTRAL
+A77	PronounType T23 RELATIVE
+T24	Mention 354 358	Ivan
+A78	EntityType T24 PERSON
+A79	NumberType T24 SINGULAR
+A80	GenderType T24 MALE
+T25	Mention 381 384	any
+A81	EntityType T25 PRONOUN
+A82	NumberType T25 SINGULAR
+A83	GenderType T25 NEUTRAL
+A84	PronounType T25 INDEFINITE
+T26	Mention 385 388	day
+A85	EntityType T26 COMMON
+A86	NumberType T26 SINGULAR
+A87	GenderType T26 UNKNOWN
+T27	Mention 402 407	night
+A88	EntityType T27 COMMON
+A89	NumberType T27 SINGULAR
+A90	GenderType T27 UNKNOWN
+T28	Mention 410 414	That
+A91	EntityType T28 PRONOUN
+A92	NumberType T28 SINGULAR
+A93	GenderType T28 NEUTRAL
+A94	PronounType T28 DEMOSTRATIVE
+T29	Mention 421 426	Snake
+A95	EntityType T29 UNKNOWN
+A96	NumberType T29 UNKNOWN
+A97	GenderType T29 UNKNOWN
+T30	Mention 447 449	he
+A98	EntityType T30 PRONOUN
+A99	NumberType T30 SINGULAR
+A100	GenderType T30 MALE
+A101	PronounType T30 SUBJECT
+T31	Mention 462 466	mace
+A102	EntityType T31 COMMON
+A103	NumberType T31 SINGULAR
+A104	GenderType T31 UNKNOWN
+T32	Mention 469 471	he
+A105	EntityType T32 PRONOUN
+A106	NumberType T32 SINGULAR
+A107	GenderType T32 MALE
+A108	PronounType T32 SUBJECT
+T33	Mention 490 496	fields
+A109	EntityType T33 COMMON
+A110	NumberType T33 PLURAL
+A111	GenderType T33 UNKNOWN
+T34	Mention 509 511	it
+A112	EntityType T34 PRONOUN
+A113	NumberType T34 SINGULAR
+A114	GenderType T34 NEUTRAL
+A115	PronounType T34 SUBJECT
+T35	Mention 531 534	air
+A116	EntityType T35 COMMON
+A117	NumberType T35 SINGULAR
+A118	GenderType T35 UNKNOWN
+T36	Mention 546 548	he
+A119	EntityType T36 PRONOUN
+A120	NumberType T36 SINGULAR
+A121	GenderType T36 MALE
+A122	PronounType T36 SUBJECT
+T37	Mention 570 573	day
+A123	EntityType T37 COMMON
+A124	NumberType T37 SINGULAR
+A125	GenderType T37 UNKNOWN
+T38	Mention 574 576	he
+A126	EntityType T38 PRONOUN
+A127	NumberType T38 SINGULAR
+A128	GenderType T38 MALE
+A129	PronounType T38 SUBJECT
+T39	Mention 595 601	fields
+A130	EntityType T39 COMMON
+A131	NumberType T39 PLURAL
+A132	GenderType T39 UNKNOWN
+T40	Mention 609 613	spot
+A133	EntityType T40 COMMON
+A134	NumberType T40 SINGULAR
+A135	GenderType T40 UNKNOWN
+T41	Mention 619 624	which
+A136	EntityType T41 PRONOUN
+A137	NumberType T41 UNKNOWN
+A138	GenderType T41 NEUTRAL
+A139	PronounType T41 RELATIVE
+T42	Mention 625 627	he
+A140	EntityType T42 PRONOUN
+A141	NumberType T42 SINGULAR
+A142	GenderType T42 MALE
+A143	PronounType T42 SUBJECT
+T43	Mention 642 646	mace
+A144	EntityType T43 COMMON
+A145	NumberType T43 SINGULAR
+A146	GenderType T43 UNKNOWN
+T44	Mention 678 681	his
+A147	EntityType T44 PRONOUN
+A148	NumberType T44 SINGULAR
+A149	GenderType T44 MALE
+A150	PronounType T44 POSSESSIVE
+T45	Mention 682 686	head
+A151	EntityType T45 COMMON
+A152	NumberType T45 SINGULAR
+A153	GenderType T45 UNKNOWN
+T46	Mention 713 717	mace
+A154	EntityType T46 COMMON
+A155	NumberType T46 SINGULAR
+A156	GenderType T46 UNKNOWN
+T47	Mention 734 736	it
+A157	EntityType T47 PRONOUN
+A158	NumberType T47 SINGULAR
+A159	GenderType T47 NEUTRAL
+A160	PronounType T47 SUBJECT
+T48	Mention 741 744	him
+A161	EntityType T48 PRONOUN
+A162	NumberType T48 SINGULAR
+A163	GenderType T48 MALE
+A164	PronounType T48 OBJECT
+T49	Mention 752 760	forehead
+A165	EntityType T49 COMMON
+A166	NumberType T49 SINGULAR
+A167	GenderType T49 UNKNOWN
+T50	Mention 771 775	mace
+A168	EntityType T50 COMMON
+A169	NumberType T50 SINGULAR
+A170	GenderType T50 UNKNOWN
+T51	Mention 800 802	he
+A171	EntityType T51 PRONOUN
+A172	NumberType T51 SINGULAR
+A173	GenderType T51 MALE
+A174	PronounType T51 SUBJECT
+T52	Mention 811 813	it
+A175	EntityType T52 PRONOUN
+A176	NumberType T52 SINGULAR
+A177	GenderType T52 NEUTRAL
+A178	PronounType T52 SUBJECT
+T53	Mention 814 816	he
+A179	EntityType T53 PRONOUN
+A180	NumberType T53 SINGULAR
+A181	GenderType T53 MALE
+A182	PronounType T53 SUBJECT
+T54	Mention 835 841	fields
+A183	EntityType T54 COMMON
+A184	NumberType T54 PLURAL
+A185	GenderType T54 UNKNOWN
+T55	Mention 854 856	it
+A186	EntityType T55 PRONOUN
+A187	NumberType T55 SINGULAR
+A188	GenderType T55 NEUTRAL
+A189	PronounType T55 SUBJECT
+T56	Mention 873 877	mace
+A190	EntityType T56 COMMON
+A191	NumberType T56 SINGULAR
+A192	GenderType T56 UNKNOWN
+T57	Mention 902 905	air
+A193	EntityType T57 COMMON
+A194	NumberType T57 SINGULAR
+A195	GenderType T57 UNKNOWN
+T58	Mention 916 920	days
+A196	EntityType T58 COMMON
+A197	NumberType T58 PLURAL
+A198	GenderType T58 UNKNOWN
+T59	Mention 931 937	nights
+A199	EntityType T59 COMMON
+A200	NumberType T59 PLURAL
+A201	GenderType T59 UNKNOWN
+R1	Coreference Arg1:T4 Arg2:T6
+R2	Coreference Arg1:T7 Arg2:T8
+R3	Coreference Arg1:T10 Arg2:T14
+R4	Coreference Arg1:T14 Arg2:T17
+R5	Coreference Arg1:T14 Arg2:T18
+R6	Coreference Arg1:T14 Arg2:T21
+R7	Coreference Arg1:T14 Arg2:T24
+R8	Coreference Arg1:T17 Arg2:T30
+R9	Coreference Arg1:T30 Arg2:T32
+R10	Coreference Arg1:T31 Arg2:T34
+R11	Coreference Arg1:T32 Arg2:T36
+R12	Coreference Arg1:T36 Arg2:T38
+R13	Coreference Arg1:T33 Arg2:T39
+R14	Coreference Arg1:T23 Arg2:T41
+R15	Coreference Arg1:T38 Arg2:T42
+R16	Coreference Arg1:T31 Arg2:T43
+R17	Coreference Arg1:T24 Arg2:T44
+R18	Coreference Arg1:T31 Arg2:T46
+R19	Coreference Arg1:T34 Arg2:T47
+R20	Coreference Arg1:T21 Arg2:T48
+R21	Coreference Arg1:T46 Arg2:T50
+R22	Coreference Arg1:T42 Arg2:T51
+R23	Coreference Arg1:T47 Arg2:T52
+R24	Coreference Arg1:T51 Arg2:T53
+R25	Coreference Arg1:T39 Arg2:T54
+R26	Coreference Arg1:T52 Arg2:T55
+R27	Coreference Arg1:T50 Arg2:T56
+R28	Coreference Arg1:T35 Arg2:T57
+R29	Coreference Arg1:T24 Arg2:T62
+R30	Coreference Arg1:T56 Arg2:T64
+R31	Coreference Arg1:T53 Arg2:T65
+R32	Coreference Arg1:T44 Arg2:T66
+R33	Coreference Arg1:T64 Arg2:T69
+R34	Coreference Arg1:T55 Arg2:T70
+R35	Coreference Arg1:T62 Arg2:T72
+R36	Coreference Arg1:T66 Arg2:T73
+R37	Coreference Arg1:T74 Arg2:T75
+R38	Coreference Arg1:T74 Arg2:T79
+R39	Coreference Arg1:T78 Arg2:T80
+R40	Coreference Arg1:T79 Arg2:T81
+R41	Coreference Arg1:T54 Arg2:T82
+R42	Coreference Arg1:T80 Arg2:T83
+R43	Coreference Arg1:T69 Arg2:T84
+R44	Coreference Arg1:T57 Arg2:T85
+R45	Coreference Arg1:T63 Arg2:T88
+R46	Coreference Arg1:T84 Arg2:T90
+R47	Coreference Arg1:T90 Arg2:T91
+R48	Coreference Arg1:T49 Arg2:T93
+R49	Coreference Arg1:T93 Arg2:T94
+R50	Coreference Arg1:T87 Arg2:T95
+R51	Coreference Arg1:T95 Arg2:T97
+R52	Coreference Arg1:T87 Arg2:T98
+R53	Coreference Arg1:T87 Arg2:T101
+R54	Coreference Arg1:T87 Arg2:T102
+R55	Coreference Arg1:T100 Arg2:T108
+R56	Coreference Arg1:T97 Arg2:T112
+R57	Coreference Arg1:T112 Arg2:T114
+R58	Coreference Arg1:T29 Arg2:T117
+R59	Coreference Arg1:T87 Arg2:T119
+R60	Coreference Arg1:T98 Arg2:T121
+R61	Coreference Arg1:T122 Arg2:T123
+R62	Coreference Arg1:T72 Arg2:T125
+R63	Coreference Arg1:T118 Arg2:T126
+R64	Coreference Arg1:T125 Arg2:T127
+R65	Coreference Arg1:T108 Arg2:T128
+R66	Coreference Arg1:T116 Arg2:T129
+R67	Coreference Arg1:T127 Arg2:T133
+R68	Coreference Arg1:T127 Arg2:T134
+R69	Coreference Arg1:T41 Arg2:T136
+R70	Coreference Arg1:T134 Arg2:T138
+R71	Coreference Arg1:T133 Arg2:T139
+R72	Coreference Arg1:T138 Arg2:T140
+R73	Coreference Arg1:T139 Arg2:T144
+R74	Coreference Arg1:T138 Arg2:T148
+R75	Coreference Arg1:T140 Arg2:T149
+R76	Coreference Arg1:T99 Arg2:T150
+R77	Coreference Arg1:T150 Arg2:T151
+R78	Coreference Arg1:T153 Arg2:T154
+R79	Coreference Arg1:T145 Arg2:T156
+R80	Coreference Arg1:T154 Arg2:T157
+R81	Coreference Arg1:T153 Arg2:T158
+R82	Coreference Arg1:T157 Arg2:T161
+R83	Coreference Arg1:T128 Arg2:T162
+R84	Coreference Arg1:T159 Arg2:T163
+R85	Coreference Arg1:T141 Arg2:T164
+R86	Coreference Arg1:T164 Arg2:T165
+R87	Coreference Arg1:T163 Arg2:T166
+R88	Coreference Arg1:T164 Arg2:T168
+R89	Coreference Arg1:T172 Arg2:T174
+R90	Coreference Arg1:T150 Arg2:T175
+R91	Coreference Arg1:T175 Arg2:T176
+R92	Coreference Arg1:T172 Arg2:T178
+R93	Coreference Arg1:T174 Arg2:T179
+R94	Coreference Arg1:T178 Arg2:T181
+R95	Coreference Arg1:T180 Arg2:T182
+R96	Coreference Arg1:T179 Arg2:T183
+R97	Coreference Arg1:T175 Arg2:T184
+R98	Coreference Arg1:T172 Arg2:T185
+R99	Coreference Arg1:T181 Arg2:T186
+R100	Coreference Arg1:T115 Arg2:T187
+R101	Coreference Arg1:T183 Arg2:T188
+R102	Coreference Arg1:T180 Arg2:T189
+R103	Coreference Arg1:T186 Arg2:T190
+R104	Coreference Arg1:T190 Arg2:T198
+R105	Coreference Arg1:T172 Arg2:T199
+R106	Coreference Arg1:T194 Arg2:T202
+R107	Coreference Arg1:T185 Arg2:T203
+R108	Coreference Arg1:T198 Arg2:T204
+R109	Coreference Arg1:T96 Arg2:T205
+R110	Coreference Arg1:T194 Arg2:T206
+R111	Coreference Arg1:T204 Arg2:T207
+R112	Coreference Arg1:T188 Arg2:T208
+R113	Coreference Arg1:T189 Arg2:T209
+R114	Coreference Arg1:T207 Arg2:T210
+R115	Coreference Arg1:T208 Arg2:T211
+R116	Coreference Arg1:T184 Arg2:T212
+R117	Coreference Arg1:T210 Arg2:T213
+R118	Coreference Arg1:T211 Arg2:T214
+R119	Coreference Arg1:T212 Arg2:T216
+R120	Coreference Arg1:T109 Arg2:T217
+R121	Coreference Arg1:T212 Arg2:T218
+R122	Coreference Arg1:T212 Arg2:T219
+R123	Coreference Arg1:T212 Arg2:T220
+R124	Coreference Arg1:T106 Arg2:T222
+R125	Coreference Arg1:T226 Arg2:T228
+R126	Coreference Arg1:T217 Arg2:T229
+R127	Coreference Arg1:T226 Arg2:T230
+R128	Coreference Arg1:T226 Arg2:T231
+R129	Coreference Arg1:T232 Arg2:T233
+R130	Coreference Arg1:T227 Arg2:T239
+R131	Coreference Arg1:T237 Arg2:T240
+R132	Coreference Arg1:T237 Arg2:T241
+R133	Coreference Arg1:T240 Arg2:T242
+R134	Coreference Arg1:T237 Arg2:T245
+R135	Coreference Arg1:T229 Arg2:T251
+R136	Coreference Arg1:T250 Arg2:T252
+R137	Coreference Arg1:T193 Arg2:T253
+R138	Coreference Arg1:T162 Arg2:T254
+R139	Coreference Arg1:T256 Arg2:T257
+R140	Coreference Arg1:T212 Arg2:T258
+R141	Coreference Arg1:T259 Arg2:T261
+R142	Coreference Arg1:T192 Arg2:T262
+R143	Coreference Arg1:T192 Arg2:T263
+R144	Coreference Arg1:T148 Arg2:T267
+R145	Coreference Arg1:T256 Arg2:T268
+R146	Coreference Arg1:T257 Arg2:T269
+R147	Coreference Arg1:T258 Arg2:T270
+R148	Coreference Arg1:T263 Arg2:T273
+R149	Coreference Arg1:T192 Arg2:T275
+R150	Coreference Arg1:T276 Arg2:T277
+R151	Coreference Arg1:T278 Arg2:T279
+R152	Coreference Arg1:T276 Arg2:T280
+R153	Coreference Arg1:T277 Arg2:T281
+R154	Coreference Arg1:T267 Arg2:T282
+R155	Coreference Arg1:T279 Arg2:T283
+R156	Coreference Arg1:T278 Arg2:T284
+R157	Coreference Arg1:T278 Arg2:T285
+R158	Coreference Arg1:T222 Arg2:T286
+R159	Coreference Arg1:T285 Arg2:T289
+R160	Coreference Arg1:T278 Arg2:T290
+R161	Coreference Arg1:T215 Arg2:T291
+R162	Coreference Arg1:T278 Arg2:T292
+R163	Coreference Arg1:T260 Arg2:T298
+R164	Coreference Arg1:T299 Arg2:T300
+R165	Coreference Arg1:T229 Arg2:T301
+R166	Coreference Arg1:T283 Arg2:T303
+R167	Coreference Arg1:T278 Arg2:T304
+R168	Coreference Arg1:T302 Arg2:T307
+R169	Coreference Arg1:T304 Arg2:T309
+R170	Coreference Arg1:T309 Arg2:T311
+R171	Coreference Arg1:T298 Arg2:T313
+R172	Coreference Arg1:T312 Arg2:T314
+R173	Coreference Arg1:T311 Arg2:T315
+R174	Coreference Arg1:T315 Arg2:T317
+R175	Coreference Arg1:T319 Arg2:T320
+R176	Coreference Arg1:T320 Arg2:T321
+R177	Coreference Arg1:T319 Arg2:T322

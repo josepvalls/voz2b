@@ -1,0 +1,278 @@
+In a certain kingdom in a certain land there lived a king who had three sons.
+The father gave them his blessing and they set out in different directions.
+The youngest son rode and rode and lost his way; he came to a clearing, and there lay a dead horse, around which were gathered beasts of many kinds, birds, and reptiles.
+The prince climbed down from his good steed and divided the carcass: he gave the bones to the beasts, the flesh to the birds, the skin to the reptiles, and the head to the ants.
+Prince Ivan struck the damp earth, turned into a bright falcon, soared up into the air, and flew to the thrice tenth kingdom.
+More than half of that kingdom had been swallowed into a crystal mountain.
+Thus he entered the service of that king and lived in his palace for one week, then a second, then a third.
+The king gave her leave.
+They mounted good steeds and set out.
+When they approached the crystal mountain, a golden goat jumped suddenly out from nowhere.
+The prince chased it; he galloped and galloped, but could not catch the goat, and when he returned the princess had vanished.
+Prince Ivan drove his herd over mountains and valleys.
+The dragon flew into a rage, and instead of three cows, seized six.
+Prince Ivan straightway turned into a bright falcon, cut off all the three heads of the dragon, and drove the cattle home.
+Next day the prince drove his herd over mountains and valleys, and the six-headed dragon came from the lake and demanded six cows.
+The dragon flew into a rage and instead of six, seized twelve cows; but the prince turned into a bright falcon, fell upon the dragon, and cut off his six heads.
+Late at night Prince Ivan turned into an ant and crawled into the crystal mountain through a little crack.
+Lo and behold, the princess was in the crystal mountain.
+Prince Ivan crawled out of the mountain, turned again into a herdsman, and drove his herd.
+They began to fight, and after a long struggle or a short struggle, Prince Ivan defeated the twelve-headed dragon, slashed open his trunk, and found the coffer in his right side.
+In the coffer he found a hare, in the hare a duck, in the duck an egg, in the egg a seed.
+He took the seed, set it alight, and brought it to the crystal mountain, which soon melted away.
+The wedding was held at once.
+
+Sentence index	Text offset
+0	0
+1	77
+2	152
+3	321
+4	498
+5	623
+6	697
+7	804
+8	828
+9	865
+10	955
+11	1080
+12	1134
+13	1201
+14	1323
+15	1453
+16	1613
+17	1719
+18	1775
+19	1865
+20	2043
+21	2132
+22	2228
+Coreference groups:	95
+[ The wedding ]:1
+	The wedding	The wedding	22:0-3;22:4-11;
+[ the crystal mountain, which soon melted away ]:1
+	the crystal mountain, which soon melted away	the crystal mountain	21:51-54;21:55-62;21:63-71;
+[ the coffer, the coffer, it ]:3
+	the coffer	the coffer	19:149-152;19:153-159;
+	the coffer	the coffer	20:3-6;20:7-13;
+	it	it	21:45-47;
+[ the seed ]:1
+	the seed	the seed	21:8-11;21:12-16;
+[ the princess, the princess, his, They, his, his, he, He ]:8
+	the princess	the princess	10:99-102;10:103-111;
+	the princess	the princess	17:15-18;17:19-27;
+	his	his	18:81-84;
+	They	They	19:0-4;
+	his	his	19:128-131;
+	his	his	19:163-166;
+	he	he	20:14-16;
+	He	He	21:0-2;
+[ a seed ]:1
+	a seed	a seed	20:82-83;20:84-88;
+[ the egg ]:1
+	the egg	the egg	20:74-77;20:78-81;
+[ an egg ]:1
+	an egg	an egg	20:63-65;20:66-69;
+[ a duck, the duck ]:2
+	a duck	a duck	20:43-44;20:45-49;
+	the duck	the duck	20:54-57;20:58-62;
+[ the hare a duck ]:1
+	the hare a duck	the hare	20:34-37;20:38-42;
+[ a hare ]:1
+	a hare	a hare	20:23-24;20:25-29;
+[ his right side ]:1
+	his right side	his right side	19:163-166;19:167-172;19:173-177;
+[ his trunk ]:1
+	his trunk	his trunk	19:128-131;19:132-137;
+[ the twelve-headed dragon ]:1
+	the twelve-headed dragon	the twelve-headed dragon	19:89-92;19:93-106;19:107-113;
+[ Prince Ivan, Prince Ivan, night Prince Ivan, Prince Ivan, Prince Ivan ]:5
+	Prince Ivan	Prince Ivan	4:0-6;4:7-11;
+	Prince Ivan	Prince Ivan	11:0-6;11:7-11;
+	night Prince Ivan	night Prince Ivan	16:8-13;16:14-20;16:21-25;
+	Prince Ivan	Prince Ivan	18:0-6;18:7-11;
+	Prince Ivan	Prince Ivan	19:68-74;19:75-79;
+[ a short struggle ]:1
+	a short struggle	a short struggle	19:50-51;19:52-57;19:58-66;
+[ a long struggle ]:1
+	a long struggle	a long struggle	19:31-32;19:33-37;19:38-46;
+[ a long struggle or a short struggle ]:1
+	a long struggle or a short struggle	a long struggle or a short struggle	19:31-32;19:33-37;19:38-46;19:47-49;19:50-51;19:52-57;19:58-66;
+[ his herd, his herd, his herd ]:3
+	his herd	his herd	11:18-21;11:22-26;
+	his herd	his herd	14:26-29;14:30-34;
+	his herd	his herd	18:81-84;18:85-89;
+[ a herdsman ]:1
+	a herdsman	a herdsman	18:59-60;18:61-69;
+[ the mountain ]:1
+	the mountain	the mountain	18:27-30;18:31-39;
+[ the crystal mountain ]:1
+	the crystal mountain	the crystal mountain	17:35-38;17:39-46;17:47-55;
+[ behold ]:1
+	behold	behold	17:7-13;
+[ Lo ]:1
+	Lo	Lo	17:0-2;
+[ Lo and behold ]:1
+	Lo and behold	Lo and behold	17:0-2;17:3-6;17:7-13;
+[ a little crack ]:1
+	a little crack	a little crack	16:91-92;16:93-99;16:100-105;
+[ the crystal mountain ]:1
+	the crystal mountain	the crystal mountain	16:62-65;16:66-73;16:74-82;
+[ The prince, he, he, his, the prince, his, the prince, his ]:8
+	The prince	The prince	10:0-3;10:4-10;
+	he	he	10:22-24;
+	he	he	10:87-89;
+	his	his	11:18-21;
+	the prince	the prince	14:9-12;14:13-19;
+	his	his	14:26-29;
+	the prince	the prince	15:72-75;15:76-82;
+	his	his	15:146-149;
+[ his six heads ]:1
+	his six heads	his six heads	15:146-149;15:150-153;15:154-159;
+[ the six-headed dragon, The dragon, the dragon ]:3
+	the six-headed dragon	the six-headed dragon	14:67-70;14:71-81;14:82-88;
+	The dragon	The dragon	15:0-3;15:4-10;
+	the dragon	the dragon	15:122-125;15:126-132;
+[ a bright falcon ]:1
+	a bright falcon	a bright falcon	15:95-96;15:97-103;15:104-110;
+[ twelve cows ]:1
+	twelve cows	twelve cows	15:55-61;15:62-66;
+[ six ]:1
+	six	six	15:43-46;
+[ a rage ]:1
+	a rage	a rage	15:21-22;15:23-27;
+[ six cows ]:1
+	six cows	six cows	14:121-124;14:125-129;
+[ the lake ]:1
+	the lake	the lake	14:99-102;14:103-107;
+[ valleys ]:1
+	valleys	valleys	14:54-61;
+[ mountains ]:1
+	mountains	mountains	14:40-49;
+[ mountains and valleys ]:1
+	mountains and valleys	mountains and valleys	14:40-49;14:50-53;14:54-61;
+[ Next day ]:1
+	Next day	Next day	14:0-4;14:5-8;
+[ the cattle home ]:1
+	the cattle home	the cattle home	13:106-109;13:110-116;13:117-121;
+[ the dragon ]:1
+	the dragon	the dragon	13:84-87;13:88-94;
+[ all the three heads of the dragon ]:1
+	all the three heads of the dragon	all the three heads	13:61-64;13:65-68;13:69-74;13:75-80;
+[ a bright falcon ]:1
+	a bright falcon	a bright falcon	13:36-37;13:38-44;13:45-51;
+[ Prince Ivan straightway ]:1
+	Prince Ivan straightway	Prince Ivan straightway	13:0-6;13:7-11;13:12-23;
+[ six ]:1
+	six	six	12:63-66;
+[ three cows ]:1
+	three cows	three cows	12:44-49;12:50-54;
+[ a rage ]:1
+	a rage	a rage	12:21-22;12:23-27;
+[ The dragon ]:1
+	The dragon	The dragon	12:0-3;12:4-10;
+[ valleys ]:1
+	valleys	valleys	11:46-53;
+[ mountains ]:1
+	mountains	mountains	11:32-41;
+[ mountains and valleys ]:1
+	mountains and valleys	mountains and valleys	11:32-41;11:42-45;11:46-53;
+[ a golden goat, the goat ]:2
+	a golden goat	a golden goat	9:43-44;9:45-51;9:52-56;
+	the goat	the goat	10:68-71;10:72-76;
+[ the crystal mountain ]:1
+	the crystal mountain	the crystal mountain	9:21-24;9:25-32;9:33-41;
+[ good steeds, they ]:2
+	good steeds	good steeds	8:13-17;8:18-24;
+	they	they	9:5-9;
+[ that king, The king, her, They ]:4
+	that king	that king	6:31-35;6:36-40;
+	The king	The king	7:0-3;7:4-8;
+	her	her	7:14-17;
+	They	They	8:0-4;
+[ a second ]:1
+	a second	a second	6:84-85;6:86-92;
+[ one week ]:1
+	one week	one week	6:69-72;6:73-77;
+[ More than half of that kingdom, he, his ]:3
+	More than half of that kingdom	More than half	5:0-4;5:5-9;5:10-14;
+	he	he	6:5-7;
+	his	his	6:54-57;
+[ his palace for one week ]:1
+	his palace for one week	his palace	6:54-57;6:58-64;
+[ the service of that king ]:1
+	the service of that king	the service	6:16-19;6:20-27;
+[ a crystal mountain ]:1
+	a crystal mountain	a crystal mountain	5:55-56;5:57-64;5:65-73;
+[ that kingdom ]:1
+	that kingdom	that kingdom	5:18-22;5:23-30;
+[ the thrice tenth kingdom ]:1
+	the thrice tenth kingdom	the thrice tenth kingdom	4:100-103;4:104-110;4:111-116;4:117-124;
+[ the air ]:1
+	the air	the air	4:79-82;4:83-86;
+[ a bright falcon ]:1
+	a bright falcon	a bright falcon	4:47-48;4:49-55;4:56-62;
+[ the damp earth ]:1
+	the damp earth	the damp earth	4:19-22;4:23-27;4:28-33;
+[ the ants ]:1
+	the ants	the ants	3:168-171;3:172-176;
+[ the head to the ants ]:1
+	the head to the ants	the head	3:156-159;3:160-164;
+[ the reptiles ]:1
+	the reptiles	the reptiles	3:138-141;3:142-150;
+[ the skin to the reptiles ]:1
+	the skin to the reptiles	the skin	3:126-129;3:130-134;
+[ the birds ]:1
+	the birds	the birds	3:115-118;3:119-124;
+[ the flesh to the birds ]:1
+	the flesh to the birds	the flesh	3:102-105;3:106-111;
+[ the beasts ]:1
+	the beasts	the beasts	3:90-93;3:94-100;
+[ the beasts, the flesh to the birds, the skin to the reptiles, and the head to the ants ]:1
+	the beasts, the flesh to the birds, the skin to the reptiles, and the head to the ants	the beasts , the flesh to the birds , the skin to the reptiles , and the head to the ants	3:90-93;3:94-100;3:100-101;3:102-105;3:106-111;3:112-114;3:115-118;3:119-124;3:124-125;3:126-129;3:130-134;3:135-137;3:138-141;3:142-150;3:150-151;3:152-155;3:156-159;3:160-164;3:165-167;3:168-171;3:172-176;
+[ the bones ]:1
+	the bones	the bones	3:77-80;3:81-86;
+[ The prince, his, he ]:3
+	The prince	The prince	3:0-3;3:4-10;
+	his	his	3:29-32;
+	he	he	3:69-71;
+[ the carcass ]:1
+	the carcass	the carcass	3:56-59;3:60-67;
+[ his good steed ]:1
+	his good steed	his good steed	3:29-32;3:33-37;3:38-43;
+[ reptiles ]:1
+	reptiles	reptiles	2:160-168;
+[ birds ]:1
+	birds	birds	2:149-154;
+[ many kinds ]:1
+	many kinds	many kinds	2:137-141;2:142-147;
+[ many kinds, birds, and reptiles ]:1
+	many kinds, birds, and reptiles	many kinds , birds , and reptiles	2:137-141;2:142-147;2:147-148;2:149-154;2:154-155;2:156-159;2:160-168;
+[ beasts of many kinds, birds, and reptiles ]:1
+	beasts of many kinds, birds, and reptiles	beasts	2:127-133;
+[ a dead horse, around which were gathered beasts of many kinds, birds, and reptiles ]:1
+	a dead horse, around which were gathered beasts of many kinds, birds, and reptiles	a dead horse	2:86-87;2:88-92;2:93-98;
+[ a clearing ]:1
+	a clearing	a clearing	2:60-61;2:62-70;
+[ The youngest son, his, he ]:3
+	The youngest son	The youngest son	2:0-3;2:4-12;2:13-16;
+	his	his	2:40-43;
+	he	he	2:49-51;
+[ his way ]:1
+	his way	his way	2:40-43;2:44-47;
+[ different directions ]:1
+	different directions	different directions	1:54-63;1:64-74;
+[ The father, them, his, they ]:4
+	The father	The father	1:0-3;1:4-10;
+	them	them	1:16-20;
+	his	his	1:21-24;
+	they	they	1:38-42;
+[ his blessing ]:1
+	his blessing	his blessing	1:21-24;1:25-33;
+[ three sons ]:1
+	three sons	three sons	0:66-71;0:72-76;
+[ a king who had three sons ]:1
+	a king who had three sons	a king	0:51-52;0:53-57;
+[ a certain land ]:1
+	a certain land	a certain land	0:24-25;0:26-33;0:34-38;
+[ a certain kingdom in a certain land ]:1
+	a certain kingdom in a certain land	a certain kingdom	0:3-4;0:5-12;0:13-20;

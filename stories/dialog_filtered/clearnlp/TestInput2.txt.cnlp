@@ -1,0 +1,19 @@
+1	John	john	NNP	_	2	nsubj	U-PERSON
+2	likes	like	VBZ	_	0	root	O
+3	Mary	mary	NNP	_	2	dobj	U-PERSON
+4	becase	becase	IN	p2=NNP	6	mark	O
+5	she	she	PRP	_	6	nsubj	O
+6	is	be	VBZ	_	2	advcl	O
+7	fun	fun	JJ	p2=NN	6	acomp	O
+8	.	.	.	_	2	punct	O
+
+1	He	he	PRP	_	2	nsubj	O
+2	is	be	VBZ	_	0	root	O
+3	happy	happy	JJ	_	2	acomp	O
+4	because	because	IN	_	6	mark	O
+5	she	she	PRP	_	6	nsubj	O
+6	likes	like	VBZ	_	2	advcl	O
+7	him	him	PRP	_	6	dobj	O
+8	too	too	RB	_	6	advmod	O
+9	.	.	.	_	2	punct	O
+

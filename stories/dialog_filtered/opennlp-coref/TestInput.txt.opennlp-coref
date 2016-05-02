@@ -1,0 +1,39 @@
+Mary had a little lamb,
+his fleece was white as snow,
+and everywhere that Mary went,
+the lamb was sure to go.
+
+He followed her to school one day,
+which was against the rule,
+it made the children laugh and play
+to see a lamb at school.
+
+Sentence index	Text offset
+0	0
+1	109
+Coreference groups:	9
+[ school ]:1
+	school	school	1:116-122;
+[ a lamb ]:1
+	a lamb	a lamb	1:106-107;1:108-112;
+[ the children laugh ]:1
+	the children laugh	the children laugh	1:71-74;1:75-83;1:84-89;
+[ his fleece, it ]:2
+	his fleece	his fleece	0:24-27;0:28-34;
+	it	it	1:63-65;
+[ the rule ]:1
+	the rule	the rule	1:53-56;1:57-61;
+[ one day,
+which was against the rule ]:1
+	one day,
+which was against the rule	one day	1:26-29;1:30-33;
+[ a little lamb, his, the lamb, He ]:4
+	a little lamb	a little lamb	0:9-10;0:11-17;0:18-22;
+	his	his	0:24-27;
+	the lamb	the lamb	0:85-88;0:89-93;
+	He	He	1:0-2;
+[ Mary, Mary ]:2
+	Mary	Mary	0:0-4;
+	Mary	Mary	0:74-78;
+[ snow ]:1
+	snow	snow	0:48-52;
