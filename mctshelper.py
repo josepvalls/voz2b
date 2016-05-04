@@ -8,6 +8,17 @@ import logging
 import itertools
 import random
 
+
+'''
+plot chart with x = probability computed y = accuracy
+compute the probability of the ground truth to have a target
+try decreasing epsilon?
+
+
+
+'''
+
+
 attribute_selection_rules = ''' 0.1599    2 Func. Position
  0.0877    4 Ratio Villain
  0.0872   15 Possession
@@ -28,22 +39,107 @@ logger = logging.getLogger(__name__)
 
 function_list = 'alpha beta gamma delta epsilon zeta eta theta lambda A a B C depart D E F G H J I K return Pr Rs o L M N Q Ex T U W'.split()
 
-MCTS_NODE_START_VALUE = 0.5**(len(function_list)*2) # this is 2 since its the joint probability of the ml and markov predictions
-MCTS_ROUNDS_PER_NARRATIVE = 100000
+USE_FILTERED_DATASET = True # 230 vs 208 instances
+EVAL_DO_USE_MARKOV = False
+if EVAL_DO_USE_MARKOV:
+    MCTS_NODE_START_VALUE = 0.5**(len(function_list)*2) # this is 2 since its the joint probability of the ml and markov predictions
+else:
+    MCTS_NODE_START_VALUE = 0.5**(len(function_list))
+MCTS_ROUNDS_PER_FUNCTION = 10000
 LAPLACIAN_BETA_KNN = 0.5
 LAPLACIAN_BETA_MARKOV = 0.5
+K_IN_KNN = 5 # test 5 to 11
+DO_LEAVE_ONE_OUT_MARKOV = True
 
 def main():
     #logging.root.setLevel(logging.INFO)
     logging.root.setLevel(logging.ERROR)
-    fp = SequentialFunctionPredictor(laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
+    #do_explore_knn()
+    do_compute_probabilities_for_charting()
+
+
+
+
+def do_mcts():
+    fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
     fp.predict_mcts(epsilon_greedy=0.1)
     accuracy = fp.eval_dataset_accuracy(fp.narratives)
-    if True:
+    if False:
         ranks = fp.eval_dataset_rank(fp.narratives)
         print accuracy,util.describe_distribution(ranks)
     else:
         print accuracy
+
+def do_explore_knn():
+    n = 10
+    for k in range(1,12):
+        for n in range(1,15):
+            print "checking k=%d, attributes=%d\t" % (k,n),
+            fp = SequentialFunctionPredictor(k_in_knn=k,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=n)
+            fp.predict_knn()
+            accuracy = fp.eval_dataset_accuracy(fp.narratives)
+            ranks = fp.eval_dataset_rank(fp.narratives)
+            print accuracy,util.describe_distribution(ranks)
+
+def do_compute_probabilities_for_charting_mcts():
+    fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
+    fp.predict_mcts(epsilon_greedy=0.1)
+    accuracy = fp.eval_dataset_accuracy(fp.narratives)
+
+
+def do_compute_probabilities_for_charting():
+    narratives_probabilities_knn = [] # list of lists of probabilities, one list per narrative
+    narratives_probabilities_markov_knn = [] # list of lists of probabilities, one list per narrative
+    narratives_probabilities_markov_gt = [] # list of lists of probabilities, one list per narrative
+    narratives_probabilities_joint = [] # list of lists of probabilities, one list per narrative
+
+    # first compute the ones from the
+    fp = SequentialFunctionPredictor(k_in_knn=5)
+    fp.predict_knn()
+    for narrative in fp.narratives:
+        probabilities = [i.distribution[function_list.index(i.prediction)] for i in narrative.data]
+        narratives_probabilities_knn.append(probabilities)
+
+        if DO_LEAVE_ONE_OUT_MARKOV:
+            exclude = narrative
+        else:
+            exclude = NarrativeData("fake")
+        markov_table = LearnedMarkovTable(LAPLACIAN_BETA_MARKOV,fp.narratives,exclude)
+
+        probabilities = []
+        prev = None
+        for function in narrative.data:
+            prob_markov = markov_table.get_transition_probability(prev,function.prediction)
+            probabilities.append(prob_markov)
+        narratives_probabilities_markov_knn.append(probabilities)
+
+        probabilities = []
+        prev = None
+        for function in narrative.data:
+            prob_markov = markov_table.get_transition_probability(prev,function.label)
+            probabilities.append(prob_markov)
+        narratives_probabilities_markov_gt.append(probabilities)
+    # plot stuff, let's start with knn
+    #util.sliding_window
+    import operator
+    X1 = [reduce(operator.mul,i[0:6],1.0) for i in narratives_probabilities_knn]
+    Y = [1.0 for _ in X1]
+    X2 = [reduce(operator.mul,i[0:6],1.0) for i in narratives_probabilities_markov_knn]
+    X3 = [reduce(operator.mul,i[0:6],1.0) for i in narratives_probabilities_markov_gt]
+    print X1
+    print X2
+    print X3
+    #return
+    from matplotlib import pyplot as plt
+    plt.scatter(X1,Y,color='red')
+    #plt.scatter(X2,Y,color='blue')
+    #plt.scatter(X3,Y,color='cyan')
+    plt.show()
+
+
+
+
+
 
 
 
@@ -51,17 +147,17 @@ class NarrativeData(object):
     def __init__(self,story):
         self.story=story
         self.data = []
-        self.predictions = []
-        self.distributions = []
 
 class NarrativeFunctionData(object):
     def __init__(self,attributes,label):
         self.attributes,self.label=attributes,label
         self.distribution_knn = []
+        self.distribution = []
+        self.prediction = None # final prediction after MCTS
 
 class NarrativeFunctionPrediction(object):
     def __init__(self,prediction,parent):
-        self.prediction = prediction
+        self.prediction = prediction # the option for this node
         self.parent = parent #type: NarrativeFunctionPrediction
         self.children = [] #type: list[NarrativeFunctionPrediction]
         self.visits = 0
@@ -94,29 +190,39 @@ class LearnedMarkovTable(object):
 class MCTS(object):
     def __init__(self):
         self.max_depth = 0
-        self.root = None #type: NarrativeFunctionPrediction
         self.narrative = None #type: NarrativeData
         self.markov_table = None #type: LearnedMarkovTable
+        self.random = random
+        self.random.seed(1)
     def search(self,narrative,markov_table,epsilon_greedy):
         self.narrative = narrative
         self.markov_table = markov_table
         self.max_depth = len(narrative.data)
-        self.root = NarrativeFunctionPrediction(None,None)
-        for i in xrange(MCTS_ROUNDS_PER_NARRATIVE):
-            node = self.selection(self.root,0,epsilon_greedy)
-            self.eval_node(node)
-        return self.selection(self.root,0,0.0)
-    def best_child(self,node):
-        return max(node.children, key=lambda i:i.value)
-    def selection(self,node,depth,epsilon_greedy):
+        for function_idx in range(len(narrative.data)):
+            if function_idx==0:
+                root = NarrativeFunctionPrediction(None,None)
+            else:
+                root = NarrativeFunctionPrediction(narrative.data[function_idx-1].prediction,None)
+
+            for i in xrange(MCTS_ROUNDS_PER_FUNCTION):
+                node = self.selection(root,function_idx,epsilon_greedy)
+                self.eval_node(node)
+            choice = max(root.children, key=lambda i:i.visits)
+            narrative.data[function_idx].prediction = choice.prediction
+    def selection(self,node,depth,epsilon_greedy,final_search=False):
         if depth==self.max_depth:
             #logger.info("Reached the end")
             return node
         if node.children:
-            if random.random() < epsilon_greedy:
-                choice = random.choice(node.children)
+            if self.random.random() < epsilon_greedy:
+                choice = self.random.choice(node.children)
             else:
-                choice = self.best_child(node)
+                if final_search:
+                    # choice based on node visits for the final selection
+                    choice =max(node.children, key=lambda i:i.visits)
+                else:
+                    # choice based on node value
+                    choice =max(node.children, key=lambda i:i.value)
             return self.selection(choice,depth+1,epsilon_greedy)
         else:
             # expand
@@ -148,7 +254,7 @@ class MCTS(object):
         predictions2 = list(predictions)
         # random playout
         while len(predictions)<self.max_depth:
-            predictions.append(random.choice(function_list))
+            predictions.append(self.random.choice(function_list))
         payout = self.eval_narrative_predictions(node,predictions)
         #print predictions2,payout,
         # backpropagate
@@ -165,7 +271,10 @@ class MCTS(object):
             prob_knn = actual.distribution_knn[function_list.index(prediction)]
             prob_markov = self.markov_table.get_transition_probability(prev,prediction)
             prev = prediction
-            evaluation *= prob_knn*prob_markov
+            if EVAL_DO_USE_MARKOV:
+                evaluation *= prob_knn*prob_markov
+            else:
+                evaluation *= prob_knn
         return evaluation
 
 class SequentialFunctionPredictor(object):
@@ -186,15 +295,15 @@ class SequentialFunctionPredictor(object):
             new_attributes.append(new_vector)
         return new_attributes
 
-    def __init__(self,laplacian_beta_knn,laplacian_beta_markov,num_attributes_to_include=0):
+    def __init__(self,k_in_knn=5,laplacian_beta_knn=1.0,laplacian_beta_markov=1.0,num_attributes_to_include=0):
         # init
-        self.n = 5
+        self.n = k_in_knn
         self.laplacian_beta_knn = laplacian_beta_knn
         self.laplacian_beta_markov = laplacian_beta_markov
 
         # load dataset
         self.stories = range(1,16)+[1001,1002,1003]
-        filtered = '_filtered'
+        filtered = '_filtered' if USE_FILTERED_DATASET else ''
         story_indices = [int(i.strip()) for i in open('/Users/josepvalls/voz2/tool_corpus_functions_summary/story_indices%s.txt' % filtered).readlines()]
         dataset = [i.strip().split('\t') for i in open('/Users/josepvalls/voz2/tool_corpus_functions_summary/tool_corpus_functions_summary_5_dist%s.tsv'%filtered).readlines()]
         self.attributes = dataset[0][0:-1]
@@ -228,9 +337,18 @@ class SequentialFunctionPredictor(object):
             self.init_distributions(test,training)
             markov_table = LearnedMarkovTable(self.laplacian_beta_markov,self.narratives,test)
             mcts = MCTS()
-            node = mcts.search(test,markov_table,epsilon_greedy)
-            test.predictions = mcts.get_predictions(node)
-            test.distributions = mcts.get_distributions(node)
+            mcts.search(test,markov_table,epsilon_greedy)
+
+    def predict_knn(self):
+        for test in self.narratives:
+            training = self.get_training_dataset(test.story)
+            logger.info('cross validation on story %d training %d test %d' % (test.story,len(training),len(test.data)))
+            self.init_distributions(test,training)
+            for function in test.data:
+                function.distribution = function.distribution_knn
+                function.prediction = sorted(zip(function.distribution,function_list))[-1][1]
+
+
 
     def distance_euclidean(self,c1,c2):
         return math.sqrt(
@@ -266,19 +384,19 @@ class SequentialFunctionPredictor(object):
         total = 0
         eq = 0
         for narrative in dataset:
-            for example,prediction in zip(narrative.data,narrative.predictions):
+            for function in narrative.data:
                 total +=1
-                eq +=1 if example.label==prediction else 0
+                eq +=1 if function.label==function.prediction else 0
         return 1.0*eq/total if total else 0.0
     def eval_dataset_rank(self,dataset):
         ranks = []
         for narrative in dataset:
             assert isinstance(narrative,NarrativeData)
-            for example,distribution in zip(narrative.data,narrative.distributions):
-                evals = sorted(zip(distribution,function_list),reverse=True)
+            for function in narrative.data:
+                evals = sorted(zip(function.distribution,function_list),reverse=True)
                 rank = 0
                 for k,group in itertools.groupby(evals,key=itemgetter(0)):
-                    if example.label in list(group):
+                    if function.label in list(group):
                         break
                     rank +=1
                 ranks.append(rank)
