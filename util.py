@@ -1,6 +1,7 @@
 import operator
 import itertools
 import math
+import collections
 
 def all_combinations_with_len(lst,min_len,max_len):
     for i in xrange(min_len,max_len+1):
@@ -117,13 +118,28 @@ def is_any_a_in_b(a,b):
     return False
 
 
-def describe_distribution(data):
+def describe_distribution(data,verbose=False):
     mean = average(data)
     sqd = [(i-mean)**2 for i in data]
     variance = average(sqd)
     std = math.sqrt(variance)
+    if not verbose:
+        return mean,std
     median = sorted(data)[int(len(data)/2)]
-    return mean,std
+    mode = collections.Counter(data).most_common(1)
+    return mean,std,min(data),max(data),median,mode
+
+from collections import deque
+
+def sliding_window(seq, n=2):
+    it = iter(seq)
+    win = deque((next(it, None) for _ in xrange(n)), maxlen=n)
+    yield win
+    append = win.append
+    for e in it:
+        append(e)
+        yield tuple(win)
+
 
 def partition_data(dataset,test_set,id_column=0):
     """
