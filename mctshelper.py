@@ -8,6 +8,9 @@ import logging
 import itertools
 import random
 
+from os.path import expanduser
+home = expanduser("~")
+
 
 '''
 plot chart with x = probability computed y = accuracy
@@ -95,7 +98,7 @@ def do_compute_probabilities_for_charting_mcts():
         import pickle
         pickle.dump(samples,open('samples.pickle','wB'))
 
- 
+
 
 
 def do_charting():
@@ -454,8 +457,8 @@ class SequentialFunctionPredictor(object):
         # load dataset
         self.stories = range(1,16)+[1001,1002,1003]
         filtered = '_filtered' if USE_FILTERED_DATASET else ''
-        story_indices = [int(i.strip()) for i in open('/Users/josepvalls/voz2/tool_corpus_functions_summary/story_indices%s.txt' % filtered).readlines()]
-        dataset = [i.strip().split('\t') for i in open('/Users/josepvalls/voz2/tool_corpus_functions_summary/tool_corpus_functions_summary_5_dist%s.tsv'%filtered).readlines()]
+        story_indices = [int(i.strip()) for i in open(home+'/voz2/tool_corpus_functions_summary/story_indices%s.txt' % filtered).readlines()]
+        dataset = [i.strip().split('\t') for i in open(home+'/voz2/tool_corpus_functions_summary/tool_corpus_functions_summary_5_dist%s.tsv'%filtered).readlines()]
         self.attributes = dataset[0][0:-1]
         self.weights = [1.0 for _ in self.attributes]
         dataset = dataset[1:]
