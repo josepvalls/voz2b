@@ -51,7 +51,7 @@ if EVAL_DO_USE_MARKOV:
     MCTS_NODE_START_VALUE = 0.5**(len(function_list)*3) # this is 2 since its the joint probability of the ml and markov predictions, cardinality
 else:
     MCTS_NODE_START_VALUE = 0.5**(len(function_list))
-MCTS_ROUNDS_PER_FUNCTION = 1000000
+MCTS_ROUNDS_PER_FUNCTION = 1000
 LAPLACIAN_BETA_KNN = 0.5
 LAPLACIAN_BETA_MARKOV = 0.5
 LAPLACIAN_BETA_NFSA = 0.5
@@ -402,9 +402,9 @@ class LearnedCardinalityTable(object):
     def __init__(self,laplacian_beta,narratives,exclude):
         self.laplacian_beta = laplacian_beta
         self.table = None
-        self.learn_table(narratives,exclude)
         self.observations = {}
         self.total = 0
+        self.learn_table(narratives,exclude)
     def reset(self):
         self.observations = {}
     def step(self,f):
@@ -419,7 +419,7 @@ class LearnedCardinalityTable(object):
         for narrative in narratives:
             if narrative.story==exclude.story: continue
             self.total+=1
-            for f,i in collections.Counter([i.label for i in narrative.data]):
+            for f,i in collections.Counter([i.label for i in narrative.data]).items():
                 table[function_list.index(f)].append(i)
         self.table = table
 
