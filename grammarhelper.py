@@ -1,5 +1,3 @@
-from nltk import CFG
-import nltk
 import pprint
 import collections
 import math
@@ -289,6 +287,7 @@ def do_order_test(tokens):
     return tokens == tokens2
 
 def do_grammar_tests():
+    from nltk import CFG
     grammar_files = ['grammar-mpropp.txt','grammar-mpropp2.txt','grammar-lakoff.txt','grammar-gervas.txt','grammar-finlayson.txt']
     grammar_test = [i.split() for i in open('data/grammar-test-filtered.txt').readlines()]
     for i in grammar_files:
@@ -319,11 +318,14 @@ def do_grammar_tests():
 class ProppNFSA(object):
     special_tokens = {'depart':'return','Pr':'Rs'}
     state_transition_dict = None
-    def __init__(self,filename):
+    function_list = None
+    def __init__(self,filename,function_list,laplacian_beta):
         self.state = 'START'
         self.extra_tokens = set()
+        self.laplacian_beta = laplacian_beta
         self.reset()
         if not ProppNFSA.state_transition_dict: ProppNFSA.state_transition_dict = ProppNFSA.read_nfsa_file(filename)
+        if not ProppNFSA.function_list: ProppNFSA.function_list = function_list
 
     @classmethod
     def read_nfsa_file(cls,filename):
@@ -348,9 +350,17 @@ class ProppNFSA(object):
 
     def currently_allowed(self):
         return set([i[1] for i in ProppNFSA.state_transition_dict.keys() if i[0]==self.state])-set(ProppNFSA.special_tokens.values())|self.extra_tokens
+    def current_distribution(self):
+        current = self.currently_allowed()
+        #total = len(current) + self.laplacian_beta*len(ProppNFSA.function_list)
+        #default = 1.0 * self.laplacian_beta / total
+        #included = 1.0*( 1.0+self.laplacian_beta) / total
+        #return [included if i in current else default for i in ProppNFSA.function_list]
+        included = 1.0 / len (current)
+        return [included if i in current else 0.0 for i in ProppNFSA.function_list]
     def step(self,token,verbose=False):
         # account for special pairs
-        if token in ProppNFSA.special_tokens: self.extra_tokens.add(ProppNFSA.special_tokens[token])
+        if token in ProppNFSA.special_tokens.keys(): self.extra_tokens.add(ProppNFSA.special_tokens[token])
         if token in self.extra_tokens:
             if verbose:
                 print self.state,token,'EXTRA'
@@ -359,8 +369,7 @@ class ProppNFSA(object):
         if token in ProppNFSA.special_tokens.values():
             if verbose:
                 print self.state,token,'ERROR SPECIAL'
-            self.extra_tokens.remove(token)
-            return True
+            return False
 
         # fsa transition lookup
         key = (self.state,token)

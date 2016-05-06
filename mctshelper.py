@@ -7,6 +7,8 @@ import settings
 import logging
 import itertools
 import random
+from grammarhelper import ProppNFSA
+#import jsonpickle
 
 from os.path import expanduser
 home = expanduser("~")
@@ -43,24 +45,27 @@ logger = logging.getLogger(__name__)
 function_list = 'alpha beta gamma delta epsilon zeta eta theta lambda A a B C depart D E F G H J I K return Pr Rs o L M N Q Ex T U W'.split()
 
 USE_FILTERED_DATASET = True # 230 vs 208 instances
-EVAL_DO_USE_MARKOV = True
+EVAL_DO_USE_MARKOV = False
 if EVAL_DO_USE_MARKOV:
     MCTS_NODE_START_VALUE = 0.5**(len(function_list)*2) # this is 2 since its the joint probability of the ml and markov predictions
 else:
     MCTS_NODE_START_VALUE = 0.5**(len(function_list))
-MCTS_ROUNDS_PER_FUNCTION = 1000
+MCTS_ROUNDS_PER_FUNCTION = 1000000
 LAPLACIAN_BETA_KNN = 0.5
 LAPLACIAN_BETA_MARKOV = 0.5
+LAPLACIAN_BETA_NFSA = 0.5
 K_IN_KNN = 5 # test 5 to 11
 DO_LEAVE_ONE_OUT_MARKOV = True
 NUM_SAMPLES_FROM_TREE_TO_PLOT = 100
 
 def main():
+    do_mcts()
+    return
     logging.root.setLevel(logging.INFO)
     #logging.root.setLevel(logging.ERROR)
     #do_explore_knn()
-    do_compute_probabilities_for_charting_mcts()
-    #do_charting()
+    #do_compute_probabilities_for_charting_mcts()
+    do_charting()
 
 
 
@@ -69,9 +74,24 @@ def main():
 def do_mcts():
     fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
     fp.predict_mcts(epsilon_greedy=0.1)
-    accuracy = fp.eval_dataset_accuracy(fp.narratives)
+
+    accuracy = fp.eval_dataset_accuracy(fp.narratives,'label','prediction_mcts')
+    print 'accuracy gt vs mcts',fp.eval_dataset_accuracy(fp.narratives,'label','prediction_mcts')
+    ranks_mcts = fp.eval_dataset_rank(fp.narratives,'distribution_mcts')
+    print util.describe_distribution(ranks_mcts)
+    print 'accuracy gt vs knn',fp.eval_dataset_accuracy(fp.narratives,'label','prediction_knn')
+    ranks_knn = fp.eval_dataset_rank(fp.narratives,'prediction_knn')
+    print util.describe_distribution(ranks_knn)
+    print 'accuracy knn vs mcts',fp.eval_dataset_accuracy(fp.narratives,'prediction_knn','prediction_mcts')
+    stories = util.flatten([[i.story for j in i.data] for i in fp.narratives])
+    for i in zip(stories,ranks_knn,ranks_mcts):
+        print i
+
+    open("mcts_knn_ranks.json",'w').write(jsonpickle.dumps((ranks_knn,ranks_mcts)))
+    open("mcts_knn_narratives.json",'w').write(jsonpickle.dumps(fp.narratives))
+
     if False:
-        ranks = fp.eval_dataset_rank(fp.narratives)
+        ranks = fp.eval_dataset_rank(fp.narratives,'distribution_mcts')
         print accuracy,util.describe_distribution(ranks)
     else:
         print accuracy
@@ -108,6 +128,9 @@ def do_charting():
     narratives_probabilities_joint = [] # list of lists of probabilities, one list per narrative
     narratives_probabilities_knn_random = []
     narratives_probabilities_markov_random = []
+    narratives_probabilities_markov_knn_gt = []
+    narratives_probabilities_nfsa = []
+    narratives_probabilities_nfsa_random = []
 
     import numpy as np
 
@@ -115,6 +138,7 @@ def do_charting():
     # first compute the ones from the
     fp = SequentialFunctionPredictor(k_in_knn=5)
     fp.predict_knn()
+    f=ProppNFSA('data/nfsa-propp3.txt',function_list,LAPLACIAN_BETA_NFSA)
     for narrative in fp.narratives:
         probabilities = [i.distribution[function_list.index(i.prediction)] for i in narrative.data]
         narratives_probabilities_knn.append(probabilities)
@@ -150,6 +174,7 @@ def do_charting():
             c = 0
             t = 0
             prev = None
+            #print 'new random'
             for function in narrative.data:
                 if t == 6:
                     break
@@ -162,9 +187,10 @@ def do_charting():
 
                 p_markov = markov_table.get_transition_probability(prev,pred)
                 prev = pred
-
-                p *= function.distribution_knn[function_list.index(pred)]
-                p2 *= function.distribution_knn[function_list.index(pred)]*p_markov
+                p_knn = function.distribution_knn[function_list.index(pred)]
+                p *= p_knn
+                p2 *= p_knn*p_markov
+                #print p_knn,p_markov
                 if pred==function.label:
                     c +=1
                 t +=1
@@ -176,13 +202,17 @@ def do_charting():
 
 
         probabilities = []
+        probabilities2 = []
         prev = None
         for function in narrative.data:
             prob_markov = markov_table.get_transition_probability(prev,function.prediction)
+            prob_markov_knn = markov_table.get_transition_probability(prev,function.prediction) * function.distribution_knn[function_list.index(function.label)]
             probabilities.append(prob_markov)
+            probabilities2.append(prob_markov_knn)
 
 
         narratives_probabilities_markov_knn.append(probabilities)
+        narratives_probabilities_markov_knn_gt.append(probabilities2)
 
         probabilities = []
         prev = None
@@ -190,14 +220,69 @@ def do_charting():
             prob_markov = markov_table.get_transition_probability(prev,function.label)
             probabilities.append(prob_markov)
         narratives_probabilities_markov_gt.append(probabilities)
+
+
+        probabilities = []
+        f.reset()
+        for function in narrative.data:
+            prob = f.current_distribution()[function_list.index(function.label)]
+            f.step(function.label)
+            probabilities.append(prob)
+        narratives_probabilities_nfsa.append(probabilities)
+        for i in range(500):
+            p = 1.0
+            c = 0
+            t = 0
+            f.reset()
+            for function in narrative.data:
+                if t == 6:
+                    break
+
+                distr = np.array(f.current_distribution())
+                distr = distr / sum(distr)
+
+                pred = np.random.choice(function_list, 1, p=distr)[0]
+                p *= f.current_distribution()[function_list.index(pred)]
+                f.step(pred)
+                if pred==function.label:
+                    c +=1
+                t +=1
+
+            #samples.append((accuracy,payout))
+            narratives_probabilities_nfsa_random.append((1.0*c/t,p))
+
+
+
+
+
     # plot stuff, let's start with knn
     #util.sliding_window
     import operator
+    print 'nfsa',[reduce(operator.mul,i[0:6],1.0) for i in narratives_probabilities_nfsa]
+    print 'knn_gt',[reduce(operator.mul,i[0:6],1.0) for i in narratives_probabilities_markov_knn_gt]
+    print 'markov_knn',[reduce(operator.mul,i[0:6],1.0) for i in narratives_probabilities_markov_knn]
+    print 'markov_gt',[reduce(operator.mul,i[0:6],1.0) for i in narratives_probabilities_markov_gt]
+    #return
+    if False:
+        # chart nfsa
+        X1 = [reduce(operator.mul,i[0:6],1.0) for i in narratives_probabilities_nfsa]
+        X2 = filter(None,X1)
+        print "missing GT",(len(X1),len(X2))
+        Y = [1.0 for _ in X2]
+        #return
+        from matplotlib import pyplot as plt
+        ax = plt.gca()
+        ax.set_yscale('log')
+        #ax.set_xscale('log')
+        plt.scatter(Y,X2,color='red')
+        #plt.scatter(Y,X3,color='orange')
+        import pickle
+        plt.scatter(*zip(*narratives_probabilities_nfsa_random),color='cyan')
+        plt.show()
 
     if True:
         # chart both
-        X2 = [reduce(operator.mul,i[0:6],1.0) for i in narratives_probabilities_markov_knn]
-        X3 = [reduce(operator.mul,i[0:6],1.0) for i in narratives_probabilities_markov_gt]
+        X2 = [reduce(operator.mul,i[0:6],1.0) for i in narratives_probabilities_markov_knn_gt]
         Y = [1.0 for _ in X2]
         #return
         from matplotlib import pyplot as plt
@@ -210,6 +295,7 @@ def do_charting():
         samples = pickle.load(open('samples_both.pickle','rB'))
         plt.scatter(*zip(*narratives_probabilities_joint),color='cyan')
         plt.scatter(*zip(*samples),color='blue')
+        plt.scatter(*zip(*samples[0:1]),color='green')
         plt.show()
     if False:
         # chart markov
@@ -263,8 +349,9 @@ class NarrativeFunctionData(object):
     def __init__(self,attributes,label):
         self.attributes,self.label=attributes,label
         self.distribution_knn = []
-        self.distribution = []
-        self.prediction = None # final prediction after MCTS
+        self.distribution_mcts = []
+        self.prediction_knn = None
+        self.prediction_mcts = None
 
 class NarrativeFunctionPrediction(object):
     def __init__(self,prediction,parent):
@@ -324,8 +411,8 @@ class MCTS(object):
         else:
             logger.info("MCTS for %s best node stats" % final_node)
             for prediction,distribution,function in zip(preds,distrs,narrative.data):
-                function.prediction = prediction
-                function.distribution = distribution
+                function.prediction_mcts = prediction
+                function.distribution_mcts = distribution
         self.root = root
         return root
 
@@ -382,7 +469,7 @@ class MCTS(object):
         while node:
             node.visits+=1
             node.payout+=payout
-            node.value = node.payout/node.visits
+            node.value = 1.0*node.payout/node.visits
             #print node.value,
             node = node.parent
     def eval_narrative_predictions(self,node,predictions):
@@ -416,9 +503,10 @@ class MCTS(object):
             if depth>=max_depth:
                 # process this node
                 predictions = self.get_predictions(node)
+                assert len(predictions)==max_depth
                 accuracy = self.eval_predictions_accuracy(predictions)
                 payout = self.eval_narrative_predictions(node,predictions)
-                samples.append((accuracy,payout))
+                samples.append((accuracy,payout,node.visits))
             else:
                 children = list(node.children)
                 #random.shuffle(children)
@@ -482,6 +570,7 @@ class SequentialFunctionPredictor(object):
     def init_distributions(self,test,training):
         for function in test.data:
             function.distribution_knn = self.probabilistic_distribution_knn(training,function,self.n,self.laplacian_beta_knn)
+            function.prediction_knn = self.probabilistic_assignment(function.distribution_knn)
     def predict_mcts(self,epsilon_greedy,sampling_accumulator=None):
         #for test in self.narratives[0:1]:
         for test in self.narratives:
@@ -537,20 +626,20 @@ class SequentialFunctionPredictor(object):
             total +=1
             eq +=1 if example.label==prediction else 0
         return 1.0*eq/total
-    def eval_dataset_accuracy(self,dataset):
+    def eval_dataset_accuracy(self,dataset,field_gt='label',field_to_check='prediction'):
         total = 0
         eq = 0
         for narrative in dataset:
             for function in narrative.data:
                 total +=1
-                eq +=1 if function.label==function.prediction else 0
+                eq +=1 if getattr(function,field_gt)==getattr(function,field_to_check) else 0
         return 1.0*eq/total if total else 0.0
-    def eval_dataset_rank(self,dataset):
+    def eval_dataset_rank(self,dataset,distr_field = 'distribution'):
         ranks = []
         for narrative in dataset:
             assert isinstance(narrative,NarrativeData)
             for function in narrative.data:
-                evals = sorted(zip(function.distribution,function_list),reverse=True)
+                evals = sorted(zip(getattr(function,distr_field),function_list),reverse=True)
                 rank = 0
                 for k,group in itertools.groupby(evals,key=itemgetter(0)):
                     if function.label in list(group):
