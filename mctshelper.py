@@ -8,10 +8,11 @@ import logging
 import itertools
 import random
 from grammarhelper import ProppNFSA
-#import jsonpickle
-
+import jsonpickle
+import sys
 from os.path import expanduser
 home = expanduser("~")
+
 
 
 '''
@@ -45,7 +46,7 @@ logger = logging.getLogger(__name__)
 function_list = 'alpha beta gamma delta epsilon zeta eta theta lambda A a B C depart D E F G H J I K return Pr Rs o L M N Q Ex T U W'.split()
 
 USE_FILTERED_DATASET = True # 230 vs 208 instances
-EVAL_DO_USE_MARKOV = False
+EVAL_DO_USE_MARKOV = True
 if EVAL_DO_USE_MARKOV:
     MCTS_NODE_START_VALUE = 0.5**(len(function_list)*2) # this is 2 since its the joint probability of the ml and markov predictions
 else:
@@ -59,6 +60,8 @@ DO_LEAVE_ONE_OUT_MARKOV = True
 NUM_SAMPLES_FROM_TREE_TO_PLOT = 100
 
 def main():
+
+
     do_mcts()
     return
     logging.root.setLevel(logging.INFO)
@@ -68,7 +71,15 @@ def main():
     do_charting()
 
 
+def do_analize_mcts_results():
 
+    d = jsonpickle.decode(open("mcts_knn_narratives.json").read())
+    for n in d:
+        for f in n.data:
+            print n.story,f.label,f.prediction_knn,f.prediction_mcts
+
+
+    return
 
 
 def do_mcts():
@@ -87,8 +98,8 @@ def do_mcts():
     for i in zip(stories,ranks_knn,ranks_mcts):
         print i
 
-    open("mcts_knn_ranks.json",'w').write(jsonpickle.dumps((ranks_knn,ranks_mcts)))
-    open("mcts_knn_narratives.json",'w').write(jsonpickle.dumps(fp.narratives))
+    open("mcts_knn_markov_ranks.json",'w').write(jsonpickle.dumps((ranks_knn,ranks_mcts)))
+    open("mcts_knn_markov_narratives.json",'w').write(jsonpickle.dumps(fp.narratives))
 
     if False:
         ranks = fp.eval_dataset_rank(fp.narratives,'distribution_mcts')
