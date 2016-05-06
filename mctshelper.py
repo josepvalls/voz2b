@@ -48,7 +48,7 @@ function_list = 'alpha beta gamma delta epsilon zeta eta theta lambda A a B C de
 USE_FILTERED_DATASET = True # 230 vs 208 instances
 EVAL_DO_USE_MARKOV = True
 if EVAL_DO_USE_MARKOV:
-    MCTS_NODE_START_VALUE = 0.5**(len(function_list)*2) # this is 2 since its the joint probability of the ml and markov predictions
+    MCTS_NODE_START_VALUE = 0.5**(len(function_list)*3) # this is 2 since its the joint probability of the ml and markov predictions, cardinality
 else:
     MCTS_NODE_START_VALUE = 0.5**(len(function_list))
 MCTS_ROUNDS_PER_FUNCTION = 1000000
@@ -398,17 +398,45 @@ class LearnedMarkovTable(object):
                 table[a.label][b.label]+=1
         self.markov_table = table
 
+class LearnedCardinalityTable(object):
+    def __init__(self,laplacian_beta,narratives,exclude):
+        self.laplacian_beta = laplacian_beta
+        self.table = None
+        self.learn_table(narratives,exclude)
+        self.observations = {}
+        self.total = 0
+    def reset(self):
+        self.observations = {}
+    def step(self,f):
+        self.observations[f]=self.observations.get(f,0)+1
+    def get_probability(self,f):
+        observations = self.table[function_list.index(f)]
+        total = self.total+self.total*self.laplacian_beta # this total accounts for the observations of NOT observing the function
+        already = self.observations.get(f,0)
+        return 1.0*collections.Counter(observations).get(already+1,self.laplacian_beta)/total
+    def learn_table(self,narratives,exclude):
+        table = [[] for i in function_list]
+        for narrative in narratives:
+            if narrative.story==exclude.story: continue
+            self.total+=1
+            for f,i in collections.Counter([i.label for i in narrative.data]):
+                table[function_list.index(f)].append(i)
+        self.table = table
+
+
 class MCTS(object):
     def __init__(self):
         self.max_depth = 0
         self.narrative = None #type: NarrativeData
         self.markov_table = None #type: LearnedMarkovTable
+        self.cardinality = None #type: LearnedCardinalityTable
         self.random = random
         self.random.seed(1)
         self.root = None #type: NarrativeFunctionPrediction
-    def search(self,narrative,markov_table,epsilon_greedy):
+    def search(self,narrative,markov_table,cardinality,epsilon_greedy):
         self.narrative = narrative
         self.markov_table = markov_table
+        self.cardinality = cardinality
         self.max_depth = len(narrative.data)
         root = NarrativeFunctionPrediction(None,None)
         for i in xrange(MCTS_ROUNDS_PER_FUNCTION):
@@ -486,12 +514,15 @@ class MCTS(object):
     def eval_narrative_predictions(self,node,predictions):
         evaluation = 1.0
         prev = None
+        self.cardinality.reset()
         for prediction,actual in zip(predictions,self.narrative.data):
             prob_knn = actual.distribution_knn[function_list.index(prediction)]
             prob_markov = self.markov_table.get_transition_probability(prev,prediction)
+            prob_cardinal = self.cardinality.get_probability(prediction)
+            self.cardinality.step(prediction)
             prev = prediction
             if EVAL_DO_USE_MARKOV:
-                evaluation *= prob_knn*prob_markov
+                evaluation *= prob_knn*prob_markov*prob_cardinal
             else:
                 evaluation *= prob_knn
         return evaluation
@@ -589,8 +620,9 @@ class SequentialFunctionPredictor(object):
             logger.info('cross validation on story %d training %d test %d' % (test.story,len(training),len(test.data)))
             self.init_distributions(test,training)
             markov_table = LearnedMarkovTable(self.laplacian_beta_markov,self.narratives,test)
+            cardinality = LearnedCardinalityTable(self.laplacian_beta_markov,self.narratives,test)
             mcts = MCTS()
-            mcts.search(test,markov_table,epsilon_greedy)
+            mcts.search(test,markov_table,cardinality,epsilon_greedy)
             if sampling_accumulator is None:
                 pass
             else:
