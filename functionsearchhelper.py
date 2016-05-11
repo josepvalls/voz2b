@@ -44,7 +44,7 @@ def do_systematic():
         DO_CHECK = i+1
         print "START USING SETUP %d" % DO_CHECK
         fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
-        fp.predict_systematic(best_first_branches_num=-1,beam_search_open_size=1000,beam_search_open_size_multiplier=2)
+        fp.predict_systematic(best_first_branches_num=-1,beam_search_open_size=10000,beam_search_open_size_multiplier=1.5)
 
 
 def do_dump_all_predictions():
@@ -161,7 +161,7 @@ class SystematicSearchEngine(object):
                             nfsa.step(prediction)
                         value *= nfsa.current_probability(function)
                     new_open.append(NarrativeFunctionPrediction(function,node,value))
-            open_size = beam_search_open_size*beam_search_open_size_multiplier*(depth+1)
+            open_size = int(beam_search_open_size*beam_search_open_size_multiplier*(depth+1))
             logger.info(" %d successors" % len(new_open))
             if len(new_open)>open_size:
                 open = sorted(new_open,key=attrgetter('value'),reverse=True)[0:open_size]
@@ -279,7 +279,7 @@ class SequentialFunctionPredictor(object):
             result = sse.search(test,markov_table,cardinality,nfsa,best_first_branches_num,beam_search_open_size,beam_search_open_size_multiplier)
             results.append(result)
         total_functions = sum(len(i.data) for i in self.narratives)
-        open('overall.txt','a').write("using %d: overall results for the first result: %f\n" % (DO_CHECK,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
+        open('overall2.txt','a').write("using %d: overall results for the first result: %f\n" % (DO_CHECK,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
 
 
 
