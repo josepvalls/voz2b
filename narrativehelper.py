@@ -12,6 +12,8 @@ VERB_FEATURES = 1 # levin base
 #VERB_FEATURES = 4 # similarity
 VERB_FEATURES = 5 # framenet
 
+DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT = True
+
 class Narrative(vozbase.VozContainer):
     """
     Models narrative
@@ -129,7 +131,8 @@ class NarrativeFunction(vozbase.VozTextContainer):
             self.role_counts = [0 for _ in taxonomy_labels]
             self._mentions_counted = set()
             self._compute_features_mentions_explicit(narrative,taxonomy_labels)
-            self._compute_features_mentions_implicit(narrative,taxonomy_labels,verbs)
+            if not DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT:
+                self._compute_features_mentions_implicit(narrative,taxonomy_labels,verbs)
         if sum(self.role_counts):
             if DO_COMPUTE_ROLE_DISTRIBUTION:
                 total = sum(self.role_counts)
@@ -142,8 +145,11 @@ class NarrativeFunction(vozbase.VozTextContainer):
         for mention in mentions:
             if mention.id in self._mentions_counted: continue
             self._mentions_counted.add(mention.id)
-            #print mention.format_all_taxonomies()
-            labels = mention.get_taxonomy(entitymanager.TaxonomyContainer.TAXONOMY_CHARACTER_6ROLES)
+            if DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT:
+                labels = mention.get_tag('OLD_ROLE_PRED1')
+            else:
+                #print mention.format_all_taxonomies()
+                labels = mention.get_taxonomy(entitymanager.TaxonomyContainer.TAXONOMY_CHARACTER_6ROLES)
             for label in labels:
                 if label and label in taxonomy_labels:
                     self.role_counts[taxonomy_labels.index(label)]+=1
