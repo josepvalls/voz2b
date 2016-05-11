@@ -44,7 +44,7 @@ def do_systematic():
         DO_CHECK = i+1
         print "START USING SETUP %d" % DO_CHECK
         fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
-        fp.predict_systematic(best_first_branches_num=-1,beam_search_open_size=1000,beam_search_open_size_multiplier=1)
+        fp.predict_systematic(best_first_branches_num=-1,beam_search_open_size=1000,beam_search_open_size_multiplier=2)
 
 
 def do_dump_all_predictions():
@@ -99,6 +99,7 @@ class LearnedMarkovTable(object):
         self.markov_table = table
 
 class LearnedCardinalityTable2(object):
+    LIMIT = 5
     def __init__(self,laplacian_beta,narratives,exclude):
         self.laplacian_beta = laplacian_beta
         self.table = {}
@@ -106,9 +107,11 @@ class LearnedCardinalityTable2(object):
         self.learn_table(narratives,exclude)
     def get_probability(self,f,n):
         total = self.total+self.total*self.laplacian_beta
-        return 1.0* (self.table[function_list.index(f)][n]+self.laplacian_beta)/total
+        if n>=LearnedCardinalityTable2.LIMIT:
+            return 1.0*self.laplacian_beta/total
+        return 1.0*(self.table[function_list.index(f)][n]+self.laplacian_beta)/total
     def learn_table(self,narratives,exclude):
-        table = [[0]*8 for _ in function_list]
+        table = [[0]*LearnedCardinalityTable2.LIMIT for _ in function_list]
         for narrative in narratives:
             if narrative.story==exclude.story: continue
             self.total+=1
