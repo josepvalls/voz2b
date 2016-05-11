@@ -56,19 +56,37 @@ LAPLACIAN_BETA_KNN = 0.5
 LAPLACIAN_BETA_MARKOV = 0.5
 LAPLACIAN_BETA_NFSA = 0.5
 K_IN_KNN = 5 # test 5 to 11
+LAPLACIAN_BETA_KNN = 0.1
+LAPLACIAN_BETA_MARKOV = 0.1
+LAPLACIAN_BETA_NFSA = 0.1
 DO_LEAVE_ONE_OUT_MARKOV = True
 NUM_SAMPLES_FROM_TREE_TO_PLOT = 100
+USE_GT_FOR_PREDICTIONS_WHEN_STEPPING = True
 
 def main():
-
-
-    do_mcts()
-    return
-    logging.root.setLevel(logging.INFO)
+    do_systematic()
+    #do_dump_all_predictions()
+    #do_mcts()
+    #return
+    #logging.root.setLevel(logging.INFO)
     #logging.root.setLevel(logging.ERROR)
     #do_explore_knn()
     #do_compute_probabilities_for_charting_mcts()
-    do_charting()
+    #do_charting()
+
+
+def do_systematic():
+    fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
+    fp.predict_systematic(best_first_branches_num=-1,beam_search_open_size=10,beam_search_open_size_multiplier)
+
+
+def do_dump_all_predictions():
+    fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
+    fp.predict_knn()
+    for narrative in fp.narratives:
+        for function in narrative.data:
+            print '\t'.join([str(i) for i in [narrative.story]+util.flatten([function.distribution_knn,function.distribution_markov,function.distribution_cardinal,function.distribution_nfsa])])
+
 
 
 def do_analize_mcts_results():
@@ -149,7 +167,7 @@ def do_charting():
     # first compute the ones from the
     fp = SequentialFunctionPredictor(k_in_knn=5)
     fp.predict_knn()
-    f=ProppNFSA('data/nfsa-propp3.txt',function_list,LAPLACIAN_BETA_NFSA)
+    f=ProppNFSA('data/nfsa-propp3.txt',function_list,LAPLACIAN_BETA_NFSA,allow_only_one=True)
     for narrative in fp.narratives:
         probabilities = [i.distribution[function_list.index(i.prediction)] for i in narrative.data]
         narratives_probabilities_knn.append(probabilities)
@@ -178,6 +196,7 @@ def do_charting():
         else:
             exclude = NarrativeData("fake")
         markov_table = LearnedMarkovTable(LAPLACIAN_BETA_MARKOV,fp.narratives,exclude)
+        cardinal_table = LearnedCardinalityTable(LAPLACIAN_BETA_MARKOV,fp.narratives,exclude)
 
         for i in range(500):
             p = 1.0
@@ -186,6 +205,7 @@ def do_charting():
             t = 0
             prev = None
             #print 'new random'
+            cardinal_table.reset()
             for function in narrative.data:
                 if t == 6:
                     break
@@ -197,10 +217,12 @@ def do_charting():
                 pred = np.random.choice(function_list, 1, p=distr)[0]
 
                 p_markov = markov_table.get_transition_probability(prev,pred)
+                p_cardinal = cardinal_table.get_probability(pred)
+                cardinal_table.step(pred)
                 prev = pred
                 p_knn = function.distribution_knn[function_list.index(pred)]
                 p *= p_knn
-                p2 *= p_knn*p_markov
+                p2 *= p_knn*p_markov*p_cardinal
                 #print p_knn,p_markov
                 if pred==function.label:
                     c +=1
@@ -215,8 +237,11 @@ def do_charting():
         probabilities = []
         probabilities2 = []
         prev = None
+        cardinal_table.reset()
         for function in narrative.data:
             prob_markov = markov_table.get_transition_probability(prev,function.prediction)
+            prov_cardinal = cardinal_table.get_probability(function.prediction)
+            cardinal_table.step(function.prediction)
             prob_markov_knn = markov_table.get_transition_probability(prev,function.prediction) * function.distribution_knn[function_list.index(function.label)]
             probabilities.append(prob_markov)
             probabilities2.append(prob_markov_knn)
@@ -274,6 +299,24 @@ def do_charting():
     print 'markov_knn',[reduce(operator.mul,i[0:6],1.0) for i in narratives_probabilities_markov_knn]
     print 'markov_gt',[reduce(operator.mul,i[0:6],1.0) for i in narratives_probabilities_markov_gt]
     #return
+    if True:
+        # chart all 3
+        X2 = [reduce(operator.mul,i[0:6],1.0) for i in narratives_probabilities_markov_knn_gt]
+        Y = [1.0 for _ in X2]
+        #return
+        from matplotlib import pyplot as plt
+        ax = plt.gca()
+        ax.set_yscale('log')
+        #ax.set_xscale('log')
+        plt.scatter(Y,X2,color='red')
+        #plt.scatter(Y,X3,color='orange')
+        import pickle
+        samples = pickle.load(open('samples_all3.pickle','rB'))
+        plt.scatter(*zip(*narratives_probabilities_joint),color='cyan')
+        plt.scatter(*zip(*samples),color='blue')
+        plt.scatter(*zip(*samples[0:1]),color='magenta')
+        plt.show()
+
     if False:
         # chart nfsa
         X1 = [reduce(operator.mul,i[0:6],1.0) for i in narratives_probabilities_nfsa]
@@ -291,7 +334,7 @@ def do_charting():
         plt.scatter(*zip(*narratives_probabilities_nfsa_random),color='cyan')
         plt.show()
 
-    if True:
+    if False:
         # chart both
         X2 = [reduce(operator.mul,i[0:6],1.0) for i in narratives_probabilities_markov_knn_gt]
         Y = [1.0 for _ in X2]
@@ -306,7 +349,7 @@ def do_charting():
         samples = pickle.load(open('samples_both.pickle','rB'))
         plt.scatter(*zip(*narratives_probabilities_joint),color='cyan')
         plt.scatter(*zip(*samples),color='blue')
-        plt.scatter(*zip(*samples[0:1]),color='green')
+        plt.scatter(*zip(*samples[0:1]),color='magenta')
         plt.show()
     if False:
         # chart markov
@@ -361,6 +404,9 @@ class NarrativeFunctionData(object):
         self.attributes,self.label=attributes,label
         self.distribution_knn = []
         self.distribution_mcts = []
+        self.distribution_markov = []
+        self.distribution_cardinal = []
+        self.distribution_nfsa = []
         self.prediction_knn = None
         self.prediction_mcts = None
 
@@ -416,11 +462,16 @@ class LearnedCardinalityTable(object):
         return 1.0*collections.Counter(observations).get(already+1,self.laplacian_beta)/total
     def learn_table(self,narratives,exclude):
         table = [[] for i in function_list]
+        #i_count = []
         for narrative in narratives:
             if narrative.story==exclude.story: continue
             self.total+=1
             for f,i in collections.Counter([i.label for i in narrative.data]).items():
+                #print f,i
+                #i_count.append(i)
                 table[function_list.index(f)].append(i)
+        #print max(i_count)
+
         self.table = table
 
 
@@ -609,18 +660,50 @@ class SequentialFunctionPredictor(object):
                 training += narrative.data
         return training
 
-    def init_distributions(self,test,training):
+    def init_distributions(self,test,training,use_gt_for_predictions=True,markov_table=None,cardinality=None,nfsa=None):
+        prev = None
         for function in test.data:
             function.distribution_knn = self.probabilistic_distribution_knn(training,function,self.n,self.laplacian_beta_knn)
             function.prediction_knn = self.probabilistic_assignment(function.distribution_knn)
+            if use_gt_for_predictions:
+                label = function.label
+            else:
+                label = function.prediction_knn
+            if markov_table:
+                function.distribution_markov = [markov_table.get_transition_probability(prev,i) for i in function_list]
+                prev = label
+            if cardinality:
+                function.distribution_cardinal = [cardinality.get_probability(i) for i in function_list]
+                cardinality.step(label)
+            if nfsa:
+                function.distribution_nfsa = nfsa.current_distribution()
+                nfsa.step(label)
+
+
+    def predict_systematic(self,best_first_branches_num=-1,beam_search_open_size=10,beam_search_open_size_multiplier=2):
+        #for test in self.narratives[0:1]:
+        for test in self.narratives:
+            training = self.get_training_dataset(test.story)
+            logger.info('cross validation on story %d training %d test %d' % (test.story,len(training),len(test.data)))
+            markov_table = LearnedMarkovTable(self.laplacian_beta_markov,self.narratives,test)
+            cardinality = LearnedCardinalityTable(self.laplacian_beta_markov,self.narratives,test)
+            nfsa = ProppNFSA('data/nfsa-propp3.txt',function_list,LAPLACIAN_BETA_NFSA,allow_only_one=True)
+            self.init_distributions(test, training, use_gt_for_predictions=USE_GT_FOR_PREDICTIONS_WHEN_STEPPING, markov_table=markov_table, cardinality=cardinality, nfsa=nfsa)
+            mcts = MCTS()
+            mcts.search(test,markov_table,cardinality)
+
+
+
+
     def predict_mcts(self,epsilon_greedy,sampling_accumulator=None):
         #for test in self.narratives[0:1]:
         for test in self.narratives:
             training = self.get_training_dataset(test.story)
             logger.info('cross validation on story %d training %d test %d' % (test.story,len(training),len(test.data)))
-            self.init_distributions(test,training)
             markov_table = LearnedMarkovTable(self.laplacian_beta_markov,self.narratives,test)
             cardinality = LearnedCardinalityTable(self.laplacian_beta_markov,self.narratives,test)
+            nfsa = ProppNFSA('data/nfsa-propp3.txt',function_list,LAPLACIAN_BETA_NFSA,allow_only_one=True)
+            self.init_distributions(test, training, use_gt_for_predictions=USE_GT_FOR_PREDICTIONS_WHEN_STEPPING, markov_table=markov_table, cardinality=cardinality, nfsa=nfsa)
             mcts = MCTS()
             mcts.search(test,markov_table,cardinality,epsilon_greedy)
             if sampling_accumulator is None:
@@ -632,11 +715,27 @@ class SequentialFunctionPredictor(object):
         for test in self.narratives:
             training = self.get_training_dataset(test.story)
             logger.info('cross validation on story %d training %d test %d' % (test.story,len(training),len(test.data)))
-            self.init_distributions(test,training)
+            self.init_distributions(test, training, use_gt_for_predictions=USE_GT_FOR_PREDICTIONS_WHEN_STEPPING, markov_table=markov_table, cardinality=cardinality, nfsa=nfsa)
             for function in test.data:
                 function.distribution = function.distribution_knn
-                function.prediction = sorted(zip(function.distribution,function_list))[-1][1]
+                function.prediction = function.prediction_knn
 
+    def dump_probabilities(self):
+        for test in self.narratives:
+            markov_table = LearnedMarkovTable(self.laplacian_beta_markov,self.narratives,test)
+            cardinality = LearnedCardinalityTable(self.laplacian_beta_markov,self.narratives,test)
+            nfsa = ProppNFSA('data/nfsa-propp3.txt',function_list,LAPLACIAN_BETA_NFSA,allow_only_one=True)
+            if False:
+                # do printouts of the tables
+                for i in [None]+function_list:
+                    print i,
+                    for j in function_list:
+                    #for k in range(6):
+                        print markov_table.markov_table[i][j],
+                        #observations = cardinality.table[function_list.index(i)]
+                        #print collections.Counter(observations).get(k,0),
+                    print
+                sys.exit()
 
 
     def distance_euclidean(self,c1,c2):

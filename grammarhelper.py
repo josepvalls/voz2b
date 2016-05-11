@@ -319,14 +319,16 @@ class ProppNFSA(object):
     special_tokens = {'depart':'return','Pr':'Rs'}
     state_transition_dict = None
     function_list = None
-    def __init__(self,filename,function_list,laplacian_beta):
+    def __init__(self,filename,function_list,laplacian_beta,allow_only_one=True,force_alphabetical=True):
         self.state = 'START'
         self.extra_tokens = set()
         self.laplacian_beta = laplacian_beta
+        self.allow_only_one=allow_only_one
+        self.force_alphabetical = force_alphabetical
+        self.seen = set()
         self.reset()
         if not ProppNFSA.state_transition_dict: ProppNFSA.state_transition_dict = ProppNFSA.read_nfsa_file(filename)
         if not ProppNFSA.function_list: ProppNFSA.function_list = function_list
-
     @classmethod
     def read_nfsa_file(cls,filename):
         state_transition_dict = {}
@@ -340,6 +342,7 @@ class ProppNFSA(object):
     def reset(self):
         self.state = 'START'
         self.extra_tokens = set()
+        self.seen = set()
     def recognize(self,tokens,verbose=False):
         self.reset()
         for token in tokens:
@@ -349,16 +352,39 @@ class ProppNFSA(object):
             return True
 
     def currently_allowed(self):
-        return set([i[1] for i in ProppNFSA.state_transition_dict.keys() if i[0]==self.state])-set(ProppNFSA.special_tokens.values())|self.extra_tokens
+        ret = set([i[1] for i in ProppNFSA.state_transition_dict.keys() if i[0]==self.state])
+        ret -= set(ProppNFSA.special_tokens.values())
+        ret |= self.extra_tokens
+        ret -= self.seen
+        return ret
     def current_distribution(self):
         current = self.currently_allowed()
-        #total = len(current) + self.laplacian_beta*len(ProppNFSA.function_list)
-        #default = 1.0 * self.laplacian_beta / total
-        #included = 1.0*( 1.0+self.laplacian_beta) / total
-        #return [included if i in current else default for i in ProppNFSA.function_list]
-        included = 1.0 / len (current)
-        return [included if i in current else 0.0 for i in ProppNFSA.function_list]
-    def step(self,token,verbose=False):
+        if not self.laplacian_beta:
+            included = 1.0 / len (current)
+            return [included if i in current else 0.0 for i in ProppNFSA.function_list]
+        else:
+            total = len(current) + self.laplacian_beta*len(ProppNFSA.function_list)
+            default = 1.0*(self.laplacian_beta) / total
+            included = 1.0*( 1.0+self.laplacian_beta) / total
+            return [included if i in current else default for i in ProppNFSA.function_list]
+    def current_probability(self,f):
+        current = self.currently_allowed()
+        if not self.laplacian_beta:
+            included = 1.0 / len (current)
+            return included if f in current else 0.0
+        else:
+            total = len(current) + self.laplacian_beta*len(ProppNFSA.function_list)
+            default = 1.0*(self.laplacian_beta) / total
+            included = 1.0*( 1.0+self.laplacian_beta) / total
+            return included if f in current else default
+
+    def step(self,token,recognize=False,verbose=False):
+        self.seen.add(token)
+        # add all previous
+        if self.force_alphabetical:
+            for i in self.function_list[0:function_list.index(token)]:
+                self.seen.add(i)
+
         # account for special pairs
         if token in ProppNFSA.special_tokens.keys(): self.extra_tokens.add(ProppNFSA.special_tokens[token])
         if token in self.extra_tokens:
