@@ -27,7 +27,7 @@ DO_CHECK = DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA
 USE_FILTERED_DATASET = True # 230 vs 208 instances
 K_IN_KNN = 5 # test 5 to 11
 
-DO_LOAD_AUTO_DATASET = True # currently only filtered is there
+DO_LOAD_AUTO_DATASET = True # currently only filtered is there, 167 instances
 
 #LAPLACIAN_BETA_KNN = 0.5
 #LAPLACIAN_BETA_MARKOV = 0.5
@@ -248,7 +248,7 @@ class SequentialFunctionPredictor(object):
         self.stories = range(1,16)+[1001,1002,1003]
         filtered = '_filtered' if USE_FILTERED_DATASET else ''
         story_indices = [int(i.strip()) for i in open(home+'/voz2/tool_corpus_functions_summary/story_indices%s.txt' % filtered).readlines()]
-        dataset = [i.strip().split('\t') for i in open(home+'/voz2/tool_corpus_functions_summary/tool_corpus_functions_summary_5_dist%s%s.tsv'%(filtered,'_AUTO' if DO_LOAD_AUTO_DATASET else '')).readlines()]
+        dataset = [i.strip().split('\t') for i in open(home+'/voz2/tool_corpus_functions_summary/tool_corpus_functions_summary_5_dist%s%s.tsv'%(filtered,'_auto' if DO_LOAD_AUTO_DATASET else '')).readlines()]
         self.attributes = dataset[0][0:-1]
         self.weights = [1.0 for _ in self.attributes]
         dataset = dataset[1:]
