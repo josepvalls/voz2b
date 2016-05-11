@@ -245,7 +245,7 @@ class SequentialFunctionPredictor(object):
         self.laplacian_beta_markov = laplacian_beta_markov
 
         # load dataset
-        self.stories = range(1,16)+[1001,1002,1003]
+        self.stories = range(1,16)+([1001,1002,1003] if not DO_LOAD_AUTO_DATASET else [])
         filtered = '_filtered' if USE_FILTERED_DATASET else ''
         story_indices = [int(i.strip()) for i in open(home+'/voz2/tool_corpus_functions_summary/story_indices%s.txt' % filtered).readlines()]
         dataset = [i.strip().split('\t') for i in open(home+'/voz2/tool_corpus_functions_summary/tool_corpus_functions_summary_5_dist%s%s.tsv'%(filtered,'_auto' if DO_LOAD_AUTO_DATASET else '')).readlines()]
