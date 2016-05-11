@@ -276,7 +276,7 @@ class SequentialFunctionPredictor(object):
             result = sse.search(test,markov_table,cardinality,nfsa,best_first_branches_num,beam_search_open_size,beam_search_open_size_multiplier)
             results.append(result)
         total_functions = sum(len(i.data) for i in self.narratives)
-        open('overall.txt','a').write("using %d: overall results for the first result\n",DO_CHECK,sum(i[2]*len(i[3].split(','))/total_functions for i in results))
+        open('overall.txt','a').write("using %d: overall results for the first result: %f\n" % (DO_CHECK,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
 
 
 
