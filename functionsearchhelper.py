@@ -276,7 +276,7 @@ class SequentialFunctionPredictor(object):
             result = sse.search(test,markov_table,cardinality,nfsa,best_first_branches_num,beam_search_open_size,beam_search_open_size_multiplier)
             results.append(result)
         total_functions = sum(len(i.data) for i in self.narratives)
-        "overall results for the first result",sum(i[2]*len(i[3].split(',')/total_functions) for i in results)
+        "overall results for the first result",sum(i[2]*len(i[3].split(','))/total_functions for i in results)
 
 
 
