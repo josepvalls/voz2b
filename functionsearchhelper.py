@@ -108,7 +108,7 @@ class LearnedCardinalityTable2(object):
         total = self.total+self.total*self.laplacian_beta
         return 1.0* (self.table[function_list.index(f)][n]+self.laplacian_beta)/total
     def learn_table(self,narratives,exclude):
-        table = [[0]*6 for _ in function_list]
+        table = [[0]*8 for _ in function_list]
         for narrative in narratives:
             if narrative.story==exclude.story: continue
             self.total+=1
@@ -181,7 +181,7 @@ class SystematicSearchEngine(object):
                     nfsa.step(prediction)
             accuracy = get_predictions_accuracy(narrative,predictions)
             results.append((math.log(probability),math.log(node.value),accuracy,','.join(predictions)))
-        print "sorted by final probability"
+        print "story %d: sorted by final probability" % narrative.story
         results.sort(reverse=True)
         for result in results[0:100]:
             print "%f\t%f\t%f\t%s" % result
@@ -276,7 +276,7 @@ class SequentialFunctionPredictor(object):
             result = sse.search(test,markov_table,cardinality,nfsa,best_first_branches_num,beam_search_open_size,beam_search_open_size_multiplier)
             results.append(result)
         total_functions = sum(len(i.data) for i in self.narratives)
-        "overall results for the first result",sum(i[2]*len(i[3].split(','))/total_functions for i in results)
+        open('overall.txt','a').write("using %d: overall results for the first result\n",DO_CHECK,sum(i[2]*len(i[3].split(','))/total_functions for i in results))
 
 
 
