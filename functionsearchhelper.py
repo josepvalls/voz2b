@@ -35,13 +35,20 @@ K_IN_KNN = 5 # test 5 to 11
 LAPLACIAN_BETA_KNN = LAPLACIAN_BETA_MARKOV = LAPLACIAN_BETA_NFSA = LAPLACIAN_BETA_CARDINALITY = 0.1
 USE_GT_FOR_PREDICTIONS_WHEN_STEPPING = True
 
+DO_NFSA_FORCE_ONLY_ONE = 1
+DO_NFSA_FORCE_ALPHABETICAL = 2
+DO_NFSA_FORCE = 0
+
 def main():
     do_systematic()
 
 def do_systematic():
-    for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END):
-        global DO_CHECK
-        DO_CHECK = i+1
+    #for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END):
+    for i in range(4):
+        #global DO_CHECK
+        #DO_CHECK = i+1
+        global DO_NFSA_FORCE
+        DO_NFSA_FORCE = i
         print "START USING SETUP %d" % DO_CHECK
         fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
         fp.predict_systematic(best_first_branches_num=-1,beam_search_open_size=10000,beam_search_open_size_multiplier=1.5)
@@ -273,33 +280,14 @@ class SequentialFunctionPredictor(object):
             logger.info('cross validation on story %d training %d test %d' % (test.story,len(training),len(test.data)))
             markov_table = LearnedMarkovTable(self.laplacian_beta_markov,self.narratives,test)
             cardinality = LearnedCardinalityTable2(self.laplacian_beta_markov, self.narratives, test)
-            nfsa = ProppNFSA('data/nfsa-propp3.txt',function_list,LAPLACIAN_BETA_NFSA,allow_only_one=True)
+            nfsa = ProppNFSA('data/nfsa-propp3.txt',function_list,LAPLACIAN_BETA_NFSA,allow_only_one=DO_NFSA_FORCE&DO_NFSA_FORCE_ONLY_ONE,force_alphabetical=DO_NFSA_FORCE&DO_NFSA_FORCE_ALPHABETICAL)
             self.init_distributions(test, training, use_gt_for_predictions=USE_GT_FOR_PREDICTIONS_WHEN_STEPPING, markov_table=markov_table, cardinality=cardinality, nfsa=nfsa)
             sse = SystematicSearchEngine()
             result = sse.search(test,markov_table,cardinality,nfsa,best_first_branches_num,beam_search_open_size,beam_search_open_size_multiplier)
             results.append(result)
         total_functions = sum(len(i.data) for i in self.narratives)
-        open('overall2.txt','a').write("using %d: overall results for the first result: %f\n" % (DO_CHECK,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
+        open('overall3.txt','a').write("using %d: overall results for the first result: %f\n" % (DO_CHECK,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
 
-
-
-
-
-    def predict_mcts(self,epsilon_greedy,sampling_accumulator=None):
-        #for test in self.narratives[0:1]:
-        for test in self.narratives:
-            training = self.get_training_dataset(test.story)
-            logger.info('cross validation on story %d training %d test %d' % (test.story,len(training),len(test.data)))
-            markov_table = LearnedMarkovTable(self.laplacian_beta_markov,self.narratives,test)
-            cardinality = LearnedCardinalityTable2(self.laplacian_beta_markov, self.narratives, test)
-            nfsa = ProppNFSA('data/nfsa-propp3.txt',function_list,LAPLACIAN_BETA_NFSA,allow_only_one=True)
-            self.init_distributions(test, training, use_gt_for_predictions=USE_GT_FOR_PREDICTIONS_WHEN_STEPPING, markov_table=markov_table, cardinality=cardinality, nfsa=nfsa)
-            mcts = MCTS()
-            mcts.search(test,markov_table,cardinality,epsilon_greedy)
-            if sampling_accumulator is None:
-                pass
-            else:
-                sampling_accumulator += mcts.sample_tree()
 
     def predict_knn(self):
         for test in self.narratives:
