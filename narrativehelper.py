@@ -24,7 +24,8 @@ class Narrative(vozbase.VozContainer):
         self.function_list = []
         self.filter_non_actual_default = True
     def compute_features(self):
-        for function in self.functions():
+        #for function in self.functions():
+        for function in self.function_list:
             assert isinstance(function,NarrativeFunction)
             function._compute_features(self)
     def add_function(self,id,offset,length,function,locations):
@@ -38,7 +39,7 @@ class Narrative(vozbase.VozContainer):
             return util.format_list(self.functions(),'\n',options=options)
     def functions(self,filter_non_actual=None):
         if filter_non_actual is None: filter_non_actual = self.filter_non_actual_default
-        return self.function_list if not filter_non_actual else [i for i in self.function_list if i.actual]
+        return self.function_list if not filter_non_actual else [i for i in self.function_list if i.actual and i.tokens_count]
 
 
 
@@ -84,6 +85,7 @@ class NarrativeFunction(vozbase.VozTextContainer):
         self.role_counts = None
         self.actual = 1.0 if 'ACTUAL' in [i.kind for i in self.locations] else 0.0
         self.position = 0.0
+        self.tokens_count = 0
     def format(self,options={}):
         if(options.get('use_function_group',False)):
             repr = self.function_group
@@ -116,6 +118,15 @@ class NarrativeFunction(vozbase.VozTextContainer):
         assert isinstance(document,voz.Document)
         midpoint = 1.0*(self.offset+self.offset+self.len)/2.0
         self.position = midpoint / len(document.get_text())
+
+        if self.actual:
+            # this accounts for removed dialogue
+            tokens = set([i.id for i in narrative.document.get_all_tokens()]) & set(util.flatten([[i for i in location.token_ids] for location in self.locations]))
+            self.tokens_count = len(tokens)
+        else:
+            self.tokens_count = 0
+
+
         verbs = self._compute_features_verbs(narrative)
         self._compute_features_mentions(narrative,verbs)
     def _compute_features_verbs(self,narrative):

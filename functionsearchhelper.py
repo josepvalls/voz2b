@@ -27,14 +27,15 @@ DO_CHECK = DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA
 DO_INCLUDE_MONOMOVE = 1
 DO_INCLUDE_MULTIMOVE = 2
 DO_INCLUDE_BOTH_FOR_TRAINING = 4
-DO_INCLUDE = DO_INCLUDE_MONOMOVE | DO_INCLUDE_MULTIMOVE
+DO_INCLUDE = DO_INCLUDE_MONOMOVE #| DO_INCLUDE_MULTIMOVE
 
 USE_FILTERED_DATASET = True # 230 vs 208 instances
 K_IN_KNN = 5 # test 5 to 11
 
-DO_USE_EXTRA_TRAINING_DATASET = True
+DO_USE_EXTRA_TRAINING_DATASET = False
 
-DO_LOAD_AUTO_DATASET = False # currently only filtered is there, 167 instances
+DO_LOAD_AUTO_DATASET = True # currently only filtered is there, 167 instances
+DO_REMOVE_DIALOG = True # down to 129 instances
 
 #LAPLACIAN_BETA_KNN = 0.5
 #LAPLACIAN_BETA_MARKOV = 0.5
@@ -61,12 +62,13 @@ def do_systematic():
         #DO_NFSA_FORCE = i
         global DO_CHECK
         DO_CHECK = i
-        for j in [1,2,3,5,6]:
-            global DO_INCLUDE
-            DO_INCLUDE = j
+        if True:
+        #for j in [1,2,3,5,6]:
+            #global DO_INCLUDE
+            #DO_INCLUDE = j
             print "START USING SETUP %d" % DO_CHECK
             fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
-            fp.predict_systematic(best_first_branches_num=-1,beam_search_open_size=1000,beam_search_open_size_multiplier=1.5)
+            fp.predict_systematic(best_first_branches_num=-1,beam_search_open_size=10000,beam_search_open_size_multiplier=1.5)
 
 
 def do_dump_all_predictions():
@@ -119,6 +121,8 @@ class LearnedMarkovTable(object):
         for narrative in narratives+(extra_training_dataset if DO_USE_EXTRA_TRAINING_DATASET else []):
             if narrative.story==exclude.story: continue
             if DO_INCLUDE & DO_INCLUDE_BOTH_FOR_TRAINING or DO_INCLUDE & DO_INCLUDE_MONOMOVE and story_to_moves[narrative.story]==1 or DO_INCLUDE & DO_INCLUDE_MULTIMOVE and story_to_moves[narrative.story]>1:
+                if narrative.story==14:
+                    pass
                 table[None][narrative.data[0].label]+=1
                 for a,b in zip(narrative.data[0:-1],narrative.data[1:]):
                     table[a.label][b.label]+=1
@@ -302,8 +306,8 @@ class SequentialFunctionPredictor(object):
         # load dataset
         self.stories = range(1,16)+([1001,1002,1003,1004,2001] if not DO_LOAD_AUTO_DATASET else [])
         filtered = '_filtered' if USE_FILTERED_DATASET else ''
-        story_indices = [int(i.strip()) for i in open(home+'/voz2/tool_corpus_functions_summary/story_indices%s.txt' % filtered).readlines()]
-        dataset = [i.strip().split('\t') for i in open(home+'/voz2/tool_corpus_functions_summary/tool_corpus_functions_summary_5_dist%s%s.tsv'%(filtered,'_auto' if DO_LOAD_AUTO_DATASET else '')).readlines()]
+        story_indices = [int(i.strip()) for i in open(home+'/voz2/tool_corpus_functions_summary/story_indices%s%s.txt' % (filtered,'_nodiag' if DO_REMOVE_DIALOG else '')).readlines()]
+        dataset = [i.strip().split('\t') for i in open(home+'/voz2/tool_corpus_functions_summary/tool_corpus_functions_summary_5_dist%s%s%s.tsv'%(filtered,'_auto' if DO_LOAD_AUTO_DATASET else '','_nodiag' if DO_REMOVE_DIALOG else '')).readlines()]
         self.attributes = dataset[0][0:-1]
         self.weights = [1.0 for _ in self.attributes]
         dataset = dataset[1:]
@@ -352,7 +356,7 @@ class SequentialFunctionPredictor(object):
             result = sse.search(test,markov_table,cardinality,nfsa,best_first_branches_num,beam_search_open_size,beam_search_open_size_multiplier)
             results.append(result)
         total_functions = sum(len(i.data) for i in self.narratives)
-        open('overall5.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
+        open('overall7.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
 
 
     def predict_knn(self):
