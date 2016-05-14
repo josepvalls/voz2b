@@ -119,3 +119,60 @@
 1003					K8	cry(tsar)	cried the King.
 1003					L	say(man) say(princess) point(princess,laborer)	One man said I, and another man said I. - - No, said the Princess, that is the man there; and she pointed out the workman.
 1003					Q3 W#	take(people,laborer) stand(laborer) keep(tsar)	Instantly he was taked into the palace, and the workman stood in the imperial presence, a youth such as never was: then the Tsar kept his princely word and gave what he had promised.
+1004	1	0			alpha	live(man) live(girl)	Once there lived an old widower and his daughter.
+1004	1	1			lambda	remarry(man,woman) have(woman,stepdaughter)	In due time, the man remarried to an older woman who had a daughter herself from a previous marriage.
+1004	1	0				dote(woman,stepdaughter) praise(woman,stepdaughter) despise(woman,girl)	The woman doted on her own daughter, praising her at every opportunity, but she despised her stepdaughter.
+1004	1	1				find(woman) make(woman,girl)	She found fault with everything the girl did and made her work long and hard all day long.
+1004	2	1			A9	made(woman,woman)	One day the old woman made up her mind to get rid of the stepdaughter once and for all.
+1004	2	1			A9	order(woman,man) take(man,girl) see(woman,girl) hear(woman,girl)	She ordered her husband: "Take her somewhere so that my eyes no longer have to see her, so that my ears no longer have to hear her.
+1004	2	1			A9	!take(man,girl)	And don't take her to some relative's house.
+1004	2	1			A9	take(man,girl)	Take her into the biting cold of the forest and leave her there."
+1004	2	1			A9	grieve(man) do(man)	The old man grieved and wept but he knew that he could do nothing else; his wife always had her way.
+1004	3	1			B5 ?depart	take(man,girl)	So he took the girl into the forest and left her there.
+1004	3	1				turn(man) see(man,girl)	He turned back quickly so that he wouldn't have to see his girl freeze.
+1004	4	0				sit(girl) shiver(girl) chatter(girl)	Oh, the poor thing, sitting there in the snow, with her body shivering and her teeth chattering!
+1004	5	1				leap(morozko)	Then Morozko, leaping from tree to tree, came upon her.
+1004	5	1			D1	be(girl) warm(girl)	Are you warm, my lass?
+1004	5	1			D1	ask(morozko,girl)	he asked.
+1004	5	1			E1		Welcome, my dear Morozko.
+1004	5	0			E1	warm(girl) cold(girl)	Yes, I am quite warm, she said, even though she was cold through and through.
+1004	6	0				want(morozko) freeze(morozko,girl)	At first, Morozko had wanted to freeze the life out of her with his icy grip.
+1004	6	0				admire(morozko,girl) show(morozko)	But he admired the young girl's stoicism and showed mercy.
+1004	7	1			f1	give(morozko,girl) leave(morozko)	He gave her a warm fur coat and downy quilts before he left.
+1004	8	1				retrun(morozko) check(morozko,girl)	In a short while, Morozko returned to check on the girl.
+1004	8	1			D1	warm(girl)	Are you warm, my lass?
+1004	8	1			D1	ask(morozko,girl)	he asked.
+1004	8	1			E1		Welcome again, my dear Morozko.
+1004	8	0			E1	warm(girl)	Yes, I am very warm, she said.
+1004	8	0				warmer(girl)	And indeed she was warmer.
+1004	8	1			f1	bring(morozko) sit(girl)	So this time Morozko brought a large box for her to sit on.
+1004	9	1			D1 ?E1	return(morozko) ask(morozko,girl)	A little later, Morozko returned once more to ask how she was doing.
+1004	9	1			?E1 f1	well(girl) give(morozko,girl) sit(girl)	She was doing quite well now, and this time Morozko gave her silver and gold jewelry to wear, with enough extra jewels to fill the box on which she was sitting!
+1004	10	1				tell(woman,man) bring(man,girl)	Meanwhile, back at her father's hut, the old woman told her husband to go back into the forest to bring back the body of his daughter.
+1004	10	1				do(man)	He did as he was ordered.
+1004	11	1				arrive(man) see(man,girl)	He arrived at the spot where had left her, and was overjoyed when he saw his daughter alive, wrapped in a sable coat and adorned with silver and gold.
+1004	12	1			return ?alpha ?a6	arrive(man) arrive(girl) look(wife)	When he arrived home with his daughter and the box of jewels, his wife looked on in amazement.
+1004	13	1			gamma1	harness(man,horse) take(man,stepdaughter) leave(man,daughter)	Harness the horse, you old goat, and take my own daughter to that same spot in the forest and leave her there, she said.
+1004	13	1			delta2 B2 ?C ?depart	do(man)	The old man did as he was told.
+1004	14	1				shake(stepdaughter) shiver(stepdaughter)	Like the other girl at first, the old woman's daughter began to shake and shiver.
+1004	15	1			D1	come(morozko) ask(morozko,stepdaughter)	In a short while, Morozko came by and asked her how she was doing.
+1004	15	1			E_1!	blind(morozko)	Are you blind?
+1004	15	1			E_1!	reply(stepdaughter)	she replied.
+1004	15	1			E_1!	!see(morozko,stepdaughter)	Can't you see that my hands and feet are quite numb?
+1004	15	1			E_1! ?F= ?U	curse(stepdaughter,morozko)	Curse you, you miserable old man!
+1004	16	1				wake(woman,man) tell(woman,man) be(man)	Dawn had hardly broken the next day when, back at the old man's hut, the old woman woke her husband and told him to bring back her daughter, adding: "Be careful with the box of jewels."
+1004	16	1			return	obey(man) fetch(man,girl)	The old man obeyed and went to fetch the girl.
+1004	17	1					A short while later, the gate to the yard creaked.
+1004	17	1			?o	go(woman) see(woman,man) stand(man)	The old woman went outside and saw her husband standing next to the sleigh.
+1004	18	1				rush(woman) pull(woman)	She rushed forward and pulled aside the sleigh's cover.
+1004	18	1				see(woman,stepdaughter) frozen(stepdaughter)	To her horror, she saw the body of her daughter, frozen by an angry Morozko.
+1004	18	1				scream(woman) berate(woman,man)	She began to scream and berate her husband, but it was all in vein.
+1004	19	1			W	marry(girl,neighbor)	Later, the old man's daughter married a neighbor, had children, and lived happily.
+1004	19	1				visit(man,man)	Her father would visit his grandchildren every now and then, and remind them always to respect Old Man Winter.							
+2001	1	0			alpha		A tsar, three daughters.
+2001	2	1			beta3 delta1	walk(daughters) overstay(daughters)	The daughters go walking, overstay in the garden.
+2001	2	1			A1	kidnap(dragon,daughters)	A dragon kidnaps them.
+2001	3	1			B1	call(tsar)	A call for aid.
+2001	4	1			C ?depart	quest(heroes)	Quest of three heroes.
+2001	5	1			H1 ?I1 K4	battle(heroes,dragon) rescue(heroes,daughters)	Three battles with the dragon, rescue of the maidens.
+2001	6	1			return wo	return(heroes) return(daughters)	Return, reward.

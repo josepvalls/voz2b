@@ -18,7 +18,11 @@ logger = logging.getLogger(__name__)
 
 def add_functions(last_func,key_to_role,document_id,verbs,ENTITY_ROLE6,taxonomy_labels,narrative,offset,length,role_counts):
     for function in last_func.split():
-        location = narrativehelper.NarrativeFunctionLocation('ACTUAL',[])
+        if function.startswith('?'):
+            location = narrativehelper.NarrativeFunctionLocation('IMPLICIT',[])
+            function = function[1:]
+        else:
+            location = narrativehelper.NarrativeFunctionLocation('ACTUAL',[])
         people = [i.split(')')[0].split('(')[1].split(',') for i in verbs]
         people = set(util.flatten(people))
         for character in people:

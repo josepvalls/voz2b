@@ -1,8 +1,0 @@
-using 1: overall results for the first result: 0.401198
-using 9: overall results for the first result: 0.251497
-using 2: overall results for the first result: 0.323353
-using 8: overall results for the first result: 0.245509
-using 17: overall results for the first result: 0.269461
-using 21: overall results for the first result: 0.209581
-using 25: overall results for the first result: 0.233533
-using 29: overall results for the first result: 0.167665

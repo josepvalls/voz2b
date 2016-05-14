@@ -15,7 +15,7 @@ home = expanduser("~")
 
 logger = logging.getLogger(__name__)
 
-function_list = 'alpha beta gamma delta epsilon zeta eta theta lambda A a B C depart D E F G H J I K return Pr Rs o L M N Q Ex T U W'.split()
+function_list = 'alpha beta gamma delta epsilon zeta eta theta lambda A a B C depart D E F G H J I K return Pr Rs o L M N Q Ex T U W'.split() # note:  theta lambda are the same group and are abstracted when computing the narrative
 
 DO_CHECK_KNN = 1
 DO_CHECK_MARKOV = 2
@@ -24,10 +24,17 @@ DO_CHECK_NFSA = 8
 DO_CHECK_NFSA_AT_THE_END = 16
 DO_CHECK = DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END
 
+DO_INCLUDE_MONOMOVE = 1
+DO_INCLUDE_MULTIMOVE = 2
+DO_INCLUDE_BOTH_FOR_TRAINING = 4
+DO_INCLUDE = DO_INCLUDE_MONOMOVE | DO_INCLUDE_MULTIMOVE
+
 USE_FILTERED_DATASET = True # 230 vs 208 instances
 K_IN_KNN = 5 # test 5 to 11
 
-DO_LOAD_AUTO_DATASET = True # currently only filtered is there, 167 instances
+DO_USE_EXTRA_TRAINING_DATASET = True
+
+DO_LOAD_AUTO_DATASET = False # currently only filtered is there, 167 instances
 
 #LAPLACIAN_BETA_KNN = 0.5
 #LAPLACIAN_BETA_MARKOV = 0.5
@@ -39,24 +46,27 @@ USE_GT_FOR_PREDICTIONS_WHEN_STEPPING = True
 
 DO_NFSA_FORCE_ONLY_ONE = 1
 DO_NFSA_FORCE_ALPHABETICAL = 2
-DO_NFSA_FORCE = 0
+DO_NFSA_FORCE = 2
 
 def main():
     do_systematic()
 
 def do_systematic():
-    #for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END):
+    for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END):
     #for i in range(4):
-    for i in [1,9,2,8,17,21,25,29]:
+    #for i in [1]:#[3,11,13,5]:
         #global DO_CHECK
         #DO_CHECK = i+1
         #global DO_NFSA_FORCE
         #DO_NFSA_FORCE = i
         global DO_CHECK
         DO_CHECK = i
-        print "START USING SETUP %d" % DO_CHECK
-        fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
-        fp.predict_systematic(best_first_branches_num=-1,beam_search_open_size=10000,beam_search_open_size_multiplier=1.5)
+        for j in [1,2,3,5,6]:
+            global DO_INCLUDE
+            DO_INCLUDE = j
+            print "START USING SETUP %d" % DO_CHECK
+            fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
+            fp.predict_systematic(best_first_branches_num=-1,beam_search_open_size=1000,beam_search_open_size_multiplier=1.5)
 
 
 def do_dump_all_predictions():
@@ -68,9 +78,12 @@ def do_dump_all_predictions():
 
 
 class NarrativeData(object):
-    def __init__(self,story):
+    def __init__(self,story,data=None):
         self.story=story
-        self.data = []
+        if data:
+            self.data=data
+        else:
+            self.data = []
 
 class NarrativeFunctionData(object):
     def __init__(self,attributes,label):
@@ -103,11 +116,12 @@ class LearnedMarkovTable(object):
             return self.laplacian_beta/total
     def learn_markov(self,narratives,exclude):
         table = collections.defaultdict(lambda:collections.defaultdict(lambda:0))
-        for narrative in narratives:
+        for narrative in narratives+(extra_training_dataset if DO_USE_EXTRA_TRAINING_DATASET else []):
             if narrative.story==exclude.story: continue
-            table[None][narrative.data[0].label]+=1
-            for a,b in zip(narrative.data[0:-1],narrative.data[1:]):
-                table[a.label][b.label]+=1
+            if DO_INCLUDE & DO_INCLUDE_BOTH_FOR_TRAINING or DO_INCLUDE & DO_INCLUDE_MONOMOVE and story_to_moves[narrative.story]==1 or DO_INCLUDE & DO_INCLUDE_MULTIMOVE and story_to_moves[narrative.story]>1:
+                table[None][narrative.data[0].label]+=1
+                for a,b in zip(narrative.data[0:-1],narrative.data[1:]):
+                    table[a.label][b.label]+=1
         self.markov_table = table
 
 class LearnedCardinalityTable2(object):
@@ -126,9 +140,10 @@ class LearnedCardinalityTable2(object):
         table = [[0]*LearnedCardinalityTable2.LIMIT for _ in function_list]
         for narrative in narratives:
             if narrative.story==exclude.story: continue
-            self.total+=1
-            for f,i in collections.Counter([i.label for i in narrative.data]).items():
-                table[function_list.index(f)][i]+=1
+            if DO_INCLUDE & DO_INCLUDE_BOTH_FOR_TRAINING or DO_INCLUDE & DO_INCLUDE_MONOMOVE and story_to_moves[narrative.story]==1 or DO_INCLUDE & DO_INCLUDE_MULTIMOVE and story_to_moves[narrative.story]>1:
+                self.total+=1
+                for f,i in collections.Counter([i.label for i in narrative.data]).items():
+                    table[function_list.index(f)][i]+=1
         for i in range(len(function_list)):
             table[i][0]=self.total-sum(table[i])
         self.table = table
@@ -218,6 +233,44 @@ attribute_selection_rules = ''' 0.1599    2 Func. Position
  0.0622   26 Forming_relationships
  0.0608   14 Cause_motion'''.splitlines()
 
+extra_training_dataset = '''3001	alpha	A	B	depart	?d7	?E7.neg	?F.neg	?eta	?zeta	a	?Pr	?Rs	E	?eta1	A	depart	H	H	I	Rs	Pr	Rs	W
+3002	alpha	beta	lambda	A	depart	H	H	I	Rs	Pr	Rs	W
+3003	alpha	beta	a	D	E	F	D	E	F	D	E	F	Rs	Pr	Rs	return'''.splitlines()
+
+extra_training_dataset = '''3001	alpha	A	B	depart	?d7	?E7.neg	?F.neg	?eta	?zeta	a	?Pr	?Rs	E	?eta1	A	depart	H	H	I	Rs	Pr	Rs	W
+3002	alpha	beta	theta	A	depart	H	H	I	Rs	Pr	Rs	W
+3003	alpha	beta	a	D	E	F	D	E	F	D	E	F	Rs	Pr	Rs	return'''.splitlines()
+
+extra_training_dataset = [i.split('\t') for i in extra_training_dataset]
+extra_training_dataset = [NarrativeData(int(i[0]),[NarrativeFunctionData([],j) for j in i[1:]]) for i in extra_training_dataset]
+
+
+
+
+story_to_moves = '''1	1
+2	1
+3	1
+4	1
+5	1
+6	1
+7	1
+8	1
+9	1
+10	1
+11	1
+12	1
+13	1
+14	1
+15	1
+1004	2
+3001	3
+1001	1
+3002	1
+1002	1
+1003	3
+3003	1
+2001	1'''.splitlines()
+story_to_moves = dict([(int(j[0]),int(j[1])) for j in [i.split() for i in story_to_moves]])
 
 
 class SequentialFunctionPredictor(object):
@@ -244,8 +297,10 @@ class SequentialFunctionPredictor(object):
         self.laplacian_beta_knn = laplacian_beta_knn
         self.laplacian_beta_markov = laplacian_beta_markov
 
+
+
         # load dataset
-        self.stories = range(1,16)+([1001,1002,1003] if not DO_LOAD_AUTO_DATASET else [])
+        self.stories = range(1,16)+([1001,1002,1003,1004,2001] if not DO_LOAD_AUTO_DATASET else [])
         filtered = '_filtered' if USE_FILTERED_DATASET else ''
         story_indices = [int(i.strip()) for i in open(home+'/voz2/tool_corpus_functions_summary/story_indices%s.txt' % filtered).readlines()]
         dataset = [i.strip().split('\t') for i in open(home+'/voz2/tool_corpus_functions_summary/tool_corpus_functions_summary_5_dist%s%s.tsv'%(filtered,'_auto' if DO_LOAD_AUTO_DATASET else '')).readlines()]
@@ -254,6 +309,7 @@ class SequentialFunctionPredictor(object):
         dataset = dataset[1:]
         labels = [i[-1] for i in dataset]
         attributes = [[float(j) for j in i[0:-1]] for i in dataset]
+
         if num_attributes_to_include:
             attributes = self.select_attributes(attributes,attribute_selection_rules[0:num_attributes_to_include])
         self.narratives = [NarrativeData(i) for i in self.stories]
@@ -267,7 +323,8 @@ class SequentialFunctionPredictor(object):
             if narrative.story==current_story:
                 pass
             else:
-                training += narrative.data
+                if DO_INCLUDE & DO_INCLUDE_BOTH_FOR_TRAINING or DO_INCLUDE & DO_INCLUDE_MONOMOVE and story_to_moves[narrative.story]==1 or DO_INCLUDE & DO_INCLUDE_MULTIMOVE and story_to_moves[narrative.story]>1:
+                    training += narrative.data
         return training
 
     def init_distributions(self,test,training,use_gt_for_predictions=True,markov_table=None,cardinality=None,nfsa=None):
@@ -282,7 +339,11 @@ class SequentialFunctionPredictor(object):
         results = []
         for test in self.narratives:
             training = self.get_training_dataset(test.story)
-            logger.info('cross validation on story %d training %d test %d' % (test.story,len(training),len(test.data)))
+            if DO_INCLUDE & DO_INCLUDE_MONOMOVE and story_to_moves[test.story]==1 or DO_INCLUDE & DO_INCLUDE_MULTIMOVE and story_to_moves[test.story]>1:
+                logger.info('cross validation on story %d (%d moves) training %d test %d' % (test.story,story_to_moves[test.story],len(training),len(test.data)))
+            else:
+                logger.info('skipping story %d (%d moves) training %d test %d' % (test.story,story_to_moves[test.story],len(training),len(test.data)))
+                continue
             markov_table = LearnedMarkovTable(self.laplacian_beta_markov,self.narratives,test)
             cardinality = LearnedCardinalityTable2(self.laplacian_beta_markov, self.narratives, test)
             nfsa = ProppNFSA('data/nfsa-propp3.txt',function_list,LAPLACIAN_BETA_NFSA,allow_only_one=DO_NFSA_FORCE&DO_NFSA_FORCE_ONLY_ONE,force_alphabetical=DO_NFSA_FORCE&DO_NFSA_FORCE_ALPHABETICAL)
@@ -291,7 +352,7 @@ class SequentialFunctionPredictor(object):
             result = sse.search(test,markov_table,cardinality,nfsa,best_first_branches_num,beam_search_open_size,beam_search_open_size_multiplier)
             results.append(result)
         total_functions = sum(len(i.data) for i in self.narratives)
-        open('overall4.txt','a').write("using %d: overall results for the first result: %f\n" % (DO_CHECK,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
+        open('overall5.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
 
 
     def predict_knn(self):

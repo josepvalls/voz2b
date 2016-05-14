@@ -1,4 +1,0 @@
-using 31: overall results for the first result: 0.182692
-using 31: overall results for the first result: 0.182692
-using 31: overall results for the first result: 0.192308
-using 31: overall results for the first result: 0.192308

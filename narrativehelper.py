@@ -12,7 +12,7 @@ VERB_FEATURES = 1 # levin base
 #VERB_FEATURES = 4 # similarity
 VERB_FEATURES = 5 # framenet
 
-DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT = True
+DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT = False
 
 class Narrative(vozbase.VozContainer):
     """
@@ -184,7 +184,7 @@ class NarrativeFunction(vozbase.VozTextContainer):
         elif VERB_FEATURES==4:
             return ['do','be','think','talk','answer','ask','punish','help','reward','move']
         elif VERB_FEATURES==5:
-            return ['Abusing','Moving_in_place','Becoming_a_member','Motion','Cause_motion','Possession','Self_motion','Becoming_aware','Body_movement','Ingestion','Request','Giving','Questioning','Communication','Manipulation','Killing','Forming_relationships','Grooming','Moving_in_place','Storing']
+            return ['Abusing','Moving_in_place','Becoming_a_member','Motion','Cause_motion','Possession','Self_motion','Becoming_aware','Body_movement','Ingestion','Request','Giving','Questioning','Communication','Manipulation','Killing','Forming_relationships','Grooming','Storing']
     def get_feature_vector_verbs(self):
         if VERB_FEATURES==1:
             vector_lst = self.__class__.get_feature_vector_labels_verbs()

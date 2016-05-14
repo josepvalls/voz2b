@@ -17,11 +17,11 @@ logger = logging.getLogger(__name__)
 DO_REMOVE_DIALOG = False
 DO_WRITE_FILES = True
 DO_PRINT_TO_SCREEN = True
-DO_FILTER_NONACTUAL = True
+DO_FILTER_NONACTUAL = False
 
 DO_AUTO_COREF_ROLES = True
 DO_AUTO_VERBS = True
-DO_AUTO = True
+DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT = False
 
 def main():
     get_docs_stats(5,True)
@@ -34,9 +34,11 @@ def main():
 def get_docs_stats(feature_group,feature_distribution):
     tsv = None
     arff = None
+    idxlst = ''
     logging.root.setLevel(logging.ERROR)
     file_path = settings.STY_FILE_PATH
     documents = []
+    #for sty_file in []:
     for sty_file in settings.STY_FILES:
     #for sty_file in ['03 - Bukhtan Bukhtanovich.sty']:
         try:
@@ -52,33 +54,39 @@ def get_docs_stats(feature_group,feature_distribution):
             doc.serialize_to_file('/Users/josepvalls/temp/voz2/'+sty_file+'.json',use_deep_copy=True)
         # print util.string_as_print(doc.id,doc.properties.get('afanasev_new',doc.id),doc.properties.get('afanasev_old',doc.id), doc.narrative.format_summary())
         documents.append(doc)
-    if not DO_AUTO:
-        for document_id in [1001,1002,1003]:
+    if not DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT:
+        for document_id in [1001,1002,1003,1004,2001]:
+        #for document_id in [1004]:
             documents.append(oldannotationhelper.load_old_annotations_into_document(document_id))
     for doc in documents:
         import narrativehelper
         narrativehelper.VERB_FEATURES = feature_group
         narrativehelper.DO_COMPUTE_ROLE_DISTRIBUTION = feature_distribution
+        narrativehelper.DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT = DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT
         assert isinstance(doc,voz.Document)
-        #print "Narrative: ",doc.narrative.format(options={'one_liner':True,'use_function_group':True})
+        print doc.id,"Narrative: ",doc.narrative.format(options={'one_liner':True,'use_function_group':True})
         #continue
         doc.narrative.filter_non_actual_default = DO_FILTER_NONACTUAL
         doc.narrative.compute_features()
 
         if DO_WRITE_FILES:
+            for _ in doc.narrative.functions():
+                idxlst += "%d\n" % doc.id
             if not tsv:
                 tsv = doc.narrative.format_tsv()
                 arff = doc.narrative.format_arff()
+                idxlst
             else:
                 tsv += doc.narrative.format_tsv(False)
                 arff += doc.narrative.format_arff(False)
         if DO_PRINT_TO_SCREEN:
             #print doc.id
             for function in doc.narrative.functions():
-                print doc.id#,function.get_feature_vector()
+                print doc.id,function.get_feature_vector()
     if DO_WRITE_FILES:
-        open('tool_corpus_functions_summary/tool_corpus_functions_summary_%d_%s%s%s.tsv' % (feature_group,'dist' if feature_distribution else 'abs','_filtered' if DO_FILTER_NONACTUAL else '','_auto' if DO_AUTO else ''),'w').write(tsv)
-        open('tool_corpus_functions_summary/tool_corpus_functions_summary_%d_%s%s%s.arff' % (feature_group,'dist' if feature_distribution else 'abs','_filtered' if DO_FILTER_NONACTUAL else '','_auto' if DO_AUTO else ''),'w').write(arff)
+        open('tool_corpus_functions_summary/story_indices%s.txt' % ('_filtered' if DO_FILTER_NONACTUAL else ''),'w').write(idxlst)
+        open('tool_corpus_functions_summary/tool_corpus_functions_summary_%d_%s%s%s.tsv' % (feature_group,'dist' if feature_distribution else 'abs','_filtered' if DO_FILTER_NONACTUAL else '','_auto' if DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT else ''), 'w').write(tsv)
+        open('tool_corpus_functions_summary/tool_corpus_functions_summary_%d_%s%s%s.arff' % (feature_group,'dist' if feature_distribution else 'abs','_filtered' if DO_FILTER_NONACTUAL else '','_auto' if DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT else ''), 'w').write(arff)
 
 
 if __name__=='__main__':
