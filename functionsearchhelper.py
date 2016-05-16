@@ -58,8 +58,8 @@ def main():
 def do_systematic():
     #for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END): # needs to add +1
     #if True:
-    #for i in range(15):
-    for i in [1]:#[3,11,13,5,17,21,25]:
+    for i in range(15):
+    #for i in [1]:#[3,11,13,5,17,21,25]:
         #global DO_CHECK
         #DO_CHECK = i+1
         #global DO_NFSA_FORCE
@@ -70,12 +70,12 @@ def do_systematic():
             DO_CHECK ^= DO_CHECK_NFSA
             DO_CHECK |= DO_CHECK_NFSA_AT_THE_END
         #if True:
-        for j in [3]*10:
+        for j in [3]:
             #global DO_INCLUDE
             #DO_INCLUDE = j
             print "START USING SETUP %d" % DO_CHECK
             fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
-            fp.predict_systematic(best_first_branches_num=-1,beam_search_open_size=100,beam_search_open_size_multiplier=1.5)
+            fp.predict_systematic(best_first_branches_num=-1,beam_search_open_size=10000,beam_search_open_size_multiplier=1.0)
 
 def do_dump_distributions():
     fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
