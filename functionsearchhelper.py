@@ -27,15 +27,15 @@ DO_CHECK = DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA
 DO_INCLUDE_MONOMOVE = 1
 DO_INCLUDE_MULTIMOVE = 2
 DO_INCLUDE_BOTH_FOR_TRAINING = 4
-DO_INCLUDE = DO_INCLUDE_MONOMOVE #| DO_INCLUDE_MULTIMOVE
+DO_INCLUDE = DO_INCLUDE_MONOMOVE | DO_INCLUDE_MULTIMOVE  | DO_INCLUDE_BOTH_FOR_TRAINING
 
 USE_FILTERED_DATASET = True # 230 vs 208 instances
 K_IN_KNN = 5 # test 5 to 11
 
-DO_USE_EXTRA_TRAINING_DATASET = False
+DO_USE_EXTRA_TRAINING_DATASET = True
 
-DO_LOAD_AUTO_DATASET = True # currently only filtered is there, 167 instances
-DO_REMOVE_DIALOG = True # down to 129 instances
+DO_LOAD_AUTO_DATASET = False # currently only filtered is there, 167 instances
+DO_REMOVE_DIALOG = False # down to 129 instances
 
 #LAPLACIAN_BETA_KNN = 0.5
 #LAPLACIAN_BETA_MARKOV = 0.5
@@ -47,29 +47,40 @@ USE_GT_FOR_PREDICTIONS_WHEN_STEPPING = True
 
 DO_NFSA_FORCE_ONLY_ONE = 1
 DO_NFSA_FORCE_ALPHABETICAL = 2
-DO_NFSA_FORCE = 2
+DO_NFSA_FORCE = 0
 
 def main():
     do_systematic()
 
+
+
+
 def do_systematic():
-    for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END):
+    #for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END): # needs to add +1
+    #if True:
     #for i in range(4):
-    #for i in [1]:#[3,11,13,5]:
+    for i in [1]:#[3,11,13,5,17,21,25]:
         #global DO_CHECK
         #DO_CHECK = i+1
         #global DO_NFSA_FORCE
         #DO_NFSA_FORCE = i
         global DO_CHECK
         DO_CHECK = i
-        if True:
-        #for j in [1,2,3,5,6]:
+        #if True:
+        for j in [1,3,5]*5:
             #global DO_INCLUDE
             #DO_INCLUDE = j
             print "START USING SETUP %d" % DO_CHECK
             fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
-            fp.predict_systematic(best_first_branches_num=-1,beam_search_open_size=10000,beam_search_open_size_multiplier=1.5)
+            fp.predict_systematic(best_first_branches_num=-1,beam_search_open_size=100,beam_search_open_size_multiplier=1.5)
 
+def do_dump_distributions():
+    fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
+    fp.predict_knn()
+    for i in fp.narratives:
+        print i.story
+        for j in i.data:
+            print j.prediction,j.distribution
 
 def do_dump_all_predictions():
     fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
@@ -121,8 +132,6 @@ class LearnedMarkovTable(object):
         for narrative in narratives+(extra_training_dataset if DO_USE_EXTRA_TRAINING_DATASET else []):
             if narrative.story==exclude.story: continue
             if DO_INCLUDE & DO_INCLUDE_BOTH_FOR_TRAINING or DO_INCLUDE & DO_INCLUDE_MONOMOVE and story_to_moves[narrative.story]==1 or DO_INCLUDE & DO_INCLUDE_MULTIMOVE and story_to_moves[narrative.story]>1:
-                if narrative.story==14:
-                    pass
                 table[None][narrative.data[0].label]+=1
                 for a,b in zip(narrative.data[0:-1],narrative.data[1:]):
                     table[a.label][b.label]+=1
@@ -249,8 +258,6 @@ extra_training_dataset = [i.split('\t') for i in extra_training_dataset]
 extra_training_dataset = [NarrativeData(int(i[0]),[NarrativeFunctionData([],j) for j in i[1:]]) for i in extra_training_dataset]
 
 
-
-
 story_to_moves = '''1	1
 2	1
 3	1
@@ -356,14 +363,14 @@ class SequentialFunctionPredictor(object):
             result = sse.search(test,markov_table,cardinality,nfsa,best_first_branches_num,beam_search_open_size,beam_search_open_size_multiplier)
             results.append(result)
         total_functions = sum(len(i.data) for i in self.narratives)
-        open('overall7.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
+        open('overall8.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
 
 
     def predict_knn(self):
         for test in self.narratives:
             training = self.get_training_dataset(test.story)
             logger.info('cross validation on story %d training %d test %d' % (test.story,len(training),len(test.data)))
-            self.init_distributions(test, training, use_gt_for_predictions=USE_GT_FOR_PREDICTIONS_WHEN_STEPPING, markov_table=markov_table, cardinality=cardinality, nfsa=nfsa)
+            self.init_distributions(test, training, use_gt_for_predictions=USE_GT_FOR_PREDICTIONS_WHEN_STEPPING, markov_table=None, cardinality=None, nfsa=None)
             for function in test.data:
                 function.distribution = function.distribution_knn
                 function.prediction = function.prediction_knn
