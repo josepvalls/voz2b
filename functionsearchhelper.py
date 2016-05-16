@@ -32,7 +32,7 @@ DO_INCLUDE = DO_INCLUDE_MONOMOVE | DO_INCLUDE_MULTIMOVE  | DO_INCLUDE_BOTH_FOR_T
 USE_FILTERED_DATASET = True # 230 vs 208 instances
 K_IN_KNN = 5 # test 5 to 11
 
-DO_USE_EXTRA_TRAINING_DATASET = True
+DO_USE_EXTRA_TRAINING_DATASET = False
 
 DO_LOAD_AUTO_DATASET = False # currently only filtered is there, 167 instances
 DO_REMOVE_DIALOG = False # down to 129 instances
@@ -47,7 +47,7 @@ USE_GT_FOR_PREDICTIONS_WHEN_STEPPING = True
 
 DO_NFSA_FORCE_ONLY_ONE = 1
 DO_NFSA_FORCE_ALPHABETICAL = 2
-DO_NFSA_FORCE = 0
+DO_NFSA_FORCE = 2
 
 def main():
     do_systematic()
@@ -58,16 +58,19 @@ def main():
 def do_systematic():
     #for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END): # needs to add +1
     #if True:
-    #for i in range(4):
+    #for i in range(15):
     for i in [1]:#[3,11,13,5,17,21,25]:
         #global DO_CHECK
         #DO_CHECK = i+1
         #global DO_NFSA_FORCE
         #DO_NFSA_FORCE = i
         global DO_CHECK
-        DO_CHECK = i
+        DO_CHECK = i+1
+        if DO_CHECK & DO_CHECK_NFSA:
+            DO_CHECK ^= DO_CHECK_NFSA
+            DO_CHECK |= DO_CHECK_NFSA_AT_THE_END
         #if True:
-        for j in [1,3,5]*5:
+        for j in [3]*10:
             #global DO_INCLUDE
             #DO_INCLUDE = j
             print "START USING SETUP %d" % DO_CHECK
@@ -181,7 +184,7 @@ class SystematicSearchEngine(object):
             return 1.0*c/t
 
         max_depth = len(narrative.data)
-        root = NarrativeFunctionPrediction(None,None,0.0)
+        root = NarrativeFunctionPrediction(None,None,1.0)
         open = [root]
         for depth in xrange(max_depth):
             logger.info("%d depth, %d open" % (depth,len(open)))
@@ -189,7 +192,7 @@ class SystematicSearchEngine(object):
             for node in open:
                 # get successors
                 for function in function_list:
-                    value = 1.0
+                    value = node.value
                     if DO_CHECK & DO_CHECK_KNN:
                         value *= narrative.data[depth].distribution_knn[function_list.index(function)]
                     if DO_CHECK & DO_CHECK_MARKOV:
@@ -204,7 +207,8 @@ class SystematicSearchEngine(object):
             open_size = int(beam_search_open_size*beam_search_open_size_multiplier*(depth+1))
             logger.info(" %d successors" % len(new_open))
             if len(new_open)>open_size:
-                open = sorted(new_open,key=attrgetter('value'),reverse=True)[0:open_size]
+                #open = sorted(new_open,key=attrgetter('value'),reverse=True)[0:open_size]
+                open = sorted(new_open,key=lambda i:(-1*i.value,i.prediction))[0:open_size]
             else:
                 open = new_open
         # we are at the bottom, let's see what's here
@@ -225,7 +229,7 @@ class SystematicSearchEngine(object):
             accuracy = get_predictions_accuracy(narrative,predictions)
             results.append((math.log(probability),math.log(node.value),accuracy,','.join(predictions)))
         print "story %d: sorted by final probability" % narrative.story
-        results.sort(reverse=True)
+        results.sort(key=lambda i:(-1*i[0],-1*i[2],i[3]))
         for result in results[0:100]:
             print "%f\t%f\t%f\t%s" % result
         return results[0]
@@ -363,7 +367,7 @@ class SequentialFunctionPredictor(object):
             result = sse.search(test,markov_table,cardinality,nfsa,best_first_branches_num,beam_search_open_size,beam_search_open_size_multiplier)
             results.append(result)
         total_functions = sum(len(i.data) for i in self.narratives)
-        open('overall8.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
+        open('overall9.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
 
 
     def predict_knn(self):
