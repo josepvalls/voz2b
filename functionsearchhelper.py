@@ -34,8 +34,8 @@ K_IN_KNN = 5 # test 5 to 11
 
 DO_USE_EXTRA_TRAINING_DATASET = False
 
-DO_LOAD_AUTO_DATASET = True # currently only filtered is there, 167 instances
-DO_REMOVE_DIALOG = True # down to 129 instances
+DO_LOAD_AUTO_DATASET = False # currently only filtered is there, 167 instances
+DO_REMOVE_DIALOG = False # down to 129 instances
 
 #LAPLACIAN_BETA_KNN = 0.5
 #LAPLACIAN_BETA_MARKOV = 0.5
@@ -49,17 +49,21 @@ DO_NFSA_FORCE_ONLY_ONE = 1
 DO_NFSA_FORCE_ALPHABETICAL = 2
 DO_NFSA_FORCE = 0
 
+DO_USE_LOGLILEKYHOOD = True
+
 def main():
-    do_systematic()
+    do_beam()
+    #do_dump_distributions()
+    #do_dump_all_predictions()
 
 
 
 
-def do_systematic():
+def do_beam():
     #for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END): # needs to add +1
     #if True:
-    for i in range(15):
-    #for i in [1]:#[3,11,13,5,17,21,25]:
+    #for i in range(15):
+    for i in [1]:#[3,11,13,5,17,21,25]:
         #global DO_CHECK
         #DO_CHECK = i+1
         #global DO_NFSA_FORCE
@@ -70,13 +74,13 @@ def do_systematic():
             DO_CHECK ^= DO_CHECK_NFSA
             DO_CHECK |= DO_CHECK_NFSA_AT_THE_END
         #if True:
-        #for j in range(3):
-        for j in [3]:
+        for j in range(3):
+        #for j in [3]:
             #global DO_INCLUDE
             #DO_INCLUDE = j
             print "START USING SETUP %d" % DO_CHECK
             fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
-            fp.predict_systematic(best_first_branches_num=-1,beam_search_open_size=10000,beam_search_open_size_multiplier=1.0)
+            fp.predict_beam(best_first_branches_num=-1, beam_search_open_size=10 ** j, beam_search_open_size_multiplier=1.0)
 
 def do_dump_distributions():
     fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
@@ -166,26 +170,27 @@ class LearnedCardinalityTable2(object):
         self.table = table
 
 class SystematicSearchEngine(object):
+    @classmethod
+    def get_predictions(cls,node):
+        predictions = []
+        node_ = node
+        while node_.parent:
+            predictions.append(node_.prediction)
+            node_ = node_.parent
+        predictions.reverse()
+        return predictions # the root node has a None prediction, not returned here
+    @classmethod
+    def get_predictions_accuracy(cls,narrative,predictions):
+        c = 0
+        t = 0
+        for function,prediction in zip(narrative.data,predictions):
+            if function.label == prediction:
+                c +=1
+            t +=1
+        return 1.0*c/t
     def search(self,narrative,markov_table,cardinality,nfsa,best_first_branches_num=-1,beam_search_open_size=10,beam_search_open_size_multiplier=1):
-        def get_predictions(node):
-            predictions = []
-            node_ = node
-            while node_.parent:
-                predictions.append(node_.prediction)
-                node_ = node_.parent
-            predictions.reverse()
-            return predictions # the root node has a None prediction, not returned here
-        def get_predictions_accuracy(narrative,predictions):
-            c = 0
-            t = 0
-            for function,prediction in zip(narrative.data,predictions):
-                if function.label == prediction:
-                    c +=1
-                t +=1
-            return 1.0*c/t
-
         max_depth = len(narrative.data)
-        root = NarrativeFunctionPrediction(None,None,1.0)
+        root = NarrativeFunctionPrediction(None,None,1.0 if DO_USE_LOGLILEKYHOOD else 0.0)
         open = [root]
         for depth in xrange(max_depth):
             logger.info("%d depth, %d open" % (depth,len(open)))
@@ -195,40 +200,70 @@ class SystematicSearchEngine(object):
                 for function in function_list:
                     value = node.value
                     if DO_CHECK & DO_CHECK_KNN:
-                        value *= narrative.data[depth].distribution_knn[function_list.index(function)]
+                        likelyhood = narrative.data[depth].distribution_knn[function_list.index(function)]
+                        if DO_USE_LOGLILEKYHOOD:
+                            value += math.log(likelyhood)
+                        else:
+                            value *= likelyhood
                     if DO_CHECK & DO_CHECK_MARKOV:
                         prev = node.parent.prediction if node.parent else None
-                        value *= markov_table.get_transition_probability(prev,function)
+                        likelyhood = markov_table.get_transition_probability(prev,function)
+                        if DO_USE_LOGLILEKYHOOD:
+                            value += math.log(likelyhood)
+                        else:
+                            value *= likelyhood
                     if DO_CHECK & DO_CHECK_NFSA:
                         nfsa.reset()
-                        for prediction in get_predictions(node):
+                        for prediction in SystematicSearchEngine.get_predictions(node):
                             nfsa.step(prediction)
-                        value *= nfsa.current_probability(function)
+                        likelyhood = nfsa.current_probability(function)
+                        if DO_USE_LOGLILEKYHOOD:
+                            value += math.log(likelyhood)
+                        else:
+                            value *= likelyhood
                     new_open.append(NarrativeFunctionPrediction(function,node,value))
             open_size = int(beam_search_open_size*beam_search_open_size_multiplier*(depth+1))
-            logger.info(" %d successors" % len(new_open))
+
+
             if len(new_open)>open_size:
                 #open = sorted(new_open,key=attrgetter('value'),reverse=True)[0:open_size]
                 open = sorted(new_open,key=lambda i:(-1*i.value,i.prediction))[0:open_size]
+
+                count = 0
+                node_value = new_open[0].value
+                for node in new_open[1:]:
+                    if node.value==node_value:
+                        count +=1
+                    else:
+                        break
+                logger.info(" %d successors, max size: %d, tied successors: %d" % (len(new_open),open_size,count))
+
             else:
                 open = new_open
         # we are at the bottom, let's see what's here
         results = []
         for node in open:
-            predictions = get_predictions(node)
+            predictions = SystematicSearchEngine.get_predictions(node)
             probability = node.value
             if DO_CHECK & DO_CHECK_CARDINALITY:
                 counter = collections.Counter(predictions)
                 for function in function_list:
-                    probability *= cardinality.get_probability(function,counter.get(function,0))
-
+                    likelyhood = cardinality.get_probability(function,counter.get(function,0))
+                    if DO_USE_LOGLILEKYHOOD:
+                        probability += math.log(likelyhood)
+                    else:
+                        probability *= likelyhood
             if DO_CHECK & DO_CHECK_NFSA_AT_THE_END:
                 nfsa.reset()
                 for prediction in predictions:
-                    probability *= nfsa.current_probability(prediction)
+                    likelyhood = nfsa.current_probability(prediction)
                     nfsa.step(prediction)
-            accuracy = get_predictions_accuracy(narrative,predictions)
-            results.append((math.log(probability),math.log(node.value),accuracy,','.join(predictions)))
+                    if DO_USE_LOGLILEKYHOOD:
+                        probability += math.log(likelyhood)
+                    else:
+                        probability *= likelyhood
+            accuracy = SystematicSearchEngine.get_predictions_accuracy(narrative,predictions)
+            results.append((probability if DO_USE_LOGLILEKYHOOD else math.log(probability),node.value if DO_USE_LOGLILEKYHOOD else math.log(node.value),accuracy,','.join(predictions)))
         print "story %d: sorted by final probability" % narrative.story
         results.sort(key=lambda i:(-1*i[0],-1*i[2],i[3]))
         for result in results[0:100]:
@@ -350,7 +385,7 @@ class SequentialFunctionPredictor(object):
             function.prediction_knn = self.probabilistic_assignment(function.distribution_knn)
 
 
-    def predict_systematic(self,best_first_branches_num=-1,beam_search_open_size=10,beam_search_open_size_multiplier=1):
+    def predict_beam(self, best_first_branches_num=-1, beam_search_open_size=10, beam_search_open_size_multiplier=1):
         #for test in self.narratives[0:1]:
         results = []
         for test in self.narratives:
