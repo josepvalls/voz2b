@@ -62,8 +62,8 @@ def main():
 def do_beam():
     #for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END): # needs to add +1
     #if True:
-    #for i in range(15):
-    for i in [1]:#[3,11,13,5,17,21,25]:
+    for i in range(15):
+    #for i in [0]:#[3,11,13,5,17,21,25]:
         #global DO_CHECK
         #DO_CHECK = i+1
         #global DO_NFSA_FORCE
@@ -74,13 +74,13 @@ def do_beam():
             DO_CHECK ^= DO_CHECK_NFSA
             DO_CHECK |= DO_CHECK_NFSA_AT_THE_END
         #if True:
-        for j in range(3):
-        #for j in [3]:
+        #for j in range(3):
+        for j in [3]:
             #global DO_INCLUDE
             #DO_INCLUDE = j
             print "START USING SETUP %d" % DO_CHECK
             fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
-            fp.predict_beam(best_first_branches_num=-1, beam_search_open_size=10 ** j, beam_search_open_size_multiplier=1.0)
+            fp.predict_beam(best_first_branches_num=-1, beam_search_open_size=10000, beam_search_open_size_multiplier=1.0)
 
 def do_dump_distributions():
     fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
@@ -190,10 +190,11 @@ class SystematicSearchEngine(object):
         return 1.0*c/t
     def search(self,narrative,markov_table,cardinality,nfsa,best_first_branches_num=-1,beam_search_open_size=10,beam_search_open_size_multiplier=1):
         max_depth = len(narrative.data)
-        root = NarrativeFunctionPrediction(None,None,1.0 if DO_USE_LOGLILEKYHOOD else 0.0)
+        root = NarrativeFunctionPrediction(None,None,0.0 if DO_USE_LOGLILEKYHOOD else 1.0)
         open = [root]
         for depth in xrange(max_depth):
             logger.info("%d depth, %d open" % (depth,len(open)))
+            #print narrative.data[depth].distribution_knn
             new_open = []
             for node in open:
                 # get successors
@@ -227,16 +228,17 @@ class SystematicSearchEngine(object):
 
             if len(new_open)>open_size:
                 #open = sorted(new_open,key=attrgetter('value'),reverse=True)[0:open_size]
-                open = sorted(new_open,key=lambda i:(-1*i.value,i.prediction))[0:open_size]
+                open = sorted(new_open,key=lambda i:(-1*i.value,i.prediction))
 
-                count = 0
-                node_value = new_open[0].value
-                for node in new_open[1:]:
+                ties = 1
+                node_value = open[0].value
+                for node in open[1:]:
                     if node.value==node_value:
-                        count +=1
+                        ties +=1
                     else:
                         break
-                logger.info(" %d successors, max size: %d, tied successors: %d" % (len(new_open),open_size,count))
+                logger.info(" %d successors, max size: %d, tied successors: %d" % (len(new_open),open_size,ties))
+                open = open[0:open_size]
 
             else:
                 open = new_open
@@ -263,9 +265,13 @@ class SystematicSearchEngine(object):
                     else:
                         probability *= likelyhood
             accuracy = SystematicSearchEngine.get_predictions_accuracy(narrative,predictions)
-            results.append((probability if DO_USE_LOGLILEKYHOOD else math.log(probability),node.value if DO_USE_LOGLILEKYHOOD else math.log(node.value),accuracy,','.join(predictions)))
+            results.append((
+                probability if DO_USE_LOGLILEKYHOOD else math.log(probability),
+                node.value if DO_USE_LOGLILEKYHOOD else math.log(node.value),
+                accuracy,
+                ','.join(predictions)))
         print "story %d: sorted by final probability" % narrative.story
-        results.sort(key=lambda i:(-1*i[0],-1*i[2],i[3]))
+        results.sort(key=lambda i:(-1*i[0],i[3]))
         for result in results[0:100]:
             print "%f\t%f\t%f\t%s" % result
         return results[0]
@@ -388,7 +394,7 @@ class SequentialFunctionPredictor(object):
     def predict_beam(self, best_first_branches_num=-1, beam_search_open_size=10, beam_search_open_size_multiplier=1):
         #for test in self.narratives[0:1]:
         results = []
-        for test in self.narratives:
+        for test in self.narratives:#[8:9]:
             training = self.get_training_dataset(test.story)
             if DO_INCLUDE & DO_INCLUDE_MONOMOVE and story_to_moves[test.story]==1 or DO_INCLUDE & DO_INCLUDE_MULTIMOVE and story_to_moves[test.story]>1:
                 logger.info('cross validation on story %d (%d moves) training %d test %d' % (test.story,story_to_moves[test.story],len(training),len(test.data)))
