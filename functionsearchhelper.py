@@ -34,8 +34,8 @@ K_IN_KNN = 5 # test 5 to 11
 
 DO_USE_EXTRA_TRAINING_DATASET = False
 
-DO_LOAD_AUTO_DATASET = False # currently only filtered is there, 167 instances
-DO_REMOVE_DIALOG = False # down to 129 instances
+DO_LOAD_AUTO_DATASET = True # currently only filtered is there, 167 instances
+DO_REMOVE_DIALOG = True # down to 129 instances
 
 #LAPLACIAN_BETA_KNN = 0.5
 #LAPLACIAN_BETA_MARKOV = 0.5
@@ -47,7 +47,7 @@ USE_GT_FOR_PREDICTIONS_WHEN_STEPPING = True
 
 DO_NFSA_FORCE_ONLY_ONE = 1
 DO_NFSA_FORCE_ALPHABETICAL = 2
-DO_NFSA_FORCE = 2
+DO_NFSA_FORCE = 0
 
 def main():
     do_systematic()
@@ -70,6 +70,7 @@ def do_systematic():
             DO_CHECK ^= DO_CHECK_NFSA
             DO_CHECK |= DO_CHECK_NFSA_AT_THE_END
         #if True:
+        #for j in range(3):
         for j in [3]:
             #global DO_INCLUDE
             #DO_INCLUDE = j
