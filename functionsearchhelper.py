@@ -62,20 +62,17 @@ def main():
 def do_beam():
     #for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END): # needs to add +1
     #if True:
-    for i in range(15):
-    #for i in [0]:#[3,11,13,5,17,21,25]:
+    #for i in range(15):
+    for i in [13,15]:#[3,11,13,5,17,21,25]:
         #global DO_CHECK
         #DO_CHECK = i+1
         #global DO_NFSA_FORCE
         #DO_NFSA_FORCE = i
         global DO_CHECK
         DO_CHECK = i+1
-        if DO_CHECK & DO_CHECK_NFSA:
-            DO_CHECK ^= DO_CHECK_NFSA
-            DO_CHECK |= DO_CHECK_NFSA_AT_THE_END
-        #if True:
+        if True:
         #for j in range(3):
-        for j in [3]:
+        #for j in [3]:
             #global DO_INCLUDE
             #DO_INCLUDE = j
             print "START USING SETUP %d" % DO_CHECK
@@ -409,7 +406,7 @@ class SequentialFunctionPredictor(object):
             result = sse.search(test,markov_table,cardinality,nfsa,best_first_branches_num,beam_search_open_size,beam_search_open_size_multiplier)
             results.append(result)
         total_functions = sum(len(i.data) for i in self.narratives)
-        open('overall9.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
+        open('overall9_1315.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
 
 
     def predict_knn(self):
