@@ -378,7 +378,7 @@ class SequentialFunctionPredictor(object):
 
 
         # load dataset
-        self.stories = range(1,16)#+([1001,1002,1003,1004,2001] if (not DO_LOAD_AUTO_DATASET and not DO_REMOVE_DIALOG) else [])
+        self.stories = range(1,16)+([1001,1002,1003,1004,2001] if (not DO_LOAD_AUTO_DATASET and not DO_REMOVE_DIALOG) else [])
         filtered = '_filtered' if USE_FILTERED_DATASET else ''
         story_indices = [int(i.strip()) for i in open(home+'/voz2/tool_corpus_functions_summary/story_indices%s%s.txt' % (filtered,'_nodiag' if DO_REMOVE_DIALOG else '')).readlines()]
         dataset = [i.strip().split('\t') for i in open(home+'/voz2/tool_corpus_functions_summary/tool_corpus_functions_summary_5_dist%s%s%s.tsv'%(filtered,'_auto' if DO_LOAD_AUTO_DATASET else '','_nodiag' if DO_REMOVE_DIALOG else '')).readlines()]
@@ -416,7 +416,7 @@ class SequentialFunctionPredictor(object):
     def predict_beam(self, best_first_branches_num=-1, beam_search_open_size=10, beam_search_open_size_multiplier=1.0):
         #for test in self.narratives[0:1]:
         results = []
-        for test in self.narratives:#[8:9]:
+        for test in self.narratives[0:15]:
             training = self.get_training_dataset(test.story)
             if True:#DO_INCLUDE & DO_INCLUDE_MONOMOVE and story_to_moves[test.story]==1 or DO_INCLUDE & DO_INCLUDE_MULTIMOVE and story_to_moves[test.story]>1:
                 logger.info('cross validation on story %d (%d moves) training %d test %d' % (test.story,story_to_moves[test.story],len(training),len(test.data)))
@@ -433,7 +433,7 @@ class SequentialFunctionPredictor(object):
         if DO_FORCE_MAX_DEPTH is None:
             total_functions = sum(len(i.data) for i in self.narratives)
         else:
-            total_functions = 5*len(self.narratives)
+            total_functions = 5*15#len(self.narratives)
         open('overall10.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
 
 
