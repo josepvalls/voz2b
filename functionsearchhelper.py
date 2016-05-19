@@ -51,7 +51,7 @@ DO_NFSA_FORCE = 2
 
 DO_USE_LOGLILEKYHOOD = False
 
-DO_FORCE_MAX_DEPTH = 5
+DO_FORCE_MAX_DEPTH = None
 
 def main():
     #do_dump_all_dataset()
@@ -70,7 +70,7 @@ def do_beam():
     #for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END): # needs to add +1
     #if True:
     #for i in range(15):
-    for i in [1,3,7]:#[1,3,5,7,13,17,19,21,23]:#[3,11,13,5,17,21,25]:
+    for i in [1,3,5,7,13,17,19,21,23]:#[3,11,13,5,17,21,25]:
         #global DO_CHECK
         #DO_CHECK = i+1
         #global DO_NFSA_FORCE
@@ -80,7 +80,7 @@ def do_beam():
         #if True:
         #for j in range(3):
         #for j in [3]:
-        for s in [1]:
+        for s in [1,2,3]:
             global DO_LOAD_AUTO_DATASET
             global DO_REMOVE_DIALOG
             if s == 1:
@@ -244,7 +244,7 @@ class SystematicSearchEngine(object):
                         else:
                             value *= likelyhood
                     new_open.append(NarrativeFunctionPrediction(function,node,value))
-            open_size = int(beam_search_open_size*beam_search_open_size_multiplier*(depth+1))
+            open_size = beam_search_open_size#int(beam_search_open_size*beam_search_open_size_multiplier*(depth+1))
 
 
             if len(new_open)>open_size:
@@ -431,9 +431,9 @@ class SequentialFunctionPredictor(object):
             result = sse.search(test,markov_table,cardinality,nfsa,best_first_branches_num,beam_search_open_size,beam_search_open_size_multiplier)
             results.append(result)
         if DO_FORCE_MAX_DEPTH is None:
-            total_functions = sum(len(i.data) for i in self.narratives)
+            total_functions = sum(len(i.data) for i in self.narratives[0:15])
         else:
-            total_functions = 5*15#len(self.narratives)
+            total_functions = DO_FORCE_MAX_DEPTH*15#len(self.narratives)
         open('overall10.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
 
 
