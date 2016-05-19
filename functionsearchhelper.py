@@ -49,7 +49,9 @@ DO_NFSA_FORCE_ONLY_ONE = 1
 DO_NFSA_FORCE_ALPHABETICAL = 2
 DO_NFSA_FORCE = 2
 
-DO_USE_LOGLILEKYHOOD = True
+DO_USE_LOGLILEKYHOOD = False
+
+DO_FORCE_MAX_DEPTH = 5
 
 def main():
     #do_dump_all_dataset()
@@ -68,7 +70,7 @@ def do_beam():
     #for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END): # needs to add +1
     #if True:
     #for i in range(15):
-    for i in [1,3,5,7,13,17,19,21,23]:#[3,11,13,5,17,21,25]:
+    for i in [1,3,7]:#[1,3,5,7,13,17,19,21,23]:#[3,11,13,5,17,21,25]:
         #global DO_CHECK
         #DO_CHECK = i+1
         #global DO_NFSA_FORCE
@@ -78,7 +80,7 @@ def do_beam():
         #if True:
         #for j in range(3):
         #for j in [3]:
-        for s in [1,2,3]:
+        for s in [3]:
             global DO_LOAD_AUTO_DATASET
             global DO_REMOVE_DIALOG
             if s == 1:
@@ -204,8 +206,11 @@ class SystematicSearchEngine(object):
                 c +=1
             t +=1
         return 1.0*c/t
-    def search(self,narrative,markov_table,cardinality,nfsa,best_first_branches_num=-1,beam_search_open_size=10,beam_search_open_size_multiplier=1):
-        max_depth = len(narrative.data)
+    def search(self,narrative,markov_table,cardinality,nfsa,best_first_branches_num=-1,beam_search_open_size=10,beam_search_open_size_multiplier=1.0):
+        if DO_FORCE_MAX_DEPTH is None:
+            max_depth = len(narrative.data)
+        else:
+            max_depth = DO_FORCE_MAX_DEPTH
         root = NarrativeFunctionPrediction(None,None,0.0 if DO_USE_LOGLILEKYHOOD else 1.0)
         open = [root]
         for depth in xrange(max_depth):
@@ -223,7 +228,7 @@ class SystematicSearchEngine(object):
                         else:
                             value *= likelyhood
                     if DO_CHECK & DO_CHECK_MARKOV:
-                        prev = node.parent.prediction if node.parent else None
+                        prev = node.prediction
                         likelyhood = markov_table.get_transition_probability(prev,function)
                         if DO_USE_LOGLILEKYHOOD:
                             value += math.log(likelyhood)
@@ -408,7 +413,7 @@ class SequentialFunctionPredictor(object):
             function.prediction_knn = self.probabilistic_assignment(function.distribution_knn)
 
 
-    def predict_beam(self, best_first_branches_num=-1, beam_search_open_size=10, beam_search_open_size_multiplier=1):
+    def predict_beam(self, best_first_branches_num=-1, beam_search_open_size=10, beam_search_open_size_multiplier=1.0):
         #for test in self.narratives[0:1]:
         results = []
         for test in self.narratives:#[8:9]:
@@ -425,7 +430,10 @@ class SequentialFunctionPredictor(object):
             sse = SystematicSearchEngine()
             result = sse.search(test,markov_table,cardinality,nfsa,best_first_branches_num,beam_search_open_size,beam_search_open_size_multiplier)
             results.append(result)
-        total_functions = sum(len(i.data) for i in self.narratives)
+        if DO_FORCE_MAX_DEPTH is None:
+            total_functions = sum(len(i.data) for i in self.narratives)
+        else:
+            total_functions = 5*len(self.narratives)
         open('overall10.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
 
 
