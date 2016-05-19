@@ -80,7 +80,7 @@ def do_beam():
         #if True:
         #for j in range(3):
         #for j in [3]:
-        for s in [3]:
+        for s in [1]:
             global DO_LOAD_AUTO_DATASET
             global DO_REMOVE_DIALOG
             if s == 1:
@@ -378,7 +378,7 @@ class SequentialFunctionPredictor(object):
 
 
         # load dataset
-        self.stories = range(1,16)+([1001,1002,1003,1004,2001] if (not DO_LOAD_AUTO_DATASET and not DO_REMOVE_DIALOG) else [])
+        self.stories = range(1,16)#+([1001,1002,1003,1004,2001] if (not DO_LOAD_AUTO_DATASET and not DO_REMOVE_DIALOG) else [])
         filtered = '_filtered' if USE_FILTERED_DATASET else ''
         story_indices = [int(i.strip()) for i in open(home+'/voz2/tool_corpus_functions_summary/story_indices%s%s.txt' % (filtered,'_nodiag' if DO_REMOVE_DIALOG else '')).readlines()]
         dataset = [i.strip().split('\t') for i in open(home+'/voz2/tool_corpus_functions_summary/tool_corpus_functions_summary_5_dist%s%s%s.tsv'%(filtered,'_auto' if DO_LOAD_AUTO_DATASET else '','_nodiag' if DO_REMOVE_DIALOG else '')).readlines()]
