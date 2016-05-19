@@ -35,7 +35,7 @@ K_IN_KNN = 5 # test 5 to 11
 DO_USE_EXTRA_TRAINING_DATASET = False
 
 DO_LOAD_AUTO_DATASET = False # currently only filtered is there, 167 instances
-DO_REMOVE_DIALOG = False # down to 129 instances
+DO_REMOVE_DIALOG = True # down to 129 instances
 
 #LAPLACIAN_BETA_KNN = 0.5
 #LAPLACIAN_BETA_MARKOV = 0.5
@@ -47,14 +47,19 @@ USE_GT_FOR_PREDICTIONS_WHEN_STEPPING = True
 
 DO_NFSA_FORCE_ONLY_ONE = 1
 DO_NFSA_FORCE_ALPHABETICAL = 2
-DO_NFSA_FORCE = 0
+DO_NFSA_FORCE = 2
 
 DO_USE_LOGLILEKYHOOD = True
 
 def main():
+    #do_dump_all_dataset()
     do_beam()
     #do_dump_distributions()
     #do_dump_all_predictions()
+
+def do_dump_all_dataset():
+    fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
+    fp.dump_dataset()
 
 
 
@@ -63,19 +68,33 @@ def do_beam():
     #for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END): # needs to add +1
     #if True:
     #for i in range(15):
-    for i in [13,15]:#[3,11,13,5,17,21,25]:
+    for i in [1,3,5,7,13,17,19,21,23]:#[3,11,13,5,17,21,25]:
         #global DO_CHECK
         #DO_CHECK = i+1
         #global DO_NFSA_FORCE
         #DO_NFSA_FORCE = i
         global DO_CHECK
-        DO_CHECK = i+1
-        if True:
+        DO_CHECK = i
+        #if True:
         #for j in range(3):
         #for j in [3]:
+        for s in [1,2,3]:
+            global DO_LOAD_AUTO_DATASET
+            global DO_REMOVE_DIALOG
+            if s == 1:
+                DO_LOAD_AUTO_DATASET = False # currently only filtered is there, 167 instances
+                DO_REMOVE_DIALOG = False # down to 129 instances
+            elif s==2:
+                DO_LOAD_AUTO_DATASET = True # currently only filtered is there, 167 instances
+                DO_REMOVE_DIALOG = True # down to 129 instances
+            else:
+                DO_LOAD_AUTO_DATASET = False # currently only filtered is there, 167 instances
+                DO_REMOVE_DIALOG = True # down to 129 instances
+
+
             #global DO_INCLUDE
             #DO_INCLUDE = j
-            print "START USING SETUP %d" % DO_CHECK
+            print "START USING SETUP %d,s" % DO_CHECK
             fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
             fp.predict_beam(best_first_branches_num=-1, beam_search_open_size=10000, beam_search_open_size_multiplier=1.0)
 
@@ -354,7 +373,7 @@ class SequentialFunctionPredictor(object):
 
 
         # load dataset
-        self.stories = range(1,16)+([1001,1002,1003,1004,2001] if not DO_LOAD_AUTO_DATASET else [])
+        self.stories = range(1,16)+([1001,1002,1003,1004,2001] if (not DO_LOAD_AUTO_DATASET and not DO_REMOVE_DIALOG) else [])
         filtered = '_filtered' if USE_FILTERED_DATASET else ''
         story_indices = [int(i.strip()) for i in open(home+'/voz2/tool_corpus_functions_summary/story_indices%s%s.txt' % (filtered,'_nodiag' if DO_REMOVE_DIALOG else '')).readlines()]
         dataset = [i.strip().split('\t') for i in open(home+'/voz2/tool_corpus_functions_summary/tool_corpus_functions_summary_5_dist%s%s%s.tsv'%(filtered,'_auto' if DO_LOAD_AUTO_DATASET else '','_nodiag' if DO_REMOVE_DIALOG else '')).readlines()]
@@ -369,6 +388,7 @@ class SequentialFunctionPredictor(object):
         self.narratives = [NarrativeData(i) for i in self.stories]
         for story,attributes,label in zip(story_indices,attributes,labels):
             self.narratives[self.stories.index(story)].data.append(NarrativeFunctionData(attributes,label))
+        pass
 
 
     def get_training_dataset(self,current_story):
@@ -393,7 +413,7 @@ class SequentialFunctionPredictor(object):
         results = []
         for test in self.narratives:#[8:9]:
             training = self.get_training_dataset(test.story)
-            if DO_INCLUDE & DO_INCLUDE_MONOMOVE and story_to_moves[test.story]==1 or DO_INCLUDE & DO_INCLUDE_MULTIMOVE and story_to_moves[test.story]>1:
+            if True:#DO_INCLUDE & DO_INCLUDE_MONOMOVE and story_to_moves[test.story]==1 or DO_INCLUDE & DO_INCLUDE_MULTIMOVE and story_to_moves[test.story]>1:
                 logger.info('cross validation on story %d (%d moves) training %d test %d' % (test.story,story_to_moves[test.story],len(training),len(test.data)))
             else:
                 logger.info('skipping story %d (%d moves) training %d test %d' % (test.story,story_to_moves[test.story],len(training),len(test.data)))
@@ -406,7 +426,7 @@ class SequentialFunctionPredictor(object):
             result = sse.search(test,markov_table,cardinality,nfsa,best_first_branches_num,beam_search_open_size,beam_search_open_size_multiplier)
             results.append(result)
         total_functions = sum(len(i.data) for i in self.narratives)
-        open('overall9_1315.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
+        open('overall10.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
 
 
     def predict_knn(self):
@@ -418,22 +438,48 @@ class SequentialFunctionPredictor(object):
                 function.distribution = function.distribution_knn
                 function.prediction = function.prediction_knn
 
-    def dump_probabilities(self):
-        for test in self.narratives:
+    def dump_dataset(self):
+        for test in self.narratives:#[8:9]:
+            training = self.get_training_dataset(test.story)
+            if True:#DO_INCLUDE & DO_INCLUDE_MONOMOVE and story_to_moves[test.story]==1 or DO_INCLUDE & DO_INCLUDE_MULTIMOVE and story_to_moves[test.story]>1:
+                logger.info('cross validation on story %d (%d moves) training %d test %d' % (test.story,story_to_moves[test.story],len(training),len(test.data)))
+            else:
+                logger.info('skipping story %d (%d moves) training %d test %d' % (test.story,story_to_moves[test.story],len(training),len(test.data)))
+                continue
             markov_table = LearnedMarkovTable(self.laplacian_beta_markov,self.narratives,test)
             cardinality = LearnedCardinalityTable2(self.laplacian_beta_markov, self.narratives, test)
-            nfsa = ProppNFSA('data/nfsa-propp3.txt',function_list,LAPLACIAN_BETA_NFSA,allow_only_one=True)
-            if False:
-                # do printouts of the tables
+            nfsa = ProppNFSA('data/nfsa-propp3.txt',function_list,LAPLACIAN_BETA_NFSA,allow_only_one=DO_NFSA_FORCE&DO_NFSA_FORCE_ONLY_ONE,force_alphabetical=DO_NFSA_FORCE&DO_NFSA_FORCE_ALPHABETICAL)
+            self.init_distributions(test, training, use_gt_for_predictions=USE_GT_FOR_PREDICTIONS_WHEN_STEPPING, markov_table=markov_table, cardinality=cardinality, nfsa=nfsa)
+            if True:
+                markov_out = '\t'+'\t'.join(function_list)+'\n'
                 for i in [None]+function_list:
-                    print i,
-                    for j in function_list:
-                    #for k in range(6):
-                        print markov_table.markov_table[i][j],
-                        #observations = cardinality.table[function_list.index(i)]
-                        #print collections.Counter(observations).get(k,0),
-                    print
-                sys.exit()
+                    #markov_out += str(i)+'\t'+'\t'.join([str(markov_table.markov_table[i][j]) for j in function_list])+'\n'
+                    markov_out += str(i)+'\t'+'\t'.join([str(markov_table.get_transition_probability(i,j)) for j in function_list])+'\n'
+
+                cardinality_out = '\t'+'\t'.join([str(i) for i in range(6)])+'\n'
+                for f in function_list:
+                    cardinality_out +=f+'\t'+'\t'.join([str(cardinality.get_probability(f,k)) for k in range(6)])+'\n'
+
+                knn_distribution_out = '\t'.join(function_list)+'\n'
+                train_vector_out = test_vector_out = '\t'.join(self.attributes+['LABEL'])+'\n'
+                for d in test.data:
+                    knn_distribution_out += '\t'.join([str(i) for i in d.distribution_knn])+ '\n'
+                    test_vector_out += '\t'.join([str(i) for i in d.attributes])+'\t'+d.label+'\n'
+                for d in training:
+                    train_vector_out += '\t'.join([str(i) for i in d.attributes])+'\t'+d.label+'\n'
+
+                if DO_LOAD_AUTO_DATASET:
+                    combo = 'voz'
+                else:
+                    if DO_REMOVE_DIALOG:
+                        combo = 'gt15nodialog'
+                    else:
+                        combo = 'gt20'
+                open('dataset/test_%s_%d.txt' % (combo,test.story),'w').write(test_vector_out)
+                open('dataset/train_%s_%d.txt' % (combo,test.story),'w').write(train_vector_out)
+                open('dataset/trained_knn_%s_%d.txt' % (combo,test.story),'w').write(knn_distribution_out)
+                open('dataset/trained_markov_%s_%d.txt' % (combo,test.story),'w').write(markov_out)
+                open('dataset/trained_cardinality_%s_%d.txt' % (combo,test.story),'w').write(cardinality_out)
 
     def distance_euclidean(self,c1,c2):
         return math.sqrt(

@@ -14,8 +14,8 @@ import oldannotationhelper
 logger = logging.getLogger(__name__)
 
 
-DO_REMOVE_DIALOG = False
-DO_WRITE_FILES = False
+DO_REMOVE_DIALOG = True
+DO_WRITE_FILES = True
 DO_PRINT_TO_SCREEN = False
 DO_FILTER_NONACTUAL = True
 
@@ -55,7 +55,7 @@ def get_docs_stats(feature_group,feature_distribution):
             doc.serialize_to_file('/Users/josepvalls/temp/voz2/'+sty_file+'.json',use_deep_copy=True)
         # print util.string_as_print(doc.id,doc.properties.get('afanasev_new',doc.id),doc.properties.get('afanasev_old',doc.id), doc.narrative.format_summary())
         documents.append(doc)
-    if not DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT:
+    if False and not DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT:
         for document_id in [1001,1002,1003,1004,2001]:
         #for document_id in [1004]:
             documents.append(oldannotationhelper.load_old_annotations_into_document(document_id))
