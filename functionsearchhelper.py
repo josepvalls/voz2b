@@ -55,9 +55,10 @@ DO_FORCE_MAX_DEPTH = None
 
 def main():
     #do_dump_all_dataset()
-    do_beam()
+    #do_beam()
     #do_dump_distributions()
     #do_dump_all_predictions()
+    do_beam_confusion_matrix()
 
 def do_dump_all_dataset():
     fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
@@ -66,11 +67,11 @@ def do_dump_all_dataset():
 
 
 
-def do_beam():
+def do_beam_confusion_matrix():
     #for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END): # needs to add +1
     #if True:
     #for i in range(15):
-    for i in [1,3,5,7,13,17,19,21,23]:#[3,11,13,5,17,21,25]:
+    for i in [13]:#[3,11,13,5,17,21,25]:
         #global DO_CHECK
         #DO_CHECK = i+1
         #global DO_NFSA_FORCE
@@ -80,7 +81,7 @@ def do_beam():
         #if True:
         #for j in range(3):
         #for j in [3]:
-        for s in [1,2,3]:
+        for s in [1]:
             global DO_LOAD_AUTO_DATASET
             global DO_REMOVE_DIALOG
             if s == 1:
@@ -98,7 +99,20 @@ def do_beam():
             #DO_INCLUDE = j
             print "START USING SETUP %d,s" % DO_CHECK
             fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
-            fp.predict_beam(best_first_branches_num=-1, beam_search_open_size=10000, beam_search_open_size_multiplier=1.0)
+            fp.predict_beam(best_first_branches_num=-1, beam_search_open_size=100000, beam_search_open_size_multiplier=1.0)
+            confusion = collections.defaultdict(lambda:0)
+            for narrative in fp.narratives:
+                for function in narrative.data:
+                    confusion[(function.prediction,function.label)]+=1
+            out = '\t'+'\t'.join(function_list)+'\n'
+            for prediction in function_list:
+                out += prediction + '\t'
+                for label in function_list:
+                    out += str(confusion[(prediction,label)])+'\t'
+                out += '\n'
+            open('confusion.txt','w').write(out)
+
+
 
 def do_dump_distributions():
     fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
@@ -290,7 +304,7 @@ class SystematicSearchEngine(object):
                 probability if DO_USE_LOGLILEKYHOOD else math.log(probability),
                 node.value if DO_USE_LOGLILEKYHOOD else math.log(node.value),
                 accuracy,
-                ','.join(predictions)))
+                predictions))
         print "story %d: sorted by final probability" % narrative.story
         results.sort(key=lambda i:(-1*i[0],i[3]))
         for result in results[0:100]:
@@ -429,12 +443,14 @@ class SequentialFunctionPredictor(object):
             self.init_distributions(test, training, use_gt_for_predictions=USE_GT_FOR_PREDICTIONS_WHEN_STEPPING, markov_table=markov_table, cardinality=cardinality, nfsa=nfsa)
             sse = SystematicSearchEngine()
             result = sse.search(test,markov_table,cardinality,nfsa,best_first_branches_num,beam_search_open_size,beam_search_open_size_multiplier)
+            for function,prediction in zip(test.data,result[3]):
+                function.prediction = prediction
             results.append(result)
         if DO_FORCE_MAX_DEPTH is None:
             total_functions = sum(len(i.data) for i in self.narratives[0:15])
         else:
             total_functions = DO_FORCE_MAX_DEPTH*15#len(self.narratives)
-        open('overall10.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3].split(','))/total_functions for i in results)))
+        open('overall_confusion.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3])/total_functions for i in results)))
 
 
     def predict_knn(self):
