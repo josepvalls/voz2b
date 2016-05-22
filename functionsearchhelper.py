@@ -55,15 +55,48 @@ DO_FORCE_MAX_DEPTH = None
 
 def main():
     #do_dump_all_dataset()
-    #do_beam()
+    do_beam()
     #do_dump_distributions()
     #do_dump_all_predictions()
-    do_beam_confusion_matrix()
+    #do_beam_confusion_matrix()
 
 def do_dump_all_dataset():
     fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
     fp.dump_dataset()
 
+
+
+def do_beam():
+    #for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END): # needs to add +1
+    #if True:
+    #for i in range(15):
+    for i in [13]:#[1,3,11,13,5,17,21,25]:
+        #global DO_CHECK
+        #DO_CHECK = i+1
+        #global DO_NFSA_FORCE
+        #DO_NFSA_FORCE = i
+        global DO_CHECK
+        DO_CHECK = i
+        #if True:
+        #for j in range(3):
+        #for j in [3]:
+        for s in [1]:#[1,2,3]
+            global DO_LOAD_AUTO_DATASET
+            global DO_REMOVE_DIALOG
+            if s == 1:
+                DO_LOAD_AUTO_DATASET = False # currently only filtered is there, 167 instances
+                DO_REMOVE_DIALOG = False # down to 129 instances
+            elif s==2:
+                DO_LOAD_AUTO_DATASET = True # currently only filtered is there, 167 instances
+                DO_REMOVE_DIALOG = True # down to 129 instances
+            else:
+                DO_LOAD_AUTO_DATASET = False # currently only filtered is there, 167 instances
+                DO_REMOVE_DIALOG = True # down to 129 instances
+            #global DO_INCLUDE
+            #DO_INCLUDE = j
+            print "START USING SETUP %d,s" % DO_CHECK
+            fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
+            fp.predict_beam(best_first_branches_num=-1, beam_search_open_size=10000, beam_search_open_size_multiplier=1.0,get_ranks=True)
 
 
 
@@ -99,7 +132,7 @@ def do_beam_confusion_matrix():
             #DO_INCLUDE = j
             print "START USING SETUP %d,s" % DO_CHECK
             fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
-            fp.predict_beam(best_first_branches_num=-1, beam_search_open_size=100000, beam_search_open_size_multiplier=1.0)
+            fp.predict_beam(best_first_branches_num=-1, beam_search_open_size=10000, beam_search_open_size_multiplier=1.0)
             confusion = collections.defaultdict(lambda:0)
             for narrative in fp.narratives:
                 for function in narrative.data:
@@ -150,6 +183,8 @@ class NarrativeFunctionPrediction(object):
         self.prediction = prediction # the option for this node
         self.parent = parent #type: NarrativeFunctionPrediction
         self.value = value #type: float
+        self.rank = None
+        self.rank_worst = None
     def __str__(self):
         return "%s %f" % (self.prediction,self.value)
 
@@ -203,6 +238,25 @@ class LearnedCardinalityTable2(object):
 
 class SystematicSearchEngine(object):
     @classmethod
+    def get_node_sequence(cls,node):
+        predictions = []
+        node_ = node
+        while node_.parent:
+            predictions.append(node)
+            node_ = node_.parent
+        predictions.reverse()
+        return predictions # the root node has a None prediction, not returned here
+    @classmethod
+    def get_ranks(cls,node):
+        predictions = []
+        node_ = node
+        while node_.parent:
+            predictions.append((node_.rank,node_.rank_worst))
+            node_ = node_.parent
+        predictions.reverse()
+        return predictions # the root node has a None prediction, not returned here
+
+    @classmethod
     def get_predictions(cls,node):
         predictions = []
         node_ = node
@@ -220,7 +274,7 @@ class SystematicSearchEngine(object):
                 c +=1
             t +=1
         return 1.0*c/t
-    def search(self,narrative,markov_table,cardinality,nfsa,best_first_branches_num=-1,beam_search_open_size=10,beam_search_open_size_multiplier=1.0):
+    def search(self,narrative,markov_table,cardinality,nfsa,best_first_branches_num=-1,beam_search_open_size=10,beam_search_open_size_multiplier=1.0,get_ranks=False):
         if DO_FORCE_MAX_DEPTH is None:
             max_depth = len(narrative.data)
         else:
@@ -258,6 +312,23 @@ class SystematicSearchEngine(object):
                         else:
                             value *= likelyhood
                     new_open.append(NarrativeFunctionPrediction(function,node,value))
+
+            if get_ranks:
+                label = narrative.data[depth].label
+                rank = 0
+                for k,group in itertools.groupby(new_open,key=attrgetter('value')):
+                    group_ = list(group)
+                    if label in [i.prediction for i in group_]:
+                        break
+                    rank +=len(group_)
+                for i in new_open:
+                    i.rank = rank
+                    i.rank_worst = rank+len(group_)-1
+            # end ranks
+
+
+
+
             open_size = beam_search_open_size#int(beam_search_open_size*beam_search_open_size_multiplier*(depth+1))
 
 
@@ -281,6 +352,7 @@ class SystematicSearchEngine(object):
         results = []
         for node in open:
             predictions = SystematicSearchEngine.get_predictions(node)
+            #predictions = SystematicSearchEngine.get_node_sequence(node)
             probability = node.value
             if DO_CHECK & DO_CHECK_CARDINALITY:
                 counter = collections.Counter(predictions)
@@ -304,12 +376,22 @@ class SystematicSearchEngine(object):
                 probability if DO_USE_LOGLILEKYHOOD else math.log(probability),
                 node.value if DO_USE_LOGLILEKYHOOD else math.log(node.value),
                 accuracy,
-                predictions))
+                predictions,
+                node
+            ))
         print "story %d: sorted by final probability" % narrative.story
         results.sort(key=lambda i:(-1*i[0],i[3]))
-        for result in results[0:100]:
-            print "%f\t%f\t%f\t%s" % result
-        return results[0]
+        if not get_ranks:
+            for result in results[0:100]:
+                print "%f\t%f\t%f\t%s" % result
+            return results[0]
+        else:
+            node = results[0][4]
+            ranks = SystematicSearchEngine.get_ranks(node)
+            r = list(results[0])+[ranks]
+            return r
+
+
 
 attribute_selection_rules = ''' 0.1599    2 Func. Position
  0.0877    4 Ratio Villain
@@ -427,9 +509,9 @@ class SequentialFunctionPredictor(object):
             function.prediction_knn = self.probabilistic_assignment(function.distribution_knn)
 
 
-    def predict_beam(self, best_first_branches_num=-1, beam_search_open_size=10, beam_search_open_size_multiplier=1.0):
-        #for test in self.narratives[0:1]:
+    def predict_beam(self, best_first_branches_num=-1, beam_search_open_size=10, beam_search_open_size_multiplier=1.0,get_ranks=False):
         results = []
+        #for test in self.narratives[0:1]:
         for test in self.narratives[0:15]:
             training = self.get_training_dataset(test.story)
             if True:#DO_INCLUDE & DO_INCLUDE_MONOMOVE and story_to_moves[test.story]==1 or DO_INCLUDE & DO_INCLUDE_MULTIMOVE and story_to_moves[test.story]>1:
@@ -442,15 +524,20 @@ class SequentialFunctionPredictor(object):
             nfsa = ProppNFSA('data/nfsa-propp3.txt',function_list,LAPLACIAN_BETA_NFSA,allow_only_one=DO_NFSA_FORCE&DO_NFSA_FORCE_ONLY_ONE,force_alphabetical=DO_NFSA_FORCE&DO_NFSA_FORCE_ALPHABETICAL)
             self.init_distributions(test, training, use_gt_for_predictions=USE_GT_FOR_PREDICTIONS_WHEN_STEPPING, markov_table=markov_table, cardinality=cardinality, nfsa=nfsa)
             sse = SystematicSearchEngine()
-            result = sse.search(test,markov_table,cardinality,nfsa,best_first_branches_num,beam_search_open_size,beam_search_open_size_multiplier)
+            result = sse.search(test,markov_table,cardinality,nfsa,best_first_branches_num,beam_search_open_size,beam_search_open_size_multiplier,get_ranks=get_ranks)
             for function,prediction in zip(test.data,result[3]):
                 function.prediction = prediction
             results.append(result)
+        ranks = util.flatten([[j[0] for j in i[5]] for i in results])
+        ranks_worst = util.flatten([[j[1] for j in i[5]] for i in results])
         if DO_FORCE_MAX_DEPTH is None:
             total_functions = sum(len(i.data) for i in self.narratives[0:15])
         else:
             total_functions = DO_FORCE_MAX_DEPTH*15#len(self.narratives)
-        open('overall_confusion.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3])/total_functions for i in results)))
+        if not get_ranks:
+            open('overall_confusion.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3])/total_functions for i in results)))
+        else:
+            open('overall_ranks.txt','a').write("using %d,%d: ranks:\t%s\t%s\n" % (DO_CHECK,DO_INCLUDE,str(util.describe_distribution(ranks)),str(util.describe_distribution(ranks_worst))))
 
 
     def predict_knn(self):
