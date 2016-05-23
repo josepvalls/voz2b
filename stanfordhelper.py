@@ -167,7 +167,17 @@ def main():
     print doc
     file_name = 'temp_document.json'
     #doc.serialize_to_file(file_name,use_deep_copy=False)
-    open('test_output.html','w').write(formatter.html(formatter.VozHTMLFormatter.format(doc,options={'parse_highlight':parse_tree_mention_helper.HIGHLIGHT_MENTIONS_INDEPENDNET})))
+    open('test_output.html','w').write(formatter.html(
+        formatter.VozHTMLFormatter.format(doc,options={
+            'include_parse':False,
+            'parse_highlight':parse_tree_mention_helper.HIGHLIGHT_MENTIONS_INDEPENDNET,
+            'include_raw':True,
+            'include_text':True,
+            'text_highlight':parse_tree_mention_helper.HIGHLIGHT_MENTIONS_INDEPENDNET,
+            'include_mentions':False,
+            'include_verbs':False,
+        })
+    ))
     print voz.Document.format_stats(doc.get_stats())
 
 

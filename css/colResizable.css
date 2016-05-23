@@ -1,0 +1,24 @@
+th{
+   height:30px;
+   text-align: center;   
+}
+
+.grip{
+	width:20px;
+	height:30px;
+	margin-top:-3px;
+	background-image:url('../img/grip.png');
+	margin-left:-5px;
+	position:relative;
+	z-index:88;
+	cursor:e-resize;
+}
+
+.grip:hover{
+	background-position-x:-20px;
+}
+
+.dragging .grip{
+	background-position-x:-40px;
+}
+

@@ -96,7 +96,7 @@ def do_beam():
             #DO_INCLUDE = j
             print "START USING SETUP %d,s" % DO_CHECK
             fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
-            fp.predict_beam(best_first_branches_num=-1, beam_search_open_size=10000, beam_search_open_size_multiplier=1.0,get_ranks=True)
+            fp.predict_beam(best_first_branches_num=-1, beam_search_open_size=100, beam_search_open_size_multiplier=1.0,get_ranks=True)
 
 
 

@@ -76,6 +76,8 @@ class VozHTMLFormatter(object):
         (voz.Token,'format_token'),
         (voz.Sentence,'format_sentence'),
         (voz.Document,'format_document'),
+        (voz.entitymanager.Mention,'format_mention'),
+        (voz.verbmanager.Verb,'format_verb'),
         (str,'format_str'),
         (types.NoneType,'format_none'),
         (object,'wrap'),
@@ -125,9 +127,57 @@ class VozHTMLFormatter(object):
         return cls.format(document.sentences,options=options)
     @classmethod
     def format_sentence(cls,sentence,options={}):
-        if options and 'parse_highlight' in options:
-            options['color_map'] = sentence.parse_highlight.get(options['parse_highlight'],{})
-        return cls.format(sentence.parse_tree,options)
+        out = ''
+        if options.get('include_parse',False)==True:
+            if options and 'parse_highlight' in options:
+                options['color_map'] = sentence.parse_highlight.get(options['parse_highlight'],{})
+            out += cls.format(sentence.parse_tree,options)
+        if options.get('include_raw',False)==True:
+            out += '<div class="text-container raw-container"><pre>%s</pre></div>' % sentence.get_text()
+        if options.get('include_mentions',False)==True:
+             for mention in sentence.mentions:
+                if mention.is_independent:
+                    out += cls.format(mention)
+        if options.get('include_verbs',False)==True:
+             for verb in sentence.verbs:
+                out += cls.format(verb)
+
+        if options.get('include_text',False)==True:
+            to_highlight = []
+            for mention in sentence.mentions:
+                if mention.is_independent and mention not in to_highlight:
+                    to_highlight.append(mention)
+            for verb in sentence.verbs:
+                if verb not in to_highlight:
+                    to_highlight.append(verb)
+            to_highlight.sort(key=lambda i:i.tokens[0].offset)
+            p_start = sentence.offset
+            out_ = ''
+            while True:
+                if p_start >= sentence.offset+sentence.len:
+                     break # we finished with the sentence
+                elif to_highlight and to_highlight[0].tokens[0].offset <= p_start:
+                    item = to_highlight.pop(0)
+                    out_ += cls.format(item)
+                    p_start = item.tokens[-1].offset+item.tokens[-1].len
+                elif to_highlight and to_highlight[0].tokens[0].offset > p_start:
+                    out_ += sentence._parent_document.get_text()[p_start:to_highlight[0].tokens[0].offset]
+                    p_start = to_highlight[0].tokens[0].offset
+                else:
+                    out_ += sentence._parent_document.get_text()[p_start:sentence.offset+sentence.len]
+                    break
+
+            out += '<div class="text-container raw-container">%s</div>' % out_
+
+        return out
+    @classmethod
+    def format_mention(cls,mention,options={}):
+        color_class = ""
+        color_class = " e%d" % mention.get_coref_group_id()
+        return '<span class="tooltip%s" title="%s"><u>%s</u></span>' % (color_class,str(mention),mention.get_text())
+    @classmethod
+    def format_verb(cls,verb,options={}):
+        return '<strong>%s</strong>' % verb.get_text()
 
     @classmethod
     def format(cls,element,options={}):
@@ -146,17 +196,7 @@ class VozHTMLFormatter(object):
 def html(body,pre=''):
     return '''<html><head>
         <link rel="stylesheet" type="text/css" href="css/colResizable.css" />
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/colResizable-1.3.min.js"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-        <script type="text/javascript" src="js/jquery-gentleSelect-min.js"></script>
-        <link type="text/css" href="css/jquery-gentleSelect.css" rel="stylesheet" />
-
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('#selector').gentleSelect({title: "Hide columns", columns: 3, itemWidth: 100, maxDisplay:5, openSpeed: 50,closeSpeed:50}); // apply gentleSelect with default options
-            });
-        </script>
+        <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 
         <script type="text/javascript">
             this.tooltip = function(){
