@@ -150,19 +150,32 @@ class VozHTMLFormatter(object):
             for verb in sentence.verbs:
                 if verb not in to_highlight:
                     to_highlight.append(verb)
-            to_highlight.sort(key=lambda i:i.tokens[0].offset)
+            to_highlight.sort(key=lambda i:(i.get_tokens()[0].offset,len(i.get_tokens())))
             p_start = sentence.offset
             out_ = ''
+            included_mentions = [] #type: list[entitymanager.Mention]
             while True:
                 if p_start >= sentence.offset+sentence.len:
                      break # we finished with the sentence
-                elif to_highlight and to_highlight[0].tokens[0].offset <= p_start:
+                elif to_highlight and to_highlight[0].get_tokens()[0].offset <= p_start:
                     item = to_highlight.pop(0)
-                    out_ += cls.format(item)
-                    p_start = item.tokens[-1].offset+item.tokens[-1].len
-                elif to_highlight and to_highlight[0].tokens[0].offset > p_start:
-                    out_ += sentence._parent_document.get_text()[p_start:to_highlight[0].tokens[0].offset]
-                    p_start = to_highlight[0].tokens[0].offset
+                    for mention2 in included_mentions:
+                        if isinstance(item,voz.entitymanager.Mention) and mention2.contains_mention(item):
+                            out_ += ' ('+cls.format(item)+')'
+                            item = mention2
+                            break
+                        else:
+                            pass
+                    else:
+                        out_ += cls.format(item)
+
+                    if isinstance(item,voz.entitymanager.Mention) and item not in included_mentions:
+                        included_mentions.append(item)
+
+                    p_start = item.get_tokens()[-1].offset+item.get_tokens()[-1].len
+                elif to_highlight and to_highlight[0].get_tokens()[0].offset > p_start:
+                    out_ += sentence._parent_document.get_text()[p_start:to_highlight[0].get_tokens()[0].offset]
+                    p_start = to_highlight[0].get_tokens()[0].offset
                 else:
                     out_ += sentence._parent_document.get_text()[p_start:sentence.offset+sentence.len]
                     break
@@ -177,7 +190,8 @@ class VozHTMLFormatter(object):
         return '<span class="tooltip%s" title="%s"><u>%s</u></span>' % (color_class,str(mention),mention.get_text())
     @classmethod
     def format_verb(cls,verb,options={}):
-        return '<strong>%s</strong>' % verb.get_text()
+        color_class = ''
+        return '<span class="tooltip%s" title="%s"><u>%s</u></span>' % (color_class,str(verb),verb.get_text())
 
     @classmethod
     def format(cls,element,options={}):
@@ -188,7 +202,8 @@ class VozHTMLFormatter(object):
         return cls.wrap(str(element))
 
 
-
+def html_wrap(tag,contents):
+    return '<%s>%s</%s>' % (tag,contents,tag.split()[0])
 
 
 

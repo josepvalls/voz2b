@@ -223,13 +223,17 @@ class Mention(vozbase.VozContainer,TaxonomyContainer,TaggableContainer):
                                                     ('I' if self.is_independent else ''),
                                                     ('L' if self.is_list else ''))
     def contains_mention(self,mention):
-        if self.is_independent:
+        # TODO fix some mentions marked as independent but contain other mentions!!!
+        if False and self.is_independent:
             return False
         else:
             for token in mention.tokens:
                 if token not in self.tokens:
                     return False
             return True
+    def get_tokens(self):
+        return self.tokens
+
 
 
 class CoreferenceGroup(vozbase.VozContainer):

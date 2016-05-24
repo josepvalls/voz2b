@@ -46,7 +46,7 @@ class CacheManagerGAE(CacheManager):
 
 class CacheManagerLocal(CacheManager):
     def __init__(self):
-        self.con = sqlite3.connect(settings.DATA_LOCAL_CACHE_DB_FILE)
+        self.con = sqlite3.connect(settings.DATA_LOCAL_CACHE_DB_FILE,check_same_thread=False)
         self.cur = self.con.cursor()
         self.cur.execute("CREATE TABLE IF NOT EXISTS cache ( key TEXT, value TEXT, time NUMERIC);")
     def store(self,key,value):

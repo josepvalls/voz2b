@@ -43,6 +43,13 @@ class Verb(vozbase.VozTextContainer):
         #objects = [i for i in objects if i] or ['']
         self._subjects = subjects
         self._objects = objects
+    def get_tokens(self):
+        return [self.token]
+    def get_text(self):
+        return self.token.get_text()
+    def __str__(self):
+        return "Verb %d" % (self.id)
+
 
 class VerbMapper(object):
     MODE_NO_MAP = 'NoMap'
