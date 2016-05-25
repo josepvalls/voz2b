@@ -70,7 +70,7 @@ def do_beam():
     #for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END): # needs to add +1
     #if True:
     #for i in range(15):
-    for i in [1,13]:#[1,3,11,13,5,17,21,25]:
+    for i in [1,3,11,13,5,17,21,25]:
         #global DO_CHECK
         #DO_CHECK = i+1
         #global DO_NFSA_FORCE
@@ -177,6 +177,8 @@ class NarrativeFunctionData(object):
         self.distribution_knn = []
         self.prediction_knn = None
         self.prediction = None
+    def __repr__(self):
+        return '%s-%s' % (', '.join([str(i) for i in self.attributes]),self.label)
 
 class NarrativeFunctionPrediction(object):
     def __init__(self,prediction,parent,value):
@@ -598,6 +600,8 @@ class SequentialFunctionPredictor(object):
                 open('dataset/trained_cardinality_%s_%d.txt' % (combo,test.story),'w').write(cardinality_out)
 
     def distance(self,c1,c2):
+        #return self.distance_euclidean(c1,c2)
+        #return self.distance_cjaccard(c1,c2)
         return self.distance_wcjaccard(c1,c2)
     def distance_euclidean(self,c1,c2):
         return math.sqrt(
@@ -606,9 +610,9 @@ class SequentialFunctionPredictor(object):
                          len(self.attributes)
                          )
     def distance_cjaccard(self,c1,c2):
-        return sum([min(a,b) for a,b in zip(c1.attributes,c2.attributes)])/len(self.attributes)
+        return -1.0*sum([min(a,b) for a,b in zip(c1.attributes,c2.attributes)])/len(self.attributes)
     def distance_wcjaccard(self,c1,c2):
-        return sum([min(a,b)*c for a,b,c in zip(c1.attributes,c2.attributes,self.weights)])/len(self.attributes)
+        return -1.0*sum([min(a,b)*c for a,b,c in zip(c1.attributes,c2.attributes,self.weights)])/len(self.attributes)
 
     def probabilistic_assignment(self,distribution):
         return function_list[sorted(enumerate(distribution), key=itemgetter(1), reverse=True)[0][0]]
@@ -647,7 +651,8 @@ class SequentialFunctionPredictor(object):
                 ranks.append(rank)
         return ranks
     def get_knn(self,training,target,n):
-        return [i[1] for i in sorted([(self.distance(target,c),c) for c in training])[0:(min(n,len(training)))]]
+        instances = sorted([(self.distance(target,c),c) for c in training])[0:(min(n,len(training)))]
+        return [i[1] for i in instances]
     def get_1nn(self,training,target,n):
         best = None
         best_d = 0.0
