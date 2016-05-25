@@ -96,7 +96,7 @@ def do_beam():
             #DO_INCLUDE = j
             print "START USING SETUP %d,s" % DO_CHECK
             fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)
-            fp.predict_beam(best_first_branches_num=-1, beam_search_open_size=100, beam_search_open_size_multiplier=1.0,get_ranks=False)
+            fp.predict_beam(best_first_branches_num=-1, beam_search_open_size=10000, beam_search_open_size_multiplier=1.0,get_ranks=False)
 
 
 
@@ -383,7 +383,7 @@ class SystematicSearchEngine(object):
         results.sort(key=lambda i:(-1*i[0],i[3]))
         if not get_ranks:
             for result in results[0:100]:
-                print "%f\t%f\t%f\t%s" % result
+                print "%f\t%f\t%f\t%s" % result[0:4]
             return results[0]
         else:
             node = results[0][4]
@@ -450,12 +450,16 @@ story_to_moves = dict([(int(j[0]),int(j[1])) for j in [i.split() for i in story_
 class SequentialFunctionPredictor(object):
     def select_attributes(self,attributes,rules):
         new_attributes = []
+        new_weights = []
         indices = []
         for rule in rules:
+            weight = float(rule.strip().split()[0])
             index = int(rule.strip().split()[1])-1 # Weka is not 0-based
             indices.append(index)
             new_attributes.append(self.attributes[index])
+            new_weights.append(weight)
         self.attributes = new_attributes
+        self.weights = new_weights
 
         new_attributes = []
         for vector in attributes:
@@ -528,8 +532,9 @@ class SequentialFunctionPredictor(object):
             for function,prediction in zip(test.data,result[3]):
                 function.prediction = prediction
             results.append(result)
-        ranks = util.flatten([[j[0] for j in i[5]] for i in results])
-        ranks_worst = util.flatten([[j[1] for j in i[5]] for i in results])
+        if get_ranks:
+            ranks = util.flatten([[j[0] for j in i[5]] for i in results])
+            ranks_worst = util.flatten([[j[1] for j in i[5]] for i in results])
         if DO_FORCE_MAX_DEPTH is None:
             total_functions = sum(len(i.data) for i in self.narratives[0:15])
         else:
@@ -593,7 +598,7 @@ class SequentialFunctionPredictor(object):
                 open('dataset/trained_cardinality_%s_%d.txt' % (combo,test.story),'w').write(cardinality_out)
 
     def distance(self,c1,c2):
-        return self.distance_cjaccard(c1,c2)
+        return self.distance_wcjaccard(c1,c2)
     def distance_euclidean(self,c1,c2):
         return math.sqrt(
                          sum([1.0*(a-b)**2 for a,b in zip(c1.attributes,c2.attributes)])
@@ -602,6 +607,8 @@ class SequentialFunctionPredictor(object):
                          )
     def distance_cjaccard(self,c1,c2):
         return sum([min(a,b) for a,b in zip(c1.attributes,c2.attributes)])/len(self.attributes)
+    def distance_wcjaccard(self,c1,c2):
+        return sum([min(a,b)*c for a,b,c in zip(c1.attributes,c2.attributes,self.weights)])/len(self.attributes)
 
     def probabilistic_assignment(self,distribution):
         return function_list[sorted(enumerate(distribution), key=itemgetter(1), reverse=True)[0][0]]
