@@ -39,7 +39,7 @@ class Narrative(vozbase.VozContainer):
             return util.format_list(self.functions(),'\n',options=options)
     def functions(self,filter_non_actual=None):
         if filter_non_actual is None: filter_non_actual = self.filter_non_actual_default
-        return self.function_list if not filter_non_actual else [i for i in self.function_list if i.actual and i.tokens_count]
+        return self.function_list if not filter_non_actual else [i for i in self.function_list if i.actual and (i.tokens_count is None or i.tokens_count>0)]
 
 
 
@@ -85,7 +85,7 @@ class NarrativeFunction(vozbase.VozTextContainer):
         self.role_counts = None
         self.actual = 1.0 if 'ACTUAL' in [i.kind for i in self.locations] else 0.0
         self.position = 0.0
-        self.tokens_count = 0
+        self.tokens_count = None
     def format(self,options={}):
         if(options.get('use_function_group',False)):
             repr = self.function_group

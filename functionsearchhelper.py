@@ -70,7 +70,7 @@ def do_beam():
     #for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END): # needs to add +1
     #if True:
     #for i in range(15):
-    for i in [1,3,11,13,5,17,21,25]:
+    for i in [2,4,8,16]:#[1,3,11,13,5,17,21,25]:
         #global DO_CHECK
         #DO_CHECK = i+1
         #global DO_NFSA_FORCE

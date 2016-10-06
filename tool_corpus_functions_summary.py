@@ -15,8 +15,8 @@ logger = logging.getLogger(__name__)
 
 
 DO_REMOVE_DIALOG = True
-DO_WRITE_FILES = True
-DO_PRINT_TO_SCREEN = False
+DO_WRITE_FILES = False
+DO_PRINT_TO_SCREEN = True
 DO_FILTER_NONACTUAL = True
 
 DO_AUTO_COREF_ROLES = True
@@ -65,10 +65,10 @@ def get_docs_stats(feature_group,feature_distribution):
         narrativehelper.DO_COMPUTE_ROLE_DISTRIBUTION = feature_distribution
         narrativehelper.DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT = DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT
         assert isinstance(doc,voz.Document)
-        #print doc.id,"Narrative: ",doc.narrative.format(options={'one_liner':True,'use_function_group':True})
-        #continue
         doc.narrative.filter_non_actual_default = DO_FILTER_NONACTUAL
         doc.narrative.compute_features()
+        print doc.id,"Narrative: ",doc.narrative.format(options={'one_liner':True,'use_function_group':True})
+        continue
         print sum([i.tokens_count for i in doc.narrative.function_list])
         if DO_WRITE_FILES:
             for _ in doc.narrative.functions():
