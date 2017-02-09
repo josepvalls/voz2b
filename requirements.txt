@@ -1,0 +1,14 @@
+BeautifulSoup==3.2.1
+beautifulsoup4==4.5.1
+decorator==4.0.10
+dnet==1.12
+jsonpickle==0.9.3
+lxml==3.6.4
+networkx==1.11
+nltk==3.2.1
+numpy==1.11.2
+pcapy==0.10.10
+Pillow==3.4.2
+requests==2.11.1
+scapy==2.3.3
+vboxapi==1.0

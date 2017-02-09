@@ -10,6 +10,8 @@ from nltk.tree import Tree,ParentedTree
 import logging
 import settings
 import narrativehelper
+import dependencyhelper
+import parse_tree_mention_helper
 
 logger = logging.getLogger(__name__)
 
@@ -42,6 +44,7 @@ class Document(vozbase.VozContainer):
         self._token_to_sentence_dict = {} #type: dict(int,Sentence)
         self._token_to_mention_dict = {} #type: dict(int,entitymanager.Mention)
         self._token_to_verb_dict = {}  #type: dict(int,verbmanager.Verb)
+        self._coreference_dict = {}
         self._compute_caches(self)
 
     def get_new_id(self,collection='Default'):
@@ -83,12 +86,12 @@ class Document(vozbase.VozContainer):
             self._token_to_mention_dict = {}
             for i in self.get_all_mentions():
                 for j in i.tokens:
-                    if not j.id in self._token_to_mention_dict:
-                        self._token_to_mention_dict[j.id] = i
-                    else:
-                        previous = self._token_to_mention_dict[j.id]
-                        if i.is_independent or len(i.tokens)<=len(previous.tokens):
-                            self._token_to_mention_dict[j.id] = i
+                    self._token_to_mention_dict[j.id] = i
+            for i in self.get_all_tokens():
+                mention = i.get_mention()
+                if mention:
+                    for j in mention.tokens:
+                        self._token_to_mention_dict[j.id] = mention
         return self._token_to_mention_dict.get(token_id,None)
     def get_verb_by_token_id(self,token_id):
         """
@@ -152,14 +155,19 @@ class Document(vozbase.VozContainer):
         :param remove_dependencies: bool
         :return: None
         """
+        occurences = 0
         if remove_dependencies:
             for mention in sentence.mentions:
+                occurences += 1
                 self.remove_mention(mention)
         self.sentences.remove(sentence)
         self.sentences_removed.append(sentence)
 
         # invalidate cache
         self._compute_caches(self)
+
+        return occurences
+
 
     def _prepare_copy(self):
         for sentence in self.sentences:
@@ -223,8 +231,12 @@ class Document(vozbase.VozContainer):
         for item in getattr(self,collection):
             lst += getattr(item,property)
         return lst
-    def get_all_mentions(self):
-        return self.get_all('mentions')
+    def get_all_mentions(self, filter_only_independent = False):
+        mentions = self.get_all('mentions')
+        if not filter_only_independent:
+            return mentions
+        else:
+            return [mention for mention in mentions if mention and mention.annotations and mention.is_independent]
     def get_all_verbs(self):
         return self.get_all('verbs')
     def get_all_tokens(self):
@@ -259,6 +271,19 @@ class Document(vozbase.VozContainer):
         # create an entity for each coref group
         # create singleton entities for mentions not in any coref group
 
+SPEECH_TYPE_CONSEC = 'c'
+class SentenceLevelAnnotations(object):
+    def __init__(self):
+        self.speech = []
+        self.speaker = []
+        self.listener = []
+        self.hint = []
+        self.scene_loc = []
+        self.scene_time = []
+        self.scene = []
+        self.verbs = []
+    def is_normal(self):
+        return len(set(self.speech)) == 1 and self.speech[0] == SPEECH_TYPE_CONSEC
 
 
 class Sentence(vozbase.VozTextContainer):
@@ -272,13 +297,16 @@ class Sentence(vozbase.VozTextContainer):
         super(Sentence, self).__init__(id,offset,len)
         self.tokens = tokens
 
-        self.quoted_speech = [] #type: list[quotedspeechhelper.QuotedSpeechTag]
+        self.annotations = SentenceLevelAnnotations()
+        self.predictions = SentenceLevelAnnotations() # for scene segmentation et al
         self.parse_string = None #type: str
         self.parse_tree = None #type: ParentedTree
         self.parse_highlight = {} #type: dict(str,dict(tuple,int))
         self.mentions = [] #type: list[entitymanager.Mention]
         self.verbs = [] #type: list[verbmanager.Verb]
+        self.dependencies = []  #type: list[dependencyhelper.Dependency]
         self.idx = -1
+
 
         self._tokens_list = tokens #type: list[Token]
         self._tokens_dict = {} #type: dict(int,Token)
@@ -315,6 +343,8 @@ class Sentence(vozbase.VozTextContainer):
     def get_tokens_by_id_range(self,start,end):
         # TODO token id's may not be sorted in sty files, use offset instead?
         return [self.get_token_by_id(i) for i in range(start,end)]
+    def get_tokens_by_idx_range(self,start,end):
+        return self.tokens[start:end]
     def get_mention_by_tokens(self,tokens,exact_match_only=False):
         """
         Retrieves the shortest mention that contains all the tokens and its parent
@@ -435,6 +465,32 @@ class Token(vozbase.VozTextContainer):
         return 'Token %d/%s/%s' % (self.id,self.lemma,self.pos)
     def get_text(self):
         return self.text
+    def get_mention_ids(self, only_independent=False):
+        node = self.get_parse()
+        nodes = parse_tree_mention_helper.get_node_parents(node)[0:-1]
+        key = parse_tree_mention_helper.HIGHLIGHT_MENTIONS_INDEPENDNET if only_independent else parse_tree_mention_helper.HIGHLIGHT_MENTIONS
+        d = self._parent_sentence.parse_highlight.get(key,{})
+        mentions = filter(lambda i: i is not None, [d.get(i.treeposition(), None) for i in nodes])
+        return mentions
+    def get_mention(self):
+        '''
+        Note, this uses the parse information, to use the cached information loaded from the sty file use sentence._parent_document.get_mention_by_token_id(tokens_ref[0].id)
+        :return:
+        '''
+        mention_ids = self.get_mention_ids(True)
+        if mention_ids:
+            return util.get_from_list(self._parent_sentence.mentions,mention_ids[0])
+        else:
+            return None
+    def get_parse(self):
+        if not self._parent_sentence.parse_tree:
+            logger.error("PARSE NOT AVAILABLE FOR THIS SENTENCE")
+            return None
+        if not self.idx >= 0:
+            logger.error("TOKEN IDX NOT VALID")
+            return None
+        parse = self._parent_sentence.parse_tree
+        return parse[parse.leaf_treeposition(self.idx)[0:-1]]
 
 
 def create_document_from_jsonpickle_file(json_file):

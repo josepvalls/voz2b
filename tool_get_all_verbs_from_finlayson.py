@@ -39,7 +39,7 @@ def get_verbs():
             doc = styhelper.create_document_from_sty_file(file_path+sty_file)
             assert isinstance(doc,voz.Document)
             if DO_REMOVE_DIALOG:
-                quotedspeechhelper.annotate_quoted_speech(doc,file_path+quoted_speech_file)
+                quotedspeechhelper.annotate_sentences(doc, file_path + quoted_speech_file)
                 quotedspeechhelper.clean_quoted_speech_from_document(doc)
             doc.serialize_to_file('/Users/josepvalls/temp/voz2/'+sty_file+'.json',use_deep_copy=True)
         #print len(doc.get_all_tokens())

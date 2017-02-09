@@ -23,6 +23,11 @@ DO_AUTO_COREF_ROLES = True
 DO_AUTO_VERBS = True
 DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT = False
 
+TEMP_CACHE_PATH = '/Users/josepvalls/temp/voz2/'
+
+if not os.path.isdir(TEMP_CACHE_PATH):
+    os.makedirs(TEMP_CACHE_PATH)
+
 def main():
     get_docs_stats(5,True)
     return
@@ -35,11 +40,12 @@ def get_docs_stats(feature_group,feature_distribution):
     tsv = None
     arff = None
     idxlst = ''
-    logging.root.setLevel(logging.ERROR)
+    #logging.root.setLevel(logging.ERROR)
     file_path = settings.STY_FILE_PATH
     documents = []
     #for sty_file in []:
-    for sty_file in settings.STY_FILES:
+    for sty_file in settings.STY_FILES[14:]:
+    #for sty_file in settings.STY_FILES:
     #for sty_file in ['03 - Bukhtan Bukhtanovich.sty']:
         try:
             0/0
@@ -47,12 +53,13 @@ def get_docs_stats(feature_group,feature_distribution):
             logger.info("Loading JSON %s" % sty_file)
         except:
             logger.info("Processing %s" % sty_file)
-            quoted_speech_file = sty_file.split()[0]+"/sentences.csv"
+            quoted_speech_file = sty_file.split()[0] + "/sentences.csv"
+            quoted_speech_file = "all_sentences.tsv"
             doc = styhelper.create_document_from_sty_file(file_path+sty_file)
             if DO_REMOVE_DIALOG:
-                quotedspeechhelper.annotate_quoted_speech(doc,file_path+quoted_speech_file)
+                quotedspeechhelper.annotate_sentences(doc, file_path + quoted_speech_file, format='tsv', single_sentences_file_story_id=doc.id)
                 quotedspeechhelper.clean_quoted_speech_from_document(doc)
-            doc.serialize_to_file('/Users/josepvalls/temp/voz2/'+sty_file+'.json',use_deep_copy=True)
+            doc.serialize_to_file(TEMP_CACHE_PATH+sty_file+'.json',use_deep_copy=True)
         # print util.string_as_print(doc.id,doc.properties.get('afanasev_new',doc.id),doc.properties.get('afanasev_old',doc.id), doc.narrative.format_summary())
         documents.append(doc)
     if False and not DO_USE_OLD_AUTO_DATA_INSTEAD_OF_STY_GT:

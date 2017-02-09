@@ -73,6 +73,7 @@ class VozHTMLFormatter(object):
     formatter_templates = [
         (ParentedTree,'format_tree'),
         (list,'format_list'),
+        (set, 'format_list'),
         (voz.Token,'format_token'),
         (voz.Sentence,'format_sentence'),
         (voz.Document,'format_document'),
@@ -91,7 +92,10 @@ class VozHTMLFormatter(object):
         return cls.wrap(cls.wrap(cls.format_str('<None>'),'pre'),'div')
     @classmethod
     def wrap(cls,i,tag='div',options={}):
-        return '<%s>%s</%s>' % (tag,str(i),tag) if tag else str(i)
+        extra = ''
+        if options.get('class',None): extra += ' class=' + options['class']
+        if options.get('id', None): extra += ' id=' + options['id']
+        return '<%s%s>%s</%s>' % (tag, extra,str(i),tag) if tag else str(i)
     @classmethod
     def html(cls,payload,list_wrapper='p',container_wrapper='div'):
         if isinstance(payload,list):
@@ -137,10 +141,10 @@ class VozHTMLFormatter(object):
         if options.get('include_mentions',False)==True:
              for mention in sentence.mentions:
                 if mention.is_independent:
-                    out += cls.format(mention)
+                    out += cls.format_mention_extra(mention)
         if options.get('include_verbs',False)==True:
              for verb in sentence.verbs:
-                out += cls.format(verb)
+                out += cls.format_verb_extra(verb, options)
 
         if options.get('include_text',False)==True:
             to_highlight = []
@@ -184,10 +188,19 @@ class VozHTMLFormatter(object):
 
         return out
     @classmethod
+    def format_mention_extra(cls, mention, options = {}):
+        return cls.format_mention(mention,options)
+    @classmethod
     def format_mention(cls,mention,options={}):
-        color_class = ""
-        color_class = " e%d" % mention.get_coref_group_id()
+        color_class = ' e%d' % mention.get_coref_group_id()
         return '<span class="tooltip%s" title="%s"><u>%s</u></span>' % (color_class,str(mention),mention.get_text())
+    @classmethod
+    def format_verb_extra(cls, verb, options={}):
+        return '<div><div style="float: left;">%s: </div> <div style="float: left"><div>%s</div> <div>%s</div></div></div><div style="clear: both"/>' % (
+            cls.format_verb(verb,options),
+            cls.format_list([verb.get_subjects() or 'N/A'],'; '),
+            cls.format_list([verb.get_objects() or 'N/A'], '; ')
+        )
     @classmethod
     def format_verb(cls,verb,options={}):
         color_class = ''

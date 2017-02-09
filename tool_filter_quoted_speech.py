@@ -36,10 +36,10 @@ def generate_filtered_text_files():
         logger.info("Processing %s" % sty_file)
         quoted_speech_file = sty_file.split()[0]+"/sentences.csv"
         doc = styhelper.create_document_from_sty_file(file_path+sty_file)
-        quotedspeechhelper.annotate_quoted_speech(doc,file_path+quoted_speech_file)
+        quotedspeechhelper.annotate_sentences(doc, file_path + quoted_speech_file)
         sentences = []
         for sentence in doc.sentences:
-            if not sentence.quoted_speech:
+            if sentence.is_normal():
                 sentences.append(sentence.get_text()+'\n')
         file_name = settings.STORY_TXT_PATH+str(doc.id)+'.txt'
         logger.info("Writing %d sentences to %s" % (len(sentences),file_name))
@@ -62,10 +62,10 @@ def generate_filtered_entity_file():
         logger.info("Processing %s" % sty_file)
         quoted_speech_file = sty_file.split()[0]+"/sentences.csv"
         doc = styhelper.create_document_from_sty_file(file_path+sty_file)
-        quotedspeechhelper.annotate_quoted_speech(doc,file_path+quoted_speech_file)
+        quotedspeechhelper.annotate_sentences(doc, file_path + quoted_speech_file)
         for sentence in doc.sentences:
             assert(isinstance (sentence,voz.Sentence))
-            if not sentence.quoted_speech:
+            if sentence.annotations.is_normal():
                 for mention in sentence.mentions:
                     mentions.append(mention.get_text().lower()+'\n')
     file_name = '/Users/josepvalls/voz2/stories/finlayson-entities.txt'

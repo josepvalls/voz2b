@@ -156,7 +156,7 @@ def make_coreferences():
         quoted_speech_file = sty_file.split()[0]+"/sentences.csv"
         doc = styhelper.create_document_from_sty_file(file_path+sty_file)
         assert isinstance(doc,voz.Document)
-        quotedspeechhelper.annotate_quoted_speech(doc,file_path+quoted_speech_file)
+        quotedspeechhelper.annotate_sentences(doc, file_path + quoted_speech_file)
         quotedspeechhelper.clean_quoted_speech_from_document(doc)
         doc.coreference_aux[voz.entitymanager.TaggableContainer.TAG_CHARACTER_SYMBOL] = doc.coreference
         mentions = doc.get_all_mentions()

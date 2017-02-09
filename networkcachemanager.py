@@ -6,6 +6,7 @@ import json
 import logging
 import util
 import settings
+import collections
 
 if os.environ.get('SERVER_NAME',None):
     GOOGLEDB = True
@@ -45,9 +46,13 @@ class CacheManagerGAE(CacheManager):
         return cd.value.decode('utf-8') if cd else None
 
 class CacheManagerLocal(CacheManager):
+    con = None
+    cur = None
     def __init__(self):
-        self.con = sqlite3.connect(settings.DATA_LOCAL_CACHE_DB_FILE,check_same_thread=False)
-        self.cur = self.con.cursor()
+        if not CacheManagerLocal.cur:
+            CacheManagerLocal.con = sqlite3.connect(settings.DATA_LOCAL_CACHE_DB_FILE,check_same_thread=False)
+            CacheManagerLocal.cur = CacheManagerLocal.con.cursor()
+        self.cur = CacheManagerLocal.cur
         self.cur.execute("CREATE TABLE IF NOT EXISTS cache ( key TEXT, value TEXT, time NUMERIC);")
     def store(self,key,value):
         try:
@@ -59,6 +64,23 @@ class CacheManagerLocal(CacheManager):
         self.cur.execute("SELECT value FROM cache WHERE key = '%s';" % (key))
         rs = self.cur.fetchone()
         return rs[0] if rs and rs[0] else None
+    @classmethod
+    def cache_stats(cls):
+        count = cls.cur.execute("SELECT COUNT(*) FROM cache").fetchone()[0]
+        stats = collections.defaultdict(lambda: 0)
+        stats['rows'] = count
+        stats['file'] = settings.DATA_LOCAL_CACHE_DB_FILE
+        stats['size'] = os.path.getsize(settings.DATA_LOCAL_CACHE_DB_FILE)
+        if count < 10000:
+            cls.cur.execute("SELECT key FROM cache")
+            for i in cls.cur.fetchall():
+                key = i[0].split('_',1)[0]
+                stats[key] +=1
+        return dict(stats)
+
+
+
+DUMP_DATA = False
 
 if GOOGLEDB:
     cm = CacheManagerGAE()
@@ -89,14 +111,14 @@ class CachedAcquirer(Acquirer):
             logger.warn('CachedAcquirer fetching %s using: %s' % (key,self.__class__.__name__))
             try:
                 data = self.fetch(q)
-            except:
-                pass
-                logger.error('CachedAcquirer error %s in: %s' % (key,self.__class__.__name__))
+            except IOError as e:
+                logger.error('CachedAcquirer error %s in: %s, %s' % (e, key,self.__class__.__name__))
             if not data == None:
-                try:
-                    open('temp_xmldoc.xml','w').write(data)
-                except:
-                    pass
+                if DUMP_DATA:
+                    try:
+                        open('temp_xmldoc.xml','w').write(data)
+                    except:
+                        pass
                 data = data.decode('utf-8', errors='ignore')
                 #data = data.decode('latin-1', errors='ignore')
                 self.cache_manager.store(key,data)
@@ -203,7 +225,7 @@ class CAConceptnetOnline(CachedAcquirer):
     def query_concept(self,lemma,edge=None,limit=None):
         try:
             # http://conceptnet5.media.mit.edu/data/5.4/c/en/toast?offset=5&limit=5
-            url = self.get_url+'/c/en/' + urllib.quote(lemma.replace(' ','_'))
+            url = self.get_url()+'/c/en/' + urllib.quote(lemma.replace(' ','_'))
             query = {'filter':'core','limit':1}
             data = json.loads(self.query(url+'?'+urllib.urlencode(query)))
             try:
@@ -211,7 +233,7 @@ class CAConceptnetOnline(CachedAcquirer):
             except:
                 desc=None
             # http://conceptnet5.media.mit.edu/data/5.4/search?rel=/r/PartOf&end=/c/en/car&limit=10
-            url = self.get_url+'/search'
+            url = self.get_url()+'/search'
             #query = {'filter':'core','start':'/c/en/'+lemma}
             #data_search = self.query(url+'?'+urllib.urlencode(query))
             #urlencode is encoding / as %2F
@@ -222,13 +244,13 @@ class CAConceptnetOnline(CachedAcquirer):
                 query_string += '&limit=%d' % limit
             data_search = self.query(query_string)
             return (desc,json.loads(data_search))
-        except:
-            logger.warning('CAConceptnet.query_concept not found %s' % lemma)
+        except Exception as e:
+            logger.warning('CAConceptnet.query_concept error or not found %s' % lemma)
             return (None,{'numFound':None})
     def query_assoc(self,a,b):
         #http://conceptnet5.media.mit.edu/data/5.1/assoc/c/en/live/v?filter=/c/en/be/v&limit=10
         #http://conceptnet5.media.mit.edu/data/5.4/assoc/c/en/cat?filter=/c/en/dog/.&limit=1
-        url = self.get_url+'/assoc%s?filter=%s/.&limit=1' % (urllib.quote(a),urllib.quote(b))
+        url = self.get_url()+'/assoc%s?filter=%s/.&limit=1' % (urllib.quote(a),urllib.quote(b))
         try:
             data = self.query(url)
             return json.loads(data)
@@ -288,7 +310,7 @@ services_impl = {'stanford_nlp':[CAStanfordCoreNLPOnline,CAStanfordCoreNLPDrexel
                  'stanford_parser':[CAStanfordParserOnline,CAStanfordParserGoogle,CAStanfordParserDrexel,CAStanfordParserLocal],
                  'conceptnet':[CAConceptnetOnline]}
 
-def main():
+def main_connectivity():
     # Testing connectivity
     import sys
     service_status_codes={-1:"Not implemented",0:"Offline",1:"Success"}
@@ -299,6 +321,17 @@ def main():
             alt_impl = alternative()
             print "Service %s alternative %s is %s" % (service,str(alt_impl),service_status_codes[alt_impl.test()])
 
+def main_cache():
+    # Cache status
+    if not GOOGLEDB:
+        print CacheManagerLocal.cache_stats()
+        print CacheManagerLocal.cur.execute("select value from cache where key like 'nlp_%'").fetchone()
+        #print CacheManagerLocal.cur.execute("CREATE UNIQUE INDEX IF NOT EXISTS cache_key ON cache (key);").fetchone()
+        #print CacheManagerLocal.con.commit()
+        print CacheManagerLocal.cur.execute("select value from cache where key like 'nlp_%'").fetchone()
+
+
+
 
 if __name__ == '__main__':
-    main()
+    main_cache()

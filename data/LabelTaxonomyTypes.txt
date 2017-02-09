@@ -17,3 +17,5 @@ NC props
 NC settings
     SSpatial - spatial settings are places where the action happens, places the characters visit, etc. (e.g. the hill where the fox goes)
     STemporal
+NC
+    Not Applicable (or other)

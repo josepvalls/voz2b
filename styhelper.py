@@ -3,7 +3,6 @@ import voz
 import logging
 import os
 import util
-from bs4 import BeautifulSoup
 import formatter
 from nltk.tree import Tree,ParentedTree
 import csv
@@ -19,6 +18,8 @@ class StyFile(object):
         """
         :param path: str
         """
+        from bs4 import BeautifulSoup
+
         logger.info('Processing '+path)
         self.d = BeautifulSoup(open(path).read(), 'xml')
         self.path = path
@@ -34,7 +35,7 @@ class StyFile(object):
         sentences = []
         properties = dict({'source':'create_document_from_sty_file'}, **properties)
         self.document = voz.Document(str_input,sentences,properties) #type: voz.Document
-        self.document.id = int(self.story_id) if util.is_numeric_int(self.story_id) else -1
+        self.document.id = int(self.story_id) if util.is_numeric_int(self.story_id) else properties.get('story_id',-1)
 
         try:
             afanasev = re.findall(r'corresponds[^\d]*(\d*)[^\d]*(\d*)',str_input,re.IGNORECASE)
@@ -50,9 +51,11 @@ class StyFile(object):
         self._init_mentions()
         self._init_coref()
         self._init_verbs()
+        for sentence in self.document.sentences:
+            for verb in sentence.verbs:
+                verb._compute_caches(sentence)
         self._init_gt()
         self._clean_mentions_and_coref()
-        self._init_gt_data_old()
         self._init_functions()
         return self.document
     def _clean_mentions_set_hierarchy(self,mentions):
@@ -116,7 +119,9 @@ class StyFile(object):
                 try:
                     mentions.remove(mention)
                 except ValueError:
-                    pass
+                    logger.warning("When removing coreference, mention not found")
+                except KeyError:
+                    logger.warning("When removing coreference, mention not found")
         logger.info("Singleton mentions %d"%len(mentions))
         for mention in mentions:
             if 'CH' in mention.get_taxonomy(voz.entitymanager.TaxonomyContainer.TAXONOMY_NONCHARACTER):
@@ -146,13 +151,20 @@ class StyFile(object):
         tokens = []
         pos_tag_dict = [(i.text.strip().split(),int(i.attrs.get('id'))) for i in self.d.select('rep#edu.mit.parsing.pos')[0].select('desc')]
         pos_tag_dict = dict([(int(i[0][0]),(i[0][1],i[1])) for i in pos_tag_dict])
-        stem_tag_dict = [i.text.strip().split() for i in self.d.select('rep#edu.mit.parsing.stem')[0].select('desc')]
-        stem_tag_dict = dict([(int(i[0]),i[1]) for i in stem_tag_dict])
+        if self.d.select('rep#edu.mit.parsing.stem'):
+            stem_tag_dict = [i.text.strip().split() for i in self.d.select('rep#edu.mit.parsing.stem')[0].select('desc')]
+            stem_tag_dict = dict([(int(i[0]),i[1]) for i in stem_tag_dict])
+        else:
+            stem_tag_dict = {}
 
         for i in self.d.select('rep#edu.mit.parsing.token')[0].select('desc'):
             token_id = int(i.attrs.get('id'))
             token_text = i.text.strip()
-            pos,pos_id = pos_tag_dict[token_id]
+            if token_id not in pos_tag_dict:
+                logger.error("TOKEN NOT FOUND IN TAGS")
+                pos, pos_id = None, None
+            else:
+                pos,pos_id = pos_tag_dict[token_id]
             lemma = stem_tag_dict.get(pos_id,token_text.lower())
             tokens.append(voz.Token(token_id,int(i.attrs.get('off')),int(i.attrs.get('len')),pos,lemma,token_text))
         self.document._tokens_list = tokens
@@ -184,7 +196,27 @@ class StyFile(object):
                 sentence.mentions.append(mention)
             else:
                 logger.warning("No parse node found for mention "+str(mention))
+        self._init_mentions_delete_trash(mentions)
         self._mentions = util.object_list_to_dict(mentions)
+
+    def _init_mentions_delete_trash(self,mentions):
+        def remove_overlap(a,b):
+            a_ = set([i.id for i in a.tokens])
+            b_ = set([i.id for i in b.tokens])
+            intersect = a_ & b_
+            if not intersect: return
+            if len(a_)>len(b_):
+                remove_from = a
+            else:
+                remove_from = b
+            remove_from.tokens = [i for i in remove_from.tokens if i.id not in intersect]
+        for i in mentions:
+            for j in mentions:
+                if i.id==j.id: continue
+                remove_overlap(i,j)
+
+
+
 
     def _init_coref(self):
         for i in self.d.select('rep#edu.mit.discourse.rep.coref')[0].select('desc'):
@@ -206,9 +238,74 @@ class StyFile(object):
     def _init_gt(self):
         self._init_gt_wordnet_senses()
         self._init_gt_roles()
+        #self._init_gt_roles_old()
         #self._init_gt_data_old()
     def _init_gt_roles(self):
         # load ground truth
+        if not os.path.isfile(settings.STY_FILE_PATH+settings.STY_GT_ROLES):
+            logger.warning("NO GROUND TRUTH FOR ROLES")
+            return
+        ENTITY_STORY = 0
+        ENTITY_FID = 1
+        ENTITY_TYPE = 4
+        ENTITY_ROLE6 = 5
+        ENTITY_ROLEX = 6
+        ENTITY_SYMBOL = 3
+
+        entity_to_role = dict([((int(j[ENTITY_STORY]),int(j[ENTITY_FID])),j) for j in [i[0:-1].split('\t') for i in open(settings.STY_FILE_PATH+settings.STY_GT_ROLES).readlines()]])
+        entity_to_role_symbol_aux = dict([((int(j[ENTITY_STORY]), j[ENTITY_SYMBOL]), j) for j in [i[0:-1].split('\t') for i in open(settings.STY_FILE_PATH + settings.STY_GT_ROLES).readlines()] if
+                                          j[ENTITY_SYMBOL] and j[ENTITY_TYPE] and ',' not in j[ENTITY_TYPE] and voz.entitymanager.taxonomy_dict_aux_type_to_parent[(voz.entitymanager.TaxonomyContainer.TAXONOMY_NONCHARACTER,j[ENTITY_TYPE])]=='CH'
+                                          ])
+
+        for entity in self.document.coreference.entities:
+            key = (self.document.id,entity.id)
+            if key not in entity_to_role:
+                logger.error("Key not found in entity file for " + str(key)+"\t"+str(entity))
+                continue
+
+            entity.symbol = entity_to_role.get(key,None)[ENTITY_SYMBOL]
+            if ',' in entity.symbol:
+                to_add_types = []
+                to_add_roles = []
+                for i in entity.symbol.split(','):
+                    key_aux = (self.document.id, i.strip())
+                    if key_aux not in entity_to_role_symbol_aux:
+                        logger.error("Aux key not found in entity file for "+str(key_aux)+" in "+str(key))
+                        continue
+                    to_add_types += entity_to_role_symbol_aux[key_aux][ENTITY_TYPE].split(',')
+                    to_add_roles += entity_to_role_symbol_aux[key_aux][ENTITY_ROLE6].split(',')
+            else:
+                to_add_types = entity_to_role[key][ENTITY_TYPE].split(',')
+                to_add_roles = entity_to_role[key][ENTITY_ROLE6].split(',')
+            to_add_types = [i.strip() for i in to_add_types if i.strip()]
+            to_add_roles = [i.strip() for i in to_add_roles if i.strip()]
+            entity.add_taxonomy(voz.entitymanager.TaxonomyContainer.TAXONOMY_ENTITY_TYPES, to_add_types)
+            entity.add_taxonomy(voz.entitymanager.TaxonomyContainer.TAXONOMY_CHARACTER_6ROLES, to_add_roles)
+            #to_add_roles3 = [i if i in ['Hero','Villain'] else 'Other' for i in to_add_roles]
+            #entity.add_taxonomy(voz.entitymanager.TaxonomyContainer.TAXONOMY_CHARACTER_3ROLES, to_add_roles3)
+
+            #if not to_add_types:
+            #    entity.add_taxonomy(voz.entitymanager.TaxonomyContainer.TAXONOMY_NONCHARACTER,'NC')
+            #    to_add_types = ['NC']
+            #else:
+            #    to_add_types = [voz.entitymanager.taxonomy_dict_aux_type_to_parent[(voz.entitymanager.TaxonomyContainer.TAXONOMY_NONCHARACTER,i)] for i in to_add_types]
+            #    entity.set_taxonomy(voz.entitymanager.TaxonomyContainer.TAXONOMY_NONCHARACTER,to_add_types)
+
+            for mention in self.document.coreference.get_coreference_group_by_id(entity.id).mentions:
+                assert isinstance(mention,voz.entitymanager.Mention)
+                mention.add_tag(voz.entitymanager.TaggableContainer.TAG_CHARACTER_SYMBOL,entity.symbol)
+                #mention.set_taxonomy(voz.entitymanager.TaxonomyContainer.TAXONOMY_NONCHARACTER,to_add_types)
+                mention.set_taxonomy(voz.entitymanager.TaxonomyContainer.TAXONOMY_ENTITY_TYPES, to_add_types)
+                mention.set_taxonomy(voz.entitymanager.TaxonomyContainer.TAXONOMY_CHARACTER_6ROLES,entity.get_taxonomy(voz.entitymanager.TaxonomyContainer.TAXONOMY_CHARACTER_6ROLES))
+                if ',' in entity.symbol or len(to_add_roles)>1 or len(to_add_types)>1:
+                    mention.is_independent = False
+                #mention.set_taxonomy(voz.entitymanager.TaxonomyContainer.TAXONOMY_CHARACTER_3ROLES,entity.get_taxonomy(voz.entitymanager.TaxonomyContainer.TAXONOMY_CHARACTER_3ROLES))
+
+    def _init_gt_roles_old(self):
+        # load ground truth
+        if not os.path.isfile(settings.STY_FILE_PATH+settings.STY_ENTITY_TO_KEY):
+            logger.warning("NO GROUND TRUTH FOR ROLES")
+            return
         entity_id_to_key = dict([((int(j[0]),int(j[1])),j[3]) for j in [i.split('\t') for i in open(settings.STY_FILE_PATH+settings.STY_ENTITY_TO_KEY).readlines()]])
         key_to_role = csv.reader(open(settings.STY_FILE_PATH+settings.STY_KEY_TO_ROLE,'rU'))
         ENTITY_TYPE = 3
@@ -250,42 +347,6 @@ class StyFile(object):
                     mention.add_tag(voz.entitymanager.TaggableContainer.TAG_CHARACTER_SYMBOL,entity.symbol)
                     mention.set_taxonomy(voz.entitymanager.TaxonomyContainer.TAXONOMY_NONCHARACTER,types)
                     mention.set_taxonomy(voz.entitymanager.TaxonomyContainer.TAXONOMY_CHARACTER_6ROLES,entity.get_taxonomy(voz.entitymanager.TaxonomyContainer.TAXONOMY_CHARACTER_6ROLES))
-    def _init_gt_data_old(self):
-        data = [i.split('\t') for i in open("/Users/josepvalls/voz-nlp/finlayson_gt_entities.csv").readlines()]
-        if True: # load restrictions
-            restrictions = pickle.load(open('/Users/josepvalls/voz-nlp/make_restriction_table.pickle', 'rb'))
-            for a,b in zip(data,restrictions):
-                a+=[b.strip()]
-        data = [[int(i[0])]+i[1:] for i in data if i[0].isdigit()]
-        data_labels = [i.split('\t') for i in open("/Users/josepvalls/voz-nlp/character-labels-ijcai2.csv").readlines()]
-        data_labels = dict([((int(i[0]),int(i[1])),i) for i in data_labels[1:] if i[0].isdigit()])
-        DATA_TEXT = 3
-        DATA_TYPE = 11
-        DATA_SYMBOL = 12
-
-        for mention in self.document.get_all_mentions():
-            if mention.is_independent:
-                rows = [i for i in data if i[0]==self.document.id and i[DATA_TEXT]==mention.get_text().strip()]
-                logger.info("found %d rows" % len(rows))
-                if rows:
-                    row = rows[0]
-                    data.remove(row)
-                    key = (int(row[0]),int(row[1]))
-                    labels = data_labels[key]
-                    mention.add_tag('OLD_SYMBOL',row[DATA_SYMBOL])
-                    mention.add_tag('OLD_TYPE',row[DATA_TYPE])
-                    mention.add_tag('OLD_IDX',labels[1])
-                    mention.add_tag('OLD_STANFORD_COREF',labels[2])
-                    mention.add_tag('OLD_NAME_COREF',labels[3])
-                    mention.add_tag('OLD_ROLE_GT',labels[13])
-                    mention.add_tag('OLD_ROLE_PRED1',labels[16])
-                    mention.add_tag('OLD_ROLE_PRED2',labels[17])
-                    mention.add_tag('OLD_ROLE_PRED3',labels[18])
-                    mention.add_tag('OLD_RESTRICTION',row[-1])
-                    #mention.add_tag(voz.entitymanager.TaggableContainer.TAG_CHARACTER_SYMBOL_OLD,':'.join(labels))
-                    #mention.add_taxonomy(voz.entitymanager.TaxonomyContainer.TAXONOMY_ENTITY_TYPES_OLD,row[DATA_TYPE])
-                else:
-                    logger.warning("Mention not found %s" % mention)
     def _init_gt_wordnet_senses(self):
         # <desc id="2597" len="8" off="683">WID-01842204-V-01-go_out,,1143,1433,2346</desc>
         # <desc id="2602" len="8" off="747">WID-02074677-V-01-escape,USER:,90,1447,2349</desc>
@@ -293,29 +354,31 @@ class StyFile(object):
         # token_id|colloc_id, pos_id, stem_id (inc phrasal verb)
 
         collocations = {} #type: dict(int,list[int])
-        for i in self.d.select('rep#edu.mit.parsing.colloc')[0].select('desc'):
-            id = int(i.attrs.get('id'))
-            collocations[id] = [int(j) for j in i.text.split(',')]
+        if self.d.select('rep#edu.mit.parsing.colloc'):
+            for i in self.d.select('rep#edu.mit.parsing.colloc')[0].select('desc'):
+                id = int(i.attrs.get('id'))
+                collocations[id] = [int(j) for j in i.text.split(',')]
 
-        for i in self.d.select('rep#edu.mit.wordnet.sense')[0].select('desc'):
-            data,user,token_id,_ = i.text.split(',',3)
-            if data=='NO_SENSE' or not data.startswith('WID'): continue
-            data_source,data_offset,data_pos,_ = data.split('-',3)
+        if self.d.select('rep#edu.mit.wordnet.sense'):
+            for i in self.d.select('rep#edu.mit.wordnet.sense')[0].select('desc'):
+                data,user,token_id,_ = i.text.split(',',3)
+                if data=='NO_SENSE' or not data.startswith('WID'): continue
+                data_source,data_offset,data_pos,_ = data.split('-',3)
 
-            token_id = int(token_id)
-            if token_id in collocations:
-                token_ids = collocations[token_id]
-            else:
-                token_ids = [token_id]
+                token_id = int(token_id)
+                if token_id in collocations:
+                    token_ids = collocations[token_id]
+                else:
+                    token_ids = [token_id]
 
-            if data_pos=='N':
-                for token_id in token_ids:
-                    try:
-                        mention = self.document.get_mention_by_token_id(token_id)
-                        assert isinstance(mention,voz.entitymanager.Mention)
-                        mention.add_tag(voz.entitymanager.TaggableContainer.TAG_WORDNET_SENSE,data)
-                    except Exception as e:
-                        logger.warn("Couldn't assign Wordnet tag to mention at token: %s with data %s" % (self.document._tokens_dict[token_id],data))
+                if data_pos=='N':
+                    for token_id in token_ids:
+                        try:
+                            mention = self.document.get_mention_by_token_id(token_id)
+                            assert isinstance(mention,voz.entitymanager.Mention)
+                            mention.add_tag(voz.entitymanager.TaggableContainer.TAG_WORDNET_SENSE,data)
+                        except Exception as e:
+                            logger.warn("Couldn't assign Wordnet tag to mention at token: %s with data %s" % (self.document._tokens_dict[token_id],data))
 
             #elif data_pos=='V': R A
     def _init_functions(self):
@@ -324,9 +387,12 @@ class StyFile(object):
             offset = int(i.attrs.get('off'))
             length = int(i.attrs.get('len'))
             function,locations_str = i.text.split('|',1)
+            if function.startswith("NORMAL"):
+                function = function.split(':')[2]
             locations = []
             for kind_group in locations_str.split('|'):
-                kind,groups = kind_group.split(':')
+                kind_group = kind_group + ':'
+                kind,groups,_ = kind_group.split(':',2)
                 for group in groups.split(','):
                     locations.append(narrativehelper.NarrativeFunctionLocation(kind,[int(k) for k in group.split('~')]))
 
@@ -366,7 +432,6 @@ class StyFile(object):
             verb_args = dict([parse_args(i, parse) for i in data[4:]])
             verb = verbmanager.Verb(int(e.attrs.get('id')),off,len,verb_token,verb_frame,verb_args)
             sentence.verbs.append(verb)
-        self.document._compute_caches(self.document)
 
     def get_original_text(self):
         """

@@ -49,7 +49,9 @@ class TaxonomyContainer(object):
         self.taxonomy_labels = {}
     def set_taxonomy(self, taxonomy_class, taxonomy_labels):
         for taxonomy_label in taxonomy_labels:
-            assert taxonomy_label in taxonomy_dict[taxonomy_class].labels
+            if taxonomy_label not in taxonomy_dict[taxonomy_class].labels:
+                logger.error("set_taxonomy: Taxonomy class %s not in taxonomy labels %s" % (
+                taxonomy_label, str(taxonomy_dict[taxonomy_class].labels)))
         if not taxonomy_class in self.taxonomy_labels:
             self.taxonomy_labels[taxonomy_class] = []
         self.taxonomy_labels[taxonomy_class] = taxonomy_labels
@@ -59,7 +61,12 @@ class TaxonomyContainer(object):
         else:
             return self.taxonomy_labels[taxonomy_class]
     def add_taxonomy(self,taxonomy_class,taxonomy_label):
-        assert taxonomy_label in taxonomy_dict[taxonomy_class].labels, taxonomy_label
+        if isinstance(taxonomy_label,list):
+            for i in taxonomy_label:
+                self.add_taxonomy(taxonomy_class,i)
+            return
+        if taxonomy_label not in taxonomy_dict[taxonomy_class].labels:
+            logger.error("add_taxonomy: Taxonomy class %s not in taxonomy labels %s" % (taxonomy_label, str(taxonomy_dict[taxonomy_class].labels)))
         if not taxonomy_class in self.taxonomy_labels:
             self.taxonomy_labels[taxonomy_class] = []
         self.taxonomy_labels[taxonomy_class].append(taxonomy_label)
@@ -159,11 +166,21 @@ class Entity(vozbase.VozContainer,TaxonomyContainer,TaggableContainer):
         return cls.filter_by_taxonomy(entities,TaxonomyContainer.TAXONOMY_NONCHARACTER,'CH')
 
 
+class MentionLevelAnnotations(object):
+    def __init__(self):
+        self.type = None
+        self.coref = None
+        self.role = None
+        self.character = None
+    def is_character(self):
+        return self.character if self.character is not None else \
+            taxonomy_dict_aux_type_to_parent.get((TaxonomyContainer.TAXONOMY_NONCHARACTER,self.type),'NC')=='CH'
+
 class Mention(vozbase.VozContainer,TaxonomyContainer,TaggableContainer):
     """
     Models a single mention (a referring expression).
     """
-    def __init__(self,id,tokens,tag_labels={}):
+    def __init__(self,id,tokens,tag_labels={},is_independent=False):
         """
         :param id: int
         :param tokens: voz.Token
@@ -177,9 +194,12 @@ class Mention(vozbase.VozContainer,TaxonomyContainer,TaggableContainer):
         self.tokens = tokens #type: voz.Token
         self.is_list = False
         self.is_compound = False
-        self.is_independent = False
+        self.is_independent = is_independent
         self.parent_mention = None
         self.child_mentions = []
+        self.annotations = MentionLevelAnnotations() # type: MentionLevelAnnotations
+        self.predictions = MentionLevelAnnotations() # type: MentionLevelAnnotations
+
 
         self._coref_group = None
 

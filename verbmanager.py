@@ -2,45 +2,60 @@ import vozbase
 import collections
 import util
 
+class Dependency(object):
+    def __init__(self, label, governor, dependent):
+        self.label, self.governor, self.dependent = label, governor, dependent
+
+
 class Verb(vozbase.VozTextContainer):
     def __init__(self,id,offset,len,token,frame,arguments):
         super(Verb, self).__init__(id,offset,len)
         self.token = token
-        self.frame = frame
+        self.frame = frame #unused
         self.arguments = arguments
         self._subjects = None
         self._objects = None
         self._sentence = None
+    def is_negated(self):
+        return ('AM-NEG' in self.arguments.keys())
     def get_subjects(self):
-        return self._subjects
+        return [i for i in self._subjects if i and i.is_independent]
     def get_objects(self):
-        return self._objects
+        return [i for i in self._objects if i and i.is_independent]
     def _clear_caches(self,sentence):
         del self._subjects
         del self._objects
         del self._sentence
-    def _compute_caches(self,sentence):
-        self._sentence = sentence
-        import voz
-        assert isinstance(sentence,voz.Sentence)
+    def _compute_caches(self,sentence=None):
+        if sentence:
+            self._sentence = sentence
         subjects = set()
         objects = set()
 
         for arg,tokens in self.arguments.items():
-            if arg.startswith('A'):
-                matches_ = filter(None,[sentence._parent_document.get_mention_by_token_id(i.id) for i in tokens])
-                matches = set([i for i in matches_ if i.is_independent])
-                if not matches:
-                    pass
-                    # TODO add the children of non-independent mentions by checking mention.contains(mention)
-
-
-                if arg.startswith('A0') and matches:
+            matches = [sentence._parent_document.get_mention_by_token_id(i.id) for i in tokens]
+            #matches = set([i for i in matches if i and i.is_independent]) # is_independent is not properly initialized here?
+            matches = set([i for i in matches])
+            if not matches:
+                pass
+                # TODO add the children of non-independent mentions by checking mention.contains(mention)
+            else:
+                if arg.startswith('A0'):
                     subjects.update(matches)
-                elif (arg.startswith('A1') or arg.startswith('A2') or arg.startswith('A3')) and matches:
+                elif (arg.startswith('A1') or arg.startswith('A2') or arg.startswith('A3')):
                     objects.update(matches)
-        #subjects = [i for i in subjects if i] or ['']
-        #objects = [i for i in objects if i] or ['']
+                elif arg == 'nsubj':
+                    subjects.update(matches)
+                elif arg == 'expl':
+                    subjects.update(matches)
+                elif arg == 'nsubjpass':
+                    objects.update(matches)
+                elif arg == 'dobj':
+                    objects.update(matches)
+                elif arg == 'iobj':
+                    objects.update(matches)
+                elif arg == 'pobj':
+                    objects.update(matches)
         self._subjects = subjects
         self._objects = objects
     def get_tokens(self):

@@ -8,20 +8,18 @@ import re
 
 logger = logging.getLogger(__name__)
 
+SPEECH_TYPE_CONSEC = 'c'
+SPEECH_TYPE_DIALOG = 'd'
+SPEECH_TYPE_NARRAT = 'n'
+SPEECH_TYPE_QUOTED = 'q'
+SPEECH_TYPE_NOQOUO = 'p'
+
 def normalize_string(s):
     return re.sub('[^a-z]','',s.lower())
 def normalize_string_spacing(s):
     return re.sub('[\n\s\r]','',s.lower())
 
-
-class QuotedSpeechTag(vozbase.VozTextContainer):
-    def __init__(self,id_,offset,length,speech_type,speaker=None):
-        super(QuotedSpeechTag, self).__init__(id_,offset,length)
-        self.speech_type = speech_type
-        self.speaker = speaker
-
-
-def annotate_quoted_speech(document,quoted_speech_file):
+def annotate_sentences(document, quoted_speech_file, format='tsv', single_sentences_file_story_id = None):
     """
     :param document: voz.Document
     :param quoted_speech_file: str
@@ -35,29 +33,72 @@ def annotate_quoted_speech(document,quoted_speech_file):
     sty_cur= 0
     text_count_sty = 0
     text_count_csv = 0
-    row_annotation = []
-    row_speakers = []
-    _get_align_sentences = []
-    with open(quoted_speech_file, 'rbU') as csv_file:
-        csv_reader = csv.reader(csv_file)
-        for row in csv_reader:
-            logger.info('< '+row[4])
-            row_annotation.append(row[2])
-            row_speakers.append(row[3])
-            text_count_csv += len(normalize_string(row[4]))
-            while text_count_sty <= text_count_csv and sty_cur < len(document.sentences):
-                logger.info('> '+str(document.sentences[sty_cur]))
-                if _get_align_sentences:
-                    row_annotation = []
-                    row_speakers = []
-                _get_align_sentences.append((row_annotation,row_speakers))
-                text_count_sty += len(normalize_string(document.sentences[sty_cur].get_text()))
-                sty_cur += 1
-    for sentence,annotations in zip(document.sentences,_get_align_sentences):
-        if len(annotations[0])==1 and annotations[0][0]=='c':
-            pass
+
+    all_rows = []
+    if format == 'csv':
+        offset = 0
+        COL_FID = 0
+        COL_IDX = 1
+        COL_TYP = 2
+        COL_SPK = 3
+        COL_TXT = 4
+        with open(quoted_speech_file, 'rbU') as csv_file:
+            csv_reader = csv.reader(csv_file)
+            for row in csv_reader:
+                all_rows.append(list(row))
+    elif format == 'tsv':
+        if single_sentences_file_story_id:
+            offset = 1
+            found = False
+            for i in open(quoted_speech_file, 'r').readlines():
+                row = i.split('\t')
+                if row[0] and found:
+                    break
+                elif row[0] and not found and int(row[0]) == single_sentences_file_story_id:
+                    found = True
+                if found:
+                    all_rows.append(row)
+
         else:
-            sentence.quoted_speech = annotations
+            offset = 0
+            all_rows = [i[0:-1].split('\t') for i in open(quoted_speech_file,'r').readlines()]
+
+        COL_FID = 0 + offset
+        COL_IDX = 1 + offset
+        COL_TYP = 2 + offset
+        COL_SPK = 3 + offset
+        COL_LST = 4 + offset
+        COL_HNT = 5 + offset
+        COL_TXT = 6 + offset
+        COL_SCE_LOC = 7 + offset
+        COL_SCE_TME = 8 + offset
+        COL_SCE = 9 + offset
+
+    row_annotation = voz.SentenceLevelAnnotations()
+    _aligned_sentences_annotations = []
+
+    for row_i,row in enumerate(all_rows):
+        logger.info('< '+str(len(_aligned_sentences_annotations)-1)+'/'+str(row_i)+' '+row[COL_TXT])
+        row_annotation.speech.append(row[COL_TYP])
+        row_annotation.speaker.append(row[COL_SPK])
+        if offset:
+            row_annotation.listener.append(row[COL_LST])
+            row_annotation.hint.append(row[COL_HNT])
+            row_annotation.scene_loc.append(row[COL_SCE_LOC])
+            row_annotation.scene_time.append(row[COL_SCE_TME])
+            row_annotation.scene.append(int(row[COL_SCE].strip()))
+        text_count_csv += len(normalize_string(row[COL_TXT]))
+        while text_count_sty <= text_count_csv and sty_cur < len(document.sentences):
+            logger.info('> '+str(sty_cur)+' '+str(document.sentences[sty_cur]))
+            if _aligned_sentences_annotations:
+                row_annotation = voz.SentenceLevelAnnotations()
+            _aligned_sentences_annotations.append(row_annotation)
+            text_count_sty += len(normalize_string(document.sentences[sty_cur].get_text()))
+            sty_cur += 1
+    if not len(document.sentences)==len(_aligned_sentences_annotations):
+        logger.warning("MISMATCH BETWEEN ANNOTATED SENTENCES LENGTH")
+    for sentence,annotations in zip(document.sentences,_aligned_sentences_annotations):
+        sentence.annotations = annotations
 
 def clean_quoted_speech_from_document(document):
     """
@@ -68,19 +109,19 @@ def clean_quoted_speech_from_document(document):
     occurences = 0
     for sentence in list(document.sentences):
         assert isinstance(sentence,voz.Sentence)
-        if sentence.quoted_speech:
-            document.remove_sentence(sentence)
+        if not sentence.annotations.is_normal():
+            occurences += document.remove_sentence(sentence)
     logger.info("Removed %d mentions in quoted speech" % occurences)
 
 
 
-def main():
+def main_single():
     logging.basicConfig(level=logging.DEBUG)
     file_path = "/Users/josepvalls/voz2/stories/annotation-finlayson-01/"
     story_file = "01 - Nikita the Tanner.sty"
     quoted_speech_file = "01/sentences.csv"
     doc = styhelper.create_document_from_sty_file(file_path+story_file)
-    annotate_quoted_speech(doc,file_path+quoted_speech_file)
+    annotate_sentences(doc, file_path + quoted_speech_file)
     for sentence in doc.sentences:
         if sentence.quoted_speech:
             print "QUOTED SPEECH"
@@ -92,5 +133,24 @@ def main():
 
     pass
 
+
+def main_all():
+    logging.basicConfig(level=logging.DEBUG)
+    file_path = "/Users/josepvalls/voz2/stories/annotation-finlayson-01/"
+    story_file = "01 - Nikita the Tanner.sty"
+    doc = styhelper.create_document_from_sty_file(file_path+story_file)
+
+    annotate_sentences(doc, settings.STORY_ALL_SENTENCES, single_sentences_file_story_id = doc.id)
+    for sentence in doc.sentences:
+        if sentence.annotations.is_normal():
+            print sentence.get_text()
+        else:
+            print "QUOTED SPEECH"
+    print voz.Document.format_stats(doc.get_stats())
+    clean_quoted_speech_from_document(doc)
+    print voz.Document.format_stats(doc.get_stats())
+
+    pass
+
 if __name__=='__main__':
-    main()
+    main_all()

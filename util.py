@@ -253,6 +253,11 @@ def is_numeric_float(s):
 def object_list_to_dict(lst,key='id'):
     return dict([(getattr(i,key),i) for i in lst])
 
+def get_from_list(lst,query,key='id'):
+    for i in lst:
+        if getattr(i,key)==query:
+            return i
+    return None
 
 class AttrValueStorePrinter(object):
     """
@@ -300,4 +305,7 @@ class SentinelValue(object):
     pass
 
 def format_list(lst,glue=' ',options={}):
-    return glue.join([i.format(options=options) for i in lst])
+    return glue.join([str(i) for i in lst])
+
+def bool_str(str):
+    return str.lower() in ("yes", "true", "t", "1")

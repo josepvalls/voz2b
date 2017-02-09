@@ -70,7 +70,7 @@ def do_beam():
     #for i in range(DO_CHECK_KNN | DO_CHECK_MARKOV | DO_CHECK_CARDINALITY | DO_CHECK_NFSA | DO_CHECK_NFSA_AT_THE_END): # needs to add +1
     #if True:
     #for i in range(15):
-    for i in [2,4,8,16]:#[1,3,11,13,5,17,21,25]:
+    for i in [13]:#[2,4,8,16]:#[1,3,11,13,5,17,21,25]:
         #global DO_CHECK
         #DO_CHECK = i+1
         #global DO_NFSA_FORCE
@@ -276,7 +276,7 @@ class SystematicSearchEngine(object):
                 c +=1
             t +=1
         return 1.0*c/t
-    def search(self,narrative,markov_table,cardinality,nfsa,best_first_branches_num=-1,beam_search_open_size=10,beam_search_open_size_multiplier=1.0,get_ranks=False):
+    def search(self,narrative,markov_table,cardinality,nfsa,best_first_branches_num=-1,beam_search_open_size=10000,beam_search_open_size_multiplier=1.0,get_ranks=False):
         if DO_FORCE_MAX_DEPTH is None:
             max_depth = len(narrative.data)
         else:
@@ -515,9 +515,9 @@ class SequentialFunctionPredictor(object):
             function.prediction_knn = self.probabilistic_assignment(function.distribution_knn)
 
 
-    def predict_beam(self, best_first_branches_num=-1, beam_search_open_size=10, beam_search_open_size_multiplier=1.0,get_ranks=False):
+    def predict_beam(self, best_first_branches_num=-1, beam_search_open_size=10000, beam_search_open_size_multiplier=1.0,get_ranks=False):
         results = []
-        #for test in self.narratives[0:1]:
+        #for test in self.narratives[1:2]:
         for test in self.narratives[0:15]:
             training = self.get_training_dataset(test.story)
             if True:#DO_INCLUDE & DO_INCLUDE_MONOMOVE and story_to_moves[test.story]==1 or DO_INCLUDE & DO_INCLUDE_MULTIMOVE and story_to_moves[test.story]>1:
@@ -534,6 +534,7 @@ class SequentialFunctionPredictor(object):
             for function,prediction in zip(test.data,result[3]):
                 function.prediction = prediction
             results.append(result)
+            print result
         if get_ranks:
             ranks = util.flatten([[j[0] for j in i[5]] for i in results])
             ranks_worst = util.flatten([[j[1] for j in i[5]] for i in results])
@@ -541,10 +542,6 @@ class SequentialFunctionPredictor(object):
             total_functions = sum(len(i.data) for i in self.narratives[0:15])
         else:
             total_functions = DO_FORCE_MAX_DEPTH*15#len(self.narratives)
-        if not get_ranks:
-            open('overall_confusion.txt','a').write("using %d,%d: overall results for the first result: %f\n" % (DO_CHECK,DO_INCLUDE,sum(i[2]*len(i[3])/total_functions for i in results)))
-        else:
-            open('overall_ranks.txt','a').write("using %d,%d: ranks:\t%s\t%s\n" % (DO_CHECK,DO_INCLUDE,str(util.describe_distribution(ranks)),str(util.describe_distribution(ranks_worst))))
 
 
     def predict_knn(self):
