@@ -9,6 +9,7 @@ logger = logging.getLogger(__name__)
 import dependencyhelper
 import util
 import verbmanager
+import os
 
 VERB_POS = ['VB','VBD','VBG','VBN','VBP','VBZ']
 
@@ -52,13 +53,11 @@ def annotate_document_from_corenlp(str_input,raw_xml_data,properties={}):
     return document
 
 def _compute_roles():
-    # TODO reimplement
-    logger.warning("Roles not implemented yet")
-
+    pass
+    # TODO move here?
 
 def _annotate_document_from_corenlp_deps(xmldoc, document):
     # TODO reimplement
-    logger.warning("Verbs not implemented yet")
 
     for sentence, sentence_xml in zip(document.sentences, xmldoc.getElementsByTagName('sentences')[0].getElementsByTagName('sentence')):
         sentence.dependencies = []
@@ -205,9 +204,10 @@ def create_document_using_stanford_from_filtered_sty_file(sty_file):
     text = "\n".join([sentence.get_text() for sentence in doc.sentences if sentence.annotations.is_normal()])
     doc_new = create_document_from_raw_text(text,{'story_id':doc.id+1000})
     assert len([sentence for sentence in doc.sentences if sentence.annotations.is_normal()])==len(doc_new.sentences), "Sentence length mismatch between annotated and processed document"
-    if True:
+    fixed_annotation_file = settings.STORY_ANNOTATION_FIXES + '%d.tsv' % doc_new.id
+    if not os.path.isfile(fixed_annotation_file):
         # Dump data for fixing
-        f_fixes = open(settings.STORY_ANNOTATION_FIXES+'%d.tsv' % doc_new.id,'w')
+        f_fixes = open(fixed_annotation_file,'w')
         for sentence in [sentence for sentence in doc.sentences if sentence.annotations.is_normal()]:
             mentions_check = [i for i in sentence.mentions if len([j for j in i.tokens if j.pos!='DT'])>1]
             mentions_check = sorted(mentions_check,key=lambda i:(len(i.child_mentions)*100-i.id),reverse=True)
@@ -232,6 +232,12 @@ def create_document_using_stanford_from_filtered_sty_file(sty_file):
         f_fixes.close()
 
     # Annotate
+    fixed_annotation_file_extra = settings.STORY_ANNOTATION_FIXES + '%d-extra.tsv' % doc_new.id
+    if not os.path.isfile(fixed_annotation_file_extra):
+        f_fixes = open(fixed_annotation_file_extra, 'w')
+    else:
+        f_fixes = None
+
     for sentence_ref,sentence in zip([sentence for sentence in doc.sentences if sentence.annotations.is_normal()],doc_new.sentences):
         assert isinstance(sentence, voz.Sentence)
         for mention in sentence.mentions:
@@ -241,25 +247,35 @@ def create_document_using_stanford_from_filtered_sty_file(sty_file):
             mentions_ref = set(filter(None,[sentence_ref._parent_document.get_mention_by_token_id(i.id) for i in tokens_ref]))
             if not mentions_ref:
                 logger.warning("UNABLE TO FIND ANNOTATION FOR MENTION %s" % mention.get_text())
+                if f_fixes:
+                    f_fixes.write("%d\tMISS\t%s\t%s\n" % (mention.id,mention.get_text(),str(mention)))
                 stats_not_found += 1
                 continue
             elif not len(mentions_ref)==1:
                 logger.warning("AMBIGUOUS ANNOTATION FOR MENTION")
                 stats_ambiguous += 1
                 mentions_ref = sorted(mentions_ref,key=lambda i:len(i.tokens))
+                for i in mentions_ref:
+                    if mention_ref.get_taxonomy(entitymanager.TaxonomyContainer.TAXONOMY_CHARACTER_6ROLES):
+                        mention_ref = i
+                        break
+                if f_fixes:
+                    f_fixes.write("%d\tAMBG\t%s\t%s\t%s\n" % (mention.id,mention.get_text(),[str(i) for i in mentions_ref],mention_ref))
             else:
+                mention_ref = mentions_ref.pop()
                 stats_match_ok +=1
-            #print mention.get_text(),'\t','; '.join([i.get_text() for i in mentions_ref]),'\t',mention.predictions.coref,'\t','; '.join([str(i.get_coref_group_id()) for i in mentions_ref]),'\t','; '.join([str(i.tokens) for i in mentions_ref])
-            mentions_ref = list(mentions_ref)
-            mention_ref = mentions_ref[0]
+
+            if len(mention_ref.get_taxonomy(entitymanager.TaxonomyContainer.TAXONOMY_ENTITY_TYPES))>1:
+                logger.info(util.string_as_print("POTENTIALLY IGNORE",mention_ref,mention_ref.get_taxonomy(entitymanager.TaxonomyContainer.TAXONOMY_ENTITY_TYPES)))
+                mention.annotations.split_ignore = True
             mention.annotations.coref = mention_ref.get_coref_group_id()
             mention.annotations.type = \
                 (mention_ref.get_taxonomy(entitymanager.TaxonomyContainer.TAXONOMY_ENTITY_TYPES) or ['NA'])[0]
             mention.annotations.role = \
                 (mention_ref.get_taxonomy(entitymanager.TaxonomyContainer.TAXONOMY_CHARACTER_6ROLES) or ['NA'])[0]
-            for mention_ref_ in mentions_ref[1:]:
-                mention_ref_.is_independent = False
         sentence.annotations.verbs = sentence_ref.verbs
+    if f_fixes:
+        f_fixes.close()
 
     #print stats_not_found, stats_ambiguous, stats_match_ok
     return doc_new

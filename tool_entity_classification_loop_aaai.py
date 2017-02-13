@@ -19,8 +19,8 @@ import verbhelper
 logger = logging.getLogger(__name__)
 
 def main():
-    load_documents()
-    #do_init_loop()
+    #load_documents()
+    do_init_loop()
     # get_stats_docs_verbs()
 
 TSV_COREF = 'COREF'
@@ -28,11 +28,11 @@ TSV_MYCOREF = 'MYCOREF'
 TSV_CHARACTER = 'CH'
 TSV_TYPE = 'TY'
 TSV_ROLE = 'RO'
-DO_FORCE_DOCS_RELOAD = True
-DO_FORCE_FEATURES_REWRITE = False
-classificationhelper.DO_FORCE_LABEL_COMPUTE = False
+DO_FORCE_DOCS_RELOAD = False
+DO_FORCE_FEATURES_REWRITE = True
+classificationhelper.DO_FORCE_LABEL_COMPUTE = True
 featuremanager.DO_FORCE_FEATURE_RELOAD = False
-coreferencehelper.DO_FORCE_COREF_RELOAD = False
+coreferencehelper.DO_FORCE_COREF_RELOAD = True
 
 
 def do_init_loop():

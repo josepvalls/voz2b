@@ -172,6 +172,7 @@ class MentionLevelAnnotations(object):
         self.coref = None
         self.role = None
         self.character = None
+        self.split_ignore = False
     def is_character(self):
         return self.character if self.character is not None else \
             taxonomy_dict_aux_type_to_parent.get((TaxonomyContainer.TAXONOMY_NONCHARACTER,self.type),'NC')=='CH'

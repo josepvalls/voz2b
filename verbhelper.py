@@ -55,14 +55,14 @@ def get_srl_stats_prfa(docs):
                     args_ref = verb_ref.get_subjects() + verb_ref.get_objects()
                     va_r += len(args_ref)
                     va_t += len(args_ref)
-    v_p = 1.0 * v_i / v_p
-    v_r = 1.0 * v_i / v_r
-    v_f = 2.0 * v_p * v_r / (v_p+v_r)
-    v_a = 1.0 * v_a / v_t
-    va_p = 1.0 * v_i / v_p
-    va_r = 1.0 * v_i / v_r
-    va_f = 2.0 * v_p * v_r / (v_p+v_r)
-    va_a = 1.0 * v_a / v_t
+    v_p = 1.0 * v_i / v_p if v_p else 0.0
+    v_r = 1.0 * v_i / v_r if v_r else 0.0
+    v_f = 2.0 * v_p * v_r / (v_p+v_r) if (v_p+v_r) else 0.0
+    v_a = 1.0 * v_a / v_t if v_t else 0.0
+    va_p = 1.0 * va_i / va_p if va_p else 0.0
+    va_r = 1.0 * va_i / va_r if va_r else 0.0
+    va_f = 2.0 * va_p * va_r / (va_p+va_r) if (va_p+va_r) else 0.0
+    va_a = 1.0 * va_a / va_t if va_t else 0.0
     return v_p,v_r,v_f,v_a, va_p,va_r,va_f,va_a
 
 def do_fix_srl(docs):

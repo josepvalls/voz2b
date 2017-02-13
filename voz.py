@@ -83,16 +83,21 @@ class Document(vozbase.VozContainer):
         :return: entitymanager.Mention
         """
         if not self._token_to_mention_dict:
-            self._token_to_mention_dict = {}
+            self._token_to_mention_dict = collections.defaultdict(list)
             for i in self.get_all_mentions():
-                for j in i.tokens:
-                    self._token_to_mention_dict[j.id] = i
-            for i in self.get_all_tokens():
-                mention = i.get_mention()
-                if mention:
-                    for j in mention.tokens:
-                        self._token_to_mention_dict[j.id] = mention
-        return self._token_to_mention_dict.get(token_id,None)
+                for j_i,j in enumerate(i.tokens):
+                    if j.pos in ['PRP$','WP$','POS','DT']: continue
+                    if len(i.tokens)> j_i+2 and i.tokens[j_i+1].pos in ['PRP$','WP$','POS']: continue
+                    self._token_to_mention_dict[j.id].append(i)
+            for k,v in self._token_to_mention_dict.items():
+                self._token_to_mention_dict[k] = sorted(v,key = lambda i:len(i.tokens))
+            if False: # extra mentions in tokens, not used
+                for i in self.get_all_tokens():
+                    mention = i.get_mention()
+                    if mention:
+                        for j in mention.tokens:
+                            self._token_to_mention_dict[j.id] = mention
+        return self._token_to_mention_dict.get(token_id,[None])[0]
     def get_verb_by_token_id(self,token_id):
         """
         :param id: int
@@ -236,7 +241,7 @@ class Document(vozbase.VozContainer):
         if not filter_only_independent:
             return mentions
         else:
-            return [mention for mention in mentions if mention and mention.annotations and mention.is_independent]
+            return [mention for mention in mentions if mention and mention.annotations and mention.is_independent and not mention.annotations.split_ignore]
     def get_all_verbs(self):
         return self.get_all('verbs')
     def get_all_tokens(self):

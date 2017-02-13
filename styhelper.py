@@ -86,22 +86,24 @@ class StyFile(object):
             else:
                 mention.is_independent=True
     def _clean_mentions_and_coref(self):
-        token_to_mention_dict = collections.defaultdict(list)
-        for mention in self.document.get_all_mentions():
-            for j in mention.tokens:
-                token_to_mention_dict[j].append(mention)
+        if False: # not used
+            token_to_mention_dict = collections.defaultdict(list)
+            for mention in self.document.get_all_mentions():
+                for j in mention.tokens:
+                    token_to_mention_dict[j].append(mention)
         # fixing the hierarchy of mentions
         # fixing the mention tags
-        mention_groups = util.remove_duplicates([tuple(i) for i in token_to_mention_dict.values()])
-        for mentions in mention_groups:
-            if len(mentions)==1:
-                mentions[0].is_independent=True
-            else:
-                logger.info("Multiple mentions in a token: %d" % len(mentions))
-                mentions = self._clean_mentions_set_hierarchy(mentions)
-                self._clean_mentions_set_tags(mentions)
-                for mention in mentions:
-                    if not mention.is_independent: self.document.remove_mention(mention)
+        if False: #this doesn't work with the current annotations, bummer
+            mention_groups = util.remove_duplicates([tuple(i) for i in token_to_mention_dict.values()])
+            for mentions in mention_groups:
+                if len(mentions)==1:
+                    mentions[0].is_independent=True
+                else:
+                    logger.info("Multiple mentions in a token: %d" % len(mentions))
+                    mentions = self._clean_mentions_set_hierarchy(mentions)
+                    self._clean_mentions_set_tags(mentions)
+                    for mention in mentions:
+                        if not mention.is_independent: self.document.remove_mention(mention)
         # fixing split coreference groups
         for entity in self.document.coreference.entities:
             if entity.number_of_distinct_coref_groups()>1:
@@ -453,6 +455,7 @@ def create_document_from_sty_file(sty_file,properties={}):
 
 
 def main():
+    export_text()
     logging.basicConfig(level=logging.DEBUG)
     file_path = settings.STY_FILE_PATH
     story_file = settings.STY_FILES[0]
@@ -464,6 +467,18 @@ def main():
         print mention
     print voz.Document.format_stats(doc.get_stats())
     #open('test_output.html','w').write(formatter.html(formatter.VozHTMLFormatter.format(doc,options={'parse_highlight':'mentions'})))
+
+def export_text():
+    import os,re
+    p = "/Users/josepvalls/Desktop/untitled folder 2/"
+    for i in os.listdir(p):
+        if i.endswith('.sty'):
+            with open(p+i+".txt",'w') as f:
+                doc = StyFile(p+i)
+                txt = doc.get_original_text()
+                txt = re.sub(r"\/\*(\*(?!\/)|[^*])*\*\/",'',txt)
+                txt = txt.replace(' \n','  ')
+                f.write(txt.strip())
 
 if __name__ == '__main__':
     main()
