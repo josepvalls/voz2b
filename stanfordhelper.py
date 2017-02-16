@@ -46,15 +46,15 @@ def annotate_document_from_corenlp(str_input,raw_xml_data,properties={}):
     _annotate_document_from_corenlp_coref(xmldoc,document)
     _annotate_document_from_corenlp_deps(xmldoc,document)
     _annotate_document_from_corenlp_verbs_from_deps(xmldoc, document)
-    _compute_roles()
+    _compute_predictions()
 
     document._compute_caches(document) # verb slots
 
     return document
 
-def _compute_roles():
+def _compute_predictions():
     pass
-    # TODO move here?
+    # I will do this lazily in document
 
 def _annotate_document_from_corenlp_deps(xmldoc, document):
     # TODO reimplement
@@ -120,6 +120,8 @@ def _annotate_document_from_corenlp_mentions(xmldoc,document):
 def _annotate_document_from_corenlp_coref(xmldoc,document):
     if xmldoc.getElementsByTagName('document')[0].getElementsByTagName('coreference'):
         _init_coreference_from_xml(xmldoc.getElementsByTagName('document')[0].getElementsByTagName('coreference')[0],document)
+    for mention in document.get_all_mentions():
+        if mention.predictions.coref is None: mention.predictions.coref = mention.id
 
 def token_from_xml(xml,str_input,document):
     #id_ = int(xml.attributes.get('id').value)
@@ -142,6 +144,7 @@ def _init_coreference_from_xml(xml,document):
         for mention_xml in coreference.getElementsByTagName('mention'):
             representative,mention = _coref_mention_from_xml(document,mention_xml)
             if not mention.is_independent: continue
+            if mention.tokens[-1].pos in ['POS','PRP$']: continue
             mentions.append(mention)
             sentence = mention.tokens[0]._parent_sentence
             sentence.mentions.append(mention)

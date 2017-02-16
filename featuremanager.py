@@ -140,10 +140,12 @@ class FeatureContainer(object):
         return settings.FEATURE_MANAGER_COMPUTED_FEATURES_PATH + str(self.document.id) + '.json'
 
     def _persist_feature_cache(self):
+        if not self.document.properties.get('cache', True): return False
         vozbase.serialize_to_file(self._feature_managers,self.document_filename())
 
     def _load_feature_cache(self):
         if DO_FORCE_FEATURE_RELOAD: return False
+        if not self.document.properties.get('cache',True): return False
         try:
             self._feature_managers = vozbase.unserialize_file(self.document_filename())
             # json uses strings for the keys!
@@ -492,7 +494,10 @@ class FeatureProviderVerbsM(FeatureProvider):
                 if verb.get_subjects():
                     feature_name = 'v-subject-g-' + group[0]
                     feature_idx = MentionFeatures.get_feature_names().index(feature_name)
-                    for mention in verb.get_subjects():
+                    matches = []
+                    verbmanager.add_children_mentions_to_list(verb.get_subjects(), matches)
+                    for mention in matches:
+                        if not mention.id in feature_container._feature_managers['m']: continue
                         feature_container._feature_managers['m'][mention.id][feature_idx] = max(
                             feature_container._feature_managers['m'][mention.id][feature_idx],
                             similarity
@@ -500,20 +505,29 @@ class FeatureProviderVerbsM(FeatureProvider):
                 if verb.get_objects():
                     feature_name = 'v-object-g-' + group[0]
                     feature_idx = MentionFeatures.get_feature_names().index(feature_name)
-                    for mention in verb.get_objects():
+                    matches = []
+                    verbmanager.add_children_mentions_to_list(verb.get_objects(), matches)
+                    for mention in matches:
+                        if not mention.id in feature_container._feature_managers['m']: continue
                         feature_container._feature_managers['m'][mention.id][feature_idx] = max(
                             feature_container._feature_managers['m'][mention.id][feature_idx],
                             similarity
                         )
         if verb.token.lemma in verbs_list:
-            for mention in verb.get_subjects():
+            matches = []
+            verbmanager.add_children_mentions_to_list(verb.get_subjects(), matches)
+            for mention in matches:
+                if not mention.id in feature_container._feature_managers['m']: continue
                 feature_name = 'v-subject-' + verb.token.lemma
                 feature_idx = MentionFeatures.get_feature_names().index(feature_name)
                 feature_container._feature_managers['m'][mention.id][feature_idx] = max(
                     feature_container._feature_managers['m'][mention.id][feature_idx],
                     similarity
                 )
-            for mention in verb.get_objects():
+            matches = []
+            verbmanager.add_children_mentions_to_list(verb.get_objects(), matches)
+            for mention in matches:
+                if not mention.id in feature_container._feature_managers['m']: continue
                 feature_name = 'v-object-' + verb.token.lemma
                 feature_idx = MentionFeatures.get_feature_names().index(feature_name)
                 feature_container._feature_managers['m'][mention.id][feature_idx] = max(

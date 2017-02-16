@@ -469,6 +469,11 @@ def main():
     #open('test_output.html','w').write(formatter.html(formatter.VozHTMLFormatter.format(doc,options={'parse_highlight':'mentions'})))
 
 def export_text():
+    for i in settings.STY_FILES:
+        print StyFile(settings.STY_FILE_PATH+i).to_document().get_text()
+
+
+def export_text_():
     import os,re
     p = "/Users/josepvalls/Desktop/untitled folder 2/"
     for i in os.listdir(p):

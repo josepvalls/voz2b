@@ -174,8 +174,10 @@ class MentionLevelAnnotations(object):
         self.character = None
         self.split_ignore = False
     def is_character(self):
-        return self.character if self.character is not None else \
-            taxonomy_dict_aux_type_to_parent.get((TaxonomyContainer.TAXONOMY_NONCHARACTER,self.type),'NC')=='CH'
+        if self.character is None:
+            self.character = taxonomy_dict_aux_type_to_parent.get((TaxonomyContainer.TAXONOMY_NONCHARACTER,self.type),'NC')=='CH'
+        return self.character
+
 
 class Mention(vozbase.VozContainer,TaxonomyContainer,TaggableContainer):
     """
@@ -207,7 +209,7 @@ class Mention(vozbase.VozContainer,TaxonomyContainer,TaggableContainer):
         self._text = ''
         self._compute_caches(self)
 
-    def _compute_caches(self,parent):
+    def _compute_caches(self,parent=None):
         if self.tokens:
             _text_start = self.tokens[0].offset
             _text_end = self.tokens[-1].offset + self.tokens[-1].len

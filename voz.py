@@ -235,7 +235,7 @@ class Document(vozbase.VozContainer):
         lst = []
         for item in getattr(self,collection):
             lst += getattr(item,property)
-        return lst
+        return util.remove_duplicates(lst)
     def get_all_mentions(self, filter_only_independent = False):
         mentions = self.get_all('mentions')
         if not filter_only_independent:
@@ -246,6 +246,55 @@ class Document(vozbase.VozContainer):
         return self.get_all('verbs')
     def get_all_tokens(self):
         return self.get_all('tokens')
+    def compute_predictions_mentions(self, do_voting=True):
+        import classificationhelper
+        import featuremanager
+        fm = featuremanager.FeatureContainer(self).init_features()
+        for mention in self.get_all_mentions(filter_only_independent=True):
+            feature_vector = fm.get_features(mention)
+            mention.predictions.type = classificationhelper.get_label(feature_vector,classificationhelper.TASK_TYPE)
+            if mention.predictions.is_character():
+                mention.predictions.role = classificationhelper.get_label(feature_vector,classificationhelper.TASK_ROLE)
+        if do_voting:
+            classificationhelper.do_voting([self], classificationhelper.TASK_TYPE,filter_characters=False)
+            #classificationhelper.do_voting([self], classificationhelper.TASK_CHARACTER)
+            classificationhelper.do_voting([self], classificationhelper.TASK_ROLE,filter_characters=False)
+    def _extend_coref(self, mention, target, mentions):
+        to_assign = [i for i in mentions if i.predictions.coref == target.predictions.coref]
+        for i in to_assign:
+            i.predictions.coref = mention.predictions.coref
+    def improve_coref(self, nn_match_aggressive=0):
+        '''
+        nn_match_aggressive -1: exact match
+        nn_match_aggressive 0: exact match for NN, NNP and JJ
+        nn_match_aggressive 1: exact match for NN, NNP
+        nn_match_aggressive 2: any match for NN, NNP
+        :param nn_match_aggressive: int
+        :return:
+        '''
+        if nn_match_aggressive==-1: return
+        # TODO port code from loop_aaai
+        requirements = ['NN', 'NNP']
+        if nn_match_aggressive == 0:
+            requirements.append('JJ')
+        mentions = self.get_all_mentions(filter_only_independent=True)
+        mentions = [i for i in mentions if 'NNS' not in [j.pos for j in i.tokens] and 'NNPS' not in [j.pos for j in i.tokens]]
+
+        for i in range(len(mentions)):
+            for j in range(i+1,len(mentions)):
+                tokens_i = [k.lemma.lower() for k in mentions[i].tokens if k.pos in requirements]
+                tokens_j = [k.lemma.lower() for k in mentions[j].tokens if k.pos in requirements]
+                if nn_match_aggressive in [0,1] and tokens_i and tokens_i==tokens_j or nn_match_aggressive==2 and set(tokens_i) & set(tokens_j):
+                    self._extend_coref(mentions[i],mentions[j], mentions)
+    def improve_verb_args(self):
+        # TODO port code from loop_aaai
+        pass
+
+    def compute_predictions(self):
+        self.improve_coref()
+        self.improve_verb_args()
+        self.compute_predictions_mentions()
+
 
 
     def format(self,options={'display_tokens':['lemma','pos']}):

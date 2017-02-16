@@ -6,7 +6,7 @@ def mention_contains_mention(container, mention):
     mention_ = set([i.idx for i in mention.tokens])
     return container_ & mention_
 
-def get_srl_stats_prfa(docs):
+def get_srl_stats_prfa(docs, filter_character_field='annotations'):
     verbs = 0
     v_p = 0
     v_r = 0
@@ -29,9 +29,9 @@ def get_srl_stats_prfa(docs):
                     verb = verb[0]
                     v_a +=1
                     v_i +=1
-                    verb_args = verb.get_subjects()
+                    verb_args = verb.get_subjects(filter_character_field)
                     va_p += len(verb_args)
-                    for arg_ref in verb_ref.get_subjects():
+                    for arg_ref in verb_ref.get_subjects(filter_character_field):
                         va_r += 1
                         va_t += 1
                         for arg in verb_args:
@@ -40,9 +40,9 @@ def get_srl_stats_prfa(docs):
                                 va_i +=1
                                 va_a +=1
                                 break
-                    verb_args = verb.get_objects()
+                    verb_args = verb.get_objects(filter_character_field)
                     va_p += len(verb_args)
-                    for arg_ref in verb_ref.get_objects():
+                    for arg_ref in verb_ref.get_objects(filter_character_field):
                         va_r += 1
                         va_t += 1
                         for arg in verb_args:
@@ -52,7 +52,7 @@ def get_srl_stats_prfa(docs):
                                 va_a +=1
                                 break
                 else:
-                    args_ref = verb_ref.get_subjects() + verb_ref.get_objects()
+                    args_ref = verb_ref.get_subjects(filter_character_field) + verb_ref.get_objects(filter_character_field)
                     va_r += len(args_ref)
                     va_t += len(args_ref)
     v_p = 1.0 * v_i / v_p if v_p else 0.0
@@ -63,7 +63,7 @@ def get_srl_stats_prfa(docs):
     va_r = 1.0 * va_i / va_r if va_r else 0.0
     va_f = 2.0 * va_p * va_r / (va_p+va_r) if (va_p+va_r) else 0.0
     va_a = 1.0 * va_a / va_t if va_t else 0.0
-    return v_p,v_r,v_f,v_a, va_p,va_r,va_f,va_a
+    return v_i, v_t, v_p,v_r,v_f,v_a, va_p,va_r,va_f,va_a
 
 def do_fix_srl(docs):
     pass

@@ -2,6 +2,13 @@ import vozbase
 import collections
 import util
 
+
+def add_children_mentions_to_list(lst, lst_):
+    for i in lst:
+        lst_.append(i)
+        if i: add_children_mentions_to_list(i.child_mentions, lst_)
+
+
 class Dependency(object):
     def __init__(self, label, governor, dependent):
         self.label, self.governor, self.dependent = label, governor, dependent
@@ -18,10 +25,10 @@ class Verb(vozbase.VozTextContainer):
         self._sentence = None
     def is_negated(self):
         return ('AM-NEG' in self.arguments.keys())
-    def get_subjects(self):
-        return [i for i in self._subjects if i and i.is_independent]
-    def get_objects(self):
-        return [i for i in self._objects if i and i.is_independent]
+    def get_subjects(self, filter_character_field = None):
+        return [i for i in self._subjects if i and i.is_independent and (filter_character_field is None or getattr(i,filter_character_field).is_character())]
+    def get_objects(self, filter_character_field = None):
+        return [i for i in self._objects if i and i.is_independent and (filter_character_field is None or getattr(i,filter_character_field).is_character())]
     def _clear_caches(self,sentence):
         del self._subjects
         del self._objects
@@ -35,14 +42,17 @@ class Verb(vozbase.VozTextContainer):
         for arg,tokens in self.arguments.items():
             matches = [sentence._parent_document.get_mention_by_token_id(i.id) for i in tokens]
             #matches = set([i for i in matches if i and i.is_independent]) # is_independent is not properly initialized here?
-            matches = set([i for i in matches])
+            matches_ = []
+            add_children_mentions_to_list(matches,matches_)
+            matches = set([i for i in matches_])
+
             if not matches:
                 pass
                 # TODO add the children of non-independent mentions by checking mention.contains(mention)
             else:
                 if arg.startswith('A0'):
                     subjects.update(matches)
-                elif (arg.startswith('A1') or arg.startswith('A2') or arg.startswith('A3')):
+                elif (arg.startswith('A1') or arg.startswith('A2') or arg.startswith('A3') or arg.startswith('AM')):
                     objects.update(matches)
                 elif arg == 'nsubj':
                     subjects.update(matches)
