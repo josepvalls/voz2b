@@ -41,7 +41,7 @@ def doc_to_graph(doc,filter_scene=None,filter_characters=True,filter_character_e
         for i in subjects:
             for j in objects:
                 edges[(i,j)].append(verb)
-    return (nodes,edges)
+    return voz.Graph((nodes,edges))
 def print_adj_matrix(graph,include_na=True,print_labels=True,verb_glue=';',field_separator='\t'):
     nodes, vertices = graph
     for i_i,i in enumerate(nodes):
@@ -81,9 +81,20 @@ def demo():
     settings.SERIALIZE_PRETTY_JSON_BY_DEFAULT = True
     file_path = "/Users/josepvalls/voz2/data/"
     story_file = "TestInput.txt"
-    doc = stanfordhelper.create_document_from_raw_text(open(file_path+story_file).read())
+    text = open(file_path+story_file).read()
+    doc = stanfordhelper.create_document_from_raw_text(text)
     print doc
+    doc.compute_predictions()
     print_adj_matrix(doc_to_graph(doc))
+
+def demo2():
+    text= "One morning, Bob met Alice for brunch but she didn't eat her food."
+    doc = stanfordhelper.create_document_from_raw_text(text)
+    print doc
+    doc.compute_predictions()
+    g = doc_to_graph(doc)
+    print_adj_matrix(g)
+
 
 def main():
     VERBOSE_OUTPUT = False

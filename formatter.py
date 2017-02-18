@@ -5,7 +5,7 @@ New formatting architecture:
     The element to be formatted can format subelements using the received formatter
 '''
 from nltk.tree import ParentedTree
-import voz
+import voz,util
 import logging
 import types,cgi
 
@@ -72,6 +72,7 @@ html_formatter = HtmlFormatter()
 class VozHTMLFormatter(object):
     formatter_templates = [
         (ParentedTree,'format_tree'),
+        (voz.Graph, 'format_story_graph'),
         (list,'format_list'),
         (set, 'format_list'),
         (voz.Token,'format_token'),
@@ -214,6 +215,34 @@ class VozHTMLFormatter(object):
                 return getattr(cls,formatter)(element,options=options)
         return cls.wrap(str(element))
 
+    @classmethod
+    def format_story_graph(cls, graph, options={}):
+        nodes, vertices = graph
+        include_na = options.get('include_na', True)
+        verb_glue =  options.get('verb_glue', ', ')
+        out = ''
+        table = []
+        for i in nodes:
+            table.append([i.predictions.coref, i.predictions.type, i.predictions.role, cls.format(i)])
+        out += cls.html_table_from_list_of_lists(table)
+        nodes_ = [i.predictions.coref for i in nodes]
+        if include_na:
+            nodes_.append(-1)
+        table = []
+        table.append(['']+nodes_)
+        for sub in nodes_:
+            row = [sub]
+            for obj in nodes_:
+                row.append(verb_glue.join([str(i.get_text()) for i in vertices.get((sub, obj), [])]))
+            table.append(row)
+        out += cls.html_table_from_list_of_lists(table)
+        return out
+    @classmethod
+    def html_table_from_list_of_lists(cls, table, options={}):
+        separator = '\n'
+        return html_wrap('table',
+            separator.join([html_wrap('tr',
+            separator.join([html_wrap('td',i) for i in row])) for row in table]))
 
 def html_wrap(tag,contents):
     return '<%s>%s</%s>' % (tag,contents,tag.split()[0])

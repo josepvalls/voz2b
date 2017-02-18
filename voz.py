@@ -15,6 +15,13 @@ import parse_tree_mention_helper
 
 logger = logging.getLogger(__name__)
 
+class Graph(tuple):
+    '''
+    List of nodes
+    Dict of edges
+    '''
+    pass
+
 class Document(vozbase.VozContainer):
     def __init__(self,text,sentences,properties,document_id=None):
         """
