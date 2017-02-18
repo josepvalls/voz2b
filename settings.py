@@ -48,3 +48,11 @@ PHRASAL_VERB_FILE = None
 OPTIONS={ # This is used to create radio buttons in the web form
     'DATA_USE_STANFORD_SYSTEM_LOCAL_URL_ALT':['http://129.25.12.216:8888','http://centos:8888']
 }
+
+WEB_HOST = '129.25.12.216'
+WEB_PORT = '8080'
+
+
+WEB_HOST = '127.0.0.1'
+WEB_PORT = '8080'
+

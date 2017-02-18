@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import webapp2
 import json, datetime, time
 import voz

@@ -1,0 +1,24 @@
+INSTALLATION:
+After checking out the repository, make sure you have the following libraries:
+* libxml2 (sudo yum install libxml2)
+Then, install dependencies:
+> pip install -r requirements.txt
+Finally, download required NLTK corpora:
+> python -m nltk.downloader wordnet
+> python -m nltk.downloader names
+> python -m nltk.downloader punkt
+> python -m nltk.downloader sentiwordnet
+> python -m nltk.downloader stopwords
+
+RUNNING:
+There are several stand-alone scripts. The run the web interface, run ./web.py
+
+KNOWN CAVEATS AND LIMITATIONS:
+Split antecedents are currently not supported and despite the code being able to handle lists of mentions, this is currently disabled.
+There is very limited world knowledge and because of biases in the training data, proper nouns such as toponyms are likely to be classified as characters.
+The training data comes from Afanasev's folktales, the system may underperform on out-of-domain text and overfit stories in the training data.
+
+TODO:
+Port latest code from IJCAI that iterates in order to refine coreference, verb arguments and predictions for mention types and roles.
+
+
