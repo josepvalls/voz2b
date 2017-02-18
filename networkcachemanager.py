@@ -49,11 +49,12 @@ class CacheManagerLocal(CacheManager):
     con = None
     cur = None
     def __init__(self):
-        if not settings.DATA_DISABLE_CACHING and not CacheManagerLocal.cur:
-            CacheManagerLocal.con = sqlite3.connect(settings.DATA_LOCAL_CACHE_DB_FILE,check_same_thread=False)
-            CacheManagerLocal.cur = CacheManagerLocal.con.cursor()
-        self.cur = CacheManagerLocal.cur
-        self.cur.execute("CREATE TABLE IF NOT EXISTS cache ( key TEXT, value TEXT, time NUMERIC);")
+        if not settings.DATA_DISABLE_CACHING:
+            if not CacheManagerLocal.cur:
+                CacheManagerLocal.con = sqlite3.connect(settings.DATA_LOCAL_CACHE_DB_FILE,check_same_thread=False)
+                CacheManagerLocal.cur = CacheManagerLocal.con.cursor()
+            self.cur = CacheManagerLocal.cur
+            self.cur.execute("CREATE TABLE IF NOT EXISTS cache ( key TEXT, value TEXT, time NUMERIC);")
     def store(self,key,value):
         try:
             self.cur.execute("INSERT INTO cache (key, value, time) VALUES (?, ?, ?);", (key, value, int(time.time())))
