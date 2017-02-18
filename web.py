@@ -4,6 +4,7 @@ import voz
 import traceback
 import logging
 import settings
+settings.DATA_DISABLE_CACHING = True
 import stanfordhelper
 import voz
 import verbmanager
@@ -104,7 +105,6 @@ class RController(webapp2.RequestHandler):
     def post(self, default=False):
         # try:
         if True:
-            settings.DATA_DISABLE_CACHING = True
             if not default:
                 params = json.loads(self.request.body)
             else:
@@ -126,4 +126,4 @@ app = webapp2.WSGIApplication([
 ], debug=True)
 if __name__ == '__main__':
     from paste import httpserver
-    httpserver.serve(app, host='127.0.0.1', port='8080')
+    httpserver.serve(app, host=settings.WEB_HOST, port=settings.WEB_PORT)
