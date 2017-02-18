@@ -49,7 +49,7 @@ class CacheManagerLocal(CacheManager):
     con = None
     cur = None
     def __init__(self):
-        if not CacheManagerLocal.cur:
+        if not settings.DATA_DISABLE_CACHING and not CacheManagerLocal.cur:
             CacheManagerLocal.con = sqlite3.connect(settings.DATA_LOCAL_CACHE_DB_FILE,check_same_thread=False)
             CacheManagerLocal.cur = CacheManagerLocal.con.cursor()
         self.cur = CacheManagerLocal.cur
