@@ -5,5 +5,4 @@ lxml==3.6.4
 networkx==1.11
 nltk==3.2.1
 numpy==1.11.2
-Pillow==3.4.2
 requests==2.11.1
