@@ -42,10 +42,16 @@ def doc_to_graph(doc,filter_scene=None,filter_characters=True,filter_character_e
             for j in objects:
                 edges[(i,j)].append(verb)
     return voz.Graph((nodes,edges))
-def print_adj_matrix(graph,include_na=True,print_labels=True,verb_glue=';',field_separator='\t'):
+def print_adj_matrix(graph,doc=None,include_coref=True,include_na=True,print_labels=True,verb_glue=';',field_separator='\t'):
     nodes, vertices = graph
     for i_i,i in enumerate(nodes):
-        print i_i, i.predictions.coref, i.predictions.type, i.predictions.role, i, i.tokens[0]._parent_sentence.idx, i.tokens[0].idx
+        print i_i, i.predictions.coref, i.predictions.type, i.predictions.role,
+        if include_coref and doc:
+            coref = [k for k in doc.get_all_mentions(filter_only_independent=True) if k.predictions.coref==i.predictions.coref]
+            for j in coref:
+                print '\t',j, j.tokens[0]._parent_sentence.idx, j.tokens[0].idx
+        else:
+            print i, i.tokens[0]._parent_sentence.idx, i.tokens[0].idx
     nodes_ = [i.predictions.coref for i in nodes]
     if include_na:
         nodes_.append(-1)
@@ -76,6 +82,10 @@ def annotate_segments_as_scenes(doc, segments):
             consume -= len(re.sub(r"[^\w]",'',doc.sentences[sentence].get_text()).lower())
             sentence += 1
 
+def clear_coref(doc):
+    for i in doc.get_all_mentions(filter_only_independent=True):
+        i.predictions.coref = i.id
+
 def demo():
     logging.basicConfig(level=logging.DEBUG)
     settings.SERIALIZE_PRETTY_JSON_BY_DEFAULT = True
@@ -98,6 +108,7 @@ def demo2():
 
 def main():
     VERBOSE_OUTPUT = False
+    NO_COREF = True
     segments = []
     files = []
     path = '.'
@@ -117,14 +128,15 @@ def main():
     text = '\n'.join(segments)
     doc = stanfordhelper.create_document_from_raw_text(text,{'cache':False})
     doc.compute_predictions()
+    if NO_COREF: clear_coref(doc)
     if VERBOSE_OUTPUT:
         print doc
-        print_adj_matrix(doc_to_graph(doc))
-    # Annotate segments as scenes and print the grapg for each segment
+        print_adj_matrix(doc_to_graph(doc),doc)
+    # Annotate segments as scenes and print the graph for each segment
     annotate_segments_as_scenes(doc, segments)
     for i,fname in enumerate(files):
         print fname
-        print_adj_matrix(doc_to_graph(doc,filter_scene=i))
+        print_adj_matrix(doc_to_graph(doc,filter_scene=i), doc)
 
 if __name__ == '__main__':
     main()
