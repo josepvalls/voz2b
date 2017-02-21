@@ -108,7 +108,7 @@ def demo2():
 
 def main():
     VERBOSE_OUTPUT = False
-    NO_COREF = True
+    NO_COREF = False
     segments = []
     files = []
     path = '.'
