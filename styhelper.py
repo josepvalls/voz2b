@@ -86,14 +86,15 @@ class StyFile(object):
             else:
                 mention.is_independent=True
     def _clean_mentions_and_coref(self):
-        if False: # not used
+        # fixing the hierarchy of mentions
+        # fixing the mention tags
+        if True:
+            # TODO this doesn't work with the current annotations for AAAI, used for SIGDIAL
             token_to_mention_dict = collections.defaultdict(list)
             for mention in self.document.get_all_mentions():
                 for j in mention.tokens:
                     token_to_mention_dict[j].append(mention)
-        # fixing the hierarchy of mentions
-        # fixing the mention tags
-        if False: #this doesn't work with the current annotations, bummer
+
             mention_groups = util.remove_duplicates([tuple(i) for i in token_to_mention_dict.values()])
             for mentions in mention_groups:
                 if len(mentions)==1:
@@ -452,6 +453,39 @@ def create_document_from_sty_file(sty_file,properties={}):
     doc = StyFile(sty_file).to_document(properties)
     return doc
 
+def fix_sty_annotations(doc):
+    import entitymanager
+    for sentence_ref in doc.sentences:
+        sentence = sentence_ref
+        assert isinstance(sentence, voz.Sentence)
+        for mention in sentence.mentions:
+            if not mention.is_independent: continue
+            tokens_ref = [sentence_ref.tokens[i.idx] for i in mention.tokens]
+            mentions_ref = set(
+                filter(None, [sentence_ref._parent_document.get_mention_by_token_id(i.id) for i in tokens_ref]))
+            if not mentions_ref:
+                logger.warning("UNABLE TO FIND ANNOTATION FOR MENTION %s" % mention.get_text())
+                continue
+            elif not len(mentions_ref) == 1:
+                logger.warning("AMBIGUOUS ANNOTATION FOR MENTION")
+                mentions_ref = sorted(mentions_ref, key=lambda i: len(i.tokens))
+                for i in mentions_ref:
+                    if mention_ref.get_taxonomy(entitymanager.TaxonomyContainer.TAXONOMY_CHARACTER_6ROLES):
+                        mention_ref = i
+                        break
+            else:
+                mention_ref = mentions_ref.pop()
+
+            if len(mention_ref.get_taxonomy(entitymanager.TaxonomyContainer.TAXONOMY_ENTITY_TYPES)) > 1:
+                logger.info(util.string_as_print("POTENTIALLY IGNORE", mention_ref, mention_ref.get_taxonomy(
+                    entitymanager.TaxonomyContainer.TAXONOMY_ENTITY_TYPES)))
+                mention.annotations.split_ignore = True
+            mention.annotations.coref = mention_ref.get_coref_group_id()
+            mention.annotations.type = \
+                (mention_ref.get_taxonomy(entitymanager.TaxonomyContainer.TAXONOMY_ENTITY_TYPES) or ['NA'])[0]
+            mention.annotations.role = \
+                (mention_ref.get_taxonomy(entitymanager.TaxonomyContainer.TAXONOMY_CHARACTER_6ROLES) or ['NA'])[0]
+        sentence.annotations.verbs = sentence_ref.verbs
 
 
 def main():

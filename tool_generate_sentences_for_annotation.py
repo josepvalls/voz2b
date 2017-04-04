@@ -13,8 +13,8 @@ import entitymanager
 logger = logging.getLogger(__name__)
 
 def main():
-
-    get_docs_stats()
+    pass
+    #get_docs_stats()
 
 
 def get_docs_stats():

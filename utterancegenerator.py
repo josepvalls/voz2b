@@ -1,5 +1,6 @@
 import random
 class UtteranceGenerator(object):
+    # @TODO unfolod recursive calls using a stack and convert all this to a generator
     class ListOptions(list):
         def __repr__(self):
             return 'OP' + list.__repr__(self)
@@ -104,6 +105,12 @@ class UtteranceGenerator(object):
         p = UtteranceGenerator.ListSequence([UtteranceGenerator.parse(list(r.choice(grammar)), dictionary)])
         return UtteranceGenerator._sample(p,  r, trim_whitespace=trim_whitespace)
 
+import re
+def fix(e):
+    e = re.sub(r'\s([\.\,\?\!])', r'\1', e.strip())
+    e = e[0].upper() + e[1:]
+    e = re.sub(r'([\.\?\!] )(\w)',lambda match: match.group(1).upper()+match.group(2).upper() ,e)
+    return e
 
 def main():
     d = {
@@ -113,19 +120,21 @@ def main():
         'play {name}',
         'start ((|a) (|new) (game|board) (|of {name})|{name})',
         'restart ( |the|the game) {name}',
-        '{a} (and|or) {b}'
+        '{a} (and|or) {b}',
+        "((hello|hi).|) (tell me|) how are you (feeling|) (today|)?"
         ]
     results = UtteranceGenerator().generate(g, d, verbose=True)
-    print 'EXHAUSTIVE LIST (as generator)'
+    print 'EXHAUSTIVE LIST'
     for i in results:
-        print i
+        print fix(i)
     print 'SAMPLING'
-    for _ in range(100):
+    for _ in range(10):
         print UtteranceGenerator().sample(g, d, verbose=False, r=None)
+    print 'NOT RANDOM'
     class NotRandom(random.Random):
         def choice(self, seq):
-            return seq[0]
-    for _ in range(10):
+            return seq[-1]
+    for _ in range(3):
         print UtteranceGenerator().sample(g, d, verbose=False, r=NotRandom())
 
 

@@ -76,29 +76,39 @@ def annotate_sentences(document, quoted_speech_file, format='tsv', single_senten
 
     row_annotation = voz.SentenceLevelAnnotations()
     _aligned_sentences_annotations = []
-
+    row_offset = 0
+    newline_offset = 0
     for row_i,row in enumerate(all_rows):
+        # read lines from the annotation file
         logger.info('< '+str(len(_aligned_sentences_annotations)-1)+'/'+str(row_i)+' '+row[COL_TXT])
         row_annotation.speech.append(row[COL_TYP])
-        row_annotation.speaker.append(row[COL_SPK])
         if offset:
-            row_annotation.listener.append(row[COL_LST])
-            row_annotation.hint.append(row[COL_HNT])
+            row_annotation.speech_data.append(
+                voz.SentenceLevelQuotedAnnotations(
+                    row_offset, len(row[COL_TXT]), row[COL_TYP], row[COL_SPK],row[COL_LST], row[COL_HNT],text=row[COL_TXT]))
             row_annotation.scene_loc.append(row[COL_SCE_LOC])
             row_annotation.scene_time.append(row[COL_SCE_TME])
             row_annotation.scene.append(int(row[COL_SCE].strip()))
+        else:
+            row_annotation.speech_data.append(voz.SentenceLevelQuotedAnnotations(row_offset, len(row[COL_TXT]), row[COL_TYP]),None, None, None)
+        # line offsets
+        row_offset += len(row[COL_TXT]) + newline_offset
+        # global, normalized offsets
         text_count_csv += len(normalize_string(row[COL_TXT]))
         while text_count_sty <= text_count_csv and sty_cur < len(document.sentences):
+            # ingest any necessary sentences from the ground sty text and apply annotations read so far to the sentence
             logger.info('> '+str(sty_cur)+' '+str(document.sentences[sty_cur]))
             if _aligned_sentences_annotations:
                 row_annotation = voz.SentenceLevelAnnotations()
             _aligned_sentences_annotations.append(row_annotation)
             text_count_sty += len(normalize_string(document.sentences[sty_cur].get_text()))
             sty_cur += 1
+            row_offset = 0
     if not len(document.sentences)==len(_aligned_sentences_annotations):
         logger.warning("MISMATCH BETWEEN ANNOTATED SENTENCES LENGTH")
     for sentence,annotations in zip(document.sentences,_aligned_sentences_annotations):
         sentence.annotations = annotations
+        sentence.annotations.init(sentence)
 
 def clean_quoted_speech_from_document(document):
     """
@@ -116,6 +126,7 @@ def clean_quoted_speech_from_document(document):
 
 
 def main_single():
+    # not used anymore, all the annotations are all in a single file
     logging.basicConfig(level=logging.DEBUG)
     file_path = "/Users/josepvalls/voz2/stories/annotation-finlayson-01/"
     story_file = "01 - Nikita the Tanner.sty"
@@ -123,10 +134,7 @@ def main_single():
     doc = styhelper.create_document_from_sty_file(file_path+story_file)
     annotate_sentences(doc, file_path + quoted_speech_file)
     for sentence in doc.sentences:
-        if sentence.quoted_speech:
-            print "QUOTED SPEECH"
-        else:
-            print sentence.get_text()
+        print sentence.format_quoted_annotations()
     print voz.Document.format_stats(doc.get_stats())
     clean_quoted_speech_from_document(doc)
     print voz.Document.format_stats(doc.get_stats())
@@ -139,18 +147,42 @@ def main_all():
     file_path = "/Users/josepvalls/voz2/stories/annotation-finlayson-01/"
     story_file = "01 - Nikita the Tanner.sty"
     doc = styhelper.create_document_from_sty_file(file_path+story_file)
+    styhelper.fix_sty_annotations(doc)
 
     annotate_sentences(doc, settings.STORY_ALL_SENTENCES, single_sentences_file_story_id = doc.id)
     for sentence in doc.sentences:
-        if sentence.annotations.is_normal():
-            print sentence.get_text()
-        else:
-            print "QUOTED SPEECH"
+        print sentence.format_quoted_annotations()
+
     print voz.Document.format_stats(doc.get_stats())
     clean_quoted_speech_from_document(doc)
     print voz.Document.format_stats(doc.get_stats())
 
     pass
 
+def main_signal_verbs():
+    offset = 1
+    rows = [i[0:-1].split('\t') for i in open(settings.STORY_ALL_SENTENCES,'r').readlines()]
+    COL_FID = 0 + offset
+    COL_IDX = 1 + offset
+    COL_TYP = 2 + offset
+    COL_SPK = 3 + offset
+    COL_LST = 4 + offset
+    COL_HNT = 5 + offset
+    COL_TXT = 6 + offset
+    COL_SCE_LOC = 7 + offset
+    COL_SCE_TME = 8 + offset
+    COL_SCE = 9 + offset
+    verbs = filter(None,[i[COL_HNT].replace('<','>').split('>')[0] for i in rows])
+    verbs = [i for i in verbs]
+    import nltkhelper
+    import collections
+    print collections.Counter(verbs).most_common()
+
+    for verb in sorted(set(verbs)):
+        print verb
+        print ' ',[j.lemmas() for j in nltkhelper.nltk_wordnet.query(verb)]
+
+
 if __name__=='__main__':
-    main_all()
+    main_signal_verbs()
+    #main_all()

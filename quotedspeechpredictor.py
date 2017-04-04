@@ -627,49 +627,19 @@ def extract_rules(input):
     return rules, missing
 
 
-def main_extract(verbose = True):
-    logging.basicConfig(level=logging.ERROR)
-    #logging.basicConfig(level=logging.INFO)
+def clean_assignments(data_set):
+    for output_tuple in data_set.values():
+        output, quotes, mentions, verbs = output_tuple
+        for quote in quotes:
+            quote.speaker_mention = None
+            quote.speaker_mentions = {}
+            quote.listener_mention = None
+            quote.listener_mentions = {}
 
-    #training_set = ["01 - Nikita the Tanner.sty"]
-    training_set = settings.STY_FILES
-    #training_set = settings.STY_FILES[5:7]
-    #test_set = settings.STY_FILES
-    #test_set = settings.STY_FILES[7:9]
-    test_set = []
-    data_set = {}
-
-    rules = []
-    uncovered_quotes = []
-    training_tuples = []
-    test_tuples = []
-    print 'LOADING DATA'
-    for story_file in training_set:
-        print story_file
-        doc = styhelper.create_document_from_sty_file(file_path + story_file)
-        quotedspeechhelper.annotate_sentences(doc, settings.STORY_ALL_SENTENCES,single_sentences_file_story_id=doc.id)
-        output_tuple = tokenize_document(doc)
-        training_tuples.append(output_tuple)
-    for story_file in test_set:
-        print story_file
-        doc = styhelper.create_document_from_sty_file(file_path + story_file)
-        quotedspeechhelper.annotate_sentences(doc, settings.STORY_ALL_SENTENCES,single_sentences_file_story_id=doc.id)
-        output_tuple = tokenize_document(doc)
-        test_tuples.append(output_tuple)
-    if not test_tuples:
-        test_tuples = training_tuples
-
-
-    print 'TRAINING/EXTRACTING RULES'
-    for output_tuple in training_tuples:
-        rules_,uncovered_quotes_ = extract_rules(output_tuple)
-        rules += rules_
-        uncovered_quotes += uncovered_quotes_
-
-    print 'GENERALIZE/EXPAND RULES',len(rules)
-    def generalize_options(i,actions):
+def generalize_rules(rules):
+    def generalize_options(i, actions):
         r = [i]
-        if i[0] in ['S','A','R','T','E','q']:
+        if i[0] in ['S', 'A', 'R', 'T', 'E', 'q']:
             r.append(generalize_token(i))
         if i not in [j[0] for j in actions] and i not in [j[2] for j in actions]:
             r.append('?' + i)
@@ -690,39 +660,72 @@ def main_extract(verbose = True):
             actions2 = [j if (j[0] in pattern2) else generalize_action(j) for j in rule.actions]
             actions2 = [j for j in actions2 if j[2] in pattern2 and j[0] in pattern2]
             if not actions2: continue
-            rules2.append(QuotedSpeechPredictorRule(pattern2,actions2,rule.rule_type))
-    rules = rules2
+            rules2.append(QuotedSpeechPredictorRule(pattern2, actions2, rule.rule_type))
+    return rules2
 
-    print 'TRAINING WEIGHTS',len(rules)
-    rules_eval = [str(i) for i in rules]
-    rules_eval_counts = collections.Counter(rules_eval)
-    rules_eval = set(rules_eval)
-    rules_accum = dict([(i, [0] * 14) for i in rules_eval])
-    weights = {}
-    for rule_type in [None, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE]:
-    #for rule_type in [None]:
+def main_extract(verbose = True):
+    logging.basicConfig(level=logging.ERROR)
+    data_set = {}
+    print 'LOADING DATA'
+    for story_file in settings.STY_FILES:
+        doc = styhelper.create_document_from_sty_file(file_path + story_file)
+        quotedspeechhelper.annotate_sentences(doc, settings.STORY_ALL_SENTENCES,single_sentences_file_story_id=doc.id)
+        output_tuple = tokenize_document(doc)
+        data_set[story_file] = output_tuple
+    for story_file in settings.STY_FILES:
+        print 'CROSS VALIDATION', story_file
+        clean_assignments(data_set)
+        rules = []
+        uncovered_quotes = []
+        training_tuples = []
+        test_tuples = []
+        for key,tuple in data_set.items():
+            if key==story_file:
+                test_tuples.append(tuple)
+            else:
+                training_tuples.append(tuple)
+
+        print 'TRAINING/EXTRACTING RULES'
         for output_tuple in training_tuples:
-            rules_to_apply = [i for i in rules if i.rule_type==rule_type]
-            output_tuple = predict_quoted_speech(output_tuple, rules_to_apply)
-        for output_tuple in training_tuples:
+            rules_,uncovered_quotes_ = extract_rules(output_tuple)
+            rules += rules_
+            uncovered_quotes += uncovered_quotes_
+
+        print 'GENERALIZE/EXPAND RULES',len(rules)
+        rules = generalize_rules(rules)
+
+        print 'TRAINING WEIGHTS',len(rules)
+        rules_eval = [str(i) for i in rules]
+        rules_eval_counts = collections.Counter(rules_eval)
+        rules_eval = set(rules_eval)
+        rules_accum = dict([(i, [0] * 14) for i in rules_eval])
+        weights = {}
+        for rule_type in [None, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE]:
+        #for rule_type in [None]:
+            for output_tuple in training_tuples:
+                rules_to_apply = [i for i in rules if i.rule_type==rule_type]
+                output_tuple = predict_quoted_speech(output_tuple, rules_to_apply)
+            for output_tuple in training_tuples:
+                for rule in rules_eval:
+                    e = eval_quoted_speech(output_tuple, rule, laplace=1)
+                    rules_accum[rule] = [a + b for a, b in zip(rules_accum[rule], e)]
             for rule in rules_eval:
-                e = eval_quoted_speech(output_tuple, rule, laplace=1)
-                rules_accum[rule] = [a + b for a, b in zip(rules_accum[rule], e)]
-        for rule in rules_eval:
-            weights[rule] = list(compute_eval_quoted_speech(rules_accum[rule])[1:4])
-        for output_tuple in training_tuples:
-            weighted_assignment(output_tuple, weights)
-    # TODO prune out shitty rules here, takes too long otherwise
-    rules = [i for i in rules if weights[str(i)][2]>0.5]
+                weights[rule] = list(compute_eval_quoted_speech(rules_accum[rule])[1:4])
+            for output_tuple in training_tuples:
+                weighted_assignment(output_tuple, weights)
 
-    print 'TEST ASSIGNMENT',len(rules)
-    rules_accum['aggregated'] = [0] * 14
-    for output_tuple in test_tuples:
-        output_tuple = predict_quoted_speech(output_tuple, rules)
-        weighted_assignment(output_tuple, weights)
-        e = eval_quoted_speech(output_tuple, None)
-        rule = 'aggregated'
-        rules_accum[rule] = [a + b for a, b in zip(rules_accum[rule], e)]
+        # TODO better way to prune out bad rules? takes too long otherwise
+        # laplace=1 makes default accuracy 0.5
+        rules = [i for i in rules if weights[str(i)][2]>0.5]
+
+        print 'TEST ASSIGNMENT',len(rules)
+        rules_accum['aggregated'] = [0] * 14
+        for output_tuple in test_tuples:
+            output_tuple = predict_quoted_speech(output_tuple, rules)
+            weighted_assignment(output_tuple, weights)
+            e = eval_quoted_speech(output_tuple, None)
+            rule = 'aggregated'
+            rules_accum[rule] = [a + b for a, b in zip(rules_accum[rule], e)]
 
     print 'OVERALL ALL STORIES'
     rule = 'aggregated'

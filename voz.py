@@ -84,7 +84,9 @@ class Document(vozbase.VozContainer):
             logger.error("Sentence not found by offset %d, last offset is %d, text length is %d" % (off,self.sentences[-1].offset,self.sentences[-1].offset+self.sentences[-1].len))
         return last
 
-    def get_mention_by_token_id(self,token_id):
+    def get_mention_by_token_id(self, token_id):
+        return self.get_mentions_by_token_id(token_id)[0]
+    def get_mentions_by_token_id(self,token_id):
         """
         :param id: int
         :return: entitymanager.Mention
@@ -104,7 +106,7 @@ class Document(vozbase.VozContainer):
                     if mention:
                         for j in mention.tokens:
                             self._token_to_mention_dict[j.id] = mention
-        return self._token_to_mention_dict.get(token_id,[None])[0]
+        return self._token_to_mention_dict.get(token_id,[None])
     def get_verb_by_token_id(self,token_id):
         """
         :param id: int
@@ -238,10 +240,13 @@ class Document(vozbase.VozContainer):
         if 'source' in self.properties:
             ret += " (%s)" % self.properties['source']
         return ret
-    def get_all(self,property,collection='sentences'):
+    def get_all(self,property,collection='sentences',pair_container=False):
         lst = []
         for item in getattr(self,collection):
-            lst += getattr(item,property)
+            if not pair_container:
+                lst += getattr(item,property)
+            else:
+                lst += [(item,i) for i in getattr(item,property)]
         return util.remove_duplicates(lst)
     def get_all_mentions(self, filter_only_independent = False):
         mentions = self.get_all('mentions')
@@ -249,10 +254,10 @@ class Document(vozbase.VozContainer):
             return mentions
         else:
             return [mention for mention in mentions if mention and mention.annotations and mention.is_independent and not mention.annotations.split_ignore]
-    def get_all_verbs(self):
-        return self.get_all('verbs')
-    def get_all_tokens(self):
-        return self.get_all('tokens')
+    def get_all_verbs(self, pair_container=False):
+        return self.get_all('verbs', pair_container=pair_container)
+    def get_all_tokens(self, pair_container=False):
+        return self.get_all('tokens', pair_container=pair_container)
     def compute_predictions_mentions(self, do_voting=True):
         import classificationhelper
         import featuremanager
@@ -333,18 +338,121 @@ class Document(vozbase.VozContainer):
         # create singleton entities for mentions not in any coref group
 
 SPEECH_TYPE_CONSEC = 'c'
+class SentenceLevelSpan(object):
+    def __init__(self, offset, len):
+        self.offset = offset
+        self.len = len
+class SentenceLevelQuotedAnnotations(SentenceLevelSpan):
+    def __init__(self, offset, len, speech, speaker='?', listener='?', hint='?', text=''):
+        SentenceLevelSpan.__init__(self, offset, len)
+        self.speech = speech
+        self.speaker_annotation = speaker
+        self.listener_annotation = listener
+        self.speaker = speaker
+        self.listener = listener
+        self.hint = hint
+        self.verb_token = None
+        self.speaker_tokens = []
+        self.listener_tokens = []
+        self.speaker_mention = None
+        self.listener_mention = None
+        self.text=text
+    def __str__(self):
+        if self.speech=='d':
+            return "%s, %s (%s) > %s (%s)" % (self.verb_token or '?', self.speaker_mention or '?', self.speaker_annotation or '?',self.listener_mention or '?', self.listener_annotation or '?')
+        else:
+            return "(%s)" % self.speech
+    def init(self, sentence):
+        assert isinstance(sentence, Sentence)
+        self.offset+=sentence.offset
+
 class SentenceLevelAnnotations(object):
     def __init__(self):
         self.speech = []
-        self.speaker = []
-        self.listener = []
-        self.hint = []
+        self.speech_data = []
         self.scene_loc = []
         self.scene_time = []
         self.scene = []
         self.verbs = []
     def is_normal(self):
         return len(set(self.speech)) == 1 and self.speech[0] == SPEECH_TYPE_CONSEC
+    def init(self, sentence):
+        if sentence.id == 2393:
+            pass
+        for speech in self.speech_data:
+            speech.init(sentence)
+        for speech_i,speech in enumerate(self.speech_data):
+            if speech.hint:
+                lookup = 0
+                #print speech.hint,speech_i,sentence,sentence.id
+                verb=speaker=listener=None
+                speaker_=listener_ = None
+                if '<' in speech.hint:
+                    lookup = -1
+                    verb_,speaker_ = speech.hint.split('<')
+                elif '>' in speech.hint:
+                    lookup = 1
+                    verb_,speaker_ = speech.hint.split('>')
+                if speaker_ and '/' in speaker_:
+                    speaker_,listener_ = speaker_.split('/')
+
+                for i in sentence.tokens:
+                    if i.offset <= speech.offset: continue
+                    if i.text==verb_ and not verb: verb = i
+                    if speaker_ and i.text==speaker_ and not speaker: speaker = i
+                    if listener_ and i.text == listener_ and not listener: listener = i
+                if speech_i + lookup < 0:
+                    # TODO allow annotations to run over to the next sentence
+                    speech_data = sentence.get_previous_sentence().annotations.speech_data[-1]
+                elif speech_i + lookup >= len(self.speech_data):
+                    speech_data = None
+                    #speech_data = sentence.get_next_sentence().annotations.speech_data[0]
+                    # TODO allow annotations to run over to the next sentence
+                else:
+                    speech_data = self.speech_data[speech_i + lookup]
+                if speech_data:
+                    speech_data.verb_token = verb
+                    if speaker: speech_data.speaker_tokens = [speaker] # TODO this should be a list of tokens
+                    if listener: speech_data.listener_tokens = [listener]  # TODO this should be a list of tokens
+        for speech in self.speech_data:
+            # using the initial offset of the speech act will bias it towards closest to the beginning, therefore previous
+            if speech.speaker_tokens:
+                #speech.speaker_mention = sentence._parent_document.get_mention_by_tokens(speech.speaker_tokens)
+                speech.speaker_mention = sentence._parent_document.get_mention_by_token_id(speech.speaker_tokens[0].id)
+            else:
+                speech.speaker_mention = SentenceLevelAnnotations.find_closest_mention(sentence,speech.speaker,speech.offset)
+            if speech.listener_tokens:
+                speech.listener_mention = sentence._parent_document.get_mention_by_token_id(speech.listener_tokens[0].id)
+            else:
+                speech.listener_mention = SentenceLevelAnnotations.find_closest_mention(sentence, speech.listener,speech.offset)
+    @classmethod
+    def find_closest_mention(cls, sentence, symbol, offset):
+        # TODO this needs to be one of the mentions previously selected
+        mentions = sentence._parent_document.coreference.find_mentions_for_symbol(symbol)
+        if mentions:
+
+            mentions = sorted([(abs(offset-i.get_centroid()),i) for i in mentions if i.tokens])
+            return mentions[0]
+        else:
+            logger.warning("NO MENTION FOUND FOR SYMBOL: %s" % symbol)
+            return None
+    def get_speech_annotations_for_quote(self, quote):
+        # rank on overlap
+        overlaps = [(min(quote.offset_end,speech.offset+speech.len)-max(quote.offset,speech.offset),speech) for speech in self.speech_data]
+        overlaps = sorted(overlaps)
+        if overlaps[-1][0]<=0:
+            logger.warning('NO OVERLAPS FOR QUOTE: '+str(quote))
+        return overlaps[-1][1]
+        for speech in self.speech_data:
+            if speech.offset>=quote.offset and (quote.offset_end-1)<=speech.offset+speech.len:
+                return speech
+        else:
+            logger.warning('NO SPEECH ANNOTATIONS FOR QUOTE: '+str(quote))
+            logger.warning('Q:%d'%quote.offset)
+            logger.warning('S:'+','.join([str(i.offset) for i in self.speech_data]))
+
+    def __str__(self):
+        return '; '.join([str(i) for i in self.speech_data])
 
 
 class Sentence(vozbase.VozTextContainer):
@@ -368,12 +476,21 @@ class Sentence(vozbase.VozTextContainer):
         self.dependencies = []  #type: list[dependencyhelper.Dependency]
         self.idx = -1
 
-
         self._tokens_list = tokens #type: list[Token]
         self._tokens_dict = {} #type: dict(int,Token)
         self._text = ''
         self._parent_document = None #type: Document
 
+    def get_previous_sentence(self):
+        return self.get_sentence_by_offset(-1)
+    def get_next_sentence(self):
+        return self.get_sentence_by_offset(1)
+    def get_sentence_by_offset(self,off):
+        idx = self._parent_document.sentences.index(self)
+        if idx+off>= 0 and idx+off < len(self._parent_document.sentences):
+            return self._parent_document.sentences[idx+off]
+        else:
+            return None
     def _compute_caches(self,parent):
         self._tokens_list = self.tokens
         self._tokens_dict = util.object_list_to_dict(self._tokens_list)
@@ -473,7 +590,20 @@ class Sentence(vozbase.VozTextContainer):
         return self.format()
     def __repr__(self):
         return 'Sentence %d/%s' % (self.id,str(self))
-
+    def format_quoted_annotations(self):
+        if 'd' in self.annotations.speech:
+            ret = ''
+            text = self.get_text()
+            for speech in self.annotations.speech_data:
+                assert isinstance(speech,SentenceLevelQuotedAnnotations)
+                text_ = text[speech.offset:speech.offset + speech.len]
+                if speech.speech == 'd':
+                    ret += '\t' + speech.speaker + '->' + speech.listener + " " + text_ + '\n'
+                else:
+                    ret += '\t(' + speech.speech +') '+ text_ + '\n'
+        else:
+            ret = self.format()
+        return ret
 
 class Token(vozbase.VozTextContainer):
     def __init__(self,id,offset,length,pos,lemma,text):
@@ -490,8 +620,8 @@ class Token(vozbase.VozTextContainer):
         self.lemma = lemma
         self.text = text
         self.idx = -1
-
         self._parent_sentence = None #type: Sentence
+
     @classmethod
     def filter(cls,tokens,pos='',pos_list=[]):
         if pos and not pos_list:
@@ -501,7 +631,11 @@ class Token(vozbase.VozTextContainer):
             tokens = [i for i in tokens if i.pos in pos_list]
         # TODO filter by other fields
         return tokens
-
+    @classmethod
+    def centroid(cls,tokens):
+        a = tokens[0].offset
+        b = tokens[-1].offset + tokens[-1].len
+        return (a+b)/2
     def _compute_caches(self,parent):
         self._parent_sentence = parent
     def _clear_caches(self,parent):
@@ -552,6 +686,18 @@ class Token(vozbase.VozTextContainer):
             return None
         parse = self._parent_sentence.parse_tree
         return parse[parse.leaf_treeposition(self.idx)[0:-1]]
+
+    def get_previous(self):
+        return self.get_by_offset(-1)
+    def get_next(self):
+        return self.get_by_offset(1)
+    def get_by_offset(self,off):
+        idx = self._parent_sentence.tokens.index(self)
+        if idx+off>= 0 and idx+off < len(self._parent_sentence.tokens):
+            return self._parent_sentence.tokens[idx+off]
+        else:
+            return None
+
 
 
 def create_document_from_jsonpickle_file(json_file):

@@ -4,7 +4,11 @@ import util
 import logging
 import collections
 logger = logging.getLogger(__name__)
-import numpy as np
+try:
+    import numpy as np
+except:
+    logger.error("COULT NOT LOAD NUMPY")
+    np = None
 import collections
 import itertools
 
@@ -155,9 +159,10 @@ class Entity(vozbase.VozContainer,TaxonomyContainer,TaggableContainer):
         return groups_found
     def number_of_distinct_coref_groups(self,tag_to_compare_against=TaggableContainer.TAG_CHARACTER_SYMBOL):
         return len(self.distinct_coref_groups(tag_to_compare_against))
-
+    def get_mentions(self):
+        return self._parent_document.coreference.get_coreference_group_by_id(self.id).mentions
     def __str__(self):
-        return "Entity %d - %s, %s (%d mentions)" % (self.id,self.representation,self.format_all_taxonomies(),len(self._parent_document.coreference.get_coreference_group_by_id(self.id).mentions))
+        return "Entity %d - %s, %s (%d mentions)" % (self.id,self.representation,self.format_all_taxonomies(),len(self.get_mentions()))
     @classmethod
     def filter_by_taxonomy(cls,entities,taxonomy,value):
         return [i for i in entities if value in i.get_taxonomy(taxonomy)]
@@ -255,7 +260,25 @@ class Mention(vozbase.VozContainer,TaxonomyContainer,TaggableContainer):
                     return False
             return True
     def get_tokens(self):
+        # TODO, in 06 - Ivanko the Bear's Son.sty there is a mention without tokens?
         return self.tokens
+    def get_centroid(self):
+        a = self.tokens[0].offset
+        b = self.tokens[-1].offset + self.tokens[-1].len
+        return (a+b)/2
+    def get_all_symbols(self):
+        return self.get_tag(TaggableContainer.TAG_CHARACTER_SYMBOL)
+    def get_most_likely_symbol(self):
+        return collections.Counter(self.get_all_symbols()).most_common(1)[0][0]
+    def get_all_children_recursively(self, include_self = True):
+        ret = [self]
+        def add_all(m):
+            for i in m.child_mentions:
+                ret.append(i)
+                add_all(i)
+        add_all(self)
+        return ret
+
 
 
 
@@ -338,6 +361,12 @@ class Coreference(vozbase.VozContainer):
         self.coreference_groups = coreference_groups or [] #type: list[entitymanager.CoreferenceGroup]
 
         self._coreference_dict = {} #type: dict(int,entitymanager.Coreference)
+    def find_mentions_for_symbol(self, symbol):
+        for entity in self.entities:
+            if entity.symbol==symbol: break
+        else:
+            return None
+        return entity.get_mentions()
 
     def create_coref_group_and_entity_from_mentions(self,id,symbol,mentions):
         entity = Entity(id,mentions[0].get_text())
