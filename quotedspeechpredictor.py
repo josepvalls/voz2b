@@ -569,7 +569,7 @@ def load_rules_manual():
 
     return [QuotedSpeechPredictorRule.from_string(i) for i in rules]
 
-file_path = "/Users/josepvalls/voz2/stories/annotation-finlayson-01/"
+file_path = settings.PATH_BASE + "stories/annotation-finlayson-01/"
 
 def extract_rules_window(output, quote, token_start, token_end):
     rules = []
