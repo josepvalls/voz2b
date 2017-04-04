@@ -1,3 +1,4 @@
+import vozbase
 import voz
 import quotedspeechhelper
 import styhelper
@@ -203,9 +204,9 @@ def eval_quoted_speech(input_tuple,rule=None, laplace = 0, verbose=False):
                 if quote.speaker_mention.get_most_likely_symbol() == quote.annotations.speaker_annotation:
                     s_ms += 1
                 else:
-                    logger.warning('WRONG SPEAKER ASSIGNMENT %d, %s' % (quote.doc.id, str(quote)))
+                    logger.info('WRONG SPEAKER ASSIGNMENT %d, %s' % (quote.doc.id, str(quote)))
         else:
-            logger.warning('WRONG ANNOTATION IN SPEAKER QUOTE %d, %s' % (quote.doc.id, str(quote)))
+            logger.info('WRONG ANNOTATION IN SPEAKER QUOTE %d, %s' % (quote.doc.id, str(quote)))
 
         if quote.annotations.listener_annotation and ',' not in quote.annotations.listener_annotation:
             s_cl += 1
@@ -214,10 +215,10 @@ def eval_quoted_speech(input_tuple,rule=None, laplace = 0, verbose=False):
                 if quote.listener_mention.get_most_likely_symbol() == quote.annotations.listener_annotation:
                     s_ml += 1
                 else:
-                    logger.warning('WRONG LISTENER ASSIGNMENT %d, %s' % (quote.doc.id, str(quote)))
+                    logger.info('WRONG LISTENER ASSIGNMENT %d, %s' % (quote.doc.id, str(quote)))
         else:
             pass
-            logger.warning('WRONG ANNOTATION IN LISTENER QUOTE %d, %s' % (quote.doc.id, str(quote)))
+            logger.info('WRONG ANNOTATION IN LISTENER QUOTE %d, %s' % (quote.doc.id, str(quote)))
 
         if verbose:
             print quote.speaker_mention.get_most_likely_symbol() if quote.speaker_mention else '?',quote.annotations.speaker_annotation,'>', quote.listener_mention.get_most_likely_symbol() if quote.listener_mention else '?', quote.annotations.listener_annotation
@@ -569,8 +570,6 @@ def load_rules_manual():
 
     return [QuotedSpeechPredictorRule.from_string(i) for i in rules]
 
-file_path = settings.PATH_BASE + "stories/annotation-finlayson-01/"
-
 def extract_rules_window(output, quote, token_start, token_end):
     rules = []
     tokens = output[token_start:token_end]
@@ -614,8 +613,8 @@ def extract_rules(input):
     for token_i, token in enumerate(output):
         if isinstance(token,Quote):
             rules_ = []
-            for before in range(1,4):
-                for after in range(1,4):
+            for before in range(1,6):
+                for after in range(1,6):
                     start = token_i - before
                     end = token_i + after
                     if start<0 or end>len(output): continue
@@ -638,11 +637,14 @@ def clean_assignments(data_set):
 
 def generalize_rules(rules):
     def generalize_options(i, actions):
-        r = [i]
+        r = []
         if i[0] in ['S', 'A', 'R', 'T', 'E', 'q']:
-            r.append(generalize_token(i))
+            pass
+            #r.append(generalize_token(i))
         if i not in [j[0] for j in actions] and i not in [j[2] for j in actions]:
             r.append('?' + i)
+        if not r:
+            r = [i]
         return r
 
     def generalize_token(i):
@@ -665,10 +667,12 @@ def generalize_rules(rules):
 
 def main_extract(verbose = True):
     logging.basicConfig(level=logging.ERROR)
+    logger.setLevel(logging.ERROR)
+    logging.root.setLevel(logging.ERROR)
     data_set = {}
     print 'LOADING DATA'
     for story_file in settings.STY_FILES:
-        doc = styhelper.create_document_from_sty_file(file_path + story_file)
+        doc = styhelper.create_document_from_sty_file(settings.STY_FILE_PATH + story_file)
         quotedspeechhelper.annotate_sentences(doc, settings.STORY_ALL_SENTENCES,single_sentences_file_story_id=doc.id)
         output_tuple = tokenize_document(doc)
         data_set[story_file] = output_tuple
@@ -710,9 +714,10 @@ def main_extract(verbose = True):
                     e = eval_quoted_speech(output_tuple, rule, laplace=1)
                     rules_accum[rule] = [a + b for a, b in zip(rules_accum[rule], e)]
             for rule in rules_eval:
-                weights[rule] = list(compute_eval_quoted_speech(rules_accum[rule])[1:4])
+                weights[rule] = list(compute_eval_quoted_speech(rules_accum[rule])[1:])
             for output_tuple in training_tuples:
                 weighted_assignment(output_tuple, weights)
+        vozbase.serialize_to_file(weights,'weights.json',False)
 
         # TODO better way to prune out bad rules? takes too long otherwise
         # laplace=1 makes default accuracy 0.5
@@ -726,6 +731,8 @@ def main_extract(verbose = True):
             e = eval_quoted_speech(output_tuple, None)
             rule = 'aggregated'
             rules_accum[rule] = [a + b for a, b in zip(rules_accum[rule], e)]
+            print 'Story-'+'\t'.join([str(i) for i in [rule] + list(compute_eval_quoted_speech(rules_accum[rule]))])
+        break # first cross validation set complete here
 
     print 'OVERALL ALL STORIES'
     rule = 'aggregated'
@@ -760,7 +767,7 @@ def main_all(verbose = False):
     #for story_file in settings.STY_FILES[5:6]:
     for story_file in settings.STY_FILES:
         print story_file
-        doc = styhelper.create_document_from_sty_file(file_path+story_file)
+        doc = styhelper.create_document_from_sty_file(settings.STY_FILE_PATH+story_file)
         #styhelper.fix_sty_annotations(doc)
         quotedspeechhelper.annotate_sentences(doc, settings.STORY_ALL_SENTENCES, single_sentences_file_story_id = doc.id)
         if verbose:
@@ -1917,7 +1924,7 @@ def main_print_stuff():
     len_quotes = 0
     for story_file in settings.STY_FILES:
         print story_file
-        doc = styhelper.create_document_from_sty_file(file_path+story_file)
+        doc = styhelper.create_document_from_sty_file(settings.STY_FILE_PATH+story_file)
         #styhelper.fix_sty_annotations(doc)
         quotedspeechhelper.annotate_sentences(doc, settings.STORY_ALL_SENTENCES, single_sentences_file_story_id = doc.id)
         output_tuple = tokenize_document(doc)
