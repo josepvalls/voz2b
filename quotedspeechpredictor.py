@@ -736,8 +736,8 @@ def main_extract(verbose = True):
             e = eval_quoted_speech(output_tuple, None)
             rule = 'aggregated'
             rules_accum[rule] = [a + b for a, b in zip(rules_accum[rule], e)]
-            print 'Story-'+'\t'.join([str(i) for i in [rule] + list(compute_eval_quoted_speech(rules_accum[rule]))])
-        break # first cross validation set complete here
+            print 'Story-'+'\t'.join([str(i) for i in [rule] + list(compute_eval_quoted_speech(e))])
+        #break # first cross validation set complete here
 
     print 'OVERALL ALL STORIES'
     rule = 'aggregated'
