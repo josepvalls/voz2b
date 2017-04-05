@@ -338,6 +338,7 @@ class QuotedSpeechPredictorRule(object):
         self.pattern = pattern
         self.actions = actions
         self.rule_type = rule_type
+
     @classmethod
     def from_string(cls, s, t=None):
         logger.info("Loading rule: %s" % s )
@@ -346,6 +347,7 @@ class QuotedSpeechPredictorRule(object):
         actions = actions.strip().split()
         actions = [i.replace('=','.').split('.') for i in actions]
         return cls(pattern, actions, t)
+
     @classmethod
     def format_action(cls, action):
         if len(action) == 3:
@@ -613,8 +615,8 @@ def extract_rules(input):
     for token_i, token in enumerate(output):
         if isinstance(token,Quote):
             rules_ = []
-            for before in range(1,6):
-                for after in range(1,6):
+            for before in range(1,8):
+                for after in range(1,8):
                     start = token_i - before
                     end = token_i + after
                     if start<0 or end>len(output): continue
@@ -670,6 +672,8 @@ def main_extract(verbose = True):
     logger.setLevel(logging.ERROR)
     logging.root.setLevel(logging.ERROR)
     data_set = {}
+    rules_accum = {}
+    rules_accum['aggregated'] = [0] * 14
     print 'LOADING DATA'
     for story_file in settings.STY_FILES:
         doc = styhelper.create_document_from_sty_file(settings.STY_FILE_PATH + story_file)
@@ -702,9 +706,10 @@ def main_extract(verbose = True):
         rules_eval = [str(i) for i in rules]
         rules_eval_counts = collections.Counter(rules_eval)
         rules_eval = set(rules_eval)
-        rules_accum = dict([(i, [0] * 14) for i in rules_eval])
+        for i in rules_eval:
+            rules_accum[i] = [0] * 14
         weights = {}
-        for rule_type in [None, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE]:
+        for rule_type in [None, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE]:
         #for rule_type in [None]:
             for output_tuple in training_tuples:
                 rules_to_apply = [i for i in rules if i.rule_type==rule_type]
@@ -724,7 +729,7 @@ def main_extract(verbose = True):
         rules = [i for i in rules if weights[str(i)][2]>0.5]
 
         print 'TEST ASSIGNMENT',len(rules)
-        rules_accum['aggregated'] = [0] * 14
+        #rules_accum['aggregated'] = [0] * 14
         for output_tuple in test_tuples:
             output_tuple = predict_quoted_speech(output_tuple, rules)
             weighted_assignment(output_tuple, weights)
