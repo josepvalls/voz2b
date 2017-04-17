@@ -12,69 +12,7 @@ import random,collections
 import copy
 import util
 import utterancegenerator
-
-class TokenizedToken(object):
-    def __init__(self):
-        self.matched_rules = []
-    def add_matched_rules(self, token, rule):
-        self.matched_rules.append(rule)
-
-class EmptyTokenizedToken(TokenizedToken):
-    def __init__(self, placeholder):
-        self.placeholder = placeholder
-
-
-class Punctuation(TokenizedToken):
-    def __init__(self, endp):
-        TokenizedToken.__init__(self)
-        self.endp = endp
-
-class Quote(TokenizedToken):
-    def __init__(self, offset, offset_end, doc):
-        self.offset = offset
-        self.offset_end = offset_end
-        self.doc = doc
-        self.speaker_mention = None
-        self.listener_mention = None
-        self.speaker_mentions = {}
-        self.listener_mentions = {}
-        self.annotations = None # type voz.SentenceLevelQuotedAnnotations
-        self.endp = None
-    def __str__(self):
-        if self.speaker_mention:
-            speaker = '%s (%s)' % (self.speaker_mention.get_text(),self.speaker_mention.get_most_likely_symbol())
-        else:
-            speaker = '?'
-        if self.listener_mention:
-            listener = '%s (%s)' % (self.listener_mention.get_text(),self.listener_mention.get_most_likely_symbol())
-        else:
-            listener = '?'
-        ret = speaker + '>' + listener + ': ' + self.get_text()
-        if self.annotations:
-            ret += '\n\t(%s)' % self.annotations
-        return ret
-    def get_text(self):
-        return self.doc.get_text()[self.offset:self.offset_end].replace('\n', ' ').replace('  ', ' ')
-    def set_speaker_mention(self, mention, rule):
-        # rules starting with _ are the followup rules
-        if rule.startswith('_') or rule=='aggregated3':
-            if mention:
-                self.speaker_mention = mention
-                self.speaker_mentions[rule] = mention
-        else:
-            self.speaker_mentions[rule] = mention
-    def set_listener_mention(self, mention, rule):
-        if rule.startswith('_') or rule=='aggregated3':
-            if mention:
-                self.listener_mention = mention
-                self.listener_mentions[rule] = mention
-        else:
-            self.listener_mentions[rule] = mention
-    def get_speaker_mention(self):
-        return self.speaker_mention
-    def get_listener_mention(self):
-        return self.listener_mention
-
+from quotedbase import *
 
 def tokenize_document(doc, verbose=False):
     assert isinstance(doc,voz.Document)
@@ -270,6 +208,8 @@ RULE_LANGUAGE = {
     'P': '*', # person (character mention)
 }
 
+FOLLOWUP_RULE = '_'
+
 
 def token_to_string(token, verbose=0):
     ret = ''
@@ -330,8 +270,6 @@ def print_quoted_speech_tuple(input_tuple):
     print "TOKENIZED",tokenized_string_to_string(output,False)
     print "TOKENIZED",tokenized_string_to_string(output,True)
 
-
-FOLLOWUP_RULE = '_'
 
 class QuotedSpeechPredictorRule(object):
     def __init__(self, pattern, actions, rule_type=None):
@@ -515,7 +453,7 @@ def load_rules_manual():
     # example rules
     # Q S P > Q.s=P
     #   when Quote Said Person is found, assign Person to Quote.speaker
-    # Q1 S P1 Q2 R P2> Q1.s=P1 Q1.l=P2 Q1.s=P1 Q1.l=P2:
+    # Q1 S P1 Q2 R P2 > Q1.s=P1 Q1.l=P2 Q2.s=P2 Q2.l=P1:
     #   when Quote1 Said Person1 Quote2 Replied Person2 is found, assign Person1 to Quote1.speaker, Person2 to Quote1.listener...
     rules = [
         'Q S P > Q.s=P',
@@ -524,7 +462,7 @@ def load_rules_manual():
         'S P Q > Q.s=P',
         'S Q P > Q.s=P',
         'P Q S > Q.s=P',
-        'Q1 S P1 Q2 R P2 > Q1.s=P1 Q1.l=P2 Q1.s=P1 Q1.l=P2',
+        'Q1 S P1 Q2 R P2 > Q1.s=P1 Q1.l=P2 Q2.s=P2 Q2.l=P1',
         'Q E P > Q.s=P',
         'Q P E > Q.s=P',
         'P E Q > Q.s=P',
@@ -537,7 +475,7 @@ def load_rules_manual():
         'T P ?: Q > Q.s=P Q.l=P',
         'T Q P ?. > Q.s=P Q.l=P',
         'P Q T ?. > Q.s=P Q.l=P',
-        'Q1 E P1 Q2 R P2 > Q1.s=P1 Q1.l=P2 Q1.s=P1 Q1.l=P2',
+        'Q1 E P1 Q2 R P2 > Q1.s=P1 Q1.l=P2 Q2.s=P2 Q2.l=P1',
         'Q S P > Q.s=P',
         'q~ S P > q~.s=P',
         'q~ S P q! > q~.s=P q!.s=P',
@@ -583,7 +521,6 @@ def extract_rules_window(output, quote, token_start, token_end):
 
     # compute rules for the given quote
     pattern = ['%s%d' % (token_to_string(token),i) for i,token in enumerate(tokens)]
-
     # TODO do it for all the quotes in the token list?
     token_to_string_dict = dict(zip(tokens,pattern))
     target = token_to_string_dict[quote]
@@ -615,7 +552,7 @@ def extract_rules(input):
     for token_i, token in enumerate(output):
         if isinstance(token,Quote):
             rules_ = []
-            for before in range(1,8):
+            for before in range(0,8):
                 for after in range(1,8):
                     start = token_i - before
                     end = token_i + after
@@ -1810,54 +1747,6 @@ P A ?: q! ?. > Q.s=P	ACCURACY	0.0434782608696	0	0.0217391304348
     data = [i.split('\t') for i in data]
     return dict([(i[0],(i[2],i[3])) for i in data])
 
-def load_weights():
-    data = '''P E Q > Q.s=P	ACCURACY	1.0	1.0	0.75641025641	COVERAGE	0.0543175487465	0.0294550810015	0.042233357194	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	12	9	0	0	0	MATCHES	39	20
-S P Q > Q.s=P	ACCURACY	0.833333333333	1.0	0.601851851852	COVERAGE	0.075208913649	0.0294550810015	0.0529706513958	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	22	3	0	0	0	MATCHES	45	20
-E P : Q > Q.s=P	ACCURACY	0.444444444444	1.0	0.407407407407	COVERAGE	0.075208913649	0.0294550810015	0.0529706513958	SKIPPED	0.0	0.0543175487465	CONFLICTS	2	13	19	0	0	0	MATCHES	24	20
-q!1 q~ S P q!2 > Q.s=P Q1.s=P Q2.s=P	ACCURACY	0.818181818182	1.0	0.636363636364	COVERAGE	0.0612813370474	0.0294550810015	0.0458124552613	SKIPPED	0.0	0.0543175487465	CONFLICTS	5	15	2	0	0	0	MATCHES	36	20
-q!1 q!2 P A > q!1.l=P q!2.s=P	ACCURACY	0.954545454545	0.909090909091	0.931818181818	COVERAGE	0.0306406685237	0.0324005891016	0.0314960629921	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	4	0	0	-3	4	MATCHES	21	20
-E P Q > Q.s=P	ACCURACY	0.710144927536	1.0	0.5	COVERAGE	0.0961002785515	0.0294550810015	0.0637079455977	SKIPPED	0.0	0.0543175487465	CONFLICTS	5	22	7	0	0	0	MATCHES	49	20
-Q P S > Q.s=P	ACCURACY	0.897959183673	1.0	0.65306122449	COVERAGE	0.0682451253482	0.0294550810015	0.0493915533286	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	14	5	0	0	0	MATCHES	44	20
-P1 A P2 : Q > Q.s=P1 Q.l=P2	ACCURACY	0.962962962963	1.0	0.981481481481	COVERAGE	0.0376044568245	0.039764359352	0.0386542591267	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	8	13	0	8	13	MATCHES	26	27
-T P ?: Q > Q.s=P Q.l=P	ACCURACY	1.0	1.0	1.0	COVERAGE	0.0320334261838	0.0338733431517	0.032927702219	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	3	3	0	3	3	MATCHES	23	23
-P Q S > Q.s=P	ACCURACY	0.909090909091	1.0	0.909090909091	COVERAGE	0.0306406685237	0.0294550810015	0.0300644237652	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	3	4	0	0	0	MATCHES	20	20
-q~ S P q! > q~.s=P q!.s=P	ACCURACY	1.0	1.0	0.647058823529	COVERAGE	0.0947075208914	0.0294550810015	0.0629921259843	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	22	0	0	0	0	MATCHES	68	20
-T Q P ?. > Q.s=P Q.l=P	ACCURACY	1.0	0.909090909091	0.954545454545	COVERAGE	0.0306406685237	0.0324005891016	0.0314960629921	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	2	2	0	2	2	MATCHES	22	20
-P2 E P1 : Q > Q.s=P1 Q.l=P2	ACCURACY	0.5	0.558139534884	0.522727272727	COVERAGE	0.0612813370474	0.0633284241532	0.0622763063708	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	12	19	0	12	19	MATCHES	22	24
-Q P E > Q.s=P	ACCURACY	0.772727272727	1.0	0.5	COVERAGE	0.122562674095	0.0294550810015	0.0773085182534	SKIPPED	0.0	0.0543175487465	CONFLICTS	25	14	8	0	0	0	MATCHES	68	20
-P S Q > Q.s=P	ACCURACY	1.0	1.0	0.833333333333	COVERAGE	0.041782729805	0.0294550810015	0.0357909806729	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	11	6	0	0	0	MATCHES	30	20
-P E : Q > Q.s=P	ACCURACY	0.71186440678	1.0	0.525423728814	COVERAGE	0.0821727019499	0.0294550810015	0.0565497494631	SKIPPED	0.0	0.0543175487465	CONFLICTS	6	9	1	0	0	0	MATCHES	42	20
-P1 E ?: q!1 P2 E ?: q!2 > q!1.s=P1 q!1.l=P2 q!2.s=P2 q!2.l=P1	ACCURACY	0.933333333333	0.9	0.916666666667	COVERAGE	0.041782729805	0.0441826215022	0.0429491768074	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	8	2	0	8	2	MATCHES	28	27
-P1 E P2 ?: Q > Q.s=P1 Q.l=P2	ACCURACY	0.898305084746	1.0	0.940677966102	COVERAGE	0.0821727019499	0.0854197349043	0.0837508947745	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	12	28	0	12	28	MATCHES	53	58
-P1 E ?: q!1 P2 R ?: q!2 > q!1.s=P1 q!1.l=P2 q!2.s=P2 q!2.l=P1	ACCURACY	0.958333333333	0.958333333333	0.958333333333	COVERAGE	0.033426183844	0.0353460972018	0.034359341446	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	4	0	0	4	0	MATCHES	23	23
-S P : Q > Q.s=P	ACCURACY	0.526315789474	1.0	0.526315789474	COVERAGE	0.0529247910864	0.0294550810015	0.0415175375805	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	9	12	0	0	0	MATCHES	20	20
-Q T ?: P > Q.s=P Q.l=P	ACCURACY	1.0	1.0	1.0	COVERAGE	0.0292479108635	0.0309278350515	0.0300644237652	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	1	0	0	1	0	MATCHES	21	21
-P2 A P1 : Q > Q.s=P1 Q.l=P2	ACCURACY	0.740740740741	0.777777777778	0.759259259259	COVERAGE	0.0376044568245	0.039764359352	0.0386542591267	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	8	13	0	8	13	MATCHES	20	21
-P T ?: Q > Q.s=P Q.l=P	ACCURACY	1.0	0.954545454545	0.977272727273	COVERAGE	0.0306406685237	0.0324005891016	0.0314960629921	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	2	2	0	2	2	MATCHES	22	21
-Q E P > Q.s=P	ACCURACY	0.969387755102	1.0	0.586734693878	COVERAGE	0.136490250696	0.0294550810015	0.084466714388	SKIPPED	0.0	0.0543175487465	CONFLICTS	17	32	0	0	0	0	MATCHES	95	20
-P Q E > Q.s=P	ACCURACY	0.909090909091	1.0	0.909090909091	COVERAGE	0.0306406685237	0.0294550810015	0.0300644237652	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	3	4	0	0	0	MATCHES	20	20
-q~ S P > q~.s=P	ACCURACY	0.985507246377	1.0	0.63768115942	COVERAGE	0.0961002785515	0.0294550810015	0.0637079455977	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	30	0	0	0	0	MATCHES	68	20
-Q1 E P1 Q2 R P2 > Q1.s=P1 Q1.l=P2 Q1.s=P1 Q1.l=P2	ACCURACY	1.0	1.0	1.0	COVERAGE	0.0278551532033	0.0294550810015	0.0286327845383	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	0	0	0	0	0	MATCHES	20	20
-P1 E P2 : Q > Q.s=P1 Q.l=P2	ACCURACY	0.886363636364	1.0	0.931818181818	COVERAGE	0.0612813370474	0.0633284241532	0.0622763063708	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	12	19	0	12	19	MATCHES	39	43
-Q P T ?. > Q.s=P Q.l=P	ACCURACY	1.0	0.95652173913	0.978260869565	COVERAGE	0.0320334261838	0.0338733431517	0.032927702219	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	3	0	0	3	0	MATCHES	23	22
-P R q! > q!.s=P	ACCURACY	1.0	1.0	0.916666666667	COVERAGE	0.033426183844	0.0294550810015	0.0314960629921	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	4	2	0	0	0	MATCHES	24	20
-P1 A ?: q!1 P2 R ?: q!2 > q!1.s=P1 q!1.l=P2 q!2.s=P2 q!2.l=P1	ACCURACY	1.0	1.0	1.0	COVERAGE	0.0278551532033	0.0294550810015	0.0286327845383	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	0	0	0	0	0	MATCHES	20	20
-S Q P > Q.s=P	ACCURACY	0.888888888889	1.0	0.814814814815	COVERAGE	0.0376044568245	0.0294550810015	0.0336435218325	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	4	12	0	0	0	MATCHES	24	20
-P Q T ?. > Q.s=P Q.l=P	ACCURACY	1.0	1.0	1.0	COVERAGE	0.0278551532033	0.0294550810015	0.0286327845383	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	0	0	0	0	0	MATCHES	20	20
-P S q! > q!.s=P	ACCURACY	1.0	1.0	0.844827586207	COVERAGE	0.0403899721448	0.0294550810015	0.0350751610594	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	13	6	0	0	0	MATCHES	29	20
-E Q P > Q.s=P	ACCURACY	0.764705882353	1.0	0.676470588235	COVERAGE	0.0473537604457	0.0294550810015	0.0386542591267	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	5	19	0	0	0	MATCHES	26	20
-P1 E ?: q!1 q!2 P2 E > q!1.s=P1 q!1.l=P2 q!2.s=P2 q!2.l=P1	ACCURACY	0.954545454545	0.954545454545	0.954545454545	COVERAGE	0.0306406685237	0.0324005891016	0.0314960629921	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	2	0	0	2	0	MATCHES	21	21
-Q S P > Q.s=P	ACCURACY	0.975308641975	1.0	0.611111111111	COVERAGE	0.112813370474	0.0294550810015	0.0722977809592	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	64	0	0	0	0	MATCHES	158	40
-P S : Q > Q.s=P	ACCURACY	0.666666666667	1.0	0.555555555556	COVERAGE	0.0626740947075	0.0294550810015	0.0465282748747	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	7	0	0	0	0	MATCHES	30	20
-P1 A ?: q!1 q!2 P2 R > q!1.s=P1 q!1.l=P2 q!2.s=P2 q!2.l=P1	ACCURACY	1.0	1.0	1.0	COVERAGE	0.0278551532033	0.0294550810015	0.0286327845383	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	0	0	0	0	0	MATCHES	20	20
-P A : Q > Q.s=P	ACCURACY	0.913043478261	1.0	0.891304347826	COVERAGE	0.0320334261838	0.0294550810015	0.0307802433787	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	3	1	0	0	0	MATCHES	21	20
-P1 S P2 : Q > Q.s=P1 Q.l=P2	ACCURACY	0.903225806452	1.0	0.935483870968	COVERAGE	0.0431754874652	0.0441826215022	0.0436649964209	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	8	12	0	8	12	MATCHES	28	30
-P1 S q!1 P2 R q!2 > q!1.s=P1 q!1.l=P2 q!2.s=P2 q!2.l=P1	ACCURACY	1.0	1.0	1.0	COVERAGE	0.0278551532033	0.0294550810015	0.0286327845383	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	0	0	0	0	0	MATCHES	20	20
-Q1 S P1 Q2 R P2 > Q1.s=P1 Q1.l=P2 Q1.s=P1 Q1.l=P2	ACCURACY	1.0	1.0	1.0	COVERAGE	0.0278551532033	0.0294550810015	0.0286327845383	SKIPPED	0.0	0.0543175487465	CONFLICTS	0	0	0	0	0	0	MATCHES	20	20
-'''.splitlines()
-    data = [i.split('\t') for i in data]
-    return dict([(i[0],(i[2],i[3])) for i in data])
-
 def load_auto_rules():
     d = {'Q': ['Q','q~','q!'],
          'E': ['E','A','R','T','S'],
@@ -1918,7 +1807,7 @@ def main_gene_minilang():
     results = utterancegenerator.UtteranceGenerator().generate(g, d, verbose=False)
     results = [i.strip() for i in results]
     print 'generated rules',len(results)
-    rules = [re.sub('\d','',i.split('>')[0].strip()) for i in load_weights().keys()]
+    rules = [re.sub('\d','',' '.join(i.pattern)) for i in load_rules_manual()]
     print 'generated',len(results),len(set(rules)&set(results))
     print 'missing',len(set(rules)-set(results))
     for i in set(rules)-set(results):
@@ -1927,6 +1816,13 @@ def main_gene_minilang():
 
 def main_print_stuff():
     len_quotes = 0
+    len_sentences = 0
+    len_verbs = 0
+    len_mentions = 0
+    len_pp = 0
+    len_pn = 0
+    len_tokens = 0
+    len_tokens_in_quotes = 0
     for story_file in settings.STY_FILES:
         print story_file
         doc = styhelper.create_document_from_sty_file(settings.STY_FILE_PATH+story_file)
@@ -1936,7 +1832,21 @@ def main_print_stuff():
         output, quotes, mentions, verbs = output_tuple
         print tokenized_string_to_string(output, 1)
         len_quotes += len(quotes)
-    print 'TOTAL NUM QUOTES ', len_quotes
+        len_verbs += len(verbs)
+        len_mentions += len(mentions)
+        len_sentences += len(doc.sentences)
+        len_pp += len([i for i in mentions if [j for j in i.tokens if j.pos == 'PRP']])
+        len_pn += len([i for i in mentions if [j for j in i.tokens if j.pos == 'NNP']])
+        len_tokens += len(doc.get_text())
+        len_tokens_in_quotes += sum([q.offset_end-q.offset for q in quotes])
+    print 'TOTAL NUM QUOTES\t', len_quotes
+    print 'TOTAL NUM SENT\t', len_sentences
+    print 'TOTAL NUM VERBS\t', len_verbs
+    print 'TOTAL NUM MENT\t', len_mentions
+    print 'TOTAL NUM PP\t', len_pp
+    print 'TOTAL NUM PN\t', len_pn
+    print 'TOTAL NUM chars\t', len_tokens
+    print 'TOTAL NUM chars in quotes\t', len_tokens_in_quotes
 
 if __name__=='__main__':
     main_extract()

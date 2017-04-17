@@ -155,3 +155,5 @@ wizard	witch
 stepson	stepdaughter
 bachelor	maiden
 stepfather	stepmother
+dad	mom
+papi	mami
