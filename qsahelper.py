@@ -53,9 +53,11 @@ class QsaFile(object):
             return car,cdr
         def child_as_text(child):
             if isinstance(child, element.NavigableString):
-                return str(child.encode('utf-8'))
+                #return str(child.encode('utf-8'))
+                return str(unicode(child.decode('utf-8')).encode('utf-8'))
             else:
-                return child.getText().encode('utf-8')
+                #return child.getText().encode('utf-8')
+                return str(unicode(child.getText().decode('utf-8')).encode('utf-8'))
         for p in self.d.select('DOC')[0].select('PARAGRAPH'):
             #text = p.getText() # doesn't work because of: <PERSON>the bride</PERSON>-people
             text = ' '.join([child_as_text(child) for child in p.children])
@@ -81,9 +83,9 @@ class QsaFile(object):
                     # Note, wrong annotations:
                     # in austen_emma_1.xml: <PARAGRAPH parnum="13"><QUOTE id="0">"Poor
                     q = Quote(-1,-1,DummyDocument())
-                    q._text = child.getText().encode('utf-8')
+                    q._text = child_as_text(child)
                     q.annotations = voz.SentenceLevelQuotedAnnotations(-1, -1, 'd', child.attrs.get('speaker',None))
-                    q.endp = child.getText().encode('utf-8').strip('"')
+                    q.endp = q._text.strip('"')
                     quotes.append(q)
                     output.append(q)
                 else:
