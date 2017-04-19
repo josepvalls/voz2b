@@ -20,6 +20,24 @@ def create_document_from_raw_text(str_input,properties={}):
 def annotate_document_from_xml_file(str_input,xml_file,properties={}):
     return annotate_document_from_corenlp(str_input,open(xml_file).read())
 
+def tokenized_string(str_input):
+    scm = networkcachemanager.CAStanfordCoreNLPDrexelMini()
+    scm = networkcachemanager.CAStanfordCoreNLPLocalMini()
+    sentences = []
+    document = voz.Document(str_input, sentences, {})  # type: voz.Document
+    raw_xml_data = scm.query(str_input)
+    xmldoc = minidom.parseString(raw_xml_data)
+    for sentence_xml in xmldoc.getElementsByTagName('sentences')[0].getElementsByTagName('sentence'):
+        id_ = int(sentence_xml.getAttribute('id'))
+        tokens = [token_from_xml(xml,str_input,document) for xml in sentence_xml.getElementsByTagName('tokens')[0].getElementsByTagName('token')]
+        if tokens:
+            offset = tokens[0].offset
+            offset_end = tokens[-1].offset+tokens[-1].len
+        sentence = voz.Sentence(id_,offset,offset_end-offset,tokens)
+        sentences.append(sentence)
+    return util.flatten([i.tokens for i in sentences])
+
+
 def annotate_document_from_corenlp(str_input,raw_xml_data,properties={}):
     properties = dict({'source':'annotate_document_from_corenlp'}, **properties)
     sentences = []

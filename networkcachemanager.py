@@ -145,11 +145,21 @@ class CAStanfordCoreNLPLocal(CachedAcquirer):
     def get_url(self):
         return settings.DATA_USE_STANFORD_SYSTEM_LOCAL_URL+'/nlp'
 
+class CAStanfordCoreNLPLocalMini(CAStanfordCoreNLPLocal):
+    def key(self,q):
+        return 'pos_'+base64.b64encode(hashlib.sha1(q.encode('ascii','ignore')).digest())
+    def fetch(self,q):
+        query = {'sent':q.encode('utf-8'),'annotators':'tokenize, ssplit, pos, lemma','print':'xml'}
+        url = self.get_url()
+        return urllib2.urlopen(url,urllib.urlencode(query),240).read()
+
+class CAStanfordCoreNLPDrexelMini(CAStanfordCoreNLPLocalMini):
+    def get_url(self):
+        return settings.DATA_USE_STANFORD_SYSTEM_LOCAL_URL_ALT+'/nlp'
 
 class CAStanfordCoreNLPDrexel(CAStanfordCoreNLPLocal):
     def get_url(self):
         return settings.DATA_USE_STANFORD_SYSTEM_LOCAL_URL_ALT+'/nlp'
-
 
 class CAStanfordCoreNLPOnline(CachedAcquirer):
     def key(self,q):

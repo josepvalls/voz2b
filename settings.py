@@ -6,7 +6,7 @@ import logging
 logging.basicConfig(format='%(levelname)s:\t%(message)s', level=logging.DEBUG)
 
 PATH_BASE = '/Users/josepvalls/voz2/'
-PATH_BASE = '/home/centos/voz2/'
+#PATH_BASE = '/home/centos/voz2/'
 
 DATA_LOCAL_CACHE_DB_FILE = PATH_BASE+'data/networkcache.db'
 #DATA_LOCAL_CACHE_DB_FILE = '/Users/josepvalls/voz-nlp/cache.db'
@@ -56,7 +56,7 @@ OPTIONS={ # This is used to create radio buttons in the web form
 WEB_HOST = '129.25.12.216'
 WEB_PORT = '8080'
 
-WEB_HOST = '0.0.0.0'
 WEB_HOST = '127.0.0.1'
+WEB_HOST = '0.0.0.0'
 WEB_PORT = '8080'
 

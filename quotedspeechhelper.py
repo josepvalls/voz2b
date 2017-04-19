@@ -5,7 +5,7 @@ import styhelper
 import logging
 import csv
 import re
-
+from quotedbase import normalize_string
 logger = logging.getLogger(__name__)
 
 SPEECH_TYPE_CONSEC = 'c'
@@ -14,10 +14,6 @@ SPEECH_TYPE_NARRAT = 'n'
 SPEECH_TYPE_QUOTED = 'q'
 SPEECH_TYPE_NOQOUO = 'p'
 
-def normalize_string(s):
-    return re.sub('[^a-z]','',s.lower())
-def normalize_string_spacing(s):
-    return re.sub('[\n\s\r]','',s.lower())
 
 def annotate_sentences(document, quoted_speech_file, format='tsv', single_sentences_file_story_id = None):
     """

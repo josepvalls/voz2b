@@ -19,7 +19,7 @@ class Verb(vozbase.VozTextContainer):
         super(Verb, self).__init__(id,offset,len)
         self.token = token
         self.frame = frame #unused
-        self.arguments = arguments
+        self.arguments = arguments #type: {}
         self._subjects = None
         self._objects = None
         self._sentence = None

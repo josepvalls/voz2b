@@ -38,7 +38,7 @@ def base_form(text, stories=[]):
             return '''%s: <input name="%s" type="text" value="%s"/>''' % (k, k, getattr(settings, k))
     body = '''<html><body><form method="POST"><textarea name="text" cols="60" rows="20">''' + text + '''</textarea>'''
     body += '''<br/><input type="submit"></input>'''
-    body += str(settings.STY_FILES) + str(type(settings.STY_FILES))
+    #body += str(settings.STY_FILES) + str(type(settings.STY_FILES))
     #body += "<br/>" + "<br/>".join(['<input name="story" type="checkbox" value="%s"%s/>%s' % (i, ' checked' if i in stories else '', i) for i insettings.STY_FILES])
     body += '''<br/><input type="submit"></input>'''
     body += "<br/>" + "<br/>".join([i for i in [inputfor(k) for k in dir(settings)] if i])
