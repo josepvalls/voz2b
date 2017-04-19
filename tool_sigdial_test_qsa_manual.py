@@ -12,10 +12,11 @@ def main(verbose = False, DO_MANUAL=False, DO_CROSS_VALIDATION=True):
     rules_accum = {}
     rules_accum['aggregated'] = [0] * 14
     print 'LOADING DATA'
-    for story_file in settings.QSA_FILES:
+    files_in_use = settings.QSA_FILES[0:2]
+    for story_file in files_in_use:
         output_tuple = qsahelper.tokenized_string_from_qsa_file(settings.QSA_FILE_PATH + story_file)
         data_set[story_file] = output_tuple
-    for story_file in (settings.QSA_FILES if DO_CROSS_VALIDATION else ['TRAINING SET = TEST SET']):
+    for story_file in (files_in_use if DO_CROSS_VALIDATION else ['TRAINING SET = TEST SET']):
         if DO_CROSS_VALIDATION:
             print 'CROSS VALIDATION', story_file
             clean_assignments(data_set)
