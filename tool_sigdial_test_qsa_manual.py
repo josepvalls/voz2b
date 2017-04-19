@@ -12,7 +12,7 @@ def main(verbose = False, DO_MANUAL=False, DO_CROSS_VALIDATION=True):
     rules_accum = {}
     rules_accum['aggregated'] = [0] * 14
     print 'LOADING DATA'
-    files_in_use = settings.QSA_FILES[0:2]
+    files_in_use = settings.QSA_FILES
     for story_file in files_in_use:
         output_tuple = qsahelper.tokenized_string_from_qsa_file(settings.QSA_FILE_PATH + story_file)
         data_set[story_file] = output_tuple

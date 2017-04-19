@@ -425,6 +425,8 @@ def extract_rules_window(output, quote, token_start, token_end):
     pattern = ['%s%d' % (token_to_string(token),i) for i,token in enumerate(tokens)]
     # TODO do it for all the quotes in the token list?
     token_to_string_dict = dict(zip(tokens,pattern))
+    if quote not in token_to_string_dict:
+        pass
     target = token_to_string_dict[quote]
     if speakers or listeners:
         actions = []
@@ -460,7 +462,7 @@ def extract_rules(input):
                     end = token_i + after
                     if start<0 or end>len(output): continue
                     if not token.annotations: continue
-                rules_ += extract_rules_window(output,token,start, end)
+                    rules_ += extract_rules_window(output,token,start, end)
             if not rules_:
                 missing += [token]
             rules += rules_
