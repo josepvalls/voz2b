@@ -54,10 +54,12 @@ class QsaFile(object):
         def child_as_text(child):
             if isinstance(child, element.NavigableString):
                 #return str(child.encode('utf-8'))
-                return str(unicode(child.decode('utf-8')).encode('utf-8'))
+                #return str(unicode(child.decode('utf-8')).encode('utf-8'))
+                return str(unicode(child.decode('utf-8')).encode('ascii','ignore'))
             else:
                 #return child.getText().encode('utf-8')
-                return str(unicode(child.getText().decode('utf-8')).encode('utf-8'))
+                #return str(unicode(child.getText().decode('utf-8')).encode('utf-8'))
+                return str(unicode(child.getText().decode('utf-8')).encode('ascii','ignore'))
         for p in self.d.select('DOC')[0].select('PARAGRAPH'):
             #text = p.getText() # doesn't work because of: <PERSON>the bride</PERSON>-people
             text = ' '.join([child_as_text(child) for child in p.children])
