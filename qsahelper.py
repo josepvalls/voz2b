@@ -53,18 +53,19 @@ class QsaFile(object):
             return car,cdr
         def child_as_text(child):
             if isinstance(child, element.NavigableString):
-                #return str(child.encode('utf-8'))
+                return unicode(child)
                 #return str(unicode(child.decode('utf-8')).encode('utf-8'))
-                return str(unicode(child.decode('utf-8')).encode('ascii','ignore'))
+                #return str(unicode(child).encode('ascii','ignore'))
             else:
-                #return child.getText().encode('utf-8')
+                return unicode(child.getText())
                 #return str(unicode(child.getText().decode('utf-8')).encode('utf-8'))
-                return str(unicode(child.getText().decode('utf-8')).encode('ascii','ignore'))
+                #return str(unicode(child.getText()).encode('ascii','ignore'))
         for p in self.d.select('DOC')[0].select('PARAGRAPH'):
             #text = p.getText() # doesn't work because of: <PERSON>the bride</PERSON>-people
             text = ' '.join([child_as_text(child) for child in p.children])
-            tokens = stanfordhelper.tokenized_string(unicode(text.decode('utf-8')))
-            #print self.path,p.attrs.get('parnum')
+            tokens = stanfordhelper.tokenized_string(unicode(text))
+            print self.path,p.attrs.get('parnum')
+            #if p.attrs.get('parnum')=='22': pass
             for child in p.children:
                 car, tokens = consume(tokens, child_as_text(child))
                 if child.name in ['PERSON','ORGANIZATION']:
@@ -85,7 +86,8 @@ class QsaFile(object):
                     # Note, wrong annotations:
                     # in austen_emma_1.xml: <PARAGRAPH parnum="13"><QUOTE id="0">"Poor
                     q = Quote(-1,-1,DummyDocument())
-                    q._text = child_as_text(child)
+                    print child,child_as_text(child)
+                    q._text = child_as_text(child).encode('ascii','ignore')
                     q.annotations = voz.SentenceLevelQuotedAnnotations(-1, -1, 'd', child.attrs.get('speaker',None))
                     q.endp = q._text.strip('"')
                     quotes.append(q)
@@ -108,6 +110,7 @@ def main():
     file_path = settings.QSA_FILE_PATH
     story_file = settings.QSA_FILES[0]
     story_file = 'chekhov_lady.xml'
+    #story_file = 'doyle_boscombe.xml'
     t = tokenized_string_from_qsa_file(file_path+story_file) #type: voz.Document
     output, quotes, mentions, verbs = t
     print tokenized_string_to_string(output,2)

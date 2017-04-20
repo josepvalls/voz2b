@@ -3,7 +3,7 @@ logger = logging.getLogger(__name__)
 from quotedspeechpredictor import *
 import qsahelper
 
-def main(verbose = False, DO_MANUAL=False, DO_CROSS_VALIDATION=True):
+def main(verbose = False, DO_MANUAL=True, DO_CROSS_VALIDATION=False):
     logging.basicConfig(level=logging.ERROR)
     logger.setLevel(logging.ERROR)
     logging.root.setLevel(logging.ERROR)
