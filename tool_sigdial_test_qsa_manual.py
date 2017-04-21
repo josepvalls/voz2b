@@ -10,7 +10,7 @@ def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False):
     data_set = {}
     rules_accum = {}
     rules_accum['aggregated'] = [0] * 14
-    print 'LOADING DATA'
+    logger.warn('LOADING DATA')
     files_in_use = settings.QSA_FILES
     for story_file in files_in_use:
         output_tuple = qsahelper.tokenized_string_from_qsa_file(settings.QSA_FILE_PATH + story_file)
@@ -86,7 +86,9 @@ def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False):
             e = eval_quoted_speech(output_tuple, None)
             rule = 'aggregated'
             rules_accum[rule] = [a + b for a, b in zip(rules_accum[rule], e)]
-            print 'Story - ' + '\t'.join([str(i) for i in [rule] + list(compute_eval_quoted_speech(e))])
+            out = 'Fold - ' + '\t'.join([str(i) for i in [rule] + list(compute_eval_quoted_speech(e))])
+            print out
+            logger.warn(out)
             # break # first cross validation set complete here
 
     print 'OVERALL ALL STORIES'
