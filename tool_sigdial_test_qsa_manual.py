@@ -4,9 +4,9 @@ from quotedspeechpredictor import *
 import qsahelper
 
 def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False):
-    #logging.basicConfig(level=logging.ERROR)
-    #logger.setLevel(logging.ERROR)
-    #logging.root.setLevel(logging.ERROR)
+    logging.basicConfig(level=logging.WARN)
+    logger.setLevel(logging.WARN)
+    logging.root.setLevel(logging.WARN)
     data_set = {}
     rules_accum = {}
     rules_accum['aggregated'] = [0] * 14
@@ -17,7 +17,7 @@ def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False):
         data_set[story_file] = output_tuple
     for story_file in (files_in_use if DO_CROSS_VALIDATION else ['TRAINING SET = TEST SET']):
         if DO_CROSS_VALIDATION:
-            logger.info('CROSS VALIDATION '+story_file)
+            logger.warn('CROSS VALIDATION '+story_file)
             clean_assignments(data_set)
             rules = []
             uncovered_quotes = []
@@ -32,25 +32,25 @@ def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False):
             training_tuples = test_tuples = data_set.values()
 
         if DO_MANUAL:
-            logger.info('LOADING MANUAL RULES')
+            logger.warn('LOADING MANUAL RULES')
             rules = load_rules_manual()
             rules = load_auto_rules()
         else:
-            logger.info('TRAINING/EXTRACTING RULES')
+            logger.warn('TRAINING/EXTRACTING RULES')
             for output_tuple in training_tuples:
                 rules_, uncovered_quotes_ = extract_rules(output_tuple)
                 rules += rules_
                 uncovered_quotes += uncovered_quotes_
 
-            logger.info('GENERALIZE/EXPAND RULES'+str(len(rules)))
+            logger.warn('GENERALIZE/EXPAND RULES '+str(len(rules)))
             rules = set(rules)
-            logger.info('GENERALIZE/EXPAND RULES SET' + str(len(rules)))
+            logger.warn('GENERALIZE/EXPAND RULES SET ' + str(len(rules)))
             rules = generalize_rules(rules)
-            logger.info('GENERALIZE/EXPAND RULES' + str(len(rules)))
+            logger.warn('GENERALIZE/EXPAND RULES ' + str(len(rules)))
             rules = set(rules)
-            logger.info('GENERALIZE/EXPAND RULES SET' + str(len(rules)))
+            logger.warn('GENERALIZE/EXPAND RULES SET ' + str(len(rules)))
 
-        logger.info('TRAINING WEIGHTS'+str(len(rules)))
+        logger.warn('TRAINING WEIGHTS '+str(len(rules)))
         rules_eval = [str(i) for i in rules]
         rules_eval_counts = collections.Counter(rules_eval)
         rules_eval = set(rules_eval)
@@ -71,14 +71,14 @@ def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False):
                 weights[rule] = list(compute_eval_quoted_speech(rules_accum[rule])[1:])
             for output_tuple in training_tuples:
                 weighted_assignment(output_tuple, weights)
-        vozbase.serialize_to_file(weights, 'weights.json', False)
+        #vozbase.serialize_to_file(weights, 'weights.json', False)
 
         if not DO_MANUAL:
             # TODO better way to prune out bad rules? takes too long otherwise
             # laplace=1 makes default accuracy 0.5
             rules = [i for i in rules if weights[str(i)][2] > 0.5]
 
-        logger.info('TEST ASSIGNMENT'+str(len(rules)))
+        logger.warn('TEST ASSIGNMENT '+str(len(rules)))
         # rules_accum['aggregated'] = [0] * 14
         for output_tuple in test_tuples:
             output_tuple = predict_quoted_speech(output_tuple, rules)
@@ -97,5 +97,5 @@ def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False):
         for rule in rules_accum.keys():
             print '\t'.join([str(i) for i in [rule] + list(compute_eval_quoted_speech(rules_accum[rule]))])
 
-
-main()
+if __name__=='__main__':
+    main()
