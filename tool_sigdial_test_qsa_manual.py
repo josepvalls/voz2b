@@ -3,11 +3,10 @@ logger = logging.getLogger(__name__)
 from quotedspeechpredictor import *
 import qsahelper
 
-def main(verbose = False, DO_MANUAL=True, DO_CROSS_VALIDATION=False):
-    logging.basicConfig(level=logging.ERROR)
-    logger.setLevel(logging.ERROR)
-    logging.root.setLevel(logging.ERROR)
-
+def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False):
+    #logging.basicConfig(level=logging.ERROR)
+    #logger.setLevel(logging.ERROR)
+    #logging.root.setLevel(logging.ERROR)
     data_set = {}
     rules_accum = {}
     rules_accum['aggregated'] = [0] * 14
@@ -18,7 +17,7 @@ def main(verbose = False, DO_MANUAL=True, DO_CROSS_VALIDATION=False):
         data_set[story_file] = output_tuple
     for story_file in (files_in_use if DO_CROSS_VALIDATION else ['TRAINING SET = TEST SET']):
         if DO_CROSS_VALIDATION:
-            print 'CROSS VALIDATION', story_file
+            logger.info('CROSS VALIDATION '+story_file)
             clean_assignments(data_set)
             rules = []
             uncovered_quotes = []
@@ -33,19 +32,25 @@ def main(verbose = False, DO_MANUAL=True, DO_CROSS_VALIDATION=False):
             training_tuples = test_tuples = data_set.values()
 
         if DO_MANUAL:
-            print 'LOADING MANUAL RULES'
+            logger.info('LOADING MANUAL RULES')
             rules = load_rules_manual()
+            rules = load_auto_rules()
         else:
-            print 'TRAINING/EXTRACTING RULES'
+            logger.info('TRAINING/EXTRACTING RULES')
             for output_tuple in training_tuples:
                 rules_, uncovered_quotes_ = extract_rules(output_tuple)
                 rules += rules_
                 uncovered_quotes += uncovered_quotes_
 
-            print 'GENERALIZE/EXPAND RULES', len(rules)
+            logger.info('GENERALIZE/EXPAND RULES'+str(len(rules)))
+            rules = set(rules)
+            logger.info('GENERALIZE/EXPAND RULES SET' + str(len(rules)))
             rules = generalize_rules(rules)
+            logger.info('GENERALIZE/EXPAND RULES' + str(len(rules)))
+            rules = set(rules)
+            logger.info('GENERALIZE/EXPAND RULES SET' + str(len(rules)))
 
-        print 'TRAINING WEIGHTS', len(rules)
+        logger.info('TRAINING WEIGHTS'+str(len(rules)))
         rules_eval = [str(i) for i in rules]
         rules_eval_counts = collections.Counter(rules_eval)
         rules_eval = set(rules_eval)
@@ -73,7 +78,7 @@ def main(verbose = False, DO_MANUAL=True, DO_CROSS_VALIDATION=False):
             # laplace=1 makes default accuracy 0.5
             rules = [i for i in rules if weights[str(i)][2] > 0.5]
 
-        print 'TEST ASSIGNMENT', len(rules)
+        logger.info('TEST ASSIGNMENT'+str(len(rules)))
         # rules_accum['aggregated'] = [0] * 14
         for output_tuple in test_tuples:
             output_tuple = predict_quoted_speech(output_tuple, rules)

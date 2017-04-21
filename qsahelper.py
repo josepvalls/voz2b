@@ -60,35 +60,49 @@ class QsaFile(object):
                 return unicode(child.getText())
                 #return str(unicode(child.getText().decode('utf-8')).encode('utf-8'))
                 #return str(unicode(child.getText()).encode('ascii','ignore'))
+        def create_mention(child):
+            m = entitymanager.Mention(-1, [], is_independent=True)
+            id_ = child.attrs.get('id', None)
+            mention_id_to_mention[id_] = m
+            m.annotations.character = True
+            m.annotations.coref = child.attrs.get('entity', None)
+            m.add_tag(entitymanager.TaggableContainer.TAG_CHARACTER_SYMBOL, m.annotations.coref)
+
+            if not m.get_most_likely_symbol():
+                logger.error("No symbol for " + m.annotations.coref)
+            m.type = child.attrs.get('gender', None)
+            m.role = None
+            m.split_ignore = False
+        for child in self.d.select('PERSON'):
+            create_mention(child)
+        for child in self.d.select('ORGANIZATION'):
+            create_mention(child)
+
         for p in self.d.select('DOC')[0].select('PARAGRAPH'):
             #text = p.getText() # doesn't work because of: <PERSON>the bride</PERSON>-people
             text = ' '.join([child_as_text(child) for child in p.children])
             tokens = stanfordhelper.tokenized_string(unicode(text))
-            print self.path,p.attrs.get('parnum')
+            #print self.path,p.attrs.get('parnum')
             #if p.attrs.get('parnum')=='22': pass
             for child in p.children:
                 car, tokens = consume(tokens, child_as_text(child))
                 if child.name in ['PERSON','ORGANIZATION']:
-                    m = entitymanager.Mention(-1, [], is_independent=True)
-                    m.annotations.character = True
-                    m.annotations.coref = child.attrs.get('entity', None)
-                    m.add_tag(entitymanager.TaggableContainer.TAG_CHARACTER_SYMBOL,m.annotations.coref)
                     id_ = child.attrs.get('id', None)
-                    mention_id_to_mention[id_]=m
-                    if not m.get_most_likely_symbol():
-                        print m.annotations.coref
-                    m.type = child.attrs.get('gender', None)
-                    m.role = None
-                    m.split_ignore = False
+                    m = mention_id_to_mention[id_]
                     mentions.append(m)
                     output.append(m)
                 elif child.name =='QUOTE':
                     # Note, wrong annotations:
                     # in austen_emma_1.xml: <PARAGRAPH parnum="13"><QUOTE id="0">"Poor
                     q = Quote(-1,-1,DummyDocument())
-                    print child,child_as_text(child)
+                    #print child,child_as_text(child)
                     q._text = child_as_text(child).encode('ascii','ignore')
-                    q.annotations = voz.SentenceLevelQuotedAnnotations(-1, -1, 'd', child.attrs.get('speaker',None))
+                    speaker_symbol = child.attrs.get('speaker', None)
+                    if speaker_symbol and speaker_symbol != 'none':
+                        speaker_symbol = mention_id_to_mention[speaker_symbol].annotations.coref
+                    else:
+                        speaker_symbol = None
+                    q.annotations = voz.SentenceLevelQuotedAnnotations(-1, -1, 'd', speaker_symbol)
                     q.endp = q._text.strip('"')
                     quotes.append(q)
                     output.append(q)
@@ -99,7 +113,7 @@ class QsaFile(object):
                             verbs.append(verb)
                             output.append(verb)
                         if token.pos[-1] in ['.', ':']:
-                            output.append(Punctuation(token.text[-1]))
+                            output.append(Punctuation(token.pos[-1]))
         return output, quotes, mentions, verbs
 
 def tokenized_string_from_qsa_file(qsa_file):

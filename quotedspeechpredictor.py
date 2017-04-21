@@ -199,6 +199,12 @@ class QuotedSpeechPredictorRule(object):
 
     def __str__(self):
         return (self.rule_type or '') + ' '.join(self.pattern) + ' > ' + ' '.join([QuotedSpeechPredictorRule.format_action(i) for i in self.actions])
+    def __eq__(self,other):
+        return hash(self)==hash(other) and str(self)==str(other)
+    def __ne__(self,other):
+        return not self == other
+    def __hash__(self):
+        return hash(str(self))
 
 class QuotedSpeechMatcher(object):
     property_setters = {'s':'set_speaker_mention','l':'set_listener_mention','m':'add_matched_rules'}
@@ -1676,6 +1682,13 @@ def load_auto_rules():
         'P1 ?V (V|E) ?V P2 ?: {Q} > Q.s=P1 Q.l=P2',
         'P2 ?V (V|E) ?V P1 ?: {Q} > Q.s=P1 Q.l=P2',
     ]
+    g = [
+        minilang_permutations(['{Q}', 'P', '{E}']) + ' ?V ?. ?: > Q.s=P',
+        minilang_permutations(['{Q}1', 'P1', '{E}']) + ' ?V ?. ?: ' + minilang_permutations(
+            ['{Q}2', 'P2', '{E}']) + ' > Q1.s=P1 Q2.s=P2',
+        minilang_permutations(['{Q}1', 'P1', '{E}']) + ' ?V ?. ?: ' + minilang_permutations(
+            ['{Q}2', 'P2', '{E}']) + ' > Q1.s=P1 Q2.s=P2 Q1.l=P2 Q2.l=P1',
+        ]
     rules = utterancegenerator.UtteranceGenerator().generate(g, d, verbose=False)
     return [QuotedSpeechPredictorRule.from_string(i) for i in rules]
 
