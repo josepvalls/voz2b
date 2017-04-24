@@ -455,15 +455,15 @@ def extract_rules_window(output, quote, token_start, token_end):
         rules.append(QuotedSpeechPredictorRule(pattern, actions, FOLLOWUP_RULE))
     return rules
 
-def extract_rules(input):
+def extract_rules(input, windows_size=8):
     rules = []
     missing = []
     output, quotes, mentions, verbs = input
     for token_i, token in enumerate(output):
         if isinstance(token,Quote):
             rules_ = []
-            for before in range(0,8):
-                for after in range(1,8):
+            for before in range(0,windows_size):
+                for after in range(1,windows_size):
                     start = token_i - before
                     end = token_i + after
                     if start<0 or end>len(output): continue

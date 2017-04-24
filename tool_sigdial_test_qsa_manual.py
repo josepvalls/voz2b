@@ -3,7 +3,7 @@ logger = logging.getLogger(__name__)
 from quotedspeechpredictor import *
 import qsahelper
 
-def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False):
+def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False, WINDOW_SIZE = 8):
     logging.basicConfig(level=logging.WARN)
     logger.setLevel(logging.WARN)
     logging.root.setLevel(logging.WARN)
@@ -12,11 +12,14 @@ def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False):
     rules_accum['aggregated'] = [0] * 14
     logger.warn('LOADING DATA')
     files_in_use = settings.QSA_FILES
+    fold_i = 0
     for story_file in files_in_use:
         output_tuple = qsahelper.tokenized_string_from_qsa_file(settings.QSA_FILE_PATH + story_file)
         data_set[story_file] = output_tuple
     for story_file in (files_in_use if DO_CROSS_VALIDATION else ['TRAINING SET = TEST SET']):
         if DO_CROSS_VALIDATION:
+            fold_i+=1
+            if len(sys.argv) > 1 and not int(sys.argv[1]) == fold_i: continue
             logger.warn('CROSS VALIDATION '+story_file)
             clean_assignments(data_set)
             rules = []
@@ -38,7 +41,7 @@ def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False):
         else:
             logger.warn('TRAINING/EXTRACTING RULES')
             for output_tuple in training_tuples:
-                rules_, uncovered_quotes_ = extract_rules(output_tuple)
+                rules_, uncovered_quotes_ = extract_rules(output_tuple,WINDOW_SIZE)
                 rules += rules_
                 uncovered_quotes += uncovered_quotes_
 
