@@ -3,7 +3,7 @@ logger = logging.getLogger(__name__)
 from quotedspeechpredictor import *
 import qsahelper
 
-def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False, WINDOW_SIZE = 8):
+def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False, WINDOW_SIZE = 4):
     logging.basicConfig(level=logging.WARN)
     logger.setLevel(logging.WARN)
     logging.root.setLevel(logging.WARN)
@@ -11,7 +11,7 @@ def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False, WINDOW_SIZE 
     rules_accum = {}
     rules_accum['aggregated'] = [0] * 14
     logger.warn('LOADING DATA')
-    files_in_use = settings.QSA_FILES
+    files_in_use = settings.QSA_FILES[0:3]
     fold_i = 0
     for story_file in files_in_use:
         output_tuple = qsahelper.tokenized_string_from_qsa_file(settings.QSA_FILE_PATH + story_file)
@@ -37,7 +37,7 @@ def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False, WINDOW_SIZE 
         if DO_MANUAL:
             logger.warn('LOADING MANUAL RULES')
             rules = load_rules_manual()
-            rules = load_auto_rules()
+            #rules = load_auto_rules()
         else:
             logger.warn('TRAINING/EXTRACTING RULES')
             for output_tuple in training_tuples:
@@ -60,17 +60,16 @@ def main(verbose = True, DO_MANUAL=True, DO_CROSS_VALIDATION=False, WINDOW_SIZE 
         for i in rules_eval:
             rules_accum[i] = [0] * 14
         weights = {}
-        for rule_type in [None, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE,
-                          FOLLOWUP_RULE, FOLLOWUP_RULE]:
+        for rule_type in [None, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE]:
             # for rule_type in [None]:
             for output_tuple in training_tuples:
                 rules_to_apply = [i for i in rules if i.rule_type == rule_type]
                 output_tuple = predict_quoted_speech(output_tuple, rules_to_apply)
             for output_tuple in training_tuples:
-                for rule in rules_eval:
+                for rule in [str(i) for i in rules_to_apply]:
                     e = eval_quoted_speech(output_tuple, rule, laplace=1)
                     rules_accum[rule] = [a + b for a, b in zip(rules_accum[rule], e)]
-            for rule in rules_eval:
+            for rule in [str(i) for i in rules_to_apply]:
                 weights[rule] = list(compute_eval_quoted_speech(rules_accum[rule])[1:])
             for output_tuple in training_tuples:
                 weighted_assignment(output_tuple, weights)

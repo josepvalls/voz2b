@@ -103,6 +103,7 @@ class QsaFile(object):
                     else:
                         speaker_symbol = None
                     q.annotations = voz.SentenceLevelQuotedAnnotations(-1, -1, 'd', speaker_symbol)
+                    # q.annotations.speaker_annotation = speaker_symbol
                     q.endp = q._text.strip('"')
                     quotes.append(q)
                     output.append(q)

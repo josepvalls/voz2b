@@ -8,9 +8,9 @@ logging.basicConfig(format='%(levelname)s:\t%(message)s', level=logging.DEBUG)
 #PATH_BASE = '/Users/josepvalls/voz2/'
 #PATH_BASE = '/home/centos/voz2/'
 #PATH_BASE = '/home/jv384/voz2/'
-from os.path import expanduser
-home = expanduser("~")
-PATH_BASE = home + 'voz2/'
+import os
+home = os.path.expanduser("~")
+PATH_BASE = home + '/voz2/'
 
 DATA_LOCAL_CACHE_DB_FILE = PATH_BASE+'data/networkcache.db'
 #DATA_LOCAL_CACHE_DB_FILE = '/Users/josepvalls/voz-nlp/cache.db'
