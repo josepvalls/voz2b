@@ -562,10 +562,10 @@ def main_extract(verbose = True):
                 rules_to_apply = [i for i in rules if i.rule_type==rule_type]
                 output_tuple = predict_quoted_speech(output_tuple, rules_to_apply)
             for output_tuple in training_tuples:
-                for rule in rules_eval:
+                for rule in [str(i) for i in rules_to_apply]:
                     e = eval_quoted_speech(output_tuple, rule, laplace=1)
                     rules_accum[rule] = [a + b for a, b in zip(rules_accum[rule], e)]
-            for rule in rules_eval:
+            for rule in [str(i) for i in rules_to_apply]:
                 weights[rule] = list(compute_eval_quoted_speech(rules_accum[rule])[1:])
             for output_tuple in training_tuples:
                 weighted_assignment(output_tuple, weights)
