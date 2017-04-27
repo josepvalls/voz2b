@@ -137,24 +137,6 @@ def main_single():
 
     pass
 
-
-def main_all():
-    logging.basicConfig(level=logging.DEBUG)
-    file_path = "/Users/josepvalls/voz2/stories/annotation-finlayson-01/"
-    story_file = "01 - Nikita the Tanner.sty"
-    doc = styhelper.create_document_from_sty_file(file_path+story_file)
-    styhelper.fix_sty_annotations(doc)
-
-    annotate_sentences(doc, settings.STORY_ALL_SENTENCES, single_sentences_file_story_id = doc.id)
-    for sentence in doc.sentences:
-        print sentence.format_quoted_annotations()
-
-    print voz.Document.format_stats(doc.get_stats())
-    clean_quoted_speech_from_document(doc)
-    print voz.Document.format_stats(doc.get_stats())
-
-    pass
-
 def main_signal_verbs():
     offset = 1
     rows = [i[0:-1].split('\t') for i in open(settings.STORY_ALL_SENTENCES,'r').readlines()]
@@ -181,4 +163,3 @@ def main_signal_verbs():
 
 if __name__=='__main__':
     main_signal_verbs()
-    #main_all()
