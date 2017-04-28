@@ -207,6 +207,8 @@ class QuotedSpeechPredictorRule(object):
 
     @classmethod
     def from_string(cls, s, t=None):
+        if t:
+            s = s.strip(t)
         logger.info("Loading rule: %s" % s )
         pattern,actions = s.split('>')
         pattern = pattern.strip().split()
@@ -532,12 +534,12 @@ def load_rules_manual():
     ]
     rules_ = [QuotedSpeechPredictorRule.from_string(i) for i in rules]
     rules = [
-        'Q1 Q2 > Q1.l=Q2.s Q2.l=Q1.s',
-        'Q2 Q1 > Q1.l=Q2.s Q2.l=Q1.s',
-        'Q1 ?V ?P ?V ?P Q2 > Q1.l=Q2.s Q2.l=Q1.s',
-        'Q2 ?V ?P ?V ?P Q1 > Q1.l=Q2.s Q2.l=Q1.s',
-        'q~1 ?V ?P ?V ?P q!2 > Q2.s=Q1.s Q2.l=Q1.l',
-        'q~2 ?V ?P ?V ?P q!1 > Q2.s=Q1.s Q2.l=Q1.l',
+        '_Q1 Q2 > Q1.l=Q2.s Q2.l=Q1.s',
+        '_Q2 Q1 > Q1.l=Q2.s Q2.l=Q1.s',
+        '_Q1 ?V ?P ?V ?P Q2 > Q1.l=Q2.s Q2.l=Q1.s',
+        '_Q2 ?V ?P ?V ?P Q1 > Q1.l=Q2.s Q2.l=Q1.s',
+        '_q~1 ?V ?P ?V ?P q!2 > Q2.s=Q1.s Q2.l=Q1.l',
+        '_q~2 ?V ?P ?V ?P q!1 > Q2.s=Q1.s Q2.l=Q1.l',
     ]
     return rules_ + [QuotedSpeechPredictorRule.from_string(i,FOLLOWUP_RULE) for i in rules]
 
