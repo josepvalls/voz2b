@@ -8,8 +8,6 @@ def main(verbose = False, DO_MANUAL=True, DO_CROSS_VALIDATION=False, WINDOW_SIZE
     logger.setLevel(logging.WARN)
     logging.root.setLevel(logging.WARN)
     data_set = {}
-    rules_accum = {}
-    rules_accum['aggregated'] = [0] * 14
     logger.warn('LOADING DATA')
     files_in_use = settings.QSA_FILES
     for story_file in files_in_use:
@@ -18,6 +16,8 @@ def main(verbose = False, DO_MANUAL=True, DO_CROSS_VALIDATION=False, WINDOW_SIZE
 
     for VOTING_METHOD in [0, 1, 2, 3]:
         fold_i = 0
+        rules_accum = {}
+        rules_accum['aggregated'] = [0] * 14
         for story_file in (files_in_use if DO_CROSS_VALIDATION else ['TRAINING SET = TEST SET']):
             if DO_CROSS_VALIDATION:
                 fold_i+=1
@@ -37,6 +37,7 @@ def main(verbose = False, DO_MANUAL=True, DO_CROSS_VALIDATION=False, WINDOW_SIZE
                 training_tuples = test_tuples = data_set.values()
 
             if DO_MANUAL:
+                clean_assignments(data_set)
                 logger.warn('LOADING MANUAL RULES')
                 rules = load_rules_manual()
             else:
