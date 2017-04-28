@@ -43,7 +43,7 @@ def main(verbose = False):
             rules_eval = set(rules_eval)
             for i in rules_eval:
                 rules_accum[i] = [0] * 14
-            weights = {}
+            weights = dict([(str(i), [0.25, 0.25]) for i in rules])
             for rule_type in [None, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE]:
             #for rule_type in [None]:
                 for output_tuple in training_tuples:

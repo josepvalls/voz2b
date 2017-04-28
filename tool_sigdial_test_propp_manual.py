@@ -37,7 +37,7 @@ def main(DO_MANUAL = False, DO_FOLLOWUP = True, DO_FALLBACK_BASELINE= True, verb
             rules_eval = set(rules_eval)
             for i in rules_eval:
                 rules_accum[i] = [0] * 14
-            weights = dict([(str(i),0.25) for i in rules])
+            weights = dict([(str(i), [0.25, 0.25]) for i in rules])
             for rule_type in [None, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE, FOLLOWUP_RULE]:
                 rules_to_apply = [i for i in rules if i.rule_type == rule_type]
                 output_tuple = predict_quoted_speech(output_tuple, rules_to_apply)
