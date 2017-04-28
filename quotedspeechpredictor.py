@@ -92,7 +92,6 @@ def weighted_assignment(input_tuple,weights,top_weight_mechanism=0):
         cumm_weights = {}
         total = 0.0
         for rule_name,mention in items:
-            if not rule_name in weights: continue
             cumm_weights[mention] = cumm_weights.get(mention,0.0) + weights[rule_name][slot]
         return sorted(cumm_weights.items(),key=lambda i:i[1])[-1][0]
     def bayes(items,slot):
