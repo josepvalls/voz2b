@@ -460,7 +460,11 @@ def fix_sty_annotations(doc):
         assert isinstance(sentence, voz.Sentence)
         for mention in sentence.mentions:
             if not mention.is_independent: continue
-            tokens_ref = [sentence_ref.tokens[i.idx] for i in mention.tokens]
+            try:
+                tokens_ref = [sentence_ref.tokens[i.idx] for i in mention.tokens]
+            except:
+                logger.error("CANNOT MATCH")
+                continue
             mentions_ref = set(
                 filter(None, [sentence_ref._parent_document.get_mention_by_token_id(i.id) for i in tokens_ref]))
             if not mentions_ref:

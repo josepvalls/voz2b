@@ -66,6 +66,10 @@ class Document(vozbase.VozContainer):
         self.symbol_manager[collection][symbol]=id_+1
         return id_
 
+    def get_token_by_id(self, id):
+        if not self._tokens_dict:
+            self._compute_caches(self)
+        return self._tokens_dict[id]
     def get_sentence_by_id(self,id):
         """
         :param id: int

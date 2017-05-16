@@ -1,0 +1,129 @@
+;;; -*- Mode: LISP; Syntax: Common-lisp; Package: SME; Base: 10; Fonts: CPTFONT,TR12I -*-
+#-Symbolics
+(in-package "SME" :use (list sme::*the-lisp-package*))
+
+(sme-rules-file "literal-similarity.rules")	;REQUIRED for all SME rules files
+
+
+;;;; Define MH creation rules
+
+
+(MHC-rule (:filter ?b ?t :test (and (expression? ?b) (expression? ?t) (eq (expression-functor ?b) (expression-functor ?t))))
+    (install-MH ?b ?t))
+
+(MHC-rule (:filter ?b ?t :test (and (expression? ?b) (expression? ?t) (predicate-type-intersection? (expression-functor ?b) (expression-functor ?t))))
+    (install-MH ?b ?t))
+
+;;; Intern rule for non-commutative predicates - corresponding arguments only.
+(MHC-rule (:intern ?b ?t :test (and (expression? ?b) (expression? ?t)
+				    (not (commutative? (expression-functor ?b)))
+				    (not (commutative? (expression-functor ?t)))))
+    (do ((bchildren (expression-arguments ?b) (cdr bchildren))
+	 (tchildren (expression-arguments ?t) (cdr tchildren)))
+	((or (null bchildren) (null tchildren)))
+      (cond ((and (entity? (first bchildren)) (entity? (first tchildren)))
+	     (install-MH (first bchildren) (first tchildren)))
+	    ((and (expression? (first bchildren)) (function? (expression-functor (first bchildren)))
+		  (expression? (first tchildren)) (function? (expression-functor (first tchildren))))
+	     (install-MH (first bchildren) (first tchildren))))))
+
+;;; Intern rule for commutative predicates - any "compatible" arguments, not necessarily corresponding
+(MHC-rule (:intern ?b ?t :test (and (expression? ?b) (expression? ?t)
+				    (commutative? (expression-functor ?b))
+				    (commutative? (expression-functor ?t))))
+    (dolist (bchild (expression-arguments ?b))
+      (dolist (tchild (expression-arguments ?t))
+	(cond ((and (entity? bchild) (entity? tchild))
+	       (install-MH bchild tchild))
+	      ((and (function? (expression-functor bchild))
+		    (function? (expression-functor tchild)))
+	       (install-MH bchild tchild))))))
+
+
+;;;; Define MH evidence rules
+
+;; having the same functor is a good sign
+;;
+(initial-sme-assertion (sme:sme-assert! 'same-functor))
+
+(rule ((:intern (MH ?b ?t) :test (and (expression? ?b) (expression? ?t)
+				      (eq (expression-functor ?b) (expression-functor ?t)))))
+   (if (function? (expression-functor ?b))
+       (sme:rsme-assert! (implies same-functor (MH ?b ?t) (0.2 . 0.0)))
+       (sme:rsme-assert! (implies same-functor (MH ?b ?t) (0.5 . 0.0)))))
+
+
+;;check children (arguments) match potential
+;;
+(initial-sme-assertion (sme:sme-assert! 'children-potential))
+
+(rule ((:intern (MH ?b ?t) :test (and (expression? ?b) (expression? ?t)
+				      (children-match-potential ?b ?t))))
+      (sme:rsme-assert! (implies children-potential (MH ?b ?t) (0.4 . 0.0))))
+
+
+(rule ((:intern (MH ?b ?t) :test (and (expression? ?b) (expression? ?t)
+				      (not (children-match-potential ?b ?t)))))
+      (unless (some #'(lambda (exp) (and (expression? exp)
+					 (function? (expression-functor exp))))
+		    (expression-arguments ?b))
+	(sme:rsme-assert! (implies children-potential (MH ?b ?t) (0.0 . 0.8)))))
+
+
+;;if their order is similar, this is good.  if the item is a function,
+;;  ignore since order comparisons give false support here.
+;;
+(initial-sme-assertion (sme:sme-assert! 'order-similarity))
+
+(rule ((:intern (MH ?b ?t) :test (and (expression? ?b) (expression? ?t)
+				      (not (function? (expression-functor ?b)))
+				      (not (function? (expression-functor ?t))))))
+    (cond ((= (expression-order ?b) (expression-order ?t))
+	   (sme:rsme-assert! (implies order-similarity (MH ?b ?t) (0.3 . 0.0))))
+	  ((or (= (expression-order ?b) (1+ (expression-order ?t)))
+	       (= (expression-order ?b) (1- (expression-order ?t))))
+	   (sme:rsme-assert! (implies order-similarity (MH ?b ?t) (0.2 . 0.05))))))
+
+
+;;propagate evidence down - systematicity
+;;   support for the arg will be 0.8 of the current support for the parent
+;;
+(rule ((:intern (MH ?b1 ?t1) :test (and (expression? ?b1) (expression? ?t1)
+					(not (commutative? (expression-functor ?b1)))))
+       (:intern (MH ?b2 ?t2) :test (children-of? ?b2 ?t2 ?b1 ?t1)))
+    (sme:rsme-assert! (implies (MH ?b1 ?t1) (MH ?b2 ?t2) (0.8 . 0.0))))
+
+
+(rule ((:intern (MH ?b1 ?t1) :test (and (expression? ?b1) (expression? ?t1)
+					(commutative? (expression-functor ?b1))))
+       (:intern (MH ?b2 ?t2) :test (and (member ?b2 (expression-arguments ?b1) :test #'eq)
+					(member ?t2 (expression-arguments ?t1) :test #'eq))))
+    (sme:rsme-assert! (implies (MH ?b1 ?t1) (MH ?b2 ?t2) (0.8 . 0.0))))
+
+
+
+;;; Egroup rules
+
+;;; Support from its MH's
+(rule ((:intern (GMAP ?gm) :var ?the-group))
+    (setf (node-belief+ (gm-bms-node ?gm)) 0)
+    (dolist (mh (gm-elements ?gm))
+      (incf (node-belief+ (gm-bms-node ?gm))
+	    (node-belief+ (mh-bms-node mh)))
+	)
+   )
+
+
+
+;;  ;;; Support from its CI's
+;;  (rule ((:intern (EGROUP ?eg) :var ?the-group))
+;;      (let ((cis (candidate-inferences ?eg)))
+;;        (dolist (ci cis) (sme:sme-assert! `(CI ,?the-group ,ci)))))
+
+;;  (rule ((:intern (CI ?eg ?ci) :var ?the-ci))
+;;      (sme:rsme-assert! (implies ?the-ci ?eg (0.3 . 0.0))))
+
+
+
+(tre-save-rules)
+
