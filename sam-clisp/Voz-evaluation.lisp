@@ -17,7 +17,7 @@
 
 (defun generate-story ()
 	;; Load the evening tide story:
-	(load "story1-complete.lisp")
+	(load "stories/story1-complete.lisp")
 	(setf complete-story1 *story*)
 	(load "stories/EveningTide/mem02")
 	(setf complete-story2 *story*)
@@ -29,7 +29,7 @@
 	(setf complete-story5 *story*)
 	(setf complete-stories (list complete-story1 complete-story2 complete-story3 complete-story4 complete-story5))
 
-	(load "story2-complete.lisp")
+	(load "stories/story2-complete.lisp")
 	(setf partial-story *story*)
 
 
