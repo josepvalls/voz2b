@@ -17,7 +17,7 @@
          ;; A dragon appeared near Kiev; he took heavy tribute from the people - a lovely maiden from every house, whom he then devoured.
          ;; Finally, it was the fate of the tsar's daughter to go to the dragon.
 
-         (t1 "A dragon appeared near Kiev ; " (E1 "" (m1084 "he") "took heavy tribute from the people - " (m1088 "a lovely maiden from every house, whom he then devoured") "" (m1084 "he") "" ) "" (m1088 "a lovely maiden from every house, whom he then devoured") "")
+         (t1 "A dragon appeared near Kiev ; " (E1 "" (m1084 "he") " took heavy tribute from the people - " (m1088 "a lovely maiden from every house, whom he then devoured") " " (m1084 "he") " " ) "" (m1088 "a lovely maiden from every house, whom he then devoured") " ")
          (t2 "Finally , it was the fate of the tsar 's daughter to go to the dragon . ")
          (t1001 (EXTRA1  (m1088 "a lovely maiden from every house, whom he then devoured") " is the " (Other "Other") ) ".")
          (t1002 (EXTRA2  (m1092 "tsar") " is the " (Other "Other") ) ".")

@@ -19,10 +19,10 @@
          ;; There are marvelous marvels, wondrous wonders, and the laborer Shabarsha, Shabarsha who is a rogue among rogues: oh, well, in for a penny, in for a pound!
          ;; So Shabarsha set off to work as a laborer, and times were bad.
 
-         (t1 "Shall " (E1 "" (m4305 "I") "amuse " (m4306 "you") "" ) "with a little tale ? ")
+         (t1 "Shall " (E1 "" (m4305 "I") " amuse " (m4306 "you") " " ) "with a little tale ? ")
          (t2 "It 's a wonderful tale . ")
          (t3 "There are marvelous marvels , wondrous wonders , and the laborer Shabarsha , Shabarsha who is a rogue among rogues : oh , well , in for a penny , in for a pound ! ")
-         (t4 "So " (m4311 "Shabarsha") "set off to work as " (m4313 "a laborer") ", and times were bad . ")
+         (t4 "So " (m4311 "Shabarsha") " set off to work as " (m4313 "a laborer") " , and times were bad . ")
          (t1001 (EXTRA1  (m4305 "I") " is the " (NA "NA") ) ".")
          (t1002 (EXTRA2  (m4306 "you") " is the " (NA "NA") ) ".")
          (t1003 (EXTRA3  (m4313 "a laborer") " is the " (NA "NA") ) ".")

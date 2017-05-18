@@ -19,12 +19,12 @@
          ;; Prince Ivan, the tsar's son who was still a little boy, walked by the prison.
          ;; Prince Ivan did not know anything yet, he was very little, so he drew some water and gave it to him; with the help of the water the old man vanished from the prison.
 
-         (t1 "For many years " (m4126 "a certain tsar") "had kept under lock and key " (m4127 "a little peasant all made of copper, with iron hands and a steel head - a cunning man, a wizard of a man") "" (m4127 "a little peasant all made of copper, with iron hands and a steel head - a cunning man, a wizard of a man") "")
-         (t2 "" (m4132 "Prince Ivan, the tsar's son who was still a little boy") "" (m4132 "Prince Ivan, the tsar's son who was still a little boy") "")
+         (t1 "For many years " (m4126 "a certain tsar") " had kept under lock and key " (m4127 "a little peasant all made of copper, with iron hands and a steel head - a cunning man, a wizard of a man") " " (m4127 "a little peasant all made of copper, with iron hands and a steel head - a cunning man, a wizard of a man") " ")
+         (t2 "" (m4132 "Prince Ivan, the tsar's son who was still a little boy") " " (m4132 "Prince Ivan, the tsar's son who was still a little boy") " ")
          (t1001 (EXTRA1  (m4132 "Prince Ivan, the tsar's son who was still a little boy") " is the " (Hero "Hero") ) ".")
          (t1002 (EXTRA2  (m4126 "a certain tsar") " is the " (Other "Other") ) ".")
          (t1003 (EXTRA3  (m4127 "a little peasant all made of copper, with iron hands and a steel head - a cunning man, a wizard of a man") " is the " (Tester "Tester") ) ".")
-         (t3 "Prince Ivan did not know anything yet , he was very little , so he drew some water and gave it to him ; with the help of the water " (m4127 "the old man") "vanished from the prison . ")
+         (t3 "Prince Ivan did not know anything yet , he was very little , so he drew some water and gave it to him ; with the help of the water " (m4127 "the old man") " vanished from the prison . ")
          (t1004 (EXTRA4  (m4132 "he") " is the " (Hero "Hero") ) ".")
          (t1005 (EXTRA5  (m4126 "a certain tsar") " is the " (Other "Other") ) ".")
          (t1006 (EXTRA6  (m4127 "the old man") " is the " (Tester "Tester") ) ".")

@@ -19,10 +19,10 @@
          ;; Be careful, watch over your little brother, do not leave the house."
          ;; The parents went away and the daughter forgot what they had told her; she put her brother on the grass beneath the window, ran out into the street, and became absorbed in games.
 
-         (t1 "" (E1 "" (m2456 "An old man") "lived with his " (m2457 "his old wife") "" ) "; they had a daughter and a little son . ")
-         (t2 "' Daughter , daughter , ' said " (m2457 "the mother") ", ' we are going to work ; we shall bring you back a bun , sew you a dress , and buy " (m2460 "you") "a kerchief . ")
+         (t1 "" (E1 "" (m2456 "An old man") " lived with his " (m2457 "his old wife") " " ) "; they had a daughter and a little son . ")
+         (t2 "' Daughter , daughter , ' said " (m2457 "the mother") " , ' we are going to work ; we shall bring you back a bun , sew you a dress , and buy " (m2460 "you") " a kerchief . ")
          (t3 "Be careful , watch over your little brother , do not leave the house . ' ")
-         (t4 "The parents went away and the daughter forgot what they had told her ; " (m2460 "she") "put her " (m2461 "her brother") "on the grass beneath the window , ran out into the street , and became absorbed in games . ")
+         (t4 "The parents went away and the daughter forgot what they had told her ; " (m2460 "she") " put her " (m2461 "her brother") " on the grass beneath the window , ran out into the street , and became absorbed in games . ")
          (t1001 (EXTRA1  (m2456 "An old man") " is the " (Other "Other") ) ".")
          (t1002 (EXTRA2  (m2457 "the mother") " is the " (Other "Other") ) ".")
          (t1003 (EXTRA3  (m2460 "she") " is the " (Hero "Hero") ) ".")

@@ -30,7 +30,7 @@
          (t1001 (EXTRA1  (m5965 "This soldier") " is the " (Hero "Hero") ) ".")
          (t2 "He walked and walked , but nowhere did he see any water and he wanted to wet his hardtack and eat a little along the way and road . ")
          (t3 "His belly had long since been empty . ")
-         (t4 "There was nothing to be done and so " (m5965 "he") "dragged " (m5965 "himself") "on a bit further . ")
+         (t4 "There was nothing to be done and so " (m5965 "he") " dragged " (m5965 "himself") " on a bit further . ")
          (t5 "Then he looked and saw a creek running . ")
          (t6 "He went up to this creek and got three biscuits out of his pack and put them in the water . ")
          (t7 "Besides the hardtack the soldier had this fiddle . ")

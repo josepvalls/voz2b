@@ -1,4 +1,6 @@
 
+(proclaim '(optimize (debug 1)))
+
 ;; Riu
 
 (defvar *sme-loaded* nil)

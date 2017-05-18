@@ -28,7 +28,7 @@
          (t4 "One night the king 's daughters tarried in the garden , for they could not tear their eyes away from the flowers ; suddenly the dragon appeared and carried them off on his fiery wings . ")
          (t1001 (EXTRA1  (m4640 "the dragon") " is the " (Villain "Villain") ) ".")
          (t1002 (EXTRA2  (m4634 "king") " is the " (Other "Other") ) ".")
-         (t5 "" (E1 "" (m4634 "He") "sent his " (m4646 "his maidservants") "" ) "to look for them in the garden , but all in vain ; the maidservants could not find the princesses . ")
+         (t5 "" (E1 "" (m4634 "He") " sent his " (m4646 "his maidservants") " " ) "to look for them in the garden , but all in vain ; the maidservants could not find the princesses . ")
          (t6 "The next morning the king proclaimed a state of emergency and a great multitude of people gathered . ")
          (t1003 (EXTRA3  (m4640 "the dragon") " is the " (Villain "Villain") ) ".")
          (t1004 (EXTRA4  (m4649 "a great multitude of people") " is the " (NA "NA") ) ".")

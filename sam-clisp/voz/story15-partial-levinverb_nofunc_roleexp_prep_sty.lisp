@@ -24,15 +24,15 @@
          ;; They beheld the red sun, the trees, and the flowers, and were overjoyed that they had the freedom of the bright world.
          ;; They ran about in the garden and enjoyed themselves - when a sudden whirlwind seized them and carried them off far and high, no one knew whither.
 
-         (t1 "In a certain kingdom there was " (m6140 "a king who had three daughters of surpassing beauty") "" (m6141 "three daughters of surpassing beauty") ". ")
-         (t2 "" (m6140 "The king") "guarded " (m6141 "them") "more carefully than his most precious treasure ; " (E2 "" (m6140 "he") "built underground chambers and kept his daughters there like birds in a cage , so that rough winds could not blow upon them nor the red sun scorch " (m6141 "them") "" ) "with his rays . ")
-         (t3 "One day the princesses read in a certain book that there was a marvelous bright world , and when " (m6140 "the king") "came to visit " (m6141 "them") ", " (E4 "" (m6141 "they") "straightway began to implore " (m6140 "him") "" ) "with tears in their eyes , saying : ' " (m6140 "Sovereign, our father") "" (m6140 "Sovereign, our father") "" (m6141 "us") "out to see the bright world and walk in the green garden . ' ")
-         (t4 "" (m6140 "The king") "tried to dissuade " (m6141 "them") "but to no avail . ")
-         (t5 "" (m6141 "They") "would not even listen to " (m6140 "him") "; the more he refused , the more urgently " (m6141 "they") "besought " (m6140 "him") ". ")
+         (t1 "In a certain kingdom there was " (m6140 "a king who had three daughters of surpassing beauty") " " (m6141 "three daughters of surpassing beauty") " . ")
+         (t2 "" (m6140 "The king") " guarded " (m6141 "them") " more carefully than his most precious treasure ; " (E2 "" (m6140 "he") " built underground chambers and kept his daughters there like birds in a cage , so that rough winds could not blow upon them nor the red sun scorch " (m6141 "them") " " ) "with his rays . ")
+         (t3 "One day the princesses read in a certain book that there was a marvelous bright world , and when " (m6140 "the king") " came to visit " (m6141 "them") " , " (E4 "" (m6141 "they") " straightway began to implore " (m6140 "him") " " ) "with tears in their eyes , saying : ' " (m6140 "Sovereign, our father") " " (m6140 "Sovereign, our father") " " (m6141 "us") " out to see the bright world and walk in the green garden . ' ")
+         (t4 "" (m6140 "The king") " tried to dissuade " (m6141 "them") " but to no avail . ")
+         (t5 "" (m6141 "They") " would not even listen to " (m6140 "him") " ; the more he refused , the more urgently " (m6141 "they") " besought " (m6140 "him") " . ")
          (t6 "There was nothing to be done , so the king granted their insistent prayer . ")
          (t7 "And so the beautiful princesses went out to walk in the garden . ")
          (t8 "They beheld the red sun , the trees , and the flowers , and were overjoyed that they had the freedom of the bright world . ")
-         (t9 "" (m6141 "They") "ran about in the garden and enjoyed " (m6141 "themselves") "- when a sudden whirlwind seized them and carried them off far and high , no one knew whither . ")
+         (t9 "" (m6141 "They") " ran about in the garden and enjoyed " (m6141 "themselves") " - when a sudden whirlwind seized them and carried them off far and high , no one knew whither . ")
          (t1001 (EXTRA1  (m6140 "the king") " is the " (Other "Other") ) ".")
          (t1002 (EXTRA2  (m6141 "them") " is the " (Other "Other") ) ".")
 

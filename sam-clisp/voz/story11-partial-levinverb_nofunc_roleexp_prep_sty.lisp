@@ -23,10 +23,10 @@
 
          (t1 "Once upon a time there was an old couple , and they had three Sons . ")
          (t2 "Two of these had their wits about them , but the third was a simpleton , Ivan by name , surnamed Popyalof . ")
-         (t3 "For twelve whole years Ivan lay among the ashes from the stove ; but then " (m4097 "he") "arose , and shook " (m4097 "himself") ", so that six poods of ashes fell off from him . ")
+         (t3 "For twelve whole years Ivan lay among the ashes from the stove ; but then " (m4097 "he") " arose , and shook " (m4097 "himself") " , so that six poods of ashes fell off from him . ")
          (t4 "Now in the land in which Ivan lived there was never any day , but always night . ")
          (t5 "That was a Snake 's doing . ")
-         (t6 "Well , " (m4097 "Ivan") "undertook to kill " (m4107 "that Snake") ", so " (m4097 "he") "said to his father , ' " (m4108 "Father") "make " (m4097 "me") "a mace five poods in weight . ' ")
+         (t6 "Well , " (m4097 "Ivan") " undertook to kill " (m4107 "that Snake") " , so " (m4097 "he") " said to his father , ' " (m4108 "Father") " make " (m4097 "me") " a mace five poods in weight . ' ")
          (t1001 (EXTRA1  (m4097 "me") " is the " (Hero "Hero") ) ".")
          (t1002 (EXTRA2  (m4107 "that Snake") " is the " (Villain "Villain") ) ".")
          (t1003 (EXTRA3  (m4108 "Father") " is the " (Other "Other") ) ".")

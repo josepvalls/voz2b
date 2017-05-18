@@ -289,7 +289,7 @@ def substitute_text(sentence,substitutions,substitutions_expressions,add_func_tu
             mention = subs_tokens[token]
             for _ in mention.tokens[1:]:
                 if sent_tokens: sent_tokens.pop(0)
-            ret += "\" (m%s \"%s\") \"" % (substitutions[mention],mention.get_text().replace('\n', '').replace('"',"'"))
+            ret += "\" (m%s \"%s\") \" " % (substitutions[mention],mention.get_text().replace('\n', '').replace('"',"'"))
         else:
             ret += sentence._parent_document.text[token.offset:token.offset + token.len].replace('\n', '').replace('"',"'") + ' '
     if exp_start:
@@ -331,6 +331,8 @@ def get_sam_template(story_id, phases, templates_comment, templates_text, struct
 
 def get_riu_runner(num, suffix):
     template = '''
+(proclaim '(optimize (debug 1)))
+
 ;; Riu
 
 (defvar *sme-loaded* nil)
@@ -485,7 +487,8 @@ def main():
                             script += 'clisp ' + fname + ' > ' + fname + '.txt &\n'
                                 #break
 
-                        continue
+                        #continue
+
                         # write the stories
                         for sty_file in stories_in_use:
                             if suffix_g == 'sty':

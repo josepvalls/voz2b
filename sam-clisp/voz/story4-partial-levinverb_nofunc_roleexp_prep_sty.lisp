@@ -20,11 +20,11 @@
          ;; The youngest son rode and rode and lost his way; he came to a clearing, and there lay a dead horse, around which were gathered beasts of many kinds, birds, and reptiles.
          ;; A falcon rose, flew up to the prince, perched on his shoulder, and said: "Prince Ivan, divide that horse among us; it has lain here for thirty years, and we have been quarreling ever since, unable to find a way of sharing it."
 
-         (t1 "In a certain kingdom in a certain land there lived " (m3344 "a king who had three sons") "" (m3345 "three sons") ". ")
-         (t2 "One day " (m3345 "they") "said to " (m3344 "him") ": ' " (E2 "" (m3344 "Father, our gracious sovereign") "" (m3344 "Father, our gracious sovereign") "" ) "your blessing ; we wish to go hunting . ' ")
-         (t3 "" (m3344 "The father") "gave " (m3345 "them") "his blessing and they set out in different directions . ")
+         (t1 "In a certain kingdom in a certain land there lived " (m3344 "a king who had three sons") " " (m3345 "three sons") " . ")
+         (t2 "One day " (m3345 "they") " said to " (m3344 "him") " : ' " (E2 "" (m3344 "Father, our gracious sovereign") " " (m3344 "Father, our gracious sovereign") " " ) "your blessing ; we wish to go hunting . ' ")
+         (t3 "" (m3344 "The father") " gave " (m3345 "them") " his blessing and they set out in different directions . ")
          (t4 "The youngest son rode and rode and lost his way ; he came to a clearing , and there lay a dead horse , around which were gathered beasts of many kinds , birds , and reptiles . ")
-         (t5 "" (m3357 "A falcon") "rose , flew up to the prince , perched on his shoulder , and said : ' " (m3349 "Prince Ivan") ", divide that horse among us ; it has lain here for thirty years , and we have been quarreling ever since , unable to find a way of sharing it . ' ")
+         (t5 "" (m3357 "A falcon") " rose , flew up to the prince , perched on his shoulder , and said : ' " (m3349 "Prince Ivan") " , divide that horse among us ; it has lain here for thirty years , and we have been quarreling ever since , unable to find a way of sharing it . ' ")
          (t1001 (EXTRA1  (m3344 "The father") " is the " (Other "Other") ) ".")
          (t1002 (EXTRA2  (m3345 "they") " is the " (NA "NA") ) ".")
          (t1003 (EXTRA3  (m3349 "Prince Ivan") " is the " (Hero "Hero") ) ".")
