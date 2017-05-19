@@ -10,16 +10,62 @@
   '(STORY-3
      (:discourse
        (:clauses
-         (phase1 (:s  t1 t2))
+         (c0 (:s phase1))
+         (phase1 (:s  t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23))
 
        )
        (:templates
          ;; In a certain kingdom in a certain land there lived one Bukhtan Bukhtanovich, who had a stove built on pillars in the middle of a field.
          ;; He lay on the stove in cockroach milk up to his elbows.
+         ;; A fox came to him and said: "Bukhtan Bukhtanovich, would you like me to marry you to the tsar's daughter?"
+         ;; "What's that you're saying, little fox?"
+         ;; "Do you have any money?"
+         ;; "I have one five kopek piece."
+         ;; "Hand it over!"
+         ;; The fox took the coin, exchanged it for smaller coins - kopeks, pennies, and halfpennies, went to the tsar, and said: "Tsar, give me a quart measure to measure Bukhtan Bukhtanovich's money."
+         ;; The tsar said: "Take one!"
+         ;; The fox took it home, stuck one kopek behind the hoop around the measure, brought it back to the tsar, and said: "Tsar, a quart measure is not big enough; give me a peck measure to measure Bukhtan Bukhtanovich's money."
+         ;; "Take one!"
+         ;; The fox took it home, stuck a kopek behind the hoop of the measure, and brought it back to the tsar.
+         ;; "Tsar, a peck measure is not big enough; give me a bushel measure."
+         ;; "Take one!"
+         ;; The Fox took it home, stuck what remained of his coins behind the hoop, and brought it back to the tsar.
+         ;; He said: "Have you measured all his money, little fox?"
+         ;; The fox answered: "All of it.
+         ;; Now, tsar, I have come for a good purpose: give your daughter in marriage to Bukhtan Bukhtanovich."
+         ;; "Very well; show me the suitor."
+         ;; The fox ran home.
+         ;; "Bukhtan Bukhtanovich, have you any clothes?
+         ;; Put them on."
+         ;; He dressed and, accompanied by the fox, went to the tsar.
 
-         (t1 "In a certain kingdom in a certain land there lived one Bukhtan Bukhtanovich , who had a stove built on pillars in the middle of a field . ")
-         (t2 "He lay on the stove in cockroach milk up to his elbows . ")
-         (t1001 (EXTRA1  (m3141 "He") " is the " (Hero "Hero") ) ".")
+         (t1 "In a certain kingdom in a certain land there lived " (STORY3-m3141 "one Bukhtan Bukhtanovich, who had a stove built on pillars in the middle of a field") " a stove built on pillars in the middle of a field . ")
+         (t2 "" (STORY3-m3141 "He") " lay on the stove in cockroach milk up to his elbows . ")
+         (t3 "" (STORY3-m3148 "A fox") " came to " (STORY3-m3141 "him") " and said : ' " (STORY3-m3141 "Bukhtan Bukhtanovich") " , would " (STORY3-m3141 "you") " like " (STORY3-m3148 "me") " to marry " (STORY3-m3141 "you") " to " (STORY3-m3149 "the tsar's daughter") " ? ' ")
+         (t4 "' What 's that you 're saying , " (STORY3-m3148 "little fox") " ? ' ")
+         (t5 "' Do " (STORY3-m3148 "you") " have any money ? ' ")
+         (t6 "' " (STORY3-m3141 "I") " have one five kopek piece . ' ")
+         (t7 "' Hand it over ! ' ")
+         (t8 "" (STORY3-m3148 "The fox") " took the coin , exchanged it for smaller coins - kopeks , pennies , and halfpennies , went to " (STORY3-m3150 "the tsar") " , and said : ' " (STORY3-m3150 "Tsar") " , give me a quart measure to measure " (STORY3-m3141 "Bukhtan Bukhtanovich") " 's money . ' ")
+         (t9 "" (STORY3-m3150 "The tsar") " said : ' Take one ! ' ")
+         (t10 "" (STORY3-m3148 "The fox") " took it home , stuck one kopek behind the hoop around the measure , brought it back to " (STORY3-m3150 "the tsar") " , and said : ' " (STORY3-m3150 "Tsar") " , a quart measure is not big enough ; give " (STORY3-m3148 "me") " a peck measure to measure " (STORY3-m3141 "Bukhtan Bukhtanovich") " 's money . ' ")
+         (t11 "' Take one ! ' ")
+         (t12 "" (STORY3-m3148 "The fox") " took it home , stuck a kopek behind the hoop of the measure , and brought it back to " (STORY3-m3150 "the tsar") " . ")
+         (t13 "' " (STORY3-m3150 "Tsar") " , a peck measure is not big enough ; give " (STORY3-m3148 "me") " a bushel measure . ' ")
+         (t14 "' Take one ! ' ")
+         (t15 "" (STORY3-m3148 "The Fox") " took it home , stuck what remained of his coins behind the hoop , and brought it back to " (STORY3-m3150 "the tsar") " . ")
+         (t16 "" (STORY3-m3150 "He") " said : ' Have " (STORY3-m3148 "you") " measured all his money , " (STORY3-m3148 "little fox") " ? ' ")
+         (t17 "" (STORY3-m3148 "The fox") " answered : ' All of it . ")
+         (t18 "Now , " (STORY3-m3150 "tsar") " , " (STORY3-m3148 "I") " have come for a good purpose : give your " (STORY3-m3149 "your daughter") " in marriage to " (STORY3-m3141 "Bukhtan Bukhtanovich") " . ' ")
+         (t19 "' Very well ; show " (STORY3-m3150 "me") " " (STORY3-m3141 "the suitor") " . ' ")
+         (t20 "" (STORY3-m3148 "The fox") " ran home . ")
+         (t21 "' " (STORY3-m3141 "Bukhtan Bukhtanovich") " , have " (STORY3-m3141 "you") " any clothes ? ")
+         (t22 "Put them on . ' ")
+         (t23 "" (STORY3-m3141 "He") " dressed and , accompanied by " (STORY3-m3148 "the fox") " , went to " (STORY3-m3150 "the tsar") " . ")
+         (t1001 (STORY3-EXTRA1  (STORY3-m3148 "the fox") " is the " (Other "Other") ) ".")
+         (t1002 (STORY3-EXTRA2  (STORY3-m3141 "He") " is the " (Hero "Hero") ) ".")
+         (t1003 (STORY3-EXTRA3  (STORY3-m3150 "the tsar") " is the " (Other "Other") ) ".")
+         (t1004 (STORY3-EXTRA4  (STORY3-m3149 "your daughter") " is the " (Prize "Prize") ) ".")
 
        )
      )
@@ -56,10 +102,22 @@
       
        (phase1
          (:entities
-           (m3141 :type MA)
+           (STORY3-m3148 :type AA)
+           (STORY3-m3141 :type MA)
+           (STORY3-m3150 :type MA)
+           (STORY3-m3149 :type FE)
          )
          (:expressions
-           ((roleHero m3141) :name EXTRA0)
+           ((levin-37-7 STORY3-m3148 STORY3-m3149) :name STORY3-VERB1)
+           ((levin-37-7 STORY3-m3148 STORY3-m3141) :name STORY3-VERB2)
+           ((levin-11-3 STORY3-m3148 STORY3-m3150) :name STORY3-VERB3)
+           ((levin-54-1 STORY3-m3148 STORY3-m3141) :name STORY3-VERB4)
+           ((levin-37-7 STORY3-m3150 STORY3-m3148) :name STORY3-VERB5)
+           ((levin-51-7 STORY3-m3148 STORY3-m3141) :name STORY3-VERB6)
+           ((roleOther STORY3-m3148) :name STORY3-EXTRA0)
+           ((roleHero STORY3-m3141) :name STORY3-EXTRA1)
+           ((roleOther STORY3-m3150) :name STORY3-EXTRA2)
+           ((rolePrize STORY3-m3149) :name STORY3-EXTRA3)
          )
        )
 

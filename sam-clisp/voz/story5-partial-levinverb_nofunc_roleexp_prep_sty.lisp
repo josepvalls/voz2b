@@ -10,6 +10,7 @@
   '(STORY-5
      (:discourse
        (:clauses
+         (c0 (:s phase1))
          (phase1 (:s  t1 t2 t3 t4))
 
        )
@@ -19,14 +20,15 @@
          ;; There are marvelous marvels, wondrous wonders, and the laborer Shabarsha, Shabarsha who is a rogue among rogues: oh, well, in for a penny, in for a pound!
          ;; So Shabarsha set off to work as a laborer, and times were bad.
 
-         (t1 "Shall " (E1 "" (m4305 "I") " amuse " (m4306 "you") " " ) "with a little tale ? ")
+         (t1 "Shall " (STORY5-VERB1 "" (STORY5-m4305 "I") " amuse " (STORY5-m4306 "you") " " ) "with a little tale ? ")
          (t2 "It 's a wonderful tale . ")
-         (t3 "There are marvelous marvels , wondrous wonders , and the laborer Shabarsha , Shabarsha who is a rogue among rogues : oh , well , in for a penny , in for a pound ! ")
-         (t4 "So " (m4311 "Shabarsha") " set off to work as " (m4313 "a laborer") " , and times were bad . ")
-         (t1001 (EXTRA1  (m4305 "I") " is the " (NA "NA") ) ".")
-         (t1002 (EXTRA2  (m4306 "you") " is the " (NA "NA") ) ".")
-         (t1003 (EXTRA3  (m4313 "a laborer") " is the " (NA "NA") ) ".")
-         (t1004 (EXTRA4  (m4311 "Shabarsha") " is the " (Hero "Hero") ) ".")
+         (t3 "There are marvelous marvels , wondrous wonders , and " (STORY5-m4311 "the laborer Shabarsha, Shabarsha who is a rogue among rogues") " " (STORY5-m4312 "rogues") " : oh , well , in for a penny , in for a pound ! ")
+         (t4 "So " (STORY5-m4311 "Shabarsha") " set off to work as " (STORY5-m4313 "a laborer") " , and times were bad . ")
+         (t1001 (STORY5-EXTRA1  (STORY5-m4312 "rogues") " is the " (NA "NA") ) ".")
+         (t1002 (STORY5-EXTRA2  (STORY5-m4305 "I") " is the " (NA "NA") ) ".")
+         (t1003 (STORY5-EXTRA3  (STORY5-m4306 "you") " is the " (NA "NA") ) ".")
+         (t1004 (STORY5-EXTRA4  (STORY5-m4313 "a laborer") " is the " (NA "NA") ) ".")
+         (t1005 (STORY5-EXTRA5  (STORY5-m4311 "Shabarsha") " is the " (Hero "Hero") ) ".")
 
        )
      )
@@ -63,18 +65,20 @@
       
        (phase1
          (:entities
-           (m4305 :type MB)
-           (m4306 :type MB)
-           (m4313 :type MA)
-           (m4311 :type MA)
+           (STORY5-m4312 :type GR)
+           (STORY5-m4305 :type MB)
+           (STORY5-m4306 :type MB)
+           (STORY5-m4313 :type MA)
+           (STORY5-m4311 :type MA)
          )
          (:expressions
-           ((levin-31-1 m4305 m4306) :name E1)
-           ((levin-09-1 m4311 m4313) :name E2)
-           ((roleNA m4305) :name EXTRA0)
-           ((roleNA m4306) :name EXTRA1)
-           ((roleNA m4313) :name EXTRA2)
-           ((roleHero m4311) :name EXTRA3)
+           ((levin-31-1 STORY5-m4305 STORY5-m4306) :name STORY5-VERB1)
+           ((levin-09-1 STORY5-m4311 STORY5-m4313) :name STORY5-VERB2)
+           ((roleNA STORY5-m4312) :name STORY5-EXTRA0)
+           ((roleNA STORY5-m4305) :name STORY5-EXTRA1)
+           ((roleNA STORY5-m4306) :name STORY5-EXTRA2)
+           ((roleNA STORY5-m4313) :name STORY5-EXTRA3)
+           ((roleHero STORY5-m4311) :name STORY5-EXTRA4)
          )
        )
 

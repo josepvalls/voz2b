@@ -10,8 +10,9 @@
   '(STORY-4
      (:discourse
        (:clauses
-         (phase1 (:s  t1 t2 t3 t4 t5))
-         (phase2 (:s ))
+         (c0 (:s phase1 phase2))
+         (phase1 (:s  t1 t2 t3 t4 t5 t6 t7 t8 t9))
+         (phase2 (:s  t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20))
 
        )
        (:templates
@@ -20,20 +21,58 @@
          ;; The father gave them his blessing and they set out in different directions.
          ;; The youngest son rode and rode and lost his way; he came to a clearing, and there lay a dead horse, around which were gathered beasts of many kinds, birds, and reptiles.
          ;; A falcon rose, flew up to the prince, perched on his shoulder, and said: "Prince Ivan, divide that horse among us; it has lain here for thirty years, and we have been quarreling ever since, unable to find a way of sharing it."
+         ;; The prince climbed down from his good steed and divided the carcass: he gave the bones to the beasts, the flesh to the birds, the skin to the reptiles, and the head to the ants.
+         ;; "Thank you, Prince Ivan," said the falcon.
+         ;; "For your kindness you shall be able to turn into a bright falcon or an ant whenever you wish."
+         ;; Prince Ivan struck the damp earth, turned into a bright falcon, soared up into the air, and flew to the thrice tenth kingdom.
+         ;; The prince flew straight into the royal palace, turned into a goodly youth, and asked the palace guards: "Will your king take me into his service?"
+         ;; "Why should he not take such a goodly youth?" they answered.
+         ;; Thus he entered the service of that king and lived in his palace for one week, then a second, then a third.
+         ;; The king's daughter asked her father: "Father, my sovereign, give me leave to take a ride with Prince Ivan to the crystal mountain."
+         ;; The king gave her leave.
+         ;; They mounted good steeds and set out.
+         ;; When they approached the crystal mountain, a golden goat jumped suddenly out from nowhere.
+         ;; The prince chased it; he galloped and galloped, but could not catch the goat, and when he returned the princess had vanished.
+         ;; What was he to do?
+         ;; How could he dare to appear before the king?
+         ;; He disguised himself as a very old man, so that he would be unrecognizable, came to the palace, and said to the king: "Your Majesty, hire me as your herdsman."
 
-         (t1 "In a certain kingdom in a certain land there lived " (m3344 "a king who had three sons") " " (m3345 "three sons") " . ")
-         (t2 "One day " (m3345 "they") " said to " (m3344 "him") " : ' " (E2 "" (m3344 "Father, our gracious sovereign") " " (m3344 "Father, our gracious sovereign") " " ) "your blessing ; we wish to go hunting . ' ")
-         (t3 "" (m3344 "The father") " gave " (m3345 "them") " his blessing and they set out in different directions . ")
-         (t4 "The youngest son rode and rode and lost his way ; he came to a clearing , and there lay a dead horse , around which were gathered beasts of many kinds , birds , and reptiles . ")
-         (t5 "" (m3357 "A falcon") " rose , flew up to the prince , perched on his shoulder , and said : ' " (m3349 "Prince Ivan") " , divide that horse among us ; it has lain here for thirty years , and we have been quarreling ever since , unable to find a way of sharing it . ' ")
-         (t1001 (EXTRA1  (m3344 "The father") " is the " (Other "Other") ) ".")
-         (t1002 (EXTRA2  (m3345 "they") " is the " (NA "NA") ) ".")
-         (t1003 (EXTRA3  (m3349 "Prince Ivan") " is the " (Hero "Hero") ) ".")
-         (t1004 (EXTRA4  (m3357 "A falcon") " is the " (Tester "Tester") ) ".")
-         (t1005 (EXTRA5  (m3344 "The father") " is the " (Other "Other") ) ".")
-         (t1006 (EXTRA6  (m3345 "they") " is the " (NA "NA") ) ".")
-         (t1007 (EXTRA7  (m3349 "Prince Ivan") " is the " (Hero "Hero") ) ".")
-         (t1008 (EXTRA8  (m3357 "A falcon") " is the " (Tester "Tester") ) ".")
+         (t1 "In a certain kingdom in a certain land there lived " (STORY4-m3344 "a king who had three sons") " " (STORY4-m3345 "three sons") " . ")
+         (t2 "One day " (STORY4-m3345 "they") " said to " (STORY4-m3344 "him") " : ' " (STORY4-m3344 "Father, our gracious sovereign") " , give " (STORY4-m3345 "us") " your blessing ; " (STORY4-m3345 "we") " wish to go hunting . ' ")
+         (t3 "" (STORY4-m3344 "The father") " gave " (STORY4-m3345 "them") " his blessing and " (STORY4-m3345 "they") " set out in different directions . ")
+         (t4 "" (STORY4-m3349 "The youngest son") " rode and rode and lost his way ; " (STORY4-m3349 "he") " came to a clearing , and there lay a dead horse , around which were gathered beasts of many kinds , birds , and reptiles . ")
+         (t5 "" (STORY4-m3357 "A falcon") " rose , flew up to " (STORY4-m3349 "the prince") " , perched on his shoulder , and said : ' " (STORY4-m3349 "Prince Ivan") " , divide that horse among us ; it has lain here for thirty years , and we have been quarreling ever since , unable to find a way of sharing it . ' ")
+         (t6 "" (STORY4-m3349 "The prince") " climbed down from his good steed and divided the carcass : " (STORY4-m3349 "he") " gave the bones to the beasts , the flesh to the birds , the skin to the reptiles , and the head to the ants . ")
+         (t7 "' Thank " (STORY4-m3349 "you") " , " (STORY4-m3349 "Prince Ivan") " , ' said " (STORY4-m3357 "the falcon") " . ")
+         (t8 "' For your kindness " (STORY4-m3349 "you") " shall be able to turn into " (STORY4-m3368 "a bright falcon") " or an ant whenever " (STORY4-m3349 "you") " wish . ' ")
+         (t9 "" (STORY4-m3349 "Prince Ivan") " struck the damp earth , turned into " (STORY4-m3349 "a bright falcon") " , soared up into the air , and flew to the thrice tenth kingdom . ")
+         (t1001 (STORY4-EXTRA1  (STORY4-m3344 "The father") " is the " (Other "Other") ) ".")
+         (t1002 (STORY4-EXTRA2  (STORY4-m3345 "they") " is the " (NA "NA") ) ".")
+         (t1003 (STORY4-EXTRA3  (STORY4-m3368 "a bright falcon") " is the " (Tester "Tester") ) ".")
+         (t1004 (STORY4-EXTRA4  (STORY4-m3349 "a bright falcon") " is the " (Hero "Hero") ) ".")
+         (t1005 (STORY4-EXTRA5  (STORY4-m3357 "the falcon") " is the " (Tester "Tester") ) ".")
+         (t10 "" (STORY4-VERB5 "" (STORY4-m3349 "The prince") " flew straight into the royal palace , turned into " (STORY4-m3349 "a goodly youth") " , and asked " (STORY4-m3376 "the palace guards") " : ' Will your " (STORY4-m3377 "your king") " " ) "take " (STORY4-m3349 "me") " into his service ? ' ")
+         (t11 "' Why should " (STORY4-m3377 "he") " not take " (STORY4-m3349 "such a goodly youth") " ? ' " (STORY4-m3376 "they") " answered . ")
+         (t12 "Thus " (STORY4-m3349 "he") " entered the service of " (STORY4-m3377 "that king") " and lived in his palace for one week , then a second , then a third . ")
+         (t13 "" (STORY4-m3382 "The king's daughter") " asked her " (STORY4-m3377 "her father") " : ' " (STORY4-m3377 "Father, my sovereign") " , give " (STORY4-m3382 "me") " leave to take a ride with " (STORY4-m3349 "Prince Ivan") " to the crystal mountain . ' ")
+         (t14 "" (STORY4-m3377 "The king") " gave her leave . ")
+         (t15 "They mounted good steeds and set out . ")
+         (t16 "When they approached the crystal mountain , " (STORY4-m3387 "a golden goat") " jumped suddenly out from nowhere . ")
+         (t17 "" (STORY4-m3349 "The prince") " chased " (STORY4-m3387 "it") " ; " (STORY4-m3349 "he") " galloped and galloped , but could not catch " (STORY4-m3387 "the goat") " , and when " (STORY4-m3349 "he") " returned " (STORY4-m3382 "the princess") " had vanished . ")
+         (t18 "What was " (STORY4-m3349 "he") " to do ? ")
+         (t19 "How could " (STORY4-m3349 "he") " dare to appear before " (STORY4-m3377 "the king") " ? ")
+         (t20 "" (STORY4-m3349 "He") " disguised " (STORY4-m3349 "himself") " as " (STORY4-m3389 "a very old man") " , so that " (STORY4-m3349 "he") " would be unrecognizable , came to the palace , and said to " (STORY4-m3377 "the king") " : ' " (STORY4-m3377 "Your Majesty") " , hire " (STORY4-m3349 "me") " as your " (STORY4-m3390 "your herdsman") " . ' ")
+         (t1006 (STORY4-EXTRA6  (STORY4-m3376 "they") " is the " (Other "Other") ) ".")
+         (t1007 (STORY4-EXTRA7  (STORY4-m3377 "Your Majesty") " is the " (Other "Other") ) ".")
+         (t1008 (STORY4-EXTRA8  (STORY4-m3368 "a bright falcon") " is the " (Tester "Tester") ) ".")
+         (t1009 (STORY4-EXTRA9  (STORY4-m3389 "a very old man") " is the " (NA "NA") ) ".")
+         (t1010 (STORY4-EXTRA10  (STORY4-m3344 "The father") " is the " (Other "Other") ) ".")
+         (t1011 (STORY4-EXTRA11  (STORY4-m3345 "they") " is the " (NA "NA") ) ".")
+         (t1012 (STORY4-EXTRA12  (STORY4-m3349 "me") " is the " (Hero "Hero") ) ".")
+         (t1013 (STORY4-EXTRA13  (STORY4-m3382 "the princess") " is the " (Prize "Prize") ) ".")
+         (t1014 (STORY4-EXTRA14  (STORY4-m3387 "the goat") " is the " (Other "Other") ) ".")
+         (t1015 (STORY4-EXTRA15  (STORY4-m3357 "the falcon") " is the " (Tester "Tester") ) ".")
+         (t1016 (STORY4-EXTRA16  (STORY4-m3390 "your herdsman") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -70,33 +109,57 @@
       
        (phase1
          (:entities
-           (m3344 :type MA)
-           (m3345 :type MA)
-           (m3349 :type MA)
-           (m3357 :type AA)
+           (STORY4-m3344 :type MA)
+           (STORY4-m3345 :type MA)
+           (STORY4-m3368 :type AA)
+           (STORY4-m3349 :type MA)
+           (STORY4-m3357 :type AA)
          )
          (:expressions
-           ((levin-37-7 m3345 m3344) :name E1)
-           ((levin-13-1 m3344 m3345) :name E2)
-           ((levin-37-7 m3357 m3349) :name E3)
-           ((roleOther m3344) :name EXTRA0)
-           ((roleNA m3345) :name EXTRA1)
-           ((roleHero m3349) :name EXTRA2)
-           ((roleTester m3357) :name EXTRA3)
+           ((levin-37-7 STORY4-m3345 STORY4-m3345) :name STORY4-VERB1)
+           ((levin-37-7 STORY4-m3357 STORY4-m3349) :name STORY4-VERB2)
+           ((levin-33-1 STORY4-m3357 STORY4-m3349) :name STORY4-VERB3)
+           ((levin-26-6 STORY4-m3349 STORY4-m3368) :name STORY4-VERB4)
+           ((roleOther STORY4-m3344) :name STORY4-EXTRA0)
+           ((roleNA STORY4-m3345) :name STORY4-EXTRA1)
+           ((roleTester STORY4-m3368) :name STORY4-EXTRA2)
+           ((roleHero STORY4-m3349) :name STORY4-EXTRA3)
+           ((roleTester STORY4-m3357) :name STORY4-EXTRA4)
          )
        )
        (phase2
          (:entities
-           (m3344 :type MA)
-           (m3345 :type MA)
-           (m3349 :type MA)
-           (m3357 :type AA)
+           (STORY4-m3376 :type GR)
+           (STORY4-m3377 :type MA)
+           (STORY4-m3368 :type AA)
+           (STORY4-m3389 :type MA)
+           (STORY4-m3344 :type MA)
+           (STORY4-m3345 :type MA)
+           (STORY4-m3349 :type MA)
+           (STORY4-m3382 :type FE)
+           (STORY4-m3387 :type AA)
+           (STORY4-m3357 :type AA)
+           (STORY4-m3390 :type MA)
          )
          (:expressions
-           ((roleOther m3344) :name EXTRA4)
-           ((roleNA m3345) :name EXTRA5)
-           ((roleHero m3349) :name EXTRA6)
-           ((roleTester m3357) :name EXTRA7)
+           ((levin-37-1 STORY4-m3349 STORY4-m3377) :name STORY4-VERB5)
+           ((levin-51-1 STORY4-m3349 STORY4-m3377) :name STORY4-VERB6)
+           ((levin-37-1 STORY4-m3377 STORY4-m3382) :name STORY4-VERB7)
+           ((levin-51-6 STORY4-m3349 STORY4-m3387) :name STORY4-VERB8)
+           ((levin-13-5-1 STORY4-m3349 STORY4-m3387) :name STORY4-VERB9)
+           ((levin-29-2 STORY4-m3349 STORY4-m3389) :name STORY4-VERB10)
+           ((levin-37-7 STORY4-m3349 STORY4-m3349) :name STORY4-VERB11)
+           ((roleOther STORY4-m3376) :name STORY4-EXTRA5)
+           ((roleOther STORY4-m3377) :name STORY4-EXTRA6)
+           ((roleTester STORY4-m3368) :name STORY4-EXTRA7)
+           ((roleNA STORY4-m3389) :name STORY4-EXTRA8)
+           ((roleOther STORY4-m3344) :name STORY4-EXTRA9)
+           ((roleNA STORY4-m3345) :name STORY4-EXTRA10)
+           ((roleHero STORY4-m3349) :name STORY4-EXTRA11)
+           ((rolePrize STORY4-m3382) :name STORY4-EXTRA12)
+           ((roleOther STORY4-m3387) :name STORY4-EXTRA13)
+           ((roleTester STORY4-m3357) :name STORY4-EXTRA14)
+           ((roleNA STORY4-m3390) :name STORY4-EXTRA15)
          )
        )
 

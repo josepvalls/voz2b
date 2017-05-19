@@ -10,6 +10,7 @@
   '(STORY-15
      (:discourse
        (:clauses
+         (c0 (:s phase1))
          (phase1 (:s  t1 t2 t3 t4 t5 t6 t7 t8 t9))
 
        )
@@ -24,17 +25,17 @@
          ;; They beheld the red sun, the trees, and the flowers, and were overjoyed that they had the freedom of the bright world.
          ;; They ran about in the garden and enjoyed themselves - when a sudden whirlwind seized them and carried them off far and high, no one knew whither.
 
-         (t1 "In a certain kingdom there was " (m6140 "a king who had three daughters of surpassing beauty") " " (m6141 "three daughters of surpassing beauty") " . ")
-         (t2 "" (m6140 "The king") " guarded " (m6141 "them") " more carefully than his most precious treasure ; " (E2 "" (m6140 "he") " built underground chambers and kept his daughters there like birds in a cage , so that rough winds could not blow upon them nor the red sun scorch " (m6141 "them") " " ) "with his rays . ")
-         (t3 "One day the princesses read in a certain book that there was a marvelous bright world , and when " (m6140 "the king") " came to visit " (m6141 "them") " , " (E4 "" (m6141 "they") " straightway began to implore " (m6140 "him") " " ) "with tears in their eyes , saying : ' " (m6140 "Sovereign, our father") " " (m6140 "Sovereign, our father") " " (m6141 "us") " out to see the bright world and walk in the green garden . ' ")
-         (t4 "" (m6140 "The king") " tried to dissuade " (m6141 "them") " but to no avail . ")
-         (t5 "" (m6141 "They") " would not even listen to " (m6140 "him") " ; the more he refused , the more urgently " (m6141 "they") " besought " (m6140 "him") " . ")
-         (t6 "There was nothing to be done , so the king granted their insistent prayer . ")
-         (t7 "And so the beautiful princesses went out to walk in the garden . ")
-         (t8 "They beheld the red sun , the trees , and the flowers , and were overjoyed that they had the freedom of the bright world . ")
-         (t9 "" (m6141 "They") " ran about in the garden and enjoyed " (m6141 "themselves") " - when a sudden whirlwind seized them and carried them off far and high , no one knew whither . ")
-         (t1001 (EXTRA1  (m6140 "the king") " is the " (Other "Other") ) ".")
-         (t1002 (EXTRA2  (m6141 "them") " is the " (Other "Other") ) ".")
+         (t1 "In a certain kingdom there was " (STORY15-m6140 "a king who had three daughters of surpassing beauty") " " (STORY15-m6141 "three daughters of surpassing beauty") " . ")
+         (t2 "" (STORY15-m6140 "The king") " guarded " (STORY15-m6141 "them") " more carefully than his most precious treasure ; " (STORY15-VERB2 "" (STORY15-m6140 "he") " built underground chambers and kept his " (STORY15-m6141 "his daughters") " there like birds in a cage , so that rough winds could not blow upon " (STORY15-m6141 "them") " nor the red sun scorch " (STORY15-m6141 "them") " " ) "with his rays . ")
+         (t3 "One day " (STORY15-m6141 "the princesses") " read in a certain book that there was a marvelous bright world , and when " (STORY15-m6140 "the king") " came to visit " (STORY15-m6141 "them") " , " (STORY15-VERB4 "" (STORY15-m6141 "they") " straightway began to implore " (STORY15-m6140 "him") " " ) "with tears in their eyes , saying : ' " (STORY15-m6140 "Sovereign, our father") " , let " (STORY15-m6141 "us") " out to see the bright world and walk in the green garden . ' ")
+         (t4 "" (STORY15-m6140 "The king") " tried to dissuade " (STORY15-m6141 "them") " but to no avail . ")
+         (t5 "" (STORY15-m6141 "They") " would not even listen to " (STORY15-m6140 "him") " ; the more " (STORY15-m6140 "he") " refused , the more urgently " (STORY15-m6141 "they") " besought " (STORY15-m6140 "him") " . ")
+         (t6 "There was nothing to be done , so " (STORY15-m6140 "the king") " granted their insistent prayer . ")
+         (t7 "And so " (STORY15-m6141 "the beautiful princesses") " went out to walk in the garden . ")
+         (t8 "" (STORY15-m6141 "They") " beheld the red sun , the trees , and the flowers , and were overjoyed that " (STORY15-m6141 "they") " had the freedom of the bright world . ")
+         (t9 "" (STORY15-m6141 "They") " ran about in the garden and enjoyed " (STORY15-m6141 "themselves") " - when a sudden whirlwind seized " (STORY15-m6141 "them") " and carried " (STORY15-m6141 "them") " off far and high , no one knew whither . ")
+         (t1001 (STORY15-EXTRA1  (STORY15-m6140 "the king") " is the " (Other "Other") ) ".")
+         (t1002 (STORY15-EXTRA2  (STORY15-m6141 "them") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -71,19 +72,19 @@
       
        (phase1
          (:entities
-           (m6140 :type MA)
-           (m6141 :type FE)
+           (STORY15-m6140 :type MA)
+           (STORY15-m6141 :type FE)
          )
          (:expressions
-           ((levin-29-8 m6140 m6141) :name E1)
-           ((levin-15-2 m6140 m6141) :name E2)
-           ((levin-36-3 m6140 m6141) :name E3)
-           ((levin-55-1 m6141 m6140) :name E4)
-           ((levin-31-1 m6140 m6141) :name E5)
-           ((levin-30-3 m6141 m6140) :name E6)
-           ((levin-31-2 m6141 m6141) :name E7)
-           ((roleOther m6140) :name EXTRA0)
-           ((roleOther m6141) :name EXTRA1)
+           ((levin-29-8 STORY15-m6140 STORY15-m6141) :name STORY15-VERB1)
+           ((levin-15-2 STORY15-m6140 STORY15-m6141) :name STORY15-VERB2)
+           ((levin-36-3 STORY15-m6140 STORY15-m6141) :name STORY15-VERB3)
+           ((levin-55-1 STORY15-m6141 STORY15-m6140) :name STORY15-VERB4)
+           ((levin-31-1 STORY15-m6140 STORY15-m6141) :name STORY15-VERB5)
+           ((levin-30-3 STORY15-m6141 STORY15-m6140) :name STORY15-VERB6)
+           ((levin-31-2 STORY15-m6141 STORY15-m6141) :name STORY15-VERB7)
+           ((roleOther STORY15-m6140) :name STORY15-EXTRA0)
+           ((roleOther STORY15-m6141) :name STORY15-EXTRA1)
          )
        )
 

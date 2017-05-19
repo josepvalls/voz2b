@@ -10,24 +10,53 @@
   '(STORY-17
      (:discourse
        (:clauses
-         (phase1 (:s  t1 t2))
-         (phase2 (:s  t3))
+         (c0 (:s phase1 phase2))
+         (phase1 (:s  t1 t2 t3 t4))
+         (phase2 (:s  t5 t6 t7 t8 t9 t10 t11 t12 t13 t14))
 
        )
        (:templates
          ;; For many years a certain tsar had kept under lock and key a little peasant all made of copper, with iron hands and a steel head - a cunning man, a wizard of a man!
          ;; Prince Ivan, the tsar's son who was still a little boy, walked by the prison.
+         ;; The old man called him and began to beg: "Prince Ivan, please give me a drink!"
          ;; Prince Ivan did not know anything yet, he was very little, so he drew some water and gave it to him; with the help of the water the old man vanished from the prison.
+         ;; The tsar's word was law.
+         ;; Prince Ivan was banished and he left home not knowing where to go.
+         ;; He walked for a long time; at last he arrived in another kingdom, presented himself to the king, and asked to be taken into his service.
+         ;; The king accepted him and appointed him stableboy.
+         ;; But all he did in the stable was sleep; he did not tend the horses, and the stable master beat him more than once.
+         ;; Prince Ivan bore all this patiently.
+         ;; Meanwhile another king had asked for the hand of this king's daughter, was rebuffed, and declared war.
+         ;; The king departed with his troops, and Princess Martha, his daughter, was left to rule the kingdom.
+         ;; Even before this she had noticed that Prince Ivan was not of lowly origin; now she appointed him governor of one of her provinces.
+         ;; Prince Ivan left for his province and governed it.
 
-         (t1 "For many years " (m4126 "a certain tsar") " had kept under lock and key " (m4127 "a little peasant all made of copper, with iron hands and a steel head - a cunning man, a wizard of a man") " " (m4127 "a little peasant all made of copper, with iron hands and a steel head - a cunning man, a wizard of a man") " ")
-         (t2 "" (m4132 "Prince Ivan, the tsar's son who was still a little boy") " " (m4132 "Prince Ivan, the tsar's son who was still a little boy") " ")
-         (t1001 (EXTRA1  (m4132 "Prince Ivan, the tsar's son who was still a little boy") " is the " (Hero "Hero") ) ".")
-         (t1002 (EXTRA2  (m4126 "a certain tsar") " is the " (Other "Other") ) ".")
-         (t1003 (EXTRA3  (m4127 "a little peasant all made of copper, with iron hands and a steel head - a cunning man, a wizard of a man") " is the " (Tester "Tester") ) ".")
-         (t3 "Prince Ivan did not know anything yet , he was very little , so he drew some water and gave it to him ; with the help of the water " (m4127 "the old man") " vanished from the prison . ")
-         (t1004 (EXTRA4  (m4132 "he") " is the " (Hero "Hero") ) ".")
-         (t1005 (EXTRA5  (m4126 "a certain tsar") " is the " (Other "Other") ) ".")
-         (t1006 (EXTRA6  (m4127 "the old man") " is the " (Tester "Tester") ) ".")
+         (t1 "For many years " (STORY17-m4126 "a certain tsar") " had kept under lock and key " (STORY17-m4127 "a little peasant all made of copper, with iron hands and a steel head - a cunning man, a wizard of a man") " ! ")
+         (t2 "" (STORY17-m4132 "Prince Ivan, the tsar's son who was still a little boy") " , walked by the prison . ")
+         (t3 "" (STORY17-m4127 "The old man") " called " (STORY17-m4132 "him") " and began to beg : ' " (STORY17-m4132 "Prince Ivan") " , please give " (STORY17-m4127 "me") " a drink ! ' ")
+         (t4 "" (STORY17-m4132 "Prince Ivan") " did not know anything yet , " (STORY17-m4132 "he") " was very little , so " (STORY17-m4132 "he") " drew some water and gave it to " (STORY17-m4127 "him") " ; with the help of the water " (STORY17-m4127 "the old man") " vanished from the prison . ")
+         (t1001 (STORY17-EXTRA1  (STORY17-m4132 "he") " is the " (Hero "Hero") ) ".")
+         (t1002 (STORY17-EXTRA2  (STORY17-m4126 "tsar") " is the " (Other "Other") ) ".")
+         (t1003 (STORY17-EXTRA3  (STORY17-m4127 "the old man") " is the " (Tester "Tester") ) ".")
+         (t5 "The " (STORY17-m4126 "tsar") " 's word was law . ")
+         (t6 "" (STORY17-m4132 "Prince Ivan") " was banished and " (STORY17-m4132 "he") " left home not knowing where to go . ")
+         (t7 "" (STORY17-m4132 "He") " walked for a long time ; at last " (STORY17-m4132 "he") " arrived in another kingdom , presented " (STORY17-m4132 "himself") " to " (STORY17-m4143 "the king") " , and asked to be taken into his service . ")
+         (t8 "" (STORY17-m4143 "The king") " accepted " (STORY17-m4132 "him") " and appointed " (STORY17-m4132 "him") " " (STORY17-m4132 "stableboy") " . ")
+         (t9 "But all " (STORY17-m4132 "he") " did in the stable was sleep ; " (STORY17-m4132 "he") " did not tend the horses , and the stable " (STORY17-m4147 "the stable master") " " (STORY17-m4148 "the stable master beat him more than once") " . ")
+         (t10 "" (STORY17-m4132 "Prince Ivan") " bore " (STORY17-m4148 "all this") " patiently . ")
+         (t11 "Meanwhile " (STORY17-m4149 "another king") " had asked for the hand of " (STORY17-m4143 "this king") " " (STORY17-m4151 "this king's daughter") " , was rebuffed , and declared war . ")
+         (t12 "" (STORY17-m4143 "The king") " departed with his " (STORY17-m4154 "his troops") " , and " (STORY17-m4151 "Princess Martha, his daughter") " , was left to rule the kingdom . ")
+         (t13 "Even before this " (STORY17-m4151 "she") " had noticed that " (STORY17-m4132 "Prince Ivan") " was not of lowly origin ; now " (STORY17-m4151 "she") " appointed " (STORY17-m4132 "him") " " (STORY17-m4132 "governor of one of her provinces") " one of her provinces . ")
+         (t14 "" (STORY17-m4132 "Prince Ivan") " left for his province and governed it . ")
+         (t1004 (STORY17-EXTRA4  (STORY17-m4132 "Prince Ivan") " is the " (Hero "Hero") ) ".")
+         (t1005 (STORY17-EXTRA5  (STORY17-m4143 "The king") " is the " (Other "Other") ) ".")
+         (t1006 (STORY17-EXTRA6  (STORY17-m4147 "the stable master") " is the " (NA "NA") ) ".")
+         (t1007 (STORY17-EXTRA7  (STORY17-m4148 "all this") " is the " (Villain "Villain") ) ".")
+         (t1008 (STORY17-EXTRA8  (STORY17-m4149 "another king") " is the " (Other "Other") ) ".")
+         (t1009 (STORY17-EXTRA9  (STORY17-m4151 "she") " is the " (Prize "Prize") ) ".")
+         (t1010 (STORY17-EXTRA10  (STORY17-m4154 "his troops") " is the " (NA "NA") ) ".")
+         (t1011 (STORY17-EXTRA11  (STORY17-m4126 "tsar") " is the " (Other "Other") ) ".")
+         (t1012 (STORY17-EXTRA12  (STORY17-m4127 "the old man") " is the " (Tester "Tester") ) ".")
 
        )
      )
@@ -64,26 +93,41 @@
       
        (phase1
          (:entities
-           (m4132 :type MA)
-           (m4126 :type MA)
-           (m4127 :type MA)
+           (STORY17-m4132 :type MA)
+           (STORY17-m4126 :type MA)
+           (STORY17-m4127 :type MA)
          )
          (:expressions
-           ((roleHero m4132) :name EXTRA0)
-           ((roleOther m4126) :name EXTRA1)
-           ((roleTester m4127) :name EXTRA2)
+           ((levin-13-1 STORY17-m4127 STORY17-m4127) :name STORY17-VERB1)
+           ((roleHero STORY17-m4132) :name STORY17-EXTRA0)
+           ((roleOther STORY17-m4126) :name STORY17-EXTRA1)
+           ((roleTester STORY17-m4127) :name STORY17-EXTRA2)
          )
        )
        (phase2
          (:entities
-           (m4132 :type MA)
-           (m4126 :type MA)
-           (m4127 :type MA)
+           (STORY17-m4132 :type MA)
+           (STORY17-m4143 :type MA)
+           (STORY17-m4147 :type MA)
+           (STORY17-m4148 :type MA)
+           (STORY17-m4149 :type MA)
+           (STORY17-m4151 :type FE)
+           (STORY17-m4154 :type GR)
+           (STORY17-m4126 :type MA)
+           (STORY17-m4127 :type MA)
          )
          (:expressions
-           ((roleHero m4132) :name EXTRA3)
-           ((roleOther m4126) :name EXTRA4)
-           ((roleTester m4127) :name EXTRA5)
+           ((levin-26-5 STORY17-m4147 STORY17-m4132) :name STORY17-VERB2)
+           ((levin-35-5 STORY17-m4132 STORY17-m4148) :name STORY17-VERB3)
+           ((roleHero STORY17-m4132) :name STORY17-EXTRA3)
+           ((roleOther STORY17-m4143) :name STORY17-EXTRA4)
+           ((roleNA STORY17-m4147) :name STORY17-EXTRA5)
+           ((roleVillain STORY17-m4148) :name STORY17-EXTRA6)
+           ((roleOther STORY17-m4149) :name STORY17-EXTRA7)
+           ((rolePrize STORY17-m4151) :name STORY17-EXTRA8)
+           ((roleNA STORY17-m4154) :name STORY17-EXTRA9)
+           ((roleOther STORY17-m4126) :name STORY17-EXTRA10)
+           ((roleTester STORY17-m4127) :name STORY17-EXTRA11)
          )
        )
 

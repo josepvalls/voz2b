@@ -10,6 +10,7 @@
   '(STORY-7
      (:discourse
        (:clauses
+         (c0 (:s phase1 phase2))
          (phase1 (:s  t1))
          (phase2 (:s  t2 t3 t4 t5 t6 t7 t8 t9 t10))
 
@@ -26,19 +27,19 @@
          ;; So the soldier sat down next to the stream and began playing.
          ;; Suddenly out of nowhere the Unclean One with the appearance of an old man came up to him with a book in his hands.
 
-         (t1 "This soldier got permission to go on leave . ")
-         (t1001 (EXTRA1  (m5965 "This soldier") " is the " (Hero "Hero") ) ".")
-         (t2 "He walked and walked , but nowhere did he see any water and he wanted to wet his hardtack and eat a little along the way and road . ")
+         (t1 "" (STORY7-m5965 "This soldier") " got permission to go on leave . ")
+         (t1001 (STORY7-EXTRA1  (STORY7-m5965 "This soldier") " is the " (Hero "Hero") ) ".")
+         (t2 "" (STORY7-m5965 "He") " walked and walked , but nowhere did " (STORY7-m5965 "he") " see any water and " (STORY7-m5965 "he") " wanted to wet his hardtack and eat a little along the way and road . ")
          (t3 "His belly had long since been empty . ")
-         (t4 "There was nothing to be done and so " (m5965 "he") " dragged " (m5965 "himself") " on a bit further . ")
-         (t5 "Then he looked and saw a creek running . ")
-         (t6 "He went up to this creek and got three biscuits out of his pack and put them in the water . ")
-         (t7 "Besides the hardtack the soldier had this fiddle . ")
-         (t8 "In his free time he played various songs to chase away his boredom . ")
-         (t9 "So the soldier sat down next to the stream and began playing . ")
-         (t10 "Suddenly out of nowhere the Unclean One with the appearance of an old man came up to him with a book in his hands . ")
-         (t1002 (EXTRA2  (m5965 "the soldier") " is the " (Hero "Hero") ) ".")
-         (t1003 (EXTRA3  (m5982 "the Unclean One with the appearance of an old man") " is the " (Villain "Villain") ) ".")
+         (t4 "There was nothing to be done and so " (STORY7-m5965 "he") " dragged " (STORY7-m5965 "himself") " on a bit further . ")
+         (t5 "Then " (STORY7-m5965 "he") " looked and saw a creek running . ")
+         (t6 "" (STORY7-m5965 "He") " went up to this creek and got three biscuits out of his pack and put them in the water . ")
+         (t7 "Besides the hardtack " (STORY7-m5965 "the soldier") " had this fiddle . ")
+         (t8 "In his free time " (STORY7-m5965 "he") " played various songs to chase away his boredom . ")
+         (t9 "So " (STORY7-m5965 "the soldier") " sat down next to the stream and began playing . ")
+         (t10 "Suddenly out of nowhere " (STORY7-m5982 "the Unclean One with the appearance of an old man") " came up to " (STORY7-m5965 "him") " with a book in his hands . ")
+         (t1002 (STORY7-EXTRA2  (STORY7-m5965 "him") " is the " (Hero "Hero") ) ".")
+         (t1003 (STORY7-EXTRA3  (STORY7-m5982 "the Unclean One with the appearance of an old man") " is the " (Villain "Villain") ) ".")
 
        )
      )
@@ -75,21 +76,21 @@
       
        (phase1
          (:entities
-           (m5965 :type MA)
+           (STORY7-m5965 :type MA)
          )
          (:expressions
-           ((roleHero m5965) :name EXTRA0)
+           ((roleHero STORY7-m5965) :name STORY7-EXTRA0)
          )
        )
        (phase2
          (:entities
-           (m5965 :type MA)
-           (m5982 :type MB)
+           (STORY7-m5965 :type MA)
+           (STORY7-m5982 :type MB)
          )
          (:expressions
-           ((levin-11-4 m5965 m5965) :name E1)
-           ((roleHero m5965) :name EXTRA1)
-           ((roleVillain m5982) :name EXTRA2)
+           ((levin-11-4 STORY7-m5965 STORY7-m5965) :name STORY7-VERB1)
+           ((roleHero STORY7-m5965) :name STORY7-EXTRA1)
+           ((roleVillain STORY7-m5982) :name STORY7-EXTRA2)
          )
        )
 

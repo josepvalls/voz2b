@@ -10,6 +10,7 @@
   '(STORY-8
      (:discourse
        (:clauses
+         (c0 (:s phase1 phase2))
          (phase1 (:s  t1 t2 t3 t4))
          (phase2 (:s  t5 t6))
 
@@ -22,18 +23,18 @@
          ;; He sent his maidservants to look for them in the garden, but all in vain; the maidservants could not find the princesses.
          ;; The next morning the king proclaimed a state of emergency and a great multitude of people gathered.
 
-         (t1 "There was once a king who had three daughters , and such beauties they were as no tongue can tell of nor pen describe . ")
+         (t1 "There was once " (STORY8-m4634 "a king who had three daughters") " three daughters , and such beauties they were as no tongue can tell of nor pen describe . ")
          (t2 "Their garden was big and beautiful and they liked to walk there at night . ")
-         (t3 "A dragon from the Black Sea took to visiting this garden . ")
-         (t4 "One night the king 's daughters tarried in the garden , for they could not tear their eyes away from the flowers ; suddenly the dragon appeared and carried them off on his fiery wings . ")
-         (t1001 (EXTRA1  (m4640 "the dragon") " is the " (Villain "Villain") ) ".")
-         (t1002 (EXTRA2  (m4634 "king") " is the " (Other "Other") ) ".")
-         (t5 "" (E1 "" (m4634 "He") " sent his " (m4646 "his maidservants") " " ) "to look for them in the garden , but all in vain ; the maidservants could not find the princesses . ")
-         (t6 "The next morning the king proclaimed a state of emergency and a great multitude of people gathered . ")
-         (t1003 (EXTRA3  (m4640 "the dragon") " is the " (Villain "Villain") ) ".")
-         (t1004 (EXTRA4  (m4649 "a great multitude of people") " is the " (NA "NA") ) ".")
-         (t1005 (EXTRA5  (m4634 "the king") " is the " (Other "Other") ) ".")
-         (t1006 (EXTRA6  (m4646 "the maidservants") " is the " (NA "NA") ) ".")
+         (t3 "" (STORY8-m4640 "A dragon") " from the Black Sea took to visiting this garden . ")
+         (t4 "One night the " (STORY8-m4634 "king") " 's daughters tarried in the garden , for they could not tear their eyes away from the flowers ; suddenly " (STORY8-m4640 "the dragon") " appeared and carried them off on his fiery wings . ")
+         (t1001 (STORY8-EXTRA1  (STORY8-m4640 "the dragon") " is the " (Villain "Villain") ) ".")
+         (t1002 (STORY8-EXTRA2  (STORY8-m4634 "king") " is the " (Other "Other") ) ".")
+         (t5 "" (STORY8-VERB1 "" (STORY8-m4634 "He") " sent his " (STORY8-m4646 "his maidservants") " " ) "to look for them in the garden , but all in vain ; " (STORY8-m4646 "the maidservants") " could not find the princesses . ")
+         (t6 "The next morning " (STORY8-m4634 "the king") " proclaimed a state of emergency and " (STORY8-m4649 "a great multitude of people") " gathered . ")
+         (t1003 (STORY8-EXTRA3  (STORY8-m4640 "the dragon") " is the " (Villain "Villain") ) ".")
+         (t1004 (STORY8-EXTRA4  (STORY8-m4649 "a great multitude of people") " is the " (NA "NA") ) ".")
+         (t1005 (STORY8-EXTRA5  (STORY8-m4634 "the king") " is the " (Other "Other") ) ".")
+         (t1006 (STORY8-EXTRA6  (STORY8-m4646 "the maidservants") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -70,27 +71,27 @@
       
        (phase1
          (:entities
-           (m4640 :type MB)
-           (m4634 :type MA)
+           (STORY8-m4640 :type MB)
+           (STORY8-m4634 :type MA)
          )
          (:expressions
-           ((roleVillain m4640) :name EXTRA0)
-           ((roleOther m4634) :name EXTRA1)
+           ((roleVillain STORY8-m4640) :name STORY8-EXTRA0)
+           ((roleOther STORY8-m4634) :name STORY8-EXTRA1)
          )
        )
        (phase2
          (:entities
-           (m4640 :type MB)
-           (m4649 :type GR)
-           (m4634 :type MA)
-           (m4646 :type GR)
+           (STORY8-m4640 :type MB)
+           (STORY8-m4649 :type GR)
+           (STORY8-m4634 :type MA)
+           (STORY8-m4646 :type GR)
          )
          (:expressions
-           ((levin-11-1 m4634 m4646) :name E1)
-           ((roleVillain m4640) :name EXTRA2)
-           ((roleNA m4649) :name EXTRA3)
-           ((roleOther m4634) :name EXTRA4)
-           ((roleNA m4646) :name EXTRA5)
+           ((levin-11-1 STORY8-m4634 STORY8-m4646) :name STORY8-VERB1)
+           ((roleVillain STORY8-m4640) :name STORY8-EXTRA2)
+           ((roleNA STORY8-m4649) :name STORY8-EXTRA3)
+           ((roleOther STORY8-m4634) :name STORY8-EXTRA4)
+           ((roleNA STORY8-m4646) :name STORY8-EXTRA5)
          )
        )
 

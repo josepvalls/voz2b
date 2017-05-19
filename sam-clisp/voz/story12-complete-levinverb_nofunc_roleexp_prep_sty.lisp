@@ -10,6 +10,7 @@
   '(STORY-12
      (:discourse
        (:clauses
+         (c0 (:s phase1 phase2))
          (phase1 (:s  t1))
          (phase2 (:s  t2 t3 t4 t5 t6 t7 t8))
 
@@ -24,19 +25,19 @@
          ;; Surely, you must be tired of life."
          ;; "Why do you say that?"
 
-         (t1 "In old times there was a village where a serpent frequently flew . ")
-         (t1001 (EXTRA1  (m4369 "a serpent") " is the " (Villain "Villain") ) ".")
-         (t2 "At that time a gypsy came to the village . ")
-         (t3 "He came at night and no matter where he looked , " (m4374 "he") " could n't find " (m4377 "anyone") " ! ")
-         (t4 "" (m4374 "He") " finally entered the last hut where " (m4372 "the last man") " was sitting and crying . ")
-         (t5 "' Greetings , good man ! ' ")
-         (t6 "' Why are you here , gypsy ? ")
-         (t7 "Surely , you must be tired of life . ' ")
-         (t8 "' Why do you say that ? ' ")
-         (t1002 (EXTRA2  (m4369 "a serpent") " is the " (Villain "Villain") ) ".")
-         (t1003 (EXTRA3  (m4372 "you") " is the " (Other "Other") ) ".")
-         (t1004 (EXTRA4  (m4374 "you") " is the " (Hero "Hero") ) ".")
-         (t1005 (EXTRA5  (m4377 "anyone") " is the " (Other "Other") ) ".")
+         (t1 "In old times there was a village where " (STORY12-m4369 "a serpent") " frequently flew . ")
+         (t1001 (STORY12-EXTRA1  (STORY12-m4369 "a serpent") " is the " (Villain "Villain") ) ".")
+         (t2 "At that time " (STORY12-m4374 "a gypsy") " came to the village . ")
+         (t3 "" (STORY12-m4374 "He") " came at night and no matter where " (STORY12-m4374 "he") " looked , " (STORY12-m4374 "he") " could n't find " (STORY12-m4377 "anyone") " ! ")
+         (t4 "" (STORY12-m4374 "He") " finally entered the last hut where " (STORY12-m4372 "the last man") " was sitting and crying . ")
+         (t5 "' Greetings , " (STORY12-m4372 "good man") " ! ' ")
+         (t6 "' Why are " (STORY12-m4374 "you") " here , " (STORY12-m4374 "gypsy") " ? ")
+         (t7 "Surely , " (STORY12-m4374 "you") " must be tired of life . ' ")
+         (t8 "' Why do " (STORY12-m4372 "you") " say that ? ' ")
+         (t1002 (STORY12-EXTRA2  (STORY12-m4369 "a serpent") " is the " (Villain "Villain") ) ".")
+         (t1003 (STORY12-EXTRA3  (STORY12-m4372 "you") " is the " (Other "Other") ) ".")
+         (t1004 (STORY12-EXTRA4  (STORY12-m4374 "you") " is the " (Hero "Hero") ) ".")
+         (t1005 (STORY12-EXTRA5  (STORY12-m4377 "anyone") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -73,26 +74,26 @@
       
        (phase1
          (:entities
-           (m4369 :type MB)
+           (STORY12-m4369 :type MB)
          )
          (:expressions
-           ((roleVillain m4369) :name EXTRA0)
+           ((roleVillain STORY12-m4369) :name STORY12-EXTRA0)
          )
        )
        (phase2
          (:entities
-           (m4369 :type MB)
-           (m4372 :type MA)
-           (m4374 :type MA)
-           (m4377 :type GR)
+           (STORY12-m4369 :type MB)
+           (STORY12-m4372 :type MA)
+           (STORY12-m4374 :type MA)
+           (STORY12-m4377 :type GR)
          )
          (:expressions
-           ((levin-29-4 m4374 m4377) :name E1)
-           ((levin-51-1 m4374 m4372) :name E2)
-           ((roleVillain m4369) :name EXTRA1)
-           ((roleOther m4372) :name EXTRA2)
-           ((roleHero m4374) :name EXTRA3)
-           ((roleOther m4377) :name EXTRA4)
+           ((levin-29-4 STORY12-m4374 STORY12-m4377) :name STORY12-VERB1)
+           ((levin-51-1 STORY12-m4374 STORY12-m4372) :name STORY12-VERB2)
+           ((roleVillain STORY12-m4369) :name STORY12-EXTRA1)
+           ((roleOther STORY12-m4372) :name STORY12-EXTRA2)
+           ((roleHero STORY12-m4374) :name STORY12-EXTRA3)
+           ((roleOther STORY12-m4377) :name STORY12-EXTRA4)
          )
        )
 

@@ -112,7 +112,7 @@ def remove_overlaps(substitutions_expressions):
     return ret
 
 
-def get_sam_phases(phases,all_coref_mentions,do_verbs,do_funcs,do_roles):
+def get_sam_phases(storyname,phases,all_coref_mentions,do_verbs,do_funcs,do_roles):
     roles_as_expressions = True
     ret = ''
     ret_ent = ''
@@ -130,6 +130,7 @@ def get_sam_phases(phases,all_coref_mentions,do_verbs,do_funcs,do_roles):
 
     mentions = []
     discourse = ''
+    discourse_phases = ''
     for sentences, functions in phases:
         expressions_verbs = ''
         expressions_roles = ''
@@ -149,6 +150,7 @@ def get_sam_phases(phases,all_coref_mentions,do_verbs,do_funcs,do_roles):
             templates_comments += '         ;; %s\n' % sentence.get_text()
             #templates_templates += '         (t%d "%s"\n' % (sentence_i, sentence.get_text().replace('"', "'"))
         discourse += '         (phase%d (:s %s))\n' % (phase_i,discourse_sentence)
+        discourse_phases += ' phase%d' % phase_i
 
         for sentence in sentences:
             for verb in sentence.verbs:
@@ -180,13 +182,21 @@ def get_sam_phases(phases,all_coref_mentions,do_verbs,do_funcs,do_roles):
                         verb_string = get_sam_verb(verb,do_verbs)
                         expression_tokens.append([verb.token])
                         if not verb_string: continue
-                        verb_string = '%s m%s m%s' % (verb_string, subject_id, object_id)
+                        verb_string = '%s %s-m%s %s-m%s' % (verb_string, storyname,subject_id, storyname,object_id)
                         if verb_string not in added_expressions_remove_redundant:
                             substitutions_expressions.append((get_start_end(expression_tokens),verb_string))
                             added_expressions_remove_redundant.add(verb_string)
+
+            filter_character_field = 'annotations'
+            mmm = filter_mentions([i for i in sentence.mentions if i and i.is_independent and (filter_character_field is None or getattr(i, filter_character_field).is_character())], all_coref_mentions)
+            for i in mmm:
+                if i.annotations.coref and i.annotations.role and ',' not in i.annotations.role:
+                    mentions.append(i)
+
         entities = {}
         for i in mentions:
             entities[i.annotations.coref] = i
+            substitutions[i]=i.annotations.coref
 
         current_hero = None
         if roles_as_expressions:
@@ -196,41 +206,38 @@ def get_sam_phases(phases,all_coref_mentions,do_verbs,do_funcs,do_roles):
                     current_hero = key
                 if role and ',' not in role:
                     template_i +=1
-                    expressions_roles += '           ((role%s m%s) :name EXTRA%d)\n' % (role,key,expression_extra_i)
-                    if do_roles=='roleent':
-                        pass
-                        #templates_roles += '         (t%d (m%s "%s") " is the " (%s "%s") ".")\n' % (template_i, key, entities[key].get_text(), role, role)
+                    expressions_roles += '           ((role%s %s-m%s) :name %s-EXTRA%d)\n' % (role,storyname,key,storyname,expression_extra_i)
                     if do_roles=='roleexp':
                         expression_extra_i += 1
-                        templates_roles += '         (t%d (EXTRA%d  (m%s "%s") " is the " (%s "%s") ) ".")\n' % (template_i,expression_extra_i,key,entities[key].get_text(),role,role)
+                        templates_roles += '         (t%d (%s-EXTRA%d  (%s-m%s "%s") " is the " (%s "%s") ) ".")\n' % (template_i,storyname,expression_extra_i,storyname,key,entities[key].get_text(),role,role)
         add_func_tuple = None
         if do_funcs == 'functs':
             if functions and current_hero:
-                add_func_tuple = ('funcFiller-'+functions[0].function_group,'m%d'%current_hero)
+                add_func_tuple = ('funcFiller-'+functions[0].function_group,'%s-m%d'%(storyname,current_hero))
 
         substitutions_expressions_=[]
         for start_end, verb_string in remove_overlaps(substitutions_expressions):
             expression_i += 1
-            expression_name = 'E%d' % expression_i
+            expression_name = '%s-VERB%d' % (storyname,expression_i)
             expressions_verbs += '           ((%s) :name %s)\n' % (verb_string, expression_name)
             substitutions_expressions_.append((expression_name,start_end, verb_string ))
         substitutions_expressions = substitutions_expressions_
         if add_func_tuple:
             expressions_extra_func += 1
             template_i +=1
-            expressions_funcs = '           ((%s %s) :name EXTRAF%d)\n' % (add_func_tuple[0], add_func_tuple[1],expressions_extra_func)
-            templates_funcs += '         (t%d (EXTRAF%d  (m%s "%s") " fulfills %s.")\n' % (template_i, expressions_extra_func, add_func_tuple[1], entities[int(add_func_tuple[1].strip('m'))].get_text(), add_func_tuple[0])
+            expressions_funcs = '           ((%s %s) :name %s-EXTRAF%d)\n' % (add_func_tuple[0], add_func_tuple[1],storyname,expressions_extra_func)
+            templates_funcs += '         (t%d (%s-EXTRAF%d  (m%s "%s") " fulfills %s.")\n' % (template_i, storyname, expressions_extra_func, add_func_tuple[1], entities[int(add_func_tuple[1].strip('m'))].get_text(), add_func_tuple[0])
             add_func_tuple = [add_func_tuple[0], add_func_tuple[1],expressions_extra_func]
 
 
         ret += '       (phase%d\n' % phase_i
         ret += '         (:entities\n'
         for key in entities.keys():
-            ret += '           (m%s :type %s)\n' % (key,entities[key].annotations.type)
+            ret += '           (%s-m%s :type %s)\n' % (storyname,key,entities[key].annotations.type)
             if do_roles=='roleent':
                 role = entities[key].annotations.role
                 if role and ',' not in role:
-                    ret += '           (m%s :type %s)\n' % (key, role)
+                    ret += '           (%s-m%s :type %s)\n' % (storyname,key, role)
 
         ret += '         )\n'
         ret += '         (:expressions\n'
@@ -247,14 +254,14 @@ def get_sam_phases(phases,all_coref_mentions,do_verbs,do_funcs,do_roles):
         for sentence in sentences:
             sentence_i += 1
             #templates_templates += '         (t%d "%s"\n' % (sentence_i, sentence.get_text().replace('"', "'"))
-            templates_templates += '         (t%d "%s")\n' % (sentence_i, substitute_text(sentence,substitutions,substitutions_expressions,add_func_tuple))
+            templates_templates += '         (t%d "%s")\n' % (sentence_i, substitute_text(sentence,substitutions,substitutions_expressions,add_func_tuple,storyname))
         templates_templates += templates_roles
         templates_templates += templates_funcs
 
-
+    discourse = ('         (c0 (:s%s))\n' % discourse_phases) + discourse
     return discourse,templates_comments,templates_templates,ret
 
-def substitute_text(sentence,substitutions,substitutions_expressions,add_func_tuple):
+def substitute_text(sentence,substitutions,substitutions_expressions,add_func_tuple,storyname):
     ret = ''
     subs_tokens = dict(util.flatten([[(j,i) for j in i.tokens] for i in substitutions.keys()]))
     sent_tokens = list(sentence.tokens)
@@ -272,7 +279,7 @@ def substitute_text(sentence,substitutions,substitutions_expressions,add_func_tu
             add_func_tuple.pop()
             add_func_tuple_do = True
 
-            ret += '" (EXTRAF%d "' % expr
+            ret += '" (%s-EXTRAF%d "' % (storyname,expr)
 
 
     while sent_tokens:
@@ -287,9 +294,9 @@ def substitute_text(sentence,substitutions,substitutions_expressions,add_func_tu
 
         if token in subs_tokens:
             mention = subs_tokens[token]
-            for _ in mention.tokens[1:]:
-                if sent_tokens: sent_tokens.pop(0)
-            ret += "\" (m%s \"%s\") \" " % (substitutions[mention],mention.get_text().replace('\n', '').replace('"',"'"))
+            while sent_tokens and token.offset < mention.tokens[-1].offset:
+                token = sent_tokens.pop(0)
+            ret += "\" (%s-m%s \"%s\") \" " % (storyname,substitutions[mention],mention.get_text().replace('\n', '').replace('"',"'"))
         else:
             ret += sentence._parent_document.text[token.offset:token.offset + token.len].replace('\n', '').replace('"',"'") + ' '
     if exp_start:
@@ -406,7 +413,7 @@ def doc_to_sam(doc,do_verbs,do_funcs,do_roles,do_segment,limit=None,filter_chara
 
     phases = []
 
-    if do_segment=='prep':
+    if do_segment=='prep_old':
         cutoffs = []
         functions_ = []
         functions = []
@@ -447,6 +454,51 @@ def doc_to_sam(doc,do_verbs,do_funcs,do_roles,do_segment,limit=None,filter_chara
                     pass
             elif phase==3:
                 functions.append(function) #return,Pr,Rs,o,L,M,N,Q,Ex,T,U,W
+    elif do_segment == 'prep':
+        cutoffs = []
+        functions_ = []
+        functions = []
+        phase = 0
+        for function in doc.narrative.functions():
+            if phase == 0 and function.function_group not in 'A,a,depart'.split(
+                    ','):
+                functions.append(function)
+            elif phase == 0 and function.function_group in 'A,a,depart'.split(
+                    ','):
+                if function.locations:
+                    cutoffs.append(doc.get_token_by_id(function.locations[0].token_ids[0]))
+                    functions_.append(functions)
+                    functions = []
+                    phase = 1
+                    functions.append(function)
+                else:
+                    pass
+            elif phase == 1 and function.function_group in 'A,a,depart'.split(','):
+                functions.append(function)
+            elif phase == 1 and function.function_group not in 'A,a,depart'.split(','):
+                if function.locations:
+                    cutoffs.append(doc.get_token_by_id(function.locations[0].token_ids[0]))
+                    functions_.append(functions)
+                    functions = []
+                    phase = 2
+                    functions.append(function)
+                else:
+                    pass
+            elif phase == 2 and function.function_group in 'B,C,D,E,F,G,H,I,J,K'.split(','):
+                functions.append(function)
+            elif phase == 2 and function.function_group not in 'B,C,D,E,F,G,H,I,J,K'.split(','):
+                if function.locations:
+                    cutoffs.append(doc.get_token_by_id(function.locations[0].token_ids[0]))
+                    functions_.append(functions)
+                    functions = []
+                    phase = 3
+                    functions.append(function)
+                else:
+                    pass
+            elif phase == 3:
+                functions.append(function)  # return,Pr,Rs,o,L,M,N,Q,Ex,T,U,W
+
+
         sentences = []
         cutoffs.append(None)
         functions_.append(functions)
@@ -465,14 +517,15 @@ def doc_to_sam(doc,do_verbs,do_funcs,do_roles,do_segment,limit=None,filter_chara
     if limit:
         phases = phases[0:limit]
 
-    discourse,templates_comments,phases_text,phases_struct = get_sam_phases(phases,all_coref_mentions,do_verbs,do_funcs,do_roles)
+    storyname = 'STORY%d' % doc.id
+    discourse,templates_comments,phases_text,phases_struct = get_sam_phases(storyname,phases,all_coref_mentions,do_verbs,do_funcs,do_roles)
 
     return get_sam_template(doc.id,discourse,templates_comments,phases_text,get_sam_common(do_roles=='roleent'),phases_struct)
 
 
 def main():
     script = ''
-    stories_in_use = settings.STY_FILES#[0:3]
+    stories_in_use = settings.STY_FILES
     for suffix_v in ['levinverb']: # noverb, 'basicverb' levinverb
         for suffix_f in ['nofunc']:#,'functs']:
             for suffix_r in ['roleexp']: # 'norole','roleent','roleexp'

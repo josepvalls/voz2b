@@ -10,6 +10,7 @@
   '(STORY-1
      (:discourse
        (:clauses
+         (c0 (:s phase1))
          (phase1 (:s  t1 t2))
 
        )
@@ -17,12 +18,13 @@
          ;; A dragon appeared near Kiev; he took heavy tribute from the people - a lovely maiden from every house, whom he then devoured.
          ;; Finally, it was the fate of the tsar's daughter to go to the dragon.
 
-         (t1 "A dragon appeared near Kiev ; " (E1 "" (m1084 "he") " took heavy tribute from the people - " (m1088 "a lovely maiden from every house, whom he then devoured") " " (m1084 "he") " " ) "" (m1088 "a lovely maiden from every house, whom he then devoured") " ")
-         (t2 "Finally , it was the fate of the tsar 's daughter to go to the dragon . ")
-         (t1001 (EXTRA1  (m1088 "a lovely maiden from every house, whom he then devoured") " is the " (Other "Other") ) ".")
-         (t1002 (EXTRA2  (m1092 "tsar") " is the " (Other "Other") ) ".")
-         (t1003 (EXTRA3  (m1091 "the tsar's daughter") " is the " (Prize "Prize") ) ".")
-         (t1004 (EXTRA4  (m1084 "he") " is the " (Villain "Villain") ) ".")
+         (t1 "" (STORY1-m1084 "A dragon") " appeared near Kiev ; " (STORY1-VERB1 "" (STORY1-m1084 "he") " took heavy tribute from " (STORY1-m1087 "the people") " - " (STORY1-m1088 "a lovely maiden from every house, whom he then devoured") " " ) ". ")
+         (t2 "Finally , it was the fate of " (STORY1-m1091 "the tsar's daughter") " to go to " (STORY1-m1084 "the dragon") " . ")
+         (t1001 (STORY1-EXTRA1  (STORY1-m1088 "a lovely maiden from every house, whom he then devoured") " is the " (Other "Other") ) ".")
+         (t1002 (STORY1-EXTRA2  (STORY1-m1092 "tsar") " is the " (Other "Other") ) ".")
+         (t1003 (STORY1-EXTRA3  (STORY1-m1091 "the tsar's daughter") " is the " (Prize "Prize") ) ".")
+         (t1004 (STORY1-EXTRA4  (STORY1-m1084 "the dragon") " is the " (Villain "Villain") ) ".")
+         (t1005 (STORY1-EXTRA5  (STORY1-m1087 "the people") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -59,17 +61,19 @@
       
        (phase1
          (:entities
-           (m1088 :type FE)
-           (m1092 :type MA)
-           (m1091 :type FE)
-           (m1084 :type MB)
+           (STORY1-m1088 :type FE)
+           (STORY1-m1092 :type MA)
+           (STORY1-m1091 :type FE)
+           (STORY1-m1084 :type MB)
+           (STORY1-m1087 :type GR)
          )
          (:expressions
-           ((levin-11-3 m1084 m1084) :name E1)
-           ((roleOther m1088) :name EXTRA0)
-           ((roleOther m1092) :name EXTRA1)
-           ((rolePrize m1091) :name EXTRA2)
-           ((roleVillain m1084) :name EXTRA3)
+           ((levin-11-3 STORY1-m1084 STORY1-m1084) :name STORY1-VERB1)
+           ((roleOther STORY1-m1088) :name STORY1-EXTRA0)
+           ((roleOther STORY1-m1092) :name STORY1-EXTRA1)
+           ((rolePrize STORY1-m1091) :name STORY1-EXTRA2)
+           ((roleVillain STORY1-m1084) :name STORY1-EXTRA3)
+           ((roleOther STORY1-m1087) :name STORY1-EXTRA4)
          )
        )
 

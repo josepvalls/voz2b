@@ -10,14 +10,15 @@
   '(STORY-7
      (:discourse
        (:clauses
+         (c0 (:s phase1))
          (phase1 (:s  t1))
 
        )
        (:templates
          ;; This soldier got permission to go on leave.
 
-         (t1 "This soldier got permission to go on leave . ")
-         (t1001 (EXTRA1  (m5965 "This soldier") " is the " (Hero "Hero") ) ".")
+         (t1 "" (STORY7-m5965 "This soldier") " got permission to go on leave . ")
+         (t1001 (STORY7-EXTRA1  (STORY7-m5965 "This soldier") " is the " (Hero "Hero") ) ".")
 
        )
      )
@@ -54,10 +55,10 @@
       
        (phase1
          (:entities
-           (m5965 :type MA)
+           (STORY7-m5965 :type MA)
          )
          (:expressions
-           ((roleHero m5965) :name EXTRA0)
+           ((roleHero STORY7-m5965) :name STORY7-EXTRA0)
          )
        )
 

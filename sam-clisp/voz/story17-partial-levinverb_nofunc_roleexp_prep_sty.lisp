@@ -10,18 +10,23 @@
   '(STORY-17
      (:discourse
        (:clauses
-         (phase1 (:s  t1 t2))
+         (c0 (:s phase1))
+         (phase1 (:s  t1 t2 t3 t4))
 
        )
        (:templates
          ;; For many years a certain tsar had kept under lock and key a little peasant all made of copper, with iron hands and a steel head - a cunning man, a wizard of a man!
          ;; Prince Ivan, the tsar's son who was still a little boy, walked by the prison.
+         ;; The old man called him and began to beg: "Prince Ivan, please give me a drink!"
+         ;; Prince Ivan did not know anything yet, he was very little, so he drew some water and gave it to him; with the help of the water the old man vanished from the prison.
 
-         (t1 "For many years " (m4126 "a certain tsar") " had kept under lock and key " (m4127 "a little peasant all made of copper, with iron hands and a steel head - a cunning man, a wizard of a man") " " (m4127 "a little peasant all made of copper, with iron hands and a steel head - a cunning man, a wizard of a man") " ")
-         (t2 "" (m4132 "Prince Ivan, the tsar's son who was still a little boy") " " (m4132 "Prince Ivan, the tsar's son who was still a little boy") " ")
-         (t1001 (EXTRA1  (m4132 "Prince Ivan, the tsar's son who was still a little boy") " is the " (Hero "Hero") ) ".")
-         (t1002 (EXTRA2  (m4126 "a certain tsar") " is the " (Other "Other") ) ".")
-         (t1003 (EXTRA3  (m4127 "a little peasant all made of copper, with iron hands and a steel head - a cunning man, a wizard of a man") " is the " (Tester "Tester") ) ".")
+         (t1 "For many years " (STORY17-m4126 "a certain tsar") " had kept under lock and key " (STORY17-m4127 "a little peasant all made of copper, with iron hands and a steel head - a cunning man, a wizard of a man") " ! ")
+         (t2 "" (STORY17-m4132 "Prince Ivan, the tsar's son who was still a little boy") " , walked by the prison . ")
+         (t3 "" (STORY17-m4127 "The old man") " called " (STORY17-m4132 "him") " and began to beg : ' " (STORY17-m4132 "Prince Ivan") " , please give " (STORY17-m4127 "me") " a drink ! ' ")
+         (t4 "" (STORY17-m4132 "Prince Ivan") " did not know anything yet , " (STORY17-m4132 "he") " was very little , so " (STORY17-m4132 "he") " drew some water and gave it to " (STORY17-m4127 "him") " ; with the help of the water " (STORY17-m4127 "the old man") " vanished from the prison . ")
+         (t1001 (STORY17-EXTRA1  (STORY17-m4132 "he") " is the " (Hero "Hero") ) ".")
+         (t1002 (STORY17-EXTRA2  (STORY17-m4126 "tsar") " is the " (Other "Other") ) ".")
+         (t1003 (STORY17-EXTRA3  (STORY17-m4127 "the old man") " is the " (Tester "Tester") ) ".")
 
        )
      )
@@ -58,14 +63,15 @@
       
        (phase1
          (:entities
-           (m4132 :type MA)
-           (m4126 :type MA)
-           (m4127 :type MA)
+           (STORY17-m4132 :type MA)
+           (STORY17-m4126 :type MA)
+           (STORY17-m4127 :type MA)
          )
          (:expressions
-           ((roleHero m4132) :name EXTRA0)
-           ((roleOther m4126) :name EXTRA1)
-           ((roleTester m4127) :name EXTRA2)
+           ((levin-13-1 STORY17-m4127 STORY17-m4127) :name STORY17-VERB1)
+           ((roleHero STORY17-m4132) :name STORY17-EXTRA0)
+           ((roleOther STORY17-m4126) :name STORY17-EXTRA1)
+           ((roleTester STORY17-m4127) :name STORY17-EXTRA2)
          )
        )
 

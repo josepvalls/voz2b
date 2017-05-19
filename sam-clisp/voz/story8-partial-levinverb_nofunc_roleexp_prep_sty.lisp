@@ -10,6 +10,7 @@
   '(STORY-8
      (:discourse
        (:clauses
+         (c0 (:s phase1))
          (phase1 (:s  t1 t2 t3 t4))
 
        )
@@ -19,12 +20,12 @@
          ;; A dragon from the Black Sea took to visiting this garden.
          ;; One night the king's daughters tarried in the garden, for they could not tear their eyes away from the flowers; suddenly the dragon appeared and carried them off on his fiery wings.
 
-         (t1 "There was once a king who had three daughters , and such beauties they were as no tongue can tell of nor pen describe . ")
+         (t1 "There was once " (STORY8-m4634 "a king who had three daughters") " three daughters , and such beauties they were as no tongue can tell of nor pen describe . ")
          (t2 "Their garden was big and beautiful and they liked to walk there at night . ")
-         (t3 "A dragon from the Black Sea took to visiting this garden . ")
-         (t4 "One night the king 's daughters tarried in the garden , for they could not tear their eyes away from the flowers ; suddenly the dragon appeared and carried them off on his fiery wings . ")
-         (t1001 (EXTRA1  (m4640 "the dragon") " is the " (Villain "Villain") ) ".")
-         (t1002 (EXTRA2  (m4634 "king") " is the " (Other "Other") ) ".")
+         (t3 "" (STORY8-m4640 "A dragon") " from the Black Sea took to visiting this garden . ")
+         (t4 "One night the " (STORY8-m4634 "king") " 's daughters tarried in the garden , for they could not tear their eyes away from the flowers ; suddenly " (STORY8-m4640 "the dragon") " appeared and carried them off on his fiery wings . ")
+         (t1001 (STORY8-EXTRA1  (STORY8-m4640 "the dragon") " is the " (Villain "Villain") ) ".")
+         (t1002 (STORY8-EXTRA2  (STORY8-m4634 "king") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -61,12 +62,12 @@
       
        (phase1
          (:entities
-           (m4640 :type MB)
-           (m4634 :type MA)
+           (STORY8-m4640 :type MB)
+           (STORY8-m4634 :type MA)
          )
          (:expressions
-           ((roleVillain m4640) :name EXTRA0)
-           ((roleOther m4634) :name EXTRA1)
+           ((roleVillain STORY8-m4640) :name STORY8-EXTRA0)
+           ((roleOther STORY8-m4634) :name STORY8-EXTRA1)
          )
        )
 

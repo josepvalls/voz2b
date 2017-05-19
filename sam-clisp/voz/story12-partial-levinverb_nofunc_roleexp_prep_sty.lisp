@@ -10,14 +10,15 @@
   '(STORY-12
      (:discourse
        (:clauses
+         (c0 (:s phase1))
          (phase1 (:s  t1))
 
        )
        (:templates
          ;; In old times there was a village where a serpent frequently flew.
 
-         (t1 "In old times there was a village where a serpent frequently flew . ")
-         (t1001 (EXTRA1  (m4369 "a serpent") " is the " (Villain "Villain") ) ".")
+         (t1 "In old times there was a village where " (STORY12-m4369 "a serpent") " frequently flew . ")
+         (t1001 (STORY12-EXTRA1  (STORY12-m4369 "a serpent") " is the " (Villain "Villain") ) ".")
 
        )
      )
@@ -54,10 +55,10 @@
       
        (phase1
          (:entities
-           (m4369 :type MB)
+           (STORY12-m4369 :type MB)
          )
          (:expressions
-           ((roleVillain m4369) :name EXTRA0)
+           ((roleVillain STORY12-m4369) :name STORY12-EXTRA0)
          )
        )
 
