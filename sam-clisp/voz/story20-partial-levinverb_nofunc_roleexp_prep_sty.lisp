@@ -563,7 +563,7 @@
            ((levin-21-1 STORY20-m3738 STORY20-m3744) :name STORY20-VERB15)
            ((levin-26-5 STORY20-m3738 STORY20-m3744) :name STORY20-VERB16)
            ((levin-51-3-2 STORY20-m3009 STORY20-m3150) :name STORY20-VERB17)
-           ((levin-18-4 STORY20-m3738 STORY20-m3738) :name STORY20-VERB18)
+           ((levin-18-4 STORY20-m3738 STORY20-m3744) :name STORY20-VERB18)
            ((levin-13-3 STORY20-m3738 STORY20-m3744) :name STORY20-VERB19)
            ((levin-31-1 STORY20-m3262 STORY20-m2801) :name STORY20-VERB20)
            ((levin-37-6 STORY20-m3247 STORY20-m3738) :name STORY20-VERB21)

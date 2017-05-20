@@ -26,7 +26,7 @@
          ;; Prince Ivan struck the damp earth, turned into a bright falcon, soared up into the air, and flew to the thrice tenth kingdom.
 
          (t1 "In a certain kingdom in a certain land there lived " (STORY4-m3344 "a king who had three sons") " " (STORY4-m3345 "three sons") " . ")
-         (t2 "One day " (STORY4-m3345 "they") " said to " (STORY4-m3344 "him") " : ' " (STORY4-VERB2 "" (STORY4-m3344 "Father, our gracious sovereign") " , give " (STORY4-m3345 "us") " " ) "your blessing ; " (STORY4-m3345 "we") " wish to go hunting . ' ")
+         (t2 "One day " (STORY4-m3345 "they") " said to " (STORY4-m3344 "him") " : ' " (STORY4-m3344 "Father, our gracious sovereign") " , give " (STORY4-m3345 "us") " your blessing ; " (STORY4-m3345 "we") " wish to go hunting . ' ")
          (t3 "" (STORY4-m3344 "The father") " gave " (STORY4-m3345 "them") " his blessing and " (STORY4-m3345 "they") " set out in different directions . ")
          (t4 "" (STORY4-m3349 "The youngest son") " rode and rode and lost his way ; " (STORY4-m3349 "he") " came to a clearing , and there lay a dead horse , around which were gathered beasts of many kinds , birds , and reptiles . ")
          (t5 "" (STORY4-m3357 "A falcon") " rose , flew up to " (STORY4-m3349 "the prince") " , perched on his shoulder , and said : ' " (STORY4-m3349 "Prince Ivan") " , divide that horse among us ; it has lain here for thirty years , and we have been quarreling ever since , unable to find a way of sharing it . ' ")
@@ -83,10 +83,9 @@
          )
          (:expressions
            ((levin-37-7 STORY4-m3345 STORY4-m3344) :name STORY4-VERB1)
-           ((levin-13-1 STORY4-m3344 STORY4-m3345) :name STORY4-VERB2)
-           ((levin-37-7 STORY4-m3357 STORY4-m3349) :name STORY4-VERB3)
-           ((levin-33-1 STORY4-m3357 STORY4-m3349) :name STORY4-VERB4)
-           ((levin-26-6 STORY4-m3349 STORY4-m3368) :name STORY4-VERB5)
+           ((levin-37-7 STORY4-m3357 STORY4-m3349) :name STORY4-VERB2)
+           ((levin-33-1 STORY4-m3357 STORY4-m3349) :name STORY4-VERB3)
+           ((levin-26-6 STORY4-m3349 STORY4-m3368) :name STORY4-VERB4)
            ((roleOther STORY4-m3344) :name STORY4-EXTRA0)
            ((roleNA STORY4-m3345) :name STORY4-EXTRA1)
            ((roleTester STORY4-m3368) :name STORY4-EXTRA2)

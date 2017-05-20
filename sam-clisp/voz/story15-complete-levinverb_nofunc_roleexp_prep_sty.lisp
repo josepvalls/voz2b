@@ -118,7 +118,7 @@
          (:expressions
            ((levin-29-3 STORY15-m6140 STORY15-m6169) :name STORY15-VERB8)
            ((levin-35-2 STORY15-m6169 STORY15-m6141) :name STORY15-VERB9)
-           ((levin-37-7 STORY15-m6140 STORY15-m6174) :name STORY15-VERB10)
+           ((levin-37-7 STORY15-m6140 STORY15-m6141) :name STORY15-VERB10)
            ((levin-37-7 STORY15-m6140 STORY15-m6140) :name STORY15-VERB11)
            ((roleNA STORY15-m6169) :name STORY15-EXTRA2)
            ((roleOther STORY15-m6170) :name STORY15-EXTRA3)

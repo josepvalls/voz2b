@@ -18,7 +18,7 @@
          ;; A dragon appeared near Kiev; he took heavy tribute from the people - a lovely maiden from every house, whom he then devoured.
          ;; Finally, it was the fate of the tsar's daughter to go to the dragon.
 
-         (t1 "" (STORY1-m1084 "A dragon") " appeared near Kiev ; " (STORY1-VERB1 "" (STORY1-m1084 "he") " took heavy tribute from " (STORY1-m1087 "the people") " - " (STORY1-m1088 "a lovely maiden from every house, whom he then devoured") " " ) ". ")
+         (t1 "" (STORY1-m1084 "A dragon") " appeared near Kiev ; " (STORY1-VERB1 "" (STORY1-m1084 "he") " took heavy tribute from " (STORY1-m1087 "the people") " " ) "- " (STORY1-VERB2 "" (STORY1-m1088 "a lovely maiden from every house, whom he then devoured") " " ) ". ")
          (t2 "Finally , it was the fate of " (STORY1-m1091 "the tsar's daughter") " to go to " (STORY1-m1084 "the dragon") " . ")
          (t1001 (STORY1-EXTRA1  (STORY1-m1088 "a lovely maiden from every house, whom he then devoured") " is the " (Other "Other") ) ".")
          (t1002 (STORY1-EXTRA2  (STORY1-m1092 "tsar") " is the " (Other "Other") ) ".")
@@ -68,7 +68,8 @@
            (STORY1-m1087 :type GR)
          )
          (:expressions
-           ((levin-11-3 STORY1-m1084 STORY1-m1084) :name STORY1-VERB1)
+           ((levin-11-3 STORY1-m1084 STORY1-m1087) :name STORY1-VERB1)
+           ((levin-39-4 STORY1-m1084 STORY1-m1088) :name STORY1-VERB2)
            ((roleOther STORY1-m1088) :name STORY1-EXTRA0)
            ((roleOther STORY1-m1092) :name STORY1-EXTRA1)
            ((rolePrize STORY1-m1091) :name STORY1-EXTRA2)

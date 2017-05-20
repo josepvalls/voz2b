@@ -23,7 +23,61 @@
 	(load "voz/story1-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
 	(setf complete-story1 *story*)
     
-	(setf complete-stories (list complete-story1))
+	(load "voz/story2-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story2 *story*)
+    
+	(load "voz/story3-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story3 *story*)
+    
+	(load "voz/story4-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story4 *story*)
+    
+	(load "voz/story5-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story5 *story*)
+    
+	(load "voz/story6-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story6 *story*)
+    
+	(load "voz/story8-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story8 *story*)
+    
+	(load "voz/story9-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story9 *story*)
+    
+	(load "voz/story10-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story10 *story*)
+    
+	(load "voz/story11-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story11 *story*)
+    
+	(load "voz/story12-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story12 *story*)
+    
+	(load "voz/story13-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story13 *story*)
+    
+	(load "voz/story14-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story14 *story*)
+    
+	(load "voz/story15-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story15 *story*)
+    
+	(load "voz/story16-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story16 *story*)
+    
+	(load "voz/story17-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story17 *story*)
+    
+	(load "voz/story18-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story18 *story*)
+    
+	(load "voz/story19-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story19 *story*)
+    
+	(load "voz/story20-complete-levinverb_nofunc_roleexp_prep_sty.lisp")
+	(setf complete-story20 *story*)
+    
+	(setf complete-stories (list complete-story1 complete-story2 complete-story3 complete-story4 complete-story5 complete-story6 complete-story8 complete-story9 complete-story10 complete-story11 complete-story12 complete-story13 complete-story14 complete-story15 complete-story16 complete-story17 complete-story18 complete-story19 complete-story20))
 
 	(load "voz/story7-partial-levinverb_nofunc_roleexp_prep_sty.lisp")
 	(setf partial-story *story*)

@@ -68,7 +68,7 @@
            (STORY3-m3149 :type FE)
          )
          (:expressions
-           ((levin-37-7 STORY3-m3148 STORY3-m3149) :name STORY3-VERB1)
+           ((levin-37-7 STORY3-m3148 STORY3-m3148) :name STORY3-VERB1)
            ((roleOther STORY3-m3148) :name STORY3-EXTRA0)
            ((roleHero STORY3-m3141) :name STORY3-EXTRA1)
            ((roleOther STORY3-m3150) :name STORY3-EXTRA2)

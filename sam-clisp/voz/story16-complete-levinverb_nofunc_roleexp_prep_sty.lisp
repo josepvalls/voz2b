@@ -262,11 +262,11 @@
            (STORY16-m1482 :type MB)
          )
          (:expressions
-           ((levin-29-5 STORY16-m1621 STORY16-m1174) :name STORY16-VERB1)
+           ((levin-29-5 STORY16-m1621 STORY16-m1170) :name STORY16-VERB1)
            ((levin-09-1 STORY16-m1621 STORY16-m1174) :name STORY16-VERB2)
            ((levin-47-7 STORY16-m1242 STORY16-m1174) :name STORY16-VERB3)
            ((levin-14 STORY16-m1592 STORY16-m1201) :name STORY16-VERB4)
-           ((levin-11-3 STORY16-m1617 STORY16-m1617) :name STORY16-VERB5)
+           ((levin-11-3 STORY16-m1617 STORY16-m1501) :name STORY16-VERB5)
            ((roleVillain STORY16-m1206) :name STORY16-EXTRA0)
            ((roleNA STORY16-m1617) :name STORY16-EXTRA1)
            ((roleNA STORY16-m1494) :name STORY16-EXTRA2)

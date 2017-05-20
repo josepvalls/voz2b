@@ -79,7 +79,7 @@
            (STORY17-m4127 :type MA)
          )
          (:expressions
-           ((levin-13-1 STORY17-m4127 STORY17-m4127) :name STORY17-VERB1)
+           ((levin-13-1 STORY17-m4132 STORY17-m4127) :name STORY17-VERB1)
            ((roleHero STORY17-m4132) :name STORY17-EXTRA0)
            ((roleOther STORY17-m4126) :name STORY17-EXTRA1)
            ((roleTester STORY17-m4127) :name STORY17-EXTRA2)
