@@ -104,7 +104,7 @@
          (:expressions
            ((levin-37-7 STORY13-m6019 STORY13-m6017) :name STORY13-VERB1)
            ((levin-55-1 STORY13-m6017 STORY13-m6026) :name STORY13-VERB2)
-           ((levin-29-4 STORY13-m6017 STORY13-m6017) :name STORY13-VERB3)
+           ((levin-29-4 STORY13-m6017 STORY13-m6026) :name STORY13-VERB3)
            ((levin-31-3 STORY13-m6017 STORY13-m6017) :name STORY13-VERB4)
            ((levin-37-2 STORY13-m6017 STORY13-m6018) :name STORY13-VERB5)
            ((levin-37-7 STORY13-m6017 STORY13-m6018) :name STORY13-VERB6)

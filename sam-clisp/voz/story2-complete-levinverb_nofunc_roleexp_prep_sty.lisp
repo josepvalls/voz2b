@@ -12,7 +12,7 @@
        (:clauses
          (c0 (:s phase1 phase2))
          (phase1 (:s  t1 t2 t3 t4))
-         (phase2 (:s  t5 t6 t7 t8 t9 t10 t11 t12))
+         (phase2 (:s  t5 t6 t7 t8 t9))
 
        )
        (:templates
@@ -25,9 +25,6 @@
          ;; She called him, wept, and lamented that her father and mother would scold her severely; still her little brother did not answer.
          ;; She ran into the open field; the swan geese flashed in the distance and vanished behind a dark forest.
          ;; The swan geese had long had a bad reputation; they had done a great deal of damage and stolen many little children.
-         ;; The girl guessed that they had carried off her brother, and rushed after them.
-         ;; She ran and ran and saw a stove.
-         ;; "Stove, stove, tell me, whither have the geese flown?"
 
          (t1 "" (STORY2-VERB1 "" (STORY2-m2456 "An old man") " lived with his " (STORY2-m2457 "his old wife") " " ) "; they had " (STORY2-m2460 "a daughter") " and " (STORY2-m2461 "a little son") " . ")
          (t2 "' " (STORY2-m2460 "Daughter") " , " (STORY2-m2460 "daughter") " , ' said " (STORY2-m2457 "the mother") " , ' we are going to work ; we shall bring " (STORY2-m2460 "you") " back a bun , sew you a dress , and buy " (STORY2-m2460 "you") " a kerchief . ")
@@ -42,16 +39,12 @@
          (t7 "" (STORY2-m2460 "She") " called " (STORY2-m2461 "him") " , wept , and lamented that her " (STORY2-m2456 "father") " and " (STORY2-m2457 "mother") " would scold " (STORY2-m2460 "her") " severely ; still her " (STORY2-m2461 "her little brother") " did not answer . ")
          (t8 "" (STORY2-m2460 "She") " ran into the open field ; " (STORY2-m2471 "the swan geese") " flashed in the distance and vanished behind a dark forest . ")
          (t9 "" (STORY2-m2471 "The swan geese") " had long had a bad reputation ; " (STORY2-m2471 "they") " had done a great deal of damage and stolen " (STORY2-m2479 "many little children") " . ")
-         (t10 "" (STORY2-m2460 "The girl") " guessed that " (STORY2-m2471 "they") " had carried off her " (STORY2-m2461 "her brother") " , and rushed after " (STORY2-m2471 "them") " . ")
-         (t11 "" (STORY2-m2460 "She") " ran and ran and saw " (STORY2-m2480 "a stove") " . ")
-         (t12 "' " (STORY2-m2480 "Stove") " , " (STORY2-m2480 "stove") " , tell " (STORY2-m2460 "me") " , whither have " (STORY2-m2471 "the geese") " flown ? ' ")
-         (t1005 (STORY2-EXTRA5  (STORY2-m2471 "the geese") " is the " (Villain "Villain") ) ".")
+         (t1005 (STORY2-EXTRA5  (STORY2-m2471 "they") " is the " (Villain "Villain") ) ".")
          (t1006 (STORY2-EXTRA6  (STORY2-m2479 "many little children") " is the " (Other "Other") ) ".")
-         (t1007 (STORY2-EXTRA7  (STORY2-m2480 "stove") " is the " (Tester "Tester") ) ".")
-         (t1008 (STORY2-EXTRA8  (STORY2-m2456 "father") " is the " (Other "Other") ) ".")
-         (t1009 (STORY2-EXTRA9  (STORY2-m2457 "mother") " is the " (Other "Other") ) ".")
-         (t1010 (STORY2-EXTRA10  (STORY2-m2460 "me") " is the " (Hero "Hero") ) ".")
-         (t1011 (STORY2-EXTRA11  (STORY2-m2461 "her brother") " is the " (Other "Other") ) ".")
+         (t1007 (STORY2-EXTRA7  (STORY2-m2456 "father") " is the " (Other "Other") ) ".")
+         (t1008 (STORY2-EXTRA8  (STORY2-m2457 "mother") " is the " (Other "Other") ) ".")
+         (t1009 (STORY2-EXTRA9  (STORY2-m2460 "She") " is the " (Hero "Hero") ) ".")
+         (t1010 (STORY2-EXTRA10  (STORY2-m2461 "her little brother") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -107,7 +100,6 @@
          (:entities
            (STORY2-m2471 :type AA)
            (STORY2-m2479 :type GR)
-           (STORY2-m2480 :type AO)
            (STORY2-m2456 :type MA)
            (STORY2-m2457 :type FE)
            (STORY2-m2460 :type FE)
@@ -118,16 +110,12 @@
            ((levin-29-3 STORY2-m2460 STORY2-m2461) :name STORY2-VERB5)
            ((levin-33-1 STORY2-m2456 STORY2-m2460) :name STORY2-VERB6)
            ((levin-13-5-1 STORY2-m2471 STORY2-m2479) :name STORY2-VERB7)
-           ((levin-29-5 STORY2-m2460 STORY2-m2471) :name STORY2-VERB8)
-           ((levin-30-1 STORY2-m2460 STORY2-m2480) :name STORY2-VERB9)
-           ((levin-37-2 STORY2-m2480 STORY2-m2471) :name STORY2-VERB10)
            ((roleVillain STORY2-m2471) :name STORY2-EXTRA4)
            ((roleOther STORY2-m2479) :name STORY2-EXTRA5)
-           ((roleTester STORY2-m2480) :name STORY2-EXTRA6)
-           ((roleOther STORY2-m2456) :name STORY2-EXTRA7)
-           ((roleOther STORY2-m2457) :name STORY2-EXTRA8)
-           ((roleHero STORY2-m2460) :name STORY2-EXTRA9)
-           ((roleOther STORY2-m2461) :name STORY2-EXTRA10)
+           ((roleOther STORY2-m2456) :name STORY2-EXTRA6)
+           ((roleOther STORY2-m2457) :name STORY2-EXTRA7)
+           ((roleHero STORY2-m2460) :name STORY2-EXTRA8)
+           ((roleOther STORY2-m2461) :name STORY2-EXTRA9)
          )
        )
 

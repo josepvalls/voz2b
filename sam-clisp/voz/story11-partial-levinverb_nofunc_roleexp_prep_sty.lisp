@@ -11,7 +11,7 @@
      (:discourse
        (:clauses
          (c0 (:s phase1))
-         (phase1 (:s  t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23 t24 t25 t26 t27 t28 t29 t30 t31 t32 t33 t34 t35 t36 t37 t38 t39 t40 t41 t42 t43 t44 t45 t46 t47 t48 t49 t50 t51 t52 t53 t54 t55 t56 t57 t58 t59 t60 t61 t62 t63 t64 t65 t66 t67 t68 t69 t70 t71 t72 t73 t74 t75 t76 t77))
+         (phase1 (:s  t1 t2 t3 t4))
 
        )
        (:templates
@@ -19,169 +19,12 @@
          ;; Two of these had their wits about them, but the third was a simpleton, Ivan by name, surnamed Popyalof.
          ;; For twelve whole years Ivan lay among the ashes from the stove; but then he arose, and shook himself, so that six poods of ashes fell off from him.
          ;; Now in the land in which Ivan lived there was never any day, but always night.
-         ;; That was a Snake's doing.
-         ;; Well, Ivan undertook to kill that Snake, so he said to his father, "Father make me a mace five poods in weight."
-         ;; And when he had got the mace, he went out into the fields, and flung it straight up in the air, and then he went home.
-         ;; The next day he went out into the fields to the spot from which he had flung the mace on high, and stood there with his head thrown back.
-         ;; So when the mace fell down again it hit him on the forehead.
-         ;; And the mace broke in two.
-         ;; Ivan went home and said to his father, "Father, make me another mace, a ten pood one."
-         ;; And when he had got it he went out into the fields, and flung it aloft.
-         ;; And the mace went flying through the air for three days and three nights.
-         ;; On the fourth day Ivan went out to the same spot, and when the mace came tumbling down, he put his knee in the way, and the mace broke over it into three pieces.
-         ;; Ivan went home and told his father to make him a third mace, one of fifteen poods weight.
-         ;; And when he had got it, he went out into the fields and flung it aloft.
-         ;; And the mace was up in the air six days.
-         ;; On the seventh Ivan went to the same spot as before.
-         ;; Down fell the mace, and when it struck Ivan's forehead, the forehead bowed under it.
-         ;; Thereupon he said, "This mace will do for the Snake!"
-         ;; So when he had got everything ready, he went forth with his brothers to fight the Snake.
-         ;; He rode and rode, and presently there stood before him a hut on fowl's legs, and in that hut lived the Snake.
-         ;; There all the party came to a standstill.
-         ;; Then Ivan hung up his gloves, and said to his brothers, "Should blood drop from my gloves, make haste to help me."
-         ;; When he had said this he went into the hut and sat down under the boarding.
-         ;; Presently there rode up a Snake with three heads.
-         ;; His steed stumbled, his hound howled, his falcon clamored.
-         ;; Then cried the Snake: "Wherefore hast thou stumbled, O Steed! hast thou howled, O Hound! hast thou clamored, O Falcon?"
-         ;; "How can I but stumble," replied the Steed, "when under the boarding sits Ivan Popyalof?"
-         ;; Then said the Snake, "Come forth, Ivanushka!
-         ;; Let us try our strength together."
-         ;; Ivan came forth, and they began to fight.
-         ;; And Ivan killed the Snake, and then sat down again beneath the boarding.
-         ;; Presently there came another Snake, a six-headed one, and him, too, Ivan killed.
-         ;; And then there came a third, which had twelve heads.
-         ;; Well, Ivan began to fight with him, and lopped off nine of his heads.
-         ;; The Snake had no strength left in him.
-         ;; Just then a raven came flying by, and it croaked: "Krof? Krof!"
-         ;; Then the Snake cried to the Raven, "Fly, and tell my wife to come and devour Ivan Popyalof."
-         ;; But Ivan cried: "Fly, and tell my brothers to come, and then we will kill this Snake, and give his flesh to thee."
-         ;; And the Raven gave ear to what Ivan said, and flew to his brothers and began to croak above their heads.
-         ;; The brothers awoke, and when they heard the cry of the Raven, they hastened to their brother's aid.
-         ;; And they killed the Snake, and then, having taken his heads, they went into his hut and destroyed them.
-         ;; And immediately there was bright light throughout the whole land.
-         ;; After killing the Snake, Ivan Popyalof and his brothers set off on their way home.
-         ;; But he had forgotten to take away his gloves, so he went back to fetch them, telling his brothers to wait for him meanwhile.
-         ;; Now when he had reached the hut and was going to take away his gloves, he heard the voices of the Snake's wife and daughters, who were talking with each other.
-         ;; So he turned himself into a cat, and began to mew outside the door.
-         ;; They let him in, and he listened to everything they said.
-         ;; Then he got his gloves and hastened away.
-         ;; As soon as he came to where his brothers were, he mounted his horse, and they all started afresh.
-         ;; They rode and rode; presently they saw before them a green meadow, and on that meadow lay silken cushions.
-         ;; Then the elder brothers said, "Let's turn out our horses to graze here, while we rest ourselves a little."
-         ;; But Ivan said, "Wait a minute, brothers!" and he seized his mace, and struck the cushions with it.
-         ;; And out of those cushions there streamed blood.
-         ;; So they all went on further.
-         ;; They rode and rode; presently there stood before them an apple-tree, and upon it were gold and silver apples.
-         ;; Then the elder brothers said. "Let's eat an apple apiece."
-         ;; But Ivan said, "Wait a minute, brothers; I'll try them first," and he took his  mace, and struck the apple-tree with it.
-         ;; And out of the tree streamed blood.
-         ;; So they went on further.
-         ;; They rode and rode, and by and by they saw a spring in front of them.
-         ;; And the elder brothers cried, "Let's have a drink of water."
-         ;; But Ivan Popyalof cried: "Stop, brothers!" and he raised his mace and struck the spring, and its waters became blood.
-         ;; For the meadow, the silken cushions, the apple-tree, and the spring, were all of them daughters of the Snake.
-         ;; After killing the Snake's daughters, Ivan and his brothers went on homewards.
-         ;; Presently came the Snake's Wife flying after them, and she opened her jaws from the sky to the earth, and tried to swallow up Ivan.
-         ;; But Ivan and his brothers threw three poods of salt into her mouth.
-         ;; She swallowed the salt, thinking it was Ivan Popyalof, but afterwards - when she had tasted the salt, and found out it was not Ivan - she flew after him again.
-         ;; Then he perceived that danger was at hand, and so he let his horse go free, and hid himself behind twelve doors in the forge of Kuzma and Demian.
-         ;; The Snake's Wife came flying up, and said to Kuzma and Demian, "Give me up Ivan Popyalof."
-         ;; But they replied:"Send your tongue through the twelve doors and take him."
-         ;; So the Snake's Wife began licking the doors.
-         ;; But meanwhile they all heated iron pincers, and as soon as she had sent her tongue through into the smithy, they caught tight hold of her by the tongue, and began thumping her with hammers.
-         ;; And when the Snake's Wife was dead they consumed her with fire, and scattered her ashes to the winds.
-         ;; And then they went home, and there they lived and enjoyed themselves, feasting and revelling, and drinking mead and wine.
-         ;; I was there, too, and had liquor to drink; it didn't go into my mouth, but only ran down my beard.
 
          (t1 "Once upon a time there was an old couple , and they had three Sons . ")
          (t2 "Two of these had their wits about them , but " (STORY11-m4097 "the third") " was " (STORY11-m4097 "a simpleton, Ivan by name, surnamed Popyalof") " . ")
          (t3 "For twelve whole years " (STORY11-m4097 "Ivan") " lay among the ashes from the stove ; but then " (STORY11-m4097 "he") " arose , and shook " (STORY11-m4097 "himself") " , so that six poods of ashes fell off from " (STORY11-m4097 "him") " . ")
          (t4 "Now in the land in which " (STORY11-m4097 "Ivan") " lived there was never any day , but always night . ")
-         (t5 "That was a " (STORY11-m4107 "Snake") " 's doing . ")
-         (t6 "Well , " (STORY11-m4097 "Ivan") " undertook to kill " (STORY11-m4107 "that Snake") " , so " (STORY11-m4097 "he") " said to his " (STORY11-m4108 "his father") " , ' " (STORY11-m4108 "Father") " make " (STORY11-m4097 "me") " a mace five poods in weight . ' ")
-         (t7 "And when " (STORY11-m4097 "he") " had got the mace , " (STORY11-m4097 "he") " went out into the fields , and flung it straight up in the air , and then " (STORY11-m4097 "he") " went home . ")
-         (t8 "The next day " (STORY11-m4097 "he") " went out into the fields to the spot from which " (STORY11-m4097 "he") " had flung the mace on high , and stood there with his head thrown back . ")
-         (t9 "So when the mace fell down again it hit " (STORY11-m4097 "him") " on the forehead . ")
-         (t10 "And the mace broke in two . ")
-         (t11 "" (STORY11-m4097 "Ivan") " went home and said to his " (STORY11-m4108 "his father") " , ' " (STORY11-m4108 "Father") " , make " (STORY11-m4097 "me") " another mace , a ten pood one . ' ")
-         (t12 "And when " (STORY11-m4097 "he") " had got it " (STORY11-m4097 "he") " went out into the fields , and flung it aloft . ")
-         (t13 "And the mace went flying through the air for three days and three nights . ")
-         (t14 "On the fourth day " (STORY11-m4097 "Ivan") " went out to the same spot , and when the mace came tumbling down , " (STORY11-m4097 "he") " put his knee in the way , and the mace broke over it into three pieces . ")
-         (t15 "" (STORY11-m4097 "Ivan") " went home and told his " (STORY11-m4108 "his father") " to make " (STORY11-m4097 "him") " a third mace , one of fifteen poods weight . ")
-         (t16 "And when " (STORY11-m4097 "he") " had got it , " (STORY11-m4097 "he") " went out into the fields and flung it aloft . ")
-         (t17 "And the mace was up in the air six days . ")
-         (t18 "On the seventh " (STORY11-m4097 "Ivan") " went to the same spot as before . ")
-         (t19 "Down fell the mace , and when it struck " (STORY11-m4097 "Ivan") " 's forehead , the forehead bowed under it . ")
-         (t20 "Thereupon " (STORY11-m4097 "he") " said , ' This mace will do for " (STORY11-m4107 "the Snake") " ! ' ")
-         (t21 "So when " (STORY11-m4097 "he") " had got everything ready , " (STORY11-m4097 "he") " went forth with his brothers to fight " (STORY11-m4107 "the Snake") " . ")
-         (t22 "" (STORY11-m4097 "He") " rode and rode , and presently there stood before " (STORY11-m4097 "him") " a hut on fowl 's legs , and in that hut lived " (STORY11-m4107 "the Snake") " . ")
-         (t23 "There all the party came to a standstill . ")
-         (t24 "Then " (STORY11-m4097 "Ivan") " hung up his gloves , and said to his brothers , ' Should blood drop from my gloves , make haste to help " (STORY11-m4097 "me") " . ' ")
-         (t25 "When " (STORY11-m4097 "he") " had said this " (STORY11-m4097 "he") " went into the hut and sat down under the boarding . ")
-         (t26 "Presently there rode up " (STORY11-m4138 "a Snake with three heads") " three heads . ")
-         (t27 "His steed stumbled , his hound howled , his falcon clamored . ")
-         (t28 "Then cried " (STORY11-m4138 "the Snake") " : ' Wherefore hast thou stumbled , O Steed ! hast thou howled , O Hound ! hast thou clamored , O Falcon ? ' ")
-         (t29 "' How can I but stumble , ' replied the Steed , ' when under the boarding sits " (STORY11-m4097 "Ivan Popyalof") " ? ' ")
-         (t30 "Then said " (STORY11-m4138 "the Snake") " , ' Come forth , " (STORY11-m4097 "Ivanushka") " ! ")
-         (t31 "Let us try our strength together . ' ")
-         (t32 "" (STORY11-m4097 "Ivan") " came forth , and they began to fight . ")
-         (t33 "And " (STORY11-m4097 "Ivan") " killed " (STORY11-m4138 "the Snake") " , and then sat down again beneath the boarding . ")
-         (t34 "Presently there came " (STORY11-m4145 "another Snake, a six-headed one") " , and " (STORY11-m4145 "him") " , too , " (STORY11-m4097 "Ivan") " killed . ")
-         (t35 "And then there came " (STORY11-m4107 "a third, which had twelve heads") " twelve heads . ")
-         (t36 "Well , " (STORY11-m4097 "Ivan") " began to fight with " (STORY11-m4107 "him") " , and lopped off nine of his heads . ")
-         (t37 "" (STORY11-m4107 "The Snake") " had no strength left in " (STORY11-m4107 "him") " . ")
-         (t38 "Just then " (STORY11-m4149 "a raven") " came flying by , and " (STORY11-m4149 "it") " croaked : ' Krof ? Krof ! ' ")
-         (t39 "Then " (STORY11-m4107 "the Snake") " cried to " (STORY11-m4149 "the Raven") " , ' Fly , and tell my " (STORY11-m4150 "my wife") " to come and devour " (STORY11-m4097 "Ivan Popyalof") " . ' ")
-         (t40 "But " (STORY11-m4097 "Ivan") " cried : ' Fly , and tell my brothers to come , and then we will kill " (STORY11-m4107 "this Snake") " , and give his flesh to " (STORY11-m4149 "thee") " . ' ")
-         (t41 "And " (STORY11-m4149 "the Raven") " gave ear to what " (STORY11-m4097 "Ivan") " said , and flew to his brothers and began to croak above their heads . ")
-         (t42 "The brothers awoke , and when they heard the cry of " (STORY11-m4149 "the Raven") " , they hastened to their " (STORY11-m4097 "their brother") " 's aid . ")
-         (t43 "And they killed " (STORY11-m4107 "the Snake") " , and then , having taken his heads , they went into his hut and destroyed them . ")
-         (t44 "And immediately there was bright light throughout the whole land . ")
-         (t45 "After killing " (STORY11-m4107 "the Snake") " , " (STORY11-m4097 "Ivan Popyalof") " and his brothers set off on their way home . ")
-         (t46 "But " (STORY11-m4097 "he") " had forgotten to take away his gloves , so " (STORY11-m4097 "he") " went back to fetch them , telling his brothers to wait for " (STORY11-m4097 "him") " meanwhile . ")
-         (t47 "Now when " (STORY11-m4097 "he") " had reached the hut and was going to take away his gloves , " (STORY11-m4097 "he") " heard the voices of the " (STORY11-m4107 "Snake") " 's " (STORY11-m4150 "wife") " and " (STORY11-m4160 "daughters") " , who were talking with each other . ")
-         (t48 "So " (STORY11-m4097 "he") " turned " (STORY11-m4097 "himself") " into " (STORY11-m4097 "a cat") " , and began to mew outside the door . ")
-         (t49 "They let " (STORY11-m4097 "him") " in , and " (STORY11-m4097 "he") " listened to everything they said . ")
-         (t50 "Then " (STORY11-m4097 "he") " got his gloves and hastened away . ")
-         (t51 "As soon as " (STORY11-m4097 "he") " came to where his brothers were , " (STORY11-m4097 "he") " mounted his " (STORY11-m4164 "his horse") " , and they all started afresh . ")
-         (t52 "They rode and rode ; presently they saw before them a green meadow , and on that meadow lay silken cushions . ")
-         (t53 "Then the elder brothers said , ' Let 's turn out our horses to graze here , while we rest ourselves a little . ' ")
-         (t54 "But " (STORY11-m4097 "Ivan") " said , ' Wait a minute , brothers ! ' and " (STORY11-m4097 "he") " seized his mace , and struck the cushions with it . ")
-         (t55 "And out of those cushions there streamed blood . ")
-         (t56 "So they all went on further . ")
-         (t57 "They rode and rode ; presently there stood before them an apple-tree , and upon it were gold and silver apples . ")
-         (t58 "Then the elder brothers said . ' Let 's eat an apple apiece . ' ")
-         (t59 "But " (STORY11-m4097 "Ivan") " said , ' Wait a minute , brothers ; " (STORY11-m4097 "I") " 'll try them first , ' and " (STORY11-m4097 "he") " took his mace , and struck the apple - tree with it . ")
-         (t60 "And out of the tree streamed blood . ")
-         (t61 "So they went on further . ")
-         (t62 "They rode and rode , and by and by they saw a spring in front of them . ")
-         (t63 "And the elder brothers cried , ' Let 's have a drink of water . ' ")
-         (t64 "But " (STORY11-m4097 "Ivan Popyalof") " cried : ' Stop , brothers ! ' and " (STORY11-m4097 "he") " raised his mace and struck the spring , and its waters became blood . ")
-         (t65 "For the meadow " (STORY11-m4160 "the meadow, the silken cushions, the apple-tree, and the spring") " the spring , were " (STORY11-m4160 "all of them") " " (STORY11-m4160 "daughters of the Snake") " " (STORY11-m4107 "the Snake") " . ")
-         (t66 "After killing " (STORY11-m4160 "the Snake's daughters") " , " (STORY11-m4097 "Ivan") " and his brothers went on homewards . ")
-         (t67 "Presently came " (STORY11-m4150 "the Snake's Wife") " flying after them , and " (STORY11-m4150 "she") " opened her jaws from the sky to the earth , and tried to swallow up " (STORY11-m4097 "Ivan") " . ")
-         (t68 "But " (STORY11-m4097 "Ivan") " and his brothers threw three poods of salt into her mouth . ")
-         (t69 "" (STORY11-m4150 "She") " swallowed the salt , thinking it was " (STORY11-m4097 "Ivan Popyalof") " , but afterwards - when " (STORY11-m4150 "she") " had tasted the salt , and found out it was not " (STORY11-m4097 "Ivan") " - " (STORY11-m4150 "she") " flew after " (STORY11-m4097 "him") " again . ")
-         (t70 "Then " (STORY11-m4097 "he") " perceived that danger was at hand , and so " (STORY11-m4097 "he") " let his " (STORY11-m4164 "his horse") " go free , and hid " (STORY11-m4097 "himself") " behind twelve doors in the forge of " (STORY11-m4189 "Kuzma") " and " (STORY11-m4191 "Demian") " . ")
-         (t71 "" (STORY11-m4150 "The Snake's Wife") " came flying up , and said to " (STORY11-m4189 "Kuzma") " and " (STORY11-m4191 "Demian") " , ' Give " (STORY11-m4150 "me") " up " (STORY11-m4097 "Ivan Popyalof") " . ' ")
-         (t72 "But they replied : ' Send your tongue through the twelve doors and take " (STORY11-m4097 "him") " . ' ")
-         (t73 "So " (STORY11-m4150 "the Snake's Wife") " began licking the doors . ")
-         (t74 "But meanwhile they all heated iron pincers , and as soon as " (STORY11-m4150 "she") " had sent her tongue through into the smithy , they caught tight hold of her by the tongue , and began thumping her with hammers . ")
-         (t75 "And when " (STORY11-m4150 "the Snake's Wife") " was dead they consumed " (STORY11-m4150 "her") " with fire , and scattered her ashes to the winds . ")
-         (t76 "And then they went home , and there they lived and enjoyed themselves , feasting and revelling , and drinking mead and wine . ")
-         (t77 "" (STORY11-m4203 "I") " was there , too , and had liquor to drink ; it did n't go into my mouth , but only ran down my beard . ")
-         (t1001 (STORY11-EXTRA1  (STORY11-m4160 "the Snake's daughters") " is the " (Villain "Villain") ) ".")
-         (t1002 (STORY11-EXTRA2  (STORY11-m4097 "him") " is the " (Hero "Hero") ) ".")
-         (t1003 (STORY11-EXTRA3  (STORY11-m4203 "I") " is the " (NA "NA") ) ".")
-         (t1004 (STORY11-EXTRA4  (STORY11-m4164 "his horse") " is the " (Other "Other") ) ".")
-         (t1005 (STORY11-EXTRA5  (STORY11-m4138 "the Snake") " is the " (Villain "Villain") ) ".")
-         (t1006 (STORY11-EXTRA6  (STORY11-m4107 "Snake") " is the " (Villain "Villain") ) ".")
-         (t1007 (STORY11-EXTRA7  (STORY11-m4108 "his father") " is the " (Other "Other") ) ".")
-         (t1008 (STORY11-EXTRA8  (STORY11-m4145 "him") " is the " (Villain "Villain") ) ".")
-         (t1009 (STORY11-EXTRA9  (STORY11-m4149 "the Raven") " is the " (Other "Other") ) ".")
-         (t1010 (STORY11-EXTRA10  (STORY11-m4150 "her") " is the " (Villain "Villain") ) ".")
-         (t1011 (STORY11-EXTRA11  (STORY11-m4189 "Kuzma") " is the " (Other "Other") ) ".")
-         (t1012 (STORY11-EXTRA12  (STORY11-m4191 "Demian") " is the " (Other "Other") ) ".")
+         (t1001 (STORY11-EXTRA1  (STORY11-m4097 "Ivan") " is the " (Hero "Hero") ) ".")
 
        )
      )
@@ -218,58 +61,11 @@
       
        (phase1
          (:entities
-           (STORY11-m4160 :type MB)
            (STORY11-m4097 :type MA)
-           (STORY11-m4203 :type MB)
-           (STORY11-m4164 :type AA)
-           (STORY11-m4138 :type MB)
-           (STORY11-m4107 :type MB)
-           (STORY11-m4108 :type MA)
-           (STORY11-m4145 :type MB)
-           (STORY11-m4149 :type AA)
-           (STORY11-m4150 :type MB)
-           (STORY11-m4189 :type MA)
-           (STORY11-m4191 :type MA)
          )
          (:expressions
            ((levin-40-6 STORY11-m4097 STORY11-m4097) :name STORY11-VERB1)
-           ((levin-42-1 STORY11-m4097 STORY11-m4107) :name STORY11-VERB2)
-           ((levin-37-7 STORY11-m4097 STORY11-m4108) :name STORY11-VERB3)
-           ((levin-37-7 STORY11-m4097 STORY11-m4097) :name STORY11-VERB4)
-           ((levin-47-7 STORY11-m4097 STORY11-m4097) :name STORY11-VERB5)
-           ((levin-37-2 STORY11-m4097 STORY11-m4108) :name STORY11-VERB6)
-           ((levin-37-7 STORY11-m4097 STORY11-m4107) :name STORY11-VERB7)
-           ((levin-36-3 STORY11-m4097 STORY11-m4097) :name STORY11-VERB8)
-           ((levin-37-7 STORY11-m4138 STORY11-m4097) :name STORY11-VERB9)
-           ((levin-42-1 STORY11-m4097 STORY11-m4138) :name STORY11-VERB10)
-           ((levin-42-1 STORY11-m4097 STORY11-m4145) :name STORY11-VERB11)
-           ((levin-55-1 STORY11-m4097 STORY11-m4107) :name STORY11-VERB12)
-           ((levin-40-1-2 STORY11-m4107 STORY11-m4097) :name STORY11-VERB13)
-           ((levin-40-1-2 STORY11-m4097 STORY11-m4107) :name STORY11-VERB14)
-           ((levin-13-1 STORY11-m4149 STORY11-m4097) :name STORY11-VERB15)
-           ((levin-09-1 STORY11-m4097 STORY11-m4107) :name STORY11-VERB16)
-           ((levin-37-2 STORY11-m4097 STORY11-m4097) :name STORY11-VERB17)
-           ((levin-30-1 STORY11-m4097 STORY11-m4107) :name STORY11-VERB18)
-           ((levin-26-6 STORY11-m4097 STORY11-m4097) :name STORY11-VERB19)
-           ((levin-09-1 STORY11-m4097 STORY11-m4097) :name STORY11-VERB20)
-           ((levin-11-3 STORY11-m4097 STORY11-m4097) :name STORY11-VERB21)
-           ((levin-42-1 STORY11-m4097 STORY11-m4160) :name STORY11-VERB22)
-           ((levin-39-3 STORY11-m4150 STORY11-m4097) :name STORY11-VERB23)
-           ((levin-29-4 STORY11-m4150 STORY11-m4097) :name STORY11-VERB24)
-           ((levin-16 STORY11-m4097 STORY11-m4097) :name STORY11-VERB25)
-           ((levin-37-7 STORY11-m4150 STORY11-m4150) :name STORY11-VERB26)
-           ((roleVillain STORY11-m4160) :name STORY11-EXTRA0)
-           ((roleHero STORY11-m4097) :name STORY11-EXTRA1)
-           ((roleNA STORY11-m4203) :name STORY11-EXTRA2)
-           ((roleOther STORY11-m4164) :name STORY11-EXTRA3)
-           ((roleVillain STORY11-m4138) :name STORY11-EXTRA4)
-           ((roleVillain STORY11-m4107) :name STORY11-EXTRA5)
-           ((roleOther STORY11-m4108) :name STORY11-EXTRA6)
-           ((roleVillain STORY11-m4145) :name STORY11-EXTRA7)
-           ((roleOther STORY11-m4149) :name STORY11-EXTRA8)
-           ((roleVillain STORY11-m4150) :name STORY11-EXTRA9)
-           ((roleOther STORY11-m4189) :name STORY11-EXTRA10)
-           ((roleOther STORY11-m4191) :name STORY11-EXTRA11)
+           ((roleHero STORY11-m4097) :name STORY11-EXTRA0)
          )
        )
 

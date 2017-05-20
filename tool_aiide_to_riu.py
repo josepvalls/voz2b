@@ -112,7 +112,7 @@ def remove_overlaps(substitutions_expressions):
     return ret
 
 
-def get_sam_phases(storyname,phases,all_coref_mentions,do_verbs,do_funcs,do_roles):
+def get_sam_phases(storyname,get_data_from,phases,all_coref_mentions,do_verbs,do_funcs,do_roles):
     roles_as_expressions = True
     ret = ''
     ret_ent = ''
@@ -155,8 +155,8 @@ def get_sam_phases(storyname,phases,all_coref_mentions,do_verbs,do_funcs,do_role
         for sentence in sentences:
             for verb in sentence.verbs:
                 assert isinstance(verb, verbmanager.Verb)
-                subjects = filter_mentions(verb.get_subjects(), all_coref_mentions)
-                objects = filter_mentions(verb.get_objects(), all_coref_mentions)
+                subjects = filter_mentions(verb.get_subjects(), all_coref_mentions,get_data_from)
+                objects = filter_mentions(verb.get_objects(), all_coref_mentions,get_data_from)
                 #mentions += subjects
                 #mentions += objects
                 expression_tokens = []
@@ -168,13 +168,13 @@ def get_sam_phases(storyname,phases,all_coref_mentions,do_verbs,do_funcs,do_role
                 if subjects and objects:
                     if subjects:
                         expression_tokens.append(subjects[0].tokens)
-                        subject_id = subjects[0].annotations.coref
+                        subject_id = getattr(subjects[0],get_data_from).coref
                         substitutions[subjects[0]] = subject_id
                     else:
                         subject_id = -1
                     if objects:
                         expression_tokens.append(objects[0].tokens)
-                        object_id = objects[0].annotations.coref
+                        object_id = getattr(objects[0], get_data_from).coref
                         substitutions[objects[0]] = object_id
                     else:
                         object_id = -1
@@ -187,21 +187,20 @@ def get_sam_phases(storyname,phases,all_coref_mentions,do_verbs,do_funcs,do_role
                             substitutions_expressions.append((get_start_end(expression_tokens),verb_string))
                             added_expressions_remove_redundant.add(verb_string)
 
-            filter_character_field = 'annotations'
-            mmm = filter_mentions([i for i in sentence.mentions if i and i.is_independent and (filter_character_field is None or getattr(i, filter_character_field).is_character())], all_coref_mentions)
+            mmm = filter_mentions([i for i in sentence.mentions if i and i.is_independent and (get_data_from is None or getattr(i, get_data_from).is_character())], all_coref_mentions,get_data_from)
             for i in mmm:
-                if i.annotations.coref and i.annotations.role and ',' not in i.annotations.role:
+                if getattr(i,get_data_from).coref and getattr(i,get_data_from).role and ',' not in getattr(i,get_data_from).role:
                     mentions.append(i)
 
         entities = {}
         for i in mentions:
-            entities[i.annotations.coref] = i
-            substitutions[i]=i.annotations.coref
+            entities[getattr(i,get_data_from).coref] = i
+            substitutions[i]=getattr(i,get_data_from).coref
 
         current_hero = None
         if roles_as_expressions:
             for key in entities.keys():
-                role = entities[key].annotations.role
+                role = getattr(entities[key],get_data_from).role
                 if role=='Hero':
                     current_hero = key
                 if role and ',' not in role:
@@ -233,9 +232,9 @@ def get_sam_phases(storyname,phases,all_coref_mentions,do_verbs,do_funcs,do_role
         ret += '       (phase%d\n' % phase_i
         ret += '         (:entities\n'
         for key in entities.keys():
-            ret += '           (%s-m%s :type %s)\n' % (storyname,key,entities[key].annotations.type)
+            ret += '           (%s-m%s :type %s)\n' % (storyname,key,getattr(entities[key],get_data_from).type)
             if do_roles=='roleent':
-                role = entities[key].annotations.role
+                role = getattr(entities[key],get_data_from).role
                 if role and ',' not in role:
                     ret += '           (%s-m%s :type %s)\n' % (storyname,key, role)
 
@@ -390,26 +389,31 @@ def get_riu_runner(num, suffix):
             if i==j: continue
             to_load += template_load % (j,suffix,j)
             to_load_lst.append('complete-story%d' % j)
+            break
         out = template.format(to_load,' '.join(to_load_lst),i,suffix)
         ret.append(out)
     return ret
 
 
-def filter_mentions(mentions,all_coref_mentions):
+def filter_mentions(mentions,all_coref_mentions,get_data_from):
     mm = []
     verbmanager.add_children_mentions_to_list(mentions,mm)
-    #mm = [i.annotations.coref for i in mm]
-    mm = [i for i in mm if i.annotations.coref in all_coref_mentions]
+    mm = [i for i in mm if getattr(i,get_data_from).coref in all_coref_mentions]
     return mm
 
-def doc_to_sam(doc,do_verbs,do_funcs,do_roles,do_segment,limit=None,filter_characters=True):
+def doc_to_sam(doc,suffix_g,do_verbs,do_funcs,do_roles,do_segment,limit=None,filter_characters=True):
     assert isinstance(doc,voz.Document)
+    if suffix_g=='sty':
+        get_data_from = 'annotations'
+    else:
+        get_data_from = 'predictions'
     all_coref_mentions = set()
     for i in doc.get_all_mentions(filter_only_independent=True):
-        if not i.annotations.coref:
-            i.annotations.coref = i.id
-        if i.annotations.coref not in all_coref_mentions and (not filter_characters or i.annotations.is_character()):
-            all_coref_mentions.add(i.annotations.coref)
+
+        if not getattr(i,get_data_from).coref:
+            getattr(i, get_data_from).coref = i.id
+        if getattr(i,get_data_from).coref not in all_coref_mentions and (not filter_characters or getattr(i,get_data_from).is_character()):
+            all_coref_mentions.add(getattr(i,get_data_from).coref)
 
     phases = []
 
@@ -459,7 +463,7 @@ def doc_to_sam(doc,do_verbs,do_funcs,do_roles,do_segment,limit=None,filter_chara
         functions_ = []
         functions = []
         phase = 0
-        for function in doc.narrative.functions():
+        for function in doc.narrative.functions(filter_non_actual=False):
             if phase == 0 and function.function_group not in 'A,a,depart'.split(
                     ','):
                 functions.append(function)
@@ -518,7 +522,7 @@ def doc_to_sam(doc,do_verbs,do_funcs,do_roles,do_segment,limit=None,filter_chara
         phases = phases[0:limit]
 
     storyname = 'STORY%d' % doc.id
-    discourse,templates_comments,phases_text,phases_struct = get_sam_phases(storyname,phases,all_coref_mentions,do_verbs,do_funcs,do_roles)
+    discourse,templates_comments,phases_text,phases_struct = get_sam_phases(storyname,get_data_from,phases,all_coref_mentions,do_verbs,do_funcs,do_roles)
 
     return get_sam_template(doc.id,discourse,templates_comments,phases_text,get_sam_common(do_roles=='roleent'),phases_struct)
 
@@ -526,11 +530,12 @@ def doc_to_sam(doc,do_verbs,do_funcs,do_roles,do_segment,limit=None,filter_chara
 def main():
     script = ''
     stories_in_use = settings.STY_FILES
-    for suffix_v in ['levinverb']: # noverb, 'basicverb' levinverb
-        for suffix_f in ['nofunc']:#,'functs']:
-            for suffix_r in ['roleexp']: # 'norole','roleent','roleexp'
-                for suffix_s in ['prep']:
-                    for suffix_g in ['sty']:
+    for suffix_g in ['voz']: #sty voz
+        for suffix_v in ['levinverb']: # noverb, 'basicverb' levinverb
+            for suffix_f in ['nofunc']:#,'functs']:
+                for suffix_r in ['roleexp']: # 'norole','roleent','roleexp'
+                    for suffix_s in ['prep']:
+
                         suffix = suffix_v + '_' + suffix_f + '_' + suffix_r + '_' + suffix_s + '_' + suffix_g
                         # write the scripts
                         for i,s in enumerate(get_riu_runner(len(stories_in_use),suffix)):
@@ -548,14 +553,14 @@ def main():
                                 doc = styhelper.create_document_from_sty_file(settings.STY_FILE_PATH + sty_file)
                                 styhelper.fix_sty_annotations(doc)
                             else:
-                                pass
+                                doc = styhelper.create_document_from_sty_file(settings.STY_FILE_PATH + sty_file)
                                 #doc = stanfordhelper.create_document_using_stanford_from_filtered_sty_file(settings.STY_FILE_PATH + sty_file)
                                 #doc = stanfordhelper.create_document_from_raw_text(text,{'cache':False})
-                                #doc.compute_predictions()
-                            out = doc_to_sam(doc,suffix_v,suffix_f,suffix_r,suffix_s,limit=2)
+                                doc.compute_predictions()
+                            out = doc_to_sam(doc,suffix_g,suffix_v,suffix_f,suffix_r,suffix_s,limit=2)
                             with open(export_path+('voz/story%d' %doc.id)+'-complete-%s.lisp'%suffix,'w') as f:
                                 f.write(out)
-                            out = doc_to_sam(doc,suffix_v,suffix_f,suffix_r,suffix_s,limit=1)
+                            out = doc_to_sam(doc,suffix_g,suffix_v,suffix_f,suffix_r,suffix_s,limit=1)
                             with open(export_path+('voz/story%d' %doc.id)+'-partial-%s.lisp'%suffix,'w') as f:
                                 f.write(out)
 

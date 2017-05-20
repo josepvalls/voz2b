@@ -11,7 +11,7 @@
      (:discourse
        (:clauses
          (c0 (:s phase1))
-         (phase1 (:s  t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23 t24 t25 t26 t27 t28 t29 t30 t31 t32 t33 t34 t35 t36 t37 t38 t39 t40 t41 t42))
+         (phase1 (:s  t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23 t24 t25 t26 t27 t28 t29 t30 t31 t32 t33 t34 t35 t36))
 
        )
        (:templates
@@ -51,12 +51,6 @@
          ;; Simeon climbed to a high place, looked around and related, "Here such-and-such is happening, and there, such-and-such."
          ;; They checked his statements with the newspapers and found he was exactly right!
          ;; After another long period passed, the czar decided to marry a certain princess.
-         ;; But, how was he to abduct her?
-         ;; He just didn't know; there was no one suitable for the job.
-         ;; Then he remembered the seven Simeons.
-         ;; Summoning them, he commissioned them as soldiers, with the assignment to bring him that princess.
-         ;; The Simeons quickly convened.
-         ;; As expert craftsmen they, slam-bam, built a boat, boarded and sailed off to the kingdom of the bride-to-be-princess.
 
          (t1 "Once , in a far away land , there was " (STORY10-m2542 "a man who had seven sons - all by the name of Simeon") " seven sons - all by the name of Simeon . ")
          (t2 "They were seven lazy , good-for-nothing loafers . ")
@@ -94,27 +88,20 @@
          (t34 "" (STORY10-m2567 "Simeon") " climbed to a high place , looked around and related , ' Here such-and-such is happening , and there , such-and-such . ' ")
          (t35 "" (STORY10-m2584 "They") " checked his statements with the newspapers and found " (STORY10-m2567 "he") " was exactly right ! ")
          (t36 "After another long period passed , " (STORY10-m2550 "the czar") " decided to marry " (STORY10-m2588 "a certain princess") " . ")
-         (t37 "But , how was " (STORY10-m2550 "he") " to abduct her ? ")
-         (t38 "" (STORY10-m2550 "He") " just did n't know ; there was " (STORY10-m2589 "no one suitable for the job") " the job . ")
-         (t39 "Then " (STORY10-m2550 "he") " remembered the seven Simeons . ")
-         (t40 "Summoning them , " (STORY10-m2550 "he") " commissioned them as soldiers , with the assignment to bring " (STORY10-m2550 "him") " " (STORY10-m2588 "that princess") " . ")
-         (t41 "The Simeons quickly convened . ")
-         (t42 "As expert craftsmen they , slam-bam , built a boat , boarded and sailed off to the kingdom of " (STORY10-m2588 "the bride-to-be- princess") " . ")
          (t1001 (STORY10-EXTRA1  (STORY10-m2562 "I") " is the " (Tester "Tester") ) ".")
          (t1002 (STORY10-EXTRA2  (STORY10-m2563 "a marksman") " is the " (Tester "Tester") ) ".")
          (t1003 (STORY10-EXTRA3  (STORY10-m2566 "From a vantage point, I can see and then relate all that is happening in any part of the kingdom") " is the " (Tester "Tester") ) ".")
          (t1004 (STORY10-EXTRA4  (STORY10-m2567 "he") " is the " (Tester "Tester") ) ".")
-         (t1005 (STORY10-EXTRA5  (STORY10-m2588 "the bride-to-be- princess") " is the " (Prize "Prize") ) ".")
+         (t1005 (STORY10-EXTRA5  (STORY10-m2588 "a certain princess") " is the " (Prize "Prize") ) ".")
          (t1006 (STORY10-EXTRA6  (STORY10-m2572 "I") " is the " (Tester "Tester") ) ".")
          (t1007 (STORY10-EXTRA7  (STORY10-m2542 "their father") " is the " (Other "Other") ) ".")
          (t1008 (STORY10-EXTRA8  (STORY10-m2576 "a healer") " is the " (Tester "Tester") ) ".")
          (t1009 (STORY10-EXTRA9  (STORY10-m2545 "anyone") " is the " (NA "NA") ) ".")
-         (t1010 (STORY10-EXTRA10  (STORY10-m2550 "him") " is the " (Other "Other") ) ".")
+         (t1010 (STORY10-EXTRA10  (STORY10-m2550 "the czar") " is the " (Other "Other") ) ".")
          (t1011 (STORY10-EXTRA11  (STORY10-m2584 "They") " is the " (NA "NA") ) ".")
          (t1012 (STORY10-EXTRA12  (STORY10-m2553 "you") " is the " (Hero "Hero") ) ".")
          (t1013 (STORY10-EXTRA13  (STORY10-m2556 "You") " is the " (Tester "Tester") ) ".")
-         (t1014 (STORY10-EXTRA14  (STORY10-m2589 "no one suitable for the job") " is the " (NA "NA") ) ".")
-         (t1015 (STORY10-EXTRA15  (STORY10-m2558 "I") " is the " (Tester "Tester") ) ".")
+         (t1014 (STORY10-EXTRA14  (STORY10-m2558 "I") " is the " (Tester "Tester") ) ".")
 
        )
      )
@@ -164,7 +151,6 @@
            (STORY10-m2584 :type GR)
            (STORY10-m2553 :type MA)
            (STORY10-m2556 :type MA)
-           (STORY10-m2589 :type GR)
            (STORY10-m2558 :type MA)
          )
          (:expressions
@@ -193,8 +179,7 @@
            ((roleNA STORY10-m2584) :name STORY10-EXTRA10)
            ((roleHero STORY10-m2553) :name STORY10-EXTRA11)
            ((roleTester STORY10-m2556) :name STORY10-EXTRA12)
-           ((roleNA STORY10-m2589) :name STORY10-EXTRA13)
-           ((roleTester STORY10-m2558) :name STORY10-EXTRA14)
+           ((roleTester STORY10-m2558) :name STORY10-EXTRA13)
          )
        )
 

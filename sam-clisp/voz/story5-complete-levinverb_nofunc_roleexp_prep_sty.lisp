@@ -12,7 +12,7 @@
        (:clauses
          (c0 (:s phase1 phase2))
          (phase1 (:s  t1 t2 t3 t4))
-         (phase2 (:s  t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23 t24 t25 t26 t27 t28 t29 t30 t31 t32 t33 t34 t35 t36 t37 t38 t39 t40 t41 t42))
+         (phase2 (:s  t5))
 
        )
        (:templates
@@ -21,43 +21,6 @@
          ;; There are marvelous marvels, wondrous wonders, and the laborer Shabarsha, Shabarsha who is a rogue among rogues: oh, well, in for a penny, in for a pound!
          ;; So Shabarsha set off to work as a laborer, and times were bad.
          ;; But one owner thought, a deep thought.
-         ;; How could he chase away his misery, what could he live on, where could he get some money?
-         ;; "Don't worry about it," said Shabarsha to him.
-         ;; "There'll come a day and there will be both grain and money!"
-         ;; And Shabarsha set off for the millpond.
-         ;; "At any rate I can catch some fish.
-         ;; I'll sell them and I'll have some money.
-         ;; But I've no line and no hook.
-         ;; Wait a minute and I'll make one."
-         ;; He asked the miller for a handful of hemp, sat down on the shore, and started weaving his tackle.
-         ;; He wove and wove, and then a boy in a black shirt and red hat jumped out of the water.
-         ;; "Grandfather!
-         ;; What are you doing here?" he asked.
-         ;; "I'm weaving a line."
-         ;; "Why?"
-         ;; "I intend to cleanse this pond of all you devils by pulling you out of the water."
-         ;; "Oh, no!
-         ;; Wait a little.
-         ;; I'll go and tell grandfather."
-         ;; The imp dove deep down and Shabarsha went back to his work.
-         ;; "Wait a minute," he thought, "I'll play a trick on you, you cursed ones.
-         ;; You'll bring me some gold and silver."
-         ;; And Shabarsha began digging a pit and when he had dug it, he placed his hat with a cutout hole over it.
-         ;; "Shabarsha, oh Shabarsha!
-         ;; Grandfather says that you and I should trade.
-         ;; What will you take not to drag us out of the water?"
-         ;; "Fill that hat full of gold and silver."
-         ;; The imp dove back into the water.
-         ;; He came back and said, "Grandfather says that you and I should first wrestle."
-         ;; "What do you mean, milksop; why should I wrestle with the likes of you?
-         ;; You couldn't even deal with my middle brother, Misha."
-         ;; "And where is your Misha?"
-         ;; "Look over there.
-         ;; He's resting in that ravine under a bush."
-         ;; "How can I call him out?"
-         ;; "Go up to him and hit him in the side.
-         ;; Then he'll get up of his own accord."
-         ;; The imp went into the ravine, found the bear, and whacked him in the side with his club.
 
          (t1 "Shall " (STORY5-VERB1 "" (STORY5-m4305 "I") " amuse " (STORY5-m4306 "you") " " ) "with a little tale ? ")
          (t2 "It 's a wonderful tale . ")
@@ -69,54 +32,12 @@
          (t1004 (STORY5-EXTRA4  (STORY5-m4313 "a laborer") " is the " (NA "NA") ) ".")
          (t1005 (STORY5-EXTRA5  (STORY5-m4311 "Shabarsha") " is the " (Hero "Hero") ) ".")
          (t5 "But " (STORY5-m4317 "one owner") " thought , a deep thought . ")
-         (t6 "How could " (STORY5-m4317 "he") " chase away his misery , what could " (STORY5-m4317 "he") " live on , where could " (STORY5-m4317 "he") " get some money ? ")
-         (t7 "' Do n't worry about it , ' said " (STORY5-m4311 "Shabarsha") " to " (STORY5-m4317 "him") " . ")
-         (t8 "' There 'll come a day and there will be both grain and money ! ' ")
-         (t9 "And " (STORY5-m4311 "Shabarsha") " set off for the millpond . ")
-         (t10 "' At any rate " (STORY5-m4311 "I") " can catch some fish . ")
-         (t11 "" (STORY5-m4311 "I") " 'll sell them and " (STORY5-m4311 "I") " 'll have some money . ")
-         (t12 "But " (STORY5-m4311 "I") " 've no line and no hook . ")
-         (t13 "Wait a minute and " (STORY5-m4311 "I") " 'll make one . ' ")
-         (t14 "" (STORY5-m4311 "He") " asked " (STORY5-m4330 "the miller") " for a handful of hemp , sat down on the shore , and started weaving his tackle . ")
-         (t15 "" (STORY5-m4311 "He") " wove and wove , and then " (STORY5-m4334 "a boy in a black shirt and red hat") " red hat jumped out of the water . ")
-         (t16 "' " (STORY5-m4311 "Grandfather") " ! ")
-         (t17 "What are " (STORY5-m4311 "you") " doing here ? ' " (STORY5-m4334 "he") " asked . ")
-         (t18 "' " (STORY5-m4311 "I") " 'm weaving a line . ' ")
-         (t19 "' Why ? ' ")
-         (t20 "' " (STORY5-m4311 "I") " intend to cleanse this pond of " (STORY5-m4337 "all you devils") " by pulling " (STORY5-m4337 "you") " out of the water . ' ")
-         (t21 "' Oh , no ! ")
-         (t22 "Wait a little . ")
-         (t23 "" (STORY5-m4334 "I") " 'll go and tell " (STORY5-m4339 "grandfather") " . ' ")
-         (t24 "" (STORY5-m4334 "The imp") " dove deep down and " (STORY5-m4311 "Shabarsha") " went back to his work . ")
-         (t25 "' Wait a minute , ' " (STORY5-m4311 "he") " thought , ' " (STORY5-m4311 "I") " 'll play a trick on " (STORY5-m4337 "you, you cursed ones") " . ")
-         (t26 "" (STORY5-m4337 "You") " 'll bring " (STORY5-m4311 "me") " some gold and silver . ' ")
-         (t27 "And " (STORY5-m4311 "Shabarsha") " began digging a pit and when " (STORY5-m4311 "he") " had dug it , " (STORY5-m4311 "he") " placed his hat with a cutout hole over it . ")
-         (t28 "' " (STORY5-m4311 "Shabarsha") " , oh " (STORY5-m4311 "Shabarsha") " ! ")
-         (t29 "" (STORY5-m4339 "Grandfather") " says that " (STORY5-m4311 "you") " and " (STORY5-m4334 "I") " should trade . ")
-         (t30 "What will " (STORY5-m4311 "you") " take not to drag " (STORY5-m4337 "us") " out of the water ? ' ")
-         (t31 "' Fill that hat full of gold and silver . ' ")
-         (t32 "" (STORY5-m4334 "The imp") " dove back into the water . ")
-         (t33 "" (STORY5-m4334 "He") " came back and said , ' " (STORY5-m4339 "Grandfather") " says that " (STORY5-m4311 "you") " and " (STORY5-m4334 "I") " should first wrestle . ' ")
-         (t34 "' What do " (STORY5-m4334 "you") " mean , " (STORY5-m4334 "milksop") " ; why should " (STORY5-m4311 "I") " wrestle with " (STORY5-m4334 "the likes of you") " ? ")
-         (t35 "" (STORY5-m4334 "You") " could n't even deal with my " (STORY5-m4348 "my middle brother, Misha") " . ' ")
-         (t36 "' And where is your " (STORY5-m4348 "your Misha") " ? ' ")
-         (t37 "' Look over there . ")
-         (t38 "" (STORY5-m4348 "He") " 's resting in that ravine under a bush . ' ")
-         (t39 "' How can " (STORY5-m4334 "I") " call " (STORY5-m4348 "him") " out ? ' ")
-         (t40 "' Go up to " (STORY5-m4348 "him") " and hit " (STORY5-m4348 "him") " in the side . ")
-         (t41 "Then " (STORY5-m4348 "he") " 'll get up of his own accord . ' ")
-         (t42 "" (STORY5-m4334 "The imp") " went into the ravine , found " (STORY5-m4348 "the bear") " , and whacked " (STORY5-m4348 "him") " in the side with his club . ")
-         (t1006 (STORY5-EXTRA6  (STORY5-m4337 "us") " is the " (NA "NA") ) ".")
-         (t1007 (STORY5-EXTRA7  (STORY5-m4330 "the miller") " is the " (NA "NA") ) ".")
-         (t1008 (STORY5-EXTRA8  (STORY5-m4334 "The imp") " is the " (Villain "Villain") ) ".")
-         (t1009 (STORY5-EXTRA9  (STORY5-m4305 "I") " is the " (NA "NA") ) ".")
-         (t1010 (STORY5-EXTRA10  (STORY5-m4306 "you") " is the " (NA "NA") ) ".")
-         (t1011 (STORY5-EXTRA11  (STORY5-m4339 "Grandfather") " is the " (Villain "Villain") ) ".")
-         (t1012 (STORY5-EXTRA12  (STORY5-m4311 "I") " is the " (Hero "Hero") ) ".")
-         (t1013 (STORY5-EXTRA13  (STORY5-m4312 "rogues") " is the " (NA "NA") ) ".")
-         (t1014 (STORY5-EXTRA14  (STORY5-m4313 "a laborer") " is the " (NA "NA") ) ".")
-         (t1015 (STORY5-EXTRA15  (STORY5-m4348 "him") " is the " (NA "NA") ) ".")
-         (t1016 (STORY5-EXTRA16  (STORY5-m4317 "him") " is the " (NA "NA") ) ".")
+         (t1006 (STORY5-EXTRA6  (STORY5-m4305 "I") " is the " (NA "NA") ) ".")
+         (t1007 (STORY5-EXTRA7  (STORY5-m4306 "you") " is the " (NA "NA") ) ".")
+         (t1008 (STORY5-EXTRA8  (STORY5-m4311 "Shabarsha") " is the " (Hero "Hero") ) ".")
+         (t1009 (STORY5-EXTRA9  (STORY5-m4312 "rogues") " is the " (NA "NA") ) ".")
+         (t1010 (STORY5-EXTRA10  (STORY5-m4313 "a laborer") " is the " (NA "NA") ) ".")
+         (t1011 (STORY5-EXTRA11  (STORY5-m4317 "one owner") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -171,44 +92,20 @@
        )
        (phase2
          (:entities
-           (STORY5-m4337 :type GR)
-           (STORY5-m4330 :type MA)
-           (STORY5-m4334 :type MB)
            (STORY5-m4305 :type MB)
            (STORY5-m4306 :type MB)
-           (STORY5-m4339 :type MB)
            (STORY5-m4311 :type MA)
            (STORY5-m4312 :type GR)
            (STORY5-m4313 :type MA)
-           (STORY5-m4348 :type AA)
            (STORY5-m4317 :type MA)
          )
          (:expressions
-           ((levin-37-7 STORY5-m4311 STORY5-m4317) :name STORY5-VERB3)
-           ((levin-37-1 STORY5-m4311 STORY5-m4330) :name STORY5-VERB4)
-           ((levin-37-1 STORY5-m4334 STORY5-m4311) :name STORY5-VERB5)
-           ((levin-12 STORY5-m4311 STORY5-m4337) :name STORY5-VERB6)
-           ((levin-37-2 STORY5-m4334 STORY5-m4339) :name STORY5-VERB7)
-           ((levin-36-3 STORY5-m4311 STORY5-m4337) :name STORY5-VERB8)
-           ((levin-11-3 STORY5-m4337 STORY5-m4311) :name STORY5-VERB9)
-           ((levin-09-1 STORY5-m4311 STORY5-m4311) :name STORY5-VERB10)
-           ((levin-37-7 STORY5-m4339 STORY5-m4334) :name STORY5-VERB11)
-           ((levin-11-3 STORY5-m4311 STORY5-m4337) :name STORY5-VERB12)
-           ((levin-37-7 STORY5-m4334 STORY5-m4311) :name STORY5-VERB13)
-           ((levin-29-5 STORY5-m4334 STORY5-m4334) :name STORY5-VERB14)
-           ((levin-29-3 STORY5-m4334 STORY5-m4348) :name STORY5-VERB15)
-           ((levin-29-4 STORY5-m4334 STORY5-m4348) :name STORY5-VERB16)
-           ((roleNA STORY5-m4337) :name STORY5-EXTRA5)
-           ((roleNA STORY5-m4330) :name STORY5-EXTRA6)
-           ((roleVillain STORY5-m4334) :name STORY5-EXTRA7)
-           ((roleNA STORY5-m4305) :name STORY5-EXTRA8)
-           ((roleNA STORY5-m4306) :name STORY5-EXTRA9)
-           ((roleVillain STORY5-m4339) :name STORY5-EXTRA10)
-           ((roleHero STORY5-m4311) :name STORY5-EXTRA11)
-           ((roleNA STORY5-m4312) :name STORY5-EXTRA12)
-           ((roleNA STORY5-m4313) :name STORY5-EXTRA13)
-           ((roleNA STORY5-m4348) :name STORY5-EXTRA14)
-           ((roleNA STORY5-m4317) :name STORY5-EXTRA15)
+           ((roleNA STORY5-m4305) :name STORY5-EXTRA5)
+           ((roleNA STORY5-m4306) :name STORY5-EXTRA6)
+           ((roleHero STORY5-m4311) :name STORY5-EXTRA7)
+           ((roleNA STORY5-m4312) :name STORY5-EXTRA8)
+           ((roleNA STORY5-m4313) :name STORY5-EXTRA9)
+           ((roleNA STORY5-m4317) :name STORY5-EXTRA10)
          )
        )
 

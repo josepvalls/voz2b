@@ -12,7 +12,7 @@
        (:clauses
          (c0 (:s phase1 phase2))
          (phase1 (:s  t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23 t24 t25 t26 t27 t28 t29 t30 t31 t32))
-         (phase2 (:s  t33 t34 t35 t36 t37 t38 t39 t40 t41 t42 t43 t44 t45 t46 t47))
+         (phase2 (:s  t33 t34 t35 t36 t37 t38))
 
        )
        (:templates
@@ -54,15 +54,6 @@
          ;; I'm winding ropes; I want to thrash the lake and torment you devils, because you live in our lake but do not pay any rent."
          ;; "Wait a while, Bearlet, I'll run and tell my grandfather," said the little devil, and - flop! - he jumped into the water.
          ;; Five minutes later he was out again and said: "Grandfather said that if you can run faster than I, we'll pay the rent; if not, he told me to drag you down into the lake."
-         ;; "Aren't you a nimble fellow!" said Ivanko.
-         ;; "But you cannot hope to run faster than I.
-         ;; Why, I have a grandson who was born only yesterday, and even he can outrun you.
-         ;; Do you want to race with him?"
-         ;; "What grandson?"
-         ;; "He is lying there behind a bush," said the Bearlet, and cried to a hare, "Hey, hare, do not fail me!"
-         ;; The hare darted off into the open field like mad and in a trice vanished from sight; the devil rushed after him, but it was of no use - he was half a verst behind.
-         ;; "Now, if you wish," said Ivanko, "race with me.
-         ;; But on one condition - if you lag behind, I will kill you."
 
          (t1 "In a certain village there lived " (STORY6-m4174 "a wealthy peasant") " and his wife . ")
          (t2 "One day " (STORY6-m4175 "the wife") " went to the forest for mushrooms , lost her way , and stumbled into a " (STORY6-m4181 "bear") " 's den . ")
@@ -110,27 +101,17 @@
          (t36 "" (STORY6-m4183 "I") " 'm winding ropes ; " (STORY6-m4183 "I") " want to thrash the lake and torment " (STORY6-m4219 "you devils") " , because " (STORY6-m4219 "you") " live in our lake but do not pay any rent . ' ")
          (t37 "' Wait a while , " (STORY6-m4183 "Bearlet") " , " (STORY6-m4221 "I") " 'll run and tell my " (STORY6-m4224 "my grandfather") " , ' said " (STORY6-m4221 "the little devil") " , and - flop ! - " (STORY6-m4221 "he") " jumped into the water . ")
          (t38 "Five minutes later " (STORY6-m4221 "he") " was out again and said : ' " (STORY6-m4224 "Grandfather") " said that if " (STORY6-m4183 "you") " can run faster than " (STORY6-m4221 "I") " , " (STORY6-m4219 "we") " 'll pay the rent ; if not , " (STORY6-m4224 "he") " told " (STORY6-m4221 "me") " to drag " (STORY6-m4183 "you") " down into the lake . ' ")
-         (t39 "' Are n't " (STORY6-m4221 "you") " " (STORY6-m4221 "a nimble fellow") " ! ' said " (STORY6-m4183 "Ivanko") " . ")
-         (t40 "' But " (STORY6-m4221 "you") " can not hope to run faster than " (STORY6-m4183 "I") " . ")
-         (t41 "Why , " (STORY6-m4183 "I") " have " (STORY6-m4226 "a grandson who was born only yesterday") " yesterday , and even " (STORY6-m4226 "he") " can outrun " (STORY6-m4221 "you") " . ")
-         (t42 "Do " (STORY6-m4221 "you") " want to race with " (STORY6-m4226 "him") " ? ' ")
-         (t43 "' What " (STORY6-m4226 "grandson") " ? ' ")
-         (t44 "' " (STORY6-m4226 "He") " is lying there behind a bush , ' said " (STORY6-m4183 "the Bearlet") " , and cried to a hare , ' Hey , hare , do not fail " (STORY6-m4183 "me") " ! ' ")
-         (t45 "The hare darted off into the open field like mad and in a trice vanished from sight ; " (STORY6-m4221 "the devil") " rushed after him , but it was of no use - " (STORY6-m4221 "he") " was half a verst behind . ")
-         (t46 "' Now , if " (STORY6-m4221 "you") " wish , ' said " (STORY6-m4183 "Ivanko") " , ' race with " (STORY6-m4183 "me") " . ")
-         (t47 "But on one condition - if " (STORY6-m4221 "you") " lag behind , " (STORY6-m4183 "I") " will kill " (STORY6-m4221 "you") " . ' ")
          (t1009 (STORY6-EXTRA9  (STORY6-m4224 "he") " is the " (Villain "Villain") ) ".")
-         (t1010 (STORY6-EXTRA10  (STORY6-m4226 "He") " is the " (NA "NA") ) ".")
-         (t1011 (STORY6-EXTRA11  (STORY6-m4195 "all of them, without exception") " is the " (NA "NA") ) ".")
-         (t1012 (STORY6-EXTRA12  (STORY6-m4203 "thieves and dogs") " is the " (Villain "Villain") ) ".")
-         (t1013 (STORY6-EXTRA13  (STORY6-m4204 "the thieves") " is the " (Villain "Villain") ) ".")
-         (t1014 (STORY6-EXTRA14  (STORY6-m4174 "he") " is the " (Other "Other") ) ".")
-         (t1015 (STORY6-EXTRA15  (STORY6-m4175 "she") " is the " (Other "Other") ) ".")
-         (t1016 (STORY6-EXTRA16  (STORY6-m4181 "him") " is the " (Other "Other") ) ".")
-         (t1017 (STORY6-EXTRA17  (STORY6-m4183 "I") " is the " (Hero "Hero") ) ".")
-         (t1018 (STORY6-EXTRA18  (STORY6-m4186 "the peasants") " is the " (NA "NA") ) ".")
-         (t1019 (STORY6-EXTRA19  (STORY6-m4219 "we") " is the " (NA "NA") ) ".")
-         (t1020 (STORY6-EXTRA20  (STORY6-m4221 "you") " is the " (Villain "Villain") ) ".")
+         (t1010 (STORY6-EXTRA10  (STORY6-m4195 "all of them, without exception") " is the " (NA "NA") ) ".")
+         (t1011 (STORY6-EXTRA11  (STORY6-m4203 "thieves and dogs") " is the " (Villain "Villain") ) ".")
+         (t1012 (STORY6-EXTRA12  (STORY6-m4204 "the thieves") " is the " (Villain "Villain") ) ".")
+         (t1013 (STORY6-EXTRA13  (STORY6-m4174 "he") " is the " (Other "Other") ) ".")
+         (t1014 (STORY6-EXTRA14  (STORY6-m4175 "she") " is the " (Other "Other") ) ".")
+         (t1015 (STORY6-EXTRA15  (STORY6-m4181 "him") " is the " (Other "Other") ) ".")
+         (t1016 (STORY6-EXTRA16  (STORY6-m4183 "you") " is the " (Hero "Hero") ) ".")
+         (t1017 (STORY6-EXTRA17  (STORY6-m4186 "the peasants") " is the " (NA "NA") ) ".")
+         (t1018 (STORY6-EXTRA18  (STORY6-m4219 "we") " is the " (NA "NA") ) ".")
+         (t1019 (STORY6-EXTRA19  (STORY6-m4221 "me") " is the " (Villain "Villain") ) ".")
 
        )
      )
@@ -195,11 +176,10 @@
            ((levin-11-3 STORY6-m4204 STORY6-m4204) :name STORY6-VERB16)
            ((levin-30-4 STORY6-m4174 STORY6-m4183) :name STORY6-VERB17)
            ((levin-37-7 STORY6-m4183 STORY6-m4174) :name STORY6-VERB18)
-           ((levin-37-2 STORY6-m4174 STORY6-m4174) :name STORY6-VERB19)
-           ((levin-29-4 STORY6-m4174 STORY6-m4174) :name STORY6-VERB20)
-           ((levin-44 STORY6-m4183 STORY6-m4174) :name STORY6-VERB21)
-           ((levin-31-3 STORY6-m4174 STORY6-m4183) :name STORY6-VERB22)
-           ((levin-11-1 STORY6-m4174 STORY6-m4183) :name STORY6-VERB23)
+           ((levin-29-4 STORY6-m4174 STORY6-m4174) :name STORY6-VERB19)
+           ((levin-44 STORY6-m4183 STORY6-m4174) :name STORY6-VERB20)
+           ((levin-31-3 STORY6-m4174 STORY6-m4183) :name STORY6-VERB21)
+           ((levin-11-1 STORY6-m4174 STORY6-m4183) :name STORY6-VERB22)
            ((roleNA STORY6-m4195) :name STORY6-EXTRA0)
            ((roleVillain STORY6-m4203) :name STORY6-EXTRA1)
            ((roleVillain STORY6-m4204) :name STORY6-EXTRA2)
@@ -213,7 +193,6 @@
        (phase2
          (:entities
            (STORY6-m4224 :type MB)
-           (STORY6-m4226 :type MA)
            (STORY6-m4195 :type GR)
            (STORY6-m4203 :type GR)
            (STORY6-m4204 :type GR)
@@ -226,29 +205,22 @@
            (STORY6-m4221 :type MB)
          )
          (:expressions
-           ((levin-37-1 STORY6-m4221 STORY6-m4183) :name STORY6-VERB24)
-           ((levin-31-1 STORY6-m4183 STORY6-m4219) :name STORY6-VERB25)
-           ((levin-37-7 STORY6-m4221 STORY6-m4183) :name STORY6-VERB26)
-           ((levin-37-7 STORY6-m4221 STORY6-m4224) :name STORY6-VERB27)
-           ((levin-11-4 STORY6-m4221 STORY6-m4183) :name STORY6-VERB28)
-           ((levin-37-7 STORY6-m4183 STORY6-m4221) :name STORY6-VERB29)
-           ((levin-32-2 STORY6-m4221 STORY6-m4183) :name STORY6-VERB30)
-           ((levin-32-1 STORY6-m4221 STORY6-m4226) :name STORY6-VERB31)
-           ((levin-37-7 STORY6-m4183 STORY6-m4226) :name STORY6-VERB32)
-           ((levin-51-3-2 STORY6-m4221 STORY6-m4183) :name STORY6-VERB33)
-           ((levin-42-1 STORY6-m4183 STORY6-m4221) :name STORY6-VERB34)
+           ((levin-37-1 STORY6-m4221 STORY6-m4183) :name STORY6-VERB23)
+           ((levin-31-1 STORY6-m4183 STORY6-m4219) :name STORY6-VERB24)
+           ((levin-37-7 STORY6-m4221 STORY6-m4221) :name STORY6-VERB25)
+           ((levin-37-7 STORY6-m4221 STORY6-m4224) :name STORY6-VERB26)
+           ((levin-11-4 STORY6-m4221 STORY6-m4183) :name STORY6-VERB27)
            ((roleVillain STORY6-m4224) :name STORY6-EXTRA8)
-           ((roleNA STORY6-m4226) :name STORY6-EXTRA9)
-           ((roleNA STORY6-m4195) :name STORY6-EXTRA10)
-           ((roleVillain STORY6-m4203) :name STORY6-EXTRA11)
-           ((roleVillain STORY6-m4204) :name STORY6-EXTRA12)
-           ((roleOther STORY6-m4174) :name STORY6-EXTRA13)
-           ((roleOther STORY6-m4175) :name STORY6-EXTRA14)
-           ((roleOther STORY6-m4181) :name STORY6-EXTRA15)
-           ((roleHero STORY6-m4183) :name STORY6-EXTRA16)
-           ((roleNA STORY6-m4186) :name STORY6-EXTRA17)
-           ((roleNA STORY6-m4219) :name STORY6-EXTRA18)
-           ((roleVillain STORY6-m4221) :name STORY6-EXTRA19)
+           ((roleNA STORY6-m4195) :name STORY6-EXTRA9)
+           ((roleVillain STORY6-m4203) :name STORY6-EXTRA10)
+           ((roleVillain STORY6-m4204) :name STORY6-EXTRA11)
+           ((roleOther STORY6-m4174) :name STORY6-EXTRA12)
+           ((roleOther STORY6-m4175) :name STORY6-EXTRA13)
+           ((roleOther STORY6-m4181) :name STORY6-EXTRA14)
+           ((roleHero STORY6-m4183) :name STORY6-EXTRA15)
+           ((roleNA STORY6-m4186) :name STORY6-EXTRA16)
+           ((roleNA STORY6-m4219) :name STORY6-EXTRA17)
+           ((roleVillain STORY6-m4221) :name STORY6-EXTRA18)
          )
        )
 
