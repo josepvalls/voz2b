@@ -335,7 +335,13 @@ def get_sam_template(story_id, phases, templates_comment, templates_text, struct
 )
     ''' % (story_id, phases, templates_comment, templates_text, structure_common, structure_phases)
 
-def get_riu_runner(num, suffix):
+def get_riu_runner(num, suffix, kind):
+    if kind == 'eval':
+        mem = 'complete'
+        target = 'partial'
+    else:
+        mem = 'full'
+        target = 'complete'
     template = '''
 (proclaim '(optimize (debug 1)))
 
@@ -360,7 +366,7 @@ def get_riu_runner(num, suffix):
 	{}
 	(setf complete-stories (list {}))
 
-	(load "voz/story{}-partial-{}.lisp")
+	(load "voz/story{}-{}-{}.lisp")
 	(setf partial-story *story*)
 
 	(setf retrieved-stories (retrieve-K-memories partial-story complete-stories 3 nil))
@@ -376,7 +382,7 @@ def get_riu_runner(num, suffix):
 (generate-story)
     '''
     template_load = '''
-	(load "voz/story%d-complete-%s.lisp")
+	(load "voz/story%d-%s-%s.lisp")
 	(setf complete-story%d *story*)
     '''
 
@@ -387,10 +393,9 @@ def get_riu_runner(num, suffix):
         to_load_lst = []
         for j in stories:
             if i==j: continue
-            to_load += template_load % (j,suffix,j)
+            to_load += template_load % (j,mem,suffix,j)
             to_load_lst.append('complete-story%d' % j)
-            break
-        out = template.format(to_load,' '.join(to_load_lst),i,suffix)
+        out = template.format(to_load,' '.join(to_load_lst),i,target,suffix)
         ret.append(out)
     return ret
 
@@ -518,6 +523,7 @@ def doc_to_sam(doc,suffix_g,do_verbs,do_funcs,do_roles,do_segment,limit=None,fil
                 sentences = []
         phases.append((sentences, functions))
 
+    phases = [i for i in phases if i[0]]
     if limit:
         phases = phases[0:limit]
 
@@ -530,7 +536,7 @@ def doc_to_sam(doc,suffix_g,do_verbs,do_funcs,do_roles,do_segment,limit=None,fil
 def main():
     script = ''
     stories_in_use = settings.STY_FILES
-    for suffix_g in ['voz']: #sty voz
+    for suffix_g in ['sty']: #sty voz
         for suffix_v in ['levinverb']: # noverb, 'basicverb' levinverb
             for suffix_f in ['nofunc']:#,'functs']:
                 for suffix_r in ['roleexp']: # 'norole','roleent','roleexp'
@@ -538,12 +544,13 @@ def main():
 
                         suffix = suffix_v + '_' + suffix_f + '_' + suffix_r + '_' + suffix_s + '_' + suffix_g
                         # write the scripts
-                        for i,s in enumerate(get_riu_runner(len(stories_in_use),suffix)):
-                            fname = 'voz-eval-'+str(i+1)+'-'+suffix+'.lisp'
-                            with open(export_path+fname,'w') as f:
-                                f.write(s)
-                            script += 'clisp ' + fname + ' > ' + fname + '.txt &\n'
-                                #break
+                        for k in ['eval','full']:
+                            for i,s in enumerate(get_riu_runner(len(stories_in_use),suffix,k)):
+                                fname = 'voz-'+k+'-'+str(i+1)+'-'+suffix+'.lisp'
+                                with open(export_path+fname,'w') as f:
+                                    f.write(s)
+                                script += 'clisp ' + fname + ' > ' + fname + '.txt &\n'
+                                    #break
 
                         #continue
 
@@ -557,6 +564,10 @@ def main():
                                 #doc = stanfordhelper.create_document_using_stanford_from_filtered_sty_file(settings.STY_FILE_PATH + sty_file)
                                 #doc = stanfordhelper.create_document_from_raw_text(text,{'cache':False})
                                 doc.compute_predictions()
+                            out = doc_to_sam(doc,suffix_g,suffix_v,suffix_f,suffix_r,suffix_s,limit=None)
+                            with open(export_path+('voz/story%d' %doc.id)+'-full-%s.lisp'%suffix,'w') as f:
+                                f.write(out)
+                            #continue
                             out = doc_to_sam(doc,suffix_g,suffix_v,suffix_f,suffix_r,suffix_s,limit=2)
                             with open(export_path+('voz/story%d' %doc.id)+'-complete-%s.lisp'%suffix,'w') as f:
                                 f.write(out)
