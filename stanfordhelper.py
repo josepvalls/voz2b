@@ -13,12 +13,12 @@ import os
 
 VERB_POS = ['VB','VBD','VBG','VBN','VBP','VBZ']
 
-def create_document_from_raw_text(str_input,properties={}):
+def create_document_from_raw_text(str_input,properties={},annotate=True):
     raw_xml_data = networkcachemanager.stanford_nlp.query(str_input)
-    return annotate_document_from_corenlp(str_input,raw_xml_data, properties)
+    return annotate_document_from_corenlp(str_input,raw_xml_data, properties, annotate)
 
-def annotate_document_from_xml_file(str_input,xml_file,properties={}):
-    return annotate_document_from_corenlp(str_input,open(xml_file).read())
+def annotate_document_from_xml_file(str_input,xml_file,properties={},annotate=True):
+    return annotate_document_from_corenlp(str_input,open(xml_file).read(),annotate)
 
 def tokenized_string(str_input):
     scm = networkcachemanager.CAStanfordCoreNLPDrexelMini()
@@ -38,7 +38,7 @@ def tokenized_string(str_input):
     return util.flatten([i.tokens for i in sentences])
 
 
-def annotate_document_from_corenlp(str_input,raw_xml_data,properties={}):
+def annotate_document_from_corenlp(str_input,raw_xml_data,properties={},annotate=True):
     properties = dict({'source':'annotate_document_from_corenlp'}, **properties)
     sentences = []
     document = voz.Document(str_input, sentences, properties)  # type: voz.Document
@@ -60,13 +60,13 @@ def annotate_document_from_corenlp(str_input,raw_xml_data,properties={}):
     document._compute_caches(document)
 
 
-    _annotate_document_from_corenlp_mentions(xmldoc,document)
-    _annotate_document_from_corenlp_coref(xmldoc,document)
-    _annotate_document_from_corenlp_deps(xmldoc,document)
-    _annotate_document_from_corenlp_verbs_from_deps(xmldoc, document)
-    _compute_predictions()
-
-    document._compute_caches(document) # verb slots
+    if annotate:
+        _annotate_document_from_corenlp_mentions(xmldoc,document)
+        _annotate_document_from_corenlp_coref(xmldoc,document)
+        _annotate_document_from_corenlp_deps(xmldoc,document)
+        _annotate_document_from_corenlp_verbs_from_deps(xmldoc, document)
+        _compute_predictions()
+        document._compute_caches(document) # verb slots
 
     return document
 

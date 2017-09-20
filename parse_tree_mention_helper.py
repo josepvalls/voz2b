@@ -1,7 +1,7 @@
 import settings
 import voz
 import util
-from nltk.tree import ParentedTree
+#from nltk.tree import ParentedTree
 import logging
 import stanfordhelper
 
@@ -15,6 +15,7 @@ HIGHLIGHT_MENTIONS_INDEPENDNET ='mentions_independent'
 
 class TreeParser(object):
     def get_mentions(self,parse,sentence,document):
+        from nltk.tree import ParentedTree
         """
         :param parse: nltk.tree.ParentedTree
         :param sentence: voz.Sentence
@@ -90,6 +91,7 @@ def get_mention_nodes(mention, sentence):
         children = [i.label() for i in get_subtree_nodes(node, True)]
         return children, parents
 def get_subtree_nodes(node, exclude_root=False):
+    from nltk.tree import ParentedTree
     children = [] if exclude_root else [node]
     def traverse(node):
         for child in node:

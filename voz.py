@@ -72,6 +72,16 @@ class Document(vozbase.VozContainer):
                 return token
         return None
 
+    def get_tokens_by_off_len(self, start_o, end_o):
+        lst = []
+        for token in self._tokens_list:
+            if token.offset>= start_o:
+                lst.append(token)
+            if token.offset> end_o:
+                break
+        return lst
+
+
     def get_token_by_id(self, id):
         if not self._tokens_dict:
             self._compute_caches(self)

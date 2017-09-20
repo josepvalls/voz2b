@@ -4,11 +4,6 @@ import util
 import logging
 import collections
 logger = logging.getLogger(__name__)
-try:
-    import numpy as np
-except:
-    logger.error("COULT NOT LOAD NUMPY")
-    np = None
 import collections
 import itertools
 
@@ -455,6 +450,12 @@ class Coreference(vozbase.VozContainer):
 
     @classmethod
     def eval_prf(cls,coref_key,mentions):
+        try:
+            import numpy as np
+        except:
+            logger.error("COULT NOT LOAD NUMPY")
+            np = None
+
         stats_characters = mentions
         stats_characters_uniq = set(util.flatten([i.get_tag(TaggableContainer.TAG_CHARACTER_SYMBOL) for i in mentions]))
 

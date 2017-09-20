@@ -23,6 +23,8 @@ class Verb(vozbase.VozTextContainer):
         self._subjects = None
         self._objects = None
         self._sentence = None
+    def set_negated(self):
+        self.arguments['Am-NEG']=None
     def is_negated(self):
         return ('AM-NEG' in self.arguments.keys())
     def get_subjects(self, filter_character_field = None):

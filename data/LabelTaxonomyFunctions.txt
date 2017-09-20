@@ -86,20 +86,20 @@ Function 12: protagonist(s) tested, interogates, attacked, etc. which prepares w
 	D9 - combat with hostile donor
 	D10 - offer of magical agent as an exchange
 Function 13: protagonist(s) reacts to actions of future donor = protagonist's reaction - E
-	E1 - protagonist(s) withstands ordeal (or not)
-	E_1 - protagonist(s) withstands ordeal (or not)
-	E2 - protagonist(s) answers greeting (or not)
-	E_2 - protagonist(s) answers greeting (or not)
-	E3 - protagonist(s) renders service to dead person (or not)
-	E_3 - protagonist(s) renders service to dead person (or not)
+	E1 - protagonist(s) withstands ordeal
+	E_1 - protagonist(s) withstands ordeal (not)
+	E2 - protagonist(s) answers greeting
+	E_2 - protagonist(s) answers greeting (not)
+	E3 - protagonist(s) renders service to dead person
+	E_3 - protagonist(s) renders service to dead person (not)
 	E4 - protagonist(s) frees of captive
 	E5 - mercy to suppliant
 	E6 - protagonist completes apportinment and reconciles disputants
 	Evi - protagonist(s) deceives disputants
 	E7 - performance of some other service, fulfillment of request, pious deeds
 	E8 - attempt at destruction averted by turnabout
-	E9 - protagonist(s) vanquishes hostile donor (or not)
-	E_9 - protagonist(s) vanquishes hostile donor (or not)
+	E9 - protagonist(s) vanquishes hostile donor
+	E_9 - protagonist(s) vanquishes hostile donor (not)
 	E10 - deception in an exchange, protagonist(s) employs magical agent on donor
 Function 14: protagonist(s) acquires use of magical agent = acquisition of magical agent - F/f
 	F1 - agent is directly transferred
