@@ -46,8 +46,7 @@
          (t6 "" (STORY2-m1000 "She") " put the little box in her pocket . ")
          (t7 "" (STORY2-m1006 "The box") " belong to " (STORY2-m1007 "the forest witches") " . ")
          (t8 "" (STORY2-m1007 "They") " pulled " (STORY2-m1000 "the girl") " to their lair up in the trees . ")
-         (t1002 (STORY2-EXTRA2  (STORY2-m1000 "the girl") " is the " (Other "Other") ) ".")
-         (t1003 (STORY2-EXTRA3  (STORY2-m1007 "They") " is the " (Other "Other") ) ".")
+         (t1002 (STORY2-EXTRA2  (STORY2-m1007 "They") " is the " (Other "Other") ) ".")
          (t9 "With her delicate fingers , " (STORY2-VERB3 "" (STORY2-m1000 "the girl") " opened " (STORY2-m1006 "the box") " " ) ". ")
          (t10 "From inside the box came " (STORY2-m1008 "a frog") " . ")
          (t11 "" (STORY2-m1000 "The girl") " put " (STORY2-m1008 "the frog") " in her pocket . ")
@@ -59,8 +58,6 @@
          (t17 "" (STORY2-m1002 "He") " saw " (STORY2-m1008 "the frog") " in the girl 's pocket . ")
          (t18 "" (STORY2-m1002 "He") " kissed " (STORY2-m1008 "the frog") " and the frog transformed into a princess . ")
          (t19 "" (STORY2-m1002 "The brother") " married " (STORY2-m1010 "the other princess") " and they all lived happily . ")
-         (t1004 (STORY2-EXTRA4  (STORY2-m1000 "the girl") " is the " (Other "Other") ) ".")
-         (t1005 (STORY2-EXTRA5  (STORY2-m1007 "They") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -118,8 +115,7 @@
          )
          (:expressions
            ((levin-12 STORY2-m1007 STORY2-m1000) :name STORY2-VERB2)
-           ((roleOther STORY2-m1000) :name STORY2-EXTRA1)
-           ((roleOther STORY2-m1007) :name STORY2-EXTRA2)
+           ((roleOther STORY2-m1007) :name STORY2-EXTRA1)
          )
        )
        (phase3
@@ -143,8 +139,6 @@
            ((levin-30-1 STORY2-m1002 STORY2-m1008) :name STORY2-VERB8)
            ((levin-36-2 STORY2-m1002 STORY2-m1008) :name STORY2-VERB9)
            ((levin-36-2 STORY2-m1002 STORY2-m1010) :name STORY2-VERB10)
-           ((roleOther STORY2-m1000) :name STORY2-EXTRA3)
-           ((roleOther STORY2-m1007) :name STORY2-EXTRA4)
          )
        )
 

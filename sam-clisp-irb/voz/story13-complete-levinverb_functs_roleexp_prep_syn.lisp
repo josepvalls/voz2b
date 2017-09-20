@@ -31,8 +31,6 @@
          (t4 "" (STORY13-m1005 "The old man") " told " (STORY13-m1004 "him") " all about the giant . ")
          (t5 "" (STORY13-m1004 "The gypsy") " told " (STORY13-m1005 "the old man") " he would take care of the giant . ")
          (t6 "" (STORY13-m1004 "He") " grabbed a piece of soft cheese and went to meet " (STORY13-m1002 "the giant") " . ")
-         (t1003 (STORY13-EXTRA3  (STORY13-m1000 "a father") " is the " (Other "Other") ) ".")
-         (t1004 (STORY13-EXTRA4  (STORY13-m1002 "the giant") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -91,8 +89,6 @@
            ((levin-36-3 STORY13-m1004 STORY13-m1005) :name STORY13-VERB2)
            ((levin-37-2 STORY13-m1005 STORY13-m1004) :name STORY13-VERB3)
            ((levin-37-2 STORY13-m1004 STORY13-m1005) :name STORY13-VERB4)
-           ((roleOther STORY13-m1000) :name STORY13-EXTRA2)
-           ((roleOther STORY13-m1002) :name STORY13-EXTRA3)
          )
        )
 

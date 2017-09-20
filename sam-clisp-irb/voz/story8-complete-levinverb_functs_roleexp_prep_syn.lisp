@@ -46,10 +46,7 @@
          (t11 "Inside there was " (STORY8-m1006 "a maiden") " . ")
          (t12 "" (STORY8-m1006 "The maiden") " was the daughter of a witch . ")
          (t13 "" (STORY8-m1006 "The maiden") " was lonely and asked " (STORY8-m1002 "the girl") " to be friends . ")
-         (t1004 (STORY8-EXTRA4  (STORY8-m1001 "He") " is the " (Other "Other") ) ".")
-         (t1005 (STORY8-EXTRA5  (STORY8-m1002 "the girl") " is the " (Other "Other") ) ".")
-         (t1006 (STORY8-EXTRA6  (STORY8-m1003 "She") " is the " (Other "Other") ) ".")
-         (t1007 (STORY8-EXTRA7  (STORY8-m1006 "The maiden") " is the " (Other "Other") ) ".")
+         (t1004 (STORY8-EXTRA4  (STORY8-m1006 "The maiden") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -110,10 +107,7 @@
          )
          (:expressions
            ((levin-37-1 STORY8-m1001 STORY8-m1001) :name STORY8-VERB2)
-           ((roleOther STORY8-m1001) :name STORY8-EXTRA3)
-           ((roleOther STORY8-m1002) :name STORY8-EXTRA4)
-           ((roleOther STORY8-m1003) :name STORY8-EXTRA5)
-           ((roleOther STORY8-m1006) :name STORY8-EXTRA6)
+           ((roleOther STORY8-m1006) :name STORY8-EXTRA3)
          )
        )
 

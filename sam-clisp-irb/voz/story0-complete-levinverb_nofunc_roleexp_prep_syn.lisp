@@ -26,8 +26,7 @@
          (t1001 (STORY0-EXTRA1  (STORY0-m1002 "Their son") " is the " (Other "Other") ) ".")
          (t3 "" (STORY0-VERB1 "" (STORY0-m1006 "The crops") " would n't grow " ) "anymore and the family was starving . ")
          (t4 "" (STORY0-m1002 "The son") " decided to chase " (STORY0-m1004 "the witch") " . ")
-         (t1002 (STORY0-EXTRA2  (STORY0-m1002 "The son") " is the " (Other "Other") ) ".")
-         (t1003 (STORY0-EXTRA3  (STORY0-m1004 "the witch") " is the " (Other "Other") ) ".")
+         (t1002 (STORY0-EXTRA2  (STORY0-m1004 "the witch") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -80,8 +79,7 @@
          )
          (:expressions
            ((levin-26-2 STORY0-m1006 STORY0-m1006) :name STORY0-VERB1)
-           ((roleOther STORY0-m1002) :name STORY0-EXTRA1)
-           ((roleOther STORY0-m1004) :name STORY0-EXTRA2)
+           ((roleOther STORY0-m1004) :name STORY0-EXTRA1)
          )
        )
 

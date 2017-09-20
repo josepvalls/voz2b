@@ -31,10 +31,8 @@
          (t4 "" (STORY15-m1004 "He") " had a plan to get rid of the bearlet . ")
          (t5 "" (STORY15-m1004 "He") " told " (STORY15-m1002 "the bearlet") " that he would only let him stay if " (STORY15-VERB2 "" (STORY15-m1002 "he") " got rid of the water " (STORY15-m1005 "spirits") " " ) "in the lake . ")
          (t6 "" (STORY15-m1002 "The bearlet") " left not knowing what to do . ")
-         (t1003 (STORY15-EXTRA3  (STORY15-m1000 "a bear") " is the " (Other "Other") ) ".")
-         (t1004 (STORY15-EXTRA4  (STORY15-m1002 "The bearlet") " is the " (Other "Other") ) ".")
-         (t1005 (STORY15-EXTRA5  (STORY15-m1004 "He") " is the " (Other "Other") ) ".")
-         (t1006 (STORY15-EXTRA6  (STORY15-m1005 "spirits") " is the " (Other "Other") ) ".")
+         (t1003 (STORY15-EXTRA3  (STORY15-m1004 "He") " is the " (Other "Other") ) ".")
+         (t1004 (STORY15-EXTRA4  (STORY15-m1005 "spirits") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -91,10 +89,8 @@
          (:expressions
            ((levin-37-2 STORY15-m1004 STORY15-m1002) :name STORY15-VERB1)
            ((levin-13-5-1 STORY15-m1002 STORY15-m1005) :name STORY15-VERB2)
-           ((roleOther STORY15-m1000) :name STORY15-EXTRA2)
-           ((roleOther STORY15-m1002) :name STORY15-EXTRA3)
-           ((roleOther STORY15-m1004) :name STORY15-EXTRA4)
-           ((roleOther STORY15-m1005) :name STORY15-EXTRA5)
+           ((roleOther STORY15-m1004) :name STORY15-EXTRA2)
+           ((roleOther STORY15-m1005) :name STORY15-EXTRA3)
          )
        )
 

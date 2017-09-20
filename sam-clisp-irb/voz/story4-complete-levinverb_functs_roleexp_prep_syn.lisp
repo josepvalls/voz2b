@@ -35,8 +35,6 @@
          (t6 "Years passed and " (STORY4-m1000 "everyday the mother") " would sing to " (STORY4-m1002 "the cat") " and tell him about his story . ")
          (t7 "One day " (STORY4-m1002 "the cat") " decided he could no longer bear his mother 's sadness and decided to leave . ")
          (t8 "" (STORY4-m1002 "The cat") " left the house and boarded a ship . ")
-         (t1003 (STORY4-EXTRA3  (STORY4-m1001 "The witch") " is the " (Other "Other") ) ".")
-         (t1004 (STORY4-EXTRA4  (STORY4-m1002 "The cat") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -90,8 +88,6 @@
            (STORY4-m1002 :type animate)
          )
          (:expressions
-           ((roleOther STORY4-m1001) :name STORY4-EXTRA2)
-           ((roleOther STORY4-m1002) :name STORY4-EXTRA3)
          )
        )
 

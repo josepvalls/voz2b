@@ -32,9 +32,6 @@
          (t4 "" (STORY12-m1002 "The king") " approached " (STORY12-m1003 "the tanner") " and asked him to rescue his daughter . ")
          (t5 "Eventually " (STORY12-m1003 "the tanner") " conceded and prepared to go fight " (STORY12-m1000 "the dragon") " . ")
          (t6 "" (STORY12-m1003 "He") " took a big mace and parted to seek " (STORY12-m1000 "the dragon") " . ")
-         (t1004 (STORY12-EXTRA4  (STORY12-m1000 "the dragon") " is the " (Other "Other") ) ".")
-         (t1005 (STORY12-EXTRA5  (STORY12-m1003 "He") " is the " (Other "Other") ) ".")
-         (t1006 (STORY12-EXTRA6  (STORY12-m1004 "his daughter") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -95,9 +92,6 @@
          )
          (:expressions
            ((levin-13-3 STORY12-m1003 STORY12-m1003) :name STORY12-VERB3)
-           ((roleOther STORY12-m1000) :name STORY12-EXTRA3)
-           ((roleOther STORY12-m1003) :name STORY12-EXTRA4)
-           ((roleOther STORY12-m1004) :name STORY12-EXTRA5)
          )
        )
 

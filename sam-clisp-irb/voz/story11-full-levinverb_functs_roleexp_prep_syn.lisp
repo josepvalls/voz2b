@@ -40,12 +40,8 @@
          (t7 "The ship was lifted from the sea and " (STORY11-m1000 "the soldier") " flew to a new kingdom . ")
          (t8 "There was " (STORY11-m1004 "a castle") " by a cliff where " (STORY11-m1002 "a maiden") " had been locked . ")
          (t9 "" (STORY11-m1000 "The soldier") " rescued " (STORY11-m1002 "the maiden") " from the castle . ")
-         (t1003 (STORY11-EXTRA3  (STORY11-m1000 "The soldier") " is the " (Other "Other") ) ".")
-         (t1004 (STORY11-EXTRA4  (STORY11-m1002 "the maiden") " is the " (Other "Other") ) ".")
          (t10 "" (STORY11-VERB3 "" (STORY11-m1001 "The king") " married " (STORY11-m1002 "the maiden") " " ) ". ")
          (t11 "" (STORY11-m1000 "The soldier") " was made a noble man by the king and married another lady in the court . ")
-         (t1005 (STORY11-EXTRA5  (STORY11-m1000 "The soldier") " is the " (Other "Other") ) ".")
-         (t1006 (STORY11-EXTRA6  (STORY11-m1002 "the maiden") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -101,8 +97,6 @@
          )
          (:expressions
            ((levin-10-5 STORY11-m1000 STORY11-m1002) :name STORY11-VERB2)
-           ((roleOther STORY11-m1000) :name STORY11-EXTRA2)
-           ((roleOther STORY11-m1002) :name STORY11-EXTRA3)
          )
        )
        (phase3
@@ -114,8 +108,6 @@
          )
          (:expressions
            ((levin-36-2 STORY11-m1001 STORY11-m1002) :name STORY11-VERB3)
-           ((roleOther STORY11-m1000) :name STORY11-EXTRA4)
-           ((roleOther STORY11-m1002) :name STORY11-EXTRA5)
          )
        )
 

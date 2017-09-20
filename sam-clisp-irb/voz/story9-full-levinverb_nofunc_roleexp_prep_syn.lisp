@@ -42,11 +42,9 @@
          (t3 "" (STORY9-m1001 "The daughter") " parted with " (STORY9-m1003 "a maidservant") " . ")
          (t1001 (STORY9-EXTRA1  (STORY9-m1003 "a maidservant") " is the " (Other "Other") ) ".")
          (t4 "" (STORY9-VERB1 "" (STORY9-m1003 "The maidservant") " stole " (STORY9-m1001 "the merchant's daughter clothes") " " ) "and left " (STORY9-m1001 "her") " to be eaten by the wolves . ")
-         (t1002 (STORY9-EXTRA2  (STORY9-m1003 "The maidservant") " is the " (Other "Other") ) ".")
          (t5 "" (STORY9-m1002 "The prince") " was confused because of the lack of manners of the maidservant but married " (STORY9-m1003 "her") " anyway . ")
          (t6 "Meanwhile , " (STORY9-m1004 "a fairy") " found the merchant 's daughter , took pity on her and gave her a pair of magic eyes . ")
-         (t1003 (STORY9-EXTRA3  (STORY9-m1003 "her") " is the " (Other "Other") ) ".")
-         (t1004 (STORY9-EXTRA4  (STORY9-m1004 "a fairy") " is the " (Other "Other") ) ".")
+         (t1002 (STORY9-EXTRA2  (STORY9-m1004 "a fairy") " is the " (Other "Other") ) ".")
          (t7 "When " (STORY9-VERB3 "" (STORY9-m1003 "the maidservant") " learned " ) "about the merchant 's daughter still being alive was furious . ")
          (t8 "" (STORY9-m1003 "She") " asked the " (STORY9-m1002 "prince") " to go to the palace 's doors and kill the merchant 's daughter . ")
          (t9 "" (STORY9-m1001 "The merchant's daughter") " gave the magic eyes to the prince . ")
@@ -59,8 +57,6 @@
          (t16 "" (STORY9-m1003 "The maidservant") " fell off the cliff and died . ")
          (t17 "The " (STORY9-m1001 "dove flow back to the palace where she converted into a beautiful girl again") " . ")
          (t18 "" (STORY9-m1002 "The prince") " married " (STORY9-m1001 "her") " and they lived happily the rest of their lives . ")
-         (t1005 (STORY9-EXTRA5  (STORY9-m1003 "The maidservant") " is the " (Other "Other") ) ".")
-         (t1006 (STORY9-EXTRA6  (STORY9-m1004 "The fairy") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -113,7 +109,6 @@
          )
          (:expressions
            ((levin-13-5-1 STORY9-m1003 STORY9-m1001) :name STORY9-VERB1)
-           ((roleOther STORY9-m1003) :name STORY9-EXTRA1)
          )
        )
        (phase3
@@ -126,8 +121,7 @@
          )
          (:expressions
            ((levin-29-4 STORY9-m1004 STORY9-m1004) :name STORY9-VERB2)
-           ((roleOther STORY9-m1003) :name STORY9-EXTRA2)
-           ((roleOther STORY9-m1004) :name STORY9-EXTRA3)
+           ((roleOther STORY9-m1004) :name STORY9-EXTRA1)
          )
        )
        (phase4
@@ -144,8 +138,6 @@
            ((levin-30-1 STORY9-m1002 STORY9-m1003) :name STORY9-VERB5)
            ((levin-13-5-1 STORY9-m1002 STORY9-m1003) :name STORY9-VERB6)
            ((levin-26-6 STORY9-m1004 STORY9-m1001) :name STORY9-VERB7)
-           ((roleOther STORY9-m1003) :name STORY9-EXTRA4)
-           ((roleOther STORY9-m1004) :name STORY9-EXTRA5)
          )
        )
 

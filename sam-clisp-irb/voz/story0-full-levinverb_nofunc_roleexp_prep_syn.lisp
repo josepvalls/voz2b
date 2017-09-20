@@ -36,20 +36,15 @@
          (t1001 (STORY0-EXTRA1  (STORY0-m1002 "Their son") " is the " (Other "Other") ) ".")
          (t3 "" (STORY0-VERB1 "" (STORY0-m1006 "The crops") " would n't grow " ) "anymore and the family was starving . ")
          (t4 "" (STORY0-m1002 "The son") " decided to chase " (STORY0-m1004 "the witch") " . ")
-         (t1002 (STORY0-EXTRA2  (STORY0-m1002 "The son") " is the " (Other "Other") ) ".")
-         (t1003 (STORY0-EXTRA3  (STORY0-m1004 "the witch") " is the " (Other "Other") ) ".")
+         (t1002 (STORY0-EXTRA2  (STORY0-m1004 "the witch") " is the " (Other "Other") ) ".")
          (t5 "" (STORY0-m1002 "The son") " ran to the faint sunlight and caught " (STORY0-m1004 "the witch") " . ")
          (t6 "" (STORY0-m1004 "The witch") " flung rocks at " (STORY0-m1002 "him") " . ")
          (t7 "" (STORY0-m1002 "He") " flung the rocks back at " (STORY0-m1004 "the witch") " and a big one hit her bag . ")
          (t8 "Out of the witch 's bag came out " (STORY0-m1005 "the sun") " . ")
-         (t1004 (STORY0-EXTRA4  (STORY0-m1002 "He") " is the " (Other "Other") ) ".")
-         (t1005 (STORY0-EXTRA5  (STORY0-m1004 "the witch") " is the " (Other "Other") ) ".")
          (t9 "" (STORY0-m1004 "The witch") " transformed into a beautiful lady . ")
          (t10 "Then " (STORY0-m1004 "she") " chased " (STORY0-m1002 "the son") " and tried to entice " (STORY0-m1002 "him") " to go with her . ")
          (t11 "" (STORY0-m1008 "The magical hat") " showed " (STORY0-m1002 "the son") " the witch 's true intentions . ")
          (t12 "" (STORY0-m1002 "He") " escaped " (STORY0-m1004 "the witch") " and got home safe and sound . ")
-         (t1006 (STORY0-EXTRA6  (STORY0-m1002 "He") " is the " (Other "Other") ) ".")
-         (t1007 (STORY0-EXTRA7  (STORY0-m1004 "the witch") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -102,8 +97,7 @@
          )
          (:expressions
            ((levin-26-2 STORY0-m1006 STORY0-m1006) :name STORY0-VERB1)
-           ((roleOther STORY0-m1002) :name STORY0-EXTRA1)
-           ((roleOther STORY0-m1004) :name STORY0-EXTRA2)
+           ((roleOther STORY0-m1004) :name STORY0-EXTRA1)
          )
        )
        (phase3
@@ -115,8 +109,6 @@
            (STORY0-m1005 :type animate)
          )
          (:expressions
-           ((roleOther STORY0-m1002) :name STORY0-EXTRA3)
-           ((roleOther STORY0-m1004) :name STORY0-EXTRA4)
          )
        )
        (phase4
@@ -132,8 +124,6 @@
            ((levin-51-6 STORY0-m1004 STORY0-m1004) :name STORY0-VERB2)
            ((levin-48-1-2 STORY0-m1008 STORY0-m1002) :name STORY0-VERB3)
            ((levin-51-1 STORY0-m1002 STORY0-m1004) :name STORY0-VERB4)
-           ((roleOther STORY0-m1002) :name STORY0-EXTRA5)
-           ((roleOther STORY0-m1004) :name STORY0-EXTRA6)
          )
        )
 

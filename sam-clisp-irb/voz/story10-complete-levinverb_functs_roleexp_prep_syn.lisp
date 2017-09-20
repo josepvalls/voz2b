@@ -28,9 +28,8 @@
          (t3 "" (STORY10-m1003 "A humble soldier") " responded to the call . ")
          (t4 "" (STORY10-m1002 "The king") " told " (STORY10-m1003 "the soldier") " he would make " (STORY10-m1003 "him") " a nobleman is " (STORY10-m1003 "he") " could rescue " (STORY10-m1001 "the princess") " . ")
          (t5 "" (STORY10-m1003 "The soldier") " agreed and departed . ")
-         (t1002 (STORY10-EXTRA2  (STORY10-m1000 "a dragon") " is the " (Other "Other") ) ".")
-         (t1003 (STORY10-EXTRA3  (STORY10-m1003 "The soldier") " is the " (Other "Other") ) ".")
-         (t1004 (STORY10-EXTRA4  (STORY10-m1001 "the princess") " is the " (Other "Other") ) ".")
+         (t1002 (STORY10-EXTRA2  (STORY10-m1003 "The soldier") " is the " (Other "Other") ) ".")
+         (t1003 (STORY10-EXTRA3  (STORY10-m1001 "the princess") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -83,9 +82,8 @@
          (:expressions
            ((levin-37-2 STORY10-m1002 STORY10-m1003) :name STORY10-VERB1)
            ((levin-10-5 STORY10-m1003 STORY10-m1001) :name STORY10-VERB2)
-           ((roleOther STORY10-m1000) :name STORY10-EXTRA1)
-           ((roleOther STORY10-m1003) :name STORY10-EXTRA2)
-           ((roleOther STORY10-m1001) :name STORY10-EXTRA3)
+           ((roleOther STORY10-m1003) :name STORY10-EXTRA1)
+           ((roleOther STORY10-m1001) :name STORY10-EXTRA2)
          )
        )
 

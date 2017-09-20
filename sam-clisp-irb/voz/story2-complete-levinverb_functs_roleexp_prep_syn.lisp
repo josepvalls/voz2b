@@ -34,8 +34,7 @@
          (t6 "" (STORY2-m1000 "She") " put the little box in her pocket . ")
          (t7 "" (STORY2-m1006 "The box") " belong to " (STORY2-m1007 "the forest witches") " . ")
          (t8 "" (STORY2-m1007 "They") " pulled " (STORY2-m1000 "the girl") " to their lair up in the trees . ")
-         (t1002 (STORY2-EXTRA2  (STORY2-m1000 "the girl") " is the " (Other "Other") ) ".")
-         (t1003 (STORY2-EXTRA3  (STORY2-m1007 "They") " is the " (Other "Other") ) ".")
+         (t1002 (STORY2-EXTRA2  (STORY2-m1007 "They") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -93,8 +92,7 @@
          )
          (:expressions
            ((levin-12 STORY2-m1007 STORY2-m1000) :name STORY2-VERB2)
-           ((roleOther STORY2-m1000) :name STORY2-EXTRA1)
-           ((roleOther STORY2-m1007) :name STORY2-EXTRA2)
+           ((roleOther STORY2-m1007) :name STORY2-EXTRA1)
          )
        )
 

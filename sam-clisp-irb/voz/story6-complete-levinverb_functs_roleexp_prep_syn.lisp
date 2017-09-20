@@ -36,9 +36,8 @@
          (t7 "" (STORY6-m1000 "The girl") " suspected " (STORY6-m1002 "the witch") " may be behind . ")
          (t8 "" (STORY6-m1000 "She") " decided to go save " (STORY6-m1003 "her brother") " and went on to the witch 's hut . ")
          (t9 "" (STORY6-m1000 "She") " made her way in and waited for " (STORY6-m1002 "the witch") " . ")
-         (t1002 (STORY6-EXTRA2  (STORY6-m1000 "She") " is the " (Other "Other") ) ".")
-         (t1003 (STORY6-EXTRA3  (STORY6-m1002 "the witch") " is the " (Other "Other") ) ".")
-         (t1004 (STORY6-EXTRA4  (STORY6-m1003 "her brother") " is the " (Other "Other") ) ".")
+         (t1002 (STORY6-EXTRA2  (STORY6-m1002 "the witch") " is the " (Other "Other") ) ".")
+         (t1003 (STORY6-EXTRA3  (STORY6-m1003 "her brother") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -91,9 +90,8 @@
            (STORY6-m1003 :type animate)
          )
          (:expressions
-           ((roleOther STORY6-m1000) :name STORY6-EXTRA1)
-           ((roleOther STORY6-m1002) :name STORY6-EXTRA2)
-           ((roleOther STORY6-m1003) :name STORY6-EXTRA3)
+           ((roleOther STORY6-m1002) :name STORY6-EXTRA1)
+           ((roleOther STORY6-m1003) :name STORY6-EXTRA2)
          )
        )
 

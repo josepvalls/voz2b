@@ -40,16 +40,11 @@
          (t1002 (STORY17-EXTRA2  (STORY17-m1001 "the devil") " is the " (Other "Other") ) ".")
          (t7 "" (STORY17-m1003 "The king's daughter") " had been cursed and was very ill . ")
          (t8 "" (STORY17-m1000 "The soldier") " went to the king and asked for a chance to help " (STORY17-m1003 "the princess") " . ")
-         (t1003 (STORY17-EXTRA3  (STORY17-m1000 "The soldier") " is the " (Other "Other") ) ".")
-         (t1004 (STORY17-EXTRA4  (STORY17-m1001 "the devil") " is the " (Other "Other") ) ".")
-         (t1005 (STORY17-EXTRA5  (STORY17-m1003 "the princess") " is the " (Other "Other") ) ".")
+         (t1003 (STORY17-EXTRA3  (STORY17-m1003 "the princess") " is the " (Other "Other") ) ".")
          (t9 "At night , " (STORY17-m1000 "he") " saw " (STORY17-VERB3 "" (STORY17-m1004 "the Grim Reaper") " enter " (STORY17-m1003 "the princess' room") " " ) ". ")
          (t10 "" (STORY17-m1000 "He") " challenged " (STORY17-m1004 "him") " to a game of cards . ")
          (t11 "" (STORY17-m1000 "The soldier") " won the game and asked " (STORY17-m1004 "the Grim Reaper") " to leave " (STORY17-m1003 "the princess") " alone as his reward . ")
          (t12 "The curse was lifted and " (STORY17-m1003 "the princess") " was healthy again . ")
-         (t1006 (STORY17-EXTRA6  (STORY17-m1000 "The soldier") " is the " (Other "Other") ) ".")
-         (t1007 (STORY17-EXTRA7  (STORY17-m1001 "the devil") " is the " (Other "Other") ) ".")
-         (t1008 (STORY17-EXTRA8  (STORY17-m1003 "the princess") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -103,9 +98,7 @@
            (STORY17-m1003 :type animate)
          )
          (:expressions
-           ((roleOther STORY17-m1000) :name STORY17-EXTRA2)
-           ((roleOther STORY17-m1001) :name STORY17-EXTRA3)
-           ((roleOther STORY17-m1003) :name STORY17-EXTRA4)
+           ((roleOther STORY17-m1003) :name STORY17-EXTRA2)
          )
        )
        (phase3
@@ -118,9 +111,6 @@
          (:expressions
            ((levin-51-1 STORY17-m1004 STORY17-m1003) :name STORY17-VERB3)
            ((levin-51-2 STORY17-m1004 STORY17-m1003) :name STORY17-VERB4)
-           ((roleOther STORY17-m1000) :name STORY17-EXTRA5)
-           ((roleOther STORY17-m1001) :name STORY17-EXTRA6)
-           ((roleOther STORY17-m1003) :name STORY17-EXTRA7)
          )
        )
 

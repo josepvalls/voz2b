@@ -29,8 +29,6 @@
          (t1001 (STORY19-EXTRA1  (STORY19-m1001 "their son") " is the " (Other "Other") ) ".")
          (t1002 (STORY19-EXTRA2  (STORY19-m1002 "The dragon") " is the " (Other "Other") ) ".")
          (t5 "" (STORY19-m1001 "He") " wanted revenge and ran after the dragon but got lost . ")
-         (t1003 (STORY19-EXTRA3  (STORY19-m1001 "He") " is the " (Other "Other") ) ".")
-         (t1004 (STORY19-EXTRA4  (STORY19-m1002 "The dragon") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -83,8 +81,6 @@
            (STORY19-m1002 :type animate)
          )
          (:expressions
-           ((roleOther STORY19-m1001) :name STORY19-EXTRA2)
-           ((roleOther STORY19-m1002) :name STORY19-EXTRA3)
          )
        )
 

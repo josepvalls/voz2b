@@ -41,15 +41,10 @@
          (t7 "Later , " (STORY3-VERB3 "" (STORY3-m1004 "the mouse") " asked " ) "" (STORY3-m1001 "the boy") " for some food . ")
          (t8 "" (STORY3-m1001 "The kind-hearted boy") " gave " (STORY3-m1004 "the mouse") " some nuts . ")
          (t9 "Instead of eating the nuts , " (STORY3-m1004 "the mouse") " planted them and from them a rock sprouted from the ground . ")
-         (t1003 (STORY3-EXTRA3  (STORY3-m1001 "The kind-hearted boy") " is the " (Other "Other") ) ".")
-         (t1004 (STORY3-EXTRA4  (STORY3-m1003 "him") " is the " (Other "Other") ) ".")
-         (t1005 (STORY3-EXTRA5  (STORY3-m1004 "the mouse") " is the " (Other "Other") ) ".")
+         (t1003 (STORY3-EXTRA3  (STORY3-m1004 "the mouse") " is the " (Other "Other") ) ".")
          (t10 "" (STORY3-m1001 "The boy") " used his parent 's cart to break the rock . ")
          (t11 "From inside the rock a key emerged which opened the bird 's cage . ")
          (t12 "" (STORY3-m1001 "The boy") " ended up marrying a girl from the village and they all were happy . ")
-         (t1006 (STORY3-EXTRA6  (STORY3-m1001 "The boy") " is the " (Other "Other") ) ".")
-         (t1007 (STORY3-EXTRA7  (STORY3-m1003 "him") " is the " (Other "Other") ) ".")
-         (t1008 (STORY3-EXTRA8  (STORY3-m1004 "the mouse") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -109,9 +104,7 @@
          (:expressions
            ((levin-37-1 STORY3-m1004 STORY3-m1004) :name STORY3-VERB3)
            ((levin-13-1 STORY3-m1001 STORY3-m1004) :name STORY3-VERB4)
-           ((roleOther STORY3-m1001) :name STORY3-EXTRA2)
-           ((roleOther STORY3-m1003) :name STORY3-EXTRA3)
-           ((roleOther STORY3-m1004) :name STORY3-EXTRA4)
+           ((roleOther STORY3-m1004) :name STORY3-EXTRA2)
          )
        )
        (phase3
@@ -123,9 +116,6 @@
            (STORY3-m1004 :type animate)
          )
          (:expressions
-           ((roleOther STORY3-m1001) :name STORY3-EXTRA5)
-           ((roleOther STORY3-m1003) :name STORY3-EXTRA6)
-           ((roleOther STORY3-m1004) :name STORY3-EXTRA7)
          )
        )
 

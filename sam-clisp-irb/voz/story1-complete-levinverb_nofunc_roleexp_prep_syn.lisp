@@ -34,8 +34,7 @@
          (t6 "" (STORY1-m1002 "She") " asked " (STORY1-m1007 "her older son") " to go look for his younger brother . ")
          (t7 "" (STORY1-m1007 "The older brother") " was very responsible and agreed . ")
          (t8 "" (STORY1-m1007 "He") " left the house and went into the woods . ")
-         (t1002 (STORY1-EXTRA2  (STORY1-m1003 "The snake") " is the " (Other "Other") ) ".")
-         (t1003 (STORY1-EXTRA3  (STORY1-m1007 "He") " is the " (Other "Other") ) ".")
+         (t1002 (STORY1-EXTRA2  (STORY1-m1007 "He") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -93,8 +92,7 @@
          (:expressions
            ((levin-30-1 STORY1-m1002 STORY1-m1006) :name STORY1-VERB3)
            ((levin-37-1 STORY1-m1002 STORY1-m1007) :name STORY1-VERB4)
-           ((roleOther STORY1-m1003) :name STORY1-EXTRA1)
-           ((roleOther STORY1-m1007) :name STORY1-EXTRA2)
+           ((roleOther STORY1-m1007) :name STORY1-EXTRA1)
          )
        )
 

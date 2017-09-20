@@ -45,8 +45,6 @@
          (t6 "Years passed and " (STORY4-m1000 "everyday the mother") " would sing to " (STORY4-m1002 "the cat") " and tell him about his story . ")
          (t7 "One day " (STORY4-m1002 "the cat") " decided he could no longer bear his mother 's sadness and decided to leave . ")
          (t8 "" (STORY4-m1002 "The cat") " left the house and boarded a ship . ")
-         (t1003 (STORY4-EXTRA3  (STORY4-m1001 "The witch") " is the " (Other "Other") ) ".")
-         (t1004 (STORY4-EXTRA4  (STORY4-m1002 "The cat") " is the " (Other "Other") ) ".")
          (t9 "" (STORY4-VERB2 "" (STORY4-m1000 "His mother") " would n't recognize " (STORY4-m1002 "him") " " ) "and locked him out . ")
          (t10 "" (STORY4-m1001 "The other cat") " was the witch 's in disguise . ")
          (t11 "" (STORY4-m1001 "The witch") " asked the " (STORY4-m1000 "mother") " to kill " (STORY4-m1002 "the boy") " . ")
@@ -56,8 +54,6 @@
          (t15 "" (STORY4-m1000 "She") " took a shovel and killed " (STORY4-m1001 "the witch") " . ")
          (t16 "At this moment the spell broke and " (STORY4-m1002 "the boy") " regained his human form . ")
          (t17 "" (STORY4-m1002 "He") " was a good looking lad that had no trouble finding a wife . ")
-         (t1005 (STORY4-EXTRA5  (STORY4-m1001 "the witch") " is the " (Other "Other") ) ".")
-         (t1006 (STORY4-EXTRA6  (STORY4-m1002 "He") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -111,8 +107,6 @@
            (STORY4-m1002 :type animate)
          )
          (:expressions
-           ((roleOther STORY4-m1001) :name STORY4-EXTRA2)
-           ((roleOther STORY4-m1002) :name STORY4-EXTRA3)
          )
        )
        (phase3
@@ -124,8 +118,6 @@
          (:expressions
            ((levin-29-5 STORY4-m1000 STORY4-m1002) :name STORY4-VERB2)
            ((levin-37-1 STORY4-m1001 STORY4-m1000) :name STORY4-VERB3)
-           ((roleOther STORY4-m1001) :name STORY4-EXTRA4)
-           ((roleOther STORY4-m1002) :name STORY4-EXTRA5)
          )
        )
 

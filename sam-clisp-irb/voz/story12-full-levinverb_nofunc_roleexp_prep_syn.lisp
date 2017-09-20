@@ -38,19 +38,10 @@
          (t4 "" (STORY12-m1002 "The king") " approached " (STORY12-m1003 "the tanner") " and asked him to rescue his daughter . ")
          (t5 "Eventually " (STORY12-m1003 "the tanner") " conceded and prepared to go fight " (STORY12-m1000 "the dragon") " . ")
          (t6 "" (STORY12-m1003 "He") " took a big mace and parted to seek " (STORY12-m1000 "the dragon") " . ")
-         (t1004 (STORY12-EXTRA4  (STORY12-m1000 "the dragon") " is the " (Other "Other") ) ".")
-         (t1005 (STORY12-EXTRA5  (STORY12-m1003 "He") " is the " (Other "Other") ) ".")
-         (t1006 (STORY12-EXTRA6  (STORY12-m1004 "his daughter") " is the " (Other "Other") ) ".")
          (t7 "" (STORY12-VERB4 "" (STORY12-m1000 "The dragon") " died " ) "instantly . ")
          (t8 "" (STORY12-m1003 "The tanner") " rescued " (STORY12-m1005 "the princess") " . ")
-         (t1007 (STORY12-EXTRA7  (STORY12-m1000 "The dragon") " is the " (Other "Other") ) ".")
-         (t1008 (STORY12-EXTRA8  (STORY12-m1003 "The tanner") " is the " (Other "Other") ) ".")
-         (t1009 (STORY12-EXTRA9  (STORY12-m1004 "his daughter") " is the " (Other "Other") ) ".")
          (t9 "" (STORY12-m1002 "The king") " offered the princess to " (STORY12-m1003 "the tanner") " in marriage . ")
          (t10 "But " (STORY12-m1003 "the tanner") " refused and went back to his old life . ")
-         (t1010 (STORY12-EXTRA10  (STORY12-m1000 "The dragon") " is the " (Other "Other") ) ".")
-         (t1011 (STORY12-EXTRA11  (STORY12-m1003 "the tanner") " is the " (Other "Other") ) ".")
-         (t1012 (STORY12-EXTRA12  (STORY12-m1004 "his daughter") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -111,9 +102,6 @@
          )
          (:expressions
            ((levin-13-3 STORY12-m1003 STORY12-m1003) :name STORY12-VERB3)
-           ((roleOther STORY12-m1000) :name STORY12-EXTRA3)
-           ((roleOther STORY12-m1003) :name STORY12-EXTRA4)
-           ((roleOther STORY12-m1004) :name STORY12-EXTRA5)
          )
        )
        (phase3
@@ -128,9 +116,6 @@
          (:expressions
            ((levin-48-2 STORY12-m1000 STORY12-m1000) :name STORY12-VERB4)
            ((levin-10-5 STORY12-m1003 STORY12-m1005) :name STORY12-VERB5)
-           ((roleOther STORY12-m1000) :name STORY12-EXTRA6)
-           ((roleOther STORY12-m1003) :name STORY12-EXTRA7)
-           ((roleOther STORY12-m1004) :name STORY12-EXTRA8)
          )
        )
        (phase4
@@ -143,9 +128,6 @@
            (STORY12-m1005 :type animate)
          )
          (:expressions
-           ((roleOther STORY12-m1000) :name STORY12-EXTRA9)
-           ((roleOther STORY12-m1003) :name STORY12-EXTRA10)
-           ((roleOther STORY12-m1004) :name STORY12-EXTRA11)
          )
        )
 

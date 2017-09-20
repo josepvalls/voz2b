@@ -46,8 +46,7 @@
          (t6 "" (STORY1-m1002 "She") " asked " (STORY1-m1007 "her older son") " to go look for his younger brother . ")
          (t7 "" (STORY1-m1007 "The older brother") " was very responsible and agreed . ")
          (t8 "" (STORY1-m1007 "He") " left the house and went into the woods . ")
-         (t1002 (STORY1-EXTRA2  (STORY1-m1003 "The snake") " is the " (Other "Other") ) ".")
-         (t1003 (STORY1-EXTRA3  (STORY1-m1007 "He") " is the " (Other "Other") ) ".")
+         (t1002 (STORY1-EXTRA2  (STORY1-m1007 "He") " is the " (Other "Other") ) ".")
          (t9 "" (STORY1-m1009 "The snake's wife") " asked " (STORY1-m1007 "him") " to go into her burrow . ")
          (t10 "" (STORY1-m1007 "The older brother") " agreed . ")
          (t11 "As soon as " (STORY1-m1009 "the snake's wife") " turned around " (STORY1-m1007 "he") " struck her and killed her . ")
@@ -56,12 +55,8 @@
          (t14 "" (STORY1-m1003 "The snake") " came out of the deeper part of the burrow . ")
          (t15 "" (STORY1-m1003 "The snake") " saw his eggs missing and died of sadness . ")
          (t16 "" (STORY1-m1007 "The older brother") " now was well fed . ")
-         (t1004 (STORY1-EXTRA4  (STORY1-m1003 "The snake") " is the " (Other "Other") ) ".")
-         (t1005 (STORY1-EXTRA5  (STORY1-m1007 "The older brother") " is the " (Other "Other") ) ".")
          (t17 "" (STORY1-m1001 "They") " arrived home safely . ")
          (t18 "As a strong and healthy man , " (STORY1-m1007 "the older brother") " quickly found a bride . ")
-         (t1006 (STORY1-EXTRA6  (STORY1-m1003 "The snake") " is the " (Other "Other") ) ".")
-         (t1007 (STORY1-EXTRA7  (STORY1-m1007 "the older brother") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -119,8 +114,7 @@
          (:expressions
            ((levin-30-1 STORY1-m1002 STORY1-m1006) :name STORY1-VERB3)
            ((levin-37-1 STORY1-m1002 STORY1-m1007) :name STORY1-VERB4)
-           ((roleOther STORY1-m1003) :name STORY1-EXTRA1)
-           ((roleOther STORY1-m1007) :name STORY1-EXTRA2)
+           ((roleOther STORY1-m1007) :name STORY1-EXTRA1)
          )
        )
        (phase3
@@ -134,8 +128,6 @@
          )
          (:expressions
            ((levin-26-6 STORY1-m1009 STORY1-m1009) :name STORY1-VERB5)
-           ((roleOther STORY1-m1003) :name STORY1-EXTRA3)
-           ((roleOther STORY1-m1007) :name STORY1-EXTRA4)
          )
        )
        (phase4
@@ -149,8 +141,6 @@
          )
          (:expressions
            ((levin-29-4 STORY1-m1007 STORY1-m1007) :name STORY1-VERB6)
-           ((roleOther STORY1-m1003) :name STORY1-EXTRA5)
-           ((roleOther STORY1-m1007) :name STORY1-EXTRA6)
          )
        )
 

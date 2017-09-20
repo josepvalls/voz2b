@@ -26,7 +26,6 @@
          (t3 "" (STORY9-m1001 "The daughter") " parted with " (STORY9-m1003 "a maidservant") " . ")
          (t1001 (STORY9-EXTRA1  (STORY9-m1003 "a maidservant") " is the " (Other "Other") ) ".")
          (t4 "" (STORY9-VERB1 "" (STORY9-m1003 "The maidservant") " stole " (STORY9-m1001 "the merchant's daughter clothes") " " ) "and left " (STORY9-m1001 "her") " to be eaten by the wolves . ")
-         (t1002 (STORY9-EXTRA2  (STORY9-m1003 "The maidservant") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -79,7 +78,6 @@
          )
          (:expressions
            ((levin-13-5-1 STORY9-m1003 STORY9-m1001) :name STORY9-VERB1)
-           ((roleOther STORY9-m1003) :name STORY9-EXTRA1)
          )
        )
 

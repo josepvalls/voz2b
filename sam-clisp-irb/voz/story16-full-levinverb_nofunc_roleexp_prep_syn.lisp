@@ -47,21 +47,13 @@
          (t8 "" (STORY16-m1004 "The king") " issued a call asking for help . ")
          (t9 "" (STORY16-m1000 "The soldier") " answered the call and interviewed with the king . ")
          (t10 "" (STORY16-m1000 "He") " assured " (STORY16-m1004 "the king") " he would be able to free " (STORY16-m1003 "the princess") " from her torments . ")
-         (t1003 (STORY16-EXTRA3  (STORY16-m1000 "He") " is the " (Other "Other") ) ".")
-         (t1004 (STORY16-EXTRA4  (STORY16-m1001 "the devil") " is the " (Other "Other") ) ".")
-         (t1005 (STORY16-EXTRA5  (STORY16-m1003 "the princess") " is the " (Other "Other") ) ".")
+         (t1003 (STORY16-EXTRA3  (STORY16-m1003 "the princess") " is the " (Other "Other") ) ".")
          (t11 "At midnight " (STORY16-m1001 "the devil") " appeared . ")
          (t12 "Calling for the due favor , the soldier asked " (STORY16-m1001 "the devil") " to play a game of cards . ")
          (t13 "" (STORY16-m1000 "The soldier") " bested " (STORY16-m1001 "the devil") " at all the games of cards " (STORY16-m1002 "they") " played that night . ")
-         (t1006 (STORY16-EXTRA6  (STORY16-m1000 "The soldier") " is the " (Other "Other") ) ".")
-         (t1007 (STORY16-EXTRA7  (STORY16-m1001 "the devil") " is the " (Other "Other") ) ".")
-         (t1008 (STORY16-EXTRA8  (STORY16-m1003 "the princess") " is the " (Other "Other") ) ".")
          (t14 "Then , " (STORY16-VERB2 "" (STORY16-m1000 "the soldier") " beat " ) "the knapsack and killed " (STORY16-m1001 "the devil inside") " . ")
          (t15 "" (STORY16-m1003 "The princess") " was relieved and her father thankful . ")
          (t16 "" (STORY16-m1000 "The soldier") " married " (STORY16-m1003 "the princess") " and lived happy in the castle . ")
-         (t1009 (STORY16-EXTRA9  (STORY16-m1000 "The soldier") " is the " (Other "Other") ) ".")
-         (t1010 (STORY16-EXTRA10  (STORY16-m1001 "the devil inside") " is the " (Other "Other") ) ".")
-         (t1011 (STORY16-EXTRA11  (STORY16-m1003 "the princess") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -117,9 +109,7 @@
            (STORY16-m1003 :type animate)
          )
          (:expressions
-           ((roleOther STORY16-m1000) :name STORY16-EXTRA2)
-           ((roleOther STORY16-m1001) :name STORY16-EXTRA3)
-           ((roleOther STORY16-m1003) :name STORY16-EXTRA4)
+           ((roleOther STORY16-m1003) :name STORY16-EXTRA2)
          )
        )
        (phase3
@@ -131,9 +121,6 @@
            (STORY16-m1003 :type animate)
          )
          (:expressions
-           ((roleOther STORY16-m1000) :name STORY16-EXTRA5)
-           ((roleOther STORY16-m1001) :name STORY16-EXTRA6)
-           ((roleOther STORY16-m1003) :name STORY16-EXTRA7)
          )
        )
        (phase4
@@ -147,9 +134,6 @@
          (:expressions
            ((levin-26-5 STORY16-m1000 STORY16-m1000) :name STORY16-VERB2)
            ((levin-36-2 STORY16-m1000 STORY16-m1003) :name STORY16-VERB3)
-           ((roleOther STORY16-m1000) :name STORY16-EXTRA8)
-           ((roleOther STORY16-m1001) :name STORY16-EXTRA9)
-           ((roleOther STORY16-m1003) :name STORY16-EXTRA10)
          )
        )
 

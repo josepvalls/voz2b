@@ -38,8 +38,7 @@
          (t8 "When " (STORY14-m1003 "the bull") " arrived at the goal , " (STORY14-m1000 "the laborer") " was already there waiting for him . ")
          (t9 "Ashamed , " (STORY14-m1003 "the bull") " promised to stop running and ruining the crops . ")
          (t10 "" (STORY14-m1000 "The laborer") " was able to find work in no time and was prosperous . ")
-         (t1002 (STORY14-EXTRA2  (STORY14-m1000 "The laborer") " is the " (Other "Other") ) ".")
-         (t1003 (STORY14-EXTRA3  (STORY14-m1003 "the bull") " is the " (Other "Other") ) ".")
+         (t1002 (STORY14-EXTRA2  (STORY14-m1003 "the bull") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -94,8 +93,7 @@
          )
          (:expressions
            ((levin-51-1 STORY14-m1003 STORY14-m1003) :name STORY14-VERB2)
-           ((roleOther STORY14-m1000) :name STORY14-EXTRA1)
-           ((roleOther STORY14-m1003) :name STORY14-EXTRA2)
+           ((roleOther STORY14-m1003) :name STORY14-EXTRA1)
          )
        )
 

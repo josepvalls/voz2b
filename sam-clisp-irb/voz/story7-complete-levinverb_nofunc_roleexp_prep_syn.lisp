@@ -31,8 +31,6 @@
          (t1001 (STORY7-EXTRA1  (STORY7-m1000 "The girl") " is the " (Other "Other") ) ".")
          (t1002 (STORY7-EXTRA2  (STORY7-m1001 "her baby brother") " is the " (Other "Other") ) ".")
          (t6 "When " (STORY7-VERB2 "" (STORY7-m1000 "the girl") " could not find " ) "her brother home , she became concerned and left looking for him . ")
-         (t1003 (STORY7-EXTRA3  (STORY7-m1000 "the girl") " is the " (Other "Other") ) ".")
-         (t1004 (STORY7-EXTRA4  (STORY7-m1001 "her baby brother") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -87,8 +85,6 @@
          )
          (:expressions
            ((levin-29-4 STORY7-m1000 STORY7-m1000) :name STORY7-VERB2)
-           ((roleOther STORY7-m1000) :name STORY7-EXTRA2)
-           ((roleOther STORY7-m1001) :name STORY7-EXTRA3)
          )
        )
 

@@ -38,10 +38,7 @@
          (t7 "The next morning , " (STORY5-m1001 "the girl") " and " (STORY5-m1006 "her stepsister") " could n't find their parents . ")
          (t8 "" (STORY5-m1007 "They") " decided to go look for them . ")
          (t9 "" (STORY5-m1007 "They") " took separate ways . ")
-         (t1004 (STORY5-EXTRA4  (STORY5-m1001 "the girl") " is the " (Other "Other") ) ".")
-         (t1005 (STORY5-EXTRA5  (STORY5-m1004 "The stepmother") " is the " (Other "Other") ) ".")
-         (t1006 (STORY5-EXTRA6  (STORY5-m1005 "They") " is the " (Other "Other") ) ".")
-         (t1007 (STORY5-EXTRA7  (STORY5-m1006 "her stepsister") " is the " (Other "Other") ) ".")
+         (t1004 (STORY5-EXTRA4  (STORY5-m1006 "her stepsister") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -102,10 +99,7 @@
            (STORY5-m1007 :type animate)
          )
          (:expressions
-           ((roleOther STORY5-m1001) :name STORY5-EXTRA3)
-           ((roleOther STORY5-m1004) :name STORY5-EXTRA4)
-           ((roleOther STORY5-m1005) :name STORY5-EXTRA5)
-           ((roleOther STORY5-m1006) :name STORY5-EXTRA6)
+           ((roleOther STORY5-m1006) :name STORY5-EXTRA3)
          )
        )
 

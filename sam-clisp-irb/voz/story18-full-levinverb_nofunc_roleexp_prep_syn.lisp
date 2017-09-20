@@ -36,16 +36,11 @@
          (t1002 (STORY18-EXTRA2  (STORY18-m1001 "the fox") " is the " (Other "Other") ) ".")
          (t5 "" (STORY18-m1002 "They") " emerged from the swamp covered in mud . ")
          (t6 "" (STORY18-m1003 "A nearby water spirit") " was so scared when they saw them that died instantly . ")
-         (t1003 (STORY18-EXTRA3  (STORY18-m1000 "The peasant") " is the " (Other "Other") ) ".")
-         (t1004 (STORY18-EXTRA4  (STORY18-m1001 "the fox") " is the " (Other "Other") ) ".")
-         (t1005 (STORY18-EXTRA5  (STORY18-m1003 "A nearby water spirit") " is the " (Other "Other") ) ".")
+         (t1003 (STORY18-EXTRA3  (STORY18-m1003 "A nearby water spirit") " is the " (Other "Other") ) ".")
          (t7 "Then , " (STORY18-VERB2 "" (STORY18-m1001 "the fox") " told " ) "the king that the peasant was a prince and that his clothes had been lost fighting the water spirit . ")
          (t8 "" (STORY18-m1004 "The king") " was impressed by their feat and gave " (STORY18-m1000 "the peasant") " new clothes and jewelry . ")
          (t9 "Then " (STORY18-m1000 "the peasant") " married the princess and became a prince . ")
          (t10 "Satisfied with her deed , " (STORY18-m1001 "the fox") " returned home . ")
-         (t1006 (STORY18-EXTRA6  (STORY18-m1000 "the peasant") " is the " (Other "Other") ) ".")
-         (t1007 (STORY18-EXTRA7  (STORY18-m1001 "the fox") " is the " (Other "Other") ) ".")
-         (t1008 (STORY18-EXTRA8  (STORY18-m1003 "A nearby water spirit") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -99,9 +94,7 @@
            (STORY18-m1003 :type animate)
          )
          (:expressions
-           ((roleOther STORY18-m1000) :name STORY18-EXTRA2)
-           ((roleOther STORY18-m1001) :name STORY18-EXTRA3)
-           ((roleOther STORY18-m1003) :name STORY18-EXTRA4)
+           ((roleOther STORY18-m1003) :name STORY18-EXTRA2)
          )
        )
        (phase3
@@ -114,10 +107,6 @@
          )
          (:expressions
            ((levin-37-2 STORY18-m1001 STORY18-m1001) :name STORY18-VERB2)
-           ((levin-36-2 STORY18-m1000 STORY18-m1000) :name STORY18-VERB3)
-           ((roleOther STORY18-m1000) :name STORY18-EXTRA5)
-           ((roleOther STORY18-m1001) :name STORY18-EXTRA6)
-           ((roleOther STORY18-m1003) :name STORY18-EXTRA7)
          )
        )
 
