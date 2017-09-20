@@ -55,10 +55,271 @@ DO_FORCE_MAX_DEPTH = None
 
 def main():
     #do_dump_all_dataset()
-    do_beam()
+    #do_beam()
     #do_dump_distributions()
     #do_dump_all_predictions()
     #do_beam_confusion_matrix()
+    pair_functions()
+
+def pair_functions():
+    d,p,t,pd = read_function_dict()
+    x = '''A4
+C
+F13
+H1
+I1
+K4
+return
+Pr4
+Rs7
+
+
+A1
+B1
+C
+depart
+D9
+E9
+G6
+F7
+I5
+K4
+return
+W*
+
+
+
+a1
+B4
+C
+depart
+F12
+G1
+M
+N
+T3
+W
+F2
+F*96
+
+
+A_ii
+D1_3
+E1_3
+F1_vi
+M
+N
+W
+
+
+A_11
+B_7
+C
+depart
+G
+o
+L
+M
+N
+K_8
+Ex
+U
+W
+
+
+
+
+A_1
+depart
+D1_8
+E1_8
+return
+Pr_7
+Rs_10
+L
+Q
+Ex
+T
+U
+W
+X
+
+
+A_1
+B
+C
+depart
+D1_1
+E1_1
+F1
+d2_7
+E2_7
+F2_9
+G_4
+K_1
+return
+
+
+A_xvi
+depart
+d1_7
+E1_7
+F1_2
+D2_8
+E2_8
+F2_8
+return
+Pr_1
+Rs_4
+Q
+W
+
+
+
+A_6
+o
+F1_3
+o
+H_1
+J_1
+I_1
+K_3
+Pr_6
+Rs_6
+Q
+Ex
+T_2
+W
+
+
+A_1
+B
+C
+depart
+H_1
+I_1
+K_4
+return
+w_0
+
+
+a_1
+B_2
+C
+depart
+F1_3
+G_1
+K_2
+return
+
+
+A_1
+B_4
+C
+depart
+H_1
+I_1
+K_4
+return
+W
+
+
+A_17
+B_4
+C
+depart
+H_2
+I_2
+K_4
+w_0
+
+
+a_5
+B_4
+C
+depart
+H_2
+I_2
+K_1
+
+
+A_9
+depart
+H_2
+I_2
+K_1
+return
+
+
+A_18
+C
+depart
+F1_1
+H_3
+I_3
+UwtransX
+
+
+Dpre
+Epre_7
+Fpre_9
+A_18
+C
+depart
+F1_1
+H_3
+I_3
+K_4
+W
+
+
+a_1
+B
+C
+depart
+G_3
+I_5
+T_4
+W
+return
+'''
+
+    #x = "alpha	eta	beta	A	depart	G	H	I	W	return	Q  alpha	beta	a	D	E	F	D	E	F	D	E	F	Rs	Pr	Rs	return"
+    for i in x.splitlines():
+        if not i:
+            print ''
+            continue
+        if i in pd:
+            print pd[i]
+            continue
+        if i in d:
+            i2 = i
+        else:
+            i2 = i.replace('-','').replace('_','')
+
+        if i2 in d:
+            print t[p[i2]],'/',d[i2]
+        else:
+            print '?',i
+
+def read_function_dict():
+    d = {}
+    p = {}
+    parents = []
+    pd = {}
+    for line in open(settings.RESOURCE_FUNCTION_LIST).readlines():
+        if not line or not line.strip(): continue
+        if line.startswith('Function'):
+            text,key = line.split(':',1)[1].split('-',1)
+            parents.append(text.strip())
+            pd[key.strip()]=text.strip()
+            continue
+        if line.startswith('\t'):
+            key,text = line.split('-',1)
+            d[key.strip()]=text.strip()
+            p[key.strip()]=len(parents)-1
+
+    return d,p,parents,pd
 
 def do_dump_all_dataset():
     fp = SequentialFunctionPredictor(k_in_knn=K_IN_KNN,laplacian_beta_knn=LAPLACIAN_BETA_KNN,laplacian_beta_markov=LAPLACIAN_BETA_MARKOV,num_attributes_to_include=10)

@@ -48,6 +48,7 @@ STORY_ANNOTATION_FIXES = PATH_BASE+'data/t_annotation_fixes/'
 FEATURE_MANAGER_USE_TOKEN_WEIGHTS_FOR_FEATURE_VALUE = False # weights not computed yet
 
 RESOURCE_GENDER_COMMON_NAMES = PATH_BASE+'data/res-gender-words.txt'
+RESOURCE_FUNCTION_LIST = PATH_BASE+'data/LabelTaxonomyFunctions.txt'
 
 SENTIWORDNET_ENABLED = False
 SENTIWORDNET_FILE = None

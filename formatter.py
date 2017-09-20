@@ -243,6 +243,14 @@ class VozHTMLFormatter(object):
         return html_wrap('table',
             separator.join([html_wrap('tr',
             separator.join([html_wrap('td',i) for i in row])) for row in table]))
+    @classmethod
+    def html_table_from_list_of_dicts(cls, table, labels=None, options={}):
+        separator = '\n'
+        table_data = html_wrap('tr', separator.join([html_wrap('th',i) for i in labels]))
+        table_data += separator.join([html_wrap('tr',
+            separator.join([html_wrap('td',row.get(i,'')) for i in labels])) for row in table])
+        return html_wrap('table',table_data)
+
 
 def html_wrap(tag,contents):
     return '<%s>%s</%s>' % (tag,contents,tag.split()[0])

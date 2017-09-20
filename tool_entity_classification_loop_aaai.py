@@ -64,6 +64,7 @@ def do_loop(docs):
         verbhelper.do_fix_srl(docs)
         print 'IA AFTERVERBS', verbhelper.get_srl_stats_prfa(docs)
         print 'IB BEFORECOREF', coreferencehelper.get_coref_stats(docs, stats=True, only_stats=True)
+        print 'MM BEFORECOREF', coreferencehelper.get_coref_stats_muc(docs, stats=True, only_stats=True)
         if not SKIP_PYPY:
             coreferencehelper.do_improve_coref(docs, iteration, use_ground_truth_instead_of_predictions=True)
         print 'IB AFTERCOREF', coreferencehelper.get_coref_stats(docs, stats=True, only_stats=True)

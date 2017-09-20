@@ -406,74 +406,17 @@ def filter_mentions(mentions,all_coref_mentions,get_data_from):
     mm = [i for i in mm if getattr(i,get_data_from).coref in all_coref_mentions]
     return mm
 
-def doc_to_sam(doc,suffix_g,do_verbs,do_funcs,do_roles,do_segment,limit=None,filter_characters=True):
-    assert isinstance(doc,voz.Document)
-    if suffix_g=='sty':
-        get_data_from = 'annotations'
-    else:
-        get_data_from = 'predictions'
-    all_coref_mentions = set()
-    for i in doc.get_all_mentions(filter_only_independent=True):
-
-        if not getattr(i,get_data_from).coref:
-            getattr(i, get_data_from).coref = i.id
-        if getattr(i,get_data_from).coref not in all_coref_mentions and (not filter_characters or getattr(i,get_data_from).is_character()):
-            all_coref_mentions.add(getattr(i,get_data_from).coref)
-
+def segment_doc(doc,do_segment='prep'):
     phases = []
-
-    if do_segment=='prep_old':
-        cutoffs = []
-        functions_ = []
-        functions = []
-        phase = 0
-        for function in doc.narrative.functions():
-            if phase==0 and function.function_group in 'alpha,beta,gamma,delta,epsilon,zeta,eta,theta,lambda'.split(','):
-                functions.append(function)
-            elif phase==0 and function.function_group not in 'alpha,beta,gamma,delta,epsilon,zeta,eta,theta,lambda'.split(','):
-                if function.locations:
-                    cutoffs.append(doc.get_token_by_id(function.locations[0].token_ids[0]))
-                    functions_.append(functions)
-                    functions = []
-                    phase=1
-                    functions.append(function)
-                else:
-                    pass
-            elif phase==1 and function.function_group in 'A,a,depart'.split(','):
-                functions.append(function)
-            elif phase == 1 and function.function_group not in 'A,a,depart'.split(','):
-                if function.locations:
-                    cutoffs.append(doc.get_token_by_id(function.locations[0].token_ids[0]))
-                    functions_.append(functions)
-                    functions = []
-                    phase=2
-                    functions.append(function)
-                else:
-                    pass
-            elif phase==2 and function.function_group in 'B,C,D,E,F,G,H,I,J,K'.split(','):
-                functions.append(function)
-            elif phase == 2 and function.function_group not in 'B,C,D,E,F,G,H,I,J,K'.split(','):
-                if function.locations:
-                    cutoffs.append(doc.get_token_by_id(function.locations[0].token_ids[0]))
-                    functions_.append(functions)
-                    functions = []
-                    phase=3
-                    functions.append(function)
-                else:
-                    pass
-            elif phase==3:
-                functions.append(function) #return,Pr,Rs,o,L,M,N,Q,Ex,T,U,W
-    elif do_segment == 'prep':
+    if do_segment == 'prep':
         cutoffs = []
         functions_ = []
         functions = []
         phase = 0
         for function in doc.narrative.functions(filter_non_actual=False):
-            if phase == 0 and function.function_group not in 'A,a,depart'.split(
-                    ','):
+            if phase == 0 and function.function_group not in 'A,a,depart'.split(','):
                 functions.append(function)
-            elif phase == 0 and function.function_group in 'A,a,depart'.split(
-                    ','):
+            elif phase == 0 and function.function_group in 'A,a,depart'.split(','):
                 if function.locations:
                     cutoffs.append(doc.get_token_by_id(function.locations[0].token_ids[0]))
                     functions_.append(functions)
@@ -524,6 +467,26 @@ def doc_to_sam(doc,suffix_g,do_verbs,do_funcs,do_roles,do_segment,limit=None,fil
         phases.append((sentences, functions))
 
     phases = [i for i in phases if i[0]]
+    return phases
+
+
+def doc_to_sam(doc,suffix_g,do_verbs,do_funcs,do_roles,do_segment,limit=None,filter_characters=True):
+    assert isinstance(doc,voz.Document)
+    if suffix_g=='sty':
+        get_data_from = 'annotations'
+    else:
+        get_data_from = 'predictions'
+    all_coref_mentions = set()
+    for i in doc.get_all_mentions(filter_only_independent=True):
+
+        if not getattr(i,get_data_from).coref:
+            getattr(i, get_data_from).coref = i.id
+        if getattr(i,get_data_from).coref not in all_coref_mentions and (not filter_characters or getattr(i,get_data_from).is_character()):
+            all_coref_mentions.add(getattr(i,get_data_from).coref)
+
+
+    phases = segment_doc(doc,do_segment)
+
     if limit:
         phases = phases[0:limit]
 
@@ -580,6 +543,45 @@ def main():
         f.write(script)
 
 
+def sent_stats(doc,sentences):
+    assert isinstance(doc,voz.Document)
+    s = []
+    mentions = doc.get_all('mentions',sentences)
+    mentions = [i for i in mentions if i.is_independent]
+    s.append(len(mentions))
+    s.append(len([i for i in mentions if i.annotations.is_character()]))
+    s.append(len(set([i.get_most_likely_symbol() for i in mentions if i.annotations.is_character()])))
+    s.append(len(mentions))
+    verbs = doc.get_all('verbs', sentences)
+    s.append(len(verbs))
+    vargs = util.flatten([i.get_subjects('annotations')+i.get_objects('annotations') for i in verbs])
+    vargs = [i for i in vargs if i in mentions]
+    s.append(len(vargs))
+    return s
+
+
+
+def main_get_stats():
+    for sty_file in settings.STY_FILES:
+        stats = []
+        doc = styhelper.create_document_from_sty_file(settings.STY_FILE_PATH + sty_file)
+        styhelper.fix_sty_annotations(doc)
+        stats += sent_stats(doc,doc.sentences)+[ len(doc.narrative.functions(filter_non_actual=False))]
+        phases = segment_doc(doc)
+        # (sentences, functions)
+        try:
+            stats += sent_stats(doc,phases[0][0])+[ len(phases[0][1])]
+        except:
+            pass
+        try:
+            stats += sent_stats(doc,phases[1][0])+[ len(phases[1][1])]
+        except:
+            pass
+        print '\t'.join([str(i) for i in stats])
+
+
+
+
 def main_get_levin_language():
     verbmapper.map('walk', verbmanager.VerbMapper.MODE_LEVIN_TEXT)
     for i in sorted(set(verbmapper._verb_mapping_cache[verbmanager.VerbMapper.MODE_LEVIN_TEXT].values())):
@@ -587,6 +589,7 @@ def main_get_levin_language():
 
 
 if __name__ == '__main__':
+    main_get_stats()
     #main_get_levin_language()
     #sys.exit()
-    main()
+    #main()

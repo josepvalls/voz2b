@@ -66,6 +66,12 @@ class Document(vozbase.VozContainer):
         self.symbol_manager[collection][symbol]=id_+1
         return id_
 
+    def get_token_by_off(self, start_o):
+        for token in self._tokens_list:
+            if token.offset>= start_o:
+                return token
+        return None
+
     def get_token_by_id(self, id):
         if not self._tokens_dict:
             self._compute_caches(self)
@@ -246,7 +252,11 @@ class Document(vozbase.VozContainer):
         return ret
     def get_all(self,property,collection='sentences',pair_container=False):
         lst = []
-        for item in getattr(self,collection):
+        if isinstance(collection,str):
+            c = getattr(self,collection)
+        else:
+            c = collection
+        for item in c:
             if not pair_container:
                 lst += getattr(item,property)
             else:

@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 DO_FORCE_COREF_RELOAD = False
 
+
 def do_improve_coref(docs, iteration, use_ground_truth_instead_of_predictions=False):
     m1 = get_coref_m1(docs) # stanford
     m2 = get_coref_m2(docs) # names
@@ -67,7 +68,7 @@ def make_consistent_and_apply_coref(docs, m, container='predictions'):
         mentions_done = set()
         for i in xrange(len(mentions)):
             if i in mentions_done: continue
-            group = _get_mentions_in_group(m[doc.id],i,len(mentions),threshold=0.1)
+            group = _get_mentions_in_group(m[doc.id],i,len(mentions)-1,threshold=0.1)
             mentions_done.update(group)
             for j in group:
                 coref = getattr(mentions[j], container).coref
@@ -86,10 +87,15 @@ def _get_mentions_in_group(m,start,end, threshold):
         i = open.pop()
         #for i in xrange(start,end):
         for j in xrange(start,end):
-            if m[i,j]>threshold:
-                if j not in closed:
-                    closed.add(j)
-                    open.add(j)
+            try:
+                if m[i,j]>threshold:
+                    if j not in closed:
+                        closed.add(j)
+                        open.add(j)
+            except:
+                pass
+                #print m.shape, i,j
+
     return closed
 
 
@@ -244,12 +250,51 @@ def debug_cpm(m):
         print k,np.sum(v)
 
 
-def main():
-    pass
+def dump_matrix_conll(ith,docs,container):
+    with open('matrix_conll_%s_%d.txt' % (container,ith), 'w') as f:
+        f.write('#begin document (nw/xinhua/00/chtb_0009); part 000\n')
+        for jth,doc in enumerate(docs):
+            for mention in doc.get_all_mentions(filter_only_independent=True):
+                line = 'nw/xinhua/00/chtb_0009	'
+                r = getattr(mention,container).coref
+                if r and mention.annotations.is_character():
+                    line += '(%d)' % (r+(jth+1)*10000)
+                line += '\n'
+                f.write(line)
+        f.write('\n#end document\n')
 
-if __name__=='__main__':
-    main()
+def dump_matrices_conll():
+    import stanfordhelper
+    docs = []
+    for sty_file in settings.STY_FILES[0:9]+settings.STY_FILES[10:]:
+        doc = stanfordhelper.create_document_using_stanford_from_filtered_sty_file(settings.STY_FILE_PATH + sty_file)
+        docs.append(doc)
 
+    dump_matrix_conll(0, docs, 'annotations')
+
+    use_ground_truth_instead_of_predictions=False
+
+
+    m1 = get_coref_m1(docs)  # stanford
+    m2 = get_coref_m2(docs)  # names
+    m3 = get_coref_m3(docs)  # features
+    m4 = get_coref_m4(docs)  # restrictions
+    matrices = [m1, m2, m3, m4]
+    weights = [1.0, 1.1, 0.9, 10.0]
+    #matrices = [m1, m2, m3]
+    #weights = [1.0, 1.1, 0.9]
+
+    if True:
+        weights += [0.9, 10.0]
+        m5, m6 = get_coref_m56(docs, use_ground_truth_instead_of_predictions)
+        matrices += [m5, m6]
+        for i,m in enumerate(matrices[4:]):
+            make_consistent_and_apply_coref(docs, m)
+            dump_matrix_conll(i+100,docs,'predictions')
+
+    m = do_merge_matrices(docs, matrices, weights)
+    make_consistent_and_apply_coref(docs, m)
+    dump_matrix_conll(1000,docs,'predictions')
 
 
 def do_merge_matrices(docs, matrices, weights):
@@ -260,6 +305,8 @@ def do_merge_matrices(docs, matrices, weights):
         #agg_m[doc.id] = np.ones((len(mentions),len(mentions)))
         #continue
         for m,w in zip(matrices,weights):
+            if m[doc.id].shape != agg_m[doc.id].shape: continue
+            #print 'AGGREGATTING',doc.id,m[doc.id].shape,len(mentions)
             b = m[doc.id]
             agg_m[doc.id] = np.add(agg_m[doc.id],b*w)
     return agg_m
@@ -306,3 +353,57 @@ def get_coref_stats(docs, filter_character_field='annotations', stats = True, ve
         return len(anno_to_mention),len(pred_to_mention),c_g,g_c,p,r,f
     else:
         return dict(pred_to_mention),dict(anno_to_mention),len(anno_to_mention),len(pred_to_mention),c_g,g_c,p,r,f
+
+def get_coref_stats_muc(docs, filter_character_field='annotations', stats = True, verbose=False, only_stats=False, filter_characters=True):
+    anno_to_mention = collections.defaultdict(list)
+    pred_to_mention = collections.defaultdict(list)
+    for doc in docs:
+        for mention in doc.get_all_mentions(filter_only_independent=True):
+            if filter_characters and filter_character_field is not None and not getattr(mention,filter_character_field).is_character(): continue
+            anno_to_mention[(doc.id,mention.annotations.coref)].append(mention)
+            pred_to_mention[(doc.id,mention.predictions.coref)].append(mention)
+    if stats:
+        p = 0
+        r = 0
+        a = 0
+        for g in pred_to_mention.values():
+            ref,ref_num = collections.Counter([i.annotations.coref for i in g]).most_common()[0]
+            a += ref_num
+            p += len(g)
+        c_g = []
+        g_c = []
+        for g in pred_to_mention.values():
+            c_g_ = len(set([i.annotations.coref for i in g]))
+            c_g.append(c_g_)
+        for g in anno_to_mention.values():
+            r += len(g)
+            g_c_ = len(set([i.predictions.coref for i in g]))
+            g_c.append(g_c_)
+        c_g = util.average(c_g)
+        g_c = util.average(g_c)
+        p = 1.0 * a / p
+        r = 1.0 * a / r if r else 0.0
+        f = 2.0 * p * r / (p + r) if (p + r) else 0.0
+    else:
+        c_g = 0.0
+        g_c = 0.0
+        p = 0.0
+        r = 0.0
+        f = 0.0
+    if verbose:
+        print 'COREF', len(anno_to_mention),len(pred_to_mention),c_g,g_c,p,r,f
+    if only_stats:
+        return len(anno_to_mention),len(pred_to_mention),c_g,g_c,p,r,f
+    else:
+        return dict(pred_to_mention),dict(anno_to_mention),len(anno_to_mention),len(pred_to_mention),c_g,g_c,p,r,f
+
+
+
+
+def main():
+    dump_matrices_conll()
+    pass
+
+if __name__=='__main__':
+    main()
+
