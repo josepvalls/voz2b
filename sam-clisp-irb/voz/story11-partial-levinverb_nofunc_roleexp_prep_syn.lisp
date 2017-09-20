@@ -18,8 +18,9 @@
          ;; Once upon a time, there was a soldier at the orders of certain king.
          ;; The soldier had many abilities and was always loyal.
 
-         (t1 "Once upon a time , there was a soldier at the orders of certain king . ")
-         (t2 "The soldier had many abilities and was always loyal . ")
+         (t1 "Once upon a time , there was " (STORY11-m1000 "a soldier") " at the orders of certain king . ")
+         (t2 "" (STORY11-m1000 "The soldier") " had many abilities and was always loyal . ")
+         (t1001 (STORY11-EXTRA1  (STORY11-m1000 "The soldier") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -56,8 +57,10 @@
       
        (phase1
          (:entities
+           (STORY11-m1000 :type animate)
          )
          (:expressions
+           ((roleOther STORY11-m1000) :name STORY11-EXTRA0)
          )
        )
 

@@ -22,11 +22,13 @@
          ;; She decided to try to find a bride for her brother.
          ;; At night she sneaked out of the house.
 
-         (t1 "A girl lived with her brother . ")
-         (t2 "Their father threatened to marry them if he would not find a bride . ")
-         (t3 "The girl was terrified . ")
-         (t4 "She decided to try to find a bride for her brother . ")
-         (t5 "At night she sneaked out of the house . ")
+         (t1 "" (STORY2-m1000 "A girl") " lived with her brother . ")
+         (t1001 (STORY2-EXTRA1  (STORY2-m1000 "A girl") " is the " (Other "Other") ) ".")
+         (t2 "" (STORY2-m1004 "Their father") " threatened to marry them if he would not find a bride . ")
+         (t3 "" (STORY2-m1000 "The girl") " was terrified . ")
+         (t4 "" (STORY2-m1000 "She") " decided to try to find a bride for her brother . ")
+         (t5 "At night " (STORY2-m1000 "she") " sneaked out of the house . ")
+         (t1002 (STORY2-EXTRA2  (STORY2-m1000 "she") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -63,14 +65,19 @@
       
        (phase1
          (:entities
+           (STORY2-m1000 :type animate)
          )
          (:expressions
+           ((roleOther STORY2-m1000) :name STORY2-EXTRA0)
          )
        )
        (phase2
          (:entities
+           (STORY2-m1000 :type animate)
+           (STORY2-m1004 :type animate)
          )
          (:expressions
+           ((roleOther STORY2-m1000) :name STORY2-EXTRA1)
          )
        )
 

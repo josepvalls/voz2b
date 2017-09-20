@@ -18,8 +18,10 @@
          ;; A roaming gypsy caravan with a father and his blind child arrived at an isolated village.
          ;; There was a giant who had been terrorizing the village's folks.
 
-         (t1 "A roaming gypsy caravan with a father and his blind child arrived at an isolated village . ")
-         (t2 "There was a giant who had been terrorizing the village 's folks . ")
+         (t1 "A roaming gypsy caravan with " (STORY13-m1000 "a father") " and his blind child arrived at an isolated village . ")
+         (t2 "There was " (STORY13-m1002 "a giant") " who had been terrorizing " (STORY13-m1003 "the village's folks") " . ")
+         (t1001 (STORY13-EXTRA1  (STORY13-m1000 "a father") " is the " (Other "Other") ) ".")
+         (t1002 (STORY13-EXTRA2  (STORY13-m1002 "a giant") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -56,8 +58,14 @@
       
        (phase1
          (:entities
+           (STORY13-m1000 :type animate)
+           (STORY13-m1002 :type animate)
+           (STORY13-m1003 :type animate)
          )
          (:expressions
+           ((levin-31-1 STORY13-m1003 STORY13-m1003) :name STORY13-VERB1)
+           ((roleOther STORY13-m1000) :name STORY13-EXTRA0)
+           ((roleOther STORY13-m1002) :name STORY13-EXTRA1)
          )
        )
 

@@ -26,15 +26,22 @@
          ;; They decided to go look for them.
          ;; They took separate ways.
 
-         (t1 "An old couple lived with their daughter in a farm . ")
-         (t2 "The mother died of illness . ")
-         (t3 "The widower eventually married a widow that had a daughter of her own . ")
-         (t4 "The stepmother was always cruel to the poor girl . ")
-         (t5 "One night a group of pirates came to the farm . ")
-         (t6 "They spied the family through the windows . ")
-         (t7 "The next morning , the girl and her stepsister could n't find their parents . ")
-         (t8 "They decided to go look for them . ")
-         (t9 "They took separate ways . ")
+         (t1 "" (STORY5-m1000 "An old couple") " lived with " (STORY5-m1001 "their daughter") " in a farm . ")
+         (t2 "" (STORY5-m1002 "The mother") " died of illness . ")
+         (t3 "" (STORY5-m1004 "The widower") " eventually married a widow that had a daughter of her own . ")
+         (t4 "" (STORY5-m1004 "The stepmother") " was always cruel to the poor girl . ")
+         (t5 "One night a group of " (STORY5-m1005 "pirates") " came to the farm . ")
+         (t6 "" (STORY5-m1005 "They") " spied the family through the windows . ")
+         (t1001 (STORY5-EXTRA1  (STORY5-m1001 "their daughter") " is the " (Other "Other") ) ".")
+         (t1002 (STORY5-EXTRA2  (STORY5-m1004 "The stepmother") " is the " (Other "Other") ) ".")
+         (t1003 (STORY5-EXTRA3  (STORY5-m1005 "They") " is the " (Other "Other") ) ".")
+         (t7 "The next morning , " (STORY5-m1001 "the girl") " and " (STORY5-m1006 "her stepsister") " could n't find their parents . ")
+         (t8 "" (STORY5-m1007 "They") " decided to go look for them . ")
+         (t9 "" (STORY5-m1007 "They") " took separate ways . ")
+         (t1004 (STORY5-EXTRA4  (STORY5-m1001 "the girl") " is the " (Other "Other") ) ".")
+         (t1005 (STORY5-EXTRA5  (STORY5-m1004 "The stepmother") " is the " (Other "Other") ) ".")
+         (t1006 (STORY5-EXTRA6  (STORY5-m1005 "They") " is the " (Other "Other") ) ".")
+         (t1007 (STORY5-EXTRA7  (STORY5-m1006 "her stepsister") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -71,14 +78,34 @@
       
        (phase1
          (:entities
+           (STORY5-m1000 :type animate)
+           (STORY5-m1001 :type animate)
+           (STORY5-m1002 :type animate)
+           (STORY5-m1004 :type animate)
+           (STORY5-m1005 :type animate)
          )
          (:expressions
+           ((levin-36-2 STORY5-m1004 STORY5-m1004) :name STORY5-VERB1)
+           ((roleOther STORY5-m1001) :name STORY5-EXTRA0)
+           ((roleOther STORY5-m1004) :name STORY5-EXTRA1)
+           ((roleOther STORY5-m1005) :name STORY5-EXTRA2)
          )
        )
        (phase2
          (:entities
+           (STORY5-m1000 :type animate)
+           (STORY5-m1001 :type animate)
+           (STORY5-m1002 :type animate)
+           (STORY5-m1004 :type animate)
+           (STORY5-m1005 :type animate)
+           (STORY5-m1006 :type animate)
+           (STORY5-m1007 :type animate)
          )
          (:expressions
+           ((roleOther STORY5-m1001) :name STORY5-EXTRA3)
+           ((roleOther STORY5-m1004) :name STORY5-EXTRA4)
+           ((roleOther STORY5-m1005) :name STORY5-EXTRA5)
+           ((roleOther STORY5-m1006) :name STORY5-EXTRA6)
          )
        )
 

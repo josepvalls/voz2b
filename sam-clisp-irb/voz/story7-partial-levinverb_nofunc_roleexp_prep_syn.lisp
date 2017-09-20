@@ -22,10 +22,12 @@
          ;; The girl started playing and soon forgot what her mother had asked her.
 
          (t1 "Once upon a time , in a land , far , far away . ")
-         (t2 "There lived a girl with her baby brother and her mother . ")
-         (t3 "One day , the mother went to the market . ")
-         (t4 "The mother told the girl to watch her brother . ")
-         (t5 "The girl started playing and soon forgot what her mother had asked her . ")
+         (t2 "There lived " (STORY7-m1000 "a girl") " with " (STORY7-m1001 "her baby brother") " and her mother . ")
+         (t3 "One day , " (STORY7-m1002 "the mother") " went to the market . ")
+         (t4 "" (STORY7-m1002 "The mother") " told the " (STORY7-m1000 "girl") " to watch her brother . ")
+         (t5 "" (STORY7-m1000 "The girl") " started playing and soon forgot what " (STORY7-m1002 "her mother") " had asked her . ")
+         (t1001 (STORY7-EXTRA1  (STORY7-m1000 "The girl") " is the " (Other "Other") ) ".")
+         (t1002 (STORY7-EXTRA2  (STORY7-m1001 "her baby brother") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -62,8 +64,14 @@
       
        (phase1
          (:entities
+           (STORY7-m1000 :type animate)
+           (STORY7-m1001 :type animate)
+           (STORY7-m1002 :type animate)
          )
          (:expressions
+           ((levin-37-2 STORY7-m1002 STORY7-m1000) :name STORY7-VERB1)
+           ((roleOther STORY7-m1000) :name STORY7-EXTRA0)
+           ((roleOther STORY7-m1001) :name STORY7-EXTRA1)
          )
        )
 

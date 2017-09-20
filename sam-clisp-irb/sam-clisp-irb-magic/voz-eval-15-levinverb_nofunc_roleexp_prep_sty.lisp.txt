@@ -1,0 +1,74 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: 
+(6.0599995
+ ((STORY6-VERB7 STORY15-VERB2) (STORY6-M4183 STORY15-M6141)
+  (STORY6-M4174 STORY15-M6140) (STORY6-VERB13 STORY15-VERB3)
+  (STORY6-VERB18 STORY15-VERB4) (STORY6-VERB17 STORY15-VERB5)
+  (STORY6-VERB21 STORY15-VERB6) (STORY6-VERB14 STORY15-VERB7)
+  (STORY6-VERB23 STORY15-VERB1)))
+
+
+In a certain kingdom there was a king who had three daughters of surpassing beauty three daughters of surpassing beauty . 
+The king guarded them more carefully than his most precious treasure ; he built underground chambers and kept his his daughters there like birds in a cage , so that rough winds could not blow upon them nor the red sun scorch them with his rays . 
+One day the princesses read in a certain book that there was a marvelous bright world , and when the king came to visit them , they straightway began to implore him with tears in their eyes , saying : ' Sovereign, our father , let us out to see the bright world and walk in the green garden . ' 
+The king tried to dissuade them but to no avail . 
+They would not even listen to him ; the more he refused , the more urgently they besought him . 
+There was nothing to be done , so the king granted their insistent prayer . 
+And so the beautiful princesses went out to walk in the garden . 
+They beheld the red sun , the trees , and the flowers , and were overjoyed that they had the freedom of the bright world . 
+They ran about in the garden and enjoyed themselves - when a sudden whirlwind seized them and carried them off far and high , no one knew whither . 
+three daughters of surpassing beauty went to the lake , sat on the shore , and began to wind ropes of sand . 
+Suddenly a little devil jumped out of the water and asked : ' What are three daughters of surpassing beauty doing here , three daughters of surpassing beauty ? ' 
+' Ca n't you see ? 
+three daughters of surpassing beauty 'm winding ropes ; three daughters of surpassing beauty want to thrash the lake and torment you devils , because you live in our lake but do not pay any rent . ' 
+' Wait a while , three daughters of surpassing beauty , I 'll run and tell my my grandfather , ' said the little devil , and - flop ! - he jumped into the water . 
+Five minutes later he was out again and said : ' Grandfather said that if three daughters of surpassing beauty can run faster than I , we 'll pay the rent ; if not , he told me to drag three daughters of surpassing beauty down into the lake . ' 
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: 
+(5.103187
+ ((STORY13-VERB7 STORY15-VERB4) (STORY13-M6018 STORY15-M6140)
+  (STORY13-M6017 STORY15-M6141) (STORY13-EXTRA0 STORY15-EXTRA1)
+  (STORY13-VERB6 STORY15-VERB6) (STORY13-VERB5 STORY15-VERB5)
+  (STORY13-VERB4 STORY15-VERB7)))
+
+
+In a certain kingdom there was a king who had three daughters of surpassing beauty three daughters of surpassing beauty . 
+The king guarded them more carefully than his most precious treasure ; he built underground chambers and kept his his daughters there like birds in a cage , so that rough winds could not blow upon them nor the red sun scorch them with his rays . 
+One day the princesses read in a certain book that there was a marvelous bright world , and when the king came to visit them , they straightway began to implore him with tears in their eyes , saying : ' Sovereign, our father , let us out to see the bright world and walk in the green garden . ' 
+The king tried to dissuade them but to no avail . 
+They would not even listen to him ; the more he refused , the more urgently they besought him . 
+There was nothing to be done , so the king granted their insistent prayer . 
+And so the beautiful princesses went out to walk in the garden . 
+They beheld the red sun , the trees , and the flowers , and were overjoyed that they had the freedom of the bright world . 
+They ran about in the garden and enjoyed themselves - when a sudden whirlwind seized them and carried them off far and high , no one knew whither . 
+mapping: 
+(4.5298886
+ ((STORY1-VERB9 STORY15-VERB7) (STORY1-M1091 STORY15-M6141)
+  (STORY1-VERB7 STORY15-VERB4) (STORY1-M1084 STORY15-M6140)
+  (STORY1-VERB3 STORY15-VERB2) (STORY1-VERB4 STORY15-VERB1)))
+
+
+a king who had three daughters of surpassing beauty appeared near Kiev ; a king who had three daughters of surpassing beauty took heavy tribute from the people - a lovely maiden from every house, whom he then devoured . 
+Finally , it was the fate of three daughters of surpassing beauty to go to a king who had three daughters of surpassing beauty . 
+In a certain kingdom there was a king who had three daughters of surpassing beauty three daughters of surpassing beauty . 
+The king guarded them more carefully than his most precious treasure ; he built underground chambers and kept his his daughters there like birds in a cage , so that rough winds could not blow upon them nor the red sun scorch them with his rays . 
+One day the princesses read in a certain book that there was a marvelous bright world , and when the king came to visit them , they straightway began to implore him with tears in their eyes , saying : ' Sovereign, our father , let us out to see the bright world and walk in the green garden . ' 
+The king tried to dissuade them but to no avail . 
+They would not even listen to him ; the more he refused , the more urgently they besought him . 
+There was nothing to be done , so the king granted their insistent prayer . 
+And so the beautiful princesses went out to walk in the garden . 
+They beheld the red sun , the trees , and the flowers , and were overjoyed that they had the freedom of the bright world . 
+They ran about in the garden and enjoyed themselves - when a sudden whirlwind seized them and carried them off far and high , no one knew whither . 

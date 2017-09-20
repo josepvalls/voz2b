@@ -21,10 +21,12 @@
          ;; The daughter parted with a maidservant.
          ;; The maidservant stole the merchant's daughter clothes and left her to be eaten by the wolves.
 
-         (t1 "Once there lived a rich merchant with a beautiful daughter . ")
-         (t2 "The merchant sent her daughter to marry the kingdom 's prince . ")
-         (t3 "The daughter parted with a maidservant . ")
-         (t4 "The maidservant stole the merchant 's daughter clothes and left her to be eaten by the wolves . ")
+         (t1 "Once there lived " (STORY9-m1000 "a rich merchant") " with a beautiful daughter . ")
+         (t2 "The merchant sent her " (STORY9-m1001 "daughter") " to marry the kingdom 's prince . ")
+         (t3 "" (STORY9-m1001 "The daughter") " parted with " (STORY9-m1003 "a maidservant") " . ")
+         (t1001 (STORY9-EXTRA1  (STORY9-m1003 "a maidservant") " is the " (Other "Other") ) ".")
+         (t4 "" (STORY9-VERB1 "" (STORY9-m1003 "The maidservant") " stole " (STORY9-m1001 "the merchant's daughter clothes") " " ) "and left " (STORY9-m1001 "her") " to be eaten by the wolves . ")
+         (t1002 (STORY9-EXTRA2  (STORY9-m1003 "The maidservant") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -61,14 +63,23 @@
       
        (phase1
          (:entities
+           (STORY9-m1000 :type animate)
+           (STORY9-m1001 :type animate)
+           (STORY9-m1003 :type animate)
          )
          (:expressions
+           ((roleOther STORY9-m1003) :name STORY9-EXTRA0)
          )
        )
        (phase2
          (:entities
+           (STORY9-m1000 :type animate)
+           (STORY9-m1001 :type animate)
+           (STORY9-m1003 :type animate)
          )
          (:expressions
+           ((levin-13-5-1 STORY9-m1003 STORY9-m1001) :name STORY9-VERB1)
+           ((roleOther STORY9-m1003) :name STORY9-EXTRA1)
          )
        )
 

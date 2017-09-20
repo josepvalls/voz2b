@@ -1,0 +1,86 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: 
+(8.818184
+ ((STORY6-VERB13 STORY14-VERB1) (STORY6-M4183 STORY14-M5855)
+  (STORY6-M4174 STORY14-M5848) (STORY6-VERB8 STORY14-VERB6)
+  (STORY6-M4181 STORY14-M5862) (STORY6-M4175 STORY14-M5849)
+  (STORY6-VERB4 STORY14-VERB4) (STORY6-M4186 STORY14-M5859)
+  (STORY6-VERB14 STORY14-VERB3) (STORY6-VERB18 STORY14-VERB2)
+  (STORY6-EXTRA0 STORY14-EXTRA0) (STORY6-M4195 STORY14-M5856)))
+
+
+There was once a very wealthy merchant who had a marvelously beautiful daughter a marvelously beautiful daughter . 
+This merchant carried goods to various provinces , and one day he came to a certain kingdom and brought precious cloths to the king as a gift . 
+The king said to him : ' Why can I not find a bride for myself ? ' 
+The merchant answered : ' I have a beautiful daughter , and she is so clever that no matter what a man is thinking , she can guess it . ' 
+The king immediately wrote a letter and called his his guards . 
+' Go to that merchant 's house , ' he told them , ' and deliver this letter to the merchant's daughter . ' 
+The letter said : ' Make ready to get married . ' 
+The merchant's daughter took the letter , burst into tears , and prepared to go , taking also her her maidservant ; and no one could distinguish this maid from the merchant's daughter , they were so like each other . 
+They dressed in dresses that were alike and went to the king for the marriage . 
+The maid was full of spite , and said : ' Let us take a walk on the island . ' 
+They went to the island ; there the maidservant gave the merchant's daughter sleeping potions , cut out her eyes , and put them in her pocket . 
+the king went to the lake , sat on the shore , and began to wind ropes of sand . 
+Suddenly a little devil jumped out of the water and asked : ' What are the king doing here , the king ? ' 
+' Ca n't you see ? 
+the king 'm winding ropes ; the king want to thrash the lake and torment you devils , because you live in our lake but do not pay any rent . ' 
+' Wait a while , the king , I 'll run and tell my my grandfather , ' said the little devil , and - flop ! - he jumped into the water . 
+Five minutes later he was out again and said : ' Grandfather said that if the king can run faster than I , we 'll pay the rent ; if not , he told me to drag the king down into the lake . ' 
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: 
+(7.1550264
+ ((STORY13-VERB2 STORY14-VERB4) (STORY13-M6026 STORY14-M5859)
+  (STORY13-M6017 STORY14-M5855) (STORY13-VERB6 STORY14-VERB5)
+  (STORY13-M6018 STORY14-M5849) (STORY13-VERB1 STORY14-VERB7)
+  (STORY13-M6014 STORY14-M5848) (STORY13-M6019 STORY14-M5862)
+  (STORY13-EXTRA0 STORY14-EXTRA5) (STORY13-VERB3 STORY14-VERB3)))
+
+
+There was once a very wealthy merchant who had a marvelously beautiful daughter a marvelously beautiful daughter . 
+This merchant carried goods to various provinces , and one day he came to a certain kingdom and brought precious cloths to the king as a gift . 
+The king said to him : ' Why can I not find a bride for myself ? ' 
+The merchant answered : ' I have a beautiful daughter , and she is so clever that no matter what a man is thinking , she can guess it . ' 
+The king immediately wrote a letter and called his his guards . 
+' Go to that merchant 's house , ' he told them , ' and deliver this letter to the merchant's daughter . ' 
+The letter said : ' Make ready to get married . ' 
+The merchant's daughter took the letter , burst into tears , and prepared to go , taking also her her maidservant ; and no one could distinguish this maid from the merchant's daughter , they were so like each other . 
+They dressed in dresses that were alike and went to the king for the marriage . 
+The maid was full of spite , and said : ' Let us take a walk on the island . ' 
+They went to the island ; there the maidservant gave the merchant's daughter sleeping potions , cut out her eyes , and put them in her pocket . 
+mapping: 
+(5.6377373
+ ((STORY2-VERB2 STORY14-VERB6) (STORY2-M2460 STORY14-M5862)
+  (STORY2-M2457 STORY14-M5849) (STORY2-VERB3 STORY14-VERB7)
+  (STORY2-M2461 STORY14-M5848) (STORY2-EXTRA0 STORY14-EXTRA5)
+  (STORY2-M2456 STORY14-M5855) (STORY2-VERB1 STORY14-VERB5)))
+
+
+There was once a very wealthy merchant who had a marvelously beautiful daughter a marvelously beautiful daughter . 
+This merchant carried goods to various provinces , and one day he came to a certain kingdom and brought precious cloths to the king as a gift . 
+The king said to him : ' Why can I not find a bride for myself ? ' 
+The merchant answered : ' I have a beautiful daughter , and she is so clever that no matter what a man is thinking , she can guess it . ' 
+The king immediately wrote a letter and called his his guards . 
+' Go to that merchant 's house , ' he told them , ' and deliver this letter to the merchant's daughter . ' 
+The letter said : ' Make ready to get married . ' 
+The merchant's daughter took the letter , burst into tears , and prepared to go , taking also her her maidservant ; and no one could distinguish this maid from the merchant's daughter , they were so like each other . 
+They dressed in dresses that were alike and went to the king for the marriage . 
+The maid was full of spite , and said : ' Let us take a walk on the island . ' 
+They went to the island ; there the maidservant gave the merchant's daughter sleeping potions , cut out her eyes , and put them in her pocket . 
+her maidservant came back and found her a very wealthy merchant who had a marvelously beautiful daughter gone . 
+her maidservant gasped , and rushed to look in every corner , but could not find a very wealthy merchant who had a marvelously beautiful daughter . 
+her maidservant called a very wealthy merchant who had a marvelously beautiful daughter , wept , and lamented that her the king and a marvelously beautiful daughter would scold her maidservant severely ; still her a very wealthy merchant who had a marvelously beautiful daughter did not answer . 
+her maidservant ran into the open field ; the swan geese flashed in the distance and vanished behind a dark forest . 
+The swan geese had long had a bad reputation ; they had done a great deal of damage and stolen many little children . 

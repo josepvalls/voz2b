@@ -1,0 +1,51 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: (1.654576 ((STORY3-EXTRA0 STORY2-EXTRA1) (STORY3-M3148 STORY2-M2457)))
+
+
+An old man lived with his his old wife ; they had a daughter and a little son . 
+' Daughter , daughter , ' said the mother , ' we are going to work ; we shall bring you back a bun , sew you a dress , and buy you a kerchief . 
+Be careful , watch over your your little brother , do not leave the house . ' 
+The parents went away and the daughter forgot what they had told her ; she put her her brother on the grass beneath the window , ran out into the street , and became absorbed in games . 
+' Do his old wife have any money ? ' 
+mapping: 
+(2.224752
+ ((STORY11-VERB3 STORY2-VERB2) (STORY11-M4108 STORY2-M2460)
+  (STORY11-M4097 STORY2-M2457)))
+
+
+Once upon a time there was an old couple , and they had three Sons . 
+Two of these had their wits about them , but his old wife was his old wife . 
+For twelve whole years his old wife lay among the ashes from the stove ; but then his old wife arose , and shook his old wife , so that six poods of ashes fell off from his old wife . 
+Now in the land in which his old wife lived there was never any day , but always night . 
+An old man lived with his his old wife ; they had a daughter and a little son . 
+' Daughter , daughter , ' said the mother , ' we are going to work ; we shall bring you back a bun , sew you a dress , and buy you a kerchief . 
+Be careful , watch over your your little brother , do not leave the house . ' 
+The parents went away and the daughter forgot what they had told her ; she put her her brother on the grass beneath the window , ran out into the street , and became absorbed in games . 
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: 
+(4.7152824
+ ((STORY13-VERB1 STORY2-VERB3) (STORY13-M6014 STORY2-M2461)
+  (STORY13-M6019 STORY2-M2460) (STORY13-EXTRA0 STORY2-EXTRA0)
+  (STORY13-M6017 STORY2-M2456) (STORY13-VERB6 STORY2-VERB1)
+  (STORY13-M6018 STORY2-M2457)))
+
+
+An old man lived with his his old wife ; they had a daughter and a little son . 
+' Daughter , daughter , ' said the mother , ' we are going to work ; we shall bring you back a bun , sew you a dress , and buy you a kerchief . 
+Be careful , watch over your your little brother , do not leave the house . ' 
+The parents went away and the daughter forgot what they had told her ; she put her her brother on the grass beneath the window , ran out into the street , and became absorbed in games . 

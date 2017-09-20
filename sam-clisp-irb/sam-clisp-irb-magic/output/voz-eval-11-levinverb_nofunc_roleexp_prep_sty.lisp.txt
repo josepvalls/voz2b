@@ -1,0 +1,45 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: (2.848009 ((E1 E1) (M1084 M4097) (EXTRA0 EXTRA2) (M1088 M4108)))
+
+
+Once upon a time there was an old couple , and they had three Sons . 
+Two of these had their wits about them , but the third was a simpleton , Ivan by name , surnamed Popyalof . 
+For twelve whole years Ivan lay among the ashes from the stove ; but then hearose , and shook himself, so that six poods of ashes fell off from him . 
+Now in the land in which Ivan lived there was never any day , but always night . 
+That was a Snake 's doing . 
+Well , Ivanundertook to kill that Snake, so hesaid to his father , ' Fathermake mea mace five poods in weight . ' 
+
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: (3.608979 ((EXTRA0 EXTRA1) (M3344 M4107) (E3 E3) (M3349 M4108) (M3357 M4097)))
+
+
+Once upon a time there was an old couple , and they had three Sons . 
+Two of these had their wits about them , but the third was a simpleton , Ivan by name , surnamed Popyalof . 
+For twelve whole years Ivan lay among the ashes from the stove ; but then hearose , and shook himself, so that six poods of ashes fell off from him . 
+Now in the land in which Ivan lived there was never any day , but always night . 
+That was a Snake 's doing . 
+Well , Ivanundertook to kill that Snake, so hesaid to his father , ' Fathermake mea mace five poods in weight . ' 
+
+mapping: (3.360275 ((EXTRA0 EXTRA2) (M2456 M4108) (E2 E2) (M2460 M4107) (M2457 M4097)))
+
+
+Once upon a time there was an old couple , and they had three Sons . 
+Two of these had their wits about them , but the third was a simpleton , Ivan by name , surnamed Popyalof . 
+For twelve whole years Ivan lay among the ashes from the stove ; but then hearose , and shook himself, so that six poods of ashes fell off from him . 
+Now in the land in which Ivan lived there was never any day , but always night . 
+That was a Snake 's doing . 
+Well , Ivanundertook to kill that Snake, so hesaid to his father , ' Fathermake mea mace five poods in weight . ' 
+

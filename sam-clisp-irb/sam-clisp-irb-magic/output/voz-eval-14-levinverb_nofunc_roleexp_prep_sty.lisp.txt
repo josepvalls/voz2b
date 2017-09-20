@@ -1,0 +1,53 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: 
+(8.589255
+ ((E2 E7) (M4175 M5849) (M4181 M5862) (E10 E2) (M4195 M5848) (M4183 M5855)
+  (E14 E3) (E18 E5) (M4174 M5859) (EXTRA0 EXTRA0) (E11 E1) (E20 E4)))
+
+
+There was once a very wealthy merchant who had a marvelously beautiful daughtera marvelously beautiful daughter. 
+This merchant carried goods to various provinces , and one day hecame to a certain kingdom and brought precious cloths to the kingas a gift . 
+The kingsaid to him: ' Why can Inot find a bride for myself? ' 
+The merchantanswered : ' Ihave a beautiful daughter, and she is so clever that no matter what a man is thinking , she can guess it . ' 
+The kingimmediately wrote a letter and called his his guards. 
+' Go to that merchant 's house , ' hetold them, ' and deliver this letter to the merchant 's daughter . ' 
+The letter said : ' Make ready to get married . ' 
+The merchant's daughter took the letter , burst into tears , and prepared to go , taking also her her maidservant; and no one could distinguish this maid from the merchant 's daughter , they were so like each other . 
+They dressed in dresses that were alike and went to the king for the marriage . 
+The maid was full of spite , and said : ' Let us take a walk on the island . ' 
+They went to the island ; there the maidservantgave the merchant's daughterthe merchant's daughter, cut out her eyes , and put them in her pocket . 
+
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: 
+(6.0402126
+ ((E4 E3) (M6017 M5855) (E2 E4) (M6026 M5859) (E3 E5) (EXTRA0 EXTRA4) (E6 E2)
+  (M6018 M5848)))
+
+
+There was once a very wealthy merchant who had a marvelously beautiful daughtera marvelously beautiful daughter. 
+This merchant carried goods to various provinces , and one day hecame to a certain kingdom and brought precious cloths to the kingas a gift . 
+The kingsaid to him: ' Why can Inot find a bride for myself? ' 
+The merchantanswered : ' Ihave a beautiful daughter, and she is so clever that no matter what a man is thinking , she can guess it . ' 
+The kingimmediately wrote a letter and called his his guards. 
+' Go to that merchant 's house , ' hetold them, ' and deliver this letter to the merchant 's daughter . ' 
+The letter said : ' Make ready to get married . ' 
+The merchant's daughter took the letter , burst into tears , and prepared to go , taking also her her maidservant; and no one could distinguish this maid from the merchant 's daughter , they were so like each other . 
+They dressed in dresses that were alike and went to the king for the marriage . 
+The maid was full of spite , and said : ' Let us take a walk on the island . ' 
+They went to the island ; there the maidservantgave the merchant's daughterthe merchant's daughter, cut out her eyes , and put them in her pocket . 
+

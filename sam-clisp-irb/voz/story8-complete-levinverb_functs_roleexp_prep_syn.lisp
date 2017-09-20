@@ -26,15 +26,21 @@
          ;; He immediately asked her to marry him.
          ;; The girl panicked and escaped the palace.
 
-         (t1 "Once upon a time there was a happy queen with a son and a daughter . ")
-         (t2 "In the kingdom lived a witch that was jealous of their happiness . ")
-         (t3 "The witch devised a plan to ruin their family . ")
-         (t4 "The witch visited them . ")
-         (t5 "She gave the prince a ring and told him that he would be happy as long as he married a girl who the ring would fit . ")
-         (t6 "One day , his sister saw the ring and tried it on . ")
-         (t7 "The ring fit perfectly and she could n't take it off . ")
-         (t8 "He immediately asked her to marry him . ")
-         (t9 "The girl panicked and escaped the palace . ")
+         (t1 "Once upon a time there was " (STORY8-m1000 "a happy queen") " with " (STORY8-m1001 "a son") " and " (STORY8-m1002 "a daughter") " . ")
+         (t2 "In the kingdom lived a " (STORY8-m1003 "witch") " that was jealous of their happiness . ")
+         (t3 "" (STORY8-m1003 "The witch") " devised a plan to ruin their family . ")
+         (t4 "" (STORY8-m1003 "The witch") " visited them . ")
+         (t5 "" (STORY8-m1003 "She") " gave " (STORY8-m1004 "the prince") " a ring and told him that he would be happy as long as he married a girl who the ring would fit . ")
+         (t1001 (STORY8-EXTRA1  (STORY8-m1001 "a son") " is the " (Other "Other") ) ".")
+         (t1002 (STORY8-EXTRA2  (STORY8-m1002 "a daughter") " is the " (Other "Other") ) ".")
+         (t1003 (STORY8-EXTRA3  (STORY8-m1003 "She") " is the " (Other "Other") ) ".")
+         (t6 "One day , " (STORY8-m1002 "his sister") " saw the ring and tried it on . ")
+         (t7 "The ring fit perfectly and " (STORY8-m1002 "she") " could n't take it off . ")
+         (t8 "" (STORY8-m1001 "He") " immediately asked " (STORY8-m1002 "her") " to marry him . ")
+         (t9 "" (STORY8-m1002 "The girl") " panicked and escaped the palace . ")
+         (t1004 (STORY8-EXTRA4  (STORY8-m1001 "He") " is the " (Other "Other") ) ".")
+         (t1005 (STORY8-EXTRA5  (STORY8-m1002 "The girl") " is the " (Other "Other") ) ".")
+         (t1006 (STORY8-EXTRA6  (STORY8-m1003 "She") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -71,14 +77,32 @@
       
        (phase1
          (:entities
+           (STORY8-m1000 :type animate)
+           (STORY8-m1001 :type animate)
+           (STORY8-m1002 :type animate)
+           (STORY8-m1003 :type animate)
+           (STORY8-m1004 :type animate)
          )
          (:expressions
+           ((levin-13-1 STORY8-m1003 STORY8-m1004) :name STORY8-VERB1)
+           ((roleOther STORY8-m1001) :name STORY8-EXTRA0)
+           ((roleOther STORY8-m1002) :name STORY8-EXTRA1)
+           ((roleOther STORY8-m1003) :name STORY8-EXTRA2)
          )
        )
        (phase2
          (:entities
+           (STORY8-m1000 :type animate)
+           (STORY8-m1001 :type animate)
+           (STORY8-m1002 :type animate)
+           (STORY8-m1003 :type animate)
+           (STORY8-m1004 :type animate)
          )
          (:expressions
+           ((levin-37-1 STORY8-m1001 STORY8-m1001) :name STORY8-VERB2)
+           ((roleOther STORY8-m1001) :name STORY8-EXTRA3)
+           ((roleOther STORY8-m1002) :name STORY8-EXTRA4)
+           ((roleOther STORY8-m1003) :name STORY8-EXTRA5)
          )
        )
 

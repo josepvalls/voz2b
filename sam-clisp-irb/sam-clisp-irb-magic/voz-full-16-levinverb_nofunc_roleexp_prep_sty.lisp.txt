@@ -1,0 +1,254 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: 
+(7.753542
+ ((STORY9-VERB28 STORY16-VERB2) (STORY9-M5098 STORY16-M1174)
+  (STORY9-M5119 STORY16-M1621) (STORY9-VERB46 STORY16-VERB4)
+  (STORY9-M5080 STORY16-M1201) (STORY9-M5081 STORY16-M1592)
+  (STORY9-VERB40 STORY16-VERB3) (STORY9-M5105 STORY16-M1242)
+  (STORY9-VERB35 STORY16-VERB5) (STORY9-M5108 STORY16-M1501)
+  (STORY9-M5078 STORY16-M1617)))
+
+
+There once lived an old couple who had whoever can bring me an apple ; one can tell how fond they were of whoever can bring me an apple ! 
+Well , one day , whoever can bring me an apple said to his oldest and Her step-mother : ' whoever can bring me an apple 'll go out fishing if you 'll let whoever can bring me an apple . ' 
+' What are whoever can bring me an apple thinking about ! 
+whoever can bring me an apple 're still very small ; suppose whoever can bring me an apple get drowned , what good will there be in that ? ' 
+' No , no , whoever can bring me an apple sha n't get drowned . 
+whoever can bring me an apple 'll catch you some fish ; do let whoever can bring me an apple go ! ' 
+So his Her step-mother put a white shirt on whoever can bring me an apple , tied a red girdle round whoever can bring me an apple , and let whoever can bring me an apple go . 
+Out in a boat whoever can bring me an apple sat and said : Canoe , canoe , float a little farther , Canoe , canoe , float a little farther ! 
+Then the canoe floated on farther and farther , and whoever can bring me an apple began to fish . 
+When some little time had passed by , Her step-mother hobbled down to the river side and called to her whoever can bring me an apple : whoever can bring me an apple , whoever can bring me an apple , Float up , float up unto the waterside ; Her step-mother bring whoever can bring me an apple food and drink . 
+And whoever can bring me an apple said : Canoe , canoe , float to the waterside ; That is my Her step-mother calling whoever can bring me an apple . 
+The boat floated to the shore : Her step-mother took the fish , gave her whoever can bring me an apple food and drink , changed his shirt for whoever can bring me an apple and his girdle , and sent whoever can bring me an apple back to his fishing . 
+Again whoever can bring me an apple sat in his his boat and said : Canoe , canoe , float a little farther , Canoe , canoe , float a little farther . 
+Then the canoe floated on farther and farther , and whoever can bring me an apple began to fish . 
+After a little time had passed by , oldest also hobbled down to the bank and called to his whoever can bring me an apple : whoever can bring me an apple , whoever can bring me an apple , Float up , float up , onto the waterside ; oldest bring whoever can bring me an apple food and drink . 
+And whoever can bring me an apple replied : Canoe , canoe , float to the waterside ; That is my oldest calling whoever can bring me an apple . 
+The canoe floated to the shore . 
+oldest took the fish , gave his whoever can bring me an apple food and drink , changed his shirt for whoever can bring me an apple and his girdle , and sent whoever can bring me an apple back to his fishing . 
+Now Wee little Havroshechka had heard what whoever can bring me an apple 's parents had cried aloud to whoever can bring me an apple , and Wee little Havroshechka longed to get hold of whoever can bring me an apple . 
+So Wee little Havroshechka went down to the bank and cried with a hoarse voice : whoever can bring me an apple , whoever can bring me an apple , Float up , float up , onto the waterside Wee little Havroshechka bring whoever can bring me an apple food and drink . 
+whoever can bring me an apple perceived that the voice was not his Her step-mother 's , but was that of Wee little Havroshechka , and whoever can bring me an apple sang : Canoe , canoe , float a little farther , Canoe , canoe , float a little farther ; That is not my Her step-mother , but Wee little Havroshechka whoever can bring me an apple . 
+Wee little Havroshechka saw that Wee little Havroshechka must call whoever can bring me an apple with just such a voice as his Her step-mother had . 
+So Wee little Havroshechka hastened to her spotted cow and said to her spotted cow : ' her spotted cow , her spotted cow make Wee little Havroshechka just such a thin little voice as whoever can bring me an apple Her step-mother has : if her spotted cow do n't , Wee little Havroshechka 'll eat her spotted cow . ' 
+So her spotted cow forged her a little voice just like whoever can bring me an apple Her step-mother 's . 
+Then Wee little Havroshechka went down by night to the shore and sang : whoever can bring me an apple , whoever can bring me an apple , Float up , float up , unto the waterside ; Wee little Havroshechka bring whoever can bring me an apple food and drink . 
+whoever can bring me an apple came , and Wee little Havroshechka took the fish , and seized whoever can bring me an apple and carried whoever can bring me an apple home with Wee little Havroshechka . 
+So a nobleman heated the stove hot , ever so hot , and said to whoever can bring me an apple , ' Come here and sit on this shovel ! ' 
+Please teach whoever can bring me an apple how one ought to sit on a shovel . ' 
+' Very good , ' said a nobleman ; ' it wo n't take long to teach whoever can bring me an apple . ' 
+But the moment a nobleman sat down on the shovel , whoever can bring me an apple instantly pitched her into the oven , slammed to the iron plate in front of it , ran out of the hut , shut the door , and hurriedly climbed up ever so high an oak-tree ( which stood close by ) . 
+You know , on the earth , there are good people good people and those who are a little worse those who are a little worse . 
+Then there are those who don't fear God and don't even feel shame shame . 
+Wee little Havroshechka was left motherless as a small child with the latter type . 
+These people took her in and fed her but did n't allow her out into God 's world . 
+Rather , they put her to work every day . 
+She served , cleaned and answered for all and everything . 
+Her Her step-mother had three grown daughters . 
+The oldest 's name was One-Eye , the middle daughter 's name was Two-Eye , and the youngest 's name was Three-Eye . 
+The only thing they did was sit in the entry way and gaze outside . 
+Meanwhile Wee little Havroshechka did their work . 
+She sewed their clothes and spun and wove for them , but never heard one word of kindness . 
+She was only noticed when they wanted someone to abuse ! 
+Once , Wee little Havroshechka went into the field . 
+Embracing her her spotted cow , she lay against her neck and related how difficult her life was . 
+' Little mother-cow , they beat me and scold me . 
+They do n't feed me . 
+And then they order me not to cry . 
+They gave me 200 pounds of linen to spin , weave , bleach in the sun , and roll . 
+It all must be done by tomorrow . ' 
+The cow replied , ' Beautiful maiden , climb in one of my ears and climb out the other , and all of your work will be done . ' 
+And so it was . 
+As soon as the beautiful maiden climbed out of the cow 's ear everything was ready - woven , washed and rolled . 
+She carried it to her her step-mother who shut it away in a trunk with a grunt . 
+She then gave her even more work to do . 
+Havroshechka came again to the cow . 
+She climbed in one ear and out the other , carrying the completed things back . 
+The old woman was amazed . 
+She called One-Eye , ' My My wonderful daughter, my lovely daughter ! 
+Find out who helps the orphan the orphan . 
+Who weaves, spins and rolls the linen weaves , spins and rolls the linen ? ' 
+One-Eye went with the orphan through the forest and into the field . 
+She forgot her her mother 's instructions , became fatigued in the sun , and sprawled out in the grass . 
+Havroshechka coaxed , ' Sleep , little eye . 
+Sleep , little eye ! ' 
+One-Eye 's one little eye fell asleep . 
+While One-Eye slept , the little cow did the weaving and washing . 
+As the step-mother did n't learn anything from One- Eye , she sent Two-Eye . 
+Two-Eye also became fatigued in the sun , sprawled out in the grass , forgot her her mother 's instructions , and closed her eyes . 
+Havroshechka sang , ' Sleep , little eye . 
+Sleep , other little eye ! ' 
+The cow did the weaving , washing , and rolling all while Two-Eye 's two eyes slept . 
+The old woman was angry . 
+On the third day she sent Three-Eye and gave the orphan even more work to do . 
+And just like her older sisters , she bounded along and eventually fell into the grass . 
+Havroshechka sang , ' Sleep , little eye . 
+Sleep , other little eye ! ' 
+But she forgot about Three-Eye 's third little eye . 
+Two eyes fell asleep , while the third watched and saw everything : from the beautiful maiden climbing in one ear and out the other and then gathering up all the prepared linens . 
+Three-Eye told her her mother everything she saw . 
+The old woman rejoiced . 
+On the very next day she came to her her husband , ' Slaughter that spotted cow ! ' 
+The old man was reluctant . 
+' What are you saying , woman ? 
+Are you out of your mind ? 
+That cow is young and healthy ! ' 
+But she was absolutely determined . 
+So , he sharpened the knife . 
+Havroshechka ran to the cow . 
+' Little cow-mother ! 
+They want to slaughter you . ' 
+' Do n't eat my meat , beautiful maiden . 
+Gather my bones , tie them in a handkerchief , then plant them in the garden , and never forget me . 
+Water my bones every morning . ' 
+Havroshechka did everything as the cow instructed . 
+She endured great hunger , but still did n't eat any meat . 
+She watered the bones in the garden every day , from which an apple tree grew . 
+Goodness , what a tree it was ! 
+The apples were plump . 
+The rustling leaves were golden . 
+The bowing branches were silver . 
+Whoever rode by stopped to look at the tree . 
+Whoever walked by would stare in wonder . 
+One day the girls were strolling in the garden when a nobleman rode through the field . 
+He was wealthy , handsome , and young . 
+Seeing the apples , he got the girls ' attention . 
+' Maiden-beauties ! ' 
+he said , ' whoever can bring me an apple me an apple will be my my wife . ' 
+And so the three sisters pushed themselves in front of each other to get to the apple tree . 
+While before the apples hung lower than arm 's height , suddenly they were oh so high , to the point that they were far above their heads . 
+The sisters wanted to knock them off the tree , but the leaves blinded them . 
+They wanted to pick the apples , but the branches unpicked their braids . 
+No matter how they struggled and thrashed about , tearing their hands , they still could n't pick any apples . 
+Havroshechka came to the tree . 
+The branches bowed down and apples drooped into her reach . 
+The nobleman married her . 
+They lived in happiness , without any sorrow . 
+mapping: 
+(5.516985
+ ((STORY1-VERB2 STORY16-VERB1) (STORY1-M1091 STORY16-M1170)
+  (STORY1-M1084 STORY16-M1621) (STORY1-VERB7 STORY16-VERB2)
+  (STORY1-M1106 STORY16-M1174) (STORY1-VERB9 STORY16-VERB3)
+  (STORY1-M1092 STORY16-M1242)))
+
+
+These people appeared near Kiev ; These people took heavy tribute from the people - a lovely maiden from every house, whom he then devoured . 
+Finally , it was the fate of God to go to These people . 
+You know , on the earth , there are good people good people and those who are a little worse those who are a little worse . 
+Then there are those who don't fear God and don't even feel shame shame . 
+Wee little Havroshechka was left motherless as a small child with the latter type . 
+These people took her in and fed her but did n't allow her out into God 's world . 
+Rather , they put her to work every day . 
+She served , cleaned and answered for all and everything . 
+Her Her step-mother had three grown daughters . 
+The oldest 's name was One-Eye , the middle daughter 's name was Two-Eye , and the youngest 's name was Three-Eye . 
+The only thing they did was sit in the entry way and gaze outside . 
+Meanwhile Wee little Havroshechka did their work . 
+She sewed their clothes and spun and wove for them , but never heard one word of kindness . 
+She was only noticed when they wanted someone to abuse ! 
+Once , Wee little Havroshechka went into the field . 
+Embracing her her spotted cow , she lay against her neck and related how difficult her life was . 
+' Little mother-cow , they beat me and scold me . 
+They do n't feed me . 
+And then they order me not to cry . 
+They gave me 200 pounds of linen to spin , weave , bleach in the sun , and roll . 
+It all must be done by tomorrow . ' 
+The cow replied , ' Beautiful maiden , climb in one of my ears and climb out the other , and all of your work will be done . ' 
+And so it was . 
+As soon as the beautiful maiden climbed out of the cow 's ear everything was ready - woven , washed and rolled . 
+She carried it to her her step-mother who shut it away in a trunk with a grunt . 
+She then gave her even more work to do . 
+Havroshechka came again to the cow . 
+She climbed in one ear and out the other , carrying the completed things back . 
+The old woman was amazed . 
+She called One-Eye , ' My My wonderful daughter, my lovely daughter ! 
+Find out who helps the orphan the orphan . 
+Who weaves, spins and rolls the linen weaves , spins and rolls the linen ? ' 
+One-Eye went with the orphan through the forest and into the field . 
+She forgot her her mother 's instructions , became fatigued in the sun , and sprawled out in the grass . 
+Havroshechka coaxed , ' Sleep , little eye . 
+Sleep , little eye ! ' 
+One-Eye 's one little eye fell asleep . 
+While One-Eye slept , the little cow did the weaving and washing . 
+As the step-mother did n't learn anything from One- Eye , she sent Two-Eye . 
+Two-Eye also became fatigued in the sun , sprawled out in the grass , forgot her her mother 's instructions , and closed her eyes . 
+Havroshechka sang , ' Sleep , little eye . 
+Sleep , other little eye ! ' 
+The cow did the weaving , washing , and rolling all while Two-Eye 's two eyes slept . 
+The old woman was angry . 
+On the third day she sent Three-Eye and gave the orphan even more work to do . 
+And just like her older sisters , she bounded along and eventually fell into the grass . 
+Havroshechka sang , ' Sleep , little eye . 
+Sleep , other little eye ! ' 
+But she forgot about Three-Eye 's third little eye . 
+Two eyes fell asleep , while the third watched and saw everything : from the beautiful maiden climbing in one ear and out the other and then gathering up all the prepared linens . 
+Three-Eye told her her mother everything she saw . 
+The old woman rejoiced . 
+On the very next day she came to her her husband , ' Slaughter that spotted cow ! ' 
+The old man was reluctant . 
+' What are you saying , woman ? 
+Are you out of your mind ? 
+That cow is young and healthy ! ' 
+But she was absolutely determined . 
+So , he sharpened the knife . 
+Havroshechka ran to the cow . 
+' Little cow-mother ! 
+They want to slaughter you . ' 
+' Do n't eat my meat , beautiful maiden . 
+Gather my bones , tie them in a handkerchief , then plant them in the garden , and never forget me . 
+Water my bones every morning . ' 
+Havroshechka did everything as the cow instructed . 
+She endured great hunger , but still did n't eat any meat . 
+She watered the bones in the garden every day , from which an apple tree grew . 
+Goodness , what a tree it was ! 
+The apples were plump . 
+The rustling leaves were golden . 
+The bowing branches were silver . 
+Whoever rode by stopped to look at the tree . 
+Whoever walked by would stare in wonder . 
+One day the girls were strolling in the garden when a nobleman rode through the field . 
+He was wealthy , handsome , and young . 
+Seeing the apples , he got the girls ' attention . 
+' Maiden-beauties ! ' 
+he said , ' whoever can bring me an apple me an apple will be my my wife . ' 
+And so the three sisters pushed themselves in front of each other to get to the apple tree . 
+While before the apples hung lower than arm 's height , suddenly they were oh so high , to the point that they were far above their heads . 
+The sisters wanted to knock them off the tree , but the leaves blinded them . 
+They wanted to pick the apples , but the branches unpicked their braids . 
+No matter how they struggled and thrashed about , tearing their hands , they still could n't pick any apples . 
+Havroshechka came to the tree . 
+The branches bowed down and apples drooped into her reach . 
+The nobleman married her . 
+They lived in happiness , without any sorrow . 
+But no matter how much the her spotted cow and tsarina entreated Wee little Havroshechka , Wee little Havroshechka refused to go forth against These people . 
+So they gathered together five thousand little children and sent them to implore Wee little Havroshechka , hoping that their tears would move Wee little Havroshechka to pity . 
+The little children came to Wee little Havroshechka and begged Wee little Havroshechka with tears to go fight These people . 
+Wee little Havroshechka began to shed tears when Wee little Havroshechka saw theirs . 
+Wee little Havroshechka took twelve thousand pounds of hemp , tarred it with pitch , and wound it around Wee little Havroshechka so that These people could not devour Wee little Havroshechka , then went forth to give These people battle . 
+' Better come out into the open field , ' said Wee little Havroshechka , ' or Wee little Havroshechka will destroy your lair together with These people ! ' 
+And Wee little Havroshechka began to break down the door . 
+These people , seeing that These people could not avoid trouble , went out to fight in the open field . 
+Wee little Havroshechka fought These people for a long time or a short time ; in any event , Wee little Havroshechka defeated These people . 
+Then These people began to implore Wee little Havroshechka : ' Do not put These people to death , Wee little Havroshechka ; no one in the world the world is stronger than Wee little Havroshechka and These people . 
+Let us divide all the earth , all the world , into equal parts ; Wee little Havroshechka shall live in one half , These people in the other . ' 
+' Very well , ' said Wee little Havroshechka , ' let us draw a boundary line . ' 
+Wee little Havroshechka made a plow that weighed twelve thousand pounds , harnessed These people to it , and These people began to plow a boundary from Kiev ; These people plowed a furrow from Kiev to the Caspian Sea . 
+' Now , ' said These people , ' we have divided the whole earth . ' 
+' We have divided the earth , ' said Wee little Havroshechka , ' now let us divide the sea ; else These people will say that your water has been taken . ' 
+These people crawled to the middle of the sea ; Wee little Havroshechka killed These people and drowned These people in the sea . 
+That furrow can be seen to this very day ; it is fourteen feet high . 
+Around it the fields are plowed , but the furrow is intact ; and those who do not know what it is , call it the rampart . 
+Wee little Havroshechka , having done his heroic deed , would not accept any reward , but returned to currying hides . 

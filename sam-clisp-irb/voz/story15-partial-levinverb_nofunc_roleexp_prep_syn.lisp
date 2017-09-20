@@ -19,9 +19,11 @@
          ;; The woman gave birth to a bearlet who was half-boy and half-bear.
          ;; Eventually, the woman was able to escape and took the boy with her.
 
-         (t1 "A woman was once kidnapped by a bear . ")
-         (t2 "The woman gave birth to a bearlet who was half-boy and half-bear . ")
-         (t3 "Eventually , the woman was able to escape and took the boy with her . ")
+         (t1 "A woman was once kidnapped by " (STORY15-m1000 "a bear") " . ")
+         (t2 "" (STORY15-m1001 "The woman") " gave birth to " (STORY15-m1002 "a bearlet") " who was half-boy and half-bear . ")
+         (t3 "Eventually , the woman was able to escape and took " (STORY15-m1002 "the boy") " with her . ")
+         (t1001 (STORY15-EXTRA1  (STORY15-m1000 "a bear") " is the " (Other "Other") ) ".")
+         (t1002 (STORY15-EXTRA2  (STORY15-m1002 "the boy") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -58,8 +60,13 @@
       
        (phase1
          (:entities
+           (STORY15-m1000 :type animate)
+           (STORY15-m1001 :type animate)
+           (STORY15-m1002 :type animate)
          )
          (:expressions
+           ((roleOther STORY15-m1000) :name STORY15-EXTRA0)
+           ((roleOther STORY15-m1002) :name STORY15-EXTRA1)
          )
        )
 

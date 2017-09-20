@@ -1,0 +1,30 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.2
+mapping: (3.1787038 ((EXTRA0 EXTRA0) (M2456 M1088) (E2 E1) (M2460 M1087) (M2457 M1084)))
+
+
+A dragon appeared near Kiev ; hetook heavy tribute from the people- a lovely maiden from every house, whom he then devouredhea lovely maiden from every house, whom he then devoured
+Finally , it was the fate of the tsar 's daughter to go to the dragon . 
+
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: NIL
+
+
+In a certain kingdom in a certain land there lived one Bukhtan Bukhtanovich , who had a stove built on pillars in the middle of a field . 
+He lay on the stove in cockroach milk up to his elbows . 
+A dragon appeared near Kiev ; hetook heavy tribute from the people- a lovely maiden from every house, whom he then devouredhea lovely maiden from every house, whom he then devoured
+Finally , it was the fate of the tsar 's daughter to go to the dragon . 

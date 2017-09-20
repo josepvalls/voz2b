@@ -17,7 +17,8 @@
        (:templates
          ;; A girl lived with her brother.
 
-         (t1 "A girl lived with her brother . ")
+         (t1 "" (STORY2-m1000 "A girl") " lived with her brother . ")
+         (t1001 (STORY2-EXTRA1  (STORY2-m1000 "A girl") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -54,8 +55,10 @@
       
        (phase1
          (:entities
+           (STORY2-m1000 :type animate)
          )
          (:expressions
+           ((roleOther STORY2-m1000) :name STORY2-EXTRA0)
          )
        )
 

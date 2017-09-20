@@ -21,10 +21,13 @@
          ;; The crops wouldn't grow anymore and the family was starving.
          ;; The son decided to chase the witch.
 
-         (t1 "Once upon a time , a family lived in the countryside in their farm . ")
-         (t2 "Their son was a simpleton . ")
-         (t3 "The crops would n't grow anymore and the family was starving . ")
-         (t4 "The son decided to chase the witch . ")
+         (t1 "Once upon a time , " (STORY0-m1000 "a family") " lived in the countryside in their farm . ")
+         (t2 "" (STORY0-m1002 "Their son") " was a simpleton . ")
+         (t1001 (STORY0-EXTRA1  (STORY0-m1002 "Their son") " is the " (Other "Other") ) ".")
+         (t3 "" (STORY0-VERB1 "" (STORY0-m1006 "The crops") " would n't grow " ) "anymore and the family was starving . ")
+         (t4 "" (STORY0-m1002 "The son") " decided to chase " (STORY0-m1004 "the witch") " . ")
+         (t1002 (STORY0-EXTRA2  (STORY0-m1002 "The son") " is the " (Other "Other") ) ".")
+         (t1003 (STORY0-EXTRA3  (STORY0-m1004 "the witch") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -61,14 +64,24 @@
       
        (phase1
          (:entities
+           (STORY0-m1000 :type animate)
+           (STORY0-m1002 :type animate)
          )
          (:expressions
+           ((roleOther STORY0-m1002) :name STORY0-EXTRA0)
          )
        )
        (phase2
          (:entities
+           (STORY0-m1000 :type animate)
+           (STORY0-m1002 :type animate)
+           (STORY0-m1006 :type animate)
+           (STORY0-m1004 :type animate)
          )
          (:expressions
+           ((levin-26-2 STORY0-m1006 STORY0-m1006) :name STORY0-VERB1)
+           ((roleOther STORY0-m1002) :name STORY0-EXTRA1)
+           ((roleOther STORY0-m1004) :name STORY0-EXTRA2)
          )
        )
 

@@ -1,0 +1,114 @@
+Sample outputs with intentionality 0.75
+
+<-------- the following samples are with the new story ------------------------>
+
+One day, Ales was walking in an alley.
+when he saw a cat in front of him.
+*** MEMORY START ***
+Ales used to have a bird when he was young.
+Ales was very fond of it.
+But the bird died, leaving ALES really sad.
+*** MEMORY END ***
+Ales hessitated for a second about what to do with the cat.
+Ales did not feel like to PLAY
+(IGNORE PLAY FEED)
+> play
+Ales did not want to PLAY because he did not want CAT to be DEAD or ALES to be SAD
+(FEED IGNORE)
+> ignore
+Ales just kept walking.
+The cat walked away.
+Ales then decided to continue his way to work.
+Stores are about to be open.
+Behind the store display windows, shinny sterling silverware reflects lights and shadows of the city.
+Ahead, some incident occured at the intersection.
+A big crowd of people blocks the way.
+Ales did not feel like to GO-FORWARD or GO-BACK
+(GO-FORWARD GO-BACK)
+> go-back
+Go back. The close contact with others always freaks Ales out.
+*** MEMORY START ***
+Ales has always wanted to be a painter.
+But his rusty joints do not allow his hands enough flexibility to manuver the brush.
+He stores different odd-looking objects and hopes 
+one day he can draw them.
+*** MEMORY END ***
+
+------------------------
+
+One day, Ales was walking in an alley.
+when he saw a cat in front of him.
+*** MEMORY START ***
+Ales had a bird many years ago.
+Ales was very fond of it.
+But the bird died, leaving ALES really sad.
+*** MEMORY END ***
+Ales hessitated for a second about what to do with the cat.
+Ales did not feel like to PLAY
+(IGNORE PLAY FEED)
+> ignore
+Ales just kept walking.
+The cat walked away.
+Ales then decided to continue his way to work.
+Stores are about to be open.
+Behind the store display windows, shinny sterling silverware reflects lights and shadows of the city.
+Ahead, some incident occured at the intersection.
+A big crowd of people blocks the way.
+Ales did not feel like to GO-FORWARD or GO-BACK
+(GO-FORWARD GO-BACK)
+> go-forward
+Go forward. Ales collides with the crowd and tries to make his way through.
+*** MEMORY START ***
+Ales has always wanted to be a painter.
+The long hours of his day job leaves him very little time to practice.
+He examines every interesting object he lays his eyes on and tries to draw them at night by memory.
+*** MEMORY END ***
+
+<-------- the following samples are with the old simple story ------------------------>
+
+One day, Ales was walking ourside.
+when he saw a cat in front of him.
+Ales hessitated for a second about what to do with the cat.
+(FEED PLAY IGNORE)
+> ignore
+Ales just kept walking.
+The cat walked away.
+Ales then decided to continue his way to work.
+
+------------------------
+
+One day, Ales was walking in the street
+when he saw a cat in front of him.
+*** MEMORY START ***
+Ales had a bird many years ago.
+Ales used to play with the BIRD and  was very happy.
+But the bird died, leaving ALES really sad.
+*** MEMORY END ***
+Ales hessitated for a second about what to do with the cat.
+(FEED IGNORE)
+> feed
+Ales decided to go into a convenience store and buy cat food.
+He gave the food to the cat, and the cat looked very happy.
+Ales was very happy.
+But he lost a lot of time and was late to work
+
+------------------------
+
+One day, Ales was walking in the street
+when he saw a cat in front of him.
+*** MEMORY START ***
+Ales used to have a bird when he was young.
+Ales used to play with the BIRD and  was very happy.
+But the bird died, leaving ALES really sad.
+*** MEMORY END ***
+Ales hessitated for a second about what to do with the cat.
+Ales did not feel like to PLAY
+(IGNORE PLAY FEED)
+> play
+Ales did not want to PLAY because he did not want CAT to be DEAD or ALES to be SAD
+(FEED IGNORE)
+> feed
+Ales decided to go into a convenience store and buy cat food.
+He gave the food to the cat, and the cat looked very happy.
+Ales was very happy.
+But he lost a lot of time and was late to work

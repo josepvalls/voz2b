@@ -1,0 +1,24 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: (1.4219999 ((STORY8-EXTRA0 STORY12-EXTRA0) (STORY8-M4640 STORY12-M4369)))
+
+
+In old times there was a village where a serpent frequently flew . 
+He sent his his maidservants to look for them in the garden , but all in vain ; the maidservants could not find the princesses . 
+The next morning the king proclaimed a state of emergency and a great multitude of people gathered . 
+mapping: (1.4219999 ((STORY9-EXTRA0 STORY12-EXTRA0) (STORY9-M5098 STORY12-M4369)))
+
+
+In old times there was a village where a serpent frequently flew . 
+So Alenka heated the stove hot , ever so hot , and said to Ivashko , ' Come here and sit on this shovel ! ' 

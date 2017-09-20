@@ -29,16 +29,26 @@
          ;; He found the princess and rescued her.
          ;; The soldier married the princess and they lived a happy and peaceful life.
 
-         (t1 "In a kingdom far away there was a town terrified by a dragon . ")
-         (t2 "The king issued a call for help . ")
-         (t3 "A humble soldier responded to the call . ")
-         (t4 "The king told the soldier he would make him a nobleman is he could rescue the princess . ")
-         (t5 "The soldier agreed and departed . ")
-         (t6 "The dragon ambushed him but the soldier was faster than him . ")
-         (t7 "The dragon saw he could not win and asked the soldier for forgiveness . ")
-         (t8 "The soldier ordered the dragon to leave and never come back . ")
-         (t9 "He found the princess and rescued her . ")
-         (t10 "The soldier married the princess and they lived a happy and peaceful life . ")
+         (t1 "In a kingdom far away there was a town terrified by " (STORY10-m1000 "a dragon") " . ")
+         (t1001 (STORY10-EXTRA1  (STORY10-m1000 "a dragon") " is the " (Other "Other") ) ".")
+         (t2 "" (STORY10-m1002 "The king") " issued a call for help . ")
+         (t3 "" (STORY10-m1003 "A humble soldier") " responded to the call . ")
+         (t4 "" (STORY10-m1002 "The king") " told " (STORY10-m1003 "the soldier") " he would make " (STORY10-m1003 "him") " a nobleman is " (STORY10-m1003 "he") " could rescue " (STORY10-m1001 "the princess") " . ")
+         (t5 "" (STORY10-m1003 "The soldier") " agreed and departed . ")
+         (t1002 (STORY10-EXTRA2  (STORY10-m1000 "a dragon") " is the " (Other "Other") ) ".")
+         (t1003 (STORY10-EXTRA3  (STORY10-m1003 "The soldier") " is the " (Other "Other") ) ".")
+         (t1004 (STORY10-EXTRA4  (STORY10-m1001 "the princess") " is the " (Other "Other") ) ".")
+         (t6 "" (STORY10-m1000 "The dragon") " ambushed " (STORY10-m1003 "him") " but " (STORY10-m1003 "the soldier") " was faster than him . ")
+         (t7 "" (STORY10-m1000 "The dragon") " saw he could not win and asked " (STORY10-m1003 "the soldier") " for forgiveness . ")
+         (t8 "" (STORY10-m1003 "The soldier") " ordered " (STORY10-m1000 "the dragon") " to leave and never come back . ")
+         (t9 "" (STORY10-m1003 "He") " found " (STORY10-m1001 "the princess") " and rescued " (STORY10-m1001 "her") " . ")
+         (t1005 (STORY10-EXTRA5  (STORY10-m1000 "the dragon") " is the " (Other "Other") ) ".")
+         (t1006 (STORY10-EXTRA6  (STORY10-m1003 "He") " is the " (Other "Other") ) ".")
+         (t1007 (STORY10-EXTRA7  (STORY10-m1001 "her") " is the " (Other "Other") ) ".")
+         (t10 "" (STORY10-VERB5 "" (STORY10-m1003 "The soldier") " married " (STORY10-m1001 "the princess") " " ) "and " (STORY10-m1005 "they") " lived a happy and peaceful life . ")
+         (t1008 (STORY10-EXTRA8  (STORY10-m1000 "the dragon") " is the " (Other "Other") ) ".")
+         (t1009 (STORY10-EXTRA9  (STORY10-m1003 "The soldier") " is the " (Other "Other") ) ".")
+         (t1010 (STORY10-EXTRA10  (STORY10-m1001 "the princess") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -75,26 +85,55 @@
       
        (phase1
          (:entities
+           (STORY10-m1000 :type animate)
          )
          (:expressions
+           ((roleOther STORY10-m1000) :name STORY10-EXTRA0)
          )
        )
        (phase2
          (:entities
+           (STORY10-m1000 :type animate)
+           (STORY10-m1002 :type animate)
+           (STORY10-m1003 :type animate)
+           (STORY10-m1001 :type animate)
          )
          (:expressions
+           ((levin-37-2 STORY10-m1002 STORY10-m1003) :name STORY10-VERB1)
+           ((levin-10-5 STORY10-m1003 STORY10-m1001) :name STORY10-VERB2)
+           ((roleOther STORY10-m1000) :name STORY10-EXTRA1)
+           ((roleOther STORY10-m1003) :name STORY10-EXTRA2)
+           ((roleOther STORY10-m1001) :name STORY10-EXTRA3)
          )
        )
        (phase3
          (:entities
+           (STORY10-m1000 :type animate)
+           (STORY10-m1002 :type animate)
+           (STORY10-m1003 :type animate)
+           (STORY10-m1001 :type animate)
          )
          (:expressions
+           ((levin-13-5-1 STORY10-m1003 STORY10-m1000) :name STORY10-VERB3)
+           ((levin-29-4 STORY10-m1003 STORY10-m1001) :name STORY10-VERB4)
+           ((roleOther STORY10-m1000) :name STORY10-EXTRA4)
+           ((roleOther STORY10-m1003) :name STORY10-EXTRA5)
+           ((roleOther STORY10-m1001) :name STORY10-EXTRA6)
          )
        )
        (phase4
          (:entities
+           (STORY10-m1000 :type animate)
+           (STORY10-m1002 :type animate)
+           (STORY10-m1003 :type animate)
+           (STORY10-m1001 :type animate)
+           (STORY10-m1005 :type animate)
          )
          (:expressions
+           ((levin-36-2 STORY10-m1003 STORY10-m1001) :name STORY10-VERB5)
+           ((roleOther STORY10-m1000) :name STORY10-EXTRA7)
+           ((roleOther STORY10-m1003) :name STORY10-EXTRA8)
+           ((roleOther STORY10-m1001) :name STORY10-EXTRA9)
          )
        )
 

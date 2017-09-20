@@ -1,0 +1,50 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: (1.4219999 ((STORY7-EXTRA0 STORY11-EXTRA0) (STORY7-M5965 STORY11-M4097)))
+
+
+Once upon a time there was an old couple , and they had three Sons . 
+Two of these had their wits about them , but the third was a simpleton, Ivan by name, surnamed Popyalof . 
+For twelve whole years Ivan lay among the ashes from the stove ; but then he arose , and shook himself , so that six poods of ashes fell off from him . 
+Now in the land in which Ivan lived there was never any day , but always night . 
+the third walked and walked , but nowhere did the third see any water and the third wanted to wet his hardtack and eat a little along the way and road . 
+His belly had long since been empty . 
+There was nothing to be done and so the third dragged the third on a bit further . 
+Then the third looked and saw a creek running . 
+the third went up to this creek and got three biscuits out of his pack and put them in the water . 
+Besides the hardtack the third had this fiddle . 
+In his free time the third played various songs to chase away his boredom . 
+So the third sat down next to the stream and began playing . 
+Suddenly out of nowhere the Unclean One with the appearance of an old man came up to the third with a book in his hands . 
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: (1.592752 ((STORY17-EXTRA0 STORY11-EXTRA0) (STORY17-M4132 STORY11-M4097)))
+
+
+Once upon a time there was an old couple , and they had three Sons . 
+Two of these had their wits about them , but the third was a simpleton, Ivan by name, surnamed Popyalof . 
+For twelve whole years Ivan lay among the ashes from the stove ; but then he arose , and shook himself , so that six poods of ashes fell off from him . 
+Now in the land in which Ivan lived there was never any day , but always night . 
+The tsar 's word was law . 
+the third was banished and the third left home not knowing where to go . 
+the third walked for a long time ; at last the third arrived in another kingdom , presented the third to the king , and asked to be taken into his service . 
+mapping: (1.4260093 ((STORY1-VERB9 STORY11-VERB1) (STORY1-M1091 STORY11-M4097)))
+
+
+A dragon appeared near Kiev ; he took heavy tribute from the people - a lovely maiden from every house, whom he then devoured . 
+Finally , it was the fate of the third to go to the dragon . 
+Once upon a time there was an old couple , and they had three Sons . 
+Two of these had their wits about them , but the third was a simpleton, Ivan by name, surnamed Popyalof . 
+For twelve whole years Ivan lay among the ashes from the stove ; but then he arose , and shook himself , so that six poods of ashes fell off from him . 
+Now in the land in which Ivan lived there was never any day , but always night . 

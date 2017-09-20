@@ -17,7 +17,8 @@
        (:templates
          ;; There once lived a poor and unlucky peasant.
 
-         (t1 "There once lived a poor and unlucky peasant . ")
+         (t1 "There once lived a poor and unlucky " (STORY18-m1000 "peasant") " . ")
+         (t1001 (STORY18-EXTRA1  (STORY18-m1000 "peasant") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -54,8 +55,10 @@
       
        (phase1
          (:entities
+           (STORY18-m1000 :type animate)
          )
          (:expressions
+           ((roleOther STORY18-m1000) :name STORY18-EXTRA0)
          )
        )
 

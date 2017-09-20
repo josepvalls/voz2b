@@ -1,0 +1,61 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: 
+(8.318442
+ ((E4 E21) (M5859 M5105) (M5855 M5098) (E3 E18) (E5 E19) (EXTRA0 EXTRA4)
+  (M5848 M5081) (E7 E3) (M5849 M5087) (M5862 M5078) (E6 E6)))
+
+
+There once lived an old couple who had one son called Ivashko ; one can tell how fond they were of him ! 
+Well , one day , Ivashkosaid to his father and mother : ' I'll go out fishing if you 'll let me. ' 
+' What are you thinking about ! 
+you 're still very small ; suppose you get drowned , what good will there be in that ? ' 
+' No , no , I sha n't get drowned . 
+I 'll catch you some fish ; do let me go ! ' 
+So his his motherput a white shirt on him, tied a red girdle round him, and let him go . 
+Out in a boat hesat and said : Canoe , canoe , float a little farther , Canoe , canoe, float a little farther ! 
+Then the canoe floated on farther and farther , and Ivashko began to fish . 
+When some little time had passed by , the old womanhobbled down to the river side and called to her her son: Ivashechko, Ivashechko, my boyIvashechko, my boyup , float up unto the waterside ; Ibring theefood and drink . 
+And Ivashkosaid : Canoe , canoe, float to the waterside ; That is my my mothercalling me. 
+The boat floated to the shore : the womantook the fish , gave her her boyfood and drink , changed his shirt for him and his girdle , and sent himback to his fishing . 
+Again hesat in his boat and said : Canoe , canoe , float a little farther , Canoe , canoe, float a little farther . 
+Then the canoe floated on farther and farther , and Ivashko began to fish . 
+After a little time had passed by , the old man also hobbled down to the bank and called to his son : Ivashechko, Ivashechko, my boyIvashechko, my boyup , float up , onto the waterside ; Ibring theefood and drink . 
+And Ivashkoreplied : Canoe , canoe , float to the waterside ; That is my my fathercalling me. 
+The canoe floated to the shore . 
+The old mantook the fish , gave his his boyfood and drink , changed his shirt for him and his girdle , and sent himback to his fishing . 
+Now a certain witchhad heard what Ivashko's parents had cried aloud to him, and shelonged to get hold of the boy. 
+So shewent down to the bank and cried with a hoarse voice : Ivashechko, Ivashechko, my boyIvashechko, my boyup , float up , onto the waterside Ibring theefood and drink . 
+Ivashkoperceived that the voice was not his mother 's , but was that of a witch, and hesang : Canoe, canoe , float a little farther , Canoe , canoe , float a little farther ; That is not my mother , but a witch who calls meme. 
+The witchsaw that shemust call Ivashkowith just such a voice as his mother had . 
+So shehastened to a smithand said to him : ' Smith, smith make mejust such a thin little voice as Ivashko 's mother has : if youdo n't , I'll eat you. ' 
+So the smithforged her a little voice just like Ivashko's mother 's . 
+Then the witchwent down by night to the shore and sang : Ivashechko, Ivashechko, my boyIvashechko, my boyup , float up , unto the waterside ; Ibring theefood and drink . 
+Ivashko came , and shetook the fish , and seized the boyand carried him home with her. 
+
+mapping: 
+(6.1364126
+ ((E1 E20) (M2457 M5098) (M2456 M5105) (EXTRA0 EXTRA1) (E3 E3) (M2461 M5087)
+  (M2460 M5078) (E2 E23)))
+
+
+There once lived an old couple who had one son called Ivashko ; one can tell how fond they were of him ! 
+Well , one day , Ivashkosaid to his father and mother : ' I'll go out fishing if you 'll let me. ' 
+' What are you thinking about ! 
+you 're still very small ; suppose you get drowned , what good will there be in that ? ' 
+' No , no , I sha n't get drowned . 
+I 'll catch you some fish ; do let me go ! ' 
+So his his motherput a white shirt on him, tied a red girdle round him, and let him go . 
+Out in a boat hesat and said : Canoe , canoe , float a little farther , Canoe , canoe, float a little farther ! 
+Then the 

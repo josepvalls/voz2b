@@ -19,9 +19,11 @@
          ;; A witch told her she would give her a child if the woman would return the child on his second birthday.
          ;; The woman agreed and became pregnant and gave birth to a boy.
 
-         (t1 "Once upon a time there lived an old widow without any children . ")
-         (t2 "A witch told her she would give her a child if the woman would return the child on his second birthday . ")
-         (t3 "The woman agreed and became pregnant and gave birth to a boy . ")
+         (t1 "Once upon a time there lived " (STORY4-m1000 "an old widow") " without any children . ")
+         (t2 "" (STORY4-m1001 "A witch") " told " (STORY4-m1000 "her") " she would give her a child if the woman would return the child on his second birthday . ")
+         (t3 "" (STORY4-m1000 "The woman") " agreed and became pregnant and gave birth to " (STORY4-m1002 "a boy") " . ")
+         (t1001 (STORY4-EXTRA1  (STORY4-m1001 "A witch") " is the " (Other "Other") ) ".")
+         (t1002 (STORY4-EXTRA2  (STORY4-m1002 "a boy") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -58,8 +60,14 @@
       
        (phase1
          (:entities
+           (STORY4-m1000 :type animate)
+           (STORY4-m1001 :type animate)
+           (STORY4-m1002 :type animate)
          )
          (:expressions
+           ((levin-37-2 STORY4-m1001 STORY4-m1000) :name STORY4-VERB1)
+           ((roleOther STORY4-m1001) :name STORY4-EXTRA0)
+           ((roleOther STORY4-m1002) :name STORY4-EXTRA1)
          )
        )
 

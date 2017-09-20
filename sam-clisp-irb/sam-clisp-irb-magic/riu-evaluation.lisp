@@ -1,0 +1,281 @@
+; (change-directory (get-working-directory))
+(change-directory "/Users/santi/my-research/Riu")
+(defvar *sme-loaded* nil)
+(defvar *riu-debug* '())
+(setf *riu-debug* '())
+;; (setf *riu-debug* '(analogy discourse retrieval prediction intentionality analogy-selection))
+(setf *riu-debug* '())
+
+(unless *sme-loaded* (load "sme-load.lisp"))
+
+; (load "riu-memory.lisp")
+(load "stories/riu-memory-test.lisp")
+; (load "stories/riu-memory-Hunter-long.lisp")
+; (load "stories/riu-memory-Hunter-complete.lisp")
+; (load "Hunter/story-theft.lsp")
+; (load "Hunter/story-factoryjob.lsp")
+; (load "Hunter/story-aristoreward.lsp")
+(load "stories/riu-story-Hunter-complete.lisp")
+
+(load "riu-utils.lisp")
+(load "riu-retrieval.lisp")
+(load "riu-analogy.lisp")
+(load "riu-discourse.lisp")
+(load "riu-scene-instantiation.lisp")
+(load "riu-bdi.lisp")
+
+(load "precompiled-wordnet.lisp")
+(load "riu-wordnet.lisp")
+
+;; Just evaluate one memory, printing debug messages:
+(defun RIU-EVAL1 ()
+	(setf *riu-debug* '(analogy-text-generation))
+	(format t "Riu Evaluation~%~%")	
+	(let ((memory (first *riu-MEMORY*))
+		  (scene (first *riu-STORY-DAG*)))
+		(let ((choices (find-scene-choices scene)))
+			;; Find an analogy and display both expressions and english text
+			(dolist (choice choices)
+				(let ((scene-with-choice (generate-story-by-choosing-action scene choice t)))
+					(generate-analogical-text-general scene-with-choice memory)
+				)
+			)
+		)
+	)
+)
+
+
+(defun RIU-EVAL1-GENERAL ()
+	(setf *riu-debug* '(analogy-general-selection))
+	(format t "Riu Evaluation~%~%")	
+	(let ((s1 (assoc 'MEMORY-1-BIRD-DEATH *riu-MEMORY*))
+		  (s2 (assoc 'MEMORY-2-LONG-THEFT *riu-MEMORY*)))
+		(let ((choices (find-scene-choices s1)))
+			(dolist (choice choices)
+				(let ((scene-with-choice (generate-story-by-choosing-action s1 choice t)))
+;					(format t "~%scene: ~%~a~%" 
+						(generate-analogical-text-general scene-with-choice s2); :pairings '(((phase1 . phase1) (phase2 . phase4a))))
+;					)
+				)
+			)
+		)
+	)
+)
+
+
+;; Generate all the analogies, without debugging:
+(defun RIU-EVAL2 ()
+	(setf *riu-debug* '(analogy-selection))
+	(format t "Riu Evaluation~%~%")	
+	(dolist (memory *riu-MEMORY*)
+		(dolist (scene *riu-STORY-DAG*)			
+			;; Find to see if there are available actions:
+			(let ((choices (find-scene-choices scene)))
+				;; Find an analogy and display both expressions and english text
+				(dolist (choice choices)
+					(let ((scene-with-choice (generate-story-by-choosing-action scene choice t)))
+						(generate-analogical-text-general scene-with-choice memory)
+					)
+				)
+			)
+		)
+	)	
+)
+
+
+;; Generate all the analogies, without debugging:
+(defun RIU-EVAL2-GENERAL ()
+	(setf *riu-debug* '())
+	(format t "Riu Evaluation~%~%")	
+	(dolist (scene1 (append *riu-MEMORY* *riu-STORY-DAG*))
+		(dolist (scene2 (append *riu-MEMORY* *riu-STORY-DAG*))	
+;			(format t "~a - ~a~%" (scene-phases scene1) (scene-phases scene2))
+			(when (> (length (scene-phases scene2)) (length (scene-phases scene1)))
+				(let ((choices1 (find-scene-choices scene1))
+				      (choices2 (find-scene-choices scene2)))
+;				    (format t "Choices 1: ~a~%" (mapcar #'first choices1))
+;				    (format t "Choices 2: ~a~%" (mapcar #'first choices2))
+					;; the original scene cannot have user choices:
+				    (when (equal choices2 '((nil nil nil nil nil)))
+						(dolist (choice choices1)
+							(let ((scene1-with-choice (generate-story-by-choosing-action scene1 choice t)))
+								(format t "~%---------------------------------------------------------------------------------------------------------------------------~%")
+								(format t "~%~%Generating analogy between ~a (~a) and ~a:~%" (first scene1) (first choice) (first scene2))
+								(generate-analogical-text-general scene1-with-choice scene2)
+							)
+						)
+					)
+				)
+			)
+		)
+	)	
+)
+
+
+
+;; Generate all the analogies but removing all the force dynamics expressions, without debugging:
+(defun RIU-EVAL3 ()
+	(setf *riu-debug* '())
+	(format t "Riu Evaluation~%~%")	
+	(format t "~a - ~a~%" (length *riu-MEMORY*) (length *riu-STORY-DAG*))
+	(dolist (memory *riu-MEMORY*)
+		(dolist (scene *riu-STORY-DAG*)			
+			;; Find to see if there are available actions:
+			(let ((choices (find-scene-choices scene)))
+				;; Find an analogy and display both expressions and english text
+				(dolist (choice choices)
+					(let ((mappings nil) (mappings-fd nil) (inter nil))
+						(print "USING FORCE DYNAMICS:")
+						(setf mappings-fd (generate-analogical-text memory scene choice))
+						(print "WITHOUT FORCE DYNAMICS:")
+						(setf mappings (generate-analogical-text (duplicate-removing-force-dynamics memory) (duplicate-removing-force-dynamics scene) choice))
+						(setf inters (intersection mappings mappings-fd :test 'equal))
+						(if (> (length mappings) (length mappings-fd))
+							(if (= (length inters) (length mappings-fd))
+								(print "FD WORSE")
+								(print "FD KIND OF WORSE")
+							)
+							(if (= (length inters) (length mappings))
+								(print "FD BETTER")
+								(print "FD KIND OF BETTER")
+							)
+						)
+					)
+				)
+			)
+		)
+	)	
+)
+
+
+
+;; Compares different retrieval methods
+(defun RIU-EVAL-RETRIEVAL ()
+	(setf *riu-debug* '())
+	(format t "Riu Retrieval Evaluation (extending weyword comparison with WordNet information)~%~%")	
+	(let ((results nil))
+		(dolist (scene1 (append *riu-STORY-DAG* *riu-MEMORY*))
+			(dolist (scene2 (append *riu-STORY-DAG* *riu-MEMORY*))
+				(let* ((sim-kw (scene-similarity-keywords scene1 scene2))
+					   (sim-wn (scene-similarity-wordnet scene1 scene2))
+					   (sim-sme (funcall #'(lambda (x) (if (null x) 0 (apply 'max x))) (mapcar 'car (get-all-analogies scene1 'phase1 scene2))))
+					   (maximum-sme (funcall #'(lambda (x) (if (null x) 1 (apply 'max x))) (append (mapcar 'car (get-all-analogies scene1 'phase1 scene1)) (mapcar 'car (get-all-analogies scene2 'phase1 scene2)))))
+				 	   (sum-sme-norm (/ sim-sme maximum-sme)))
+					(format t "~a, ~a, ~a, ~a~%" sim-kw sim-wn sim-sme sum-sme-norm)
+				)
+			)
+		)
+	)	
+)
+
+
+(defun RIU-EVAL-REPOSITORY ()
+	(setf *riu-debug* '())
+	(format t "Riu Retrieval Evaluation (extending weyword comparison with WordNet information)~%~%")	
+	(let ((results nil))
+;		(dotimes (K 7)
+		(dolist (K '(0 6))
+			(dolist (scene *riu-STORY-DAG*)
+;				(let ((memories-random (retrieve-K-memories scene *riu-MEMORY* (+ 1 K) nil :similarity #'scene-similarity-random)))
+;				(let ((memories-random (retrieve-K-memories scene *riu-MEMORY* (+ 1 K) nil :similarity #'scene-similarity-keywords)))
+				(let ((memories-random (retrieve-K-memories scene *riu-MEMORY* (+ 1 K) nil :similarity #'scene-similarity-wordnet)))
+					(let* ((all-candidates (remove-duplicates (mapcar 'car memories-random)))
+						   (scored-candidates
+							(mapcar
+								#'(lambda (candidate)
+									(let ((results (mapcar 'car (get-all-analogies scene 'phase1 (assoc candidate *riu-MEMORY*)))))
+										(if (null results)
+											(list candidate 0.0)
+											(list candidate (apply 'max results))
+										)
+									)
+								  )
+								all-candidates))
+						   (sorted-candidates
+							(sort scored-candidates #'(lambda (x y) (> (second x) (second y))))))
+						(format t "~a ->  SME ORDERING: ~a~%" (+ 1 K) sorted-candidates)
+						(setf results (cons (list (+ 1 k) (second (first sorted-candidates))) results))
+					)
+				)
+			)	
+		)
+		(print results)
+	)
+)
+
+
+;; Generate all the analogies, without debugging:
+(defun RIU-EVAL-EVALUATION ()
+	(setf *riu-debug* '())
+	(format t "Riu Evaluation~%~%")	
+	(dolist (memory *riu-MEMORY*)
+		(dolist (scene *riu-STORY-DAG*)			
+			;; Find to see if there are available actions:
+			(let ((choices (find-scene-choices scene)))
+				;; Find an analogy and display both expressions and english text
+				(dolist (action choices)
+					(let ((a1 (analogy scene (third action) memory :additional-entities-story (fourth action) :additional-expressions-story (fifth action)))
+						  (a2 (analogy-wordnet scene (third action) memory :additional-entities-story (fourth action) :additional-expressions-story (fifth action))))
+						(when (not (equal (second a1) (second a2)))
+							(format t "AR: ~a~%AR(WN): ~a~%~%" a1 a2)
+							(generate-analogical-text memory scene action)
+							(generate-analogical-text memory scene action :analogy-method #'analogy-wordnet)
+						)
+					)
+				)
+			)
+		)
+	)	
+)
+
+
+(defun duplicate-removing-force-dynamics (scene)
+  (let ((fd-terms '(fd-agonist fd-antagonist fd-stronger fd-move-tendency fd-rest-tendency fd-before)))
+	(remove-expression-starting-with fd-terms scene)
+  )
+)
+
+
+(defun remove-expression-starting-with (heads expressions)
+	(remove nil
+		(mapcar 
+			(lambda (expression)
+				(if (listp expression)
+					(if (and (= (length expression) 3) (listp (car expression)) (member (caar expression) heads))
+						nil
+						(remove-expression-starting-with heads expression)
+					)
+					expression
+				)
+			)
+		expressions)
+	)
+)
+
+
+(defun find-scene-choices (scene)
+	(let* ((discourse (assoc ':discourse (rest scene)))
+		   (clauses (assoc ':clauses (rest discourse)))
+		   (choices (apply #'append (mapcar #'find-clause-choices (rest clauses))))
+		  )
+		(if (null choices) (list '(() () () () ())) choices)
+	)
+)
+
+
+(defun find-clause-choices (clause)
+	(if (listp clause)
+		(if (equal (car clause) ':c)
+			(rest clause)
+			(apply #'append (mapcar #'find-clause-choices (rest clause)))
+		)
+		()
+	)
+)
+
+
+(defun scene-phases (scene)
+	(remove 'common (mapcar #'first (rest (assoc ':structure (rest scene)))))
+)
+
+

@@ -17,7 +17,8 @@
        (:templates
          ;; A poor laborer lived in a small town.
 
-         (t1 "A poor laborer lived in a small town . ")
+         (t1 "" (STORY14-m1000 "A poor laborer") " lived in a small town . ")
+         (t1001 (STORY14-EXTRA1  (STORY14-m1000 "A poor laborer") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -54,8 +55,10 @@
       
        (phase1
          (:entities
+           (STORY14-m1000 :type animate)
          )
          (:expressions
+           ((roleOther STORY14-m1000) :name STORY14-EXTRA0)
          )
        )
 

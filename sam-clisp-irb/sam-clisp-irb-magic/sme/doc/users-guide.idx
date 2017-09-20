@@ -1,0 +1,242 @@
+\indexentry{conventions}{1}
+\indexentry{packages}{1}
+\indexentry{conventions, function names}{1}
+\indexentry{file organization}{1}
+\indexentry{parameters, site specific}{1}
+\indexentry{algorithm, summary}{3}
+\indexentry{match hypothesis}{4}
+\indexentry{algorithm}{4}
+\indexentry{match hypothesis}{4}
+\indexentry{algorithm}{5}
+\indexentry{match hypothesis}{5}
+\indexentry{match hypothesis}{5}
+\indexentry{algorithm}{6}
+\indexentry{global mapping}{7}
+\indexentry{algorithm}{7}
+\indexentry{global mapping}{8}
+\indexentry{algorithm}{8}
+\indexentry{global mapping}{8}
+\indexentry{candidate inference}{9}
+\indexentry{algorithm}{9}
+\indexentry{global mapping}{9}
+\indexentry{candidate inference}{9}
+\indexentry{global mapping, scoring}{9}
+\indexentry{algorithm}{9}
+\indexentry{global mapping}{9}
+\indexentry{global mapping}{9}
+\indexentry{algorithm}{10}
+\indexentry{global mapping}{10}
+\indexentry{defPredicate macro}{10}
+\indexentry{predicate}{10}
+\indexentry{predicate, declaring}{10}
+\indexentry{define-predicate function}{10}
+\indexentry{lisp machine interface, predicate documentation}{11}
+\indexentry{defEntity macro}{11}
+\indexentry{entity, declaring}{11}
+\indexentry{define-Entity function}{11}
+\indexentry{description group}{12}
+\indexentry{define-description function}{12}
+\indexentry{Dgroup}{12}
+\indexentry{defDescription macro}{12}
+\indexentry{description group}{12}
+\indexentry{expression function}{12}
+\indexentry{expression, adding new expressions}{12}
+\indexentry{rule system}{13}
+\indexentry{rule system, rule file syntax}{13}
+\indexentry{rule system}{13}
+\indexentry{rule system}{13}
+\indexentry{sme-rules-file function}{13}
+\indexentry{tre-save-rules function}{13}
+\indexentry{rule system, match constructor rules}{13}
+\indexentry{rule system}{13}
+\indexentry{match hypothesis, installing}{13}
+\indexentry{match constructor rules}{13}
+\indexentry{MHC-rule}{13}
+\indexentry{install-MH function}{13}
+\indexentry{match hypothesis, installing}{13}
+\indexentry{match evidence rules}{14}
+\indexentry{rule system, match evidence rules}{14}
+\indexentry{rule system}{14}
+\indexentry{rule macro}{14}
+\indexentry{match hypothesis, scoring}{14}
+\indexentry{rassert! macro}{14}
+\indexentry{assert! function}{14}
+\indexentry{initial-assertion macro}{14}
+\indexentry{children-of? function}{15}
+\indexentry{match hypothesis, scoring}{15}
+\indexentry{global mapping, scoring}{15}
+\indexentry{rule system}{15}
+\indexentry{rule system}{15}
+\indexentry{rule system, simulating structure-mapping theory}{15}
+\indexentry{rule system}{16}
+\indexentry{rule system, simulating SPROUTER}{16}
+\indexentry{generalize}{16}
+\indexentry{rule system}{16}
+\indexentry{rule system, relaxing identical predicates}{16}
+\indexentry{rule system}{17}
+\indexentry{rule system, pure isomorphisms}{17}
+\indexentry{rule system}{17}
+\indexentry{rule system, analogical hints}{17}
+\indexentry{analogical hint}{17}
+\indexentry{rule system}{18}
+\indexentry{declare-given-mappings function}{18}
+\indexentry{clear-given-mappings function}{18}
+\indexentry{sanctioned-pairing? function}{19}
+\indexentry{paired-item? function}{19}
+\indexentry{rule system}{19}
+\indexentry{representation issues}{19}
+\indexentry{installation}{20}
+\indexentry{*sme-language-file* variable}{20}
+\indexentry{parameters, site specific}{20}
+\indexentry{site specific information}{20}
+\indexentry{*sme-default-rules* variable}{20}
+\indexentry{site specific information, pathnames}{20}
+\indexentry{*sme-rules-pathname* variable}{20}
+\indexentry{*sme-dgroup-pathname* variable}{20}
+\indexentry{*the-lisp-package* variable}{20}
+\indexentry{packages,site specific}{20}
+\indexentry{*the-user-package* variable}{20}
+\indexentry{site specific information, packages}{20}
+\indexentry{*sme-system-pathname* variable}{20}
+\indexentry{*sme-files* variable}{20}
+\indexentry{conventions, file names}{20}
+\indexentry{running SME}{21}
+\indexentry{execution}{21}
+\indexentry{sme-init function}{21}
+\indexentry{batch mode}{23}
+\indexentry{report generation}{23}
+\indexentry{run-batch-file function}{23}
+\indexentry{language-file macro}{23}
+\indexentry{dgroup-directory macro}{23}
+\indexentry{dgroup-file macro}{23}
+\indexentry{rule-directory macro}{23}
+\indexentry{rule-file macro}{23}
+\indexentry{rule-sets macro}{23}
+\indexentry{report-comments macro}{23}
+\indexentry{send-report-to macro}{23}
+\indexentry{run-matcher-on macro}{23}
+\indexentry{defPostMatcher macro}{23}
+\indexentry{generalize function}{24}
+\indexentry{match-evidence-inspector function}{24}
+\indexentry{match hypothesis, inspecting evidence justifications}{24}
+\indexentry{match hypothesis, inspecting evidence justifications}{24}
+\indexentry{lisp machine interface}{25}
+\indexentry{scroll windows}{25}
+\indexentry{dump-scroll-menu function}{25}
+\indexentry{scroll windows, saving contents}{25}
+\indexentry{dump-scroll function}{25}
+\indexentry{clear-scroll function}{25}
+\indexentry{select-windowing-configuration function}{25}
+\indexentry{select-scroll function}{25}
+\indexentry{select-double-scroll function}{25}
+\indexentry{select-graphics function}{25}
+\indexentry{select-large-graphics function}{25}
+\indexentry{select-split function}{25}
+\indexentry{*sme-frame* variable}{25}
+\indexentry{*graphics-pane* variable}{25}
+\indexentry{*scroll-pane* variable}{25}
+\indexentry{*spare-scroll-pane* variable}{25}
+\indexentry{*lisp-pane* variable}{25}
+\indexentry{scroll windows, writing to}{25}
+\indexentry{parameters}{26}
+\indexentry{*sme-parameters* variable}{26}
+\indexentry{*parameter-menu-options* variable}{26}
+\indexentry{defSME-Parameter macro}{26}
+\indexentry{change-parms function}{26}
+\indexentry{system utilities}{26}
+\indexentry{*system-utilities-menu* variable}{26}
+\indexentry{defSME-Utility macro}{26}
+\indexentry{menu-utilities function}{26}
+\indexentry{get-dgroup function}{26}
+\indexentry{get-rules function}{26}
+\indexentry{*sme-output-stream* variable}{27}
+\indexentry{*windowing?* variable}{27}
+\indexentry{*sme-graphics-output* variable}{27}
+\indexentry{scroll windows, writing to}{27}
+\indexentry{sme-format macro}{27}
+\indexentry{sme-print function}{27}
+\indexentry{sme-terpri function}{27}
+\indexentry{entity? function}{27}
+\indexentry{entity-type? function}{27}
+\indexentry{entity-name? macro}{28}
+\indexentry{entity, inspection functions}{28}
+\indexentry{fetch-entity-definition macro}{28}
+\indexentry{entity-domain macro}{28}
+\indexentry{constant-entity? macro}{28}
+\indexentry{*sme-predicates* variable}{28}
+\indexentry{fetch-predicate-definition macro}{28}
+\indexentry{predicate, inspection functions}{28}
+\indexentry{predicate? macro}{28}
+\indexentry{predicate-type macro}{28}
+\indexentry{relation? macro}{28}
+\indexentry{attribute? macro}{28}
+\indexentry{function? macro}{28}
+\indexentry{commutative? macro}{28}
+\indexentry{n-ary? macro}{28}
+\indexentry{arg-list macro}{28}
+\indexentry{numargs macro}{28}
+\indexentry{expression-type macro}{28}
+\indexentry{eval-form macro}{28}
+\indexentry{expression, inspection functions}{28}
+\indexentry{fetch-expression function}{28}
+\indexentry{expression-functor function}{28}
+\indexentry{fully-expand-expression function}{28}
+\indexentry{fully-expand-expression-form function}{28}
+\indexentry{fetch-dgroup function}{29}
+\indexentry{description group, retrieval}{29}
+\indexentry{return-dgroup function}{29}
+\indexentry{describe-dgroup function}{29}
+\indexentry{description group, textual description}{29}
+\indexentry{menu-display-dgroup function}{29}
+\indexentry{description group, graphical display}{29}
+\indexentry{menu-display-pairs function}{29}
+\indexentry{match function}{29}
+\indexentry{global mapping, creation}{29}
+\indexentry{best-gmaps function}{29}
+\indexentry{global mapping, selecting the best}{29}
+\indexentry{display-match function}{29}
+\indexentry{global mapping, textual display}{29}
+\indexentry{*base* variable}{29}
+\indexentry{*target* variable}{29}
+\indexentry{*match-hypotheses* variable}{29}
+\indexentry{match hypothesis, *match-hypotheses*}{29}
+\indexentry{*gmaps* variable}{29}
+\indexentry{global mapping, *gmaps*}{29}
+\indexentry{compare-gmaps function}{29}
+\indexentry{global mapping, comparing apparently identical gmaps}{29}
+\indexentry{create-match-hypotheses function}{30}
+\indexentry{run-rules function}{30}
+\indexentry{rule system, run-rules}{30}
+\indexentry{calculate-nogoods function}{30}
+\indexentry{generate-gmaps function}{30}
+\indexentry{gather-inferences function}{30}
+\indexentry{candidate inference, gather-inferences}{30}
+\indexentry{intern-gmaps function}{30}
+\indexentry{rule system, giving it access to gmaps}{30}
+\indexentry{match hypothesis, defstruct}{30}
+\indexentry{mh-form subst}{30}
+\indexentry{mh-base-item subst}{30}
+\indexentry{mh-target-item subst}{30}
+\indexentry{mh-bms-node subst}{30}
+\indexentry{node-belief+ subst}{30}
+\indexentry{mh-plist subst}{30}
+\indexentry{*match-hypotheses* variable}{30}
+\indexentry{global mapping, defstruct}{31}
+\indexentry{gm-id subst}{31}
+\indexentry{gm-elements subst}{31}
+\indexentry{gm-emaps subst}{31}
+\indexentry{gm-base subst}{31}
+\indexentry{gm-target subst}{31}
+\indexentry{gm-inferences subst}{31}
+\indexentry{gm-bms-node subst}{31}
+\indexentry{gm-plist subst}{31}
+\indexentry{*gmaps* variable}{31}
+\indexentry{candidate inference, alternate algorithms}{31}
+\indexentry{tre-rules-file function}{31}
+\indexentry{rule system, dynamically swapping rule sets}{31}
+\indexentry{tre-save-rules function}{31}
+\indexentry{tre-init function}{31}
+\indexentry{restore-rules function}{31}
+\indexentry{run-rules function}{31}
+\indexentry{*tre-rules-saver* variable}{31}
+\indexentry{*initial-assertions* variable}{31}

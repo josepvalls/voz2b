@@ -1,0 +1,45 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: 
+(1.8727038
+ ((STORY11-EXTRA0 STORY3-EXTRA0) (STORY11-M4097 STORY3-M3148)
+  (STORY11-VERB1 STORY3-VERB1)))
+
+
+In a certain kingdom in a certain land there lived one Bukhtan Bukhtanovich, who had a stove built on pillars in the middle of a field a stove built on pillars in the middle of a field . 
+He lay on the stove in cockroach milk up to his elbows . 
+A fox came to him and said : ' Bukhtan Bukhtanovich , would you like me to marry you to the tsar's daughter ? ' 
+Well , A fox undertook to kill that Snake , so A fox said to his his father , ' Father make A fox a mace five poods in weight . ' 
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: 
+(2.5758865
+ ((STORY13-EXTRA0 STORY3-EXTRA0) (STORY13-M6017 STORY3-M3148)
+  (STORY13-VERB8 STORY3-VERB1)))
+
+
+In a certain kingdom in a certain land there lived one Bukhtan Bukhtanovich, who had a stove built on pillars in the middle of a field a stove built on pillars in the middle of a field . 
+He lay on the stove in cockroach milk up to his elbows . 
+A fox came to him and said : ' Bukhtan Bukhtanovich , would you like me to marry you to the tsar's daughter ? ' 
+mapping: (1.592752 ((STORY2-EXTRA0 STORY3-EXTRA0) (STORY2-M2456 STORY3-M3148)))
+
+
+In a certain kingdom in a certain land there lived one Bukhtan Bukhtanovich, who had a stove built on pillars in the middle of a field a stove built on pillars in the middle of a field . 
+He lay on the stove in cockroach milk up to his elbows . 
+A fox came to him and said : ' Bukhtan Bukhtanovich , would you like me to marry you to the tsar's daughter ? ' 
+The girl came back and found her her brother gone . 
+She gasped , and rushed to look in every corner , but could not find him . 
+She called him , wept , and lamented that her A fox and mother would scold her severely ; still her her little brother did not answer . 
+She ran into the open field ; the swan geese flashed in the distance and vanished behind a dark forest . 
+The swan geese had long had a bad reputation ; they had done a great deal of damage and stolen many little children . 

@@ -27,14 +27,18 @@
          ;; She made her way in and waited for the witch.
 
          (t1 "Once upon a time , in a land , far , far away . ")
-         (t2 "There lived a girl with her baby brother and her mother . ")
-         (t3 "One day , the mother went to the market . ")
-         (t4 "The mother told the girl to watch her baby brother . ")
-         (t5 "The girl started playing and soon forgot what her mother had asked her . ")
-         (t6 "After a while , the girl came back and realized her baby brother was missing . ")
-         (t7 "The girl suspected the witch may be behind . ")
-         (t8 "She decided to go save her brother and went on to the witch 's hut . ")
-         (t9 "She made her way in and waited for the witch . ")
+         (t2 "There lived " (STORY6-m1000 "a girl") " with her baby brother and her mother . ")
+         (t3 "One day , " (STORY6-m1001 "the mother") " went to the market . ")
+         (t4 "" (STORY6-m1001 "The mother") " told the " (STORY6-m1000 "girl") " to watch her baby brother . ")
+         (t5 "" (STORY6-m1000 "The girl") " started playing and soon forgot what her mother had asked her . ")
+         (t1001 (STORY6-EXTRA1  (STORY6-m1000 "The girl") " is the " (Other "Other") ) ".")
+         (t6 "After a while , " (STORY6-m1000 "the girl") " came back and realized her baby brother was missing . ")
+         (t7 "" (STORY6-m1000 "The girl") " suspected " (STORY6-m1002 "the witch") " may be behind . ")
+         (t8 "" (STORY6-m1000 "She") " decided to go save " (STORY6-m1003 "her brother") " and went on to the witch 's hut . ")
+         (t9 "" (STORY6-m1000 "She") " made her way in and waited for " (STORY6-m1002 "the witch") " . ")
+         (t1002 (STORY6-EXTRA2  (STORY6-m1000 "She") " is the " (Other "Other") ) ".")
+         (t1003 (STORY6-EXTRA3  (STORY6-m1002 "the witch") " is the " (Other "Other") ) ".")
+         (t1004 (STORY6-EXTRA4  (STORY6-m1003 "her brother") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -71,14 +75,25 @@
       
        (phase1
          (:entities
+           (STORY6-m1000 :type animate)
+           (STORY6-m1001 :type animate)
          )
          (:expressions
+           ((levin-37-2 STORY6-m1001 STORY6-m1000) :name STORY6-VERB1)
+           ((roleOther STORY6-m1000) :name STORY6-EXTRA0)
          )
        )
        (phase2
          (:entities
+           (STORY6-m1000 :type animate)
+           (STORY6-m1001 :type animate)
+           (STORY6-m1002 :type animate)
+           (STORY6-m1003 :type animate)
          )
          (:expressions
+           ((roleOther STORY6-m1000) :name STORY6-EXTRA1)
+           ((roleOther STORY6-m1002) :name STORY6-EXTRA2)
+           ((roleOther STORY6-m1003) :name STORY6-EXTRA3)
          )
        )
 

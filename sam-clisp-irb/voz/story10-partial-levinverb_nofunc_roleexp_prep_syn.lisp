@@ -17,7 +17,8 @@
        (:templates
          ;; In a kingdom far away there was a town terrified by a dragon.
 
-         (t1 "In a kingdom far away there was a town terrified by a dragon . ")
+         (t1 "In a kingdom far away there was a town terrified by " (STORY10-m1000 "a dragon") " . ")
+         (t1001 (STORY10-EXTRA1  (STORY10-m1000 "a dragon") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -54,8 +55,10 @@
       
        (phase1
          (:entities
+           (STORY10-m1000 :type animate)
          )
          (:expressions
+           ((roleOther STORY10-m1000) :name STORY10-EXTRA0)
          )
        )
 

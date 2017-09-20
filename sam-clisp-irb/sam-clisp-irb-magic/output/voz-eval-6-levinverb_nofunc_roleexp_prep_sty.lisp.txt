@@ -1,0 +1,65 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: 
+(8.709366
+ ((EXTRA0 EXTRA3) (M5848 M4174) (E4 E10) (M5859 M4195) (M5855 M4183) (E5 E12)
+  (E2 E18) (E7 E2) (M5849 M4175) (M5862 M4181) (E1 E22)))
+
+
+In a certain village there lived a wealthy peasant and his wife . 
+One day the wifewent to the forest for mushrooms , lost her way , and stumbled into a bear's den . 
+The bearkept herwith him , and after some time , a long time or a short time , shehad a son by him. 
+This son was a man down to the waist and a bear below the waist ; his his mothercalled himIvanko the Bearlet . 
+Years went by , and when Ivan grew up hewanted to go away with his his motherand live with the peasantsin the village ; they waited until the bear went to a beehive , made ready , and ran away . 
+They ran and ran and finally came to their own village . 
+The peasantsaw his his wifeand was overjoyed - hehad given up hope that shewould ever return . 
+Then hebeheld her her sonand asked : ' And who is this freak? ' 
+His His wifetold him all that had happened , how shehad lived in the bear's den and had a sonby him and that this son was human to the waist and a bear from the waist down . 
+' Well , Bearlet, ' said the peasant, ' go to the back yard and slaughter a sheep ; we must make dinner for you . ' 
+' And which one shall I slaughter ? ' 
+' Whichever one stares at you . ' 
+Ivanko the Bearlettook a knife , went out to the yard , and called the sheep; all of thembegan to stare at him. 
+Heforthwith slaughtered them all, skinned them, and went to ask the peasant where heshould store the skins and the meat . 
+' What 's this ? ' yelled the peasant . 
+' Itold youto slaughter one sheep , and youhave slaughtered them all! ' 
+' No , father , youtold meto slaughter whichever one stared at me; but when I came out into the yard all of them, without exception, began to stare at me. ' 
+' You certainly are a clever fellow . 
+Take the meat and skins into the barn , and at night guard the door against thieves and dogs . ' 
+' Very well , I will guard it . ' 
+It so happened that on that night a storm broke and the rain fell in buckets . 
+Ivanko the Bearlet broke the door off the barn , took it into the bath house , and spent the night there . 
+Thieves took advantage of the darkness ; theyfound the barn open and without a guard, so theytook whatever theypleased . 
+Next morning the peasant arose , went to see whether everything was in order , and found that nothing was left : what the thieves had not taken , the dogs had eaten up . 
+Helooked for the guard, found himin the bath house , and began to chide himeven more severely than the first time . 
+' But , father, it is not my fault , ' said Ivanko. 
+' You yourselftold meto guard the door , and I did guard it . 
+Here it is ; the thieves did not steal it , nor did the dogs eat it up . ' 
+' What can Ido with this fool? ' thought the peasantto himself. 
+' If this goes on for a month or two , hewill ruin mecompletely . 
+Iwonder how Ican get rid of him. ' 
+Then he hit upon an idea ; the next day hesent Ivankoto the lake and told himto wind ropes of sand . 
+
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: 
+(7.160931
+ ((E1 E8) (M6017 M4183) (M6019 M4175) (EXTRA0 EXTRA6) (E3 E18) (M6026 M4174)
+  (E4 E14) (E5 E10) (M6018 M4195) (E2 E20)))
+
+
+In a certain village there lived a wealthy peasant and his wife . 
+One day the wifewent to the forest for mushrooms , lost her way , and stumbled into a bear's den . 
+The bearkept herwith him , and after some time , a long time or a short time , shehad a son by him. 
+This son was a man down to the waist and a bear below the waist ; his his mothercalled himIvanko the Bearlet . 
+Years went by , and when Ivan grew up hewanted to go away with his his motherand live with the peasantsin the village ; they waited until the bear went 

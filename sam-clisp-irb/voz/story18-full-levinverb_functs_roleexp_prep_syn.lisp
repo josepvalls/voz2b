@@ -29,16 +29,25 @@
          ;; Then the peasant married the princess and became a prince.
          ;; Satisfied with her deed, the fox returned home.
 
-         (t1 "There once lived a poor and unlucky peasant . ")
-         (t2 "A fox came to him one day and told him that he could marry him to the princess . ")
-         (t3 "The peasant was reluctant but then trusted the fox . ")
-         (t4 "They left the hole where the peasant lived and headed to the palace . ")
-         (t5 "They emerged from the swamp covered in mud . ")
-         (t6 "A nearby water spirit was so scared when they saw them that died instantly . ")
-         (t7 "Then , the fox told the king that the peasant was a prince and that his clothes had been lost fighting the water spirit . ")
-         (t8 "The king was impressed by their feat and gave the peasant new clothes and jewelry . ")
-         (t9 "Then the peasant married the princess and became a prince . ")
-         (t10 "Satisfied with her deed , the fox returned home . ")
+         (t1 "There once lived a poor and unlucky " (STORY18-m1000 "peasant") " . ")
+         (t1001 (STORY18-EXTRA1  (STORY18-m1000 "peasant") " is the " (Other "Other") ) ".")
+         (t2 "" (STORY18-m1001 "A fox") " came to " (STORY18-m1000 "him") " one day and told him that he could marry him to the princess . ")
+         (t3 "" (STORY18-m1000 "The peasant") " was reluctant but then trusted " (STORY18-m1001 "the fox") " . ")
+         (t4 "" (STORY18-m1002 "They") " left the hole where " (STORY18-m1000 "the peasant") " lived and headed to the palace . ")
+         (t1002 (STORY18-EXTRA2  (STORY18-m1000 "the peasant") " is the " (Other "Other") ) ".")
+         (t1003 (STORY18-EXTRA3  (STORY18-m1001 "the fox") " is the " (Other "Other") ) ".")
+         (t5 "" (STORY18-m1002 "They") " emerged from the swamp covered in mud . ")
+         (t6 "" (STORY18-m1003 "A nearby water spirit") " was so scared when they saw them that died instantly . ")
+         (t1004 (STORY18-EXTRA4  (STORY18-m1000 "the peasant") " is the " (Other "Other") ) ".")
+         (t1005 (STORY18-EXTRA5  (STORY18-m1001 "the fox") " is the " (Other "Other") ) ".")
+         (t1006 (STORY18-EXTRA6  (STORY18-m1003 "A nearby water spirit") " is the " (Other "Other") ) ".")
+         (t7 "Then , " (STORY18-VERB2 "" (STORY18-m1001 "the fox") " told " ) "the king that the peasant was a prince and that his clothes had been lost fighting the water spirit . ")
+         (t8 "" (STORY18-m1004 "The king") " was impressed by their feat and gave " (STORY18-m1000 "the peasant") " new clothes and jewelry . ")
+         (t9 "Then " (STORY18-m1000 "the peasant") " married the princess and became a prince . ")
+         (t10 "Satisfied with her deed , " (STORY18-m1001 "the fox") " returned home . ")
+         (t1007 (STORY18-EXTRA7  (STORY18-m1000 "the peasant") " is the " (Other "Other") ) ".")
+         (t1008 (STORY18-EXTRA8  (STORY18-m1001 "the fox") " is the " (Other "Other") ) ".")
+         (t1009 (STORY18-EXTRA9  (STORY18-m1003 "A nearby water spirit") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -75,26 +84,51 @@
       
        (phase1
          (:entities
+           (STORY18-m1000 :type animate)
          )
          (:expressions
+           ((roleOther STORY18-m1000) :name STORY18-EXTRA0)
          )
        )
        (phase2
          (:entities
+           (STORY18-m1000 :type animate)
+           (STORY18-m1001 :type animate)
+           (STORY18-m1002 :type animate)
          )
          (:expressions
+           ((levin-39-6 STORY18-m1000 STORY18-m1000) :name STORY18-VERB1)
+           ((roleOther STORY18-m1000) :name STORY18-EXTRA1)
+           ((roleOther STORY18-m1001) :name STORY18-EXTRA2)
          )
        )
        (phase3
          (:entities
+           (STORY18-m1000 :type animate)
+           (STORY18-m1001 :type animate)
+           (STORY18-m1002 :type animate)
+           (STORY18-m1003 :type animate)
          )
          (:expressions
+           ((roleOther STORY18-m1000) :name STORY18-EXTRA3)
+           ((roleOther STORY18-m1001) :name STORY18-EXTRA4)
+           ((roleOther STORY18-m1003) :name STORY18-EXTRA5)
          )
        )
        (phase4
          (:entities
+           (STORY18-m1000 :type animate)
+           (STORY18-m1001 :type animate)
+           (STORY18-m1002 :type animate)
+           (STORY18-m1003 :type animate)
+           (STORY18-m1004 :type animate)
          )
          (:expressions
+           ((levin-37-2 STORY18-m1001 STORY18-m1001) :name STORY18-VERB2)
+           ((levin-36-2 STORY18-m1000 STORY18-m1000) :name STORY18-VERB3)
+           ((roleOther STORY18-m1000) :name STORY18-EXTRA6)
+           ((roleOther STORY18-m1001) :name STORY18-EXTRA7)
+           ((roleOther STORY18-m1003) :name STORY18-EXTRA8)
          )
        )
 

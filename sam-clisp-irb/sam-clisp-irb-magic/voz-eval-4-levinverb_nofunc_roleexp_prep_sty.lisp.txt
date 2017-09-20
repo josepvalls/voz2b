@@ -1,0 +1,68 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: 
+(5.336787
+ ((STORY2-VERB6 STORY4-VERB3) (STORY2-M2460 STORY4-M3349)
+  (STORY2-M2456 STORY4-M3357) (STORY2-VERB4 STORY4-VERB4)
+  (STORY2-M2461 STORY4-M3368) (STORY2-VERB7 STORY4-VERB1)
+  (STORY2-M2479 STORY4-M3344) (STORY2-M2471 STORY4-M3345)))
+
+
+A falcon lived with his his old wife ; they had The youngest son and a bright falcon . 
+' The youngest son , The youngest son , ' said the mother , ' we are going to work ; we shall bring The youngest son back a bun , sew you a dress , and buy The youngest son a kerchief . 
+Be careful , watch over your a bright falcon , do not leave the house . ' 
+The parents went away and The youngest son forgot what they had told her ; The youngest son put her a bright falcon on the grass beneath the window , ran out into the street , and became absorbed in games . 
+In a certain kingdom in a certain land there lived a king who had three sons three sons . 
+One day they said to him : ' Father, our gracious sovereign , give us your blessing ; we wish to go hunting . ' 
+The father gave them his blessing and they set out in different directions . 
+The youngest son rode and rode and lost his way ; he came to a clearing , and there lay a dead horse , around which were gathered beasts of many kinds , birds , and reptiles . 
+A falcon rose , flew up to the prince , perched on his shoulder , and said : ' Prince Ivan , divide that horse among us ; it has lain here for thirty years , and we have been quarreling ever since , unable to find a way of sharing it . ' 
+The prince climbed down from his good steed and divided the carcass : he gave the bones to the beasts , the flesh to the birds , the skin to the reptiles , and the head to the ants . 
+' Thank you , Prince Ivan , ' said the falcon . 
+' For your kindness you shall be able to turn into a bright falcon or an ant whenever you wish . ' 
+Prince Ivan struck the damp earth , turned into a bright falcon , soared up into the air , and flew to the thrice tenth kingdom . 
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: (1.474275 ((STORY3-EXTRA0 STORY4-EXTRA4) (STORY3-M3148 STORY4-M3357)))
+
+
+In a certain kingdom in a certain land there lived a king who had three sons three sons . 
+One day they said to him : ' Father, our gracious sovereign , give us your blessing ; we wish to go hunting . ' 
+The father gave them his blessing and they set out in different directions . 
+The youngest son rode and rode and lost his way ; he came to a clearing , and there lay a dead horse , around which were gathered beasts of many kinds , birds , and reptiles . 
+A falcon rose , flew up to the prince , perched on his shoulder , and said : ' Prince Ivan , divide that horse among us ; it has lain here for thirty years , and we have been quarreling ever since , unable to find a way of sharing it . ' 
+The prince climbed down from his good steed and divided the carcass : he gave the bones to the beasts , the flesh to the birds , the skin to the reptiles , and the head to the ants . 
+' Thank you , Prince Ivan , ' said the falcon . 
+' For your kindness you shall be able to turn into a bright falcon or an ant whenever you wish . ' 
+Prince Ivan struck the damp earth , turned into a bright falcon , soared up into the air , and flew to the thrice tenth kingdom . 
+' Do A falcon have any money ? ' 
+mapping: 
+(2.5360832
+ ((STORY11-VERB3 STORY4-VERB2) (STORY11-M4108 STORY4-M3349)
+  (STORY11-M4097 STORY4-M3357)))
+
+
+Once upon a time there was an old couple , and they had three Sons . 
+Two of these had their wits about them , but A falcon was A falcon . 
+For twelve whole years A falcon lay among the ashes from the stove ; but then A falcon arose , and shook A falcon , so that six poods of ashes fell off from A falcon . 
+Now in the land in which A falcon lived there was never any day , but always night . 
+In a certain kingdom in a certain land there lived a king who had three sons three sons . 
+One day they said to him : ' Father, our gracious sovereign , give us your blessing ; we wish to go hunting . ' 
+The father gave them his blessing and they set out in different directions . 
+The youngest son rode and rode and lost his way ; he came to a clearing , and there lay a dead horse , around which were gathered beasts of many kinds , birds , and reptiles . 
+A falcon rose , flew up to the prince , perched on his shoulder , and said : ' Prince Ivan , divide that horse among us ; it has lain here for thirty years , and we have been quarreling ever since , unable to find a way of sharing it . ' 
+The prince climbed down from his good steed and divided the carcass : he gave the bones to the beasts , the flesh to the birds , the skin to the reptiles , and the head to the ants . 
+' Thank you , Prince Ivan , ' said the falcon . 
+' For your kindness you shall be able to turn into a bright falcon or an ant whenever you wish . ' 
+Prince Ivan struck the damp earth , turned into a bright falcon , soared up into the air , and flew to the thrice tenth kingdom . 

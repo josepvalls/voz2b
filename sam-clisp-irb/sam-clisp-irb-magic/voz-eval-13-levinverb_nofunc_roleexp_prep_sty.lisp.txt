@@ -1,0 +1,115 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: 
+(9.722987
+ ((STORY6-VERB7 STORY13-VERB6) (STORY6-M4183 STORY13-M6018)
+  (STORY6-M4174 STORY13-M6017) (STORY6-EXTRA0 STORY13-EXTRA3)
+  (STORY6-M4195 STORY13-M6026) (STORY6-VERB22 STORY13-VERB4)
+  (STORY6-VERB13 STORY13-VERB7) (STORY6-VERB19 STORY13-VERB8)
+  (STORY6-VERB8 STORY13-VERB1) (STORY6-M4181 STORY13-M6014)
+  (STORY6-M4175 STORY13-M6019) (STORY6-VERB20 STORY13-VERB3)
+  (STORY6-VERB21 STORY13-VERB5)))
+
+
+There was once an old princess ; she had a son and a daughter , both well built , both handsome . 
+A wicked witch disliked them ; she pondered and pondered as to how she could lead them into evil ways and destroy them . 
+In the end she conceived a plan . 
+Like a cunning fox she came to their their mother and said : ' My My little dove , my my dear friend , here is a ring for you ; put it on your your son 's finger . 
+With its help he will be healthy and wealthy , but he must never take it off , and he must marry only that maiden whom the ring fits . ' 
+The old woman believed her and was overjoyed ; before her death she enjoined upon her her son that he take to wife a woman whom the ring would be found to fit . 
+Time went by and the little son grew up . 
+He grew up and began to seek a bride ; he would like one girl , then another , but upon trying the ring he always found it to be too big or too small ; it did not fit either the one or the other . 
+He traveled and traveled through villages and cities , tried the ring on all the lovely maidens , but could not find one whom he could take as his his betrothed ; he returned home and was pensive and sad . 
+' Little brother , why are you grieving ? ' his his sister asked him . 
+He told her his trouble . 
+' Why is the ring so troublesome ? ' said the sister . 
+' Let me try it . ' 
+She put it on her finger and the ring clasped it , and began to gleam ; it fitted her as though made to her size . 
+' Ah , my my sister , ' said the brother , ' you have been chosen for me by fate , you shall be my my wife . ' 
+' What are you saying , my my brother ? 
+Think of God , think of the sin ; one does not marry one 's own sister . ' 
+But her her brother did not heed her ; he danced for joy and ordered that preparations be made for the wedding . 
+a daughter went to the lake , sat on the shore , and began to wind ropes of sand . 
+Suddenly a little devil jumped out of the water and asked : ' What are a daughter doing here , a daughter ? ' 
+' Ca n't you see ? 
+a daughter 'm winding ropes ; a daughter want to thrash the lake and torment you devils , because you live in our lake but do not pay any rent . ' 
+' Wait a while , a daughter , I 'll run and tell my my grandfather , ' said the little devil , and - flop ! - he jumped into the water . 
+Five minutes later he was out again and said : ' Grandfather said that if a daughter can run faster than I , we 'll pay the rent ; if not , he told me to drag a daughter down into the lake . ' 
+mapping: 
+(6.0497675
+ ((STORY1-VERB7 STORY13-VERB6) (STORY1-M1084 STORY13-M6018)
+  (STORY1-M1091 STORY13-M6017) (STORY1-VERB5 STORY13-VERB2)
+  (STORY1-M1096 STORY13-M6026) (STORY1-VERB10 STORY13-VERB1)
+  (STORY1-M1106 STORY13-M6014) (STORY1-M1092 STORY13-M6019)
+  (STORY1-VERB3 STORY13-VERB5)))
+
+
+a daughter appeared near Kiev ; a daughter took heavy tribute from the people - a lovely maiden from every house, whom he then devoured . 
+Finally , it was the fate of a son to go to a daughter . 
+There was once an old princess ; she had a son and a daughter , both well built , both handsome . 
+A wicked witch disliked them ; she pondered and pondered as to how she could lead them into evil ways and destroy them . 
+In the end she conceived a plan . 
+Like a cunning fox she came to their their mother and said : ' My My little dove , my my dear friend , here is a ring for you ; put it on your your son 's finger . 
+With its help he will be healthy and wealthy , but he must never take it off , and he must marry only that maiden whom the ring fits . ' 
+The old woman believed her and was overjoyed ; before her death she enjoined upon her her son that he take to wife a woman whom the ring would be found to fit . 
+Time went by and the little son grew up . 
+He grew up and began to seek a bride ; he would like one girl , then another , but upon trying the ring he always found it to be too big or too small ; it did not fit either the one or the other . 
+He traveled and traveled through villages and cities , tried the ring on all the lovely maidens , but could not find one whom he could take as his his betrothed ; he returned home and was pensive and sad . 
+' Little brother , why are you grieving ? ' his his sister asked him . 
+He told her his trouble . 
+' Why is the ring so troublesome ? ' said the sister . 
+' Let me try it . ' 
+She put it on her finger and the ring clasped it , and began to gleam ; it fitted her as though made to her size . 
+' Ah , my my sister , ' said the brother , ' you have been chosen for me by fate , you shall be my my wife . ' 
+' What are you saying , my my brother ? 
+Think of God , think of the sin ; one does not marry one 's own sister . ' 
+But her her brother did not heed her ; he danced for joy and ordered that preparations be made for the wedding . 
+mapping: 
+(7.787026
+ ((STORY14-VERB7 STORY13-VERB1) (STORY14-M5848 STORY13-M6014)
+  (STORY14-M5862 STORY13-M6019) (STORY14-EXTRA0 STORY13-EXTRA4)
+  (STORY14-M5856 STORY13-M6039) (STORY14-VERB5 STORY13-VERB6)
+  (STORY14-M5849 STORY13-M6018) (STORY14-M5855 STORY13-M6017)
+  (STORY14-VERB4 STORY13-VERB2) (STORY14-M5859 STORY13-M6026)
+  (STORY14-VERB3 STORY13-VERB3)))
+
+
+There was once an old princess ; she had a son and a daughter , both well built , both handsome . 
+A wicked witch disliked them ; she pondered and pondered as to how she could lead them into evil ways and destroy them . 
+In the end she conceived a plan . 
+Like a cunning fox she came to their their mother and said : ' My My little dove , my my dear friend , here is a ring for you ; put it on your your son 's finger . 
+With its help he will be healthy and wealthy , but he must never take it off , and he must marry only that maiden whom the ring fits . ' 
+The old woman believed her and was overjoyed ; before her death she enjoined upon her her son that he take to wife a woman whom the ring would be found to fit . 
+Time went by and the little son grew up . 
+He grew up and began to seek a bride ; he would like one girl , then another , but upon trying the ring he always found it to be too big or too small ; it did not fit either the one or the other . 
+He traveled and traveled through villages and cities , tried the ring on all the lovely maidens , but could not find one whom he could take as his his betrothed ; he returned home and was pensive and sad . 
+' Little brother , why are you grieving ? ' his his sister asked him . 
+He told her his trouble . 
+' Why is the ring so troublesome ? ' said the sister . 
+' Let me try it . ' 
+She put it on her finger and the ring clasped it , and began to gleam ; it fitted her as though made to her size . 
+' Ah , my my sister , ' said the brother , ' you have been chosen for me by fate , you shall be my my wife . ' 
+' What are you saying , my my brother ? 
+Think of God , think of the sin ; one does not marry one 's own sister . ' 
+But her her brother did not heed her ; he danced for joy and ordered that preparations be made for the wedding . 
+a bride answered : ' a bride need only A wicked witch , a bride have no use for a daughter . ' 
+They went to a son ; a son married A wicked witch at once , and they began to live together . 
+a son thought to a son : ' an old princess must have cheated a son ; A wicked witch can not be a merchant 's daughter . 
+Why is A wicked witch so ignorant ? 
+A wicked witch does not know how to do anything . ' 
+Meanwhile a daughter recovered from the illness that her A wicked witch had brought upon a daughter . 
+a daughter could not see ; a daughter could only hear and a daughter heard an old man tending cattle cattle . 
+a daughter said to him : ' Where are you, grandfather ? ' 
+' I live in a little hut . ' 
+' Please take a daughter into your hut . ' 

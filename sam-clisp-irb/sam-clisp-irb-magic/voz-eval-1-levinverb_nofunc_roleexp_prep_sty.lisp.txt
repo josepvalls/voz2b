@@ -1,0 +1,24 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: 
+(4.9674177
+ ((STORY9-VERB19 STORY1-VERB2) (STORY9-M5081 STORY1-M1088)
+  (STORY9-M5105 STORY1-M1084) (STORY9-EXTRA0 STORY1-EXTRA2)
+  (STORY9-M5098 STORY1-M1091) (STORY9-VERB21 STORY1-VERB1)
+  (STORY9-M5078 STORY1-M1087)))
+
+
+A dragon appeared near Kiev ; he took heavy tribute from the people - a lovely maiden from every house, whom he then devoured . 
+Finally , it was the fate of the tsar's daughter to go to the dragon . 
+So Alenka heated the stove hot , ever so hot , and said to the people , ' Come here and sit on this shovel ! ' 

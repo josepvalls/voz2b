@@ -26,15 +26,20 @@
          ;; The kind-hearted boy gave the mouse some nuts.
          ;; Instead of eating the nuts, the mouse planted them and from them a rock sprouted from the ground.
 
-         (t1 "An old couple lived in a hut with their adopted son . ")
-         (t2 "The boy had a magical bird that could control the weather . ")
-         (t3 "They used the bird 's predictions to make it rain on their crops and were always prosperous . ")
-         (t4 "A jealous neighbor learned about the bird . ")
-         (t5 "The neighbor told the boy he needed to borrow the bird . ")
-         (t6 "But the boy would n't let him take it . ")
-         (t7 "Later , the mouse asked the boy for some food . ")
-         (t8 "The kind-hearted boy gave the mouse some nuts . ")
-         (t9 "Instead of eating the nuts , the mouse planted them and from them a rock sprouted from the ground . ")
+         (t1 "" (STORY3-m1000 "An old couple") " lived in a hut with " (STORY3-m1001 "their adopted son") " . ")
+         (t2 "" (STORY3-m1001 "The boy") " had " (STORY3-m1002 "a magical bird") " that could control the weather . ")
+         (t3 "" (STORY3-m1000 "They") " used the bird 's predictions to make it rain on their crops and were always prosperous . ")
+         (t4 "" (STORY3-m1003 "A jealous neighbor") " learned about the bird . ")
+         (t5 "" (STORY3-m1003 "The neighbor") " told " (STORY3-m1001 "the boy") " he needed to borrow the bird . ")
+         (t6 "But the boy would n't let " (STORY3-m1003 "him") " take " (STORY3-m1002 "it") " . ")
+         (t1001 (STORY3-EXTRA1  (STORY3-m1001 "the boy") " is the " (Other "Other") ) ".")
+         (t1002 (STORY3-EXTRA2  (STORY3-m1003 "him") " is the " (Other "Other") ) ".")
+         (t7 "Later , " (STORY3-VERB3 "" (STORY3-m1004 "the mouse") " asked " ) "" (STORY3-m1001 "the boy") " for some food . ")
+         (t8 "" (STORY3-m1001 "The kind-hearted boy") " gave " (STORY3-m1004 "the mouse") " some nuts . ")
+         (t9 "Instead of eating the nuts , " (STORY3-m1004 "the mouse") " planted them and from them a rock sprouted from the ground . ")
+         (t1003 (STORY3-EXTRA3  (STORY3-m1001 "The kind-hearted boy") " is the " (Other "Other") ) ".")
+         (t1004 (STORY3-EXTRA4  (STORY3-m1003 "him") " is the " (Other "Other") ) ".")
+         (t1005 (STORY3-EXTRA5  (STORY3-m1004 "the mouse") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -71,14 +76,32 @@
       
        (phase1
          (:entities
+           (STORY3-m1000 :type animate)
+           (STORY3-m1001 :type animate)
+           (STORY3-m1002 :type animate)
+           (STORY3-m1003 :type animate)
          )
          (:expressions
+           ((levin-37-2 STORY3-m1003 STORY3-m1001) :name STORY3-VERB1)
+           ((levin-11-3 STORY3-m1003 STORY3-m1002) :name STORY3-VERB2)
+           ((roleOther STORY3-m1001) :name STORY3-EXTRA0)
+           ((roleOther STORY3-m1003) :name STORY3-EXTRA1)
          )
        )
        (phase2
          (:entities
+           (STORY3-m1000 :type animate)
+           (STORY3-m1001 :type animate)
+           (STORY3-m1002 :type animate)
+           (STORY3-m1003 :type animate)
+           (STORY3-m1004 :type animate)
          )
          (:expressions
+           ((levin-37-1 STORY3-m1004 STORY3-m1004) :name STORY3-VERB3)
+           ((levin-13-1 STORY3-m1001 STORY3-m1004) :name STORY3-VERB4)
+           ((roleOther STORY3-m1001) :name STORY3-EXTRA2)
+           ((roleOther STORY3-m1003) :name STORY3-EXTRA3)
+           ((roleOther STORY3-m1004) :name STORY3-EXTRA4)
          )
        )
 

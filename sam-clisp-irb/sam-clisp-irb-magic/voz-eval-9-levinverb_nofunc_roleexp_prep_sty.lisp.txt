@@ -1,0 +1,99 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: 
+(6.857755
+ ((STORY2-VERB5 STORY9-VERB1) (STORY2-M2461 STORY9-M5081)
+  (STORY2-M2460 STORY9-M5078) (STORY2-VERB4 STORY9-VERB16)
+  (STORY2-VERB7 STORY9-VERB20) (STORY2-M2479 STORY9-M5105)
+  (STORY2-M2471 STORY9-M5098) (STORY2-VERB6 STORY9-VERB11)
+  (STORY2-M2456 STORY9-M5080)))
+
+
+father lived with his his old wife ; they had one son called Ivashko and mother . 
+' one son called Ivashko , one son called Ivashko , ' said the mother , ' we are going to work ; we shall bring one son called Ivashko back a bun , sew you a dress , and buy one son called Ivashko a kerchief . 
+Be careful , watch over your mother , do not leave the house . ' 
+The parents went away and one son called Ivashko forgot what they had told her ; one son called Ivashko put her mother on the grass beneath the window , ran out into the street , and became absorbed in games . 
+There once lived an old couple who had one son called Ivashko ; one can tell how fond they were of him ! 
+Well , one day , Ivashko said to his father and mother : ' I 'll go out fishing if you 'll let me . ' 
+' What are you thinking about ! 
+you 're still very small ; suppose you get drowned , what good will there be in that ? ' 
+' No , no , I sha n't get drowned . 
+I 'll catch you some fish ; do let me go ! ' 
+So his his mother put a white shirt on him , tied a red girdle round him , and let him go . 
+Out in a boat he sat and said : Canoe , canoe , float a little farther , Canoe , canoe , float a little farther ! 
+Then the canoe floated on farther and farther , and Ivashko began to fish . 
+When some little time had passed by , the old woman hobbled down to the river side and called to her her son : Ivashechko , Ivashechko, my boy , Float up , float up unto the waterside ; I bring thee food and drink . 
+And Ivashko said : Canoe , canoe , float to the waterside ; That is my my mother calling me . 
+The boat floated to the shore : the woman took the fish , gave her her boy food and drink , changed his shirt for him and his girdle , and sent him back to his fishing . 
+Again he sat in his his boat and said : Canoe , canoe , float a little farther , Canoe , canoe , float a little farther . 
+Then the canoe floated on farther and farther , and Ivashko began to fish . 
+After a little time had passed by , the old man also hobbled down to the bank and called to his his son : Ivashechko , Ivashechko, my boy , Float up , float up , onto the waterside ; I bring thee food and drink . 
+And Ivashko replied : Canoe , canoe , float to the waterside ; That is my my father calling me . 
+The canoe floated to the shore . 
+The old man took the fish , gave his his boy food and drink , changed his shirt for him and his girdle , and sent him back to his fishing . 
+Now a certain witch had heard what Ivashko 's parents had cried aloud to him , and she longed to get hold of the boy . 
+So she went down to the bank and cried with a hoarse voice : Ivashechko , Ivashechko, my boy , Float up , float up , onto the waterside I bring thee food and drink . 
+Ivashko perceived that the voice was not his his mother 's , but was that of a witch , and he sang : Canoe , canoe , float a little farther , Canoe , canoe , float a little farther ; That is not my my mother , but a witch who calls me me . 
+The witch saw that she must call Ivashko with just such a voice as his his mother had . 
+So she hastened to a smith and said to him : ' Smith , smith make me just such a thin little voice as Ivashko Ivashko's mother has : if you do n't , I 'll eat you . ' 
+So the smith forged her a little voice just like Ivashko Ivashko's mother 's . 
+Then the witch went down by night to the shore and sang : Ivashechko , Ivashechko, my boy , Float up , float up , unto the waterside ; I bring thee food and drink . 
+Ivashko came , and she took the fish , and seized the boy and carried him home with her . 
+mapping: 
+(9.112031
+ ((STORY14-EXTRA0 STORY9-EXTRA3) (STORY14-M5856 STORY9-M5080)
+  (STORY14-VERB3 STORY9-VERB2) (STORY14-M5855 STORY9-M5078)
+  (STORY14-VERB2 STORY9-VERB16) (STORY14-M5848 STORY9-M5081)
+  (STORY14-VERB5 STORY9-VERB17) (STORY14-M5849 STORY9-M5098)
+  (STORY14-VERB7 STORY9-VERB19) (STORY14-M5862 STORY9-M5105)
+  (STORY14-VERB4 STORY9-VERB4) (STORY14-M5859 STORY9-M5087)
+  (STORY14-VERB1 STORY9-VERB7)))
+
+
+There once lived an old couple who had one son called Ivashko ; one can tell how fond they were of him ! 
+Well , one day , Ivashko said to his father and mother : ' I 'll go out fishing if you 'll let me . ' 
+' What are you thinking about ! 
+you 're still very small ; suppose you get drowned , what good will there be in that ? ' 
+' No , no , I sha n't get drowned . 
+I 'll catch you some fish ; do let me go ! ' 
+So his his mother put a white shirt on him , tied a red girdle round him , and let him go . 
+Out in a boat he sat and said : Canoe , canoe , float a little farther , Canoe , canoe , float a little farther ! 
+Then the canoe floated on farther and farther , and Ivashko began to fish . 
+When some little time had passed by , the old woman hobbled down to the river side and called to her her son : Ivashechko , Ivashechko, my boy , Float up , float up unto the waterside ; I bring thee food and drink . 
+And Ivashko said : Canoe , canoe , float to the waterside ; That is my my mother calling me . 
+The boat floated to the shore : the woman took the fish , gave her her boy food and drink , changed his shirt for him and his girdle , and sent him back to his fishing . 
+Again he sat in his his boat and said : Canoe , canoe , float a little farther , Canoe , canoe , float a little farther . 
+Then the canoe floated on farther and farther , and Ivashko began to fish . 
+After a little time had passed by , the old man also hobbled down to the bank and called to his his son : Ivashechko , Ivashechko, my boy , Float up , float up , onto the waterside ; I bring thee food and drink . 
+And Ivashko replied : Canoe , canoe , float to the waterside ; That is my my father calling me . 
+The canoe floated to the shore . 
+The old man took the fish , gave his his boy food and drink , changed his shirt for him and his girdle , and sent him back to his fishing . 
+Now a certain witch had heard what Ivashko 's parents had cried aloud to him , and she longed to get hold of the boy . 
+So she went down to the bank and cried with a hoarse voice : Ivashechko , Ivashechko, my boy , Float up , float up , onto the waterside I bring thee food and drink . 
+Ivashko perceived that the voice was not his his mother 's , but was that of a witch , and he sang : Canoe , canoe , float a little farther , Canoe , canoe , float a little farther ; That is not my my mother , but a witch who calls me me . 
+The witch saw that she must call Ivashko with just such a voice as his his mother had . 
+So she hastened to a smith and said to him : ' Smith , smith make me just such a thin little voice as Ivashko Ivashko's mother has : if you do n't , I 'll eat you . ' 
+So the smith forged her a little voice just like Ivashko Ivashko's mother 's . 
+Then the witch went down by night to the shore and sang : Ivashechko , Ivashechko, my boy , Float up , float up , unto the waterside ; I bring thee food and drink . 
+Ivashko came , and she took the fish , and seized the boy and carried him home with her . 
+a boat answered : ' a boat need only a smith , a boat have no use for a certain witch . ' 
+They went to one son called Ivashko ; one son called Ivashko married a smith at once , and they began to live together . 
+one son called Ivashko thought to one son called Ivashko : ' mother must have cheated one son called Ivashko ; a smith can not be a merchant 's daughter . 
+Why is a smith so ignorant ? 
+a smith does not know how to do anything . ' 
+Meanwhile a certain witch recovered from the illness that her a smith had brought upon a certain witch . 
+a certain witch could not see ; a certain witch could only hear and a certain witch heard an old man tending cattle cattle . 
+a certain witch said to him : ' Where are you, grandfather ? ' 
+' I live in a little hut . ' 
+' Please take a certain witch into your hut . ' 

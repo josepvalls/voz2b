@@ -1,0 +1,69 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: 
+(8.27091
+ ((STORY14-VERB7 STORY10-VERB6) (STORY14-M5848 STORY10-M2558)
+  (STORY14-M5862 STORY10-M2550) (STORY14-VERB6 STORY10-VERB1)
+  (STORY14-M5849 STORY10-M2542) (STORY14-VERB4 STORY10-VERB10)
+  (STORY14-M5859 STORY10-M2566) (STORY14-M5855 STORY10-M2567)
+  (STORY14-EXTRA0 STORY10-EXTRA8) (STORY14-M5856 STORY10-M2545)
+  (STORY14-VERB3 STORY10-VERB11)))
+
+
+Once , in a far away land , there was a man who had seven sons - all by the name of Simeon seven sons - all by the name of Simeon . 
+They were seven lazy , good-for-nothing loafers . 
+The laziest sons anyone ever had anywhere ! 
+They never did a single useful thing . 
+This was unbearable for their their father . 
+Eventually , it got to the point that he simply brought all seven Simeons to the czar and enlisted them in his service . 
+The czar was grateful to the father for bringing him so many fine , able men . 
+He asked the father about their skills , ' What do they know how to do ? ' 
+' Ask them yourself, your royal majesty , ' their their father said . 
+Accordingly , the czar summoned the oldest Simeon and asked him , ' What is your trade ? ' 
+' Thievery , your royal majesty . ' 
+' Hmm , you will probably be valuable to me at some point . ' 
+He called in the second , ' And what about you ? ' 
+' I 'm an artisan ; I can make anything valuable . ' 
+' You will also be useful . ' 
+He called in the third Simeon , asking : ' And what can you do ? ' 
+' I can shoot any bird - even in flight , your royal majesty . ' 
+' Great ! ' said the czar . 
+He asks the fourth , ' And you ? ' 
+' If a marksman shoots a bird , I will retrieve it , better than any dog . ' 
+' Fine ! ' 
+' And what are you proficient at ? ' he asked the fifth . 
+' From a vantage point, I can see and then relate all that is happening in any part of the kingdom all that is happening in any part of the kingdom . ' 
+' Sounds great ! ' 
+After the fifth Simeon , he questioned the sixth . 
+' I 'm very good at building boats ; for me it 's ' slam-bam , ' and I 've built a boat . ' 
+' Good . ' 
+Then asking the seventh , ' And what do you do ? ' 
+' I am a healer . ' 
+' Sounds good . ' said the czar . 
+Then he dismissed them all . 
+After some time passed , the czar remembering the seven Simeons , decided to put one of their skills to use . 
+The king asked the fifth Simeon , ' Okay , Simeon , will you find out what is going on in various places ? ' 
+Simeon climbed to a high place , looked around and related , ' Here such-and-such is happening , and there , such-and-such . ' 
+They checked his statements with the newspapers and found he was exactly right ! 
+After another long period passed , the czar decided to marry a certain princess . 
+what answered : ' what need only the czar , what have no use for a man who had seven sons - all by the name of Simeon . ' 
+They went to you ; you married the czar at once , and they began to live together . 
+you thought to you : ' the third Simeon must have cheated you ; the czar can not be a merchant 's daughter . 
+Why is the czar so ignorant ? 
+the czar does not know how to do anything . ' 
+Meanwhile a man who had seven sons - all by the name of Simeon recovered from the illness that her the czar had brought upon a man who had seven sons - all by the name of Simeon . 
+a man who had seven sons - all by the name of Simeon could not see ; a man who had seven sons - all by the name of Simeon could only hear and a man who had seven sons - all by the name of Simeon heard an old man tending cattle cattle . 
+a man who had seven sons - all by the name of Simeon said to him : ' Where are you, grandfather ? ' 
+' I live in a little hut . ' 
+' Please take a man who had seven sons - all by the name of Simeon into your hut . ' 

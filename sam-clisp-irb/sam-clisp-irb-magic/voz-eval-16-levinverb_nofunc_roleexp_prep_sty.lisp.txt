@@ -1,0 +1,109 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: 
+(7.2915287
+ ((STORY9-VERB3 STORY16-VERB2) (STORY9-M5078 STORY16-M1174)
+  (STORY9-M5081 STORY16-M1621) (STORY9-VERB18 STORY16-VERB4)
+  (STORY9-M5105 STORY16-M1201) (STORY9-M5098 STORY16-M1592)
+  (STORY9-VERB9 STORY16-VERB3) (STORY9-M5080 STORY16-M1242)
+  (STORY9-EXTRA0 STORY16-EXTRA14)))
+
+
+You know , on the earth , there are good people good people and those who are a little worse those who are a little worse . 
+Then there are those who don't fear God and don't even feel shame shame . 
+Wee little Havroshechka was left motherless as a small child with the latter type . 
+These people took her in and fed her but did n't allow her out into God 's world . 
+Rather , they put her to work every day . 
+She served , cleaned and answered for all and everything . 
+Her Her step-mother had three grown daughters . 
+The oldest 's name was One-Eye , the middle daughter 's name was Two-Eye , and the youngest 's name was Three-Eye . 
+The only thing they did was sit in the entry way and gaze outside . 
+Meanwhile Wee little Havroshechka did their work . 
+She sewed their clothes and spun and wove for them , but never heard one word of kindness . 
+She was only noticed when they wanted someone to abuse ! 
+Once , Wee little Havroshechka went into the field . 
+Embracing her her spotted cow , she lay against her neck and related how difficult her life was . 
+' Little mother-cow , they beat me and scold me . 
+They do n't feed me . 
+And then they order me not to cry . 
+They gave me 200 pounds of linen to spin , weave , bleach in the sun , and roll . 
+It all must be done by tomorrow . ' 
+The cow replied , ' Beautiful maiden , climb in one of my ears and climb out the other , and all of your work will be done . ' 
+And so it was . 
+As soon as the beautiful maiden climbed out of the cow 's ear everything was ready - woven , washed and rolled . 
+She carried it to her her step-mother who shut it away in a trunk with a grunt . 
+She then gave her even more work to do . 
+Havroshechka came again to the cow . 
+She climbed in one ear and out the other , carrying the completed things back . 
+The old woman was amazed . 
+She called One-Eye , ' My My wonderful daughter, my lovely daughter ! 
+Find out who helps the orphan the orphan . 
+Who weaves, spins and rolls the linen weaves , spins and rolls the linen ? ' 
+One-Eye went with the orphan through the forest and into the field . 
+She forgot her her mother 's instructions , became fatigued in the sun , and sprawled out in the grass . 
+Havroshechka coaxed , ' Sleep , little eye . 
+Sleep , little eye ! ' 
+One-Eye 's one little eye fell asleep . 
+While One-Eye slept , the little cow did the weaving and washing . 
+As the step-mother did n't learn anything from One- Eye , she sent Two-Eye . 
+Two-Eye also became fatigued in the sun , sprawled out in the grass , forgot her her mother 's instructions , and closed her eyes . 
+Havroshechka sang , ' Sleep , little eye . 
+Sleep , other little eye ! ' 
+The cow did the weaving , washing , and rolling all while Two-Eye 's two eyes slept . 
+The old woman was angry . 
+On the third day she sent Three-Eye and gave the orphan even more work to do . 
+And just like her older sisters , she bounded along and eventually fell into the grass . 
+Havroshechka sang , ' Sleep , little eye . 
+Sleep , other little eye ! ' 
+But she forgot about Three-Eye 's third little eye . 
+Two eyes fell asleep , while the third watched and saw everything : from the beautiful maiden climbing in one ear and out the other and then gathering up all the prepared linens . 
+Three-Eye told her her mother everything she saw . 
+The old woman rejoiced . 
+On the very next day she came to her her husband , ' Slaughter that spotted cow ! ' 
+The old man was reluctant . 
+' What are you saying , woman ? 
+Are you out of your mind ? 
+That cow is young and healthy ! ' 
+But she was absolutely determined . 
+So , he sharpened the knife . 
+Havroshechka ran to the cow . 
+' Little cow-mother ! 
+They want to slaughter you . ' 
+' Do n't eat my meat , beautiful maiden . 
+Gather my bones , tie them in a handkerchief , then plant them in the garden , and never forget me . 
+Water my bones every morning . ' 
+Havroshechka did everything as the cow instructed . 
+She endured great hunger , but still did n't eat any meat . 
+She watered the bones in the garden every day , from which an apple tree grew . 
+Goodness , what a tree it was ! 
+The apples were plump . 
+The rustling leaves were golden . 
+The bowing branches were silver . 
+Whoever rode by stopped to look at the tree . 
+Whoever walked by would stare in wonder . 
+One day the girls were strolling in the garden when a nobleman rode through the field . 
+He was wealthy , handsome , and young . 
+Seeing the apples , he got the girls ' attention . 
+' Maiden-beauties ! ' 
+he said , ' whoever can bring me an apple me an apple will be my my wife . ' 
+And so the three sisters pushed themselves in front of each other to get to the apple tree . 
+While before the apples hung lower than arm 's height , suddenly they were oh so high , to the point that they were far above their heads . 
+The sisters wanted to knock them off the tree , but the leaves blinded them . 
+They wanted to pick the apples , but the branches unpicked their braids . 
+No matter how they struggled and thrashed about , tearing their hands , they still could n't pick any apples . 
+Havroshechka came to the tree . 
+The branches bowed down and apples drooped into her reach . 
+The nobleman married her . 
+They lived in happiness , without any sorrow . 
+So Alenka heated the stove hot , ever so hot , and said to Wee little Havroshechka , ' Come here and sit on this shovel ! ' 

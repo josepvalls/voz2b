@@ -1,0 +1,46 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: (1.4219999 ((STORY3-EXTRA0 STORY8-EXTRA1) (STORY3-M3148 STORY8-M4634)))
+
+
+There was once a king who had three daughters three daughters , and such beauties they were as no tongue can tell of nor pen describe . 
+Their garden was big and beautiful and they liked to walk there at night . 
+A dragon from the Black Sea took to visiting this garden . 
+One night the king 's daughters tarried in the garden , for they could not tear their eyes away from the flowers ; suddenly the dragon appeared and carried them off on his fiery wings . 
+' Do a king who had three daughters have any money ? ' 
+mapping: (1.4219999 ((STORY12-EXTRA0 STORY8-EXTRA0) (STORY12-M4369 STORY8-M4640)))
+
+
+There was once a king who had three daughters three daughters , and such beauties they were as no tongue can tell of nor pen describe . 
+Their garden was big and beautiful and they liked to walk there at night . 
+A dragon from the Black Sea took to visiting this garden . 
+One night the king 's daughters tarried in the garden , for they could not tear their eyes away from the flowers ; suddenly the dragon appeared and carried them off on his fiery wings . 
+At that time a gypsy came to the village . 
+He came at night and no matter where he looked , he could n't find anyone ! 
+He finally entered the last hut where the last man was sitting and crying . 
+' Greetings , good man ! ' 
+' Why are you here , gypsy ? 
+Surely , you must be tired of life . ' 
+' Why do you say that ? ' 
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: (1.4219999 ((STORY13-EXTRA0 STORY8-EXTRA1) (STORY13-M6017 STORY8-M4634)))
+
+
+There was once a king who had three daughters three daughters , and such beauties they were as no tongue can tell of nor pen describe . 
+Their garden was big and beautiful and they liked to walk there at night . 
+A dragon from the Black Sea took to visiting this garden . 
+One night the king 's daughters tarried in the garden , for they could not tear their eyes away from the flowers ; suddenly the dragon appeared and carried them off on his fiery wings . 

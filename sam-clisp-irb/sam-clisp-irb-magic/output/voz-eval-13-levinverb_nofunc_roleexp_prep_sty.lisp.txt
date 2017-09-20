@@ -1,0 +1,90 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: 
+(7.9453516
+ ((EXTRA0 EXTRA4) (M4195 M6039) (E18 E3) (M4174 M6026) (M4183 M6017) (E14 E4)
+  (E4 E5) (M4175 M6018) (E15 E1) (M4204 M6019) (E20 E2)))
+
+
+There was once an old princess ; shehad a son and a daughter, both well built , both handsome . 
+A wicked witch disliked them ; shepondered and pondered as to how shecould lead them into evil ways and destroy them . 
+In the end she conceived a plan . 
+Like a cunning fox shecame to their mother and said : ' My little dove , my dear friend , here is a ring for you ; put it on your your son's finger . 
+With its help he will be healthy and wealthy , but he must never take it off , and he must marry only that maiden whom the ring fits . ' 
+The old woman believed her and was overjoyed ; before her death sheenjoined upon her son that hetake to wife a woman whom the ring would be found to fit . 
+Time went by and the little son grew up . 
+Hegrew up and began to seek a bride; he would like one girl , then another , but upon trying the ring he always found it to be too big or too small ; it did not fit either the one or the other . 
+Hetraveled and traveled through villages and cities , tried the ring on all the lovely maidens , but could not find one whom hecould take as his his betrothed; he returned home and was pensive and sad . 
+' Little brother, why are yougrieving ? ' his his sisterasked him . 
+Hetold herhis trouble . 
+' Why is the ring so troublesome ? ' said the sister . 
+' Let me try it . ' 
+She put it on her finger and the ring clasped it , and began to gleam ; it fitted her as though made to her size . 
+' Ah , my my sister, ' said the brother, ' you have been chosen for me by fate , you shall be my wife . ' 
+' What are yousaying , my my brother? 
+Think of God , think of the sin ; one does not marry one 's own sister . ' 
+But her brother did not heed her ; he danced for joy and ordered that preparations be made for the wedding . 
+
+mapping: 
+(5.921736
+ ((EXTRA0 EXTRA1) (M5848 M6018) (E4 E3) (M5859 M6026) (M5855 M6017) (E3 E4)
+  (E5 E2) (E2 E6)))
+
+
+There was once an old princess ; shehad a son and a daughter, both well built , both handsome . 
+A wicked witch disliked them ; shepondered and pondered as to how shecould lead them into evil ways and destroy them . 
+In the end she conceived a plan . 
+Like a cunning fox shecame to their mother and said : ' My little dove , my dear friend , here is a ring for you ; put it on your your son's finger . 
+With its help he will be healthy and wealthy , but he must never take it off , and he must marry only that maiden whom the ring fits . ' 
+The old woman believed her and was overjoyed ; before her death sheenjoined upon her son that hetake to wife a woman whom the ring would be found to fit . 
+Time went by and the little son grew up . 
+Hegrew up and began to seek a bride; he would like one girl , then another , but upon trying the ring he always found it to be too big or too small ; it did not fit either the one or the other . 
+Hetraveled and traveled through villages and cities , tried the ring on all the lovely maidens , but could not find one whom hecould take as his his betrothed; he returned home and was pensive and sad . 
+' Little brother, why are yougrieving ? ' his his sisterasked him . 
+Hetold herhis trouble . 
+' Why is the ring so troublesome ? ' said the sister . 
+' Let me try it . ' 
+She put it on her finger and the ring clasped it , and began to gleam ; it fitted her as though made to her size . 
+' Ah , my my sister, ' said the brother, ' you have been chosen for me by fate , you shall be my wife . ' 
+' What are yousaying , my my brother? 
+Think of God , think of the sin ; one does not marry one 's own sister . ' 
+But her brother did not heed her ; he danced for joy and ordered that preparations be made for the wedding . 
+
+mapping: 
+(5.045452
+ ((E2 E3) (M4107 M6026) (M4097 M6017) (EXTRA0 EXTRA0) (E1 E4) (E3 E6)
+  (M4108 M6018)))
+
+
+There was once an old princess ; shehad a son and a daughter, both well built , both handsome . 
+A wicked witch disliked them ; shepondered and pondered as to how shecould lead them into evil ways and destroy them . 
+In the end she conceived a plan . 
+Like a cunning fox shecame to their mother and said : ' My little dove , my dear friend , here is a ring for you ; put it on your your son's finger . 
+With its help he will be healthy and wealthy , but he must never take it off , and he must marry only that maiden whom the ring fits . ' 
+The old woman believed her and was overjoyed ; before her death sheenjoined upon her son that hetake to wife a woman whom the ring would be found to fit . 
+Time went by and the little son grew up . 
+Hegrew up and began to seek a bride; he would like one girl , then another , but upon trying the ring he always found it to be too big or too small ; it did not fit either the one or the other . 
+Hetraveled and traveled through villages and cities , tried the ring on all the lovely maidens , but could not find one whom hecould take as his his betrothed; he returned home and was pensive and sad . 
+' Little brother, why are yougrieving ? ' his his sisterasked him . 
+Hetold herhis trouble . 
+' Why is the ring so troublesome ? ' said the sister . 
+' Let me try it . ' 
+She put it on her finger and the ring clasped it , and began to gleam ; it fitted her as though made to her size . 
+' Ah , my my sister, ' said the brother, ' you have been chosen for me by fate , you shall be my wife . ' 
+' What are yousaying , my my brother? 
+Think of God , think of the sin ; one does not marry one 's own sister . ' 
+But her brother did not heed her ; he danced for joy and ordered that preparations be made for the wedding . 
+

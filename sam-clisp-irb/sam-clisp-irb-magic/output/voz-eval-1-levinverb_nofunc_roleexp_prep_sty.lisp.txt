@@ -1,0 +1,19 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: (2.9194608 ((EXTRA0 EXTRA0) (M5848 M1088) (E3 E1) (M5855 M1084)))
+
+
+A dragon appeared near Kiev ; hetook heavy tribute from the people - a lovely maiden from every house, whom he then devouredhea lovely maiden from every house, whom he then devoured
+Finally , it was the fate of the tsar 's daughter to go to the dragon . 
+

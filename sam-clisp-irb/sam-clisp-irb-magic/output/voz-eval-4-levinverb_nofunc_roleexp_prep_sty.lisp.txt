@@ -1,0 +1,48 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: 
+(5.3408356
+ ((E7 E2) (M5849 M3345) (M5862 M3344) (E2 E3) (M5848 M3349) (M5855 M3357)
+  (EXTRA0 EXTRA2)))
+
+
+In a certain kingdom in a certain land there lived a king who had three sonsthree sons. 
+One day theysaid to him: ' Father, our gracious sovereignFather, our gracious sovereignyour blessing ; we wish to go hunting . ' 
+The fathergave themhis blessing and they set out in different directions . 
+The youngest son rode and rode and lost his way ; he came to a clearing , and there lay a dead horse , around which were gathered beasts of many kinds , birds , and reptiles . 
+A falconrose , flew up to the prince , perched on his shoulder , and said : ' Prince Ivan, divide that horse among us ; it has lain here for thirty years , and we have been quarreling ever since , unable to find a way of sharing it . ' 
+
+mapping: (1.4219999 ((EXTRA0 EXTRA0) (M1088 M3344)))
+
+
+In a certain kingdom in a certain land there lived a king who had three sonsthree sons. 
+One day theysaid to him: ' Father, our gracious sovereignFather, our gracious sovereignyour blessing ; we wish to go hunting . ' 
+The fathergave themhis blessing and they set out in different directions . 
+The youngest son rode and rode and lost his way ; he came to a clearing , and there lay a dead horse , around which were gathered beasts of many kinds , birds , and reptiles . 
+A falconrose , flew up to the prince , perched on his shoulder , and said : ' Prince Ivan, divide that horse among us ; it has lain here for thirty years , and we have been quarreling ever since , unable to find a way of sharing it . ' 
+
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: 
+(5.8082533
+ ((E12 E2) (M4195 M3345) (M4183 M3344) (EXTRA0 EXTRA1) (E5 E3) (M4175 M3349)
+  (M4174 M3357)))
+
+
+In a certain kingdom in a certain land there lived a king who had three sonsthree sons. 
+One day theysaid to him: ' Father, our gracious sovereignFather, our gracious sovereignyour blessing ; we wish to go hunting . ' 
+The fathergave themhis blessing and they set out in different directions . 
+The youngest son rode and rode and lost his way ; he came to a clearing , and there lay a dead horse , around which were gathered beasts of many kinds , birds , and reptiles . 
+A falconrose , flew up to the prince , perched on his shoulder , and said : ' Prince Ivan, divide that horse among us ; it has lain here for thirty years , and we have been quarreling ever since , unable to find a way of sharing it . ' 
+

@@ -1,0 +1,192 @@
+\documentstyle [12pt]{article}
+\raggedright
+\renewcommand{\baselinestretch}{1.0}
+\renewcommand{\textfraction}{0.2}
+\setlength{\parindent}{0.5in}
+\setlength{\textwidth}{6in}
+\setlength{\textheight}{8.5in}
+\setlength{\headheight}{0.2in}
+\setlength{\topmargin}{-.5in}
+\newcommand{\cpic}[1]{\begin{figure}[htb]
+        \centerline{\psfig{figure=#1}}
+        \end{figure}}
+
+\begin{document}
+\vspace{2in}
+\begin{center} 
+{\Large Sme Window System Documentation}
+
+\vspace {0.2in}
+by
+
+Greg Siegle
+
+
+\vspace{2in}
+\pagebreak
+
+\begin{center}
+{\em {\bf Sme Window System Documentation}}     
+\end{center}
+
+\vspace{0.2in}
+
+\section{Introduction}
+
+The following manual describes the CLIM window system interface for
+SME version 2e as implemented for the IBM RS6000. The entire interface
+resides in the file called {\tt windowing.lisp} and is automatically
+loaded on any clim system.
+
+The manual assumes you have a working knowledge of SME, and attempts
+to preserve formalisms developed in Brian Falkenheimer's original SME
+User's Manual. Special attention is given to features not included in
+any previous version of SME.
+
+\section{Getting Started} 
+
+To begin using the interface type {\tt sme::start-windows} from the
+Lisp prompt. After about 45 seconds a large window should appear in
+the middle of your screen containing the entire interface. All
+interaction with SME may be done via the menu options in this window.
+
+The screen is composed of a top line menu, a scroll pane in which data
+is displayed (in blue on color systems), and a lisp listener (pink on
+color systems).
+
+The top line options include:
+
+\begin{itemize}   
+\item File Options -- All interaction with outside files, including
+Initialization (which loads the default lanugage file), and loading of
+all rule and dgroup files. Importantly, SME must be initialized via
+this menu before most other top line menu options will be useful.
+
+\item Match Operations -- All operations governing creation and
+examination of matches.
+
+\item Utilities -- all options not listed anywhere else. Most notably
+this menu governs how windows are configured, various system
+parameters, and lets you access the Zgraph (generic graphing utility)
+menu system. 
+
+\item Describe Dgroup -- shows description of a dgroup in the scroll pane.
+
+\item Display DGroup and Display DGroup Pairs -- graphically display
+tree representing a dgroup on a graphics pane using Zgraph, a generic
+graphing utility.
+
+\item Inspect Dgroups -- shows dgroup concordances and pretty prints dgroups
+
+\item Reports -- generates background reports describing dgroups in
+ascii or latex formats
+
+\item Use Lisp -- Toggles activation of the Lisp listener at the
+bottom of the window. While it might, at first, seem that the lisp
+listener should always be active, there are various problems with this
+approach. To begin, the lisp listener traps all lisp errors, so
+if problems with SME occur you may not know if the listener is
+active.  In addition, due to an artifact of CLIM, the listener
+automatically shuts itself off when you switch to the Zgraph
+application. Use the ``Use Lisp'' option to turn it back on. Finally,
+due to another artifact of CLIM, menu documentation disappears when
+the Lisp Listener is active.
+
+\end {itemize}
+
+Each of these options is described in more depth in the next section.
+
+\section{The Top level menu}
+\subsection {File Operations}
+File operations include 
+\begin{itemize}
+\item Initialize  -- must be executed before other options on this
+menu, and most other menus are useful. This option clears out all
+current dgroups and matches, but NOT rules files. Note that if the
+window system is temporarily exitted and returned to, you DO NOT need
+to reinitialize. All former variables are preserved.
+\item Change File Parameters -- changes default files. We note that
+extra language files are not yet supported
+\item Load a Dgroup
+\item Load a Rules File
+\edn {itemize}
+\subsection {Match Operations}
+Most of the match options are the same as in previous versions, but
+there are some new additions. They include:
+\begin{itemize}
+\item Set Match Parameters -- sets the base, target, and rules file
+for a match
+\item Run Match -- does the match
+\item Examine Match -- shows base, target, rules, statistics, gmaps, etc.
+\item Compare Gmaps -- shows differences in gmaps
+\item Generalize -- Not supported, and generally, not working
+\item Display match -- A new display which graphically illustrates a
+gmap in the scroll pane. This option depicts the tree describing the
+base on the x-axis and the tree describing the target on the y-axis of
+a grid. All matches are displayed as x's at coordinate described by
+corrosponding elements of the base and target. Because of space
+limitations all elements are shown as numbers. A key to what elements
+actually represent may be found on the spare scroll pane (accessed
+through the ``Alter Windows'' option on the {\tt Utilities} menu. It
+may also be helpful to graphically display the base and target dgroups
+via the {\tt Display Dgroup Pairs} option and view these concurrently
+with the Displayed match.
+\end{itemize}
+
+\subsection {Utilities}
+\begin{Itemize}
+\item Change System Parameters -- allows you to edit all standard
+system parameters including default files
+\item Alter Windowing -- Allows you to choose from 6 different window
+configurations. They are relatively self explanatory. To tell your
+current window configuration it is useful to note that on color
+systems, the scroll and spare scroll panes are always blue. The
+graphics window is a light lavender and the lisp listener is always
+pink. 
+\item Clear Scroll Window -- Clears all output from the scroll window.
+This option is useful primarily because redisplaying the screen
+eventually becomes slow if the window has a lot of text in it.
+\item Dump Scroll Window -- dumps scroll window to a file. Usefull
+because you cannot cut and paste from it.
+\item Inspect Evidence
+\item Zgraph Inspector -- Transfers you to the Zgraph menu system.
+This system allows you to manipulate graphs with the greatest of ease.
+It also allows you to scale graphs so they will fit on your window and
+do post script output. There should be a zgraph manual floating around
+somewhere... You can use the Zgraph menu options to operate on graphs
+drawn in the SME graphics pane.
+\item Switch Drawing Location -- Generally graphs are drawn on the
+graphics pane of the SME interface. Yet, there are times when it is
+helpful to have graphs directly displayed in Zgraph. This option
+routes all graphs drawn with {\tt Display Dgroup} and {\tt Display
+Dgroup Pairs} to the zgraph pane. Therefore, when you execute these
+options, they will not appear on the SME pane. Don't panic. Blithely
+switch to the zgraph pane using the ``Zgraph Inspector'' option to
+view them.
+\end {itemize}
+
+\subsection {Describe Dgroup}
+\subsection{Display Dgroup and Display Dgroup Pairs}
+Allows you to graphically display dgroups on the SME graphics pane or
+Zgraph pane.  Notably, graphs may not appear in the visible window
+when you execute this option. If such an unfortunate event should
+occur, do not dispair. Use the scroll bars to search around for your
+graph. It should be in there somewhere.
+
+Once a graph has been displayed the mouse serves special functions in
+the graphics pane. Clicking the left button on empty space allows you
+to ``drag'' the entire picture around. Click once at the place you
+wish to begin dragging from. Click again where you would like to
+deposit the picture.
+
+Clicking the left button on a vertex (red dot) allows you to move the
+vertex. It is ``picked up'' when you push the left button down, and
+``put down'' when you release the left button.
+
+Clicking the middle button on a vertex allows you to inspect it. All
+inspecting is done in the original lisp listener window  (not the SME
+lisp listener... this should change sometime). TO GET OUT OF THE
+INSPECTOR, type {\tt :q} at the {\tt >>} prompt which will appear in
+the original lisp listener window.
+
+\end{document}

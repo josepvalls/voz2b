@@ -1,0 +1,119 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+
+WARNING: Dgroup ANALOGY-TARGET is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-TARGET is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-TARGET is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-TARGET is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-TARGET is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-TARGET is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: NIL
+
+
+A poor mother lived in a little house with her two sons . 
+There was famine and she could barely feed her sons . 
+One day a hungry snake walked nearby . 
+The snake looked through the window and saw the younger son unattended . 
+The mother saw her younger son missing . 
+She asked her older son to go look for his younger brother . 
+The older brother was very responsible and agreed . 
+He left the house and went into the woods . 
+A woman was once kidnapped by a bear . 
+The woman gave birth to a bearlet who was half-boy and half-bear . 
+Eventually , the woman was able to escape and took the boy with her . 
+He had a plan to get rid of the bearlet . 
+He told the bearlet that he would only let him stay if he got rid of the water spirits in the lake . 
+The bearlet left not knowing what to do . 
+
+WARNING: Dgroup ANALOGY-TARGET is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-TARGET is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-TARGET is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-TARGET is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-TARGET is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-TARGET is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: NIL
+
+
+A girl lived with her brother . 
+Their father threatened to marry them if he would not find a bride . 
+The girl was terrified . 
+She decided to try to find a bride for her brother . 
+At night she sneaked out of the house . 
+A woman was once kidnapped by a bear . 
+The woman gave birth to a bearlet who was half-boy and half-bear . 
+Eventually , the woman was able to escape and took the boy with her . 
+He had a plan to get rid of the bearlet . 
+He told the bearlet that he would only let him stay if he got rid of the water spirits in the lake . 
+The bearlet left not knowing what to do . 
+
+WARNING: Dgroup ANALOGY-TARGET is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-TARGET is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-TARGET is being defined with no expressions.
+ This could be a package problem.
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: NIL
+
+
+An old couple lived in a hut with their adopted son . 
+The boy had a magical bird that could control the weather . 
+They used the bird 's predictions to make it rain on their crops and were always prosperous . 
+A jealous neighbor learned about the bird . 
+The neighbor told the boy he needed to borrow the bird . 
+But the boy would n't let him take it . 
+A woman was once kidnapped by a bear . 
+The woman gave birth to a bearlet who was half-boy and half-bear . 
+Eventually , the woman was able to escape and took the boy with her . 
+He had a plan to get rid of the bearlet . 
+He told the bearlet that he would only let him stay if he got rid of the water spirits in the lake . 
+The bearlet left not knowing what to do . 

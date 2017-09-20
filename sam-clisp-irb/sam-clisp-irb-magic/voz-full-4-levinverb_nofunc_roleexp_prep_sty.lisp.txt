@@ -1,0 +1,109 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: NIL
+
+
+In a certain kingdom , in a certain land , there lived a widowed priest and his daughter . 
+He took very good care of the girl , and whenever he went to see someone in his parish his parish he always brought her presents ; his his parishioners knew that our our priest had a daughter and that she expected presents . 
+One day he went to a village of his parish about twelve versts away , to give someone communion , and was received very hospitably . 
+He forgot to ask for a present for his his daughter , and set out for home . 
+As he was riding on the road , he beheld a human head burning - in fact , it was almost all burned , only ashes remained . 
+At first he passed it by , but then he changed his mind . 
+' Here is a human head burning , ' he thought . 
+' I will take it , put the ashes in my pocket , bring them home , and place them in the cellar . ' 
+He picked up the ashes , mounted his horse again , and rode home . 
+His His daughter came out to meet him in the yard and helped him down from his horse ; he had a headache , probably from the wind , and she put him to sleep in the featherbed . 
+But then she thought : ' My My father must have brought me a present . ' 
+She looked into his pocket ; meanwhile the ashes he had picked up had turned into a box . 
+She took out this box and said : ' Oh , this is a fine box ; what shall I do with it ? ' 
+She touched it with her tongue and became pregnant . 
+What other women bear after long weeks , she bore in hours ; her time for delivery came , and she gave birth to a boy . 
+He was christened at once and named Nodey, the priest's grandson . 
+The boy began to grow ; what other boys achieve in years , he achieved in hours ; at six weeks he went out into the street to play ball with the other boys . 
+When he hit a ball , it flew , one heard it buzz through the air , but one did not see it . 
+If he struck someone in the leg , the leg came off ; if he struck someone in the arm , the arm came off ; and when he struck someone in the head , the poor fellow 's head came off . 
+The fathers of these children these children came to the priest and said to him : ' Father , please do not allow your your grandson to go into the street to play with the other children ; he has done a great deal of damage . ' 
+One would complain that his his boy had lost his head , another that his his child had lost an arm . 
+' Please , Father , ' they said , ' keep him in the house . ' 
+So the priest kept Nodey at home until summer came ; by then he had grown quite big , and said : ' Dear grandfather , what work shall we do now ? ' 
+The priest was overjoyed and said to his his daughter : ' My My beloved daughter , God be thanked for having given us an heir ; he is a godsend , he is so strong . 
+Now what shall we undertake ? 
+Let us work . ' 
+And he said to his his grandson : ' Come , grandson , let us clear some marshy ground . ' 
+' Let us go , grandfather . ' 
+So they went to the marshes and chose a place ; the grandfather began to cut a pine tree , and Nodey said : ' Grandfather , do n't you work , but give me your blessing . ' 
+' Well , ' said the grandfather , ' may God bless you . ' 
+And the boy set to work with such vigor that the woods began to tremble ; he gave one blow with his ax , and the tree flew down . 
+Before noon he had cleared about four acres of marshy ground . 
+The grandfather said : ' Now we have to chop the wood and burn it . ' 
+He answered : ' Grandfather , let us simply pile it up . ' 
+After three days the former wilderness had become farm land . 
+With the help of his his grandfather Nodey sowed oats , and the oats throve beautifully , as never before . 
+Now a bear began to haunt that field of oats . 
+The priest went to inspect the new field and found that much of the grain had been eaten . 
+He returned home , and his his grandson asked him : ' Well , grandfather , how is our field ? ' 
+' Very fine , little grandson , only some wild horse has begun to frequent it - he has an enormous appetite and has done much damage . ' 
+' Do you mean to say , grandfather , that after all the work I did , a good-for-nothing like that has done so much damage ? 
+I 'll go catch him . 
+Find me some hemp , as much as you can . ' 
+He sat down , wove a hempen bridle , and having eaten his dinner , went to the woods . 
+When he saw the field , he was amazed at the sight . 
+' My My God , ' he said , ' what mischief this horse has done ! 
+It 's frightful ! ' 
+And he sat down on a tree stump in the field . 
+As he sat thus , the bear came out of the woods , went straight into the oat field , and began to trample the plants . 
+Our Our brave youth was surprised . 
+' What a strange creature ! ' 
+he said . 
+' I never saw such a horse . 
+And how he spoils the oats ! ' 
+Meanwhile the bear came close to him ; he was not frightened by the man on the tree stump the tree stump , but took him to be part of it . 
+When he came quite close , Nodey jumped down and - one , two , three - caught the bear by the ears , hugged him tight , and pressed him to the ground . 
+The bear thought to himself : ' What 's this ? ' 
+He tried to get up ; but Nodey would not let him ; he put the hempen bridle on him , and led him home . 
+And while he was leading him , whenever the bear caught on a tree , the tree was uprooted . 
+Well , Nodey brought him home , tied him to a pillar in the middle of the yard , and went into the house . 
+' Lord , what a horse that was , grandfather ! 
+How tired I am from dragging him home ! ' 
+The priest looked out into the yard and gasped . 
+' Look , my my daughter , ' he said , ' what your your little son, my grandson , has done ! ' 
+And for a long time they gazed in admiration . 
+Nodey said : ' Do n't stare , but tell me what we will do with this horse , what work we will give it , for it is very strong . ' 
+' Use it to bring wood , ' said the grandfather . 
+So Nodey took the bear , harnessed him to a cart , and began to use him to carry wood . 
+In three days he had carted off the whole village . 
+The villagers did not venture to go out , for the entire village had disappeared . 
+They came to the priest and said to him : ' Put him wherever you will , but he must not stay here ; what kind of behavior is this ? 
+In three days he has taken the whole village away . 
+We can not go out for fear of him . ' 
+' Ah , my my daughter , ' said the priest , ' what are we to do ? 
+I am sorry for your your son, my grandson , but we must send him away ; let him go wherever you will . ' 
+And he called his his grandson to him and said : ' Well , my my beloved grandson , the villagers have come with a request that we send you away ; I am sorry for you , but you must go . ' 
+' Eh , my my beloved grandfather , you should have told me that long ago , and I would have gone without delay . 
+My My beloved mother , bake a loaf of bread for me . ' 
+His His mother baked a loaf of bread for him and put it in his knapsack . 
+He rose very early and washed himself clean . 
+Then he put his knapsack on his back and asked for a blessing : ' My My beloved mother and my dear grandfather , give me your blessing for my journey . ' 
+He said his prayers and set out ; he came to the open field , and instead of taking a road or a path , went through thick forests and deep swamps and walked for seven days , with his mouth open and his tongue hanging out . 
+And he came to the thrice ninth land , to the thrice tenth kingdom , and found himself in an open field , near a steep mountain , and saw there Gorynya, the mighty hero, who kicked mountains about like balls . 
+Nodey, the priest's grandson , went to him and said : ' God be with you, Gorynya, mighty hero ! 
+What immense strength is in you , that you can kick mountains about like balls ! ' 
+Gorynya answered him : ' Eh , brave youth , do not admire my strength ! 
+It is said that beyond thrice nine lands , in the thrice tenth kingdom , there is a certain Nodey, a priest's grandson, who is much stronger than I. He brought a bear from the woods and on this bear loaded his his entire village . 
+His bones will not be carried by a raven , he will not be borne by a good young steed ! ' 
+And Nodey answered him : ' Ah , brother Gorynya, mighty hero ! 
+The raven did not carry his bones , but he himself is here . ' 
+Gorynya said : ' Ah , brother , so you are Nodey, the priest's grandson ! 
+Take me with you as your younger brother ! ' 
+Nodey took him , and they traveled to many far lands and conquered many mighty knights and captured many cities ; then they both got married , and they they and their brides prospered . 

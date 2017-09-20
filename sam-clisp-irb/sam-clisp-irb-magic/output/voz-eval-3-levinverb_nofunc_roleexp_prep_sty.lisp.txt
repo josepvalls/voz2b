@@ -1,0 +1,33 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: (1.4219999 ((EXTRA0 EXTRA0) (M4132 M3141)))
+
+
+In a certain kingdom in a certain land there lived one Bukhtan Bukhtanovich , who had a stove built on pillars in the middle of a field . 
+He lay on the stove in cockroach milk up to his elbows . 
+
+mapping: (1.4219999 ((EXTRA0 EXTRA0) (M4097 M3141)))
+
+
+In a certain kingdom in a certain land there lived one Bukhtan Bukhtanovich , who had a stove built on pillars in the middle of a field . 
+He lay on the stove in cockroach milk up to his elbows . 
+
+mapping: (1.0439999 ((EXTRA0 EXTRA0) (M1088 M3141)))
+
+
+In a certain kingdom in a certain land there lived one Bukhtan Bukhtanovich , who had a stove built on pillars in the middle of a field . 
+He lay on the stove in cockroach milk up to his elbows . 
+

@@ -30,18 +30,26 @@
          ;; The soldier won the game and asked the Grim Reaper to leave the princess alone as his reward.
          ;; The curse was lifted and the princess was healthy again.
 
-         (t1 "Once upon a time , a soldier deserted from his company . ")
-         (t2 "He had only a piece of bread , a knapsack and a fiddle . ")
-         (t3 "One night , the fugitive soldier got lost and stumbled into a devil . ")
-         (t4 "The devil approached the soldier and asked him to teach him how to play the fiddle . ")
-         (t5 "The soldier taught the devil how to play . ")
-         (t6 "In exchange , the devil told the soldier how to talk to the Grim Reaper . ")
-         (t7 "The king 's daughter had been cursed and was very ill . ")
-         (t8 "The soldier went to the king and asked for a chance to help the princess . ")
-         (t9 "At night , he saw the Grim Reaper enter the princess ' room . ")
-         (t10 "He challenged him to a game of cards . ")
-         (t11 "The soldier won the game and asked the Grim Reaper to leave the princess alone as his reward . ")
-         (t12 "The curse was lifted and the princess was healthy again . ")
+         (t1 "Once upon a time , " (STORY17-m1000 "a soldier") " deserted from his company . ")
+         (t2 "" (STORY17-m1000 "He") " had only a piece of bread , a knapsack and a fiddle . ")
+         (t3 "One night , " (STORY17-m1000 "the fugitive soldier") " got lost and stumbled into " (STORY17-m1001 "a devil") " . ")
+         (t4 "" (STORY17-m1001 "The devil") " approached " (STORY17-m1000 "the soldier") " and asked him to teach him how to play the fiddle . ")
+         (t5 "" (STORY17-m1000 "The soldier") " taught " (STORY17-m1001 "the devil") " how to play . ")
+         (t6 "In exchange , " (STORY17-m1001 "the devil") " told " (STORY17-m1000 "the soldier") " how to talk to the Grim Reaper . ")
+         (t1001 (STORY17-EXTRA1  (STORY17-m1000 "the soldier") " is the " (Other "Other") ) ".")
+         (t1002 (STORY17-EXTRA2  (STORY17-m1001 "the devil") " is the " (Other "Other") ) ".")
+         (t7 "" (STORY17-m1003 "The king's daughter") " had been cursed and was very ill . ")
+         (t8 "" (STORY17-m1000 "The soldier") " went to the king and asked for a chance to help " (STORY17-m1003 "the princess") " . ")
+         (t1003 (STORY17-EXTRA3  (STORY17-m1000 "The soldier") " is the " (Other "Other") ) ".")
+         (t1004 (STORY17-EXTRA4  (STORY17-m1001 "the devil") " is the " (Other "Other") ) ".")
+         (t1005 (STORY17-EXTRA5  (STORY17-m1003 "the princess") " is the " (Other "Other") ) ".")
+         (t9 "At night , " (STORY17-m1000 "he") " saw " (STORY17-VERB3 "" (STORY17-m1004 "the Grim Reaper") " enter " (STORY17-m1003 "the princess' room") " " ) ". ")
+         (t10 "" (STORY17-m1000 "He") " challenged " (STORY17-m1004 "him") " to a game of cards . ")
+         (t11 "" (STORY17-m1000 "The soldier") " won the game and asked " (STORY17-m1004 "the Grim Reaper") " to leave " (STORY17-m1003 "the princess") " alone as his reward . ")
+         (t12 "The curse was lifted and " (STORY17-m1003 "the princess") " was healthy again . ")
+         (t1006 (STORY17-EXTRA6  (STORY17-m1000 "The soldier") " is the " (Other "Other") ) ".")
+         (t1007 (STORY17-EXTRA7  (STORY17-m1001 "the devil") " is the " (Other "Other") ) ".")
+         (t1008 (STORY17-EXTRA8  (STORY17-m1003 "the princess") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -78,20 +86,41 @@
       
        (phase1
          (:entities
+           (STORY17-m1000 :type animate)
+           (STORY17-m1001 :type animate)
          )
          (:expressions
+           ((levin-37-1 STORY17-m1000 STORY17-m1001) :name STORY17-VERB1)
+           ((levin-37-2 STORY17-m1001 STORY17-m1000) :name STORY17-VERB2)
+           ((roleOther STORY17-m1000) :name STORY17-EXTRA0)
+           ((roleOther STORY17-m1001) :name STORY17-EXTRA1)
          )
        )
        (phase2
          (:entities
+           (STORY17-m1000 :type animate)
+           (STORY17-m1001 :type animate)
+           (STORY17-m1003 :type animate)
          )
          (:expressions
+           ((roleOther STORY17-m1000) :name STORY17-EXTRA2)
+           ((roleOther STORY17-m1001) :name STORY17-EXTRA3)
+           ((roleOther STORY17-m1003) :name STORY17-EXTRA4)
          )
        )
        (phase3
          (:entities
+           (STORY17-m1000 :type animate)
+           (STORY17-m1001 :type animate)
+           (STORY17-m1003 :type animate)
+           (STORY17-m1004 :type animate)
          )
          (:expressions
+           ((levin-51-1 STORY17-m1004 STORY17-m1003) :name STORY17-VERB3)
+           ((levin-51-2 STORY17-m1004 STORY17-m1003) :name STORY17-VERB4)
+           ((roleOther STORY17-m1000) :name STORY17-EXTRA5)
+           ((roleOther STORY17-m1001) :name STORY17-EXTRA6)
+           ((roleOther STORY17-m1003) :name STORY17-EXTRA7)
          )
        )
 

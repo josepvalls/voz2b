@@ -21,10 +21,12 @@
          ;; The laborer was very understanding.
          ;; He left the small town and headed to the city.
 
-         (t1 "A poor laborer lived in a small town . ")
-         (t2 "Eventually his master told him he had to let him go . ")
-         (t3 "The laborer was very understanding . ")
-         (t4 "He left the small town and headed to the city . ")
+         (t1 "" (STORY14-m1000 "A poor laborer") " lived in a small town . ")
+         (t1001 (STORY14-EXTRA1  (STORY14-m1000 "A poor laborer") " is the " (Other "Other") ) ".")
+         (t2 "Eventually " (STORY14-VERB1 "" (STORY14-m1002 "his master") " told " (STORY14-m1000 "him") " " ) "he had to let him go . ")
+         (t3 "" (STORY14-m1000 "The laborer") " was very understanding . ")
+         (t4 "" (STORY14-m1000 "He") " left the small town and headed to the city . ")
+         (t1002 (STORY14-EXTRA2  (STORY14-m1000 "He") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -61,14 +63,20 @@
       
        (phase1
          (:entities
+           (STORY14-m1000 :type animate)
          )
          (:expressions
+           ((roleOther STORY14-m1000) :name STORY14-EXTRA0)
          )
        )
        (phase2
          (:entities
+           (STORY14-m1000 :type animate)
+           (STORY14-m1002 :type animate)
          )
          (:expressions
+           ((levin-37-2 STORY14-m1002 STORY14-m1000) :name STORY14-VERB1)
+           ((roleOther STORY14-m1000) :name STORY14-EXTRA1)
          )
        )
 

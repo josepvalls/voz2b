@@ -1,0 +1,2481 @@
+\batchmode
+\documentstyle[11pt,alltt]{article}
+\pagestyle{myheadings}
+\makeindex
+\markboth{SME User's Manual}{SME User's Manual}
+\setlength{\oddsidemargin}{-0.1in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\textheight}{9in}
+%% Declaring SME lisp hooks
+\newcommand{\decvar}[1]{\noindent\makebox[\textwidth]{{\tt #1}
+                                   \hfill [{\it Variable}]}\index{#1 variable}}
+\newcommand{\decfunc}[2]{\noindent\makebox[\textwidth]{{\tt #1}\ \ {\it #2}
+                                               \hfill [{\it Function}]}\index{#1 function}}
+\newcommand{\decmacro}[2]{\noindent\makebox[\textwidth]{{\tt #1}\ \ {\it #2}
+                                                \hfill [{\it Macro}]}\index{#1 macro}}
+\newcommand{\decsubst}[2]{\noindent\makebox[\textwidth]{{\tt #1}\ \ {\it #2}
+                                                \hfill [{\it Subst}]}\index{#1 subst}}
+%% Handy abbreviations
+\newcommand{\metasyntax}[1]{$\langle #1 \rangle$}
+\newcommand{\spc}[1]{\vspace{#1\baselineskip}}
+\newcommand{\gthan}{\( >\)}
+\newcommand{\border}{\rule{\textwidth}{0.04in}}
+\newcommand{\SME}{{\tt SME}}
+\newcommand{\SMET}{\mbox{${\tt SME}_{{\it SMT}}$}}
+\newcommand{\Phineas}{{\tt PHINEAS}}
+\newcommand{\keypoint}[2]{\begin{itemize}
+                             \item \parbox[t]{0.88\textwidth}{{\it #1:} #2}
+                          \end{itemize}
+                          \vspace{0.08in}}
+%
+\begin{document}
+
+\begin{titlepage}
+{\center {\Large Technical Report UIUCDCS-R-88-1421 \\ }}
+\ \ \ \vspace{0.5in} \\
+{\center {\bf {\huge The SME User's Manual} \\[2ex]
+              {\LARGE  (SME Version 2E)} \\ }}
+\vspace{0.7in}
+\begin{center}
+            {\Large Brian Falkenhainer}       \\[2ex]
+{\large     Qualitative Reasoning Group       \\
+          Department of Computer Science      \\
+         University of Illinois at Urbana-Champaign \\
+\vspace{0.75in}
+                December, 1988 \\ }
+\end{center}
+\vspace{0.75in}
+\begin{abstract}
+This paper documents the {\it Structure-Mapping Engine} (\SME), a
+general-purpose program for studying analogical processing.  It provides a
+comprehensive description of the program and instructions for using it,
+including techniques for integrating it into larger systems. One section
+demonstrates methods for configuring \SME\ to a variety of mapping
+preferences and suggests the range of theoretical variations available.
+\end{abstract}
+
+\end{titlepage}
+\pagenumbering{roman}
+\tableofcontents
+\markboth{SME User's Manual}{SME User's Manual}
+\newpage
+\pagenumbering{arabic}
+
+\section{Introduction}
+
+The Structure-Mapping Engine (\SME) is a general tool for performing various
+types of analogical mappings. \SME\ was originally developed to simulate
+Gentner's {\it Structure-Mapping} theory of analogy
+\cite{smt-cogsci,allerton,analogica}. It was hoped that the developed system
+would also be able to model the other types of similarity comparisons
+sanctioned by Gentner's theory, such as {\it literal similarity} and {\it
+mere appearance}. What ended up being developed was an extremely flexible
+and efficient system. Most theoretical assumptions are left out of the
+program and are supplied through match rules. Thus, while \SME\ was
+originally designed to simulate the comparisons of structure-mapping theory,
+it may simulate many others as well. Given a set of theoretical restrictions
+on what constitutes a reasonable analogical mapping, one may implement these
+restrictions in the form of rules and use \SME\ to interactively test their
+consequences. This report is intended to make that task easier.
+
+This paper is designed for those interested in using \SME\ for studying
+analogical processing, testing alternate theories, or as the mapping
+component in a larger system. It describes the options and user support
+provided in \SME, how to use it for testing theories, and how to integrate
+it with other programs. For a discussion of the theory behind \SME, the
+general algorithm, and descriptions of the program in operation, one should
+consult \cite{aaai86,sme-aij} prior to reading this manual. Descriptions of
+the use of \SME\ in various research projects may be found in
+\cite{VBAL,MLW,DBR,Falken-phd,allerton,tinlap3,aaai87}, while descriptions
+of Gentner's Structure-Mapping theory appear in
+\cite{Gentner80,smt-cogsci,allerton,analogica,framework,sme-aij}.
+
+\subsection{Conventions}\index{conventions}
+
+Throughout this guide, a few conventions will be used which should be
+explained at this time.
+
+\begin{enumerate}
+
+ \item {\it CommonLisp Packages}.\index{packages} The \SME\ system resides
+in its own package, {\tt SME}, which is defined to use CommonLisp. As a
+result, any reference to an \SME\ function or variable must specify the {\tt
+SME} package, as in the function {\tt sme:define-predicate}. To simplify the
+discussion, we will omit the package prefix when describing \SME\ functions,
+macros, and variables. In addition, while the \SME\ routines reside in the
+{\tt SME} package, the structures it manipulates reside in the general {\tt
+USER} package.
+ \item {\it The declarative interface.}\index{conventions, function names}
+In general, the routines used to present data items to \SME, such as
+predicate definitions and concept descriptions, appear in two,
+functionally-equivalent forms. These two types have a naming convention
+associated with each. The most common type is the {\it declarative} or macro
+interface. The declarative routines do not evaluate their arguments and
+match the syntactic form {\tt def}{\it routine-name}. For example, to define
+the entity {\tt sun} declaratively, one writes {\tt (defEntity sun)}. The
+second type is the {\it functional} interface, which is present to support
+declarations by external programs.  These routines evaluate their arguments
+and match the syntactic form {\tt define-}{\it routine-name}. For example,
+to define the entity {\tt sun} functionally, one writes {\tt (define-entity
+'sun)}.
+
+\end{enumerate}
+
+
+\subsection{File Organization}\index{file organization}
+
+\SME\ is contained within the following twelve files:
+
+\begin{description}
+ \item[config.lisp]  The declarations for site specific
+parameters.\index{parameters, site specific}
+ \item[defs.lisp]  The basic structure definitions and macros used throughout
+\SME. 
+ \item[bits.lisp]  Routines for creating and manipulating bit vectors.
+ \item[bms.lisp]  The belief-maintenance system (BMS) - a probabilistic TMS.
+ \item[bms-tre.lisp]  The rule system and problem-solver front end for the BMS.
+ \item[sme.lisp]  The \SME\ top-level routines, such as initialization,
+defining facts about a concept, and fetching and storing facts and concept
+descriptions.
+ \item[match.lisp]  The \SME\ mapping algorithm.
+ \item[match-rules-support.lisp]  A few functions useful for writing \SME\
+match rules.
+ \item[display.lisp]  Machine independent output routines.
+ \item[windowing.lisp]  Symbolics dependent interface routines.
+ \item[batch.lisp]  Routines to enable execution in {\it batch} mode with a
+final report generated.
+ \item[generalize.lisp]  Inductive generalization support.
+\end{description}
+
+
+\section{System Review}
+
+The Structure-Mapping Engine can simulate a class of {\it structural
+approaches} to analogical mapping. In these approaches, there is a distinct
+stage of matching and carryover of predicates from one domain (the {\it
+base}) into another (the {\it target}) within the larger analogy process.
+Furthermore, although there are a number of differences, there is widespread
+agreement among these techniques on one fundamental restriction
+\cite{Burstein83,Carbonell83,Greiner,Indurkhya,KedarCabelli,Reed,Rumelhart,Winston82}:
+\begin{enumerate}
+ \item {\it Structural consistency}. If a final analogical mapping includes
+a predicate in the base paired with a predicate in the target, then it must
+also include corresponding pairings between each of their arguments. This
+criterion simply asserts that an analogical mapping must not produce
+syntactically meaningless predicate calculus forms.
+\end{enumerate}
+In \SME, this restriction was enforced by the requirement of simulating
+Structure-Mapping theory; its impact on the algorithm is described in
+\cite{sme-aij}. However, this restriction is only part of that theory and
+alone does not uniquely define a matching algorithm. Additional theoretical
+restrictions must be supplied through {\it match rules}. This enables \SME\
+to be used in exploring the space of theories consistent with this single
+criterion. An additional restriction is enforced by default:
+
+\keypoint{One-to-one mapping}{No base item (predicate or object) may be
+paired with multiple target items. Likewise, no target item may be paired
+with multiple base items.}
+
+Enforcement of the one-to-one restriction is a global parameter which may be
+disabled. Support is provided to implement variations of one-to-one within
+the match rules.
+
+Match rules specify what pairwise matches are possible and provide local
+measures of evidence used in computing the evaluation score. These rules are
+the key to \SME's flexibility. To build a new matcher one simply loads a new
+set of match rules.  This has several important advantages.  First, we can
+simulate all of the types of comparisons sanctioned by Structure-Mapping
+theory with one program.  Second, the rules could in theory be ``tuned'' if
+needed to simulate particular kinds of human performance. Third, a variety
+of other analogical mapping systems may be simulated for comparison and
+theoretical investigation.  The breadth of the space of these structural
+approaches is suggested by the examples in Section~\ref{ss:rule-system}.
+
+In this section, the \SME\ matching algorithm is briefly reviewed, followed
+by a short discussion of how theoretical guidelines may be added to the
+general mechanism. It is a summary of the algorithm description appearing in
+\cite{sme-aij}, annotated with the \SME\ functions that carry out each step.
+
+
+\begin{figure}
+\border
+\vspace{2.1in}
+\caption{Simplified water flow and heat flow descriptions.}
+\label{fg:wfhf-calculus}
+\border
+\end{figure}
+
+
+\subsection{Algorithm Review}\index{algorithm, summary}
+
+Given descriptions of a base and a target (called Dgroups), \SME\ builds all
+structurally consistent interpretations of the comparison between them.
+Each interpretation of the match is called a {\em global mapping}, or {\em
+Gmap}.  Gmaps consist of three parts:
+
+\begin{enumerate}
+\item{\em Correspondences:} A set of pairwise matches between the
+expressions and entities of the two dgroups.
+\item {\em Candidate Inferences:} A set of new expressions which the
+comparison suggests holds in the target dgroup.
+\item {\em Structural Evaluation Score:} (Called {\em SES} for
+brevity) A numerical estimate of match quality.
+\end{enumerate}
+
+For example, given the descriptions of water flow and heat flow shown in
+Figure~\ref{fg:wfhf-calculus}, \SME\ might, depending on the current
+theoretical configuration, offer several alternative interpretations for
+this potential analogy.  In one interpretation, the central inference is
+that water flowing from the beaker to the vial corresponds to heat flowing
+from the coffee to the ice cube. Alternatively, one could map water to
+coffee, since they are both liquids.
+
+
+\begin{figure}
+\border
+\begin{small}
+\begin{tt}
+\begin{itemize}
+ \item Run MHC rules to construct match hypotheses (create-match-hypotheses).
+ \item Calculate the {\it Conflicting} set for each match hypothesis (calculate-nogoods).
+ \item Calculate the {\it EMaps} and {\it NoGood} sets for each match
+        hypothesis by upward propagation from entity mappings
+        (generate-justifications and propagate-descendants).
+ \item During the propagation, delete any match hypotheses that have
+        justification holes (propagate-death).
+ \item Merge match hypotheses into Gmaps (generate-gmaps).
+      \begin{enumerate}
+         \item Interconnected and consistent (generate-structure-groups).
+         \item Consistent members of same base structure (merge-base).
+         \item Any further consistent combinations (full-gmap-merge).
+      \end{enumerate}
+ \item Calculate the candidate inferences for each GMap (gather-inferences).
+ \item Score the matches (run-rules).
+      \begin{enumerate}
+         \item Local match scores.
+         \item Global structural evaluation scores.
+      \end{enumerate}
+\end{itemize}
+\end{tt}
+\end{small}
+  \caption{Summary of SME algorithm.}
+  \label{fg:sme-overview}
+\border
+\end{figure}
+
+
+The \SME\  algorithm (see Figure~\ref{fg:sme-overview}) is logically divided
+into four stages:
+\begin{enumerate} 
+\item {\em Local match construction:} Finds all pairs of ({\it BaseItem},
+{\it TargetItem}) that potentially can match.  A {\em Match Hypothesis} is
+created for each such pair to represent the possibility that this local
+match is part of a global match.
+\item {\em Gmap construction:} Combines the local matches into maximal
+consistent collections of correspondences.
+\item {\em Candidate inference construction:} Derives the inferences
+suggested by each Gmap.
+\item {\em Match Evaluation:} Attaches evidence to each local match and
+uses this evidence to compute structural evaluation scores for each Gmap. 
+\end{enumerate}
+
+\noindent
+Each computation will now be reviewed, using a simple example to
+illustrate their operation. In this example, the rules of structure-mapping
+theory are in use. It is important to distinguish the general \SME\ system
+from its behavior when using the rules of a particular theory. Hence, when
+using the rules of structure-mapping theory, it will be called \SMET.
+
+\subsubsection{Step 1: Local match construction (create-match-hypotheses)}\index{match hypothesis}\index{algorithm}
+
+\begin{figure}
+\border
+\vspace{3.1in}
+\caption[Local Match Construction]{Local Match Construction. The water flow
+and heat flow descriptions of Figure~\ref{fg:wfhf-calculus} have been drawn
+in the abstract and placed to the left and right, respectively. The objects
+in the middle depict match hypotheses.}
+\label{fg:3D-MH}\index{algorithm}
+\border
+\end{figure}
+
+
+\SME\ begins by finding for each entity and predicate in the base the set of
+entities or predicates in the target that could plausibly match that item
+(see Figure~\ref{fg:3D-MH}). Plausibility is determined by {\it match
+constructor} rules, which are of the form:
+\begin{tt}
+\begin{tabbing}
+\ \ \= (MHCrule \= (\metasyntax{Trigger} \= \metasyntax{BaseVariable} \metasyntax{TargetVariable} \\
+\> \> \> {\it [}:test \metasyntax{TestForm}{\it ]}) \\
+\> \ \ \ \  \metasyntax{Body}) \\
+\end{tabbing}
+\end{tt}
+
+The body of these rules is run on each pair of items (one from the base and
+one from the target) that satisfy the condition and installs a {\it match
+hypothesis}\index{match hypothesis} which represents the possibility of them
+matching. For example, to state that an expression in the base may match an
+expression in the target whose functor is identical, we write:
+\begin{verbatim}
+   (MHC-rule (:filter ?b ?t :test (equal (expression-functor ?b)
+                                         (expression-functor ?t)))
+         (install-MH ?b ?t))
+\end{verbatim}
+
+
+\begin{figure}
+\border
+\vspace{4.4in}
+\caption[Water Flow / Heat Flow Analogy]{Water Flow / Heat Flow
+Analogy After Local Match Construction. Here we show the graph of match
+hypotheses depicted schematically in Figure~\ref{fg:3D-MH}, augmented by links
+indicating expression-to-arguments relationships. Match hypotheses which are not
+descended from others are called {\it roots} (e.g., the matches
+between the {\tt GREATER} predicates, {\tt MH-1} and {\tt MH-6}, and the
+match for the predicate {\tt FLOW}, {\tt MH-9}). Match hypotheses between
+entities are called {\it Emaps} (e.g., the match between beaker and coffee,
+{\tt MH-4}).  Emaps play an important role in algorithms based on structural
+consistency.}
+\label{fg:wfhf-local}\index{algorithm}
+\border
+\end{figure}
+
+
+The likelyhood of each match hypothesis\index{match hypothesis} is found by
+running {\it match evidence} rules and combining their results. The evidence
+rules provide support for a match hypothesis by examining the structural and
+syntactic properties of the items matched. For example, the rule
+\begin{verbatim}
+   (MHErule ((:intern (MH ?b ?t) :test (and (expression? ?b) (expression? ?t)
+                                            (eq (expression-functor ?b)
+                                                (expression-functor ?t)))))
+       (assert! (implies same-functor (MH ?b ?t) (0.5 . 0.0))))
+\end{verbatim}
+states ``If the two items are expressions and their functors are the same, then
+supply 0.5 evidence in favor of the match hypothesis.'' The rules may also
+examine match hypotheses associated with the arguments of these items to
+provide support based on systematicity. This causes evidence for a match
+hypothesis to increase with the amount of higher-order structure supporting
+it.
+
+The state of the match between the water flow and heat flow descriptions of
+Figure~\ref{fg:wfhf-calculus} after running these first two sets of rules is
+shown in Figure~\ref{fg:wfhf-local}.  There are several important things to
+notice in this figure.  First, there can be more than one match
+hypothesis\index{match hypothesis} involving any particular base or target
+item.  Second, our rules required predicates to match identically while they
+allowed entities to match on the basis of their roles in the predicate
+structure.  Thus while {\tt TEMPERATURE} can match either {\tt PRESSURE} or
+{\tt DIAMETER}, {\tt IMPLIES} cannot match anything but {\tt IMPLIES}.
+Third, not every possible correspondence is created. Local matches between
+entities are only created when justified by some other identity.  This
+significantly constrains the number of possible matches in the typical case.
+
+
+\begin{figure}
+\border
+\vspace{3.1in}
+\caption[Conflicting relationships.]{Water Flow - Heat Flow analogy after
+computation of {\it Conflicting} relationships. Simple lines show the
+tree-like graph that the grounding criteria imposes upon match hypotheses.
+Lines with circular endpoints indicate the {\it Conflicting} relationships
+between matches. Some of the original lines from MH construction have been
+left in to show the source of a few {\it Conflicting} relations.}
+\label{3D-nogoods}
+\border
+\vspace{3.1in}
+\caption{GMap Construction. (a) Merge step 1: Interconnected and consistent.
+(b) Merge step 2: Consistent members of the same base structure. (c) Merge
+step 3: Any further consistent combinations.}
+\label{fg:wfhf-merging}\index{global mapping}\index{algorithm}
+\border
+\end{figure}
+
+
+\subsubsection{Step 2: Global Match Construction}\index{global mapping}\index{algorithm}
+
+The second step in the \SME\ algorithm combines local match hypotheses into
+collections of global matches (Gmaps).  Intuitively, each global match is
+the largest possible set of match hypotheses that depend on the same one to
+one object correspondences.
+
+More formally, Gmaps consist of {\em maximal, structurally consistent}
+collections of match hypotheses.  A collection of match hypotheses is
+structurally consistent if it satisfies two criteria:
+\begin{enumerate}
+\item {\em One-to-one:} No two match hypotheses assign the same
+base item to multiple target items or any target item to multiple
+base items.
+\item {\em Support:} If a match hypothesis {\tt MH} is in the
+collection, then so are the match hypotheses which pair up all of
+the arguments of {\tt MH}'s base and target items.
+\end{enumerate}
+The preservation criteria enforces strict one to one mappings.  The
+grounding criteria preserves connected predicate structure.  A collection is
+maximal if adding any additional match hypothesis would render the collection
+structurally inconsistent.
+
+The formation of global matches\index{global mapping} is composed of two primary stages:
+
+\begin{enumerate}
+\item {\em Compute consistency relationships {\tt (calculate-nogoods)}:}
+Here we generate for each match hypothesis the sets of entity mappings it
+entails, what match hypotheses it locally conflicts with, and which match
+hypotheses it is structurally inconsistent with.  This information
+simplifies the detection of contradictory sets of match hypotheses, a
+critical operation in the rest of the algorithm. The result of this stage of
+processing appears in Figure~\ref{3D-nogoods}.
+
+\item {\em Merge match hypotheses {\tt (generate-gmaps)}:} Compute Gmaps by
+successively combining match hypotheses as follows:
+ \begin{enumerate}
+ \item {\em Form initial combinations {\tt (generate-structure-groups)}:}
+Combine interconnected and consistent match hypotheses into an initial set
+of Gmaps (Figure~\ref{fg:wfhf-merging}a).
+ \item {\em Combine dependent Gmaps {\tt (merge-base)}:} Since base and
+target dgroups are rarely isomorphic, some Gmaps in the initial set will
+overlap in ways that allow them to be merged.  The advantage in merging them
+is that the new combination may provide structural support for candidate
+inferences (Figure~\ref{fg:wfhf-merging}b).
+ \item {\em Combine independent collections {\tt
+(full-gmap-merge)}:}\footnote{These two merge steps (b and c) are called by
+{\tt merge-gmaps}, which is in turn called by {\tt generate-gmaps}.} The
+results of the previous step are next combined to form maximal consistent
+collections (Figure~\ref{fg:wfhf-merging}c).
+ \end{enumerate}
+\end{enumerate}
+
+A parameter option allows the support criterion to be weakened so that it
+does not cross the boundaries of a {\it relational group} \cite{Falken-phd}.
+A relational group is distinguished as an unordered collection of relational
+structures that may be collectively referred to as a unit.  They correspond
+to the abstract notion of a ``set'' and are associated to predicates taking
+any number of arguments.  For example, a set of relations joined by the
+predicate {\tt AND} defines a relational group.  Other examples include the
+axioms of a theory, a decomposable compound object, or the relations holding
+over an interval of time.  Intuitively, we would like to say that two groups
+correspond without requiring that their contents are exhaustively mapped.
+
+If base and target propositions each contain a group as an argument, the
+propositions should not be prevented from matching if the groups' members
+cannot be exhaustively paired. For example, the set of relations
+\begin{tt}
+\begin{tabbing}
+~~~B:~~~\= Implies[And(P$_{1}$,P$_{2}$,P$_{3}$), P$_{4}$] \` {\rm (1)} \\
+~~~T:   \> Implies[And(P$^{\prime}_{1}$,P$^{\prime}_{2}$), P$^{\prime}_{4}$]
+\end{tabbing}
+\end{tt}
+
+\noindent
+should match better than the set of relations
+\begin{tt}
+\begin{tabbing}
+~~~B:~~~\= Implies[And(P$_{1}$,P$_{2}$,P$_{3}$), P$_{4}$] \` {\rm (2)} \\
+~~~T$^{\prime}$: \> P$^{\prime}_{1}$, P$^{\prime}_{2}$, P$^{\prime}_{4}$
+\end{tabbing}
+\end{tt}
+
+\noindent 
+The original model of structural consistency would score (1) and (2)
+equally, since the {\tt Implies} relations of (1) would not be allowed to
+match. This is a particularly important consideration when matching
+sequential, state-based descriptions (e.g., the behavior of a system through
+time). The set of relations describing a pair of states often do not
+exhaustively match or are of different cardinality. Yet, higher-order
+relations over states, such as temporal orderings, are vital and must appear
+in the mapping.
+
+
+
+\subsubsection{Step 3: Compute Candidate Inferences (gather-inferences)}\index{candidate inference}\index{algorithm}
+
+Associated with each Gmap\index{global mapping} is a (possibly empty) set of
+candidate inferences.  Candidate inferences are base predicates that would
+fill in structure which is not in the Gmap (and hence not already in the
+target). If a candidate inference contains a base entity that has no
+corresponding target entity (i.e., the base entity is not part of any match
+hypothesis for that gmap), \SME\ introduces a new, hypothetical entity into
+the target.  Such entities are represented as a skolem function of the
+original base entity (i.e., {\tt (:skolem base-entity)}).
+
+In Figure~\ref{fg:wfhf-done}, Gmap \#1 has the top level {\tt CAUSE}
+predicate as its sole candidate inference.  In other words, this Gmap
+suggests that the cause of the flow in the heat dgroup is the difference in
+temperatures.  If the {\tt FLOW} predicate was not present in the target,
+then the candidate inferences for a Gmap corresponding to the pressure
+inequality would be both {\tt CAUSE} and {\tt FLOW}. Note that {\tt
+GREATER-THAN[DIAMETER(coffee), DIAMETER(ice cube)]} is not a valid candidate
+inference for the first Gmap because it does not intersect the existing Gmap
+structure.\index{candidate inference}
+
+\begin{figure}
+\border
+\begin{small}
+\begin{verbatim}
+  Rule File: literal-similarity.rules     Number of Match Hypotheses: 14
+
+  Gmap #1: { (>PRESSURE  >TEMPERATURE)  (PRESSURE-BEAKER  TEMP-COFFEE)
+             (PRESSURE-VIAL  TEMP-ICE-CUBE)  (WFLOW  HFLOW) }
+      Emaps:  { (beaker coffee)  (vial ice-cube)  (water heat)  (pipe bar) }
+      Weight:  5.99
+      Candidate Inferences: (CAUSE >TEMPERATURE HFLOW)
+
+  Gmap #2: { (>DIAMETER  >TEMPERATURE)  (DIAMETER-1  TEMP-COFFEE)
+             (DIAMETER-2  TEMP-ICE-CUBE) }
+      Emaps:  { (beaker coffee)  (vial ice-cube) }
+      Weight:  3.94
+      Candidate Inferences:  { }
+
+  Gmap #3: { (LIQUID-3  LIQUID-5)  (FLAT-TOP-4  FLAT-TOP-6) }
+      Emaps:  { (water coffee) }
+      Weight:  2.44
+      Candidate Inferences:  { }
+\end{verbatim}
+\end{small}
+
+  \caption{Complete SME interpretation of Water Flow - Heat Flow Analogy.}
+  \label{fg:wfhf-done}\index{algorithm}\index{global mapping}
+\border
+\end{figure}
+
+\subsubsection{Step 4: Compute Structural Evaluation Scores (run-rules)}\index{global mapping, scoring}\index{algorithm}
+
+Typically a particular pair of base and target will give rise to several
+Gmaps, each representing a different interpretation of the match.  Often it
+is desired to select only a single Gmap,\index{global mapping} for example
+to represent the best interpretation of an analogy. Many of these evaluation
+criteria (including validity, usefulness, and so forth) lie outside the
+province of Structure-Mapping, and rely heavily on the domain and
+application.  However, one important component of evaluation is {\em
+structural} --- for example, one Gmap may be considered a better analogy
+than another if it embodies a more systematic match.  \SME\ provides a
+programmable mechanism for computing a {\em structural evaluation score}
+(SES) for each Gmap.  This score can be used to rank-order the Gmaps in
+selecting the ``best'' analogy, or as a factor in a more complex (but
+external) evaluation procedure.  In \SMET, the structural evaluation score is
+currently computed by simply adding the belief of each local match
+hypothesis to the belief of the Gmaps it is a member of.
+
+Returning to Figure~\ref{fg:wfhf-done}, note that the ``strongest''
+interpretation (i.e., the one which has the highest structural evaluation
+score) is the one we would intuitively expect.  In other words, {\tt beaker}
+maps to {\tt coffee}, {\tt vial} maps to {\tt ice-cube}, {\tt water} maps to
+{\tt heat}, {\tt pipe} maps to {\tt bar}, and {\tt PRESSURE} maps to {\tt
+TEMPERATURE}.  Furthermore, we have the candidate inference that the
+temperature difference is what causes the flow.\index{global mapping}
+
+\subsection{Adding Theoretical Constraints}
+
+Given the general program, we may then add theoretical constraints in the
+form of rules. For instance, the example just presented used the {\it
+literal similarity} rules of structure-mapping theory. These rules augment
+\SME's one-to-one mapping and structural consistency criteria with two
+additional restrictions. First, evidence is computed according to {\it
+systematicity}, that is, highly interconnected systems of relations are
+preferred over independent facts. Second, only identical relations are
+allowed to match (i.e., {\tt CAUSE} is not allowed to match {\tt
+GREATER-THAN}).  Had another set of rules been used, the results might have
+been substantially different.  For example, the {\it mere appearance} rules
+of structure-mapping theory would have determined that the {\tt water} to
+{\tt coffee} mapping was the best, due to their superficial similarity.
+
+
+\section{Declarations}
+
+The descriptions given to \SME\ are constructed from a user-defined
+vocabulary of entities and predicates. This section discusses the
+conventions for defining languages for \SME's use.
+
+\subsection{Declaring Predicates}
+
+\begin{tt}\index{defPredicate macro}\index{predicate}\index{predicate, declaring}
+\begin{tabbing}
+defPredicate \= {\it name argument-declarations predicate-class} \` [{\it Macro}] \\
+             \> \&key \= :expression-type {\it logical-type}    \\
+             \>      \> :commutative?  \{t | nil\}              \\
+             \>      \> :n-ary?  \{t | nil\}                    \\
+             \>      \> :documentation {\it descriptive-string} \\
+             \>      \> :eval {\it procedural-attachment}\ \ )
+\end{tabbing}
+\end{tt}
+\decfunc{define-predicate}{name argument-declarations predicate-class ...}
+
+\spc{1}
+\noindent
+{\it predicate-class} is either {\tt function}, {\tt attribute}, or
+{\tt relation}, according to what kind of predicate {\it name} is.
+The {\it argument-declarations} allows the arguments to be named and
+typed.  For example, the declaration:
+
+\begin{verbatim}
+   (defPredicate CAUSE ((antecedent event) (consequent event)) relation)
+\end{verbatim}
+states that {\tt CAUSE} is a two-place relational predicate.  Its arguments
+are called {\tt antecedent} and {\tt consequent}, both of type {\tt event}.
+The names and types of arguments are for the convenience of the
+representation builder and any external routines (including the match rules),
+and are not currently used by \SME\ internally.  Likewise, the predicate
+class may be very important to the theoretical constraints imposed in the
+rules, but is ignored by \SME\ internally.
+
+The optional declaration {\tt :expression-type} indicates the logical type
+of an expression headed by the given predicate. For example, the predicate
+{\tt throw} may represent a kind of {\tt action}, while the predicate {\tt
+mass} may represent an {\tt extensive-quantity}.
+
+The optional declarations {\tt :commutative?} and {\tt :n-ary?} provide
+\SME\ with important syntactic information.  {\tt :commutative?} indicates
+that the predicate is commutative, and thus the order of arguments is
+unimportant when matching.  {\tt :n-ary?} indicates that the predicate can
+take any number of arguments.  Examples of commutative nary predicates include
+{\tt AND}, {\tt SUM}, and {\tt SET}.
+
+The {\tt :documentation} option allows one to attach a descriptive string to
+a predicate. This documentation may then be accessed through the lisp
+machine supplied interface\index{lisp machine interface, predicate documentation}
+({\tt C-Shift-D}) or some externally written routine. If no documentation is
+supplied, the list of argument names is used.  Another option provided
+strictly for potential user routines is the optional {\tt :eval} parameter.
+This allows one to declare a procedural attachment for a predicate.
+
+
+\subsection{Declaring Entities}
+
+\indent
+\decmacro{defEntity}{name {\tt \&key type constant?}}\index{entity, declaring}
+\decfunc{define-Entity}{name {\tt \&key type constant?}}
+
+\spc{0.5}
+Entities are logical individuals, i.e., the objects and constants of a
+domain. Typical entities include physical objects, their temperature, and
+the substance they are made of.  Primitive entities are declared with the
+{\tt defEntity} form (a non-primitive entity would be {\tt (temperature
+sun)}, which is a functional form representing a particular numeric
+temperature entity). Primitive entities declared in this way represent
+global entity types, that is, they represent a class of entities rather than
+an actual instance of an entity. When an entity type is actually used in a
+domain description, a unique entity instance is created for that type (e.g.,
+{\tt Mary} is translated to {\tt Mary43}).
+
+Since the language is typed, each entity type can be declared as
+a subtype of an existing type using the {\tt :type} option.
+For example, we might have
+\begin{verbatim}
+   (defEntity star :type inanimate)
+   (defEntity Sun :type star)
+\end{verbatim}
+to say that stars are inanimate objects, and our Sun is a particular star.
+Constants are declared by using the {\tt :constant?} option, as in
+\begin{verbatim}
+   (defEntity zero :type number :constant? t)
+\end{verbatim}
+
+
+\subsection{Declaring Description Groups}\label{ss:new-dgroups}
+\index{description group}
+
+\begin{tt}
+\begin{tabbing}
+defDescription {\it description-name}  \` [{\it Macro}]   \\
+\ \ \ \= expressions \= \kill
+      \> entities  \> ({\it entity$_{1}$}, {\it entity$_{2}$},$\ldots$,{\it entity$_{i}$}) \\ 
+      \> expressions \> ({\it expression-declarations})
+\end{tabbing}
+\end{tt}
+\decfunc{define-description}{description-name entities expressions}
+
+\spc{0.5}
+For simplicity, predicate instances and compound terms are called {\it
+expressions}. A {\em Description Group}, or {\em Dgroup}\index{Dgroup}, is a
+collection of primitive entities and expressions concerning them.  Dgroups
+are defined with the {\tt defDescription}\index{defDescription macro} form,
+where {\it expression-declarations} take the form {\tt
+\begin{tabbing}
+\ \   \= {\it expression} {\rm or} \\
+      \> ({\it expression} :name {\it expression-name})
+\end{tabbing}
+}
+\noindent
+For example, the description of water flow depicted in
+Figure~\ref{fg:wfhf-calculus} was given to \SME\ as
+\begin{verbatim}
+  (defDescription simple-water-flow
+        entities (water beaker vial pipe)
+        expressions (((flow beaker vial water pipe) :name wflow)
+                     ((pressure beaker) :name pressure-beaker)
+                     ((pressure vial) :name pressure-vial)
+                     ((greater pressure-beaker pressure-vial) :name >pressure)
+                     ((greater (diameter beaker) (diameter vial)) :name >diameter)
+                     ((cause >pressure wflow) :name cause-flow)
+                     (flat-top water)
+                     (liquid water)))
+\end{verbatim}
+All entities must have been previously defined and every entity referred to
+in the Dgroup's expressions must appear in the {\tt entities} list of the {\tt
+defDescription}.\index{description group}
+
+\subsection{Adding new expressions}\label{ss:new-expressions}
+
+\indent
+\decfunc{expression}{form dgroup-name {\tt \&key expression-name update-structure?}}\index{expression, adding new expressions}
+
+\spc{0.7}
+Expressions are normally defined as a side effect of creating a description group
+(Dgroup). However, the facility is provided for dynamically adding new expressions
+to a Dgroup. The syntax is essentially the same as for expressions declared within
+a {\tt defDescription}. The expression's {\it form} may refer to the names of
+existing Dgroup expressions and the form may be given a name. When {\tt expression} is
+used to add expressions to an existing Dgroup, the {\tt update-structure?} keyword
+must be invoked with a non-nil (e.g., {\tt T}) value. This keyword indicates
+that the Dgroup's structure must be reexamined, since the known structural
+roots will change as a result of this new expression.
+
+\subsection{Typed Logic}
+
+A mechanism exists for attaching types to predicates and their arguments
+(see {\tt defPredicate}).  This facility is designed to constrain the
+operation of \SME, particularly candidate inference generation. However, it
+has not been extensively used to date.  The ability to attach types may be
+useful for consistency checking by external systems.
+
+
+\section{Using the rule system}\label{ss:rule-system}\index{rule system}
+
+The rule system is the heart of \SME's flexibility. It allows one to specify
+what types of things might match and how strongly these matches should be
+believed. This section describes the required syntax for a rule set and
+different strategies for rule specification.
+
+\subsection{Rule file syntax}\index{rule system, rule file syntax}\index{rule system}
+
+A rule set, or rule file, consists of a {\it declaration}, a set of
+{\it match constructor} rules, and a set of {\it match evidence} rules.
+In order to describe each, we will examine the syntax and functionality of
+each part of the {\it smt-analogy} rule file.
+
+\subsubsection{File declarations}\index{rule system}
+
+\indent
+\decfunc{sme-rules-file}{identification-string}
+
+\spc{0.7}
+Each rule file must begin with the initialization command {\tt
+sme-rules-file}. This function clears the rule system in preparation for a
+new set of rules (rules are cached for efficiency) and stores the name of
+the rule set for output identification purposes. For example, our sample
+rules file begins with:\footnote{Notice the file extension *.rules. While
+rule files are not required to end in ``.rules'', all user interface
+facilities for simplifying the loading of rule files depend upon this
+extension. Another useful point is that rule files are typically defined to
+be in the \SME\ package to avoid having to use {\tt sme:} throughout the
+rule set.}  
+
+\begin{verbatim}
+   (sme-rules-file "smt-analogy.rules")
+\end{verbatim}
+
+\noindent
+The rule file must then end with the {\tt tre-save-rules} command:
+
+\spc{0.7}
+\decfunc{tre-save-rules}{}
+
+\subsubsection{Match Constructor rules}\index{rule system, match constructor rules}\index{rule system}
+
+\index{match hypothesis, installing}
+\index{match constructor rules}
+\index{MHC-rule}
+\begin{tt}
+\begin{tabbing}
+MHC-rule \= ({\it trigger} \= {\it ?base-variable} {\it ?target-variable} \` [{\it Macro}] \\
+         \>                \> [:test {\it test-form}]) \\
+\ \ \  {\it body}
+\end{tabbing}
+\end{tt}
+\decfunc{install-MH}{base-item target-item}\index{match hypothesis, installing}
+
+\spc{0.7}
+\SME\ begins by finding for each entity and predicate in the base the set of
+entities or predicates in the target that could plausibly match that item.
+Plausibility is determined by {\it match constructor} rules, which are
+responsible for installing all match hypotheses processed by \SME.  There
+are two types of constructor rules, each indicated by a different value for
+{\it trigger}.  The first type of rule is indicated by a {\tt :filter}
+trigger.  These rules are applied to each pair of base and target expressions,
+executing the code in {\it body}.  If the {\tt :test} option is used,
+{\it test-form} must return true for the body to be run.  For example, the
+following rule states that an expression in the base may match an expression
+in the target whose functor is identical, unless they are attributes
+(a structure-mapping {\it analogy} criterion):
+
+\begin{small}
+\begin{verbatim}
+   (MHC-rule (:filter ?b ?t :test (and (eq (expression-functor ?b)
+                                           (expression-functor ?t))
+                                       (not (attribute? (expression-functor ?b)))))
+          (install-MH ?b ?t))
+\end{verbatim}
+\end{small}
+
+The second type of MHC rule is indicated by a trigger of {\tt :intern}.
+These rules are run on each match hypothesis as it is created. Typically
+they create match hypotheses between any functions or entities that are the
+arguments of the expressions joined by the match hypothesis that triggered
+the rule. The following is one of two that appear in smt-analogy.rules:
+
+\begin{small}
+\begin{verbatim}
+   (MHC-rule (:intern ?b ?t :test (and (expression? ?b) (expression? ?t)
+                                       (not (commutative? (expression-functor ?b)))
+                                       (not (commutative? (expression-functor ?t)))))
+       (do ((bchildren (expression-arguments ?b) (cdr bchildren))
+            (tchildren (expression-arguments ?t) (cdr tchildren)))
+           ((or (null bchildren) (null tchildren)))
+         (cond ((and (entity? (first bchildren)) (entity? (first tchildren)))
+                (install-MH (first bchildren) (first tchildren)))
+               ((and (function? (expression-functor (first bchildren)))
+                     (function? (expression-functor (first tchildren))))
+                (install-MH (first bchildren) (first tchildren)))
+               ((and (attribute? (expression-functor (first bchildren)))
+                     (eq (expression-functor (first bchildren))
+                         (expression-functor (first tchildren))))
+                (install-MH (first bchildren) (first tchildren))))))
+\end{verbatim}
+\end{small}
+
+Notice that the third test allows identical attributes to match, whereas the
+previous MHC rule did not allow such matches. This design does not allow
+isolated attributes to match, but recognizes that attributes appearing in a
+larger overall structure should be matched.
+
+
+\subsubsection{Match Evidence rules}\label{ss:ME-rules}\index{match evidence rules}\index{rule system, match evidence rules}\index{rule system}
+
+\indent
+\decmacro{rule}{nested-triggers body}\index{match hypothesis, scoring}
+\decmacro{rassert!}{expression\ {\tt \&optional (}belief+ {\tt 1.0) (}belief- {\tt 0.0)}}
+\decfunc{assert!}{expression\ {\tt \&optional (}belief+ {\tt 1.0) (}belief- {\tt 0.0)}}
+\decmacro{initial-assertion}{assertion-form}
+
+\spc{0.8}
+The structural evaluation score is computed in two phases. First, each match
+hypothesis is assigned some local degree of evidence, independently of what
+Gmaps it belongs to.  Second, the score for each Gmap is computed based on
+the evidence for its match hypotheses.  The management of evidence rules is
+performed by the {\it Belief Maintenance System} (BMS) \cite{BMS}. A BMS is
+a form of Truth-Maintenance system, extended to handle numerical weights for
+evidence and degree of belief (see \cite{BMS} for a description of what the
+weights mean). Pattern-directed rules are provided that trigger on certain
+events in the knowledge base. 
+
+The following is a simple rule for giving evidence to match hypotheses
+between expressions that have the same predicate:
+
+\begin{small}
+\begin{verbatim}
+   (initial-assertion (assert! 'same-functor))
+
+   (rule ((:intern (MH ?b ?t) :test (and (expression? ?b) (expression? ?t)
+                                         (eq (expression-functor ?b)
+                                             (expression-functor ?t)))))
+      (if (function? (expression-functor ?b))
+          (rassert! (implies same-functor (MH ?b ?t) (0.2 . 0.0)))
+          (rassert! (implies same-functor (MH ?b ?t) (0.5 . 0.0)))))
+\end{verbatim}
+\end{small}
+
+There are two things to notice here in addition to the evidence rule. First,
+the proposition {\tt same-functor} was asserted to be true (a belief of
+1.0) and then used as the antecedent for the implication of evidence. In
+this way, the source of this particular piece of evidence is identified and
+is available for inspection. Second, the assertion of {\tt same-functor} was
+placed inside the {\tt initial-assertion} form. Since \SME\ caches the
+current rule file, it must be told if there are any functions embedded in
+the rule file that must be invoked each time \SME\ is initialized.
+
+\spc{0.8}
+\decfunc{children-of?}{base-child target-child base-expression target-expression}
+
+\spc{0.3}
+Nested triggers within an evidence rule may be used to locate
+interdependencies between different match hypotheses. For example,
+structure-mapping's systematicity principle is implemented in a local
+fashion by propagating evidence from a match hypothesis to its
+children:\footnote{A number of functions (e.g., {\tt children-of?}) are
+provided to simplify the writing of rules. These appear in the file {\tt
+match-rules-support.lisp}.}\index{match hypothesis, scoring}
+
+\begin{small}
+\begin{verbatim}
+   (rule ((:intern (MH ?b1 ?t1) :test (and (expression? ?b1) (expression? ?t1)
+                                           (not (commutative? (expression-functor ?b1)))))
+          (:intern (MH ?b2 ?t2) :test (children-of? ?b2 ?t2 ?b1 ?t1)))
+       (rassert! (implies (MH ?b1 ?t1) (MH ?b2 ?t2) (0.8 . 0.0))))
+\end{verbatim}
+\end{small}
+
+\noindent
+Evidence for a Gmap is given by:
+
+\begin{small}
+\begin{verbatim}
+   (rule ((:intern (GMAP ?gm) :var ?the-group))
+      (dolist (mh (gm-elements ?gm))
+         (assert! `(implies ,(mh-form mh) ,?the-group))))
+\end{verbatim}
+\end{small}
+
+\index{global mapping, scoring}\index{rule system}
+
+The {\tt BMS} allows a set of nodes to be declared special and will treat
+evidence to these nodes differently. An {\tt additive-nodes} function is
+provided which takes a set of {\tt BMS} nodes and modifies them so that
+their evidence is added rather than normalized using Dempster's rule. \SME\
+automatically invokes {\tt additive-nodes} on the derived set of Gmaps once
+they are created. Thus, when the above Gmap rule is executed and the {\tt
+implies} statement is used to supply evidence from each match hypothesis to
+the Gmap, that evidence is simply automatically added to the total Gmap
+evidence rather than propagated using Dempster's probabilistic sum.
+
+The following destructive rule is often used instead of the previous one to
+give a significant speed up:
+
+\begin{small}
+\begin{verbatim}
+   (rule ((:intern (GMAP ?gm) :var ?the-group))
+       (setf (node-belief+ (gm-bms-node ?gm)) 0)
+       (dolist (mh (gm-elements ?gm))
+          (incf (node-belief+ (gm-bms-node ?gm))
+                (node-belief+ (mh-bms-node mh)))))
+\end{verbatim}
+\end{small}
+
+This rule bypasses the BMS entirely, thus increasing speed by not creating
+justification links. It also renders the {\tt additive-nodes} distinction
+irrelevant. However, such rules must be used with extreme caution.  For
+example, the source of a Gmap's evidence cannot be inspected when using this
+type of operation (see Section~\ref{ss:inspecting-evidence}).
+
+\subsection{Making SME simulate structure-mapping theory}\index{rule system}\index{rule system, simulating structure-mapping theory}
+
+The previous section examined the general structure of an \SME\ rule file.
+In the process, the basic elements of the {\it structure-mapping-theory
+analogy} rule set were presented. The {\it literal similarity} and
+{\it mere-appearance} rules are essentially the same as the {\it analogy}
+rules. They differ in the first match constructor rule. The {\it analogy}
+rule set has the test {\tt (not (attribute? (expression-functor ?b)))} which is
+absent from the corresponding {\it literal similarity} rule. Conversely, the
+corresponding {\it mere appearance} rule forces the opposite condition
+{\tt (attribute? (expression-functor ?b))}. One should consult Appendix A of
+\cite{sme-aij} for listings of all three structure-mapping rule sets.
+
+\subsection{Making SME perform as SPROUTER}\index{rule system}\index{rule system, simulating SPROUTER}
+
+The {\tt SPROUTER} program \cite{hayes-roth} was
+developed as an approach to the problem of inductively forming
+characteristic concept descriptions. That is, given a sequence of events
+(e.g., a list of pictures), produce a single, conjunctive description which
+represents a generalized, characteristic description of the sequence. {\tt
+SPROUTER} generalized a sequence of {\it N} descriptions by finding the
+commonalities between the first two descriptions, generalizing these common
+elements (i.e., variablize the literals), and then repeating the process
+using this generalized description and the next, unprocessed description.
+These steps would be repeated until the generalization had propagated
+through the entire list of input descriptions.
+
+\SME\ may be used to implement {\tt SPROUTER}'s {\it interference matching}
+technique by giving it a set of match constructor rules which require all
+matching predicates to have the same name (i.e., the {\it literal
+similarity} rules without the condition that allows functions with different
+names to match). The {\tt SPROUTER} generalization\index{generalize}
+mechanism may then be implemented with the following algorithm:
+
+\begin{small}
+\begin{verbatim}
+  Procedure SPROUTER (event-list)
+     begin
+       generalization := pop(event-list)
+       while event-list
+          pairwise-match := match(pop(event-list), generalization)
+          generalization := generalize(pairwise-match)
+       return generalization
+     end
+\end{verbatim}
+\end{small}
+
+
+\subsection{Relaxing the identical predicates constraint}\index{rule system}\index{rule system, relaxing identical predicates}
+
+The current structure-mapping theory rules are sensitive to representation
+by requiring that relational predicates match only if they are identical.
+This is an important restriction that ensures the structures being compared
+are semantically similar. However, it can also be overly restrictive.  We
+are currently exploring different methods to relax the identicality
+requirement while still maintaining a strong sense of semantic similarity.
+One approach, called the {\it minimal ascension principle}, allows relations
+to match if they share a common ancestor in a multi-root is-a hierarchy of
+expression types \cite{Falken-phd} (i.e., the identicality test in the match
+constructor rule is replaced by a call to {\tt
+predicate-type-intersection?}). The local evidence score for their match is
+inversely proportional (exponentially) to the relations' distance in the
+hierarchy.  This enables \SME\ to match non-identical relations if such a
+match is supported by the surrounding structure, while still maintaining a
+strong preference for matching semantically close relations. This is similar
+to approaches used in \cite{Burstein83,Greiner,Winston80}.
+
+Problems with an unconstrained minimal ascension match technique are
+discussed in \cite{Falken-phd}. A mapping approach which considers the
+current context when determining pairwise similarity is also discussed.
+
+\subsection{Pure isomorphisms}\label{ss:isomorphisms}
+\index{rule system}\index{rule system, pure isomorphisms}
+
+While it is important to assure that the structures being compared are
+semantically similar, one can in principle remove all semantic comparisons.
+This would allow match creation to be guided strictly by \SME's structural
+consistency and 1-1 mapping criteria and match selection to be based
+strictly on systematicity.
+
+\begin{figure}
+\border
+\begin{small}
+\begin{tt}
+\begin{tabbing}
+\ \ \ \ \ \ {\rm Addition}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\rm Union} \\
+\ \ \ \= N1 + N2 $=$ N2 + N1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \= S1 $\cup$ S2 $\equiv$ S2 $\cup$ S1 \\
+\> N3+(N4+N5) $=$ (N3+N4)+N5 \> S3 $\cup$ [S4 $\cup$ S5] $\equiv$ [S3 $\cup$ S4] $\cup$ S5 \\
+\> N6+0 $=$ N6            \> S6 $\cup$ $\emptyset$ $\equiv$ S6
+\end{tabbing}
+\end{tt}
+\end{small}
+  \caption{Formal descriptions for addition and union.}
+  \label{fg:addition-union}
+\border
+\end{figure}
+
+
+Consider the isomorphic mapping between the formal definitions of numeric
+addition and set union shown in
+Figure~\ref{fg:addition-union}.\footnote{This example is taken from an
+advance copy of a paper by Holyoak and Thagard \cite{ACME}. I include it
+here simply to demonstrate the range of matching preferences available in
+\SME.} These formal descriptions may be given to \SME\ in the standard
+manner, as in {\tt (plus N3 (plus N4 N5))} for the left side of the
+associativity rule (the representation {\tt (plus N4 N5 result45)} also
+works, although it results in a slightly longer run time due to the
+flattening of structure).  When presented as formal definitions, the
+concepts of addition and union are structurally isomorphic, independent of
+the meaning of the predicates. Thus, while it could be argued that the
+predicates {\tt plus} and {\tt union} share a certain degree of semantic
+overlap, this example demonstrates that it is possible to make \SME\ ignore
+predicates entirely and simply look for isomorphic mappings.  The rule set
+for isomorphic mappings is shown in Figure~\ref{fg:isomorphism}. (This is
+called the {\it ACME} rule set, as it configures \SME\ to emulate the {\tt
+ACME} program on this example \cite{ACME}). The only constraint this rule
+set enforces is that each predicate has the same number of arguments. While
+it includes the Structure-Mapping notion of systematicity to prefer systems
+of relations, it does not enforce identicality of predicates.  Using this
+rule set, \SME\ produces the unique best mapping that we would expect
+between the formal definitions of addition and union.
+
+Since \SME\ enforces the ``same number of arguments'' restriction by
+defeating any match hypotheses that are not structurally sound, we could in
+principle effectively remove the rule file entirely. This could be done with
+one match constructor rule to match everything with everything and one
+evidence rule to measure systematicity. When this {\it free-for-all} rules
+file was given to \SME, the same single best Gmap was produced, but at the
+expense of increasing the run time from 13 seconds to 3.25 minutes.
+
+
+\begin{figure}[t]
+\border
+\begin{small}
+\begin{alltt}
+   (MHC-rule (:filter ?b ?t :test (= (numargs (expression-functor ?b))
+                                     (numargs (expression-functor ?t))))
+       (install-MH ?b ?t))
+
+   {\it ;;; Intern rule to match entities (non-commutative predicates)}
+   (MHC-rule (:intern ?b ?t :test (and (expression? ?b) (expression? ?t)))
+       (do ((bchildren (expression-arguments ?b) (cdr bchildren))
+            (tchildren (expression-arguments ?t) (cdr tchildren)))
+           ((or (null bchildren) (null tchildren)))
+         (if (and (entity? (first bchildren)) (entity? (first tchildren)))
+             (install-MH (first bchildren) (first tchildren)))))
+
+   {\it ;;; Give a uniform initial priming to each MH}
+   (initial-assertion (assert! 'initial-priming))
+
+   (rule ((:intern (MH ?b ?t)))
+      (rassert! (implies initial-priming (MH ?b ?t) (0.2 . 0.0))))
+
+   {\it ;;;propagate interconnections - systematicity}
+   (rule ((:intern (MH ?b1 ?t1) :test (and (expression? ?b1) (expression? ?t1)))
+          (:intern (MH ?b2 ?t2) :test (children-of? ?b2 ?t2 ?b1 ?t1)))
+      (rassert! (implies (MH ?b1 ?t1) (MH ?b2 ?t2) (0.8 . 0.0))))
+
+   {\it ;;; Support from its MH's}
+   (rule ((:intern (GMAP ?gm) :var ?the-group))
+      (dolist (mh (gm-elements ?gm))
+         (assert! `(implies ,(mh-form mh) ,?the-group))))
+\end{alltt}
+\end{small}
+  \caption{Rule set for forming general isomorphic mappings.}
+  \label{fg:isomorphism}\index{rule system}
+\border
+\end{figure}
+
+
+
+\subsection{Imposing externally established pairings}\index{rule system}\index{rule system, analogical hints}
+
+In certain situations, a number of entity and predicate mappings may already
+be known prior to invoking \SME. These mappings may have been provided as an
+analogical hint\index{analogical hint} from an instructor or derived by the
+application program during earlier processing.  For example, \Phineas\
+\cite{VBAL,MLW} uses \SME\ to analogically relate observed physical
+phenomena to known theories of the world. \Phineas\ uses two analogical
+mappings to learn about a new physical process. First, behavioral
+correspondences are established (i.e., what entities and quantities are
+behaving in the same manner). Second, the relevant base theories are
+analogically mapped into the new domain, guided by the behavioral
+correspondences. The two-stage mapping process solves the problem of using
+analogy in cases where one does not have a pre-existing theory, as occurs
+with truely novel learning. The assumption made in \Phineas\ is that similar
+behaviors will have similar theoretical explanations. The first mapping
+provides the correspondences between entities and functions required to
+guide the importation of an old theory to explain a new domain in the second
+mapping.
+
+\SME\ includes facilities to simplify writing \Phineas-like programs, by
+enabling the results of earlier processing to constrain subsequent mapping
+tasks. These routines are divided into two categories, {\it declaration} and
+{\it test}. The declaration routines tell \SME\ what predicate and entity
+correspondences are known {\it a-priori}. The test routines enable the match
+constructor rules to adhere to these imposed constraints. Known mappings are
+declared through the following functions:
+
+\spc{0.6}
+\noindent
+\begin{minipage}{\textwidth}
+\begin{tt}
+\begin{tabbing}
+defGiven-Mappings  \` [{\it Macro}]   \\
+\ \ \ \= entities \ \ \= (\= ({\it base-entity$_{1}$ target-entity$_{1}$})   \\
+      \>              \>  \> ({\it base-entity$_{i}$ target-entity$_{j}$}) ...)  \\
+      \> predicates   \> (({\it base-predicate$_{1}$ target-predicate$_{1}$})   \\
+      \>              \>  \> ({\it base-predicate$_{i}$ target-predicate$_{j}$}) ...)
+\end{tabbing}
+\end{tt}
+\end{minipage}
+\decfunc{declare-given-mappings}{entities predicates}
+\decfunc{clear-given-mappings}{}
+
+\spc{0.8}
+Both {\tt defGiven-Mappings} and {\tt declare-given-mappings} have identical
+functionality. The first does not evaluate its arguments while the second
+one does. Disjunctive constraints may be imposed by including all of the
+possible pairings (e.g., defining both {\tt (}{\it base-entity$_{i}$
+target-entity$_{j}$}{\tt )} and {\tt (}{\it base-entity$_{i}$
+target-entity$_{k}$}{\tt )}).
+
+Once a set of given mappings has been declared, the following test routines
+may be used within the match constructor rules to enforce these mappings:
+
+\spc{0.8}
+\decfunc{sanctioned-pairing?}{base-item target-item}
+\decfunc{paired-item?}{{\tt \&key base-item target-item}}
+
+\spc{0.4}
+\noindent
+{\tt sanctioned-pairing?} tests if the given pair is one of the {\it a-prior}
+pairings. {\tt paired-item?} takes either a base item or a target item and returns
+true if the mapping for that item has been externally determined.
+
+These functions help in writing rules which respect established mappings.
+For example, the following two rules are used in the \Phineas\ system to
+allow observed behavioral correspondences to constrain the mapping of the
+relevant theory:
+
+\begin{small}
+\begin{verbatim}
+(MHC-rule (:filter ?b ?t :test (and (eq (expression-functor ?b) (expression-functor ?t))
+                                    (not (paired-item? :base-item (expression-functor ?b)))
+                                    (not (paired-item? :target-item (expression-functor ?t)))))
+    (install-MH ?b ?t))
+
+(MHC-rule (:filter ?b ?t :test (sanctioned-pairing? (expression-functor ?b)
+                                                    (expression-functor ?t)))
+    (install-MH ?b ?t))
+\end{verbatim}
+\end{small}
+
+When an analogy is being made between two behaviors, {\tt clear-given-mappings}
+is used to make \SME\ perform in normal analogy mode. The discovered entity and
+function correspondences are then given to {\tt declare-given-mappings} prior to
+using \SME\ to map the relevant theory.\index{rule system}
+
+
+\section{Representation Issues}\index{representation issues}
+
+The proper representation becomes an issue in \SME\ due to its significant
+impact on speed performance. Hierarchical representations provide an
+important source of constraint on generating potential matches. They tend to
+make the semantic interrelations explicit in the structure of the syntax.
+For example, Section~\ref{ss:isomorphisms} described a comparison between
+the laws of addition and union. There it was noted that part of the additive
+associativity rule may be represented as {\tt (plus N3 (plus N4 N5))} or as
+the pair {\tt (plus N4 N5 result45)} and {\tt (plus N3 result45
+result3-45)}. The latter ``flat'' representation takes more time for \SME\
+to process, sometimes a significant difference for large domain
+descriptions. This is because the functional representation makes the
+associativity rule structurally explicit, while the flat representation
+buries it among the tokens appearing as arguments to {\tt plus}. However, it
+is important to note that \SME\ is able to process domain descriptions in
+any predicate-based format. It is simply speed considerations that render
+standard, flat forms of representation undesirable.
+
+Due to SME's ability to accept commutative, n-ary predicates, it is able to
+match arbitrary sets (which must be of equal size at this time). This has
+two consequences. First, the explicit use of sets becomes a viable form of
+representation. Thus, a theory might be represented concisely as
+
+\begin{verbatim}
+   (Theory T1 (SET axiom-8 axiom-14 ...))
+\end{verbatim}
+
+\noindent
+rather than as {\tt (Axiom-of T1 axiom-8)}, etc. Second, sets may be used to
+add structure to descriptions. For example, the set representation for
+theories results in greatly reduced run times compared to the non-set
+representation.\footnote{The difference in speed is due to the operation of
+merge step 2, which combines matches sharing a common base structure. The
+set notation for theory {\tt T1} enables merge step 2 to know that matches
+for {\tt axiom-8} and {\tt axiom-14} should be placed in the same gmap, thus
+reducing the number of possibilities in merge step 3.} I am currently
+investigating the use of a similar representation for temporal states, as in:
+
+\begin{verbatim}
+   (Situation S1 (SET (Increasing (Amount-of water1))
+                      (Increasing (Pressure water1))
+                      o o o ))
+\end{verbatim}
+
+\noindent
+A \Phineas\ problem which took \SME\ 53 minutes (using {\tt (Increasing
+(Amount-of (at water1 S1)))}) was reduced to 34 seconds using this more
+structured representation.
+
+
+\section{Using SME}
+
+This section describes how to install \SME\ on your machine, load it, and
+operate it.
+
+\subsection{Installing SME}\index{installation}\label{ss:site-specifics}
+
+\indent
+\decvar{*sme-language-file*}\index{parameters, site specific}\index{site specific information}
+\decvar{*sme-default-rules*}\index{site specific information, pathnames}
+\decvar{*sme-rules-pathname*}
+\decvar{*sme-dgroup-pathname*}
+
+\spc{0.8}
+To configure \SME\ to a particular site, a handful of variables storing
+system directory information must be edited and set to the appropriate
+values. These variables appear in {\tt config.lisp}, a separate file for
+this purpose. Of primary importance are {\tt *sme-language-file*} and {\tt
+*sme-default-rules*}. These are used by {\tt sme-init} to initialize the
+language and rule systems. The two variables storing the rules and dgroup
+pathnames are used by the user interface routines.
+
+\spc{0.7}
+\decvar{*the-lisp-package*}\index{packages,site specific}
+\decvar{*the-user-package*}\index{site specific information, packages}
+
+\spc{0.3}
+In most Common Lisp implementations, one package exists for general user
+definitions and another exists for the lisp implementation. It is important
+to notify \SME\ what these are for the Common Lisp in use. For example, on a
+Symbolics (version 6.2), the lisp package is called {\tt common-lisp} and
+the user package is called {\tt cl-user}. These are the default settings.
+
+\spc{0.7}
+\decvar{*sme-system-pathname*}
+\decvar{*sme-files*}
+
+\spc{0.8}
+These variables are used to automate compiling and loading. If the system is
+being loaded on something other than a Symbolics or TI Explorer, the file
+{\tt windowing} should not be included in the list {\tt *sme-files*}.
+Otherwise, it should be left in the list of \SME\ files, which is the
+default.
+
+The \SME\ routines assume a set of naming conventions on domain description
+and rule files.\index{conventions, file names} The names of files containing
+domain descriptions ({\tt defDescription}) should end with a {\tt *.dgroup}
+extension. The name of a file containing a rule set should end with the {\tt
+*.rules} extension.
+
+
+\subsection{Running SME}\index{running SME}\index{execution}
+
+\indent
+\decfunc{sme-init}{{\tt \&optional (}initialize-language? {\tt T) (}initialize-rules? {\tt T)}}
+
+\spc{0.7}
+This section gives a brief overview of the process of using \SME\ for
+matching, generalization, and inspection tasks.
+
+
+\begin{figure}
+\border
+\begin{footnotesize}
+\begin{alltt}
+{\bf\gthan\ (sme:sme-init)}
+Initializing SME...
+   Loading default language file: prof:>falken>sme>language
+   Loading default rules file: prof:>falken>sme>literal-similarity.bin
+Complete.
+T
+{\bf\gthan\ (load "prof:\gthan falken\gthan sme\gthan simple-water-flow.dgroup")}
+Loading PROF:>falken>sme>simple-water-flow.dgroup into package USER
+#P"PROF:>falken>sme>simple-water-flow.dgroup"
+NIL
+{\bf\gthan\ (load "prof:\gthan falken\gthan sme\gthan simple-heat-flow.dgroup")}
+Loading PROF:>falken>sme>simple-heat-flow.dgroup into package USER
+#P"PROF:>falken>sme>simple-heat-flow.dgroup"
+NIL
+{\bf\gthan\ (sme:match 'swater-flow 'sheat-flow T)}
+              SME Version 2E
+    Analogical Match from SWATER-FLOW to SHEAT-FLOW.
+
+Rule File: literal-similarity.rules
+--------------------------------------------------------------------------
+                  | # Entities | # Expr. | Maximum order | Average order |
+  Base Statistics |       4    |     11  |        3      |      1.36     |
+Target Statistics |       4    |      6  |        2      |      1.17     |
+--------------------------------------------------------------------------
+# MH's | # Gmaps | Merge Step 3 | CI Generation | Show Best Only |
+   14  |     3   |   ACTIVE     |    ACTIVE     |       OFF      |
+------------------------------------------------------------------
+Total Run Time:    0 Minutes,  0.821 Seconds
+BMS Run Time:      0 Minutes,  0.530 Seconds
+Best Gmaps: { 3 }
+
+Match Hypotheses:
+    (0.6320  0.0000)  (PIPE4 BAR7)
+    (0.7900  0.0000)  (FLAT-WATER FLAT-COFFEE)
+    {\it   o       o         ;a number of match hypotheses appeared here}
+    (0.8646  0.0000)  (WATER1 COFFEE5)
+    (0.7900  0.0000)  (LIQUID-WATER LIQUID-COFFEE)
+
+Gmap #1:   (BEAKER2 COFFEE5)  (DIAM-BEAKER TEMP-COFFEE)  (VIAL3 ICE-CUBE6)
+           (DIAM-VIAL TEMP-ICE-CUBE)  (>DIAMETER >TEMP)
+  Emaps:  (BEAKER2 COFFEE5) (VIAL3 ICE-CUBE6)
+  Weight: 3.937660
+  Candidate Inferences:  { }
+
+    {\it   o       o         ;Gmap #2 appeared here...}
+
+Gmap #3:   (>PRESSURE >TEMP)  (PRESS-VIAL TEMP-ICE-CUBE)  (PRESS-BEAKER TEMP-COFFEE)
+           (BEAKER2 COFFEE5)  (VIAL3 ICE-CUBE6)  (WATER1 HEAT8)
+           (PIPE4 BAR7)  (WFLOW HFLOW)
+  Emaps:  (BEAKER2 COFFEE5) (VIAL3 ICE-CUBE6) (WATER1 HEAT8) (PIPE4 BAR7)
+  Weight: 5.991660
+  Candidate Inferences:  (CAUSE >TEMP HFLOW)
+\end{alltt}
+\end{footnotesize}
+  \caption{Initializing and running SME.}
+  \label{fg:sme-trace}
+\border
+\end{figure}
+
+
+\begin{enumerate}
+
+\item {\it Loading the files.} To load or compile \SME, the file {\tt
+config} should be loaded and then {\tt (load-sme)} or {\tt (compile-sme)}
+called. A {\tt defSystem} definition is provided in {\tt system.lisp} for
+Symbolics machines.
+
+\item {\it System startup.} This stage is only appropriate for full, lisp
+machine startup. The \SME\ window environment may be created with Select-S
+on a Symbolics or System-S on a TI Explorer.
+
+\item {\it Initialization.} The function {\tt sme-init} should be called to
+initialize the database. If {\it initialize-language?} is non-nil, the
+default language file (predicate definitions) will be loaded. If {\it
+initialize-rules?} is non-nil, the default rules file will be loaded. Prior
+to operating \SME, the language and rule systems must be established.
+
+\item {\it Loading Dgroups.} Any description groups that are to be matched
+must be declared. These declarations are typically stored in files, with the
+extension {\tt *.dgroup}. If the windowing system is active, the command
+{\tt Load Dgroup} will offer a menu of all {\tt *.dgroup} files in
+{\tt *sme-dgroup-pathname*} to select what to load.
+
+\item {\it Analogical mapping.} The function {\tt match} may be called to
+form a mapping between two given Dgroups. This is discussed in
+Section~\ref{ss:match}. If the windowing system is active, the command {\tt
+Match} will offer a menu to select base and target Dgroups. It is prior to
+this step that one might want to think about wether to modify any system
+parameters (e.g., print the match hypotheses, print only the best Gmaps,
+generate candidate inferences, etc.). 
+
+\item {\it Describing Dgroups.} Once Dgroups are defined, the {\tt
+describe-dgroup} facility will provide a description of any particular
+Dgroup.
+
+\item {\it Graphically displaying Dgroups.} If the windowing system is
+active, Dgroups may also be displayed graphically, through the {\tt Display
+Dgroup} utility.
+
+\item {\it Generalizing.} Once a mapping is formed, it may be generalized
+using the {\tt generalize} function or the {\tt Generalize} command in the
+system menu.
+
+\item {\it Saving the results of a session.} If the windowing system is
+active, the results of commands like {\tt Match} and {\tt Generalize} are
+sent to the scroll window by default. These results may be written to a file
+using the {\tt dump-scroll} system utility.
+
+\item {\it Comparing two apparently identical Gmaps.} When two Gmaps are
+formed that appear to be identical, their differences can be identified
+using the {\tt compare-gmaps} system utility.
+
+\end{enumerate}
+
+\noindent
+A trace of \SME\ performing the basic mapping task is given in
+Figure~\ref{fg:sme-trace}. Each of the other options are described in
+greater detail in the following sections.
+
+
+\subsection{Batch mode}
+\index{batch mode}\index{report generation}
+
+\indent
+\decfunc{run-batch-file}{pathname {\tt \&key} {\tt (}gmap-display {\tt :all) (}gmap-statistics {\tt :none)}}
+\decmacro{language-file}{pathname}
+\decmacro{dgroup-directory}{pathname}
+\decmacro{dgroup-file}{file-name}
+\decmacro{rule-directory}{pathname}
+\decmacro{rule-file}{file-name}
+\decmacro{rule-sets}{{\tt \&rest} rule-file-names}
+\decmacro{report-comments}{string}
+\decmacro{send-report-to}{pathname {\tt \&key (}text-driver {\tt :LPR) (}style {\tt :STANDARD)}}
+\decmacro{run-matcher-on}{base-name target-name}
+\decmacro{defPostMatcher}{function}
+
+
+\begin{figure}
+\border
+\begin{footnotesize}
+\begin{alltt}
+(sme:Dgroup-Directory "prof:>falken>sme>")
+
+(sme:Dgroup-File "solar-system")
+(sme:Dgroup-File "rutherford")
+(sme:Dgroup-File "simple-water-flow")
+(sme:Dgroup-File "simple-heat-flow")
+
+(sme:Rule-Directory "prof:>falken>sme>")
+
+(sme:Rule-Sets "literal-similarity" "true-analogy" "attribute-only")   {\it; iterate over each rule set}
+
+(sme:Report-Comments "Sample run of SME to demonstrate batch mode.")
+
+(sme:Send-Report-To "heath:>falken>sample.dmp" :text-driver :LATEX)
+
+(sme:Run-Matcher-On solar-system rutherford-atom)                 {\it; map this pair once for each rule set}
+(sme:Run-Matcher-On swater-flow sheat-flow)                       {\it; map this pair once for each rule set}
+\end{alltt}
+\end{footnotesize}
+  \caption{Sample SME batch file.}
+  \label{fg:batch-file}
+\border
+\end{figure}
+
+
+\spc{0.8}
+\SME\ is normally used as an interactive utility or as a module to some
+larger program. However, when performing statistical analyses across a broad
+space of matching preferences (i.e., rule sets) and domain descriptions, an
+interactive format soon becomes inconvenient. Utilities are provided so that
+a file of \SME\ instructions may be defined and then executed using {\tt
+run-batch-file} (e.g., Figure~\ref{fg:batch-file}). This would instruct
+\SME\ to perform a series of matches, potentially over a variety of rule
+sets and domain descriptions, and generate a detailed report of the
+execution and a summary of the results. When a single rule set is specified
+using {\tt rule-file}, all subsequent matches (invoked by {\tt
+run-matcher-on}) will use this rule file until another one is specified.
+Using {\tt rule-sets}, one may instead specify a series of rule files to be
+used, so that a single {\tt run-matcher-on} command will cause \SME\ to run
+once for each rule file in the list. If a user-defined function name is
+given to {\tt defPostMatcher}, this function will be called after each match
+is performed, in case special post-match routines are desired or extra
+information is to be added to the report being generated. A variety of text
+drivers are supported for report generation ({\tt send-report-to}), such as
+{\tt :lpr} (line printer), {\tt :latex}, and {\tt :troff}.
+
+
+\subsection{Generalization mechanism}
+
+\indent
+\decfunc{generalize}{gmap}
+
+\spc{0.8}
+The {\tt generalize} function takes a global mapping structure and returns
+three alternate generalizations (using the Common-Lisp {\tt values}
+protocol), each one successively larger than the previous:
+
+
+\begin{figure}
+\border
+\begin{small}
+\begin{verbatim}
+   Generalizations for Match from SWATER-FLOW to SHEAT-FLOW:
+
+       Generalization #1 (Literally Common Aspects Only):
+            (FLOW ENTITY6 ENTITY8 ENTITY13 ENTITY14)
+
+       Generalization #2 (All Common Aspects Only):
+            (FLOW ENTITY6 ENTITY8 ENTITY13 ENTITY14)
+            (GREATER (FUNCTION0 ENTITY6) (FUNCTION0 ENTITY8))
+
+       Generalization #3 (Maximal Generalization):
+            (CAUSE (GREATER (FUNCTION0 ENTITY6) (FUNCTION0 ENTITY8))
+                   (FLOW ENTITY6 ENTITY8 ENTITY13 ENTITY14))
+\end{verbatim}
+\end{small}
+  \caption{\SME\ generalizations for the simple water flow -- heat flow analogy.}
+  \label{fg:generalizations}
+\border
+\end{figure}
+
+
+\begin{enumerate}
+ \item {\it Literally common aspects only.} This generalization locates
+those sub-structures which are identical in both base and target Dgroups.
+This is a type of generalization typically found in inductive generalization
+programs.
+ \item {\it All common aspects only.} In addition to common, identical
+substructures, this generalization includes cases where functions of a
+different name were allowed to match. Where this occurs in the common
+structure, a skolemized function predicate is created.
+ \item {\it Maximal generalization.} The largest generalization (in terms of
+amount) includes all candidate inferences sanctioned by the Gmap, as well as
+the common substructure of generalization mode 2. This represents the entire
+shared structure between the two Dgroups under the assumption that the
+candidate inferences are valid.
+\end{enumerate}
+
+For example, given the best Gmap from the simple water flow -- heat flow
+analogy described in Section 2.1 and shown in Figure~\ref{fg:wfhf-done},
+\SME\ will produce the set of generalizations shown in
+Figure~\ref{fg:generalizations}. The first generalization indicates that the
+only thing in common between the two situations is the existence of flow. The
+second generalization loosens the meaning of ``in common'' to include the
+fact that a quantity associated with the source of flow was greater than the
+same quantity measured for the destination. The final generalization assumes
+that this inequality, which was the cause of flow in the water flow domain,
+is actually the cause of flow for both situations.
+
+
+\subsection{Inspecting MH and Gmap evidence}\label{ss:inspecting-evidence}
+
+\indent
+\decfunc{match-evidence-inspector}{}\index{match hypothesis, inspecting evidence justifications}\index{match hypothesis, inspecting evidence justifications}
+
+\spc{0.8}
+When developing a theory about what types of rules should be used and how
+much evidence for a particular match they should provide, it is often useful
+to explicitly see what the different sources of evidence were for a
+particular match item. The system utility {\tt match-evidence-inspector} may
+be used to display a trace of the entire evidence facility or just the
+evidence for a particular match hypothesis or Gmap. For example, the
+following information was printed out about the {\tt pressure} to {\tt
+temperature} match hypothesis in the water flow -- heat flow analogy:
+
+\begin{small}
+\begin{verbatim}
+   (MH F#PRESS-BEAKER F#TEMP-COFFEE) has evidence (0.7120, 0.0000) due to
+      IMPLICATION((MH F#>PRESSURE F#>TEMP))  (0.5200, 0.0000)
+      IMPLICATION(CHILDREN-POTENTIAL)  (0.4000, 0.0000)
+\end{verbatim}
+\end{small}
+\noindent
+While the following information appears for the best Gmap in this analogy:
+\begin{small}
+\begin{verbatim}
+   (GMAP #GM3) has evidence (5.9917, 0.0000) due to
+       IMPLICATION((MH F#WFLOW F#HFLOW))  (0.7900, 0.0000)
+       IMPLICATION((MH I#PIPE20 I#BAR23))  (0.6320, 0.0000)
+       IMPLICATION((MH I#WATER17 I#HEAT24))  (0.6320, 0.0000)
+       IMPLICATION((MH I#VIAL19 I#ICE-CUBE22))  (0.9318, 0.0000)
+       IMPLICATION((MH I#BEAKER18 I#COFFEE21))  (0.9318, 0.0000)
+       IMPLICATION((MH F#PRESS-BEAKER F#TEMP-COFFEE))  (0.7120, 0.0000)
+       IMPLICATION((MH F#PRESS-VIAL F#TEMP-ICE-CUBE))  (0.7120, 0.0000)
+       IMPLICATION((MH F#>PRESSURE F#>TEMP))  (0.6500, 0.0000)
+\end{verbatim}
+\end{small}
+
+\noindent
+The inspection facility will not work for Gmaps if their scores were
+produced by an external (to the {\tt BMS}), destructive operation. One such
+destructive rule appeared at the end of Section~\ref{ss:ME-rules}.
+
+
+\subsection{Windows}\index{lisp machine interface}\index{scroll windows}
+
+\indent
+\decfunc{dump-scroll-menu}{}\index{scroll windows, saving contents}
+\decfunc{dump-scroll}{output-pathname}
+\decfunc{clear-scroll}{}
+
+\decfunc{select-windowing-configuration}{}
+\decfunc{select-scroll}{}
+\decfunc{select-double-scroll}{}
+\decfunc{select-graphics}{}
+\decfunc{select-large-graphics}{}
+\decfunc{select-split}{}
+
+\decvar{*sme-frame*}
+\decvar{*graphics-pane*}
+\decvar{*scroll-pane*}
+\decvar{*spare-scroll-pane*}
+\decvar{*lisp-pane*}
+
+\spc{0.8} The windowing system is lisp machine dependent and appears in the
+file {\tt windowing.lisp}. The loading of this file is optional. When the
+windowing system is used, a number of window configurations are possible,
+such as having a single scroll window, two side by side, a single graphics
+window, or a scroll and graphics window side by side. These configurations
+may be selected through their individual functions (e.g., {\tt
+select-scroll}), or through the central configuration facility {\tt
+select-scroll-graphics}.  By default, when the windowing system is active,
+all \SME\ output is sent to the primary scroll pane.\index{scroll windows,
+writing to} When both scroll windows are in use, the configuration facility
+allows one to specify which scroll window is currently active. The two
+scroll dumping routines write the contents of the primary scroll window to a
+specified file. Output sent to the secondary ({\it scratchpad}) scroll pane
+is for observation only and cannot be written to a file.
+
+
+\subsection{System parameters}\index{parameters}
+
+\indent
+\decvar{*sme-parameters*}
+\decvar{*parameter-menu-options*}
+\decmacro{defSME-Parameter}{variable-name string-description type {\tt \&optional} type-choices}
+
+\spc{0.8}
+The {\tt defSME-Parameter} form adds a new variable to the list of known
+\SME\ parameters. This list is used by the windowing interface routines to
+query the user about possible parameter settings. It is provided primarily
+for application programs wanting to use the standard \SME\ parameter setting
+facility. The arguments to {\tt defSME-Parameter} correspond to the appropriate
+definitions for the {\tt choose-variable-values} function of your particular
+machine. For example, the following declaration appears in {\tt match.lisp}:
+\begin{small}
+\begin{verbatim}
+   (defSME-Parameter *display-all-MH* "Display all the Match Hypotheses" :boolean)
+\end{verbatim}
+\end{small}
+
+
+\begin{figure}
+\border
+\vspace{1.2in}
+\caption{SME System Parameters.}
+\label{fg:parameters}
+\border
+\end{figure}
+
+
+\spc{0.6}
+\decfunc{change-parms}{}
+
+\spc{0.4}
+The windowing system provides a menu facility for viewing and changing the
+current values of system parameters. This menu is shown in
+Figure~\ref{fg:parameters}.
+
+
+\subsection{System utilities}\index{system utilities}
+
+\indent
+\decvar{*system-utilities-menu*}
+\decmacro{defSME-Utility}{string-name lisp-form}
+\decfunc{menu-utilities}{}
+\decfunc{get-dgroup}{}
+\decfunc{get-rules}{}
+
+\spc{0.8}
+The \SME\ system utilities are the options that appear when the {\tt
+Utilities} command is evoked, the right mouse button is pressed, or the
+function {\tt menu-utilities} is called. These utilities include changing
+the system parameters, choosing to load a Dgroup or rule file from those in
+the defined directories, and clearing or writting to file the contents of
+the scroll window. These routines are lisp machine dependent. The following
+declaration appears in {\tt match.lisp}:
+\begin{small}
+\begin{verbatim}
+   (defSME-Utility "Inspect Evidence" (match-evidence-inspector))
+\end{verbatim}
+\end{small}
+
+
+\section{User Hooks}
+
+This section describes the global variables and routines that are available
+to the user and application programs for the creation and inspection of
+analogical mappings.
+
+\subsection{Applications control over display}
+
+\indent
+\decvar{*sme-output-stream*}
+\decvar{*windowing?*}
+\decvar{*sme-graphics-output*}
+
+\spc{0.8}
+All \SME\ textual display routines send their output to {\tt
+*sme-output-stream*}. By default, the value of this variable is {\tt T},
+which causes output to be sent to {\tt *terminal-io*}, CommonLisp's default
+pointer to the user's console. When {\tt *sme-output-stream*} is a scroll
+window (determined by the presence of an {\tt :append-item} handler), the
+appropriate scroll window routines for sending display items are invoked.
+Otherwise, text is sent to the current output stream using {\tt format}. 
+Text routines are machine independent.
+
+In a similar manner, all \SME\ graphics output is sent to the current
+{\tt *sme-graphics-output*} window. Graphics output is lisp machine
+dependent and relies on the {\tt ZGRAPH} graphics system.
+
+When the \SME\ windowing system is in operation, {\tt *sme-output-stream*}
+is set to the primary \SME\ scroll pane ({\tt *scroll-pane*}), {\tt
+*sme-graphics-output*} is set to the \SME\ graphics pane ({\tt
+*graphics-pane*}), and {\tt windowing?} is set to {\tt T}.
+\index{scroll windows, writing to} 
+
+\spc{0.7}
+\decmacro{sme-format}{format-string {\tt \&rest} format-args}
+\decfunc{sme-print}{string}
+\decfunc{sme-terpri}{{\tt \&optional (}N {\tt 1)}}
+
+\spc{0.3}
+These routines provide a general interface for sending textual output to the
+current \SME\ output stream. {\tt sme-format} is equivalent to CommonLisp's
+{\tt format} routine, except that the printed output is always followed by a
+newline. The {\tt sme-print} routine is provided for simple situations where
+only a string is printed or for situations requiring the standard use of
+{\tt format}, as in building up a line of text through multiple invocations.
+The printed output of {\tt sme-print} is followed by a newline. When the
+routine is used for multiple calls of {\tt format}, it should be used in
+conjunction with CommonLisp's {\tt with-output-to-string}, as in:
+
+\begin{small}
+\begin{verbatim}
+   (sme-print
+      (with-output-to-string (stream)
+         (format stream "~%Beginning of a line...")
+         (format stream "   middle of a line...")
+         (format stream "   end of a line.")))
+\end{verbatim}
+\end{small}
+
+When a whole set of operations are carried out within the context of a
+single {\tt sme-print}, one must be careful not nest calls to {\tt
+sme-print} (e.g., calling a function in the context of an {\tt sme-print}
+which itself invokes {\tt sme-print}). Such nesting will cause output 
+to appear backwards from what was intended and may cause the output stream
+to close improperly.
+
+
+\subsection{Useful miscellaneous functions}
+
+Data exists within \SME\ in three forms: (1) local items such as entities,
+predicates, and expressions, (2) description groups (Dgroups), and (3) analogical
+mapping information. The routines to create and query these items are
+described in the following sections.
+
+\subsubsection{Entities, predicates, and expressions}
+
+\indent
+\decfunc{entity?}{item}
+\decfunc{entity-type?}{item}
+\decmacro{entity-name?}{symbol}\index{entity, inspection functions}
+\decmacro{fetch-entity-definition}{symbol}
+\decmacro{entity-domain}{symbol}
+\decmacro{constant-entity?}{symbol}
+
+\spc{0.8}
+Entities declared through {\tt defEntity} represent global entity types,
+that is, they represent a class of entities rather than an actual instance
+of an entity. When an entity type is used in the definition of a description
+group, a unique entity instance is created for that type (e.g., {\tt beaker}
+is translated to {\tt beaker73}). Thus, a given entity token will represent
+either a type or an instance. The structure predicate {\tt entity?} returns
+true if the given item is an entity-instance structure, while {\tt
+entity-type?} returns true if the item is an entity-type structure. The
+macro {\tt entity-name?} returns true if the given symbol represents either
+an entity type or instance. {\tt fetch-entity-definition} will return the
+entity-type structure for an entity type token or the entity-instance
+structure for an entity instance token. The routines {\tt entity-domain} and
+{\tt constant-entity?} refer to the {\tt type} and {\tt constant?} keyword
+values given to {\tt defEntity} when the corresponding entity type was
+created.
+
+\spc{1}
+\decvar{*sme-predicates*}
+\decmacro{fetch-predicate-definition}{predicate-symbol}\index{predicate, inspection functions}
+\decmacro{predicate?}{symbol}
+\decmacro{predicate-type}{predicate-symbol}
+\decmacro{relation?}{predicate-symbol}
+\decmacro{attribute?}{predicate-symbol}
+\decmacro{function?}{predicate-symbol}
+\decmacro{commutative?}{predicate-symbol}
+\decmacro{n-ary?}{predicate-symbol}
+\decmacro{arg-list}{predicate-symbol}
+\decmacro{numargs}{predicate-symbol}
+\decmacro{expression-type}{predicate-symbol}
+\decmacro{eval-form}{predicate-symbol}
+
+\spc{0.4}
+These routines provide the facility to access the various predicate properties
+defined with the {\tt defPredicate} form. {\tt fetch-predicate-definition}
+returns the actual sme-predicate structure containing all the information
+about a given predicate.
+
+\spc{1}
+\index{expression, inspection functions}
+\decfunc{fetch-expression}{expression-name dgroup
+                     {\tt \&optional (}error-if-absent? {\tt T)}}
+\decfunc{expression-functor}{expression-structure}
+\decfunc{fully-expand-expression}{expression-structure dgroup}
+\decfunc{fully-expand-expression-form}{expression-form dgroup}
+
+\spc{0.4}
+An ``expression'' represents an actual predicate instance within a Dgroup.  Notice
+that this includes terms corresponding to function applications as expressions.
+Each use of a predicate gets its own expression with its own name, so that a
+higher-order relation gets translated into several expressions, with some having
+expressions as arguments. These routines allow one to retrieve and inspect expressions
+in the database. {\tt fetch-expression} returns the expression structure with the given
+name.
+
+The routines {\tt fully-expand-expression} and {\tt fully-expand-expression-form} are
+useful for examining the form of an expression. Typically, the expression {\tt
+(greater-than (diameter beaker) 5)} is stored as the expression {\tt greater-than23},
+which has the form {\tt (greater-than diameter24 5)}. These routines return
+a fully expanded expression form, where all expression names are replaced by their
+corresponding forms.
+
+
+\subsubsection{Dgroups}
+
+\indent
+\decfunc{fetch-dgroup}{dgroup-name {\tt \&optional} create?}\index{description group, retrieval}
+\decfunc{return-dgroup}{dgroup-or-dgroup-name}
+
+\spc{0.8}
+Description groups (Dgroups) are stored in a simple data base managed
+primarily by routines in {\tt sme.lisp}. The general procedures for Dgroup
+and expression creation were described in sections~\ref{ss:new-dgroups} and
+\ref{ss:new-expressions}. A Dgroup may be retrieved by name using
+{\tt fetch-dgroup}, or created if {\it create?} is non-nil and no Dgroup
+with the given name currently exists. {\tt return-dgroup} is designed for
+routines that may take either an actual Dgroup or simply a Dgroup name
+(e.g., {\tt fetch-expression}). It will cause an error if the Dgroup does not
+previously exist.
+
+\spc{0.8}
+\decfunc{describe-dgroup}{dgroup}\index{description group, textual description}
+\decfunc{menu-display-dgroup}{}\index{description group, graphical display}
+\decfunc{menu-display-pairs}{}
+
+\spc{0.3}
+A Dgroup may be textually described using {\tt describe-Dgroup}, which
+writes to the \SME\ output stream. Graphical display is provided in the
+windowing system by {\tt menu-display-dgroup} for a single Dgroup or {\tt
+menu-display-pairs} for a display of two Dgroups side by side.
+
+
+\subsubsection{Creating and inspecting global matches}\label{ss:match}
+
+\indent
+\decfunc{match}{base-name target-name {\tt \&optional} display?}\index{global mapping, creation}
+\decfunc{best-gmaps}{{\tt \&optional (}gmaps {\tt *gmaps*) (}percentage-range {\tt 0.02)}}\index{global mapping, selecting the best}
+\decfunc{display-match}{base target {\tt \&optional (}total-run-time {\tt 0) (}bms-run-time {\tt 0)}}\index{global mapping, textual display}
+
+\spc{0.8}
+The {\tt match} function is the central \SME\ procedure. Given the names of two
+Dgroups, it forms the complete set of global mappings between them. If {\it display?}
+is non-nil, a description of the results will be sent to the current \SME\
+output stream. The function itself returns two values, the total run time of
+the match process in seconds and the subset of that time spent running the
+BMS evidence rules. The analogical mapping results are stored in the
+following global variables, which are then accessible by the user or
+application program.
+
+\spc{0.5}
+\decvar{*base*}
+\decvar{*target*}
+\decvar{*match-hypotheses*}\index{match hypothesis, *match-hypotheses*}
+\decvar{*gmaps*}\index{global mapping, *gmaps*}
+\spc{0.2}
+
+\noindent
+The Gmap(s) with the highest evaluation score are retrieved by
+{\tt best-gmaps}, which returns all Gmaps having a score within a given
+percentage (default is 2\%) of the highest score. {\tt best-gmaps} returns
+two values: the list of best Gmaps and the actual real-valued highest score.
+
+\spc{0.8}
+\decfunc{compare-gmaps}{gmap1 gmap2 {\tt \&optional} display?}\index{global mapping, comparing apparently identical gmaps}
+
+\spc{0.4}
+Occasionally, \SME\ will produce two or more ``best'' Gmaps that appear to
+be identical yet have been classified as distinct. When these Gmaps are
+large, the ``here's the set of match hypotheses'' output format can make it
+frustrating to find what the slight differences are between a pair of Gmaps.
+When given two Gmap structures, {\tt compare-gmaps} will return (using {\tt
+values}) the list of the match hypotheses that are uniquely part of the
+first Gmap and a list of match hypotheses that are uniquely part of the
+second Gmap (i.e., ({\it gmap1} - {\it gmap2}) and ({\it gmap2} - {\it
+gmap1})). When the windowing system is active, this option is available
+through the system utilities menu.
+
+
+\section{Algorithm Internals}
+
+This section quickly describes a few internal points of the program in case
+one has specialized needs for interfacing to the code. It assumes knowledge
+of CommonLisp and the realization that for many questions, the only feasible
+answer must be to examine the \SME\ program.
+
+\subsection{The Match Function}
+
+\indent
+\decfunc{create-match-hypotheses}{base-dgroup target-dgroup}
+\decfunc{run-rules}{}\index{rule system, run-rules}
+\decfunc{calculate-nogoods}{base-dgroup target-dgroup}
+\decfunc{generate-gmaps}{}
+\decfunc{gather-inferences}{base-dgroup target-dgroup}\index{candidate inference, gather-inferences}
+\decfunc{intern-gmaps}{}\index{rule system, giving it access to gmaps}
+
+\spc{0.8}
+The function {\tt match} is primarily a sequence of calls to these
+functions. {\tt create-match-hypotheses} runs the match constructor
+rules to form the individual match hypotheses. The BMS evidence rules are
+then run on these match hypotheses ({\tt run-rules}) and their
+dependence and inconsistency relationships are determined ({\tt
+calculate-nogoods}). The function {\tt generate-gmaps} executes the three
+merge steps, resulting in the set of complete global mappings being placed
+in the variable {\tt *gmaps*}. The candidate inferences each Gmap
+sanctions is then calculated ({\tt gather-inferences}) and additive BMS
+nodes for each Gmap are formed ({\tt intern-gmaps}), allowing the evidence
+rules to run on each Gmap.
+
+\subsection{Match Hypotheses}\index{match hypothesis, defstruct}
+
+\makebox[\textwidth]{{\tt match-hypothesis} \hfill [{\it Defstruct}]}
+\decsubst{mh-form}{match-hypothesis}
+\decsubst{mh-base-item}{match-hypothesis}
+\decsubst{mh-target-item}{match-hypothesis}
+\decsubst{mh-bms-node}{match-hypothesis}
+\decsubst{node-belief+}{bms-node}
+\decsubst{mh-plist}{match-hypothesis}
+\decvar{*match-hypotheses*}
+
+\spc{0.8}
+Most programs using \SME\ will need to interact with the {\it match
+hypothesis structures}. Slots to this structure type use the {\tt mh-}
+prefix. There are several slots that might be important. The MH form, which
+is a list of {\tt (MH {\it $<$base-item$>$} {\it $<$target-item$>$})}, is found
+using {\tt mh-form}. This is the form used for triggering the MH evidence
+rules, and is asserted in the BMS for each match hypothesis. The base and
+target items are expression or entity structures. The base item or target item may
+be obtained directly using {\tt mh-base-item} and {\tt mh-target-item},
+respectively.  The BMS node for each match hypothesis is found by {\tt
+mh-bms-node}. In turn, the weight for that node may be obtained using {\tt
+node-belief+}.  Finally, each match hypothesis structure has a property list
+slot ({\tt mh-plist}) which may be useful for various purposes.
+
+\subsection{Global Mappings}\index{global mapping, defstruct}
+
+\makebox[\textwidth]{{\tt global-mapping} \hfill [{\it Defstruct}]}
+\decsubst{gm-id}{global-mapping}
+\decsubst{gm-elements}{global-mapping}
+\decsubst{gm-emaps}{global-mapping}
+\decsubst{gm-base}{global-mapping}
+\decsubst{gm-target}{global-mapping}
+\decsubst{gm-inferences}{global-mapping}
+\decsubst{gm-bms-node}{global-mapping}
+\decsubst{gm-plist}{global-mapping}
+\decvar{*gmaps*}
+
+\spc{0.8}
+Each Gmap is stored as a {\it global-mapping structure}. Slots to this
+structure type use the {\tt gm-} prefix. Each Gmap is assigned a unique
+integer identifier, found through {\tt gm-id}. The Gmap form used by the BMS
+is not explicitly available, but is asserted as {\tt (Gmap {\it
+$<$gmap-structure$>$})}. The match hypotheses associated with a Gmap are stored
+in {\tt gm-elements}, while the subset of these that are entity mappings is
+stored in {\tt gm-emaps}. The candidate inferences sanctioned by the Gmap
+appear in {\tt gm-inferences} and are stored as a simple list data type,
+using the syntax defined in Section~\ref{ss:new-dgroups} for description
+group expressions.
+
+\subsection{Candidate Inference Generation}\index{candidate inference, alternate algorithms}
+
+The original candidate inference generator, as described in \cite{aaai86},
+will take any base structure ``intersecting the Gmap structure''. The newer
+(V. 2) edition only takes base structure ``intersecting a Gmap root''.
+Thus, the newer edition is more cautious and far more efficient than the
+older edition. Both versions of the code are available (in {\tt
+match.lisp}), with the default being the newer, more cautious version. There
+are theoretical arguments for and against each approach. For example, one
+might want to use only the inferences from the newer, more cautious approach
+at first since they are supported by more target knowledge and thus more
+likely valid. If an analogy proves fruitful, one may want to relax these
+constraints, and use the older version to find out what additional
+inferences might be made.
+
+\subsection{Rule System}
+
+\indent
+\decfunc{tre-rules-file}{}\index{rule system, dynamically swapping rule sets}
+\decfunc{tre-save-rules}{}
+\decfunc{tre-init}{}
+\decfunc{restore-rules}{}
+\decfunc{run-rules}{}
+\decvar{*tre-rules-saver*}
+\decvar{*initial-assertions*}
+
+\spc{0.8} 
+When a new rules file is loaded, the sme-rules-file command at the top of
+the file initializes the BMS rule system prior to loading the new set of
+rules.  At the bottom of the rules file, the fresh, just-loaded set of rules
+are saved in the global variable *tre-rules-saver* by the command
+tre-save-rules.  This variable saves the status of the rule counters and the
+list of initial rules. A similar variable, {\tt *initial-assertions*}, is
+used to store all assertions appearing in the rules file. When the BMS is
+run, new rules may be created and added to the known set of rules. As a
+result, each time {\tt match} is invoked, the BMS is reinitialized to its
+status just after loading the rule file, that is, it is restored to the
+status indicated in {\tt *tre-rules-saver*}.
+
+This facility may be used by application programs to save different rule
+sets in memory and swap them as needed, without having to load rule files
+each time. For example, suppose \SME\ is invoked, which will cause it to run
+the current rule set for Gmap scoring. If a second scoring criterion is then
+desired, a second set of rules may be invoked using code of the form:
+\begin{small}
+\begin{alltt}
+   (let ((save-rules sme:*tre-rules-saver*)          {\it ;save the previous rule set}
+         (save-assertions sme:*initial-assertions*))
+     (setq sme:*tre-rules-saver* *my-other-rules-set-rules*)
+     (setq sme:*initial-assertions* *my-other-rules-set-assertions*)
+     (sme:tre-init)                                  {\it ;initialize with new rules}
+     (sme:run-rules)                                 {\it ;run the new rule set}
+     (setq sme:*tre-rules-saver* save-rules)         {\it ;restore the original rules}
+     (setq sme:*initial-assertions* save-assertions))
+\end{alltt}
+\end{small}
+This saves \SME's normal rule set, runs a different one, and then restores
+the rule set to its previous value. In this example, {\tt tre-init} was
+used, which fully initializes the BMS. If the desire is simply to supply
+additional rules without destroying the current BMS state, {\tt
+restore-rules} should be used in place of {\tt tre-init}.  The variables
+corresponding to ``my-other-rules-set'' may be initialized by a similar
+program which saves the current rule set, {\it loads} the desired ``other
+rule set'' file, sets the ``my-other-rules-set'' variables from {\tt
+*tre-rules-saver*} and {\tt *initial-assertions}, and then restores the
+original rule set.
+
+
+\section{Summary}
+
+The \SME\ program has been described from the perspective of how to actually
+use it. A number of methods have been presented about how to configure \SME\
+to perform a variety of different types of matches.  It is hoped that \SME\
+may serve as a general mapping tool for research on analogical mapping,
+allowing researchers to focus on the more substantive issue of general
+theories of analogical mapping, as opposed to worrying about implementation
+details. The latter has the unfortunate effect of producing the repeated
+scenario in which analogy researcher A goes to analogy researcher B and says
+``My program can do X, which yours cannot'', followed by researcher B
+returning a month later with this simple modification added. By testing
+different theories within the same program, we may now compare the more
+critical ``This is a logical consequence of my theory''. A program does not
+a theory make. It can, however, function as a useful analytical tool.
+
+Of course, not all of the problems of implementing analogical mapping have
+been solved.  Most critical is redesigning the potentially combinatoric
+merge step 3, perhaps using either a heuristic search or connectionist
+relaxation network as suggested in \cite{sme-aij}. Of theoretical relevance
+is the appropriateness of the abstract structural approach which \SME\
+embodies.
+
+\section{Acknowledgements}
+
+The development of \SME\ has been a collaborative effort with Ken Forbus and
+Dedre Gentner, with significant influence provided by Janice Skorstad. This
+work has also benefited from discussions with Steve Chien, John Collins, and
+Ray Mooney. 
+
+This research is supported in part by an IBM graduate fellowship and in part
+by the Office of Naval Research, Contract No. N00014-85-K-0559.
+
+\begin{thebibliography}{99}\addcontentsline{toc}{section}{References}
+
+ \bibitem{Burstein83}
+Burstein, M., Concept formation by incremental analogical reasoning and
+debugging, {\it Proceedings of the Second International Workshop on
+Machine Learning}, University of Illinois, Monticello, Illinois, June,
+1983.  A revised version appears in {\it Machine Learning: An Artificial
+Intelligence Approach Vol. II}, R.S. Michalski, J.G. Carbonell, and T.M.
+Mitchell (Eds.), Morgan Kaufman, 1986.
+ \bibitem{Carbonell83}
+Carbonell, J.G., Learning by Analogy: Formulating and generalizing plans
+from past experience, in: {\it Machine Learning: An Artificial
+Intelligence Approach}, R.S. Michalski, J.G. Carbonell, and T.M.
+Mitchell (Eds.), Morgan Kaufman, 1983.
+ \bibitem{BMS}
+Falkenhainer, B.,
+Towards a general-purpose belief maintenance system, in: J.F. Lemmer \& L.N.
+Kanal (Eds.), {\it Uncertainty in Artificial Intelligence, Volume II}, 1987.
+Also Technical Report, UIUCDCS-R-87-1717, Department of Computer Science,
+University of Illinois, 1987.
+ \bibitem{VBAL}
+Falkenhainer, B.,
+An examination of the third stage in the analogy process:
+Verification-Based Analogical Learning, Technical Report
+UIUCDCS-R-86-1302, Department of Computer Science, University of Illinois,
+October, 1986. A summary appears in {\it Proceedings of the Tenth
+International Joint Conference on Artificial Intelligence}, Milan, Italy,
+August, 1987.
+ \bibitem{MLW}
+Falkenhainer, B.,
+Scientific theory formation through analogical inference, {\it
+Proceedings of the Fourth International Machine Learning Workshop}, Irvine,
+CA, June, 1987.
+ \bibitem{DBR}
+Falkenhainer, B.
+The utility of difference-based reasoning, {\it Proceedings of the Seventh
+National Conference on Artificial Intelligence}, St. Paul, August, 1988.
+ \bibitem{Falken-phd}
+Falkenhainer, B., Learning from physical analogies: A study in analogy
+and the explanation process, Ph.D. Thesis, University of Illinois,
+December, 1988.
+ \bibitem{aaai86}
+Falkenhainer, B., K.D. Forbus, D. Gentner,
+The Structure-Mapping Engine, {\it Proceedings of the Fifth National
+Conference on Artificial Intelligence}, August, 1986.
+ \bibitem{sme-aij}
+Falkenhainer, B., K.D. Forbus, D. Gentner,
+The Structure-Mapping Engine:  Algorithm and Examples, Technical Report
+UIUCDCS-R-87-1361, Department of Computer Science, University of Illinois,
+July, 1987. To appear in {\it Artificial Intelligence}.
+ \bibitem{framework}
+Forbus, K.D. and D. Gentner.
+Learning physical domains: Towards a theoretical framework,
+in: {\it Machine Learning: An Artificial Intelligence Approach Vol. II}, R.S. Michalski,
+J.G. Carbonell, and T.M. Mitchell (Eds.), Morgan Kaufmann, 1986.
+ \bibitem{Gentner80}
+Gentner, D.
+{\it The Structure of Analogical Models in Science}, BBN Tech.
+Report No. 4451, Cambridge, MA., Bolt Beranek and Newman Inc., 1980.
+ \bibitem{smt-cogsci}
+Gentner, D.
+Structure-Mapping: A Theoretical Framework for Analogy, {\it Cognitive
+Science} {\bf 7}(2), 1983. 
+ \bibitem{allerton}
+Gentner, D.
+Mechanisms of analogy.  To appear in S. Vosniadou and A. Ortony, (Eds.),
+{\em Similarity and analogical reasoning}, Cambridge University Press,
+Oxford.
+ \bibitem{analogica}
+Gentner, D.
+Analogical inference and analogical access, To appear in A. Preiditis (Ed.),
+{\em Analogica: Proceedings of the First Workshop on Analogical Reasoning},
+London, Pitman Publishing Co.  Presented in December, 1986.
+ \bibitem{tinlap3}
+Gentner, D., B. Falkenhainer, and J. Skorstad
+Metaphor: The good, the bad and the ugly. {\it Proceedings of the Third
+Conference on Theoretical Issues in Natural Language Processing}, Las
+Cruces, New Mexico, January, 1987.  
+ \bibitem{Greiner}
+Greiner, R., Learning by understanding analogies, PhD Thesis (STAN-CS-1071),
+Department of Computer Science, Stanford University, September, 1985.
+ \bibitem{hayes-roth}
+Hayes-Roth, F., J. McDermott, An interference matching technique for
+inducing abstractions, {\it Communications of the ACM}, {\bf 21}(5),
+May, 1978.
+ \bibitem{ACME}
+Holyoak, K., \& Thagard, P. Analogical mapping by constraint satisfaction,
+June, 1988, ({\it submitted for publication}).
+ \bibitem{Indurkhya}
+Indurkhya, B., Constrained semantic transference: A formal theory of
+metaphors, Technical Report 85/008, Boston University, Department of
+Computer Science, October, 1985.
+ \bibitem{KedarCabelli}
+Kedar-Cabelli, S., Purpose-directed analogy. {\it Proceedings of the Seventh
+Annual Conference of the Cognitive Science Society}, Irvine, CA, 1985.
+ \bibitem{Reed}
+Reed, S.K., A structure-mapping model for word problems. Paper presented
+at the meeting of the Psychonomic Society, Boston, 1985.
+ \bibitem{Rumelhart}
+Rumelhart, D.E., \& Norman, D.A., Analogical processes in learning.  In J.R.
+Anderson (Ed.), {\it Cognitive skills and their acquisition}, Hillsdale,
+N.J., Erlbaum, 1981.
+ \bibitem{aaai87}
+Skorstad, J., B. Falkenhainer and D. Gentner
+Analogical Processing: A simulation and empirical corroboration, {\it
+Proceedings of the Sixth National Conference on Artificial Intelligence},
+Seattle, WA, August, 1987.
+ \bibitem{Winston80}
+Winston, P.H., Learning and Reasoning by Analogy, {\it Communications of the
+ACM}, {\bf 23}(12), 1980.
+ \bibitem{Winston82}
+Winston, P.H., Learning new principles from precedents and exercises,
+{\it Artificial Intelligence}, {\bf 19}, 321-350, 1982.
+
+\end{thebibliography}
+
+\newpage
+\addcontentsline{toc}{section}{Index}
+
+\begin{theindex}
+
+\item algorithm, 4-10
+	\subitem  summary, 3
+\item analogical hint, 17
+\item arg-list macro, 28
+\item {\tt assert!} function, 14
+\item {\tt attribute?} macro, 28
+\indexspace
+\item {\tt *base*} variable, 29
+\item batch mode, 22
+\item {\tt best-gmaps} function, 29
+\indexspace
+\item {\tt calculate-nogoods} function, 30
+\item candidate inference, 9
+	\subitem  alternate algorithms, 31
+	\subitem  gather-inferences, 30
+\item {\tt change-parms} function, 26
+\item {\tt children-of?} function, 15
+\item {\tt clear-given-mappings} function, 18
+\item {\tt clear-scroll} function, 25
+\item {\tt commutative?} macro, 28
+\item {\tt compare-gmaps} function, 29
+\item {\tt constant-entity?} macro, 27
+\item conventions, 1
+	\subitem  file names, 20
+	\subitem  function names, 1
+\item {\tt create-match-hypotheses} function, 30
+\indexspace
+\item {\tt declare-given-mappings} function, 18
+\item {\tt defDescription} macro, 12
+\item {\tt defEntity} macro, 11
+\item {\tt define-description} function, 12
+\item {\tt define-Entity} function, 11
+\item {\tt define-predicate} function, 10
+\item {\tt defPostMatcher} macro, 23
+\item {\tt defPredicate} macro, 10
+\item {\tt defSME-Parameter} macro, 25
+\item {\tt defSME-Utility} macro, 26
+\item {\tt describe-dgroup} function, 29
+\item description group, 11-12
+	\subitem  graphical display, 29
+	\subitem  retrieval, 29
+	\subitem  textual description, 29
+\item Dgroup, 12
+\item {\tt dgroup-directory} macro, 22
+\item {\tt dgroup-file} macro, 22
+\item {\tt display-match} function, 29
+\item {\tt dump-scroll} function, 25
+\item {\tt dump-scroll-menu} function, 25
+\indexspace
+\item entity, 11
+	\subitem  declaring, 11
+\item {\tt entity?} function, 27
+	\subitem  inspection functions, 27
+\item {\tt entity-domain} macro, 27
+\item {\tt entity-name?} macro, 27
+\item {\tt entity-type?} function, 27
+\item {\tt eval-form} macro, 28
+\item execution, 20
+\item expression, 12
+	\subitem  adding new expressions, 12
+\item {\tt expression} function, 12
+	\subitem  inspection functions, 28
+\item {\tt expression-functor} function, 28
+\item {\tt expression-type} macro, 28
+\indexspace
+\item {\tt fetch-dgroup} function, 29
+\item {\tt fetch-entity-definition} macro, 27
+\item {\tt fetch-expression} function, 28
+\item {\tt fetch-predicate-definition} macro, 28
+\item file organization, 1
+\item {\tt fully-expand-expression} function, 28
+\item {\tt fully-expand-expression-form} function, 28
+\item {\tt function?} macro, 28
+\indexspace
+\item {\tt gather-inferences} function, 30
+\item generalize, 16
+\item {\tt generalize} function, 23
+\item {\tt generate-gmaps} function, 30
+\item {\tt get-dgroup} function, 26
+\item {\tt get-rules} function, 26
+\item global mapping, 7-10
+	\subitem  comparing apparently identical gmaps, 29
+	\subitem  creation, 29
+	\subitem  defstruct, 30
+	\subitem  {\tt *gmaps*}, 29
+	\subitem  scoring, 9, 15
+	\subitem  selecting the best, 29
+	\subitem  textual display, 29
+\item {\tt *gmaps*} variable, 29, 31
+\item {\tt gm-base} subst, 31
+\item {\tt gm-bms-node} subst, 31
+\item {\tt gm-elements} subst, 31
+\item {\tt gm-emaps} subst, 31
+\item {\tt gm-id} subst, 30
+\item {\tt gm-inferences} subst, 31
+\item {\tt gm-plist} subst, 31
+\item {\tt gm-target} subst, 31
+\item {\tt *graphics-pane*} variable, 25
+\indexspace
+\item {\tt initial-assertion} macro, 14
+\item {\tt *initial-assertions*} variable, 31
+\item installation, 20
+\item {\tt install-MH} function, 13
+\item {\tt intern-gmaps} function, 30
+\indexspace
+\item {\tt language-file} macro, 22
+\item lisp machine interface, 25
+	\subitem  predicate documentation, 11
+\item {\tt *lisp-pane*} variable, 25
+\indexspace
+\item match constructor rules, 13
+\item match evidence rules, 14
+\item {\tt match} function, 29
+\item match hypothesis, 4-5
+	\subitem  defstruct, 30
+	\subitem  inspecting evidence justifications, 24
+	\subitem  installing, 13
+	\subitem  {\tt *match-hypotheses*}, 29
+	\subitem  scoring, 14-15
+\item {\tt match-evidence-inspector} function, 24
+\item {\tt *match-hypotheses*} variable, 29-30
+\item {\tt menu-display-dgroup} function, 29
+\item {\tt menu-display-pairs} function, 29
+\item {\tt menu-utilities} function, 26
+\item {\tt mh-base-item} subst, 30
+\item {\tt mh-bms-node} subst, 30
+\item MHC-rule, 13
+\item {\tt mh-form} subst, 30
+\item {\tt mh-plist} subst, 30
+\item {\tt mh-target-item} subst, 30
+\indexspace
+\item {\tt n-ary?} macro, 28
+\item {\tt node-belief+} subst, 30
+\item {\tt numargs} macro, 28
+\indexspace
+\item packages, 1
+	\subitem site specific, 20
+\item {\tt paired-item?} function, 19
+\item {\tt *parameter-menu-options*} variable, 25
+\item parameters, 25
+	\subitem  site specific, 1, 20
+\item predicate, 10
+	\subitem  declaring, 10
+	\subitem  inspection functions, 28
+\item {\tt predicate?} macro, 28
+\item {\tt predicate-type} macro, 28
+\indexspace
+\item {\tt rassert!} macro, 14
+\item {\tt relation?} macro, 28
+\item report generation, 22
+\item {\tt report-comments} macro, 23
+\item representation issues, 19
+\item {\tt restore-rules} function, 31
+\item {\tt return-dgroup} function, 29
+\item {\tt rule} macro, 14
+\item rule system, 12-19, 19
+	\subitem  analogical hints, 17
+	\subitem  dynamically swapping rule sets, 31
+	\subitem  giving it access to gmaps, 30
+	\subitem  match constructor rules, 13
+	\subitem  match evidence rules, 14
+	\subitem  pure isomorphisms, 16
+	\subitem  relaxing identical predicates, 16
+	\subitem  rule file syntax, 13
+	\subitem  {\tt run-rules,} 30
+	\subitem  simulating SPROUTER, 16
+	\subitem  simulating structure-mapping theory, 15
+\item {\tt rule-directory} macro, 22
+\item {\tt rule-file} macro, 22
+\item {\tt rule-sets} macro, 22
+\item {\tt run-batch-file} function, 22
+\item {\tt run-matcher-on} macro, 23
+\item running SME, 20
+\item {\tt run-rules} function, 30-31
+\indexspace
+\item {\tt sanctioned-pairing?} function, 19
+\item scroll windows, 25
+	\subitem  saving contents, 25
+	\subitem  writing to, 25, 27
+\item {\tt *scroll-pane*} variable, 25
+\item {\tt select-double-scroll} function, 25
+\item {\tt select-graphics} function, 25
+\item {\tt select-large-graphics} function, 25
+\item {\tt select-scroll} function, 25
+\item {\tt select-split} function, 25
+\item {\tt select-windowing-configuration} function, 25
+\item {\tt send-report-to} macro, 23
+\item site specific information, 20
+	\subitem  packages, 20
+	\subitem  pathnames, 20
+\item {\tt *sme-default-rules*} variable, 20
+\item {\tt *sme-dgroup-pathname*} variable, 20
+\item {\tt *sme-files*} variable, 20
+\item {\tt sme-format} macro, 27
+\item {\tt *sme-frame*} variable, 25
+\item {\tt *sme-graphics-output*} variable, 26
+\item {\tt sme-init} function, 20
+\item {\tt *sme-language-file*} variable, 20
+\item {\tt *sme-output-stream*} variable, 26
+\item {\tt *sme-parameters*} variable, 25
+\item {\tt *sme-predicates*} variable, 28
+\item {\tt sme-print} function, 27
+\item {\tt sme-rules-file} function, 13
+\item {\tt *sme-rules-pathname*} variable, 20
+\item {\tt *sme-system-pathname*} variable, 20
+\item {\tt sme-terpri} function, 27
+\item {\tt *spare-scroll-pane*} variable, 25
+\item system utilities, 26
+\item {\tt *system-utilities-menu*} variable, 26
+\indexspace
+\item {\tt *target*} variable, 29
+\item {\tt *the-lisp-package*} variable, 20
+\item {\tt *the-user-package*} variable, 20
+\item {\tt tre-init} function, 31
+\item {\tt tre-rules-file} function, 31
+\item {\tt *tre-rules-saver*} variable, 31
+\item {\tt tre-save-rules} function, 13, 31
+\indexspace
+\item {\tt *windowing?*} variable, 26
+\indexspace
+\end{theindex}
+
+%%\input{users-guide.index}
+
+\end{document}

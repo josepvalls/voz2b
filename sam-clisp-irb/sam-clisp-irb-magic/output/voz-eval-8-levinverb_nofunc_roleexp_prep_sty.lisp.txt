@@ -1,0 +1,39 @@
+
+Shadowing ENTITIES
+Shadowing EXPRESSIONS
+Shadowing MH
+Shadowing GMAP
+Shadowing CI
+Shadowing AND
+Shadowing OR
+Shadowing IMPLIES
+Initializing SME...
+   Loading default language file: sme-language
+   Loading default rules file: riu-sme-match.rules
+Complete.3
+mapping: (1.4219999 ((EXTRA0 EXTRA1) (M1088 M4634)))
+
+
+There was once a king who had three daughters , and such beauties they were as no tongue can tell of nor pen describe . 
+Their garden was big and beautiful and they liked to walk there at night . 
+A dragon from the Black Sea took to visiting this garden . 
+One night the king 's daughters tarried in the garden , for they could not tear their eyes away from the flowers ; suddenly the dragon appeared and carried them off on his fiery wings . 
+
+
+WARNING: Dgroup ANALOGY-SOURCE is being defined with no expressions.
+ This could be a package problem.mapping: (1.4219999 ((EXTRA0 EXTRA1) (M3344 M4634)))
+
+
+There was once a king who had three daughters , and such beauties they were as no tongue can tell of nor pen describe . 
+Their garden was big and beautiful and they liked to walk there at night . 
+A dragon from the Black Sea took to visiting this garden . 
+One night the king 's daughters tarried in the garden , for they could not tear their eyes away from the flowers ; suddenly the dragon appeared and carried them off on his fiery wings . 
+
+mapping: (1.4219999 ((EXTRA0 EXTRA1) (M2456 M4634)))
+
+
+There was once a king who had three daughters , and such beauties they were as no tongue can tell of nor pen describe . 
+Their garden was big and beautiful and they liked to walk there at night . 
+A dragon from the Black Sea took to visiting this garden . 
+One night the king 's daughters tarried in the garden , for they could not tear their eyes away from the flowers ; suddenly the dragon appeared and carried them off on his fiery wings . 
+
