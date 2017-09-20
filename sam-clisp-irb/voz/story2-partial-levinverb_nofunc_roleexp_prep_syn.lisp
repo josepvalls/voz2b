@@ -11,14 +11,22 @@
      (:discourse
        (:clauses
          (c0 (:s phase1))
-         (phase1 (:s  t1))
+         (phase1 (:s  t1 t2 t3 t4 t5))
 
        )
        (:templates
          ;; A girl lived with her brother.
+         ;; Her brother could not find a bride.
+         ;; Their father threatened to marry them if he would not find a bride.
+         ;; The girl was terrified.
+         ;; She decided to try to find a bride for her brother.
 
          (t1 "" (STORY2-m1000 "A girl") " lived with her brother . ")
-         (t1001 (STORY2-EXTRA1  (STORY2-m1000 "A girl") " is the " (Other "Other") ) ".")
+         (t2 "" (STORY2-m1002 "Her brother") " could not find " (STORY2-m1003 "a bride") " . ")
+         (t3 "" (STORY2-m1004 "Their father") " threatened to marry them if he would not find a bride . ")
+         (t4 "" (STORY2-m1000 "The girl") " was terrified . ")
+         (t5 "" (STORY2-m1000 "She") " decided to try to find a bride for her brother . ")
+         (t1001 (STORY2-EXTRA1  (STORY2-m1000 "She") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -56,8 +64,12 @@
        (phase1
          (:entities
            (STORY2-m1000 :type animate)
+           (STORY2-m1002 :type animate)
+           (STORY2-m1003 :type animate)
+           (STORY2-m1004 :type animate)
          )
          (:expressions
+           ((levin-29-4 STORY2-m1002 STORY2-m1003) :name STORY2-VERB1)
            ((roleOther STORY2-m1000) :name STORY2-EXTRA0)
          )
        )

@@ -11,20 +11,24 @@
      (:discourse
        (:clauses
          (c0 (:s phase1 phase2))
-         (phase1 (:s  t1))
-         (phase2 (:s  t2 t3 t4))
+         (phase1 (:s  t1 t2 t3 t4))
+         (phase2 (:s  t5 t6))
 
        )
        (:templates
          ;; There once lived a poor and unlucky peasant.
+         ;; He never married and was very lonely.
          ;; A fox came to him one day and told him that he could marry him to the princess.
          ;; The peasant was reluctant but then trusted the fox.
-         ;; They left the hole where the peasant lived and headed to the palace.
+         ;; They emerged from the swamp covered in mud.
+         ;; A nearby water spirit was so scared when they saw them that died instantly.
 
          (t1 "There once lived a poor and unlucky peasant . ")
-         (t2 "A fox came to him one day and told him that he could marry him to the princess . ")
-         (t3 "The peasant was reluctant but then trusted the fox . ")
-         (t4 "They left the hole where the peasant lived and headed to the palace . ")
+         (t2 "He never married and was very lonely . ")
+         (t3 "A fox came to him one day and told him that he could marry him to the princess . ")
+         (t4 "The peasant was reluctant but then trusted the fox . ")
+         (t5 "They emerged from the swamp covered in mud . ")
+         (t6 "A nearby water spirit was so scared when they saw them that died instantly . ")
 
        )
      )

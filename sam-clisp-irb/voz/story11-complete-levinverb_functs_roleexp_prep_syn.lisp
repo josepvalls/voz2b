@@ -11,25 +11,34 @@
      (:discourse
        (:clauses
          (c0 (:s phase1 phase2))
-         (phase1 (:s  t1 t2))
-         (phase2 (:s  t3 t4 t5))
+         (phase1 (:s  t1 t2 t3 t4 t5))
+         (phase2 (:s  t6 t7 t8 t9))
 
        )
        (:templates
          ;; Once upon a time, there was a soldier at the orders of certain king.
          ;; The soldier had many abilities and was always loyal.
+         ;; The king could not find a bride.
          ;; The king commanded the soldier to go kidnap a princess for him to marry.
          ;; The soldier accepted the king's orders and prepared to leave.
-         ;; He took a small company of soldiers and embarked on their journey.
+         ;; The soldier stood firm at as the captain's post not matter what.
+         ;; The ship was lifted from the sea and the soldier flew to a new kingdom.
+         ;; There was a castle by a cliff where a maiden had been locked.
+         ;; The soldier rescued the maiden from the castle.
 
          (t1 "Once upon a time , there was " (STORY11-m1000 "a soldier") " at the orders of certain king . ")
          (t2 "" (STORY11-m1000 "The soldier") " had many abilities and was always loyal . ")
+         (t3 "" (STORY11-m1001 "The king") " could not find " (STORY11-m1002 "a bride") " . ")
+         (t4 "The king commanded the " (STORY11-m1000 "soldier") " to go kidnap " (STORY11-m1002 "a princess") " for him to marry . ")
+         (t5 "" (STORY11-m1000 "The soldier") " accepted the king 's orders and prepared to leave . ")
          (t1001 (STORY11-EXTRA1  (STORY11-m1000 "The soldier") " is the " (Other "Other") ) ".")
-         (t3 "The king commanded the " (STORY11-m1000 "soldier") " to go kidnap " (STORY11-m1002 "a princess") " for him to marry . ")
-         (t4 "" (STORY11-m1000 "The soldier") " accepted the king 's orders and prepared to leave . ")
-         (t5 "" (STORY11-m1000 "He") " took a small company of soldiers and embarked on their journey . ")
-         (t1002 (STORY11-EXTRA2  (STORY11-m1000 "He") " is the " (Other "Other") ) ".")
-         (t1003 (STORY11-EXTRA3  (STORY11-m1002 "a princess") " is the " (Other "Other") ) ".")
+         (t1002 (STORY11-EXTRA2  (STORY11-m1002 "a princess") " is the " (Other "Other") ) ".")
+         (t6 "" (STORY11-m1000 "The soldier") " stood firm at as the captain 's post not matter what . ")
+         (t7 "The ship was lifted from the sea and " (STORY11-m1000 "the soldier") " flew to a new kingdom . ")
+         (t8 "There was " (STORY11-m1004 "a castle") " by a cliff where " (STORY11-m1002 "a maiden") " had been locked . ")
+         (t9 "" (STORY11-m1000 "The soldier") " rescued " (STORY11-m1002 "the maiden") " from the castle . ")
+         (t1003 (STORY11-EXTRA3  (STORY11-m1000 "The soldier") " is the " (Other "Other") ) ".")
+         (t1004 (STORY11-EXTRA4  (STORY11-m1002 "the maiden") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -67,19 +76,26 @@
        (phase1
          (:entities
            (STORY11-m1000 :type animate)
+           (STORY11-m1001 :type animate)
+           (STORY11-m1002 :type animate)
          )
          (:expressions
+           ((levin-29-4 STORY11-m1001 STORY11-m1002) :name STORY11-VERB1)
            ((roleOther STORY11-m1000) :name STORY11-EXTRA0)
+           ((roleOther STORY11-m1002) :name STORY11-EXTRA1)
          )
        )
        (phase2
          (:entities
            (STORY11-m1000 :type animate)
+           (STORY11-m1001 :type animate)
            (STORY11-m1002 :type animate)
+           (STORY11-m1004 :type animate)
          )
          (:expressions
-           ((roleOther STORY11-m1000) :name STORY11-EXTRA1)
-           ((roleOther STORY11-m1002) :name STORY11-EXTRA2)
+           ((levin-10-5 STORY11-m1000 STORY11-m1002) :name STORY11-VERB2)
+           ((roleOther STORY11-m1000) :name STORY11-EXTRA2)
+           ((roleOther STORY11-m1002) :name STORY11-EXTRA3)
          )
        )
 

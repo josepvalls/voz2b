@@ -11,13 +11,19 @@
      (:discourse
        (:clauses
          (c0 (:s phase1))
-         (phase1 (:s  t1))
+         (phase1 (:s  t1 t2 t3 t4))
 
        )
        (:templates
          ;; A poor laborer lived in a small town.
+         ;; His master's crops had been ruined and there was no work for him.
+         ;; Eventually his master told him he had to let him go.
+         ;; The laborer was very understanding.
 
          (t1 "A poor laborer lived in a small town . ")
+         (t2 "His master 's crops had been ruined and there was no work for him . ")
+         (t3 "Eventually his master told him he had to let him go . ")
+         (t4 "The laborer was very understanding . ")
 
        )
      )

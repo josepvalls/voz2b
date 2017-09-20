@@ -11,13 +11,19 @@
      (:discourse
        (:clauses
          (c0 (:s phase1))
-         (phase1 (:s  t1))
+         (phase1 (:s  t1 t2 t3 t4))
 
        )
        (:templates
          ;; There once lived a poor and unlucky peasant.
+         ;; He never married and was very lonely.
+         ;; A fox came to him one day and told him that he could marry him to the princess.
+         ;; The peasant was reluctant but then trusted the fox.
 
          (t1 "There once lived a poor and unlucky peasant . ")
+         (t2 "He never married and was very lonely . ")
+         (t3 "A fox came to him one day and told him that he could marry him to the princess . ")
+         (t4 "The peasant was reluctant but then trusted the fox . ")
 
        )
      )

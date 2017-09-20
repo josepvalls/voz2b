@@ -11,20 +11,32 @@
      (:discourse
        (:clauses
          (c0 (:s phase1 phase2))
-         (phase1 (:s  t1))
-         (phase2 (:s  t2 t3 t4))
+         (phase1 (:s  t1 t2 t3 t4))
+         (phase2 (:s  t5 t6 t7 t8 t9 t10))
 
        )
        (:templates
          ;; A poor laborer lived in a small town.
+         ;; His master's crops had been ruined and there was no work for him.
          ;; Eventually his master told him he had to let him go.
          ;; The laborer was very understanding.
-         ;; He left the small town and headed to the city.
+         ;; The bull challenged him to a race.
+         ;; The laborer agreed and the bull stormed out.
+         ;; The laborer knew the land really well and instead of following the path he took a shortcut.
+         ;; When the bull arrived at the goal, the laborer was already there waiting for him.
+         ;; Ashamed, the bull promised to stop running and ruining the crops.
+         ;; The laborer was able to find work in no time and was prosperous.
 
          (t1 "A poor laborer lived in a small town . ")
-         (t2 "Eventually his master told him he had to let him go . ")
-         (t3 "The laborer was very understanding . ")
-         (t4 "He left the small town and headed to the city . ")
+         (t2 "His master 's crops had been ruined and there was no work for him . ")
+         (t3 "Eventually his master told him he had to let him go . ")
+         (t4 "The laborer was very understanding . ")
+         (t5 "The bull challenged him to a race . ")
+         (t6 "The laborer agreed and the bull stormed out . ")
+         (t7 "The laborer knew the land really well and instead of following the path he took a shortcut . ")
+         (t8 "When the bull arrived at the goal , the laborer was already there waiting for him . ")
+         (t9 "Ashamed , the bull promised to stop running and ruining the crops . ")
+         (t10 "The laborer was able to find work in no time and was prosperous . ")
 
        )
      )

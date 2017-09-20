@@ -11,22 +11,28 @@
      (:discourse
        (:clauses
          (c0 (:s phase1 phase2))
-         (phase1 (:s  t1))
-         (phase2 (:s  t2 t3 t4 t5))
+         (phase1 (:s  t1 t2 t3 t4 t5))
+         (phase2 (:s  t6 t7 t8))
 
        )
        (:templates
          ;; A girl lived with her brother.
+         ;; Her brother could not find a bride.
          ;; Their father threatened to marry them if he would not find a bride.
          ;; The girl was terrified.
          ;; She decided to try to find a bride for her brother.
-         ;; At night she sneaked out of the house.
+         ;; She put the little box in her pocket.
+         ;; The box belong to the forest witches.
+         ;; They pulled the girl to their lair up in the trees.
 
          (t1 "A girl lived with her brother . ")
-         (t2 "Their father threatened to marry them if he would not find a bride . ")
-         (t3 "The girl was terrified . ")
-         (t4 "She decided to try to find a bride for her brother . ")
-         (t5 "At night she sneaked out of the house . ")
+         (t2 "Her brother could not find a bride . ")
+         (t3 "Their father threatened to marry them if he would not find a bride . ")
+         (t4 "The girl was terrified . ")
+         (t5 "She decided to try to find a bride for her brother . ")
+         (t6 "She put the little box in her pocket . ")
+         (t7 "The box belong to the forest witches . ")
+         (t8 "They pulled the girl to their lair up in the trees . ")
 
        )
      )

@@ -10,10 +10,11 @@
   '(STORY-39
      (:discourse
        (:clauses
-         (c0 (:s phase1 phase2 phase3))
+         (c0 (:s phase1 phase2 phase3 phase4))
          (phase1 (:s  t1 t2 t3))
          (phase2 (:s  t4))
-         (phase3 (:s  t5 t6 t7 t8 t9 t10 t11 t12 t13 t14))
+         (phase3 (:s  t5 t6 t7))
+         (phase4 (:s  t8 t9 t10 t11 t12 t13 t14))
 
        )
        (:templates
@@ -21,9 +22,9 @@
          ;; The merchant sent them to marry the kingdom's prince.
          ;; The younger sister was jealous of her older sister.
          ;; She then left her sister to die.
+         ;; They got married.
          ;; The older daughter did not die.
          ;; She healed her wounds but kept horrible scars.
-         ;; The younger sister learned her older sister was alive.
          ;; She demanded her be killed.
          ;; She sent the guards to kill her.
          ;; A kind fairy learned about the older sister.
@@ -36,9 +37,9 @@
          (t2 "The merchant sent them to marry the kingdom 's prince . ")
          (t3 "The younger sister was jealous of her older sister . ")
          (t4 "She then left her sister to die . ")
-         (t5 "The older daughter did not die . ")
-         (t6 "She healed her wounds but kept horrible scars . ")
-         (t7 "The younger sister learned her older sister was alive . ")
+         (t5 "They got married . ")
+         (t6 "The older daughter did not die . ")
+         (t7 "She healed her wounds but kept horrible scars . ")
          (t8 "She demanded her be killed . ")
          (t9 "She sent the guards to kill her . ")
          (t10 "A kind fairy learned about the older sister . ")
@@ -93,6 +94,12 @@
          )
        )
        (phase3
+         (:entities
+         )
+         (:expressions
+         )
+       )
+       (phase4
          (:entities
          )
          (:expressions

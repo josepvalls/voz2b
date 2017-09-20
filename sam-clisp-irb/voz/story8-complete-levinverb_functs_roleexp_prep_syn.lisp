@@ -12,7 +12,7 @@
        (:clauses
          (c0 (:s phase1 phase2))
          (phase1 (:s  t1 t2 t3 t4 t5))
-         (phase2 (:s  t6 t7 t8 t9))
+         (phase2 (:s  t6 t7 t8 t9 t10 t11 t12 t13))
 
        )
        (:templates
@@ -25,6 +25,10 @@
          ;; The ring fit perfectly and she couldn't take it off.
          ;; He immediately asked her to marry him.
          ;; The girl panicked and escaped the palace.
+         ;; She walked though the forest until she reached a lonely hut.
+         ;; Inside there was a maiden.
+         ;; The maiden was the daughter of a witch.
+         ;; The maiden was lonely and asked the girl to be friends.
 
          (t1 "Once upon a time there was " (STORY8-m1000 "a happy queen") " with " (STORY8-m1001 "a son") " and " (STORY8-m1002 "a daughter") " . ")
          (t2 "In the kingdom lived a " (STORY8-m1003 "witch") " that was jealous of their happiness . ")
@@ -38,9 +42,14 @@
          (t7 "The ring fit perfectly and " (STORY8-m1002 "she") " could n't take it off . ")
          (t8 "" (STORY8-m1001 "He") " immediately asked " (STORY8-m1002 "her") " to marry him . ")
          (t9 "" (STORY8-m1002 "The girl") " panicked and escaped the palace . ")
+         (t10 "" (STORY8-m1002 "She") " walked though the forest until she reached a lonely hut . ")
+         (t11 "Inside there was " (STORY8-m1006 "a maiden") " . ")
+         (t12 "" (STORY8-m1006 "The maiden") " was the daughter of a witch . ")
+         (t13 "" (STORY8-m1006 "The maiden") " was lonely and asked " (STORY8-m1002 "the girl") " to be friends . ")
          (t1004 (STORY8-EXTRA4  (STORY8-m1001 "He") " is the " (Other "Other") ) ".")
-         (t1005 (STORY8-EXTRA5  (STORY8-m1002 "The girl") " is the " (Other "Other") ) ".")
+         (t1005 (STORY8-EXTRA5  (STORY8-m1002 "the girl") " is the " (Other "Other") ) ".")
          (t1006 (STORY8-EXTRA6  (STORY8-m1003 "She") " is the " (Other "Other") ) ".")
+         (t1007 (STORY8-EXTRA7  (STORY8-m1006 "The maiden") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -97,12 +106,14 @@
            (STORY8-m1002 :type animate)
            (STORY8-m1003 :type animate)
            (STORY8-m1004 :type animate)
+           (STORY8-m1006 :type animate)
          )
          (:expressions
            ((levin-37-1 STORY8-m1001 STORY8-m1001) :name STORY8-VERB2)
            ((roleOther STORY8-m1001) :name STORY8-EXTRA3)
            ((roleOther STORY8-m1002) :name STORY8-EXTRA4)
            ((roleOther STORY8-m1003) :name STORY8-EXTRA5)
+           ((roleOther STORY8-m1006) :name STORY8-EXTRA6)
          )
        )
 

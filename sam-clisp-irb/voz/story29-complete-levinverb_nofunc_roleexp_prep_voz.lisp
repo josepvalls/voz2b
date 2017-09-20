@@ -11,34 +11,22 @@
      (:discourse
        (:clauses
          (c0 (:s phase1 phase2))
-         (phase1 (:s  t1))
-         (phase2 (:s  t2 t3 t4 t5 t6 t7 t8 t9 t10 t11))
+         (phase1 (:s  t1 t2 t3))
+         (phase2 (:s  t4 t5))
 
        )
        (:templates
          ;; The once lived a very poor family.
-         ;; When they were in the woods they ran into a boar that attacked them.
+         ;; The parents didn't even have food to sustain their two sons.
+         ;; The mother sang about having to abandon their children.
          ;; The boys worked together to fend it off.
          ;; The boar left deep scars on the boys but they survived.
-         ;; They eventually made it to a nearby town.
-         ;; There was a young man telling everyone that the boar that ruined the crops was gone.
-         ;; A nearby knight took credit for defeating the boar.
-         ;; The boys challenged the knight.
-         ;; They show their scars and everybody believed them.
-         ;; The knight was discharged without honor for taking credit for the boy's work.
-         ;; The boys were paid a handsome reward and were able to go back home and support their parents.
 
          (t1 "The once lived a very poor family . ")
-         (t2 "When they were in the woods they ran into a boar that attacked them . ")
-         (t3 "The boys worked together to fend it off . ")
-         (t4 "The boar left deep scars on the boys but they survived . ")
-         (t5 "They eventually made it to a nearby town . ")
-         (t6 "There was a young man telling everyone that the boar that ruined the crops was gone . ")
-         (t7 "A nearby knight took credit for defeating the boar . ")
-         (t8 "The boys challenged the knight . ")
-         (t9 "They show their scars and everybody believed them . ")
-         (t10 "The knight was discharged without honor for taking credit for the boy 's work . ")
-         (t11 "The boys were paid a handsome reward and were able to go back home and support their parents . ")
+         (t2 "The parents did n't even have food to sustain their two sons . ")
+         (t3 "The mother sang about having to abandon their children . ")
+         (t4 "The boys worked together to fend it off . ")
+         (t5 "The boar left deep scars on the boys but they survived . ")
 
        )
      )

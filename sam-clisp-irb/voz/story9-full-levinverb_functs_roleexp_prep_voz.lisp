@@ -10,10 +10,11 @@
   '(STORY-9
      (:discourse
        (:clauses
-         (c0 (:s phase1 phase2 phase3))
+         (c0 (:s phase1 phase2 phase3 phase4))
          (phase1 (:s  t1 t2 t3))
          (phase2 (:s  t4))
-         (phase3 (:s  t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18))
+         (phase3 (:s  t5 t6))
+         (phase4 (:s  t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18))
 
        )
        (:templates
@@ -21,8 +22,8 @@
          ;; The merchant sent her daughter to marry the kingdom's prince.
          ;; The daughter parted with a maidservant.
          ;; The maidservant stole the merchant's daughter clothes and left her to be eaten by the wolves.
+         ;; The prince was confused because of the lack of manners of the maidservant but married her anyway.
          ;; Meanwhile, a fairy found the merchant's daughter, took pity on her and gave her a pair of magic eyes.
-         ;; The girl went to the palace the guards wouldn't let her in.
          ;; When the maidservant learned about the merchant's daughter still being alive was furious.
          ;; She asked the prince to go to the palace's doors and kill the merchant's daughter.
          ;; The merchant's daughter gave the magic eyes to the prince.
@@ -40,8 +41,8 @@
          (t2 "The merchant sent her daughter to marry the kingdom 's prince . ")
          (t3 "The daughter parted with a maidservant . ")
          (t4 "The maidservant stole the merchant 's daughter clothes and left her to be eaten by the wolves . ")
-         (t5 "Meanwhile , a fairy found the merchant 's daughter , took pity on her and gave her a pair of magic eyes . ")
-         (t6 "The girl went to the palace the guards would n't let her in . ")
+         (t5 "The prince was confused because of the lack of manners of the maidservant but married her anyway . ")
+         (t6 "Meanwhile , a fairy found the merchant 's daughter , took pity on her and gave her a pair of magic eyes . ")
          (t7 "When the maidservant learned about the merchant 's daughter still being alive was furious . ")
          (t8 "She asked the prince to go to the palace 's doors and kill the merchant 's daughter . ")
          (t9 "The merchant 's daughter gave the magic eyes to the prince . ")
@@ -101,6 +102,12 @@
          )
        )
        (phase3
+         (:entities
+         )
+         (:expressions
+         )
+       )
+       (phase4
          (:entities
          )
          (:expressions

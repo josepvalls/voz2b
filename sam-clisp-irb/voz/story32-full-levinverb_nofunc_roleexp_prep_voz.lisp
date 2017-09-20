@@ -10,20 +10,20 @@
   '(STORY-32
      (:discourse
        (:clauses
-         (c0 (:s phase1 phase2 phase3 phase4))
-         (phase1 (:s  t1))
-         (phase2 (:s  t2))
-         (phase3 (:s  t3 t4 t5 t6))
-         (phase4 (:s  t7 t8 t9 t10 t11 t12 t13 t14))
+         (c0 (:s phase1))
+         (phase1 (:s  t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17))
 
        )
        (:templates
          ;; A girl lived with her parents.
+         ;; She was beautiful but could not find a suitable husband.
          ;; Her parents banished her from home until she could find a husband.
+         ;; She walked for a very long time.
          ;; She ran into a poor boy who had no shoes.
          ;; She gave her shoes to him.
          ;; The boy told her he was very grateful.
          ;; She walked until her feet bled.
+         ;; She eventually reached a new kingdom.
          ;; The people of the kingdom ordered her to walk over hot coals.
          ;; Her feet were numb.
          ;; So she walked over the coals.
@@ -34,19 +34,22 @@
          ;; The prince married her and they lived happily.
 
          (t1 "A girl lived with her parents . ")
-         (t2 "Her parents banished her from home until she could find a husband . ")
-         (t3 "She ran into a poor boy who had no shoes . ")
-         (t4 "She gave her shoes to him . ")
-         (t5 "The boy told her he was very grateful . ")
-         (t6 "She walked until her feet bled . ")
-         (t7 "The people of the kingdom ordered her to walk over hot coals . ")
-         (t8 "Her feet were numb . ")
-         (t9 "So she walked over the coals . ")
-         (t10 "The little boy saw the girl . ")
-         (t11 "He went to fetch the prince of the kingdom and asked for his help . ")
-         (t12 "The prince saw how the girl has been mistreated . ")
-         (t13 "He gave the girl new garments and he fell in love with her kindness . ")
-         (t14 "The prince married her and they lived happily . ")
+         (t2 "She was beautiful but could not find a suitable husband . ")
+         (t3 "Her parents banished her from home until she could find a husband . ")
+         (t4 "She walked for a very long time . ")
+         (t5 "She ran into a poor boy who had no shoes . ")
+         (t6 "She gave her shoes to him . ")
+         (t7 "The boy told her he was very grateful . ")
+         (t8 "She walked until her feet bled . ")
+         (t9 "She eventually reached a new kingdom . ")
+         (t10 "The people of the kingdom ordered her to walk over hot coals . ")
+         (t11 "Her feet were numb . ")
+         (t12 "So she walked over the coals . ")
+         (t13 "The little boy saw the girl . ")
+         (t14 "He went to fetch the prince of the kingdom and asked for his help . ")
+         (t15 "The prince saw how the girl has been mistreated . ")
+         (t16 "He gave the girl new garments and he fell in love with her kindness . ")
+         (t17 "The prince married her and they lived happily . ")
 
        )
      )
@@ -82,24 +85,6 @@
        )
       
        (phase1
-         (:entities
-         )
-         (:expressions
-         )
-       )
-       (phase2
-         (:entities
-         )
-         (:expressions
-         )
-       )
-       (phase3
-         (:entities
-         )
-         (:expressions
-         )
-       )
-       (phase4
          (:entities
          )
          (:expressions

@@ -10,19 +10,18 @@
   '(STORY-2
      (:discourse
        (:clauses
-         (c0 (:s phase1 phase2 phase3 phase4))
-         (phase1 (:s  t1))
-         (phase2 (:s  t2 t3 t4 t5))
-         (phase3 (:s  t6 t7 t8))
-         (phase4 (:s  t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19))
+         (c0 (:s phase1 phase2 phase3))
+         (phase1 (:s  t1 t2 t3 t4 t5))
+         (phase2 (:s  t6 t7 t8))
+         (phase3 (:s  t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19))
 
        )
        (:templates
          ;; A girl lived with her brother.
+         ;; Her brother could not find a bride.
          ;; Their father threatened to marry them if he would not find a bride.
          ;; The girl was terrified.
          ;; She decided to try to find a bride for her brother.
-         ;; At night she sneaked out of the house.
          ;; She put the little box in her pocket.
          ;; The box belong to the forest witches.
          ;; They pulled the girl to their lair up in the trees.
@@ -39,18 +38,17 @@
          ;; The brother married the other princess and they all lived happily.
 
          (t1 "" (STORY2-m1000 "A girl") " lived with her brother . ")
-         (t1001 (STORY2-EXTRA1  (STORY2-m1000 "A girl") " is the " (Other "Other") ) ".")
-         (t2 "" (STORY2-m1004 "Their father") " threatened to marry them if he would not find a bride . ")
-         (t3 "" (STORY2-m1000 "The girl") " was terrified . ")
-         (t4 "" (STORY2-m1000 "She") " decided to try to find a bride for her brother . ")
-         (t5 "At night " (STORY2-m1000 "she") " sneaked out of the house . ")
-         (t1002 (STORY2-EXTRA2  (STORY2-m1000 "she") " is the " (Other "Other") ) ".")
+         (t2 "" (STORY2-m1002 "Her brother") " could not find " (STORY2-m1003 "a bride") " . ")
+         (t3 "" (STORY2-m1004 "Their father") " threatened to marry them if he would not find a bride . ")
+         (t4 "" (STORY2-m1000 "The girl") " was terrified . ")
+         (t5 "" (STORY2-m1000 "She") " decided to try to find a bride for her brother . ")
+         (t1001 (STORY2-EXTRA1  (STORY2-m1000 "She") " is the " (Other "Other") ) ".")
          (t6 "" (STORY2-m1000 "She") " put the little box in her pocket . ")
          (t7 "" (STORY2-m1006 "The box") " belong to " (STORY2-m1007 "the forest witches") " . ")
          (t8 "" (STORY2-m1007 "They") " pulled " (STORY2-m1000 "the girl") " to their lair up in the trees . ")
-         (t1003 (STORY2-EXTRA3  (STORY2-m1000 "the girl") " is the " (Other "Other") ) ".")
-         (t1004 (STORY2-EXTRA4  (STORY2-m1007 "They") " is the " (Other "Other") ) ".")
-         (t9 "With her delicate fingers , " (STORY2-VERB2 "" (STORY2-m1000 "the girl") " opened " (STORY2-m1006 "the box") " " ) ". ")
+         (t1002 (STORY2-EXTRA2  (STORY2-m1000 "the girl") " is the " (Other "Other") ) ".")
+         (t1003 (STORY2-EXTRA3  (STORY2-m1007 "They") " is the " (Other "Other") ) ".")
+         (t9 "With her delicate fingers , " (STORY2-VERB3 "" (STORY2-m1000 "the girl") " opened " (STORY2-m1006 "the box") " " ) ". ")
          (t10 "From inside the box came " (STORY2-m1008 "a frog") " . ")
          (t11 "" (STORY2-m1000 "The girl") " put " (STORY2-m1008 "the frog") " in her pocket . ")
          (t12 "" (STORY2-m1007 "The witches") " kept " (STORY2-m1006 "the box") " and were very happy . ")
@@ -61,8 +59,8 @@
          (t17 "" (STORY2-m1002 "He") " saw " (STORY2-m1008 "the frog") " in the girl 's pocket . ")
          (t18 "" (STORY2-m1002 "He") " kissed " (STORY2-m1008 "the frog") " and the frog transformed into a princess . ")
          (t19 "" (STORY2-m1002 "The brother") " married " (STORY2-m1010 "the other princess") " and they all lived happily . ")
-         (t1005 (STORY2-EXTRA5  (STORY2-m1000 "the girl") " is the " (Other "Other") ) ".")
-         (t1006 (STORY2-EXTRA6  (STORY2-m1007 "They") " is the " (Other "Other") ) ".")
+         (t1004 (STORY2-EXTRA4  (STORY2-m1000 "the girl") " is the " (Other "Other") ) ".")
+         (t1005 (STORY2-EXTRA5  (STORY2-m1007 "They") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -100,55 +98,53 @@
        (phase1
          (:entities
            (STORY2-m1000 :type animate)
+           (STORY2-m1002 :type animate)
+           (STORY2-m1003 :type animate)
+           (STORY2-m1004 :type animate)
          )
          (:expressions
+           ((levin-29-4 STORY2-m1002 STORY2-m1003) :name STORY2-VERB1)
            ((roleOther STORY2-m1000) :name STORY2-EXTRA0)
          )
        )
        (phase2
          (:entities
            (STORY2-m1000 :type animate)
+           (STORY2-m1002 :type animate)
+           (STORY2-m1003 :type animate)
            (STORY2-m1004 :type animate)
+           (STORY2-m1006 :type animate)
+           (STORY2-m1007 :type animate)
          )
          (:expressions
+           ((levin-12 STORY2-m1007 STORY2-m1000) :name STORY2-VERB2)
            ((roleOther STORY2-m1000) :name STORY2-EXTRA1)
+           ((roleOther STORY2-m1007) :name STORY2-EXTRA2)
          )
        )
        (phase3
          (:entities
            (STORY2-m1000 :type animate)
-           (STORY2-m1004 :type animate)
-           (STORY2-m1006 :type animate)
-           (STORY2-m1007 :type animate)
-         )
-         (:expressions
-           ((levin-12 STORY2-m1007 STORY2-m1000) :name STORY2-VERB1)
-           ((roleOther STORY2-m1000) :name STORY2-EXTRA2)
-           ((roleOther STORY2-m1007) :name STORY2-EXTRA3)
-         )
-       )
-       (phase4
-         (:entities
-           (STORY2-m1000 :type animate)
+           (STORY2-m1002 :type animate)
+           (STORY2-m1003 :type animate)
            (STORY2-m1004 :type animate)
            (STORY2-m1006 :type animate)
            (STORY2-m1007 :type animate)
            (STORY2-m1008 :type animate)
            (STORY2-m1009 :type animate)
-           (STORY2-m1002 :type animate)
            (STORY2-m1010 :type animate)
          )
          (:expressions
-           ((levin-47-6 STORY2-m1000 STORY2-m1006) :name STORY2-VERB2)
-           ((levin-09-1 STORY2-m1000 STORY2-m1008) :name STORY2-VERB3)
-           ((levin-15-2 STORY2-m1007 STORY2-m1006) :name STORY2-VERB4)
-           ((levin-13-1 STORY2-m1007 STORY2-m1000) :name STORY2-VERB5)
-           ((levin-51-1 STORY2-m1000 STORY2-m1000) :name STORY2-VERB6)
-           ((levin-30-1 STORY2-m1002 STORY2-m1008) :name STORY2-VERB7)
-           ((levin-36-2 STORY2-m1002 STORY2-m1008) :name STORY2-VERB8)
-           ((levin-36-2 STORY2-m1002 STORY2-m1010) :name STORY2-VERB9)
-           ((roleOther STORY2-m1000) :name STORY2-EXTRA4)
-           ((roleOther STORY2-m1007) :name STORY2-EXTRA5)
+           ((levin-47-6 STORY2-m1000 STORY2-m1006) :name STORY2-VERB3)
+           ((levin-09-1 STORY2-m1000 STORY2-m1008) :name STORY2-VERB4)
+           ((levin-15-2 STORY2-m1007 STORY2-m1006) :name STORY2-VERB5)
+           ((levin-13-1 STORY2-m1007 STORY2-m1000) :name STORY2-VERB6)
+           ((levin-51-1 STORY2-m1000 STORY2-m1000) :name STORY2-VERB7)
+           ((levin-30-1 STORY2-m1002 STORY2-m1008) :name STORY2-VERB8)
+           ((levin-36-2 STORY2-m1002 STORY2-m1008) :name STORY2-VERB9)
+           ((levin-36-2 STORY2-m1002 STORY2-m1010) :name STORY2-VERB10)
+           ((roleOther STORY2-m1000) :name STORY2-EXTRA3)
+           ((roleOther STORY2-m1007) :name STORY2-EXTRA4)
          )
        )
 

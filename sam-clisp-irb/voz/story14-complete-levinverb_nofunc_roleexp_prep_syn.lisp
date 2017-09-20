@@ -11,22 +11,35 @@
      (:discourse
        (:clauses
          (c0 (:s phase1 phase2))
-         (phase1 (:s  t1))
-         (phase2 (:s  t2 t3 t4))
+         (phase1 (:s  t1 t2 t3 t4))
+         (phase2 (:s  t5 t6 t7 t8 t9 t10))
 
        )
        (:templates
          ;; A poor laborer lived in a small town.
+         ;; His master's crops had been ruined and there was no work for him.
          ;; Eventually his master told him he had to let him go.
          ;; The laborer was very understanding.
-         ;; He left the small town and headed to the city.
+         ;; The bull challenged him to a race.
+         ;; The laborer agreed and the bull stormed out.
+         ;; The laborer knew the land really well and instead of following the path he took a shortcut.
+         ;; When the bull arrived at the goal, the laborer was already there waiting for him.
+         ;; Ashamed, the bull promised to stop running and ruining the crops.
+         ;; The laborer was able to find work in no time and was prosperous.
 
          (t1 "" (STORY14-m1000 "A poor laborer") " lived in a small town . ")
-         (t1001 (STORY14-EXTRA1  (STORY14-m1000 "A poor laborer") " is the " (Other "Other") ) ".")
-         (t2 "Eventually " (STORY14-VERB1 "" (STORY14-m1002 "his master") " told " (STORY14-m1000 "him") " " ) "he had to let him go . ")
-         (t3 "" (STORY14-m1000 "The laborer") " was very understanding . ")
-         (t4 "" (STORY14-m1000 "He") " left the small town and headed to the city . ")
-         (t1002 (STORY14-EXTRA2  (STORY14-m1000 "He") " is the " (Other "Other") ) ".")
+         (t2 "" (STORY14-m1001 "His master's crops") " had been ruined and there was no work for him . ")
+         (t3 "Eventually " (STORY14-m1002 "his master") " told " (STORY14-m1000 "him") " he had to let him go . ")
+         (t4 "" (STORY14-m1000 "The laborer") " was very understanding . ")
+         (t1001 (STORY14-EXTRA1  (STORY14-m1000 "The laborer") " is the " (Other "Other") ) ".")
+         (t5 "" (STORY14-m1003 "The bull") " challenged " (STORY14-m1000 "him") " to a race . ")
+         (t6 "" (STORY14-m1000 "The laborer") " agreed and " (STORY14-m1003 "the bull") " stormed out . ")
+         (t7 "" (STORY14-m1000 "The laborer") " knew the land really well and instead of following the path he took a shortcut . ")
+         (t8 "When " (STORY14-m1003 "the bull") " arrived at the goal , " (STORY14-m1000 "the laborer") " was already there waiting for him . ")
+         (t9 "Ashamed , " (STORY14-m1003 "the bull") " promised to stop running and ruining the crops . ")
+         (t10 "" (STORY14-m1000 "The laborer") " was able to find work in no time and was prosperous . ")
+         (t1002 (STORY14-EXTRA2  (STORY14-m1000 "The laborer") " is the " (Other "Other") ) ".")
+         (t1003 (STORY14-EXTRA3  (STORY14-m1003 "the bull") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -64,19 +77,25 @@
        (phase1
          (:entities
            (STORY14-m1000 :type animate)
+           (STORY14-m1001 :type animate)
+           (STORY14-m1002 :type animate)
          )
          (:expressions
+           ((levin-37-2 STORY14-m1002 STORY14-m1000) :name STORY14-VERB1)
            ((roleOther STORY14-m1000) :name STORY14-EXTRA0)
          )
        )
        (phase2
          (:entities
            (STORY14-m1000 :type animate)
+           (STORY14-m1001 :type animate)
            (STORY14-m1002 :type animate)
+           (STORY14-m1003 :type animate)
          )
          (:expressions
-           ((levin-37-2 STORY14-m1002 STORY14-m1000) :name STORY14-VERB1)
+           ((levin-51-1 STORY14-m1003 STORY14-m1003) :name STORY14-VERB2)
            ((roleOther STORY14-m1000) :name STORY14-EXTRA1)
+           ((roleOther STORY14-m1003) :name STORY14-EXTRA2)
          )
        )
 

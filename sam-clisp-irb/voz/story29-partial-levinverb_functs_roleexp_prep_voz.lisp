@@ -11,13 +11,17 @@
      (:discourse
        (:clauses
          (c0 (:s phase1))
-         (phase1 (:s  t1))
+         (phase1 (:s  t1 t2 t3))
 
        )
        (:templates
          ;; The once lived a very poor family.
+         ;; The parents didn't even have food to sustain their two sons.
+         ;; The mother sang about having to abandon their children.
 
          (t1 "The once lived a very poor family . ")
+         (t2 "The parents did n't even have food to sustain their two sons . ")
+         (t3 "The mother sang about having to abandon their children . ")
 
        )
      )

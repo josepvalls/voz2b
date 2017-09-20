@@ -11,23 +11,29 @@
      (:discourse
        (:clauses
          (c0 (:s phase1 phase2))
-         (phase1 (:s  t1))
-         (phase2 (:s  t2 t3 t4))
+         (phase1 (:s  t1 t2 t3 t4))
+         (phase2 (:s  t5 t6))
 
        )
        (:templates
          ;; There once lived a poor and unlucky peasant.
+         ;; He never married and was very lonely.
          ;; A fox came to him one day and told him that he could marry him to the princess.
          ;; The peasant was reluctant but then trusted the fox.
-         ;; They left the hole where the peasant lived and headed to the palace.
+         ;; They emerged from the swamp covered in mud.
+         ;; A nearby water spirit was so scared when they saw them that died instantly.
 
          (t1 "There once lived a poor and unlucky " (STORY18-m1000 "peasant") " . ")
-         (t1001 (STORY18-EXTRA1  (STORY18-m1000 "peasant") " is the " (Other "Other") ) ".")
-         (t2 "" (STORY18-m1001 "A fox") " came to " (STORY18-m1000 "him") " one day and told him that he could marry him to the princess . ")
-         (t3 "" (STORY18-m1000 "The peasant") " was reluctant but then trusted " (STORY18-m1001 "the fox") " . ")
-         (t4 "" (STORY18-m1002 "They") " left the hole where " (STORY18-m1000 "the peasant") " lived and headed to the palace . ")
-         (t1002 (STORY18-EXTRA2  (STORY18-m1000 "the peasant") " is the " (Other "Other") ) ".")
-         (t1003 (STORY18-EXTRA3  (STORY18-m1001 "the fox") " is the " (Other "Other") ) ".")
+         (t2 "" (STORY18-m1000 "He") " never married and was very lonely . ")
+         (t3 "" (STORY18-m1001 "A fox") " came to " (STORY18-m1000 "him") " one day and told him that he could marry him to the princess . ")
+         (t4 "" (STORY18-m1000 "The peasant") " was reluctant but then trusted " (STORY18-m1001 "the fox") " . ")
+         (t1001 (STORY18-EXTRA1  (STORY18-m1000 "The peasant") " is the " (Other "Other") ) ".")
+         (t1002 (STORY18-EXTRA2  (STORY18-m1001 "the fox") " is the " (Other "Other") ) ".")
+         (t5 "" (STORY18-m1002 "They") " emerged from the swamp covered in mud . ")
+         (t6 "" (STORY18-m1003 "A nearby water spirit") " was so scared when they saw them that died instantly . ")
+         (t1003 (STORY18-EXTRA3  (STORY18-m1000 "The peasant") " is the " (Other "Other") ) ".")
+         (t1004 (STORY18-EXTRA4  (STORY18-m1001 "the fox") " is the " (Other "Other") ) ".")
+         (t1005 (STORY18-EXTRA5  (STORY18-m1003 "A nearby water spirit") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -65,9 +71,12 @@
        (phase1
          (:entities
            (STORY18-m1000 :type animate)
+           (STORY18-m1001 :type animate)
          )
          (:expressions
+           ((levin-36-2 STORY18-m1000 STORY18-m1000) :name STORY18-VERB1)
            ((roleOther STORY18-m1000) :name STORY18-EXTRA0)
+           ((roleOther STORY18-m1001) :name STORY18-EXTRA1)
          )
        )
        (phase2
@@ -75,11 +84,12 @@
            (STORY18-m1000 :type animate)
            (STORY18-m1001 :type animate)
            (STORY18-m1002 :type animate)
+           (STORY18-m1003 :type animate)
          )
          (:expressions
-           ((levin-39-6 STORY18-m1000 STORY18-m1000) :name STORY18-VERB1)
-           ((roleOther STORY18-m1000) :name STORY18-EXTRA1)
-           ((roleOther STORY18-m1001) :name STORY18-EXTRA2)
+           ((roleOther STORY18-m1000) :name STORY18-EXTRA2)
+           ((roleOther STORY18-m1001) :name STORY18-EXTRA3)
+           ((roleOther STORY18-m1003) :name STORY18-EXTRA4)
          )
        )
 

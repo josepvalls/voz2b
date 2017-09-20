@@ -10,10 +10,11 @@
   '(STORY-9
      (:discourse
        (:clauses
-         (c0 (:s phase1 phase2 phase3))
+         (c0 (:s phase1 phase2 phase3 phase4))
          (phase1 (:s  t1 t2 t3))
          (phase2 (:s  t4))
-         (phase3 (:s  t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18))
+         (phase3 (:s  t5 t6))
+         (phase4 (:s  t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18))
 
        )
        (:templates
@@ -21,8 +22,8 @@
          ;; The merchant sent her daughter to marry the kingdom's prince.
          ;; The daughter parted with a maidservant.
          ;; The maidservant stole the merchant's daughter clothes and left her to be eaten by the wolves.
+         ;; The prince was confused because of the lack of manners of the maidservant but married her anyway.
          ;; Meanwhile, a fairy found the merchant's daughter, took pity on her and gave her a pair of magic eyes.
-         ;; The girl went to the palace the guards wouldn't let her in.
          ;; When the maidservant learned about the merchant's daughter still being alive was furious.
          ;; She asked the prince to go to the palace's doors and kill the merchant's daughter.
          ;; The merchant's daughter gave the magic eyes to the prince.
@@ -42,9 +43,11 @@
          (t1001 (STORY9-EXTRA1  (STORY9-m1003 "a maidservant") " is the " (Other "Other") ) ".")
          (t4 "" (STORY9-VERB1 "" (STORY9-m1003 "The maidservant") " stole " (STORY9-m1001 "the merchant's daughter clothes") " " ) "and left " (STORY9-m1001 "her") " to be eaten by the wolves . ")
          (t1002 (STORY9-EXTRA2  (STORY9-m1003 "The maidservant") " is the " (Other "Other") ) ".")
-         (t5 "Meanwhile , " (STORY9-VERB2 "" (STORY9-m1004 "a fairy") " found " ) "the merchant 's daughter , took pity on her and gave her a pair of magic eyes . ")
-         (t6 "" (STORY9-m1001 "The girl") " went to the palace " (STORY9-m1005 "the guards") " would n't let " (STORY9-m1001 "her") " in . ")
-         (t7 "When " (STORY9-m1003 "the maidservant") " learned about the merchant 's daughter still being alive was furious . ")
+         (t5 "" (STORY9-m1002 "The prince") " was confused because of the lack of manners of the maidservant but married " (STORY9-m1003 "her") " anyway . ")
+         (t6 "Meanwhile , " (STORY9-m1004 "a fairy") " found the merchant 's daughter , took pity on her and gave her a pair of magic eyes . ")
+         (t1003 (STORY9-EXTRA3  (STORY9-m1003 "her") " is the " (Other "Other") ) ".")
+         (t1004 (STORY9-EXTRA4  (STORY9-m1004 "a fairy") " is the " (Other "Other") ) ".")
+         (t7 "When " (STORY9-VERB3 "" (STORY9-m1003 "the maidservant") " learned " ) "about the merchant 's daughter still being alive was furious . ")
          (t8 "" (STORY9-m1003 "She") " asked the " (STORY9-m1002 "prince") " to go to the palace 's doors and kill the merchant 's daughter . ")
          (t9 "" (STORY9-m1001 "The merchant's daughter") " gave the magic eyes to the prince . ")
          (t10 "" (STORY9-m1002 "The prince") " saw " (STORY9-m1003 "the maidservant") " through the magic eyes . ")
@@ -56,8 +59,8 @@
          (t16 "" (STORY9-m1003 "The maidservant") " fell off the cliff and died . ")
          (t17 "The " (STORY9-m1001 "dove flow back to the palace where she converted into a beautiful girl again") " . ")
          (t18 "" (STORY9-m1002 "The prince") " married " (STORY9-m1001 "her") " and they lived happily the rest of their lives . ")
-         (t1003 (STORY9-EXTRA3  (STORY9-m1003 "The maidservant") " is the " (Other "Other") ) ".")
-         (t1004 (STORY9-EXTRA4  (STORY9-m1004 "The fairy") " is the " (Other "Other") ) ".")
+         (t1005 (STORY9-EXTRA5  (STORY9-m1003 "The maidservant") " is the " (Other "Other") ) ".")
+         (t1006 (STORY9-EXTRA6  (STORY9-m1004 "The fairy") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -118,19 +121,31 @@
            (STORY9-m1000 :type animate)
            (STORY9-m1001 :type animate)
            (STORY9-m1003 :type animate)
-           (STORY9-m1004 :type animate)
-           (STORY9-m1005 :type animate)
            (STORY9-m1002 :type animate)
+           (STORY9-m1004 :type animate)
          )
          (:expressions
            ((levin-29-4 STORY9-m1004 STORY9-m1004) :name STORY9-VERB2)
+           ((roleOther STORY9-m1003) :name STORY9-EXTRA2)
+           ((roleOther STORY9-m1004) :name STORY9-EXTRA3)
+         )
+       )
+       (phase4
+         (:entities
+           (STORY9-m1000 :type animate)
+           (STORY9-m1001 :type animate)
+           (STORY9-m1003 :type animate)
+           (STORY9-m1002 :type animate)
+           (STORY9-m1004 :type animate)
+         )
+         (:expressions
            ((levin-14 STORY9-m1003 STORY9-m1003) :name STORY9-VERB3)
            ((levin-37-1 STORY9-m1003 STORY9-m1002) :name STORY9-VERB4)
            ((levin-30-1 STORY9-m1002 STORY9-m1003) :name STORY9-VERB5)
            ((levin-13-5-1 STORY9-m1002 STORY9-m1003) :name STORY9-VERB6)
            ((levin-26-6 STORY9-m1004 STORY9-m1001) :name STORY9-VERB7)
-           ((roleOther STORY9-m1003) :name STORY9-EXTRA2)
-           ((roleOther STORY9-m1004) :name STORY9-EXTRA3)
+           ((roleOther STORY9-m1003) :name STORY9-EXTRA4)
+           ((roleOther STORY9-m1004) :name STORY9-EXTRA5)
          )
        )
 

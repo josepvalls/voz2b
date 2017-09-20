@@ -11,15 +11,21 @@
      (:discourse
        (:clauses
          (c0 (:s phase1))
-         (phase1 (:s  t1 t2))
+         (phase1 (:s  t1 t2 t3 t4 t5))
 
        )
        (:templates
          ;; Once upon a time, there was a soldier at the orders of certain king.
          ;; The soldier had many abilities and was always loyal.
+         ;; The king could not find a bride.
+         ;; The king commanded the soldier to go kidnap a princess for him to marry.
+         ;; The soldier accepted the king's orders and prepared to leave.
 
          (t1 "Once upon a time , there was a soldier at the orders of certain king . ")
          (t2 "The soldier had many abilities and was always loyal . ")
+         (t3 "The king could not find a bride . ")
+         (t4 "The king commanded the soldier to go kidnap a princess for him to marry . ")
+         (t5 "The soldier accepted the king 's orders and prepared to leave . ")
 
        )
      )

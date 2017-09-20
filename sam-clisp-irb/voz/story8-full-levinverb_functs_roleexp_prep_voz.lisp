@@ -12,8 +12,8 @@
        (:clauses
          (c0 (:s phase1 phase2 phase3 phase4))
          (phase1 (:s  t1 t2 t3 t4 t5))
-         (phase2 (:s  t6 t7 t8 t9))
-         (phase3 (:s  t10 t11 t12 t13 t14 t15 t16 t17 t18))
+         (phase2 (:s  t6 t7 t8 t9 t10 t11 t12 t13))
+         (phase3 (:s  t14 t15 t16 t17 t18))
          (phase4 (:s  t19 t20 t21 t22 t23 t24 t25))
 
        )
@@ -27,10 +27,10 @@
          ;; The ring fit perfectly and she couldn't take it off.
          ;; He immediately asked her to marry him.
          ;; The girl panicked and escaped the palace.
+         ;; She walked though the forest until she reached a lonely hut.
          ;; Inside there was a maiden.
          ;; The maiden was the daughter of a witch.
          ;; The maiden was lonely and asked the girl to be friends.
-         ;; The girl agreed.
          ;; They talked for hours.
          ;; The next day the maiden asked the girl for help braiding a handkerchief.
          ;; The girl agreed.
@@ -53,10 +53,10 @@
          (t7 "The ring fit perfectly and she could n't take it off . ")
          (t8 "He immediately asked her to marry him . ")
          (t9 "The girl panicked and escaped the palace . ")
-         (t10 "Inside there was a maiden . ")
-         (t11 "The maiden was the daughter of a witch . ")
-         (t12 "The maiden was lonely and asked the girl to be friends . ")
-         (t13 "The girl agreed . ")
+         (t10 "She walked though the forest until she reached a lonely hut . ")
+         (t11 "Inside there was a maiden . ")
+         (t12 "The maiden was the daughter of a witch . ")
+         (t13 "The maiden was lonely and asked the girl to be friends . ")
          (t14 "They talked for hours . ")
          (t15 "The next day the maiden asked the girl for help braiding a handkerchief . ")
          (t16 "The girl agreed . ")
