@@ -31,18 +31,26 @@
          ;; The magical hat showed the son the witch's true intentions.
          ;; He escaped the witch and got home safe and sound.
 
-         (t1 "Once upon a time , a family lived in the countryside in their farm . ")
-         (t2 "Their son was a simpleton . ")
-         (t3 "The crops would n't grow anymore and the family was starving . ")
-         (t4 "The son decided to chase the witch . ")
-         (t5 "The son ran to the faint sunlight and caught the witch . ")
-         (t6 "The witch flung rocks at him . ")
-         (t7 "He flung the rocks back at the witch and a big one hit her bag . ")
-         (t8 "Out of the witch 's bag came out the sun . ")
-         (t9 "The witch transformed into a beautiful lady . ")
-         (t10 "Then she chased the son and tried to entice him to go with her . ")
-         (t11 "The magical hat showed the son the witch 's true intentions . ")
-         (t12 "He escaped the witch and got home safe and sound . ")
+         (t1 "Once upon a time , " (STORY0-m1000 "a family") " lived in the countryside in " (STORY0-m1001 "their farm") " . ")
+         (t2 "" (STORY0-m1003 "Their son") " was " (STORY0-m1007 "a simpleton") " . ")
+         (t1001 (STORY0-EXTRA1  (STORY0-m1000 "a family") " is the " (NA "NA") ) ".")
+         (t1002 (STORY0-EXTRA2  (STORY0-m1001 "their farm") " is the " (NA "NA") ) ".")
+         (t1003 (STORY0-EXTRA3  (STORY0-m1003 "Their son") " is the " (NA "NA") ) ".")
+         (t1004 (STORY0-EXTRA4  (STORY0-m1007 "a simpleton") " is the " (NA "NA") ) ".")
+         (t3 "" (STORY0-VERB1 "" (STORY0-m1004 "The crops") " would n't grow " ) "anymore and " (STORY0-m1000 "the family") " was starving . ")
+         (t4 "" (STORY0-m1003 "The son") " decided to chase " (STORY0-m1005 "the witch") " . ")
+         (t1005 (STORY0-EXTRA5  (STORY0-m1004 "The crops") " is the " (NA "NA") ) ".")
+         (t1006 (STORY0-EXTRA6  (STORY0-m1005 "the witch") " is the " (NA "NA") ) ".")
+         (t5 "" (STORY0-m1003 "The son") " ran to the faint sunlight and caught " (STORY0-m1005 "the witch") " . ")
+         (t6 "" (STORY0-m1005 "The witch") " flung rocks at " (STORY0-m1003 "him") " . ")
+         (t7 "" (STORY0-m1003 "He") " flung the rocks back at " (STORY0-m1005 "the witch") " and a big one hit her bag . ")
+         (t8 "Out of the witch 's bag came out " (STORY0-m1002 "the sun") " . ")
+         (t1007 (STORY0-EXTRA7  (STORY0-m1002 "the sun") " is the " (NA "NA") ) ".")
+         (t9 "" (STORY0-m1005 "The witch") " transformed into a beautiful lady . ")
+         (t10 "Then " (STORY0-m1005 "she") " chased " (STORY0-m1003 "the son") " and tried to entice " (STORY0-m1003 "him") " to go with her . ")
+         (t11 "" (STORY0-m1008 "The magical hat") " showed " (STORY0-m1003 "the son") " the witch 's true intentions . ")
+         (t12 "" (STORY0-m1003 "He") " escaped " (STORY0-m1005 "the witch") " and got home safe and sound . ")
+         (t1008 (STORY0-EXTRA8  (STORY0-m1008 "The magical hat") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -79,26 +87,63 @@
       
        (phase1
          (:entities
+           (STORY0-m1000 :type NA)
+           (STORY0-m1001 :type NA)
+           (STORY0-m1003 :type NA)
+           (STORY0-m1007 :type NA)
          )
          (:expressions
+           ((roleNA STORY0-m1000) :name STORY0-EXTRA0)
+           ((roleNA STORY0-m1001) :name STORY0-EXTRA1)
+           ((roleNA STORY0-m1003) :name STORY0-EXTRA2)
+           ((roleNA STORY0-m1007) :name STORY0-EXTRA3)
          )
        )
        (phase2
          (:entities
+           (STORY0-m1000 :type NA)
+           (STORY0-m1001 :type NA)
+           (STORY0-m1003 :type NA)
+           (STORY0-m1004 :type NA)
+           (STORY0-m1005 :type NA)
+           (STORY0-m1007 :type NA)
          )
          (:expressions
+           ((levin-26-2 STORY0-m1004 STORY0-m1004) :name STORY0-VERB1)
+           ((roleNA STORY0-m1004) :name STORY0-EXTRA4)
+           ((roleNA STORY0-m1005) :name STORY0-EXTRA5)
          )
        )
        (phase3
          (:entities
+           (STORY0-m1000 :type NA)
+           (STORY0-m1001 :type NA)
+           (STORY0-m1002 :type NA)
+           (STORY0-m1003 :type NA)
+           (STORY0-m1004 :type NA)
+           (STORY0-m1005 :type NA)
+           (STORY0-m1007 :type NA)
          )
          (:expressions
+           ((roleNA STORY0-m1002) :name STORY0-EXTRA6)
          )
        )
        (phase4
          (:entities
+           (STORY0-m1000 :type NA)
+           (STORY0-m1001 :type NA)
+           (STORY0-m1002 :type NA)
+           (STORY0-m1003 :type NA)
+           (STORY0-m1004 :type NA)
+           (STORY0-m1005 :type NA)
+           (STORY0-m1007 :type NA)
+           (STORY0-m1008 :type NA)
          )
          (:expressions
+           ((levin-51-6 STORY0-m1005 STORY0-m1003) :name STORY0-VERB2)
+           ((levin-48-1-2 STORY0-m1008 STORY0-m1003) :name STORY0-VERB3)
+           ((levin-51-1 STORY0-m1003 STORY0-m1005) :name STORY0-VERB4)
+           ((roleNA STORY0-m1008) :name STORY0-EXTRA7)
          )
        )
 

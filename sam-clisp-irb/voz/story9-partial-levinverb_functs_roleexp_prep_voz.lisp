@@ -19,9 +19,13 @@
          ;; The merchant sent her daughter to marry the kingdom's prince.
          ;; The daughter parted with a maidservant.
 
-         (t1 "Once there lived a rich merchant with a beautiful daughter . ")
-         (t2 "The merchant sent her daughter to marry the kingdom 's prince . ")
-         (t3 "The daughter parted with a maidservant . ")
+         (t1 "Once there lived " (STORY9-m1000 "a rich merchant") " with " (STORY9-m1004 "a beautiful daughter") " . ")
+         (t2 "The merchant sent her " (STORY9-m1004 "daughter") " to marry " (STORY9-m3 "the kingdom's prince") " . ")
+         (t3 "" (STORY9-m1004 "The daughter") " parted with " (STORY9-m1003 "a maidservant") " . ")
+         (t1001 (STORY9-EXTRA1  (STORY9-m1000 "a rich merchant") " is the " (NA "NA") ) ".")
+         (t1002 (STORY9-EXTRA2  (STORY9-m3 "the kingdom's prince") " is the " (NA "NA") ) ".")
+         (t1003 (STORY9-EXTRA3  (STORY9-m1004 "The daughter") " is the " (NA "NA") ) ".")
+         (t1004 (STORY9-EXTRA4  (STORY9-m1003 "a maidservant") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -58,8 +62,16 @@
       
        (phase1
          (:entities
+           (STORY9-m1000 :type NA)
+           (STORY9-m3 :type NA)
+           (STORY9-m1004 :type NA)
+           (STORY9-m1003 :type NA)
          )
          (:expressions
+           ((roleNA STORY9-m1000) :name STORY9-EXTRA0)
+           ((roleNA STORY9-m3) :name STORY9-EXTRA1)
+           ((roleNA STORY9-m1004) :name STORY9-EXTRA2)
+           ((roleNA STORY9-m1003) :name STORY9-EXTRA3)
          )
        )
 

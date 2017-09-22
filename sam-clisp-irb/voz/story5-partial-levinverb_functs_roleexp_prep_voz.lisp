@@ -22,12 +22,17 @@
          ;; One night a group of pirates came to the farm.
          ;; They spied the family through the windows.
 
-         (t1 "An old couple lived with their daughter in a farm . ")
-         (t2 "The mother died of illness . ")
-         (t3 "The widower eventually married a widow that had a daughter of her own . ")
-         (t4 "The stepmother was always cruel to the poor girl . ")
-         (t5 "One night a group of pirates came to the farm . ")
-         (t6 "They spied the family through the windows . ")
+         (t1 "" (STORY5-m1003 "An old couple") " lived with " (STORY5-m1009 "their daughter") " in a farm . ")
+         (t2 "" (STORY5-m1006 "The mother") " died of illness . ")
+         (t3 "" (STORY5-m1010 "The widower") " eventually married a widow that had " (STORY5-m1009 "a daughter") " of her own . ")
+         (t4 "" (STORY5-m1010 "The stepmother") " was always cruel to the poor girl . ")
+         (t5 "One night a group of " (STORY5-m1001 "pirates") " came to the farm . ")
+         (t6 "" (STORY5-m1001 "They") " spied the family through the windows . ")
+         (t1001 (STORY5-EXTRA1  (STORY5-m1009 "a daughter") " is the " (NA "NA") ) ".")
+         (t1002 (STORY5-EXTRA2  (STORY5-m1010 "The stepmother") " is the " (NA "NA") ) ".")
+         (t1003 (STORY5-EXTRA3  (STORY5-m1003 "An old couple") " is the " (NA "NA") ) ".")
+         (t1004 (STORY5-EXTRA4  (STORY5-m1006 "The mother") " is the " (NA "NA") ) ".")
+         (t1005 (STORY5-EXTRA5  (STORY5-m1001 "They") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -64,8 +69,19 @@
       
        (phase1
          (:entities
+           (STORY5-m1009 :type NA)
+           (STORY5-m1010 :type NA)
+           (STORY5-m1003 :type NA)
+           (STORY5-m1006 :type NA)
+           (STORY5-m1001 :type NA)
          )
          (:expressions
+           ((levin-36-2 STORY5-m1010 STORY5-m1010) :name STORY5-VERB1)
+           ((roleNA STORY5-m1009) :name STORY5-EXTRA0)
+           ((roleNA STORY5-m1010) :name STORY5-EXTRA1)
+           ((roleNA STORY5-m1003) :name STORY5-EXTRA2)
+           ((roleNA STORY5-m1006) :name STORY5-EXTRA3)
+           ((roleNA STORY5-m1001) :name STORY5-EXTRA4)
          )
        )
 

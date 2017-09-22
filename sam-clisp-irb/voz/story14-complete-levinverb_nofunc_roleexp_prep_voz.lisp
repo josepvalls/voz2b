@@ -27,16 +27,20 @@
          ;; Ashamed, the bull promised to stop running and ruining the crops.
          ;; The laborer was able to find work in no time and was prosperous.
 
-         (t1 "A poor laborer lived in a small town . ")
-         (t2 "His master 's crops had been ruined and there was no work for him . ")
-         (t3 "Eventually his master told him he had to let him go . ")
-         (t4 "The laborer was very understanding . ")
-         (t5 "The bull challenged him to a race . ")
-         (t6 "The laborer agreed and the bull stormed out . ")
-         (t7 "The laborer knew the land really well and instead of following the path he took a shortcut . ")
-         (t8 "When the bull arrived at the goal , the laborer was already there waiting for him . ")
-         (t9 "Ashamed , the bull promised to stop running and ruining the crops . ")
-         (t10 "The laborer was able to find work in no time and was prosperous . ")
+         (t1 "" (STORY14-m1002 "A poor laborer") " lived in a small town . ")
+         (t2 "" (STORY14-m1000 "His master's crops") " had been ruined and there was no work for him . ")
+         (t3 "Eventually " (STORY14-m1001 "his master") " told " (STORY14-m1002 "him") " he had to let him go . ")
+         (t4 "" (STORY14-m1002 "The laborer") " was very understanding . ")
+         (t1001 (STORY14-EXTRA1  (STORY14-m1000 "His master's crops") " is the " (NA "NA") ) ".")
+         (t1002 (STORY14-EXTRA2  (STORY14-m1001 "his master") " is the " (NA "NA") ) ".")
+         (t1003 (STORY14-EXTRA3  (STORY14-m1002 "The laborer") " is the " (NA "NA") ) ".")
+         (t5 "" (STORY14-m1003 "The bull") " challenged " (STORY14-m1002 "him") " to a race . ")
+         (t6 "" (STORY14-m1002 "The laborer") " agreed and " (STORY14-m1003 "the bull") " stormed out . ")
+         (t7 "" (STORY14-m1002 "The laborer") " knew the land really well and instead of following the path he took a shortcut . ")
+         (t8 "When " (STORY14-m1003 "the bull") " arrived at the goal , " (STORY14-m1002 "the laborer") " was already there waiting for him . ")
+         (t9 "Ashamed , " (STORY14-m1003 "the bull") " promised to stop running and ruining the crops . ")
+         (t10 "" (STORY14-m1002 "The laborer") " was able to find work in no time and was prosperous . ")
+         (t1004 (STORY14-EXTRA4  (STORY14-m1003 "the bull") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -73,14 +77,27 @@
       
        (phase1
          (:entities
+           (STORY14-m1000 :type NA)
+           (STORY14-m1001 :type NA)
+           (STORY14-m1002 :type NA)
          )
          (:expressions
+           ((levin-37-2 STORY14-m1001 STORY14-m1002) :name STORY14-VERB1)
+           ((roleNA STORY14-m1000) :name STORY14-EXTRA0)
+           ((roleNA STORY14-m1001) :name STORY14-EXTRA1)
+           ((roleNA STORY14-m1002) :name STORY14-EXTRA2)
          )
        )
        (phase2
          (:entities
+           (STORY14-m1000 :type NA)
+           (STORY14-m1001 :type NA)
+           (STORY14-m1002 :type NA)
+           (STORY14-m1003 :type NA)
          )
          (:expressions
+           ((levin-51-1 STORY14-m1003 STORY14-m1003) :name STORY14-VERB2)
+           ((roleNA STORY14-m1003) :name STORY14-EXTRA3)
          )
        )
 

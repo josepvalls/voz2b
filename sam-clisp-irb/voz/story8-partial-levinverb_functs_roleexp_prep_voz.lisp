@@ -21,11 +21,16 @@
          ;; The witch visited them.
          ;; She gave the prince a ring and told him that he would be happy as long as he married a girl who the ring would fit.
 
-         (t1 "Once upon a time there was a happy queen with a son and a daughter . ")
-         (t2 "In the kingdom lived a witch that was jealous of their happiness . ")
-         (t3 "The witch devised a plan to ruin their family . ")
-         (t4 "The witch visited them . ")
-         (t5 "She gave the prince a ring and told him that he would be happy as long as he married a girl who the ring would fit . ")
+         (t1 "Once upon a time there was " (STORY8-m1002 "a happy queen") " with " (STORY8-m1000 "a son") " and " (STORY8-m55 "a daughter") " . ")
+         (t2 "In the kingdom lived a " (STORY8-m1005 "witch") " that was jealous of their happiness . ")
+         (t3 "" (STORY8-m1005 "The witch") " devised a plan to ruin their family . ")
+         (t4 "" (STORY8-m1005 "The witch") " visited them . ")
+         (t5 "" (STORY8-m1005 "She") " gave " (STORY8-m1003 "the prince") " a ring and told him that he would be happy as long as he married " (STORY8-m55 "a girl") " who the ring would fit . ")
+         (t1001 (STORY8-EXTRA1  (STORY8-m1000 "a son") " is the " (NA "NA") ) ".")
+         (t1002 (STORY8-EXTRA2  (STORY8-m1002 "a happy queen") " is the " (NA "NA") ) ".")
+         (t1003 (STORY8-EXTRA3  (STORY8-m1003 "the prince") " is the " (NA "NA") ) ".")
+         (t1004 (STORY8-EXTRA4  (STORY8-m1005 "She") " is the " (NA "NA") ) ".")
+         (t1005 (STORY8-EXTRA5  (STORY8-m55 "a girl") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -62,8 +67,19 @@
       
        (phase1
          (:entities
+           (STORY8-m1000 :type NA)
+           (STORY8-m1002 :type NA)
+           (STORY8-m1003 :type NA)
+           (STORY8-m1005 :type NA)
+           (STORY8-m55 :type NA)
          )
          (:expressions
+           ((levin-13-1 STORY8-m1005 STORY8-m1003) :name STORY8-VERB1)
+           ((roleNA STORY8-m1000) :name STORY8-EXTRA0)
+           ((roleNA STORY8-m1002) :name STORY8-EXTRA1)
+           ((roleNA STORY8-m1003) :name STORY8-EXTRA2)
+           ((roleNA STORY8-m1005) :name STORY8-EXTRA3)
+           ((roleNA STORY8-m55) :name STORY8-EXTRA4)
          )
        )
 

@@ -23,13 +23,15 @@
          ;; The soldier taught the devil how to play but did not ask the devil for any favors.
          ;; They parted ways.
 
-         (t1 "A soldier was given leave from his company . ")
-         (t2 "He had only a piece of bread , a knapsack and a fiddle . ")
-         (t3 "He was happy and left playing the fiddle . ")
-         (t4 "A nearby devil heard the fiddle . ")
-         (t5 "The devil approached the soldier and asked him to teach him how to play in exchange for a favor . ")
-         (t6 "The soldier taught the devil how to play but did not ask the devil for any favors . ")
-         (t7 "They parted ways . ")
+         (t1 "" (STORY16-m1001 "A soldier") " was given leave from his company . ")
+         (t2 "" (STORY16-m1001 "He") " had only a piece of bread , a knapsack and a fiddle . ")
+         (t3 "" (STORY16-m1001 "He") " was happy and left playing the fiddle . ")
+         (t4 "" (STORY16-m1001 "A nearby devil") " heard the fiddle . ")
+         (t5 "" (STORY16-m1001 "The devil") " approached " (STORY16-m1001 "the soldier") " and asked " (STORY16-m1001 "him") " to teach him how to play in exchange for a favor . ")
+         (t6 "" (STORY16-m1001 "The soldier") " taught " (STORY16-m1001 "the devil") " how to play but did not ask " (STORY16-m1001 "the devil") " for any favors . ")
+         (t7 "" (STORY16-m1004 "They") " parted ways . ")
+         (t1001 (STORY16-EXTRA1  (STORY16-m1001 "the devil") " is the " (NA "NA") ) ".")
+         (t1002 (STORY16-EXTRA2  (STORY16-m1004 "They") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -66,8 +68,13 @@
       
        (phase1
          (:entities
+           (STORY16-m1001 :type NA)
+           (STORY16-m1004 :type NA)
          )
          (:expressions
+           ((levin-37-1 STORY16-m1001 STORY16-m1001) :name STORY16-VERB1)
+           ((roleNA STORY16-m1001) :name STORY16-EXTRA0)
+           ((roleNA STORY16-m1004) :name STORY16-EXTRA1)
          )
        )
 

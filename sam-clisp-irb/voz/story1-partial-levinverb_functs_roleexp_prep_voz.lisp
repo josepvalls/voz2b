@@ -20,10 +20,16 @@
          ;; One day a hungry snake walked nearby.
          ;; The snake looked through the window and saw the younger son unattended.
 
-         (t1 "A poor mother lived in a little house with her two sons . ")
-         (t2 "There was famine and she could barely feed her sons . ")
-         (t3 "One day a hungry snake walked nearby . ")
-         (t4 "The snake looked through the window and saw the younger son unattended . ")
+         (t1 "A poor mother " (STORY1-m1006 "lived in a little house with her two sons") " . ")
+         (t2 "There was famine and " (STORY1-m1009 "she") " could barely feed " (STORY1-m1007 "her sons") " . ")
+         (t3 "One day " (STORY1-m1008 "a hungry snake") " walked nearby . ")
+         (t4 "" (STORY1-m1008 "The snake") " looked through the window and " (STORY1-m1002 "saw the younger son unattended") " . ")
+         (t1001 (STORY1-EXTRA1  (STORY1-m6 "the younger son") " is the " (NA "NA") ) ".")
+         (t1002 (STORY1-EXTRA2  (STORY1-m1002 "saw the younger son unattended") " is the " (NA "NA") ) ".")
+         (t1003 (STORY1-EXTRA3  (STORY1-m1006 "lived in a little house with her two sons") " is the " (NA "NA") ) ".")
+         (t1004 (STORY1-EXTRA4  (STORY1-m1007 "her sons") " is the " (NA "NA") ) ".")
+         (t1005 (STORY1-EXTRA5  (STORY1-m1008 "The snake") " is the " (NA "NA") ) ".")
+         (t1006 (STORY1-EXTRA6  (STORY1-m1009 "she") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -60,8 +66,22 @@
       
        (phase1
          (:entities
+           (STORY1-m6 :type NA)
+           (STORY1-m1002 :type NA)
+           (STORY1-m1006 :type NA)
+           (STORY1-m1007 :type NA)
+           (STORY1-m1008 :type NA)
+           (STORY1-m1009 :type NA)
          )
          (:expressions
+           ((levin-39-7 STORY1-m1009 STORY1-m1007) :name STORY1-VERB1)
+           ((levin-51-3-2 STORY1-m1008 STORY1-m1008) :name STORY1-VERB2)
+           ((roleNA STORY1-m6) :name STORY1-EXTRA0)
+           ((roleNA STORY1-m1002) :name STORY1-EXTRA1)
+           ((roleNA STORY1-m1006) :name STORY1-EXTRA2)
+           ((roleNA STORY1-m1007) :name STORY1-EXTRA3)
+           ((roleNA STORY1-m1008) :name STORY1-EXTRA4)
+           ((roleNA STORY1-m1009) :name STORY1-EXTRA5)
          )
        )
 

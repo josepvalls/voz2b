@@ -19,8 +19,8 @@
          ;; Their son was a simpleton.
 
          (t1 "Once upon a time , " (STORY0-m1000 "a family") " lived in the countryside in their farm . ")
-         (t2 "" (STORY0-m1002 "Their son") " was a simpleton . ")
-         (t1001 (STORY0-EXTRA1  (STORY0-m1002 "Their son") " is the " (Other "Other") ) ".")
+         (t2 "" (STORY0-m1003 "Their son") " was a simpleton . ")
+         (t1001 (STORY0-EXTRA1  (STORY0-m1003 "Their son") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -58,10 +58,10 @@
        (phase1
          (:entities
            (STORY0-m1000 :type animate)
-           (STORY0-m1002 :type animate)
+           (STORY0-m1003 :type animate)
          )
          (:expressions
-           ((roleOther STORY0-m1002) :name STORY0-EXTRA0)
+           ((roleOther STORY0-m1003) :name STORY0-EXTRA0)
          )
        )
 

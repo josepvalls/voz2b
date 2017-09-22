@@ -35,25 +35,25 @@
          ;; At this moment the spell broke and the boy regained his human form.
          ;; He was a good looking lad that had no trouble finding a wife.
 
-         (t1 "Once upon a time there lived " (STORY4-m1000 "an old widow") " without any children . ")
-         (t2 "" (STORY4-m1001 "A witch") " told " (STORY4-m1000 "her") " she would give her a child if the woman would return the child on his second birthday . ")
-         (t3 "" (STORY4-m1000 "The woman") " agreed and became pregnant and gave birth to " (STORY4-m1002 "a boy") " . ")
-         (t1001 (STORY4-EXTRA1  (STORY4-m1001 "A witch") " is the " (Other "Other") ) ".")
-         (t1002 (STORY4-EXTRA2  (STORY4-m1002 "a boy") " is the " (Other "Other") ) ".")
-         (t4 "" (STORY4-m1001 "The witch") " came the next day but could not find " (STORY4-m1002 "the boy") " . ")
-         (t5 "" (STORY4-m1001 "The witch") " cursed " (STORY4-m1002 "the boy") " and transformed him into a cat . ")
-         (t6 "Years passed and " (STORY4-m1000 "everyday the mother") " would sing to " (STORY4-m1002 "the cat") " and tell him about his story . ")
-         (t7 "One day " (STORY4-m1002 "the cat") " decided he could no longer bear his mother 's sadness and decided to leave . ")
-         (t8 "" (STORY4-m1002 "The cat") " left the house and boarded a ship . ")
-         (t9 "" (STORY4-VERB2 "" (STORY4-m1000 "His mother") " would n't recognize " (STORY4-m1002 "him") " " ) "and locked him out . ")
-         (t10 "" (STORY4-m1001 "The other cat") " was the witch 's in disguise . ")
-         (t11 "" (STORY4-m1001 "The witch") " asked the " (STORY4-m1000 "mother") " to kill " (STORY4-m1002 "the boy") " . ")
-         (t12 "" (STORY4-m1002 "The boy") " had to prove to her mother that he was his son . ")
-         (t13 "" (STORY4-m1002 "He") " sang the song her mother used to sing to him . ")
-         (t14 "" (STORY4-m1000 "The mother") " then realized who her son really was . ")
-         (t15 "" (STORY4-m1000 "She") " took a shovel and killed " (STORY4-m1001 "the witch") " . ")
-         (t16 "At this moment the spell broke and " (STORY4-m1002 "the boy") " regained his human form . ")
-         (t17 "" (STORY4-m1002 "He") " was a good looking lad that had no trouble finding a wife . ")
+         (t1 "Once upon a time there lived " (STORY4-m1003 "an old widow") " without any children . ")
+         (t2 "" (STORY4-m1002 "A witch") " told " (STORY4-m1003 "her") " she would give her a child if the woman would return the child on his second birthday . ")
+         (t3 "" (STORY4-m1003 "The woman") " agreed and became pregnant and gave birth to " (STORY4-m1000 "a boy") " . ")
+         (t1001 (STORY4-EXTRA1  (STORY4-m1000 "a boy") " is the " (Other "Other") ) ".")
+         (t1002 (STORY4-EXTRA2  (STORY4-m1002 "A witch") " is the " (Other "Other") ) ".")
+         (t4 "" (STORY4-m1002 "The witch") " came the next day but could not find " (STORY4-m1000 "the boy") " . ")
+         (t5 "" (STORY4-m1002 "The witch") " cursed " (STORY4-m1000 "the boy") " and transformed him into a cat . ")
+         (t6 "Years passed and " (STORY4-m1003 "everyday the mother") " would sing to " (STORY4-m1000 "the cat") " and tell him about his story . ")
+         (t7 "One day " (STORY4-m1000 "the cat") " decided he could no longer bear his mother 's sadness and decided to leave . ")
+         (t8 "" (STORY4-m1000 "The cat") " left the house and boarded a ship . ")
+         (t9 "" (STORY4-VERB2 "" (STORY4-m1003 "His mother") " would n't recognize " (STORY4-m1000 "him") " " ) "and locked him out . ")
+         (t10 "" (STORY4-m1002 "The other cat") " was the witch 's in disguise . ")
+         (t11 "" (STORY4-m1002 "The witch") " asked the " (STORY4-m1003 "mother") " to kill " (STORY4-m1000 "the boy") " . ")
+         (t12 "" (STORY4-m1000 "The boy") " had to prove to her mother that he was his son . ")
+         (t13 "" (STORY4-m1000 "He") " sang the song her mother used to sing to him . ")
+         (t14 "" (STORY4-m1003 "The mother") " then realized who her son really was . ")
+         (t15 "" (STORY4-m1003 "She") " took a shovel and killed " (STORY4-m1002 "the witch") " . ")
+         (t16 "At this moment the spell broke and " (STORY4-m1000 "the boy") " regained his human form . ")
+         (t17 "" (STORY4-m1000 "He") " was a good looking lad that had no trouble finding a wife . ")
 
        )
      )
@@ -91,20 +91,20 @@
        (phase1
          (:entities
            (STORY4-m1000 :type animate)
-           (STORY4-m1001 :type animate)
            (STORY4-m1002 :type animate)
+           (STORY4-m1003 :type animate)
          )
          (:expressions
-           ((levin-37-2 STORY4-m1001 STORY4-m1000) :name STORY4-VERB1)
-           ((roleOther STORY4-m1001) :name STORY4-EXTRA0)
+           ((levin-37-2 STORY4-m1002 STORY4-m1003) :name STORY4-VERB1)
+           ((roleOther STORY4-m1000) :name STORY4-EXTRA0)
            ((roleOther STORY4-m1002) :name STORY4-EXTRA1)
          )
        )
        (phase2
          (:entities
            (STORY4-m1000 :type animate)
-           (STORY4-m1001 :type animate)
            (STORY4-m1002 :type animate)
+           (STORY4-m1003 :type animate)
          )
          (:expressions
          )
@@ -112,12 +112,12 @@
        (phase3
          (:entities
            (STORY4-m1000 :type animate)
-           (STORY4-m1001 :type animate)
            (STORY4-m1002 :type animate)
+           (STORY4-m1003 :type animate)
          )
          (:expressions
-           ((levin-29-5 STORY4-m1000 STORY4-m1002) :name STORY4-VERB2)
-           ((levin-37-1 STORY4-m1001 STORY4-m1000) :name STORY4-VERB3)
+           ((levin-29-5 STORY4-m1003 STORY4-m1000) :name STORY4-VERB2)
+           ((levin-37-1 STORY4-m1002 STORY4-m1003) :name STORY4-VERB3)
          )
        )
 

@@ -25,14 +25,20 @@
          ;; The older brother was very responsible and agreed.
          ;; He left the house and went into the woods.
 
-         (t1 "A poor mother lived in a little house with her two sons . ")
-         (t2 "There was famine and she could barely feed her sons . ")
-         (t3 "One day a hungry snake walked nearby . ")
-         (t4 "The snake looked through the window and saw the younger son unattended . ")
-         (t5 "The mother saw her younger son missing . ")
-         (t6 "She asked her older son to go look for his younger brother . ")
-         (t7 "The older brother was very responsible and agreed . ")
-         (t8 "He left the house and went into the woods . ")
+         (t1 "A poor mother " (STORY1-m1006 "lived in a little house with her two sons") " . ")
+         (t2 "There was famine and " (STORY1-m1009 "she") " could barely feed " (STORY1-m1007 "her sons") " . ")
+         (t3 "One day " (STORY1-m1008 "a hungry snake") " walked nearby . ")
+         (t4 "" (STORY1-m1008 "The snake") " looked through the window and " (STORY1-m1002 "saw the younger son unattended") " . ")
+         (t1001 (STORY1-EXTRA1  (STORY1-m6 "the younger son") " is the " (NA "NA") ) ".")
+         (t1002 (STORY1-EXTRA2  (STORY1-m1002 "saw the younger son unattended") " is the " (NA "NA") ) ".")
+         (t1003 (STORY1-EXTRA3  (STORY1-m1006 "lived in a little house with her two sons") " is the " (NA "NA") ) ".")
+         (t1004 (STORY1-EXTRA4  (STORY1-m1007 "her sons") " is the " (NA "NA") ) ".")
+         (t1005 (STORY1-EXTRA5  (STORY1-m1008 "The snake") " is the " (NA "NA") ) ".")
+         (t1006 (STORY1-EXTRA6  (STORY1-m1009 "she") " is the " (NA "NA") ) ".")
+         (t5 "" (STORY1-VERB3 "" (STORY1-m1009 "The mother") " saw " (STORY1-m6 "her younger son missing") " " ) ". ")
+         (t6 "" (STORY1-m1009 "She") " asked " (STORY1-m6 "her older son") " to go look for " (STORY1-m6 "his younger brother") " . ")
+         (t7 "" (STORY1-m6 "The older brother") " was very responsible and agreed . ")
+         (t8 "" (STORY1-m6 "He") " left the house and went into the woods . ")
 
        )
      )
@@ -69,14 +75,36 @@
       
        (phase1
          (:entities
+           (STORY1-m6 :type NA)
+           (STORY1-m1002 :type NA)
+           (STORY1-m1006 :type NA)
+           (STORY1-m1007 :type NA)
+           (STORY1-m1008 :type NA)
+           (STORY1-m1009 :type NA)
          )
          (:expressions
+           ((levin-39-7 STORY1-m1009 STORY1-m1007) :name STORY1-VERB1)
+           ((levin-51-3-2 STORY1-m1008 STORY1-m1008) :name STORY1-VERB2)
+           ((roleNA STORY1-m6) :name STORY1-EXTRA0)
+           ((roleNA STORY1-m1002) :name STORY1-EXTRA1)
+           ((roleNA STORY1-m1006) :name STORY1-EXTRA2)
+           ((roleNA STORY1-m1007) :name STORY1-EXTRA3)
+           ((roleNA STORY1-m1008) :name STORY1-EXTRA4)
+           ((roleNA STORY1-m1009) :name STORY1-EXTRA5)
          )
        )
        (phase2
          (:entities
+           (STORY1-m6 :type NA)
+           (STORY1-m1002 :type NA)
+           (STORY1-m1006 :type NA)
+           (STORY1-m1007 :type NA)
+           (STORY1-m1008 :type NA)
+           (STORY1-m1009 :type NA)
          )
          (:expressions
+           ((levin-30-1 STORY1-m1009 STORY1-m6) :name STORY1-VERB3)
+           ((levin-37-1 STORY1-m1009 STORY1-m6) :name STORY1-VERB4)
          )
        )
 

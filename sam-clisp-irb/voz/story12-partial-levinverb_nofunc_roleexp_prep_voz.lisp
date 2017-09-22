@@ -19,9 +19,14 @@
          ;; The dragon would kidnap the town's maidens.
          ;; One night the king had a dream where a tanner rescued his daughter from the dragon.
 
-         (t1 "There was once a dragon that terrorized a little kingdom . ")
-         (t2 "The dragon would kidnap the town 's maidens . ")
-         (t3 "One night the king had a dream where a tanner rescued his daughter from the dragon . ")
+         (t1 "There was once " (STORY12-m1003 "a dragon") " that terrorized a little kingdom . ")
+         (t2 "" (STORY12-m1003 "The dragon") " would kidnap " (STORY12-m1004 "the town's maidens") " . ")
+         (t3 "One night " (STORY12-m1000 "the king") " had a dream where " (STORY12-m1002 "a tanner") " rescued " (STORY12-m1001 "his daughter") " from the dragon . ")
+         (t1001 (STORY12-EXTRA1  (STORY12-m1000 "the king") " is the " (NA "NA") ) ".")
+         (t1002 (STORY12-EXTRA2  (STORY12-m1001 "his daughter") " is the " (NA "NA") ) ".")
+         (t1003 (STORY12-EXTRA3  (STORY12-m1002 "a tanner") " is the " (NA "NA") ) ".")
+         (t1004 (STORY12-EXTRA4  (STORY12-m1003 "The dragon") " is the " (NA "NA") ) ".")
+         (t1005 (STORY12-EXTRA5  (STORY12-m1004 "the town's maidens") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -58,8 +63,20 @@
       
        (phase1
          (:entities
+           (STORY12-m1000 :type NA)
+           (STORY12-m1001 :type NA)
+           (STORY12-m1002 :type NA)
+           (STORY12-m1003 :type NA)
+           (STORY12-m1004 :type NA)
          )
          (:expressions
+           ((levin-10-5 STORY12-m1003 STORY12-m1004) :name STORY12-VERB1)
+           ((levin-10-5 STORY12-m1002 STORY12-m1001) :name STORY12-VERB2)
+           ((roleNA STORY12-m1000) :name STORY12-EXTRA0)
+           ((roleNA STORY12-m1001) :name STORY12-EXTRA1)
+           ((roleNA STORY12-m1002) :name STORY12-EXTRA2)
+           ((roleNA STORY12-m1003) :name STORY12-EXTRA3)
+           ((roleNA STORY12-m1004) :name STORY12-EXTRA4)
          )
        )
 

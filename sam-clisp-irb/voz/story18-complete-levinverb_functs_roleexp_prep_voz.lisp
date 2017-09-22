@@ -23,12 +23,16 @@
          ;; They emerged from the swamp covered in mud.
          ;; A nearby water spirit was so scared when they saw them that died instantly.
 
-         (t1 "There once lived a poor and unlucky peasant . ")
-         (t2 "He never married and was very lonely . ")
-         (t3 "A fox came to him one day and told him that he could marry him to the princess . ")
-         (t4 "The peasant was reluctant but then trusted the fox . ")
-         (t5 "They emerged from the swamp covered in mud . ")
-         (t6 "A nearby water spirit was so scared when they saw them that died instantly . ")
+         (t1 "" (STORY18-VERB1 "" (STORY18-m1003 "There") " once lived a poor and unlucky " (STORY18-m1003 "peasant") " " ) ". ")
+         (t2 "" (STORY18-m1003 "He") " never married and was very lonely . ")
+         (t3 "" (STORY18-m1001 "A fox") " came to " (STORY18-m1003 "him") " one day and told him that he could marry him to the princess . ")
+         (t4 "" (STORY18-m1003 "The peasant") " was reluctant but then trusted " (STORY18-m1001 "the fox") " . ")
+         (t1001 (STORY18-EXTRA1  (STORY18-m1001 "the fox") " is the " (NA "NA") ) ".")
+         (t1002 (STORY18-EXTRA2  (STORY18-m1003 "The peasant") " is the " (NA "NA") ) ".")
+         (t5 "" (STORY18-m1004 "They") " emerged from the swamp covered in mud . ")
+         (t6 "" (STORY18-m1005 "A nearby water spirit") " was so scared when they saw them that died instantly . ")
+         (t1003 (STORY18-EXTRA3  (STORY18-m1004 "They") " is the " (NA "NA") ) ".")
+         (t1004 (STORY18-EXTRA4  (STORY18-m1005 "A nearby water spirit") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -65,14 +69,26 @@
       
        (phase1
          (:entities
+           (STORY18-m1001 :type NA)
+           (STORY18-m1003 :type NA)
          )
          (:expressions
+           ((levin-39-6 STORY18-m1003 STORY18-m1003) :name STORY18-VERB1)
+           ((levin-36-2 STORY18-m1003 STORY18-m1003) :name STORY18-VERB2)
+           ((roleNA STORY18-m1001) :name STORY18-EXTRA0)
+           ((roleNA STORY18-m1003) :name STORY18-EXTRA1)
          )
        )
        (phase2
          (:entities
+           (STORY18-m1001 :type NA)
+           (STORY18-m1003 :type NA)
+           (STORY18-m1004 :type NA)
+           (STORY18-m1005 :type NA)
          )
          (:expressions
+           ((roleNA STORY18-m1004) :name STORY18-EXTRA2)
+           ((roleNA STORY18-m1005) :name STORY18-EXTRA3)
          )
        )
 

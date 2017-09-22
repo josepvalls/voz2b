@@ -30,18 +30,23 @@
          ;; The water spirit thought that the bearlet's scream had shaken his head and gave up.
          ;; The water spirit conceded to the bearlet and went to live to another lake.
 
-         (t1 "A woman was once kidnapped by a bear . ")
-         (t2 "The woman gave birth to a bearlet who was half-boy and half-bear . ")
-         (t3 "Eventually , the woman was able to escape and took the boy with her . ")
-         (t4 "He had a plan to get rid of the bearlet . ")
-         (t5 "He told the bearlet that he would only let him stay if he got rid of the water spirits in the lake . ")
-         (t6 "The bearlet left not knowing what to do . ")
-         (t7 "The water spirit challenged him to see who could scream the loudest . ")
-         (t8 "The bearlet and the water spirit took turns yelling and screaming . ")
-         (t9 "The bearlet asked the water spirit to close his eyes . ")
-         (t10 "Then , the bearlet smacked his head with a stick . ")
-         (t11 "The water spirit thought that the bearlet 's scream had shaken his head and gave up . ")
-         (t12 "The water spirit conceded to the bearlet and went to live to another lake . ")
+         (t1 "" (STORY15-m1000 "A woman") " was once kidnapped by " (STORY15-m1002 "a bear") " . ")
+         (t2 "" (STORY15-m1000 "The woman") " gave birth to " (STORY15-m1001 "a bearlet") " who was half-boy and half-bear . ")
+         (t3 "Eventually , " (STORY15-m1000 "the woman") " was able to escape and took " (STORY15-m1001 "the boy") " with her . ")
+         (t1001 (STORY15-EXTRA1  (STORY15-m1000 "the woman") " is the " (NA "NA") ) ".")
+         (t1002 (STORY15-EXTRA2  (STORY15-m1001 "the boy") " is the " (NA "NA") ) ".")
+         (t1003 (STORY15-EXTRA3  (STORY15-m1002 "a bear") " is the " (NA "NA") ) ".")
+         (t4 "" (STORY15-m1005 "He") " had a plan to get rid of the bearlet . ")
+         (t5 "" (STORY15-m1005 "He") " told " (STORY15-m1001 "the bearlet") " that he would only let him stay if " (STORY15-VERB2 "" (STORY15-m1001 "he") " got rid of the water " (STORY15-m1004 "spirits") " " ) "in the lake . ")
+         (t6 "" (STORY15-m1001 "The bearlet") " left not knowing what to do . ")
+         (t1004 (STORY15-EXTRA4  (STORY15-m1004 "spirits") " is the " (NA "NA") ) ".")
+         (t1005 (STORY15-EXTRA5  (STORY15-m1005 "He") " is the " (NA "NA") ) ".")
+         (t7 "" (STORY15-m1004 "The water spirit") " challenged " (STORY15-m1001 "him") " to see who could scream the loudest . ")
+         (t8 "" (STORY15-m1001 "The bearlet") " and " (STORY15-m1004 "the water spirit") " took turns yelling and screaming . ")
+         (t9 "" (STORY15-m1001 "The bearlet") " asked " (STORY15-m1004 "the water spirit") " to close his eyes . ")
+         (t10 "Then , " (STORY15-m1001 "the bearlet") " smacked " (STORY15-m1004 "his head") " with a stick . ")
+         (t11 "" (STORY15-m1004 "The water spirit") " thought that the bearlet 's scream had shaken " (STORY15-m1004 "his head") " and gave up . ")
+         (t12 "" (STORY15-m1004 "The water spirit") " conceded to " (STORY15-m1001 "the bearlet") " and went to live to another lake . ")
 
        )
      )
@@ -78,20 +83,42 @@
       
        (phase1
          (:entities
+           (STORY15-m1000 :type NA)
+           (STORY15-m1001 :type NA)
+           (STORY15-m1002 :type NA)
          )
          (:expressions
+           ((roleNA STORY15-m1000) :name STORY15-EXTRA0)
+           ((roleNA STORY15-m1001) :name STORY15-EXTRA1)
+           ((roleNA STORY15-m1002) :name STORY15-EXTRA2)
          )
        )
        (phase2
          (:entities
+           (STORY15-m1000 :type NA)
+           (STORY15-m1001 :type NA)
+           (STORY15-m1002 :type NA)
+           (STORY15-m1004 :type NA)
+           (STORY15-m1005 :type NA)
          )
          (:expressions
+           ((levin-37-2 STORY15-m1005 STORY15-m1001) :name STORY15-VERB1)
+           ((levin-13-5-1 STORY15-m1001 STORY15-m1004) :name STORY15-VERB2)
+           ((roleNA STORY15-m1004) :name STORY15-EXTRA3)
+           ((roleNA STORY15-m1005) :name STORY15-EXTRA4)
          )
        )
        (phase3
          (:entities
+           (STORY15-m1000 :type NA)
+           (STORY15-m1001 :type NA)
+           (STORY15-m1002 :type NA)
+           (STORY15-m1004 :type NA)
+           (STORY15-m1005 :type NA)
          )
          (:expressions
+           ((levin-37-1 STORY15-m1001 STORY15-m1004) :name STORY15-VERB3)
+           ((levin-18-1 STORY15-m1001 STORY15-m1001) :name STORY15-VERB4)
          )
        )
 

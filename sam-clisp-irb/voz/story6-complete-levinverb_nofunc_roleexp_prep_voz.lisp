@@ -27,14 +27,16 @@
          ;; She made her way in and waited for the witch.
 
          (t1 "Once upon a time , in a land , far , far away . ")
-         (t2 "There lived a girl with her baby brother and her mother . ")
-         (t3 "One day , the mother went to the market . ")
-         (t4 "The mother told the girl to watch her baby brother . ")
-         (t5 "The girl started playing and soon forgot what her mother had asked her . ")
-         (t6 "After a while , the girl came back and realized her baby brother was missing . ")
-         (t7 "The girl suspected the witch may be behind . ")
-         (t8 "She decided to go save her brother and went on to the witch 's hut . ")
-         (t9 "She made her way in and waited for the witch . ")
+         (t2 "There lived " (STORY6-m1001 "a girl") " with her baby brother and her mother . ")
+         (t3 "One day , " (STORY6-m3 "the mother") " went to the market . ")
+         (t4 "" (STORY6-m3 "The mother") " told the " (STORY6-m1001 "girl") " to watch her baby brother . ")
+         (t5 "" (STORY6-m1001 "The girl") " started playing and soon forgot what " (STORY6-m3 "her mother") " had asked " (STORY6-m3 "her") " . ")
+         (t1001 (STORY6-EXTRA1  (STORY6-m1001 "The girl") " is the " (NA "NA") ) ".")
+         (t6 "After a while , " (STORY6-VERB3 "" (STORY6-m1001 "the girl") " came back and realized " (STORY6-m1 "her baby brother") " " ) "was missing . ")
+         (t7 "" (STORY6-m1001 "The girl") " suspected " (STORY6-m1002 "the witch") " may be behind . ")
+         (t8 "" (STORY6-m1001 "She") " decided to go save her brother and went on to the witch 's hut . ")
+         (t9 "" (STORY6-m1001 "She") " made her way in and waited for " (STORY6-m1002 "the witch") " . ")
+         (t1002 (STORY6-EXTRA2  (STORY6-m1002 "the witch") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -71,14 +73,25 @@
       
        (phase1
          (:entities
+           (STORY6-m1001 :type NA)
+           (STORY6-m3 :type NA)
          )
          (:expressions
+           ((levin-37-2 STORY6-m3 STORY6-m1001) :name STORY6-VERB1)
+           ((levin-37-1 STORY6-m3 STORY6-m3) :name STORY6-VERB2)
+           ((roleNA STORY6-m1001) :name STORY6-EXTRA0)
          )
        )
        (phase2
          (:entities
+           (STORY6-m1001 :type NA)
+           (STORY6-m1002 :type NA)
+           (STORY6-m3 :type NA)
+           (STORY6-m1 :type NA)
          )
          (:expressions
+           ((levin-51-1 STORY6-m1001 STORY6-m1) :name STORY6-VERB3)
+           ((roleNA STORY6-m1002) :name STORY6-EXTRA1)
          )
        )
 

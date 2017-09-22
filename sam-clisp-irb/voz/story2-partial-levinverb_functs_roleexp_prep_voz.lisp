@@ -21,11 +21,15 @@
          ;; The girl was terrified.
          ;; She decided to try to find a bride for her brother.
 
-         (t1 "A girl lived with her brother . ")
-         (t2 "Her brother could not find a bride . ")
-         (t3 "Their father threatened to marry them if he would not find a bride . ")
-         (t4 "The girl was terrified . ")
-         (t5 "She decided to try to find a bride for her brother . ")
+         (t1 "" (STORY2-m1009 "A girl") " " (STORY2-m1007 "lived with her brother") " . ")
+         (t2 "" (STORY2-m1007 "Her brother") " could not find " (STORY2-m1006 "a bride") " . ")
+         (t3 "" (STORY2-m1002 "Their father") " threatened to marry " (STORY2-m1001 "them") " if he would not find " (STORY2-m1006 "a bride") " . ")
+         (t4 "" (STORY2-m1009 "The girl") " was terrified . ")
+         (t5 "" (STORY2-m1009 "She") " decided to try to find a bride for her brother . ")
+         (t1001 (STORY2-EXTRA1  (STORY2-m1009 "She") " is the " (NA "NA") ) ".")
+         (t1002 (STORY2-EXTRA2  (STORY2-m1002 "Their father") " is the " (NA "NA") ) ".")
+         (t1003 (STORY2-EXTRA3  (STORY2-m1001 "them") " is the " (NA "NA") ) ".")
+         (t1004 (STORY2-EXTRA4  (STORY2-m1007 "Her brother") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -62,8 +66,18 @@
       
        (phase1
          (:entities
+           (STORY2-m1009 :type NA)
+           (STORY2-m1002 :type NA)
+           (STORY2-m1001 :type NA)
+           (STORY2-m1006 :type NA)
+           (STORY2-m1007 :type NA)
          )
          (:expressions
+           ((levin-29-4 STORY2-m1007 STORY2-m1006) :name STORY2-VERB1)
+           ((roleNA STORY2-m1009) :name STORY2-EXTRA0)
+           ((roleNA STORY2-m1002) :name STORY2-EXTRA1)
+           ((roleNA STORY2-m1001) :name STORY2-EXTRA2)
+           ((roleNA STORY2-m1007) :name STORY2-EXTRA3)
          )
        )
 

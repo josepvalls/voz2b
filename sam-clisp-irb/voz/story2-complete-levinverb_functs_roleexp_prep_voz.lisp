@@ -25,14 +25,20 @@
          ;; The box belong to the forest witches.
          ;; They pulled the girl to their lair up in the trees.
 
-         (t1 "A girl lived with her brother . ")
-         (t2 "Her brother could not find a bride . ")
-         (t3 "Their father threatened to marry them if he would not find a bride . ")
-         (t4 "The girl was terrified . ")
-         (t5 "She decided to try to find a bride for her brother . ")
-         (t6 "She put the little box in her pocket . ")
-         (t7 "The box belong to the forest witches . ")
-         (t8 "They pulled the girl to their lair up in the trees . ")
+         (t1 "" (STORY2-m1009 "A girl") " " (STORY2-m1007 "lived with her brother") " . ")
+         (t2 "" (STORY2-m1007 "Her brother") " could not find " (STORY2-m1006 "a bride") " . ")
+         (t3 "" (STORY2-m1002 "Their father") " threatened to marry " (STORY2-m1001 "them") " if he would not find " (STORY2-m1006 "a bride") " . ")
+         (t4 "" (STORY2-m1009 "The girl") " was terrified . ")
+         (t5 "" (STORY2-m1009 "She") " decided to try to find a bride for her brother . ")
+         (t1001 (STORY2-EXTRA1  (STORY2-m1009 "She") " is the " (NA "NA") ) ".")
+         (t1002 (STORY2-EXTRA2  (STORY2-m1002 "Their father") " is the " (NA "NA") ) ".")
+         (t1003 (STORY2-EXTRA3  (STORY2-m1001 "them") " is the " (NA "NA") ) ".")
+         (t1004 (STORY2-EXTRA4  (STORY2-m1007 "Her brother") " is the " (NA "NA") ) ".")
+         (t6 "" (STORY2-VERB2 "" (STORY2-m1009 "She") " put " (STORY2-m1000 "the little box") " " ) "in her pocket . ")
+         (t7 "" (STORY2-m1000 "The box") " belong to " (STORY2-m1008 "the forest witches") " . ")
+         (t8 "" (STORY2-m1008 "They") " pulled " (STORY2-m1009 "the girl") " to their lair up in the trees . ")
+         (t1005 (STORY2-EXTRA5  (STORY2-m1000 "The box") " is the " (NA "NA") ) ".")
+         (t1006 (STORY2-EXTRA6  (STORY2-m1008 "They") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -69,14 +75,35 @@
       
        (phase1
          (:entities
+           (STORY2-m1009 :type NA)
+           (STORY2-m1002 :type NA)
+           (STORY2-m1001 :type NA)
+           (STORY2-m1006 :type NA)
+           (STORY2-m1007 :type NA)
          )
          (:expressions
+           ((levin-29-4 STORY2-m1007 STORY2-m1006) :name STORY2-VERB1)
+           ((roleNA STORY2-m1009) :name STORY2-EXTRA0)
+           ((roleNA STORY2-m1002) :name STORY2-EXTRA1)
+           ((roleNA STORY2-m1001) :name STORY2-EXTRA2)
+           ((roleNA STORY2-m1007) :name STORY2-EXTRA3)
          )
        )
        (phase2
          (:entities
+           (STORY2-m1000 :type NA)
+           (STORY2-m1001 :type NA)
+           (STORY2-m1002 :type NA)
+           (STORY2-m1006 :type NA)
+           (STORY2-m1007 :type NA)
+           (STORY2-m1008 :type NA)
+           (STORY2-m1009 :type NA)
          )
          (:expressions
+           ((levin-09-1 STORY2-m1009 STORY2-m1000) :name STORY2-VERB2)
+           ((levin-12 STORY2-m1008 STORY2-m1009) :name STORY2-VERB3)
+           ((roleNA STORY2-m1000) :name STORY2-EXTRA4)
+           ((roleNA STORY2-m1008) :name STORY2-EXTRA5)
          )
        )
 

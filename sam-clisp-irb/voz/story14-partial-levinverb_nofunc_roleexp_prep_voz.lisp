@@ -20,10 +20,13 @@
          ;; Eventually his master told him he had to let him go.
          ;; The laborer was very understanding.
 
-         (t1 "A poor laborer lived in a small town . ")
-         (t2 "His master 's crops had been ruined and there was no work for him . ")
-         (t3 "Eventually his master told him he had to let him go . ")
-         (t4 "The laborer was very understanding . ")
+         (t1 "" (STORY14-m1002 "A poor laborer") " lived in a small town . ")
+         (t2 "" (STORY14-m1000 "His master's crops") " had been ruined and there was no work for him . ")
+         (t3 "Eventually " (STORY14-m1001 "his master") " told " (STORY14-m1002 "him") " he had to let him go . ")
+         (t4 "" (STORY14-m1002 "The laborer") " was very understanding . ")
+         (t1001 (STORY14-EXTRA1  (STORY14-m1000 "His master's crops") " is the " (NA "NA") ) ".")
+         (t1002 (STORY14-EXTRA2  (STORY14-m1001 "his master") " is the " (NA "NA") ) ".")
+         (t1003 (STORY14-EXTRA3  (STORY14-m1002 "The laborer") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -60,8 +63,15 @@
       
        (phase1
          (:entities
+           (STORY14-m1000 :type NA)
+           (STORY14-m1001 :type NA)
+           (STORY14-m1002 :type NA)
          )
          (:expressions
+           ((levin-37-2 STORY14-m1001 STORY14-m1002) :name STORY14-VERB1)
+           ((roleNA STORY14-m1000) :name STORY14-EXTRA0)
+           ((roleNA STORY14-m1001) :name STORY14-EXTRA1)
+           ((roleNA STORY14-m1002) :name STORY14-EXTRA2)
          )
        )
 

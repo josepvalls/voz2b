@@ -21,10 +21,10 @@
          ;; The snake looked through the window and saw the younger son unattended.
 
          (t1 "A poor mother lived in a little house with her two sons . ")
-         (t2 "There was famine and " (STORY1-m1002 "she") " could barely feed " (STORY1-m1001 "her sons") " . ")
-         (t3 "One day " (STORY1-m1003 "a hungry snake") " walked nearby . ")
-         (t4 "" (STORY1-m1003 "The snake") " looked through the window and saw the younger son unattended . ")
-         (t1001 (STORY1-EXTRA1  (STORY1-m1003 "The snake") " is the " (Other "Other") ) ".")
+         (t2 "There was famine and " (STORY1-m1009 "she") " could barely feed " (STORY1-m1007 "her sons") " . ")
+         (t3 "One day " (STORY1-m1008 "a hungry snake") " walked nearby . ")
+         (t4 "" (STORY1-m1008 "The snake") " looked through the window and saw the younger son unattended . ")
+         (t1001 (STORY1-EXTRA1  (STORY1-m1008 "The snake") " is the " (Other "Other") ) ".")
 
        )
      )
@@ -61,14 +61,14 @@
       
        (phase1
          (:entities
-           (STORY1-m1002 :type animate)
-           (STORY1-m1001 :type animate)
-           (STORY1-m1003 :type animate)
+           (STORY1-m1008 :type animate)
+           (STORY1-m1009 :type animate)
+           (STORY1-m1007 :type animate)
          )
          (:expressions
-           ((levin-39-7 STORY1-m1002 STORY1-m1001) :name STORY1-VERB1)
-           ((levin-51-3-2 STORY1-m1003 STORY1-m1003) :name STORY1-VERB2)
-           ((roleOther STORY1-m1003) :name STORY1-EXTRA0)
+           ((levin-39-7 STORY1-m1009 STORY1-m1007) :name STORY1-VERB1)
+           ((levin-51-3-2 STORY1-m1008 STORY1-m1008) :name STORY1-VERB2)
+           ((roleOther STORY1-m1008) :name STORY1-EXTRA0)
          )
        )
 

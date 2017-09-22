@@ -23,12 +23,17 @@
          ;; Eventually the tanner conceded and prepared to go fight the dragon.
          ;; He took a big mace and parted to seek the dragon.
 
-         (t1 "There was once a dragon that terrorized a little kingdom . ")
-         (t2 "The dragon would kidnap the town 's maidens . ")
-         (t3 "One night the king had a dream where a tanner rescued his daughter from the dragon . ")
-         (t4 "The king approached the tanner and asked him to rescue his daughter . ")
-         (t5 "Eventually the tanner conceded and prepared to go fight the dragon . ")
-         (t6 "He took a big mace and parted to seek the dragon . ")
+         (t1 "There was once " (STORY12-m1003 "a dragon") " that terrorized a little kingdom . ")
+         (t2 "" (STORY12-m1003 "The dragon") " would kidnap " (STORY12-m1004 "the town's maidens") " . ")
+         (t3 "One night " (STORY12-m1000 "the king") " had a dream where " (STORY12-m1002 "a tanner") " rescued " (STORY12-m1001 "his daughter") " from " (STORY12-m1003 "the dragon") " . ")
+         (t1001 (STORY12-EXTRA1  (STORY12-m1000 "the king") " is the " (NA "NA") ) ".")
+         (t1002 (STORY12-EXTRA2  (STORY12-m1001 "his daughter") " is the " (NA "NA") ) ".")
+         (t1003 (STORY12-EXTRA3  (STORY12-m1002 "a tanner") " is the " (NA "NA") ) ".")
+         (t1004 (STORY12-EXTRA4  (STORY12-m1003 "the dragon") " is the " (NA "NA") ) ".")
+         (t1005 (STORY12-EXTRA5  (STORY12-m1004 "the town's maidens") " is the " (NA "NA") ) ".")
+         (t4 "" (STORY12-m1000 "The king") " approached " (STORY12-m1002 "the tanner") " and asked him to rescue " (STORY12-m1001 "his daughter") " . ")
+         (t5 "Eventually " (STORY12-m1002 "the tanner") " conceded and prepared to go fight " (STORY12-m1003 "the dragon") " . ")
+         (t6 "" (STORY12-m1002 "He") " took a big mace and parted to seek " (STORY12-m1003 "the dragon") " . ")
 
        )
      )
@@ -65,14 +70,32 @@
       
        (phase1
          (:entities
+           (STORY12-m1000 :type NA)
+           (STORY12-m1001 :type NA)
+           (STORY12-m1002 :type NA)
+           (STORY12-m1003 :type NA)
+           (STORY12-m1004 :type NA)
          )
          (:expressions
+           ((levin-10-5 STORY12-m1003 STORY12-m1004) :name STORY12-VERB1)
+           ((levin-10-5 STORY12-m1002 STORY12-m1003) :name STORY12-VERB2)
+           ((roleNA STORY12-m1000) :name STORY12-EXTRA0)
+           ((roleNA STORY12-m1001) :name STORY12-EXTRA1)
+           ((roleNA STORY12-m1002) :name STORY12-EXTRA2)
+           ((roleNA STORY12-m1003) :name STORY12-EXTRA3)
+           ((roleNA STORY12-m1004) :name STORY12-EXTRA4)
          )
        )
        (phase2
          (:entities
+           (STORY12-m1000 :type NA)
+           (STORY12-m1001 :type NA)
+           (STORY12-m1002 :type NA)
+           (STORY12-m1003 :type NA)
+           (STORY12-m1004 :type NA)
          )
          (:expressions
+           ((levin-13-3 STORY12-m1002 STORY12-m1002) :name STORY12-VERB3)
          )
        )
 

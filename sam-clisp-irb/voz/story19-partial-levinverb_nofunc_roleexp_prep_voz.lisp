@@ -20,10 +20,13 @@
          ;; The dragon wanted to take over the family's lands.
          ;; One day the parents went to the market.
 
-         (t1 "A long time ago , near the capital city , lived a family with their son . ")
-         (t2 "A dragon terrorized the region . ")
-         (t3 "The dragon wanted to take over the family 's lands . ")
-         (t4 "One day the parents went to the market . ")
+         (t1 "A long time ago , near the capital city , lived " (STORY19-m1001 "a family") " with " (STORY19-m1005 "their son") " . ")
+         (t2 "" (STORY19-m1002 "A dragon") " terrorized the region . ")
+         (t3 "" (STORY19-m1002 "The dragon") " wanted to take over the family 's lands . ")
+         (t4 "One day " (STORY19-m1001 "the parents") " went to the market . ")
+         (t1001 (STORY19-EXTRA1  (STORY19-m1001 "the parents") " is the " (NA "NA") ) ".")
+         (t1002 (STORY19-EXTRA2  (STORY19-m1002 "The dragon") " is the " (NA "NA") ) ".")
+         (t1003 (STORY19-EXTRA3  (STORY19-m1005 "their son") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -60,8 +63,14 @@
       
        (phase1
          (:entities
+           (STORY19-m1001 :type NA)
+           (STORY19-m1002 :type NA)
+           (STORY19-m1005 :type NA)
          )
          (:expressions
+           ((roleNA STORY19-m1001) :name STORY19-EXTRA0)
+           ((roleNA STORY19-m1002) :name STORY19-EXTRA1)
+           ((roleNA STORY19-m1005) :name STORY19-EXTRA2)
          )
        )
 

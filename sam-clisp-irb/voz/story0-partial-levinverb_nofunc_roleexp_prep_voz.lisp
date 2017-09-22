@@ -18,8 +18,12 @@
          ;; Once upon a time, a family lived in the countryside in their farm.
          ;; Their son was a simpleton.
 
-         (t1 "Once upon a time , a family lived in the countryside in their farm . ")
-         (t2 "Their son was a simpleton . ")
+         (t1 "Once upon a time , " (STORY0-m1000 "a family") " lived in the countryside in " (STORY0-m1001 "their farm") " . ")
+         (t2 "" (STORY0-m1003 "Their son") " was " (STORY0-m1007 "a simpleton") " . ")
+         (t1001 (STORY0-EXTRA1  (STORY0-m1000 "a family") " is the " (NA "NA") ) ".")
+         (t1002 (STORY0-EXTRA2  (STORY0-m1001 "their farm") " is the " (NA "NA") ) ".")
+         (t1003 (STORY0-EXTRA3  (STORY0-m1003 "Their son") " is the " (NA "NA") ) ".")
+         (t1004 (STORY0-EXTRA4  (STORY0-m1007 "a simpleton") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -56,8 +60,16 @@
       
        (phase1
          (:entities
+           (STORY0-m1000 :type NA)
+           (STORY0-m1001 :type NA)
+           (STORY0-m1003 :type NA)
+           (STORY0-m1007 :type NA)
          )
          (:expressions
+           ((roleNA STORY0-m1000) :name STORY0-EXTRA0)
+           ((roleNA STORY0-m1001) :name STORY0-EXTRA1)
+           ((roleNA STORY0-m1003) :name STORY0-EXTRA2)
+           ((roleNA STORY0-m1007) :name STORY0-EXTRA3)
          )
        )
 

@@ -25,14 +25,18 @@
          ;; The king's daughter had been cursed and was very ill.
          ;; The soldier went to the king and asked for a chance to help the princess.
 
-         (t1 "Once upon a time , a soldier deserted from his company . ")
-         (t2 "He had only a piece of bread , a knapsack and a fiddle . ")
-         (t3 "One night , the fugitive soldier got lost and stumbled into a devil . ")
-         (t4 "The devil approached the soldier and asked him to teach him how to play the fiddle . ")
-         (t5 "The soldier taught the devil how to play . ")
-         (t6 "In exchange , the devil told the soldier how to talk to the Grim Reaper . ")
-         (t7 "The king 's daughter had been cursed and was very ill . ")
-         (t8 "The soldier went to the king and asked for a chance to help the princess . ")
+         (t1 "Once upon a time , " (STORY17-m1000 "a soldier") " deserted from his company . ")
+         (t2 "" (STORY17-m1000 "He") " had only a piece of bread , a knapsack and a fiddle . ")
+         (t3 "One night , " (STORY17-m1000 "the fugitive soldier") " got lost and stumbled into " (STORY17-m1001 "a devil") " . ")
+         (t4 "" (STORY17-m1001 "The devil") " approached " (STORY17-m1000 "the soldier") " and asked him to teach him how to play the fiddle . ")
+         (t5 "" (STORY17-m1000 "The soldier") " taught " (STORY17-m1001 "the devil") " how to play . ")
+         (t6 "In exchange , " (STORY17-m1001 "the devil") " told " (STORY17-m1000 "the soldier") " how to talk to the Grim Reaper . ")
+         (t1001 (STORY17-EXTRA1  (STORY17-m1000 "the soldier") " is the " (NA "NA") ) ".")
+         (t1002 (STORY17-EXTRA2  (STORY17-m1001 "the devil") " is the " (NA "NA") ) ".")
+         (t7 "" (STORY17-m1002 "The king's daughter") " had been cursed and was very ill . ")
+         (t8 "" (STORY17-m1000 "The soldier") " went to " (STORY17-m1004 "the king") " and asked for a chance to help " (STORY17-m1002 "the princess") " . ")
+         (t1003 (STORY17-EXTRA3  (STORY17-m1002 "the princess") " is the " (NA "NA") ) ".")
+         (t1004 (STORY17-EXTRA4  (STORY17-m1004 "the king") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -69,14 +73,26 @@
       
        (phase1
          (:entities
+           (STORY17-m1000 :type NA)
+           (STORY17-m1001 :type NA)
          )
          (:expressions
+           ((levin-37-1 STORY17-m1000 STORY17-m1001) :name STORY17-VERB1)
+           ((levin-37-2 STORY17-m1001 STORY17-m1000) :name STORY17-VERB2)
+           ((roleNA STORY17-m1000) :name STORY17-EXTRA0)
+           ((roleNA STORY17-m1001) :name STORY17-EXTRA1)
          )
        )
        (phase2
          (:entities
+           (STORY17-m1000 :type NA)
+           (STORY17-m1001 :type NA)
+           (STORY17-m1002 :type NA)
+           (STORY17-m1004 :type NA)
          )
          (:expressions
+           ((roleNA STORY17-m1002) :name STORY17-EXTRA2)
+           ((roleNA STORY17-m1004) :name STORY17-EXTRA3)
          )
        )
 

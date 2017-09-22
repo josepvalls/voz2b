@@ -18,8 +18,12 @@
          ;; A roaming gypsy caravan with a father and his blind child arrived at an isolated village.
          ;; There was a giant who had been terrorizing the village's folks.
 
-         (t1 "A roaming gypsy caravan with a father and his blind child arrived at an isolated village . ")
-         (t2 "There was a giant who had been terrorizing the village 's folks . ")
+         (t1 "A roaming gypsy caravan with " (STORY13-m1001 "a father") " and " (STORY13-m1004 "his blind child") " arrived at an isolated village . ")
+         (t2 "There was " (STORY13-m1000 "a giant") " who had been terrorizing " (STORY13-m1003 "the village's folks") " . ")
+         (t1001 (STORY13-EXTRA1  (STORY13-m1000 "a giant") " is the " (NA "NA") ) ".")
+         (t1002 (STORY13-EXTRA2  (STORY13-m1001 "a father") " is the " (NA "NA") ) ".")
+         (t1003 (STORY13-EXTRA3  (STORY13-m1003 "the village's folks") " is the " (NA "NA") ) ".")
+         (t1004 (STORY13-EXTRA4  (STORY13-m1004 "his blind child") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -56,8 +60,17 @@
       
        (phase1
          (:entities
+           (STORY13-m1000 :type NA)
+           (STORY13-m1001 :type NA)
+           (STORY13-m1003 :type NA)
+           (STORY13-m1004 :type NA)
          )
          (:expressions
+           ((levin-31-1 STORY13-m1003 STORY13-m1003) :name STORY13-VERB1)
+           ((roleNA STORY13-m1000) :name STORY13-EXTRA0)
+           ((roleNA STORY13-m1001) :name STORY13-EXTRA1)
+           ((roleNA STORY13-m1003) :name STORY13-EXTRA2)
+           ((roleNA STORY13-m1004) :name STORY13-EXTRA3)
          )
        )
 

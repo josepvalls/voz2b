@@ -29,17 +29,23 @@
          ;; When the giant saw that he became scared of the gypsy.
          ;; The giant fled the village and never returned.
 
-         (t1 "A roaming gypsy caravan with a father and his blind child arrived at an isolated village . ")
-         (t2 "There was a giant who had been terrorizing the village 's folks . ")
-         (t3 "The gypsy met an old man . ")
-         (t4 "The old man told him all about the giant . ")
-         (t5 "The gypsy told the old man he would take care of the giant . ")
-         (t6 "He grabbed a piece of soft cheese and went to meet the giant . ")
-         (t7 "The giant smashed a rock with his hands . ")
-         (t8 "The gypsy took the cheese and told the giant it was a rock . ")
-         (t9 "The gypsy crumbled the cheese with a single hand . ")
-         (t10 "When the giant saw that he became scared of the gypsy . ")
-         (t11 "The giant fled the village and never returned . ")
+         (t1 "A roaming gypsy caravan with " (STORY13-m1001 "a father") " and " (STORY13-m1004 "his blind child") " arrived at an isolated village . ")
+         (t2 "There was " (STORY13-m1000 "a giant") " who had been terrorizing " (STORY13-m1003 "the village's folks") " . ")
+         (t1001 (STORY13-EXTRA1  (STORY13-m1000 "a giant") " is the " (NA "NA") ) ".")
+         (t1002 (STORY13-EXTRA2  (STORY13-m1001 "a father") " is the " (NA "NA") ) ".")
+         (t1003 (STORY13-EXTRA3  (STORY13-m1003 "the village's folks") " is the " (NA "NA") ) ".")
+         (t1004 (STORY13-EXTRA4  (STORY13-m1004 "his blind child") " is the " (NA "NA") ) ".")
+         (t3 "" (STORY13-VERB2 "" (STORY13-m1002 "The gypsy") " met " (STORY13-m1005 "an old man") " " ) ". ")
+         (t4 "" (STORY13-m1005 "The old man") " told " (STORY13-m1002 "him") " all about the giant . ")
+         (t5 "" (STORY13-m1002 "The gypsy") " told " (STORY13-m1005 "the old man") " he would take care of the giant . ")
+         (t6 "" (STORY13-m1002 "He") " grabbed a piece of soft cheese and went to meet " (STORY13-m1000 "the giant") " . ")
+         (t1005 (STORY13-EXTRA5  (STORY13-m1002 "He") " is the " (NA "NA") ) ".")
+         (t1006 (STORY13-EXTRA6  (STORY13-m1005 "the old man") " is the " (NA "NA") ) ".")
+         (t7 "" (STORY13-m1000 "The giant") " smashed a rock with his hands . ")
+         (t8 "" (STORY13-m1002 "The gypsy") " took the cheese and told the giant it was a rock . ")
+         (t9 "" (STORY13-m1002 "The gypsy") " crumbled the cheese with a single hand . ")
+         (t10 "When " (STORY13-m1000 "the giant saw") " that he became scared of " (STORY13-m1002 "the gypsy") " . ")
+         (t11 "" (STORY13-m1000 "The giant") " fled the village and never returned . ")
 
        )
      )
@@ -76,18 +82,44 @@
       
        (phase1
          (:entities
+           (STORY13-m1000 :type NA)
+           (STORY13-m1001 :type NA)
+           (STORY13-m1003 :type NA)
+           (STORY13-m1004 :type NA)
          )
          (:expressions
+           ((levin-31-1 STORY13-m1003 STORY13-m1003) :name STORY13-VERB1)
+           ((roleNA STORY13-m1000) :name STORY13-EXTRA0)
+           ((roleNA STORY13-m1001) :name STORY13-EXTRA1)
+           ((roleNA STORY13-m1003) :name STORY13-EXTRA2)
+           ((roleNA STORY13-m1004) :name STORY13-EXTRA3)
          )
        )
        (phase2
          (:entities
+           (STORY13-m1000 :type NA)
+           (STORY13-m1001 :type NA)
+           (STORY13-m1002 :type NA)
+           (STORY13-m1003 :type NA)
+           (STORY13-m1004 :type NA)
+           (STORY13-m1005 :type NA)
          )
          (:expressions
+           ((levin-36-3 STORY13-m1002 STORY13-m1005) :name STORY13-VERB2)
+           ((levin-37-2 STORY13-m1005 STORY13-m1002) :name STORY13-VERB3)
+           ((levin-37-2 STORY13-m1002 STORY13-m1005) :name STORY13-VERB4)
+           ((roleNA STORY13-m1002) :name STORY13-EXTRA4)
+           ((roleNA STORY13-m1005) :name STORY13-EXTRA5)
          )
        )
        (phase3
          (:entities
+           (STORY13-m1000 :type NA)
+           (STORY13-m1001 :type NA)
+           (STORY13-m1002 :type NA)
+           (STORY13-m1003 :type NA)
+           (STORY13-m1004 :type NA)
+           (STORY13-m1005 :type NA)
          )
          (:expressions
          )

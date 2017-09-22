@@ -22,11 +22,15 @@
          ;; The king told the soldier he would make him a nobleman is he could rescue the princess.
          ;; The soldier agreed and departed.
 
-         (t1 "In a kingdom far away there was a town terrified by a dragon . ")
-         (t2 "The king issued a call for help . ")
-         (t3 "A humble soldier responded to the call . ")
-         (t4 "The king told the soldier he would make him a nobleman is he could rescue the princess . ")
-         (t5 "The soldier agreed and departed . ")
+         (t1 "In a kingdom far away there was a town terrified by " (STORY10-m1002 "a dragon") " . ")
+         (t1001 (STORY10-EXTRA1  (STORY10-m1002 "a dragon") " is the " (NA "NA") ) ".")
+         (t2 "" (STORY10-m1000 "The king") " issued a call for help . ")
+         (t3 "" (STORY10-m1003 "A humble soldier") " responded to the call . ")
+         (t4 "" (STORY10-m1000 "The king") " told " (STORY10-m1003 "the soldier") " he would make " (STORY10-m1003 "him") " a nobleman is " (STORY10-m1003 "he") " could rescue " (STORY10-m1005 "the princess") " . ")
+         (t5 "" (STORY10-m1003 "The soldier") " " (STORY10-m1003 "The soldier agreed and departed.") " ")
+         (t1002 (STORY10-EXTRA2  (STORY10-m1000 "The king") " is the " (NA "NA") ) ".")
+         (t1003 (STORY10-EXTRA3  (STORY10-m1003 "The soldier") " is the " (NA "NA") ) ".")
+         (t1004 (STORY10-EXTRA4  (STORY10-m1005 "the princess") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -63,14 +67,25 @@
       
        (phase1
          (:entities
+           (STORY10-m1002 :type NA)
          )
          (:expressions
+           ((roleNA STORY10-m1002) :name STORY10-EXTRA0)
          )
        )
        (phase2
          (:entities
+           (STORY10-m1000 :type NA)
+           (STORY10-m1002 :type NA)
+           (STORY10-m1003 :type NA)
+           (STORY10-m1005 :type NA)
          )
          (:expressions
+           ((levin-37-2 STORY10-m1000 STORY10-m1003) :name STORY10-VERB1)
+           ((levin-10-5 STORY10-m1003 STORY10-m1005) :name STORY10-VERB2)
+           ((roleNA STORY10-m1000) :name STORY10-EXTRA1)
+           ((roleNA STORY10-m1003) :name STORY10-EXTRA2)
+           ((roleNA STORY10-m1005) :name STORY10-EXTRA3)
          )
        )
 

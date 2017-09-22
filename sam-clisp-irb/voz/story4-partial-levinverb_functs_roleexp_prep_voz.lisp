@@ -19,9 +19,11 @@
          ;; A witch told her she would give her a child if the woman would return the child on his second birthday.
          ;; The woman agreed and became pregnant and gave birth to a boy.
 
-         (t1 "Once upon a time there lived an old widow without any children . ")
-         (t2 "A witch told her she would give her a child if the woman would return the child on his second birthday . ")
-         (t3 "The woman agreed and became pregnant and gave birth to a boy . ")
+         (t1 "Once upon a time there lived " (STORY4-m7 "an old widow") " without any children . ")
+         (t2 "" (STORY4-m8 "A witch") " told " (STORY4-m7 "her") " she would give her a child if " (STORY4-m7 "the woman") " would return the child on his second birthday . ")
+         (t3 "" (STORY4-m7 "The woman") " agreed and became pregnant and gave birth to " (STORY4-m8 "a boy") " . ")
+         (t1001 (STORY4-EXTRA1  (STORY4-m8 "a boy") " is the " (NA "NA") ) ".")
+         (t1002 (STORY4-EXTRA2  (STORY4-m7 "The woman") " is the " (NA "NA") ) ".")
 
        )
      )
@@ -58,8 +60,13 @@
       
        (phase1
          (:entities
+           (STORY4-m8 :type NA)
+           (STORY4-m7 :type NA)
          )
          (:expressions
+           ((levin-37-2 STORY4-m8 STORY4-m7) :name STORY4-VERB1)
+           ((roleNA STORY4-m8) :name STORY4-EXTRA0)
+           ((roleNA STORY4-m7) :name STORY4-EXTRA1)
          )
        )
 

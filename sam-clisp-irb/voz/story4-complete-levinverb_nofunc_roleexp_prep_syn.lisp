@@ -25,16 +25,16 @@
          ;; One day the cat decided he could no longer bear his mother's sadness and decided to leave.
          ;; The cat left the house and boarded a ship.
 
-         (t1 "Once upon a time there lived " (STORY4-m1000 "an old widow") " without any children . ")
-         (t2 "" (STORY4-m1001 "A witch") " told " (STORY4-m1000 "her") " she would give her a child if the woman would return the child on his second birthday . ")
-         (t3 "" (STORY4-m1000 "The woman") " agreed and became pregnant and gave birth to " (STORY4-m1002 "a boy") " . ")
-         (t1001 (STORY4-EXTRA1  (STORY4-m1001 "A witch") " is the " (Other "Other") ) ".")
-         (t1002 (STORY4-EXTRA2  (STORY4-m1002 "a boy") " is the " (Other "Other") ) ".")
-         (t4 "" (STORY4-m1001 "The witch") " came the next day but could not find " (STORY4-m1002 "the boy") " . ")
-         (t5 "" (STORY4-m1001 "The witch") " cursed " (STORY4-m1002 "the boy") " and transformed him into a cat . ")
-         (t6 "Years passed and " (STORY4-m1000 "everyday the mother") " would sing to " (STORY4-m1002 "the cat") " and tell him about his story . ")
-         (t7 "One day " (STORY4-m1002 "the cat") " decided he could no longer bear his mother 's sadness and decided to leave . ")
-         (t8 "" (STORY4-m1002 "The cat") " left the house and boarded a ship . ")
+         (t1 "Once upon a time there lived " (STORY4-m1003 "an old widow") " without any children . ")
+         (t2 "" (STORY4-m1002 "A witch") " told " (STORY4-m1003 "her") " she would give her a child if the woman would return the child on his second birthday . ")
+         (t3 "" (STORY4-m1003 "The woman") " agreed and became pregnant and gave birth to " (STORY4-m1000 "a boy") " . ")
+         (t1001 (STORY4-EXTRA1  (STORY4-m1000 "a boy") " is the " (Other "Other") ) ".")
+         (t1002 (STORY4-EXTRA2  (STORY4-m1002 "A witch") " is the " (Other "Other") ) ".")
+         (t4 "" (STORY4-m1002 "The witch") " came the next day but could not find " (STORY4-m1000 "the boy") " . ")
+         (t5 "" (STORY4-m1002 "The witch") " cursed " (STORY4-m1000 "the boy") " and transformed him into a cat . ")
+         (t6 "Years passed and " (STORY4-m1003 "everyday the mother") " would sing to " (STORY4-m1000 "the cat") " and tell him about his story . ")
+         (t7 "One day " (STORY4-m1000 "the cat") " decided he could no longer bear his mother 's sadness and decided to leave . ")
+         (t8 "" (STORY4-m1000 "The cat") " left the house and boarded a ship . ")
 
        )
      )
@@ -72,20 +72,20 @@
        (phase1
          (:entities
            (STORY4-m1000 :type animate)
-           (STORY4-m1001 :type animate)
            (STORY4-m1002 :type animate)
+           (STORY4-m1003 :type animate)
          )
          (:expressions
-           ((levin-37-2 STORY4-m1001 STORY4-m1000) :name STORY4-VERB1)
-           ((roleOther STORY4-m1001) :name STORY4-EXTRA0)
+           ((levin-37-2 STORY4-m1002 STORY4-m1003) :name STORY4-VERB1)
+           ((roleOther STORY4-m1000) :name STORY4-EXTRA0)
            ((roleOther STORY4-m1002) :name STORY4-EXTRA1)
          )
        )
        (phase2
          (:entities
            (STORY4-m1000 :type animate)
-           (STORY4-m1001 :type animate)
            (STORY4-m1002 :type animate)
+           (STORY4-m1003 :type animate)
          )
          (:expressions
          )
