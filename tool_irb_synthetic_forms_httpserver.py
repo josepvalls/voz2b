@@ -45,7 +45,7 @@ def save_data(handler):
         try:
             age = int(postvars['age'])
             if age < 18:
-                erorr = True
+                error = True
         except:
             pass
     #print postvars
