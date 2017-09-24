@@ -18,7 +18,9 @@ DATA_PATH = 'saved_data'
 address = 'localhost'
 address = ''
 
-def get_message(path,uid='None'):
+def get_message(path,uid=None):
+    if uid is None:
+        uid = uuid.uuid4().hex
     if path=='/form1':
         return tool_irb_synthetic_forms.get_html_form(False).replace('%UUID%',uid)
         return open("tool_irb_form_3.html").read().replace('%UUID%',uid)
