@@ -43,7 +43,7 @@ def save_data(handler):
     postvars['client'] = handler.client_address
     if 'age' in postvars and postvars['age']:
         try:
-            age = int(postvars['age'])
+            age = int(postvars['age'][0])
             if age < 18:
                 error = True
         except:
