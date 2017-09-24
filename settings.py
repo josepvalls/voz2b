@@ -61,7 +61,6 @@ OPTIONS={ # This is used to create radio buttons in the web form
 WEB_HOST = '129.25.12.216'
 WEB_PORT = '8080'
 
-WEB_HOST = '127.0.0.1'
 WEB_HOST = '0.0.0.0'
 WEB_PORT = '8080'
 
