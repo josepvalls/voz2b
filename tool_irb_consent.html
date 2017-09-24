@@ -20,7 +20,8 @@
         }
       });
     } );
-    $('input:text, input:submit').addClass("ui-button ui-widget ui-widget-content ui-corner-all");
+    $('input:submit').addClass("ui-button ui-widget ui-widget-content ui-corner-all");
+    $('input:text').addClass("ui-widget ui-widget-content ui-corner-all");
   });
   </script>
   <style type="text/css">
@@ -56,6 +57,7 @@
   Your Name: <input type="text" name="name" size="40"/>
   <!--<br/>Your Signature: (enter your initials as an electronic signature) <input type="text" name="name" size="4" class="textbox">-->
   Date: (mm/dd/yyyy) <input type="text" name="date" size="10" class="textbox">
+  <p><small>Your name is only used as part of the consent process and will not be included in the data analysis for the study.</small></p>
   <h2>Pre-Questionnaire</h2>
   <p>Please fill the following questions to the best of your knowledge.</p>
   What is your age: <input type="text" name="age" size="4" class="textbox"><br/>
