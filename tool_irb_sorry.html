@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Evaluation of Automatic Story Generation Systems</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( document ).ready(function() {
+    $( function() {
+      $( "input:radio" ).checkboxradio({
+        icon: false
+      });
+    } );
+    $( function() {
+      $( document ).tooltip({
+        show: {
+          delay: 0
+        }
+      });
+    } );
+    $('input:text, input:submit').addClass("ui-button ui-widget ui-widget-content ui-corner-all");
+    $("input.copy-text").focus(function() {
+        this.select();
+        if(document.execCommand('copy')) $("span#copied").html("(copied to the clipboard)");
+    });
+  });
+  </script>
+  <style type="text/css">
+    body { font-family: Arial,Helvetica,sans-serif; font-size: 1em; width: 50em; margin-left: auto; margin-right: auto;}
+    fieldset { margin-bottom: 1em;}
+    legend.continuation-title {font-size:1.5em;}
+    .ui-tooltip {background-color: #F0E68C;}
+    em, fieldset.rating label, label.rating {text-decoration: #9C911D underline wavy; text-decoration-color: #9C911D; text-decoration-line: underline; text-decoration-style: wavy;}
+    li {border-bottom: 2px dashed #F0E68C;}
+    p.initial, p.continuation {padding: 0.5em;}
+    .initial { background-color: #AEBEE3;}
+    .continuation { background-color: #D0B2E3;}
+    p.continuation {margin-top: -1em;}
+  </style>
+</head>
+<body>
+  <h1>Evaluation of Automatic Story Generation Systems</h1>
+  <h2>Sorry, you cannot participate in this study.</h2>
+  <p>You are not elegible to participate in this study. You can still help us; please forward this address to your friends and encourage them to participate:</p>
+  <input class="copy-text" type="text" value="http://129.25.12.216/" size="40"/>
+  <span id="copied">(click to select)</span>
+  <p><a href="http://129.25.12.216/">Go back to the begginning of this study: http://129.25.12.216/</a></p>
+  <p><strong>If you have questions:</strong> The researchers conducting this study are Josep Valls-Vargas, Santiago Ontañón and Jichen Zhu. Please contact us with any questions you have before continuing: <a href="mailto:jv384@drexel.edu">jv384@drexel.edu</a></p>
+  <hr/>
+  <p>This research is conducted by a researcher who is a member of Drexel University.</p>
+</form>
+</body>
+</html>
