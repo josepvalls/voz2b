@@ -252,11 +252,10 @@ def create_document_from_story_data(story_data,properties={}, annotate=True):
         doc.narrative.add_function(doc.get_new_id("Function"),offset_start,offset_end-offset_start,function,[narrativehelper.NarrativeFunctionLocation('ACTUAL',[i.id for i in doc.get_tokens_by_off_len(offset_start,offset_end)])])
     return doc
 
-import logging
-import tool_entity_classification_loop_aaai
-import classificationhelper
-
 def aaai_loop():
+    import logging
+    import tool_entity_classification_loop_aaai
+    import classificationhelper
     logging.root.setLevel(logging.ERROR)
     docs = load_documents()
     tool_entity_classification_loop_aaai.generate_tsv_file(docs, classificationhelper.TASK_COREF, 0)
