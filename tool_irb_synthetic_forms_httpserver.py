@@ -24,10 +24,13 @@ def get_message(path,uid='None'):
         return open("tool_irb_form_3.html").read().replace('%UUID%',uid)
     elif path=='/form2':
         return open("tool_irb_thanks.html").read().replace('%UUID%',uid)
+    elif path=='/sorry.html':
+        return open("tool_irb_sorry.html").read()
     else:
         return open("tool_irb_consent.html").read()
 
 def save_data(handler):
+    error = False
     content_type, pdict = cgi.parse_header(handler.headers.getheader('content-type'))
     if content_type == 'multipart/form-data':
         postvars = cgi.parse_multipart(handler.rfile, pdict)
@@ -38,6 +41,13 @@ def save_data(handler):
         postvars = {}
     postvars['timestamp'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     postvars['client'] = handler.client_address
+    if 'age' in postvars and postvars['age']:
+        try:
+            age = int(postvars['age'])
+            if age < 18:
+                erorr = True
+        except:
+            pass
     #print postvars
     if 'uuid' in postvars and postvars['uuid'] and postvars['uuid'][0] and postvars['uuid'][0].strip():
         uid = postvars['uuid'][0].strip()
@@ -54,7 +64,7 @@ def save_data(handler):
     path += '/' + uid + re.sub(r'[^a-z0-9]', '_',handler.path.strip())
     with open(path,'w') as f:
         f.write(json.dumps(postvars))
-    return uid
+    return uid,error
 
 def field_names_to_dict(d):
     return dict([(i['name'], i['value']) for i in d])
@@ -97,12 +107,15 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(json.dumps({"status": "OK"}))
         else:
-            uid = save_data(self)
+            uid,error = save_data(self)
             self.send_response(200, "OK")
             self.send_header('Content-type', 'text/html')
             self.send_header("Access-Control-Allow-Origin", "*")
             self.end_headers()
-            message = get_message(self.path.strip(),uid)
+            if not error:
+                message = get_message(self.path.strip(),uid)
+            else:
+                message = get_message('/sorry.html', uid)
             self.wfile.write(message)
             self.wfile.write('\n')
         return
