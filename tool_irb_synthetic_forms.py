@@ -127,9 +127,9 @@ def get_html_form(randomize=False):
     if randomize:
         story_sets_ = story_sets[1:]
     else:
-        story_sets_ = story_sets[1:5]
+        story_sets_ = story_sets[1:6]
     random.shuffle(story_sets_)
-    story_sets = [story_sets[0]] + story_sets_[1:5]
+    story_sets = [story_sets[0]] + story_sets_[1:6]
     for i in story_sets[1:]:
         random.shuffle(i)
     sources = ''
