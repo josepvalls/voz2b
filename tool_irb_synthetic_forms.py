@@ -243,7 +243,9 @@ TEMPLATE_HTML = '''<!doctype html>
 <body>
 <form action="/form2" method="POST" id="questions">
   <h1>Evaluation of Automatic Story Generation Systems</h1>
-  <p>In this page we will show you several short story snippets or excerpt. Each story has an initial setup (<span class="initial">highlighted in blue</span>) and several different continuations (<span class="continuation">highlighted in purple</span>). We ask you to read each of the stories and rate each of the continuations in terms of how well it follows the initial setup and your overall satisfaction with the text.</p>
+  <p>In this page we will show you several short story snippets. 
+  We will show you multiple variations of each story. The different variations share a common initial setup (<span class="initial">highlighted in blue</span>) but vary in that each has a different continuation (<span class="continuation">highlighted in purple</span>).
+  We ask you to read each of them and rate each of the continuations in terms of how well they follows the initial setup and your overall satisfaction with the text.</p>
   <p>Note that throughout this page, you will find pieces of <em title="This is an example of the additional explanations you may find throughout this page.">text in italics</em>. Feel free to hover your mouse cursor on them to obtain additional explanations.</p>
   <p>When you are finished, please click the <strong>Submit</strong> button at the bottom of the page to save your answers.</p>
     %FORM%
@@ -315,7 +317,7 @@ TEMPLATE_HTML_FORM_2_OPTIONS = '''
       (<em The story was well written and enjoyable.>best</em>)
       <br/>
       
-      Did the continuation follow a reasonable <em title="The events described in the story.">plot</em> after the given initial story setup?
+      Did the <em title="The events described in the story.">plot</em> of this continuation follow reasonably from that of the initial setup?
       <input type="radio" name="q%ID%-%CID%-1" id="q%ID%-%CID%-1-y"><label for="q%ID%-%CID%-1-y">Yes</label>
       <input type="radio" name="q%ID%-%CID%-1" id="q%ID%-%CID%-1-n"><label for="q%ID%-%CID%-1-n">No</label>
       <br/>
