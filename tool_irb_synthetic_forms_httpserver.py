@@ -50,7 +50,7 @@ def save_data(handler):
         except:
             pass
     #print postvars
-    if 'uuid' in postvars and postvars['uuid'] and postvars['uuid'][0] and postvars['uuid'][0].strip():
+    if 'uuid' in postvars and postvars['uuid'] and postvars['uuid'][0] and postvars['uuid'][0].strip() and postvars['uuid'][0].strip()!='None':
         uid = postvars['uuid'][0].strip()
     else:
         uid = uuid.uuid4().hex
