@@ -1,7 +1,7 @@
 import narrativehelper
 import synthetichelper
-import pprint
 import random
+import settings
 
 def riu_parse(data):
     lines = data.splitlines(False)
@@ -85,8 +85,7 @@ def get_story_sets(stories):
 
 def get_story_sets_from_file():
     story_sets = []
-    l = 0
-    lines = open('/Users/josepvalls/voz2/stories/synthetic-results.tsv').readlines()
+    lines = open(settings.PATH_BASE +'stories/synthetic-results.tsv').readlines()
     lines = [i.strip() for i in lines]
     starts = lines[1::11]
     goods = lines[3::11]
