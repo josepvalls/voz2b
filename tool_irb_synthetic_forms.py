@@ -337,7 +337,7 @@ TEMPLATE_HTML_FORM_3_OPTIONS = '''
   <h2>Story %ID% <small>Variation %CID%</small></h2>
   <p class="initial">%SETUP%</p>
   <p class="continuation">%CONTINUATION%</p>
-      How do you rate this story considering both the initial setup and the continuation?<br/>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
       <input type="radio" name="r%ID%-%CID%" id="r%ID%-%CID%-1" value="1"><label for="r%ID%-%CID%-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
       <input type="radio" name="r%ID%-%CID%" id="r%ID%-%CID%-2" value="2"><label for="r%ID%-%CID%-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
       <input type="radio" name="r%ID%-%CID%" id="r%ID%-%CID%-3" value="3"><label for="r%ID%-%CID%-3" title="There were major issues with the story and text.">Mediocre</label>
@@ -347,7 +347,7 @@ TEMPLATE_HTML_FORM_3_OPTIONS = '''
       <br/>
 
       <table><tr><td>
-      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial story setup?
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
       </td><td>
       <input type="radio" name="q%ID%-%CID%-1" id="q%ID%-%CID%-1-y" value="y"><label for="q%ID%-%CID%-1-y">Yes</label>
       </td><td><input type="radio" name="q%ID%-%CID%-1" id="q%ID%-%CID%-1-n" value="n"><label for="q%ID%-%CID%-1-n">No</label>
