@@ -1,5 +1,4 @@
 import narrativehelper
-import stanfordhelper
 import collections
 
 synthetic_dataset_roles = {
@@ -194,6 +193,7 @@ def story_stats(story_i,story_data,glue_for_sentences = ' '):
 
 
 def create_document_from_story_data(story_data,properties={}, annotate=True):
+    import stanfordhelper
     raw_text, character_mentions, character_roles, story_data, functions = story_stats(properties['story_id'], story_data)
     import entitymanager
     stats_not_found = 0
