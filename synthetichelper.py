@@ -94,7 +94,7 @@ def parse_annotations(text,anno,anno_offset):
         ret.append((vword,vsubj,vobj))
     return ret
 
-def get_data(do_segment=True,include_annotations=False):
+def get_data(do_segment=True,include_annotations=False, glue_for_sentences = ' '):
     stories = []
     COL_STORY = 0
     COL_FUNCT = 3
@@ -132,7 +132,7 @@ def get_data(do_segment=True,include_annotations=False):
 
     return stories[1:]
 
-def story_stats(story_i,story_data):
+def story_stats(story_i,story_data,glue_for_sentences = ' '):
     raw_text = ''
     character_mentions = collections.defaultdict(list)
     character_roles = collections.defaultdict(list)
@@ -141,8 +141,42 @@ def story_stats(story_i,story_data):
     functions = []
     for row in story_data:
         function, text, annotations, offset_start, offset_end = row
-        raw_text += text + ' '
-        functions.append((function,offset_start,offset_end))
+        raw_text += text + glue_for_sentences
+        if functions and functions[-1][0] and function and functions[-1][0][0]==function[0]: # TODO check the function group instead of the first char
+            functions[-1] = (functions[-1][0],functions[-1][1],offset_end)
+        else:
+            functions.append((function,offset_start,offset_end))
+        for annotation in annotations:
+            anno_c_verbs+=1
+            for mention in [annotation[1],annotation[2]]:
+                if not mention: continue
+                anno_c_rels+=1
+                key, neg, o_start, o_end, extra = mention
+                character_mentions[key].append((raw_text[o_start:o_end],o_start,o_end))
+                if extra:
+                    character_roles[key].append(extra)
+    for key in character_mentions:
+        pass
+        #print str(story_i)+"\t"+key+"\t"+str(len(character_roles.get(key,['other'])))+"\t"+character_roles.get(key,['other'])[0]+"\t"+str(character_roles.get(key,''))+"\t"+str(len(character_mentions[key]))+"\t"+str(character_mentions[key])
+    #print anno_c_verbs,anno_c_rels
+    return (raw_text,character_mentions,character_roles,story_data,functions)
+
+
+def story_stats(story_i,story_data,glue_for_sentences = ' '):
+    raw_text = ''
+    character_mentions = collections.defaultdict(list)
+    character_roles = collections.defaultdict(list)
+    anno_c_verbs = 0
+    anno_c_rels = 0
+    functions = []
+    for row in story_data:
+        print row
+        function, text, annotations, offset_start, offset_end = row
+        raw_text += text + glue_for_sentences
+        if functions and functions[-1][0] and function and functions[-1][0][0]==function[0]: # TODO check the function group instead of the first char
+            functions[-1] = (functions[-1][0],functions[-1][1],offset_end)
+        else:
+            functions.append((function,offset_start,offset_end))
         for annotation in annotations:
             anno_c_verbs+=1
             for mention in [annotation[1],annotation[2]]:
@@ -271,14 +305,14 @@ def generate_riu_files():
     import riuhelper
     export_path = '/Users/josepvalls/voz2/sam-clisp-irb/'
     script = ''
-    for suffix_g in ['syn','voz']:  # sty voz
+    for suffix_g in ['voz']:#['syn','voz']:  # sty voz
         for suffix_v in ['levinverb']:  # noverb, 'basicverb' levinverb
             for suffix_f in ['nofunc','functs']:
                 for suffix_r in ['roleexp']:  # 'norole','roleent','roleexp'
                     for suffix_s in ['prep']:
                         suffix = suffix_v + '_' + suffix_f + '_' + suffix_r + '_' + suffix_s + '_' + suffix_g
                         # write the scripts
-                        for k in ['eval', 'full']:
+                        for k in ['complete']:#['eval', 'full']:
                             for i, s in enumerate(riuhelper.get_riu_runner(stories_in_use, suffix, k)):
                                 fname = 'voz-' + k + '-' + str(i + 1) + '-' + suffix + '.lisp'
                                 with open(export_path + fname, 'w') as f:
@@ -293,7 +327,7 @@ def generate_riu_files():
                             if suffix_g == 'syn':
                                 doc = create_document_from_story_data(story_data, {'story_id': story_i}, True)
                             else:
-                                doc = create_document_from_story_data(story_data, {'story_id': story_i}, False)
+                                doc = create_document_from_story_data(story_data, {'story_id': story_i}, True)
                                 doc.compute_predictions()
                             out = riuhelper.doc_to_sam(doc, suffix_g, suffix_v, suffix_f, suffix_r, suffix_s, limit=None)
                             with open(export_path + ('voz/story%d' % doc.id) + '-full-%s.lisp' % suffix, 'w') as f:

@@ -3,6 +3,69 @@ import synthetichelper
 import pprint
 import random
 
+def riu_parse(data):
+    lines = data.splitlines(False)
+    state = 0
+    text = ''
+    mappings = []
+    stories = []
+
+    for line in lines:
+        if 'mapping:' in line:
+            if text:
+                stories.append((text,mappings))
+            text = ''
+            mappings = []
+            state = 1
+        elif state == 1 and line.strip().startswith('('):
+            mappings.append(line)
+        elif state ==1 and not line.strip():
+            state = 2
+        elif state in [2,3] and line.strip():
+            text+=line.strip()+'\n'
+            state = 3
+        elif state ==3 and not line.strip():
+            state= 4
+        else:
+            pass # ignore blank lines when state = 4
+    stories.append((text, mappings))
+    return [(riu_text_clean(text),riu_parse_mapping(mappings)) for text,mappings in stories]
+
+
+def riu_text_clean(text):
+    return text
+
+def riu_parse_mapping(text):
+    tokens = ' '.join(text).replace('(',' ').replace(')',' ').split()
+    if not text: return (0,[])
+    score = float(tokens[0])
+    mappings = zip(tokens[1::2],tokens[2::2])
+    return (score,mappings)
+
+def get_stories_from_parsed_riu_output():
+    path = '/Users/josepvalls/voz2/sam-clisp-irb/'
+    story_data = synthetichelper.get_data(True,True)
+
+    story_sets = []
+    for story_id in range(40):
+        segment_text = story_data[story_id][0]
+        segment_text_0 = '\n'.join(i for i in segment_text[0][1])
+        segment_text = story_data[story_id][1]
+        segment_text_1 = '\n'.join(i for i in segment_text[0][1])
+
+        '''for segment_i,segment in enumerate(story_data[story_id]):
+            #print segment
+            segment_text = '\n'.join(i for i in segment[0][1])
+            #print segment_text'''
+        data = riu_parse(open(path+'voz-complete-%d-levinverb_nofunc_roleexp_prep_voz.lisp.txt' % (story_id+1)).read())
+        print 'START:\n'+segment_text_0
+        print 'GOOD:\n' + segment_text_1
+        print 'CONTINUE:\n'+data[0][0]
+        print data[0][1]
+
+
+
+
 def get_story_sets(stories):
     story_sets = []
     story_ids = list(enumerate(stories))
@@ -15,20 +78,36 @@ def get_story_sets(stories):
                 selected = random.choice(story_ids)
                 if selected[0] not in exclude: break
             exclude.add(selected[0])
-            story_set.append((story[0][1], selected[1][1][1]))
+            story_set.append((story[0][1], selected[1][1][1],'X%d'%_))
         random.shuffle(story_set)
         story_sets.append(story_set)
     return story_sets
 
+def get_story_sets_from_file():
+    story_sets = []
+    l = 0
+    lines = open('/Users/josepvalls/voz2/stories/synthetic-results.tsv').readlines()
+    lines = [i.strip() for i in lines]
+    starts = lines[1::11]
+    goods = lines[3::11]
+    c_1 = lines[5::11]
+    c_2 = lines[7::11]
+    c_3 = lines[9::11]
 
-def html_format_story_set(story_sets,template=1):
+    for s,g,c1,c2,c3,i in zip(starts,goods,c_1,c_2,c_3,range(len(starts))):
+        story_sets.append([(s,g,'s%dc0'%i),(s,c1,'s%dc1'%i),(s,c2,'s%dc2'%i),(s,c3,'s%dc3'%i)])
+    return story_sets
+
+
+
+def html_format_story_set(story_sets,template=1,sources=''):
     html = ''
     for id_, story_set in enumerate(story_sets):
         html_options = ''
         for cid_,option in enumerate(story_set):
-            text_set,text_cont = option
-            text_set = ' '.join(text_set)
-            text_cont = ' '.join(text_cont)
+            text_set,text_cont,source = option
+            #text_set = ' '.join(text_set)
+            #text_cont = ' '.join(text_cont)
             if template == 1:
                 template_form = TEMPLATE_HTML_FORM_1
                 template_form_options = TEMPLATE_HTML_FORM_1_OPTIONS
@@ -40,21 +119,44 @@ def html_format_story_set(story_sets,template=1):
                 template_form_options = TEMPLATE_HTML_FORM_3_OPTIONS
 
             html_options += template_form_options.replace('%ID%',str(id_+1)).replace('%CID%',str(cid_+1)).replace('%CONTINUATION%',text_cont)
-        html += template_form.replace('%OPTIONS%',html_options).replace('%ID%',str(id_+1)).replace('%SETUP%',text_set)
+        html += template_form.replace('%OPTIONS%',html_options).replace('%ID%',str(id_+1)).replace('%SETUP%',text_set).replace('%SOURCES%',sources)
     html = TEMPLATE_HTML.replace('%FORM%',html)
     return html
 
-
+def get_html_form(randomize=False):
+    story_sets = get_story_sets_from_file()
+    if randomize:
+        story_sets_ = story_sets[1:]
+    else:
+        story_sets_ = story_sets[1:5]
+    random.shuffle(story_sets_)
+    story_sets = [story_sets[0]] + story_sets_[1:5]
+    for i in story_sets[1:]:
+        random.shuffle(i)
+    sources = ''
+    for i in story_sets:
+        for j in i:
+            sources += j[2] + ' '
+    sources = sources.strip()
+    print sources
+    return html_format_story_set(story_sets, 3, sources)
 
 def main():
-    stories = synthetichelper.get_data()
+    import pprint
+    pp = pprint.pprint
+    #get_stories_from_parsed_riu_output()
+    #return
+    stories = synthetichelper.get_data(do_segment=False)
     for story in stories[0:5]:
         #pprint.pprint(story)
-        print "story"
-        print ' '.join(story[0][1])
-        print ' '.join(story[1][1])
+        print "SAMPLE STORY"
+        print story[0]
     print "sets"
     story_sets = get_story_sets(stories)[0:5]
+    pp(story_sets[0])
+
+    story_sets = get_story_sets_from_file()
+    pp(story_sets[0])
     print "html"
     with open("tool_irb_form_1.html",'w') as f:
         f.write(html_format_story_set(story_sets,1))
@@ -62,7 +164,8 @@ def main():
         f.write(html_format_story_set(story_sets,2))
     with open("tool_irb_form_3.html",'w') as f:
         f.write(html_format_story_set(story_sets,3))
-
+    with open("tool_irb_form_4.html",'w') as f:
+        f.write(get_html_form(False))
 
 
 
@@ -194,7 +297,10 @@ TEMPLATE_HTML_FORM_1_OPTIONS = '''
     </fieldset>
   </fieldset>
 '''
-TEMPLATE_HTML_FORM_2 = '''%OPTIONS%'''
+TEMPLATE_HTML_FORM_2 = '''
+<input type="hidden" name="sources" value="%SOURCES%">
+%OPTIONS%
+'''
 TEMPLATE_HTML_FORM_2_OPTIONS = '''
   <h2>Story %ID% - Variation %CID%</h2>
   <p class="initial">%SETUP%</p>

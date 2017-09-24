@@ -6,19 +6,21 @@ import os
 import uuid
 import datetime
 import re
+import tool_irb_synthetic_forms
 
 try:
     import simplejson as json
 except ImportError:
     import json
 
-PORT = 8787
+PORT = 80
 DATA_PATH = 'saved_data'
 address = 'localhost'
 address = ''
 
 def get_message(path,uid='None'):
     if path=='/form1':
+        return tool_irb_synthetic_forms.get_html_form(False).replace('%UUID%',uid)
         return open("tool_irb_form_3.html").read().replace('%UUID%',uid)
     elif path=='/form2':
         return open("tool_irb_thanks.html").read().replace('%UUID%',uid)

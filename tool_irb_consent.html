@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Evaluation of Automatic Story Generation Systems</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( document ).ready(function() {
+    $( function() {
+      $( "input:radio" ).checkboxradio({
+        icon: false
+      });
+    } );
+    $( function() {
+      $( document ).tooltip({
+        show: {
+          delay: 0
+        }
+      });
+    } );
+    $('input:text, input:submit').addClass("ui-button ui-widget ui-widget-content ui-corner-all");
+  });
+  </script>
+  <style type="text/css">
+    body { font-family: Arial,Helvetica,sans-serif; font-size: 1em; width: 50em; margin-left: auto; margin-right: auto;}
+    fieldset { margin-bottom: 1em;}
+    legend.continuation-title {font-size:1.5em;}
+    .ui-tooltip {background-color: #F0E68C;}
+    em, fieldset.rating label, label.rating {text-decoration-color: #9C911D; text-decoration-line: underline;}
+    em, fieldset.rating label, label.rating {-webkit-text-decoration: #9C911D underline wavy;}
+    li {border-bottom: 2px dashed #F0E68C;}
+    p.initial, p.continuation {padding: 0.5em;}
+    .initial { background-color: #AEBEE3;}
+    .continuation { background-color: #D0B2E3;}
+    p.continuation {margin-top: -1em;}
+  </style>
+</head>
+<body>
+<form action="/form1" method="POST">
+  <h1>Evaluation of Automatic Story Generation Systems</h1>
+  <h2>Research Title</h2>
+  <p>Evaluation of Automatic Story Generation Systems</p>
+  <h2>Research Objectives </h2>
+  <p>Narratives and storytelling are a key element in human: from video games to movies or news reports to informal conversations with friends. Computational narrative is an emergent field of research at the intersection of traditional narratology, artificial intelligence, natural language processing and cognitive science. Computational narrative focuses on methods to algorithmically analyze, model, and generate narratives. With this study we hope to learn more about the perceived quality of automatically generated stories.</p>
+  <h2>Research Study </h2>
+  <p>After filling this consent form and pre-questionnaire, you will be shown short excerpts from stories that we will ask you to rank. It should take no more than 30 minutes. </p>
+  <h2>Risks, Benefits, and Compensation</h2>
+  <p>We do not anticipate any risks to you participating in this study other than those encountered in day-to-day life. There is no compensation there are no direct benefits to you. Taking part in this study is completely voluntary. You may skip any questions that you do not want to answer. If you decide not to take part or to skip some of the questions, it will not affect your current or future relationship with Drexel University. If you decide to take part, you are free to withdraw at any time.</p>
+  <h2>Confidentiality</h2>
+  <p>Your answers will be confidential. The records of this study will be kept private. We will publish aggregated information and expect to recruit about 50 participants. In any report we make public we will not include any information that will make it possible to identify you. Research records will be kept in a secure storage; only the researchers will have access to the records.</p>
+  <h2>Consent</h2>
+  <p><strong>If you have questions:</strong> The researchers conducting this study are Josep Valls-Vargas, Santiago Ontañón and Jichen Zhu. Please contact us with any questions you have before continuing: <a href="mailto:jv384@drexel.edu">jv384@drexel.edu</a></p>
+  <p><strong>Statement of Consent:</strong>I have read the above information, and have received answers to any questions I asked. I consent to take part in the study.</p>
+  Your Name: <input type="text" name="name" size="40"/>
+  <!--<br/>Your Signature: (enter your initials as an electronic signature) <input type="text" name="name" size="4" class="textbox">-->
+  Date: (mm/dd/yyyy) <input type="text" name="date" size="10" class="textbox">
+  <h2>Pre-Questionnaire</h2>
+  <p>Please fill the following questions to the best of your knowledge.</p>
+  What is your age: <input type="text" name="age" size="4" class="textbox"><br/>
+  What is your highest level of education: (please select one)<br/>
+  <blockquote>
+  <input type="radio" name="edu" id="edu-1" value="1"><label for="edu-1">High school</label>
+  <input type="radio" name="edu" id="edu-2" value="2"><label for="edu-2">Some college</label>
+  <input type="radio" name="edu" id="edu-3" value="3"><label for="edu-3">Completed BS/BA</label>
+  <br/>
+  <input type="radio" name="edu" id="edu-4" value="4"><label for="edu-4">Some/Completed Master's</label>
+  <input type="radio" name="edu" id="edu-5" value="5"><label for="edu-5">Some/Completed PhD</label>
+  </blockquote>
+  <table><tr><td>
+  Are you a student at Drexel University?
+  </td><td><input type="radio" name="dustudent" id="dustudent-1" value="yes"><label for="dustudent-1">Yes</label>
+  </td><td><input type="radio" name="dustudent" id="dustudent-2" value="no"><label for="dustudent-2">No</label>
+  </td></tr><tr><td>
+  Are you a native English speaker?
+  </td><td><input type="radio" name="native" id="native-1" value="yes"><label for="native-1">Yes</label>
+  </td><td><input type="radio" name="native" id="native-2" value="no"><label for="native-2">No</label>
+  </td></tr><tr><td>
+  Are you fully competent in written English?
+  </td><td><input type="radio" name="competent" id="competent-1" value="yes"><label for="competent-1">Yes</label>
+  </td><td><input type="radio" name="competent" id="competent-2" value="no"><label for="competent-2">No</label>
+  </td></tr></table>
+  <h2>Reading Comprehension</h2>
+  <p>Please read the following excerpt and answer the following questions:</p>
+  <blockquote>
+  <p class="initial">Dolphins are marine mammals related to whales. A marine mammal is one that lives in the water. Dolphins are found all over the world's oceans as well as in rivers and marshes. Dolphins are carnivores and feed on fish, squid, and other marine life. They are thought to have powerful eyesight and hearing, but do not have a sense of smell. Dolphins often swim together in groups and are thought to be very intelligent and communicate with each other using clicks and whistles. Dolphins come in different sizes. Some are smaller than the average person, but others, such as the orca, can be more than five times as long as the average person.</p> 
+  </blockquote>
+  <table><tr><td>
+  Dolphins live on land.
+  </td><td><input type="radio" name="c1" id="c1-1" value="true"><label for="c1-1">True</label>
+  </td><td><input type="radio" name="c1" id="c1-2" value="false"><label for="c1-2">False</label>
+  </td></tr><tr><td>
+  Dolphins do not have a sense of smell.
+  </td><td><input type="radio" name="c2" id="c2-1" value="true"><label for="c2-1">True</label>
+  </td><td><input type="radio" name="c2" id="c2-2" value="false"><label for="c2-2">False</label>
+  </td></tr><tr><td>
+  Dolphins are always solitary animals.
+  </td><td><input type="radio" name="c3" id="c3-1" value="true"><label for="c3-1">True</label>
+  </td><td><input type="radio" name="c3" id="c3-2" value="false"><label for="c3-2">False</label>
+  </td></tr><tr><td>
+  Dolphins feed on seaweed.
+  </td><td><input type="radio" name="c4" id="c4-1" value="true"><label for="c4-1">True</label>
+  </td><td><input type="radio" name="c4" id="c4-2" value="false"><label for="c4-2">False</label>
+  </td></tr><tr><td>
+  An orca is much larger than the average person.
+  </td><td><input type="radio" name="c5" id="c5-1" value="true"><label for="c5-1">True</label>
+  </td><td><input type="radio" name="c5" id="c5-2" value="false"><label for="c5-2">False</label>
+  </td></tr><tr><td>
+  Orcas are mammals.  
+  </td><td><input type="radio" name="c6" id="c6-1" value="true"><label for="c6-1">True</label>
+  </td><td><input type="radio" name="c6" id="c6-2" value="false"><label for="c6-2">False</label>
+  </td></tr></table>
+  <hr/>
+  <p>Please review your answers, when you are finished, please click the <strong>Submit</strong> button below.</p>
+  <input type="hidden" name="form" value="f0"/>
+  <input type="submit" name="submit" value="Submit"/>
+  <hr/>
+  <p>This research is conducted by a researcher who is a member of Drexel University.</p>
+</form>
+</body>
+</html>

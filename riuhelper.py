@@ -117,6 +117,7 @@ def get_sam_phases(storyname,get_data_from,phases,all_coref_mentions,do_verbs,do
     templates_templates = ''
     template_i = 1000
     expressions_extra_func = 0
+    already_exported_expressions = set()
 
     mentions = []
     discourse = ''
@@ -194,6 +195,9 @@ def get_sam_phases(storyname,get_data_from,phases,all_coref_mentions,do_verbs,do
                 if role=='Hero':
                     current_hero = key
                 if role and ',' not in role:
+                    expression_key = '(role%s %s-m%s)' % (role, storyname, key)
+                    if expression_key in already_exported_expressions: continue
+                    already_exported_expressions.add(expression_key)
                     template_i +=1
                     expressions_roles += '           ((role%s %s-m%s) :name %s-EXTRA%d)\n' % (role,storyname,key,storyname,expression_extra_i)
                     if do_roles=='roleexp':
@@ -206,6 +210,8 @@ def get_sam_phases(storyname,get_data_from,phases,all_coref_mentions,do_verbs,do
 
         substitutions_expressions_=[]
         for start_end, verb_string in remove_overlaps(substitutions_expressions):
+            if verb_string in already_exported_expressions: continue
+            already_exported_expressions.add(verb_string)
             expression_i += 1
             expression_name = '%s-VERB%d' % (storyname,expression_i)
             expressions_verbs += '           ((%s) :name %s)\n' % (verb_string, expression_name)

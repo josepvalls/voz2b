@@ -1,0 +1,1558 @@
+Story	Role	Character Name	Function	Verb	Text																				
+135			alpha	live/lived,family,farm	Once upon a time, a family lived in the countryside in their farm.																				
+			alpha	be/was,son/son/hero,simpleton	Their son was a simpleton.																				
+			A4	steal/stole,witch/witch/villain,sun	One day, a witch stole the sun.																				
+			A4	!grow,crops	The crops wouldn't grow anymore and the family was starving.																				
+			C	chase,son,witch	The son decided to chase the witch.																				
+			F43	give/gave,mother,son/him	Her mother gave him a knitted hat.																				
+			H1	catch/caught,son,witch	The son ran to the faint sunlight and caught the witch.																				
+			H1	fling/flung,witch,son/him	The witch flung rocks at him.																				
+			I1	fling/flung,son/he,witch	He flung the rocks back at the witch and a big one hit her bag.																				
+			K4	come/came,sun	Out of the witch's bag came out the sun.																				
+			return	return/returned,son	With the sun high in the sky, the son returned home.																				
+			Pr4	transform/transformed,witch	The witch transformed into a beautiful lady.																				
+			Pr4	chase/chased,witch/she,son;entice,witch/she,son/him	Then she chased the son and tried to entice him to go with her.																				
+			Rs7	show/showed,hat,son	The magical hat showed the son the witch's true intentions.																				
+			Rs7	escape/escaped,son/he,witch	He escaped the witch and got home safe and sound.																				
+																									
+140			alpha	live/lived,mother live/lived,sons	A poor mother lived in a little house with her two sons.																				
+			alpha	!feed,mother/she,sons	There was famine and she could barely feed her sons.																				
+			epsilon1	walk/walked,snake//villain	One day a hungry snake walked nearby.																				
+			epsilon1	look/looked,snake see/saw,snake,son/younger/sfp	The snake looked through the window and saw the younger son unattended.																				
+			A1	crawl/crawled,snake; take/took,snake,son	The snake crawled in and took the younger son with her.																				
+			B1	see/saw,mother,younger	The mother saw her younger son missing.																				
+			B1	ask/asked,mother/she,older;look,older//hero,younger	She asked her older son to go look for his younger brother.																				
+			C	be/was,older	The older brother was very responsible and agreed.																				
+			depart	leave/left,older/he; go/went,older/he	He left the house and went into the woods.																				
+			D9	meet/met,older/he,snake's wife/wife/villain	In the woods he met the snake's wife.																				
+			D9	ask/asked,wife,older/him	The snake's wife asked him to go into her burrow.																				
+			E9	agree/agreed,older	The older brother agreed.																				
+			E9	turn/turned,wife;strike/struck,older/he,wife/her1;kill/killed,older/he,wife/her2	As soon as the snake's wife turned around he struck her and killed her.																				
+			G6	go/went,older/he	He went into the snake's burrow.																				
+			F7	eat/ate,older/he	Inside he ate the snake's eggs.																				
+			I5	come/came,snake	The snake came out of the deeper part of the burrow.																				
+			I5	see/saw,snake;die/died,snake	The snake saw his eggs missing and died of sadness.																				
+			K4	be/was,older	The older brother now was well fed.																				
+			return	retrieve/retrieved,older/he,younger	He retrieved his younger brother from the deeper part of the burrow.																				
+			return	arrive/arrived,sons/they	They arrived home safely.																				
+			W*	find/found,older,bride	As a strong and healthy man, the older brother quickly found a bride.																				
+																									
+																									
+144			alpha	live/lived,girl//hero,live/lived,brother//villain	A girl lived with her brother.																				
+			a1	!find,brother,bride	Her brother could not find a bride.																				
+			B4	threat/threatened,father,them	Their father threatened to marry them if he would not find a bride.																				
+			C	be/was,girl	The girl was terrified.																				
+			C	decide/decided,girl/she;find,girl/she	She decided to try to find a bride for her brother.																				
+			depart	sneak/sneaked,girl/she	At night she sneaked out of the house.																				
+			F12	find/found,girl/she	She found a little box.																				
+			F12	put,girl/she	She put the little box in her pocket.																				
+			G1	belong,box,witches//tester	The box belong to the forest witches.																				
+			G1	pull/pulled,witches/they,girl	They pulled the girl to their lair up in the trees.																				
+			M	want/wanted,witches,box	The witches wanted the box open.																				
+			N	open/opened,girl,box	With her delicate fingers, the girl opened the box.																				
+			N	come/came,frog	From inside the box came a frog.																				
+			N	put,girl,frog	The girl put the frog in her pocket.																				
+			N	keep/kept,witches,box	The witches kept the box and were very happy.																				
+			T3	give/gave,witches/they,girl	They gave the girl fine vests and jewelry.																				
+			W	come/came,girl;see/saw,prince,girl	When the girl came down a prince saw her.																				
+			W	wed,prince/he,girl/her	He wed her immediately.																				
+			F2	come/came,brother	The girl's brother came to the wedding.																				
+			F2	see/saw,brother/he,frog	He saw the frog in the girl's pocket.																				
+			F*96	kiss/kissed,brother/he,frog;transform/transformed,frog,princess	He kissed the frog and the frog transformed into a princess.																				
+			F*96	marry/married,brother,princess	The brother married the other princess and they all lived happily.																				
+																									
+																									
+100			alpha	live/lived,couple;live/lived,boy/son/hero	An old couple lived in a hut with their adopted son.																				
+			alpha	have/had,boy,bird	The boy had a magical bird that could control the weather.																				
+			alpha	use/used,couple/they,bird	They used the bird's predictions to make it rain on their crops and were always prosperous.																				
+			epsilon1	lean/learned,neighbor//villain,bird	A jealous neighbor learned about the bird.																				
+			eta1	tell/told,neighbor,boy	The neighbor told the boy he needed to borrow the bird.																				
+			theta1	!take,neighbor/him,bird/it	But the boy wouldn't let him take it.																				
+			A_ii	take/took,neighbor,bird;lock/locked,neighbor,bird	The neighbor took the bird and locked it into a cage.																				
+			D1_3	see/saw,mouse//tester	A mouse nearby saw everything.																				
+			D1_3	ask/asked,mouse,boy	Later, the mouse asked the boy for some food.																				
+			E1_3	give/gave,boy,mouse	The kind-hearted boy gave the mouse some nuts.																				
+			F1_vi	!eat/eating,mouse;plant/planted,mouse	Instead of eating the nuts, the mouse planted them and from them a rock sprouted from the ground.																				
+			M	tell/told,mouse,boy	The mouse told the boy that if he could break the rock, he would be able to free his bird.																				
+			N	use/used,boy;break,boy	The boy used his parent's cart to break the rock.																				
+			N	emerge/emerged	From inside the rock a key emerged which opened the bird's cage.																				
+			W	marry/marrying,boy,girl	The boy ended up marrying a girl from the village and they all were happy.																				
+																									
+101			alpha	live/lived,widow	Once upon a time there lived an old widow without any children.																				
+			eta1	tell/told,witch//villain,widow/her	A witch told her she would give her a child if the woman would return the child on his second birthday.																				
+			lambda	agree/agreed,widow/woman;birth,widow/woman,boy//hero	The woman agreed and became pregnant and gave birth to a boy.																				
+			A_11	hide/hid,widow/mother,boy	The eve of the boy's second birthday, the old mother hid the boy underground.																				
+			A_11	come/came,witch;!find,witch,boy	The witch came the next day but could not find the boy.																				
+			A_11	curse/cursed,witch;transform/transformed,witch,boy	The witch cursed the boy and transformed him into a cat.																				
+			B_7	sing,widow/mother,boy/cat	Years passed and everyday the mother would sing to the cat and tell him about his story.																				
+			C	decide/decided,boy/cat	One day the cat decided he could no longer bear his mother's sadness and decided to leave.																				
+			depart	leave/left,boy/cat	The cat left the house and boarded a ship.																				
+			G	return/returned,cat	Years passed and the ship eventually returned to the cat's home town.																				
+			o	go/went,boy/cat;see/saw,boy/cat1,witch/cat2	The cat went back home and saw her mother happy with another cat.																				
+			o	!recognize,widow/mother,boy/him1;lock/locked,widow/mother,boy/him	His mother wouldn't recognize him and locked him out.																				
+			L	be/was,witch/cat	The other cat was the witch's in disguise.																				
+			L	ask/asked,witch,widow/mother;kill,widow/mother,boy/boy	The witch asked the mother to kill the boy.																				
+			M	prove,boy,widow/mother	The boy had to prove to her mother that he was his son.																				
+			N	sing/sang,boy/he,widow/mother	He sang the song her mother used to sing to him.																				
+			Ex	realize/realized,widow/mother	The mother then realized who her son really was.																				
+			U	take/took,widow/she;kill/killed,widow/she,witch	She took a shovel and killed the witch.																				
+			K_8	break/broke;regain/regained,boy	At this moment the spell broke and the boy regained his human form.																				
+			W	be/was,boy/he	He was a good looking lad that had no trouble finding a wife.																				
+																									
+																									
+																									
+108			alpha	live/lived,couple;live/lived,girl/daughter/hero	An old couple lived with their daughter in a farm.																				
+			beta2	die/died,mother	The mother died of illness.																				
+			lambda	marry/married, father/widower,widow/widow/villain	The widower eventually married a widow that had a daughter of her own.																				
+			lambda	be/was,widow/stepmother	The stepmother was always cruel to the poor girl.																				
+			epsilon1	come/came,pirates	One night a group of pirates came to the farm.																				
+			epsilon1	spy/spied,pirates/they/villain	They spied the family through the windows.																				
+			A_1	kidnap/kidnapped,pirates,father;kidnap/kidnapped,pirates,widow/stepmother	Once the family was asleep the pirates kidnapped the father and stepmother.																				
+			depart	!find,girl;!find,sister/stepsister/fh	The next morning, the girl and her stepsister couldn't find their parents.																				
+			depart	decide/decided,they	They decided to go look for them.																				
+			depart	take/took,they	They took separate ways.																				
+			D1_8	find/found,girl,lady//tester	The girl found an old lady.																				
+			D1_8	ask/asked,lady,girl/her	The old lady asked her help her pick apples from the top of an apple tree.																				
+			E1_8	climb/climbed,girl;give/gave,girl,lady	The girl climbed the tree and gave the apples to the old lady.																				
+			return	decide/decided,they/girls	It was getting dark and both girls decided to go back home.																				
+			Pr_7	be/was,girl;see/saw,girl/she,pirates	The girl was still atop the tree when she saw the pirates come back.																				
+			Pr_7	see/saw,pirates,girl/her	The pirates saw her.																				
+			Pr_7	chew/chewing,pirates	One of the pirates had iron teeth and began chewing on the tree.																				
+			Rs_10	jump/jumped,girl	But the girl was very agile and jumped from tree to tree until she arrived home.																				
+			L	surround/surrounded,pirates,they/girls	The pirates surrounded the farm with the two girls inside.																				
+			L	make/made,lady,pirates	But then, the old lady from earlier heard their voices and made the pirates stop.																				
+			L	ask,lady,they/girls	The old lady was partly blind and asked the girls if they had helped her.																				
+			L	jump/jumped,sister/stepsister;tell/told,sister/stepsister,lady	The stepsister, immediately jumped and told the old lady she had helped her.																				
+			Q	implore/implored,girl/lady	The other girl implored the old lady to take her but free her parents.																				
+			Q	smell/smelled,lady,girl	The old lady smelled the apples on the girl.																				
+			Ex	curse/cursed,lady/she,stepsister	She cursed at the stepsister for being a liar.																				
+			T	free/freed,pirates,father	The pirates freed the girl's father.																				
+			U	take/taken,pirates,widow/stepmother; take/taken,pirates,sister/stepsister;	The stepmother and stepsister were taken by the pirates and sold as slaves.																				
+			W	marry/married,girl,captain	The girl was married to a captain and lived a good life at sea.																				
+																									
+																									
+113			alpha		Once upon a time, in a land, far, far away.																				
+			alpha	live/lived,girl//hero	There lived a girl with her baby brother and her mother.																				
+			beta1	go/went,mother	One day, the mother went to the market.																				
+			gamma1	tell/told,mother,girl	The mother told the girl to watch her baby brother.																				
+			delta1	forget/forgot,girl	The girl started playing and soon forgot what her mother had asked her.																				
+			A_1	see/saw,witch//villain,brother//sfp	A nearby witch saw the baby brother unattended and took him away.																				
+			B	come/came,girl;realize/realized,girl	After a while, the girl came back and realized her baby brother was missing.																				
+			C	suspect/suspected,girl,witch	The girl suspected the witch may be behind.																				
+			depart	decide/decided,girl/she;save,girl/she,brother;go/went,girl/she	She decided to go save her brother and went on to the witch's hut.																				
+			depart	make/made,girl/she;wait/waited,girl/she,witch	She made her way in and waited for the witch.																				
+			D1_1	come/came,bear//tester	While waiting, a bear came and knocked on the door.																				
+			D1_1	ask/asked,bear,girl	The bear asked the girl for food.																				
+			E1_1	prepare/prepared,girl;feed/fed,girl/bear	The girl prepared some porridge and fed it to the bear.																				
+			F1	tell/told,bear,girl;fight,bear,witch	The bear told the girl he would fight the witch in return.																				
+			d2_7	come/came,mouse//tester	Then a little mouse came from a little hole in the wall.																				
+			d2_7	ask/asked,mouse,girl	The mouse asked the girl what she was doing there.																				
+			E2_7	tell/told,girl,mouse	The girl told the mouse about her missing baby brother.																				
+			F2_9	tell/told,mouse,girl/her	The mouse told her that a little boy was being kept captive in a cellar under the hut.																				
+			G_4	find/found,girl;meet/met,girl/she,brother	The girl found a trap door leading to the cellar where she met her brother.																				
+			K_1	pull/pulled,girl,brother	The girl pulled her brother from the cellar and escaped.																				
+			return	return/returned,they	They both returned home safe and sound.																				
+																									
+																									
+113			alpha		Once upon a time, in a land, far, far away.																				
+			alpha	live/lived,girl//hero;live/lived,brother//sfp;live/lived,mother	There lived a girl with her baby brother and her mother.																				
+			beta1	go/went,mother	One day, the mother went to the market.																				
+			gamma1	tell/told,mother,girl	The mother told the girl to watch her brother.																				
+			delta1	forget/forgot,girl,mother	The girl started playing and soon forgot what her mother had asked her.																				
+			A1	smell/smelled,witch,brother;take/took,witch,brother/him	A nearby witch smelled the baby brother and took him away.																				
+			depart	leave/left,girl	When the girl could not find her brother home, she became concerned and left looking for him.																				
+			D1	run/ran,girl,tree//tester	The girl ran into a magic apple tree and asked the tree if she had seen her brother.																				
+			D1	ask/asked,tree,girl	The tree asked the girl to eat one of her apples before telling her where her brother was.																				
+			E_1	refuse/refused,girl;!tell/tell,tree,girl	The girl refused to eat an apple and the tree did not tell her.																				
+			G4	follow/followed,girl	The girl continued looking for her brother and eventually followed a little path that led to a wicked little cabin.																				
+			K1	see/saw,girl,brother	The girl saw her brother inside.																				
+			K1	grab/grabbed,girl,brother	The girl grabbed her brother and ran away.																				
+			return	run/running,girl	The girl started running back home.																				
+			Pr1	see/saw,witch,girl	The witch saw the girl running and started chasing after them.																				
+			D7	run/ran,girl,tree;ask/asked,girl,tree	The girl ran into the magic apple tree and asked for help.																				
+			D7	ask/asked,tree,girl	The apple tree asked the girl to eat an apple.																				
+			E7	eat/ate,girl	The girl ate an apple.																				
+			Rs4	hide/hid,tree,girl/her	Then, the apple tree hid her under her branches.																				
+			Rs4	pass/passed,witch;!see/see,witch,girl	The witch passed by and did not see the girl.																				
+				arrive/arrived,girl;arrive/arrived,brother	The girl and her baby brother arrived it home in time before her mother came back from the market.																				
+																									
+																									
+																									
+																									
+																									
+114			alpha	be/was,queen;be/was,boy/son/villain;be/was,girl/daughter/hero	Once upon a time there was a happy queen with a son and a daughter.																				
+			alpha	live/lived,witch//villain	In the kingdom lived a witch that was jealous of their happiness.																				
+			alpha	devide/devised,witch	The witch devised a plan to ruin their family.																				
+			eta1	visit/visited,witch	The witch visited them.																				
+			eta1	give/gave,witch/she,son/prince	She gave the prince a ring and told him that he would be happy as long as he married a girl who the ring would fit.																				
+			A_xvi	!find,boy,bride/girl	Years passed but the boy could not find a girl who the ring would fit.																				
+			A_xvi	see/saw,girl/sister	One day, his sister saw the ring and tried it on.																				
+			A_xvi	!take,girl/she	The ring fit perfectly and she couldn't take it off.																				
+			A_xvi	ask/asked,boy/he,girl/her	He immediately asked her to marry him.																				
+			depart	panic/panicked,girl	The girl panicked and escaped the palace.																				
+			d1_7	walk/walked,girl/she1	She walked though the forest until she reached a lonely hut.																				
+			d1_7	be/was,maiden//tester	Inside there was a maiden.																				
+			d1_7	be/was,maiden	The maiden was the daughter of a witch.																				
+			d1_7	ask/asked,maiden,girl	The maiden was lonely and asked the girl to be friends.																				
+			E1_7	agree/agreed,girl	The girl agreed.																				
+			F1_2	talk/talked,they	They talked for hours.																				
+			D2_8	ask/asked,maiden,girl	The next day the maiden asked the girl for help braiding a handkerchief.																				
+			E2_8	agree/agreed,girl	The girl agreed.																				
+			E2_8	bride/braided,they	Together they braided a beautiful handkerchief.																				
+			F2_8	ask/asked,maiden,girl	The maiden asked the girl to keep it as a token of their friendship.																				
+			return	return,girl;face,girl	The girl was ready to return home and face her fate.																				
+			Pr_1	appear/appeared,witch	Then the witch appeared from the sky.																				
+			Pr_1	smell/smelled,witch,girl	The witch smelled the girl and wanted to eat her.																				
+			Rs_4	hide/hid,maiden,girl	The maiden hid the girl from the witch.																				
+			Rs_4	!find,witch,girl/her;escape/escaped,girl	When she couldn't find her, the witch left and the girl escaped safely.																				
+			Q	arrive/arrived,girl;find/found,girl,boy/brother;sob/sobbing,boy/brother	The girl arrived home and found her brother sobbing in her absence.																				
+			Q	apologize/apologized,boy/brother,girl/her	Her brother apologized to her for his behavior.																				
+			W	marry/married,they/both	Eventually both the brother and sister married royalty from neighboring kingdoms and were happy ever after.																				
+																									
+																									
+127			alpha	live/lived,merchant;live/lived,girl/daughter	Once there lived a rich merchant with a beautiful daughter.																				
+			alpha	send/sent,girl/daughter;marry,girl/daughter,prince	The merchant sent her daughter to marry the kingdom's prince.																				
+			alpha	part/parted,girl/daughter;part/parted,maidservant//villain	The daughter parted with a maidservant.																				
+			A_6	be/was,maidservant	The maidservant was jealous.																				
+			A_6	steal/stole,maidservant,girl/daughter;leave/left,maidservant,girl/her	The maidservant stole the merchant's daughter clothes and left her to be eaten by the wolves.																				
+			o	arrive/arrived,maidservant	The maidservant arrived to the palace and met with the prince.																				
+			o	be/was,prince;marry/married,prince,maidservant/her	The prince was confused because of the lack of manners of the maidservant but married her anyway.																				
+			F1_3	find/found,fairy//tester,girl/daughter;give/gave,fairy,maidservant/her	Meanwhile, a fairy found the merchant's daughter, took pity on her and gave her a pair of magic eyes.																				
+			o	go/went,girl;!let,guards,girl/her	The girl went to the palace the guards wouldn't let her in.																				
+			H_1	lean/learned,maidservant,girl/daughter;be/was,maidservant	When the maidservant learned about the merchant's daughter still being alive was furious.																				
+			H_1	ask/asked,maidservant/she,prince;kill,prince,girl/daughter	She asked the prince to go to the palace's doors and kill the merchant's daughter.																				
+			J_1	give/gave,girl/daughter,prince	The merchant's daughter gave the magic eyes to the prince.																				
+			I_1	see/saw,prince,maidservant	The prince saw the maidservant through the magic eyes.																				
+			Ex	see/saw,prince/he,maidservant/she	He saw the horrible creature that she was in the inside.																				
+			K_3	order/ordered,prince,maidservant	The prince ordered the maidservant to be expelled from the palace.																				
+			Pr_6	enrage/enraged,maidservant;chase/chased,maidservant,girl/daughter;kill,maidservant,girl/her	The maidservant enraged and chased the merchant's daughter to kill her.																				
+			Pr_6	corner/cornered,maidservant,girl/daughter	The maidservant cornered the merchant's daughter at the edge of a cliff.																				
+			Rs_6	convert/converted,fairy,girl/daughter;escape/escaped,girl/she	The fairy converted the merchant's daughter into a dove and she escaped.																				
+			Rs_6	fall/fell,maidservant;die/died,maidservant	The maidservant fell off the cliff and died.																				
+			T_2	fly/flow,girl/dove;convert/converted,girl/dove,girl	The dove flow back to the palace where she converted into a beautiful girl again.																				
+			W	marry/married,prince,girl/her	The prince married her and they lived happily the rest of their lives.																				
+																									
+131			alpha	be/was,dragon//villain	In a kingdom far away there was a town terrified by a dragon.																				
+			A_1	kidnap/kidnapped,dragon,princess//sfp	One day the dragon kidnapped the princess.																				
+			B	issue/issued,king	The king issued a call for help.																				
+			B	respond/responded,soldier//hero	A humble soldier responded to the call.																				
+			C	tell/told,king,soldier;make,king,soldier/him;rescue,soldier/he2,princess	The king told the soldier he would make him a nobleman is he could rescue the princess.																				
+			depart	agree/agreed,soldier,depart/departed,soldier	The soldier agreed and departed.																				
+			H_1	reach/reached,soldier,dragon	After a few days, the soldier reached the den of the dragon.																				
+			H_1	ambush/ambushed,dragon,soldier/him;be/was,soldier	The dragon ambushed him but the soldier was faster than him.																				
+			I_1	see/saw,dragon;ask/asked,dragon,soldier	The dragon saw he could not win and asked the soldier for forgiveness.																				
+			I_1	order/ordered,soldier,dragon	The soldier ordered the dragon to leave and never come back.																				
+			K_4	find/found,soldier/he,princess;rescue/rescued,soldier/he,princess/her	He found the princess and rescued her.																				
+			return	return/returned,they	They returned to the palace.																				
+			w_0	marry/married,soldier,princess;live/lived,they	The soldier married the princess and they lived a happy and peaceful life.																				
+																									
+145			alpha	be/was,soldier//hero	Once upon a time, there was a soldier at the orders of certain king.																				
+			alpha	have/had,soldier;be/was,soldier	The soldier had many abilities and was always loyal.																				
+			a_1	!find,king,bride//sfp	The king could not find a bride.																				
+			B_2	command/commanded,soldier;kidnap,soldier,bride/princess	The king commanded the soldier to go kidnap a princess for him to marry.																				
+			C	accept/accepted,soldier;prepare/prepared,soldier	The soldier accepted the king's orders and prepared to leave.																				
+			depart	take/took,soldier/he,soldiers	He took a small company of soldiers and embarked on their journey.																				
+			F1_3	hit	After several days at sea, a terrible storm hit the ship.																				
+			F1_3	stand/stood,soldier	The soldier stood firm at as the captain's post not matter what.																				
+			G_1	lift;fly/flew,soldier	The ship was lifted from the sea and the soldier flew to a new kingdom.																				
+			K_2	be/was,castle;lock/locked,,bride/maiden	There was a castle by a cliff where a maiden had been locked.																				
+			K_2	rescue/rescued,soldier,bride/maiden	The soldier rescued the maiden from the castle.																				
+			return	board/boarded,they	They boarded the ship and returned home.																				
+			W	marry/married,king,bride/maiden	The king married the maiden.																				
+			W	make/made,king,soldier;marry/married,soldier,lady	The soldier was made a noble man by the king and married another lady in the court.																				
+																									
+																									
+148			alpha	be/was,dragon//villain;terrorize/terrorized,dragon	There was once a dragon that terrorized a little kingdom.																				
+			alpha	kidnap,dragon,maidens	The dragon would kidnap the town's maidens.																				
+			epsilon2	have/had,king;rescue/rescued,tanner//hero,princes/daughter/sfp	One night the king had a dream where a tanner rescued his daughter from the dragon.																				
+			A_1	kidnap,dragon,princess	The next day, the princess had been kidnapped by the dragon.																				
+			B_4	approach/approached,king,tanner	The king approached the tanner and asked him to rescue his daughter.																				
+			C	concede/conceded,tanner;fight,tanner,dragon	Eventually the tanner conceded and prepared to go fight the dragon.																				
+			depart	take/took,tanner/he;part/parted,tanner/he;seek,tanner/he,dragon	He took a big mace and parted to seek the dragon.																				
+			H_1	find/found,tanner/he,dragon;fling/flung,tanner/he2,dragon/him	When he found the dragon he flung his mace at him.																				
+			I_1	die/died,dragon	The dragon died instantly.																				
+			K_4	rescue/rescued,tanner,princess	The tanner rescued the princess.																				
+			return	come/came,they	They both came back to the palace.																				
+			W	offer/offered,king,tanner	The king offered the princess to the tanner in marriage.																				
+			W	refuse/refused,tanner;go/went,tanner	But the tanner refused and went back to his old life.																				
+																									
+																									
+149			alpha	arrive/arrived,father//hero;arrive/arrived,kid/child	A roaming gypsy caravan with a father and his blind child arrived at an isolated village.																				
+			alpha	be/was,giant//villain;terrorize/terrorizing,giant,folks	There was a giant who had been terrorizing the village's folks.																				
+			A_17	threat/threatened,giant,folks/child	The giant threatened to eat every single child if his demands were not met.																				
+			B_4	meet/met,gypsy,man	The gypsy met an old man.																				
+			B_4	tell/told,man,gypsy/him	The old man told him all about the giant.																				
+			C	tell/told,gypsy,man	The gypsy told the old man he would take care of the giant.																				
+			depart	grab/grabbed,gypsy/he;go/went,gypsy/he;meet,gypsy/he,giant	He grabbed a piece of soft cheese and went to meet the giant.																				
+			H_2	trick/tricked,gypsy,giant	The gypsy tricked the giant into a contest to see who was stronger.																				
+			H_2	smash/smashed,giant	The giant smashed a rock with his hands.																				
+			I_2	take/took,gypsy	The gypsy took the cheese and told the giant it was a rock.																				
+			I_2	crumble/crumbled,gypsy	The gypsy crumbled the cheese with a single hand.																				
+			K_4	see/saw,giant,gypsy	When the giant saw that he became scared of the gypsy.																				
+			K_4	flee/fled,giant	The giant fled the village and never returned.																				
+			w_0	thank/thanked,,gypsy;settle/settled,gypsy	The gypsy was thanked and settled in the village.																				
+																									
+151			alpha	live/lived,laborer//hero	A poor laborer lived in a small town.																				
+			a_5	ruin/ruined,,crops	His master's crops had been ruined and there was no work for him.																				
+			B_4	tell/told,master,laborer/him	Eventually his master told him he had to let him go.																				
+			C	be/was,laborer	The laborer was very understanding.																				
+			depart	leave/left,laborer/he	He left the small town and headed to the city.																				
+			H_2	run/ran,laborer/he,bull//villain	On the way there he ran into the bull that had been ruining all the crops.																				
+			H_2	challenge/challenged,bull,laborer/him	The bull challenged him to a race.																				
+			H_2	agree/agreed,laborer;storm/stormed,bull	The laborer agreed and the bull stormed out.																				
+			I_2	know/knew,laborer;take/took,laborer	The laborer knew the land really well and instead of following the path he took a shortcut.																				
+			I_2	arrive/arrived,bull;be/was,laborer	When the bull arrived at the goal, the laborer was already there waiting for him.																				
+			K_1	promise/promised,bull	Ashamed, the bull promised to stop running and ruining the crops.																				
+			K_1	be/was,laborer;find,laborer	The laborer was able to find work in no time and was prosperous.																				
+																									
+152			alpha	kidnap/kidnapped,bear//villain,woman	A woman was once kidnapped by a bear.																				
+			alpha	birth,woman,bearlet//hero	The woman gave birth to a bearlet who was half-boy and half-bear.																				
+			alpha	escape,woman;take/took,woman,bearlet/boy	Eventually, the woman was able to escape and took the boy with her.																				
+			A_9	get/got,they;!accept,husband//villain,woman	When they got back home, the woman's husband could not accept the bearlet.																				
+			A_9	have/had,husband/he	He had a plan to get rid of the bearlet.																				
+			A_9	tell/told,husband/he,bearlet;rid,bearlet/he3,spirit//villain	He told the bearlet that he would only let him stay if he got rid of the water spirits in the lake.																				
+			depart	leave/left,bearlet	The bearlet left not knowing what to do.																				
+			H_2	sob/sobbing,bearlet/he;come/came,spirit	He was sobbing loudly next to a lake when a water spirit came out of the lake.																				
+			H_2	challenge/challenged,spirit,bearlet/him	The water spirit challenged him to see who could scream the loudest.																				
+			H_2	take/took,bearlet;take/took,spirit	The bearlet and the water spirit took turns yelling and screaming.																				
+			I_2	ask/asked,bearlet,spirit	The bearlet asked the water spirit to close his eyes.																				
+			I_2	smack/smacked,bearlet,spirit/head	Then, the bearlet smacked his head with a stick.																				
+			I_2	think/thought,spirit;shake/shaken,bearlet,spirit/head	The water spirit thought that the bearlet's scream had shaken his head and gave up.																				
+			K_1	concede/conceded,spirit,bearlet;go/went,spirit;live,spirit	The water spirit conceded to the bearlet and went to live to another lake.																				
+			return	come/came,bearlet;be/was,woman/mother	The bearlet came back home and his mother was very happy to see him again.																				
+																									
+153			alpha	give/given,,soldier//hero	A soldier was given leave from his company.																				
+			alpha	have/had,soldier/he	He had only a piece of bread, a knapsack and a fiddle.																				
+			alpha	be/was,soldier/he	He was happy and left playing the fiddle.																				
+			epsilon1	hear/heard,devil//villain	A nearby devil heard the fiddle.																				
+			epsilon1	approach/approached,devil,soldier;ask/asked,devil,soldier/him	The devil approached the soldier and asked him to teach him how to play in exchange for a favor.																				
+			theta1	teach/taught,soldier,devil;!ask,soldier,devil/devil2	The soldier taught the devil how to play but did not ask the devil for any favors.																				
+			theta1	part/parted,they	They parted ways.																				
+			A_18	torment/tormenting,devil,princess//sfp	After some time, the devil was tormenting the princess of the kingdom.																				
+			A_18	issue/issued,king	The king issued a call asking for help.																				
+			C	answer/answered,soldier;interview/interviewed,soldier,king	The soldier answered the call and interviewed with the king.																				
+			C	assure/assured,soldier/he,king;free,soldier/he,princess	He assured the king he would be able to free the princess from her torments.																				
+			H_3	stand/stood,soldier	That night, the soldier stood awake in front of the princess' room.																				
+			H_3	appear/appeared,devil	At midnight the devil appeared.																				
+			H_3	call/calling;ask/asked,soldier/devil;play,devil	Calling for the due favor, the soldier asked the devil to play a game of cards.																				
+			I_3	best/bested,soldier,devil;play,they	The soldier bested the devil at all the games of cards they played that night.																				
+			U	come/came,sun;tell/told,soldier,devil	When the sun came out, the soldier told the devil to hide in his knapsack.																				
+			U	beat,soldier;kill/killed,soldier,devil	Then, the soldier beat the knapsack and killed the devil inside.																				
+			wtransX	relieve/relieved,princess	The princess was relieved and her father thankful.																				
+			wtransX	marry/married,soldier,princess	The soldier married the princess and lived happy in the castle.																				
+																									
+154			alpha	desert/deserted,soldier//hero	Once upon a time, a soldier deserted from his company.																				
+			alpha	have/had,soldier/he	He had only a piece of bread, a knapsack and a fiddle.																				
+			Dpre	get/got,soldier;stumble/stumbled,soldier,devil//villain	One night, the fugitive soldier got lost and stumbled into a devil.																				
+			Epre_7	approach/approached,devil,soldier;ask/asked,devil,soldier	The devil approached the soldier and asked him to teach him how to play the fiddle.																				
+			Fpre_9	teach/taught,soldier,devil	The soldier taught the devil how to play.																				
+			Fpre_9	tell/told,devil,soldier	In exchange, the devil told the soldier how to talk to the Grim Reaper.																				
+			A_18	pass/passed;find/found,soldier;serve/serving,soldier,king	Time passed and the soldier found himself serving another king.																				
+			A_18	be/been,princess/daughter/sfp	The king's daughter had been cursed and was very ill.																				
+			C	go/went,soldier,king;help,soldier,princess	The soldier went to the king and asked for a chance to help the princess.																				
+			F1_1	take/took,soldier/he	He took with him a deck of cards that had been rigged.																				
+			H_3	see/saw,soldier/he,reaper;enter,reaper,princess	At night, he saw the Grim Reaper enter the princess' room.																				
+			H_3	challenge/challenged,soldier/he,reaper/him	He challenged him to a game of cards.																				
+			I_3	win/won,soldier;ask/asked,soldier,reaper;leave,reaper,princess	The soldier won the game and asked the Grim Reaper to leave the princess alone as his reward.																				
+			K_4	lift/lifted,princess;be/was,princess	The curse was lifted and the princess was healthy again.																				
+			W	be/was,king;marry/married,princess/daughter,soldier;make/made,king,soldier	The king was so happy that he married his daughter to the soldier and made him a nobleman.																				
+																									
+163			alpha	live/lived,peasant//hero	There once lived a poor and unlucky peasant.																				
+			a_1	!marry/married,peasant/he	He never married and was very lonely.																				
+			B	come/came,fox//tester,peasant/him	A fox came to him one day and told him that he could marry him to the princess.																				
+			C	be/was,peasant;trust/trusted,peasant,fox	The peasant was reluctant but then trusted the fox.																				
+			depart	leave/left,they;live/lived,peasant;head/headed,they	They left the hole where the peasant lived and headed to the palace.																				
+			G_3	follow/followed,peasant,fox	The peasant followed the fox though a swamp.																				
+			I_5	emerge/emerged,they	They emerged from the swamp covered in mud.																				
+			I_5	be/was,spirit//villain	A nearby water spirit was so scared when they saw them that died instantly.																				
+			T_4	tell/told,fox,peasant	When they reached the palace, the fox told the peasant to get rid of his filthy clothes.																				
+			T_4	tell/told,fox,king	Then, the fox told the king that the peasant was a prince and that his clothes had been lost fighting the water spirit.																				
+			T_4	be/was,king;give/gave,king,peasant	The king was impressed by their feat and gave the peasant new clothes and jewelry.																				
+			W	marry/married,peasant,princess	Then the peasant married the princess and became a prince.																				
+			return	return/returned,fox	Satisfied with her deed, the fox returned home.																				
+																									
+247			alpha	live/lived,family;live/lived,son//hero	A long time ago, near the capital city, lived a family with their son.																				
+			alpha	terrorize/terrorized,dragon//villain	A dragon terrorized the region.																				
+			eta	want/wanted,dragon	The dragon wanted to take over the family's lands.																				
+			beta	go/went,family/parents	One day the parents went to the market.																				
+			A	set,dragon;escape,son/boy	The dragon set their house on fire but the boy was able to escape.																				
+			depart	want/wanted,son/he;get/got,son/he	He wanted revenge and ran after the dragon but got lost.																				
+			G	see/saw,fireflies//tester,son/boy;show,fireflies,son/him	The fireflies saw the courage of the boy and decided to show him the way to the dragon's den.																				
+			H	fight/fought,dragon,son/boy	The dragon and the boy fought for a long time.																				
+			I	!see,dragon,son/boy;strike/struck,son/he,dragon/him;kill,son/he,dragon/him2	The dragon couldn't see the boy in the darkness and he managed to struck him in the head and kill him.																				
+			W	learn/learned,king,son/boy;marry/married,king/he,son/him	When the king learned about the feat of the boy he married him to his daughter.																				
+			return	return/returned,son/boy;return/returned,bride	The boy and his bride returned to his family's lands.																				
+			Q	lament/lamenting,family/parents	His parents were lamenting his death but were overjoyed to see him alive.																				
+			Q	rebuild/rebuilt;live/lived	With their newfound wealth, they rebuilt their house and lived happily.																				
+																									
+557			alpha		In a land far away, there lived a rich family with a single spoilt daughter.																				
+			beta		One day, the parents to work.																				
+			a		The girl became hungry and decided to go find some food.																				
+			D		She went out in the forest and ran into a magic apple tree.																				
+			D		There were candied apples in the top of the tree but the girl couldn't reach.																				
+			D		The apple tree asked the girl to eat some of its green apples and then it would give her a candy apple.																				
+			E		The girl rejected the green apples.																				
+			F		The apple tree did not give her candied apples.																				
+			D		Further down the path she found a river of pudding.																				
+			D		The river asked her to eat some porridge and then it would hive her some pudding.																				
+			E		The girl refused to eat any porridge.																				
+			F		The river of pudding did not give her any pudding.																				
+			D		At the darkest part of the forest the girl found a house made of bread.																				
+			D		She asked for some gingerbread but the house told her she'd need to eat some rye bread first.																				
+			E		The girl said that she wouldn't eat any rye bread.																				
+			F		The house did not give her any gingerbread.																				
+			Pr		All of a sudden, Baba Yaga broke out of the house and started chasing the girl.																				
+			D		The house told her to eat some rye bread.																				
+			Rs		The girl ate some rye bread and started running faster than the witch.																				
+			D		She came into the river of pudding and the river of pudding told her to eat some porridge.																				
+			Rs		Then the girl ate some porridge and started leaping from tree to tree.																				
+			D		Eventually she came into the apple tree and the apple tree told her to eat a green apple.																				
+			Rs		Then the girl ate some green apples and the apple tree hid her from the witch.																				
+			return		When the witch was gone she was able to arrive home just in time before her parents came back from work.																				
+																									
+																									
+95			alpha		An old widower lived with his daughter in a farm.																				
+			lambda		The widower eventually married another woman who had a daughter of her own.																				
+			A9		The stepmother and stepdaughter despised the girl.																				
+			A9		They asked her father to get rid of her.																				
+			B5		The father took the girl to the forest and left her there to die.																				
+			D2		A goblin saw the girl and asked her how she was doing.																				
+			E1		The girl was kind to the goblin and they talked all night long.																				
+			f1		The goblin thanked the girl for their conversation.																				
+			f1		As a token of appreciation, he gave her new clothes and jewelry.																				
+			return		The next morning, the father went back to the forest to retrieve the girl's corpse.																				
+			return		He was very happy to see his daughter still alive and they went back to the farm.																				
+			gamma		When the stepmother saw the clothes and jewelry she got very excited.																				
+			delta		She asked her husband to take her own daughter to the forest.																				
+			B5		The husband took his stepdaughter to the forest and left her in the same spot.																				
+			D2		The goblin saw the girl and approached her.																				
+			E_1		The girl was repulsed by the goblin and was mean to him.																				
+			U		The goblin killed the girl as punishment.																				
+			return		The next morning, the father went back to the forest to retrieve the girl.																				
+			return		He went back home with her corpse.																				
+			W		When the mother saw her dead daughter she died of sadness herself.																				
+			W		The girl and her father lived happily and she eventually married a good lad from a nearby farm.																				
+																									
+																									
+101			alpha		Once upon a time there lived couple with their daughter.																				
+			beta2		The mother died.																				
+			beta2		Eventually, the father married an old widow who had a daughter of her own.																				
+			lambda		The woman's daughter was jealous of her stepsister's beauty.																				
+			lambda		She wanted to learn her secret.																				
+			epsilon1		The woman's daughter followed the girl everyday.																				
+			zeta1		She learned that she drank the milk of a magic cow to keep beautiful.																				
+			zeta1		She plotted to steal the cow's milk all for herself.																				
+			gamma2		The magic cow knew about the stepsister's plan and asked the girl to kill her and bury her.																				
+			delta2		The girl did as the cow asked her.																				
+			A11		From the remains of the cow grew a beautiful apple tree.																				
+			B7		The girl sang every day by the apple tree remembering her magic cow.																				
+			C		The tree would some times sing back and the girl was happy.																				
+			o		One day a prince walked by and saw the apple tree.																				
+			L		The girl's stepsister introduced herself as the maid of the house.																				
+			M10		The prince asked for an apple from the apple tree.																				
+			N12_		The stepsister was not able to reach any apples.																				
+			K8		When the girl tried to reach one, the branches bent down for her to grab an apple.																				
+			Ex4		Then the apple tree sang about the jealous stepsister.																				
+			U		When the prince heard the song commanded the stepsister to be executed.																				
+			W		He then married the girl and they lived happily ever after.																				
+																									
+																									
+143			alpha		There once lived a priest with his son.																				
+			alpha		The boy was very strong and all the other children were afraid of him.																				
+			gamma1		The villagers asked the priest to keep his son away from their families.																				
+			delta2		The priest kept the boy locked in a room.																				
+			A3		One day, a bull came to town.																				
+			A3		The bull ate the town's crops and ruined their fields.																				
+			C		The boy heard the villagers complaining and wanted to help them.																				
+			depart		He escaped his room and went to the fields.																				
+			F1		His strength was with him.																				
+			H1		He found the bull in the fields.																				
+			H1		The boy and the bull engaged in a fight.																				
+			I1		The boy was able to eventually overcome the bull's strength.																				
+			K7		The bull then became docile.																				
+			K7		The boy tied a rope to the bull's neck and led it back to the village.																				
+			return		When he arrived, the villagers were overjoyed that the bull had been captured.																				
+			return		They used the bull and the boy's strengths to mend the fields and were prosperous.																				
+																									
+																									
+131*			alpha		Once upon a time there was a king who had three daughters.																				
+			beta2		Their mother died at childbirth.																				
+			delta1		The father, zealous of his daughters locked them in a tower of the palace.																				
+			delta1		One day, the girls escaped and ventured into one of the palace's gardens.																				
+			A1		A dragon with three heads saw them and kidnapped them.																				
+			B1		The king issued a call to all the knights of the kingdom.																				
+			C		Three heroes offered themselves to rescue the princesses.																				
+			depart		They got weapons and armor and departed to encounter the dragon.																				
+			H1		Each knight battled one head of the dragon.																				
+			I1		Each knight succeeded and cut a dragon's head.																				
+			K4		They rescued the princesses from the dragon's den.																				
+			return		And returned home to a happy father.																				
+			wo		The king rewarded them with riches and made them noblemen.																				
+																									
+247*			alpha		In a faraway land lived a family with their son.																				
+			eta3		The son could understand the language of the birds.																				
+			eta3		A nightingale told the boy that one day his parents would be at his feet.																				
+			eta3		When the boy told their parents, the father became enraged.																				
+			A10		The father expelled the son from home.																				
+			depart		The son and the nightingale took off.																				
+			G2		They boarded a ship to a foreign kingdom.																				
+			M		In that kingdom lived a king.																				
+			M		The king was annoyed because a family of crows would not stop cawing.																				
+			N		The boy went to the king and offered to translate for him.																				
+			N		The crows wanted the king to resolve a family dispute.																				
+			N		The king resolved it and the boy translated it to the crows.																				
+			W*		When the crows left the king was very happy.																				
+			W*		The king married his daughter to the boy and made him a prince.																				
+			return		The newlyweds went on their honeymoon.																				
+			return		By chance, they visited the city of the boy's family.																				
+			Q4		There, they were received as royalty and all the people bowed to them.																				
+			Q4		The boy recognized his parents and the nightingale's prophecy was fulfilled.																				
+			Q4		The boy forgave his parents and they all lived happily ever after.																				
+																									
+244*			alpha		An old man lived with his wife, his older daughter and younger son.																				
+			beta3		The daughter was jealous of all the attention her younger brother always received.																				
+			beta3		One day she went to the forest to pick up berries.																				
+			gamma2		Her mother asked her to take her brother with her.																				
+			eta3		When they were in the forest, the girl asked her brother to lie down on the ground.																				
+			theta1		The boy did as his sister told him.																				
+			A14		Then the girl stabbed him and buried him.																				
+			Fvi		From the ground where the boy was buried a little shrub soon sprouted.																				
+			Fvi		A shepherd ran into the shrub, cut it and made a flute out of it.																				
+			B7		When he played the flute it sang a song.																				
+			B7		The flute told the shepherd to go to the old man's house.																				
+			Ex4		When the shepherd played the flute there, the flute sang about the daughter's murder.																				
+			U		The old man expelled his daughter as punishment.																				
+																									
+133*			alpha		A family with a son and a daughter lived in a faraway land.																				
+			beta1		One day the parents sent the son to work their fields.																				
+			gamma2		The brother asked his sister to bring him lunch later.																				
+			gamma2		He told her to follow the trail with his footprints.																				
+			zeta1		A witch overheard the conversation.																				
+			eta3		The witch then erased the brother's footprints and put her own on a path to her hut.																				
+			delta2		Later that day, when lunch was ready, the girl's mother asked her to bring it to her brother.																				
+			theta3		The girl left and followed the path with the footprints and got to the witch's hut.																				
+			A1		The witch grabbed the girl and locked her in the basement.																				
+			C		The brother came back hungry and asked about his sister.																				
+			depart		He became concerned and went looking for her.																				
+			D1		On his way, he found a merchant.																				
+			D1		The merchant promised him money if he ate a frog.																				
+			E_1		The brother declined.																				
+			F_		When the merchant left, the frog thanked the brother and befriended him.																				
+			B4		The brother told the frog about his missing sister.																				
+			C		The frog told him where to find the witch's hut.																				
+			K3		When they arrived, the frog lured the witch outside and the brother was able to sneak in and rescue his sister.																				
+			return		They returned home safe and sound.																				
+																									
+																									
+xxx			alpha		A poor traveling gypsy and his son got lost in the woods.																				
+			alpha		Late at night they found a tower and asked for help.																				
+			alpha		A little frog let them in.																				
+			gamma1		The frog told them that they could stay the night but asked them not to go upstairs.																				
+			delta1		In the middle of the night, they heard noise upstairs and went to check it out.																				
+			eta2		There was a witch.																				
+			eta2		She converted the father into a lizard.																				
+			A8		The witch told the little boy that if he wanted to see his father again, he'd need to steal her hat.																				
+			C		The boy agreed but the witch was too fast and he couldn't get her hat.																				
+			D4		That night, the frog told the boy she was also a prisoner.																				
+			D4		She asked the boy to take her with him.																				
+			J2		The boy agreed and the frog gave the boy a magic ring that would turn him invisible.																				
+			K7		With the magic ring, the boy walked to the witch and stole her hat.																				
+			w1		The witch then restored the boy's father and transformed the frog into a beautiful princess.																				
+			w1		The boy and the princess got married and all lived happy in the palace.																				
+																									
+																									
+yyy			alpha		The once lived a very poor family.																				
+			a5		The parents didn't even have food to sustain their two sons.																				
+			tfa		The mother sang about having to abandon their children.																				
+			depart		The kids, heard her mother's song and decided to leave themselves.																				
+			D9		When they were in the woods they ran into a boar that attacked them.																				
+			E9		The boys worked together to fend it off.																				
+			J1		The boar left deep scars on the boys but they survived.																				
+			o		They eventually made it to a nearby town.																				
+			o		There was a young man telling everyone that the boar that ruined the crops was gone.																				
+			L		A nearby knight took credit for defeating the boar.																				
+			Ex1		The boys challenged the knight.																				
+			Ex1		They show their scars and everybody believed them.																				
+			U		The knight was discharged without honor for taking credit for the boy's work.																				
+			wo		The boys were paid a handsome reward and were able to go back home and support their parents.																				
+																									
+																									
+																									
+																									
+1			alpha		Once upon a time, a family lived in an isolated mountain.																				
+			alpha		They had a son and a daughter.																				
+			A15		The father kept his daughter locked in a room.																				
+			B1		The daughter was very miserable and cried day and night.																				
+			C		The son decided he had to free his sister.																				
+			F5		One day, the son found the spare key to his sister's room.																				
+			H5		His father surprised him as he was opening the door.																				
+			H5		He told him, he'd let him free his sister if he'd win a game of cards with him.																				
+			I3		The boy was very skilled at card games and won.																				
+			K10		The boy rescued his sister and left.																				
+			Pr5		The father was enraged and chased after them.																				
+			Pr5		He was so mad that he wanted to eat them both.																				
+			Rs8		The mother saw what was going on.																				
+			Rs8		He tripped her husband and he fell down the mountain and died.																				
+																									
+1			alpha		A single mother had a baby girl.																				
+			alpha		One day she went to the market and took her baby girl with her.																				
+			zeta1		An older widow saw the baby and wanted to take her for herself.																				
+			eta1		The widow offered to babysit for the single mother while she was shopping.																				
+			theta3		The mother was very busy and agreed.																				
+			A1		The widow took the baby girl with her and ran away.																				
+			B7		When the mother couldn't find her baby started singing for her.																				
+			D2		A nearby witch heard the song.																				
+			E7		The witch offered help the mother find her baby.																				
+			J2		The witch gave the mother a melon and told her to treat it as her baby.																				
+			J2		Then the melon would point in the right direction to find her baby.																				
+			J2		The mother did and the melon pointed towards a food stand.																				
+			H4		There, the mother found the widow and confronted her.																				
+			H4		The widow claimed the baby was hers.																				
+			H4		To prove, a passerby suggested the two women should guess the baby's weight in a set of nearby scales.																				
+			I4		The widow tried to balance the scales but she couldn't.																				
+			I4		The mother then, placed the melon in one of the scales and the baby in the other and they balanced perfectly.																				
+			Q3		Everybody then recognized the mother and gave the baby to her.																				
+			U		The widow was expelled from town and never seen again.																				
+																									
+																									
+																									
+																									
+																									
+1			alpha		A girl lived with her parents.																				
+			a4		She was beautiful but could not find a suitable husband.																				
+			B5		Her parents banished her from home until she could find a husband.																				
+			G2		She walked for a very long time.																				
+			D7		She ran into a poor boy who had no shoes.																				
+			E7		She gave her shoes to him.																				
+			f9		The boy told her he was very grateful.																				
+			J1		She walked until her feet bled.																				
+			o		She eventually reached a new kingdom.																				
+			M9		The people of the kingdom ordered her to walk over hot coals.																				
+			N9		Her feet were numb.																				
+			N9		So she walked over the coals.																				
+			Q1		The little boy saw the girl.																				
+			Q1		He went to fetch the prince of the kingdom and asked for his help.																				
+			T3		The prince saw how the girl has been mistreated.																				
+			T3		He gave the girl new garments and he fell in love with her kindness.																				
+			W#*		The prince married her and they lived happily.																				
+																									
+																									
+																									
+																									
+																									
+																									
+1			alpha		A girl lived with her parents.																				
+			beta2		The parents died of old age.																				
+			a5		The girl was poor and hungry.																				
+			depart		She packed her last loaf of bread and left.																				
+			D1_3		Once in the forest, she ran into a mouse.																				
+			D1_3		The mouse asked for some food.																				
+			E1_3		She shared her last piece of bread with him.																				
+			F9		The mouse was grateful.																				
+			F9		The mouse told the girl he would help her when needed.																				
+			M11		Later, the girl found work in a nearby market.																				
+			M11		Her job was to separate little rocks from grains.																				
+			N12		She was very skilled and the mouse would come help her every night.																				
+			W		The girl ended up marrying a boy from the village and they all were happy.																				
+																									
+1			alpha		A girl lived with her father and stepmother.																				
+			A15		One day, the stepmother locked the girl in her room																				
+			A15		The girl was forced to work sorting grain.																				
+			B7		The girl would sing while working.																				
+			D1_3		A mouse heard the girl's song.																				
+			D1_3		The mouse asked for some food.																				
+			E1_3		She shared some of the grains with him.																				
+			F9		The mouse was grateful.																				
+			F9		He helped the girl sort the grains.																				
+			K4		The girl and the mouse finished sorting the grain.																				
+			L		When the girl's father arrived, the stepmother claimed she had been working all day sorting the grain.																				
+			Q3		The father asked them to sort grain again.																				
+			Ex3		The girl did a wonderful job.																				
+			Ex3		The stepmother failed at the task.																				
+			U		The father banished the stepmother from their house.																				
+			w1		The girl was soon promised to a young lad and never had to worry again.																				
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+1			alpha		A young boy lived with his father.																				
+			gamma1		His father told him to avoid going to the forest alone.																				
+			delta1		One day while his father was working, the boy sneaked out and into the forest.																				
+			epsilon1		A witch soon smelled him and started following him.																				
+			zeta1		When she certain the boy was alone she attempted to lure him into her hut.																				
+			theta1		The boy was very clever and didn't trust the witch.																				
+			A15		When the witch saw she couldn't trick him, she tried to snatch him.																				
+			A15		The boy quickly climbed up a tree.																				
+			A15		But then became trapped there when the witch wouldn't leave.																				
+			Pr7		The witch started gnawing thru the tree with the boy up on it.																				
+			Rs10		The boy jumped to another nearby tree.																				
+			Q4		The father heard cried in the forest and went to his rescue.																				
+			Q4		He saw the boy and a beautiful lady at the bottom of a tree.																				
+			Ex3		The lady claimed to be a singer and the father asked her to sign.																				
+			Ex3		When she couldn't he realized she was the witch.																				
+			U		The boy dropped a pinecone from the top of the tree and killed her.																				
+			wo		They were given a handsome reward for having killed the witch.																				
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+1			alpha		Once there was a beautiful princess.																				
+			eta2		A witch cursed her to not be happy.																				
+			eta2		The princess was very lonely.																				
+			a4		She could never find a bachelor to make her smile.																				
+			B1		Her father sent a call to kill the witch and lift the curse.																				
+			B1		A naive farmer heard of the trouble.																				
+			C		He decided to go talk to the witch.																				
+			depart		He left for the woods where the witch lived.																				
+			D7		On his way he found a mushroom that asked him to eat it.																				
+			F7		The farmer did, but that only made him hungrier.																				
+			H2		Eventually he reached the witch's place.																				
+			H2		The farmer met the witch and asked to lift the curse.																				
+			H2		The witch proposed an eating contest.																				
+			I2		The farmer was so hungry he could eat a horse.																				
+			I2		The farmer won the contest.																				
+			return		The farmer went to the palace and met the princess.																				
+			K8		When she saw him she was very happy.																				
+			W#*		They got married and lived happily ever after.																				
+																									
+																									
+1			alpha		There lived a girl with her brother.																				
+			alpha		One day, the brother went to work the fields.																				
+			gamma1		He told his sister to not venture in the forest alone.																				
+			A1		A dragon kidnapped the brother.																				
+			B4		When the brother wouldn't return she became worried.																				
+			depart		She decided to go look for him.																				
+			K3		She eventually found the dragon.																				
+			K3		The dragon was distracted by her beauty.																				
+			K3		The brother sneaked and slayed the dragon.																				
+			return		They came back home safe.																				
+			wo		The people from the village rewarded them for killing the dragon.																				
+																									
+																									
+																									
+1			alpha		Once there was a beautiful princess.																				
+			eta2		For some unknown reason she was very sad.																				
+			B1		Her father sent a call to figure out why she was always sad.																				
+			A_1		A nearby witch saw the baby brother unattended and took him away.																				
+			B1		A clever farmer heard about the call.																				
+			C		He decided to go talk to a witch.																				
+			depart		He packed his things and departed.																				
+			H3		He arrived to the witch's hut and asked to talk to her.																				
+			H3		She wanted to play some games of cards.																				
+			I3		The clever farmer won all of the games.																				
+			K5		The witch gave the farmer a magic handkerchief for the princess.																				
+			return		He then went back to the palace.																				
+			Q2		When the princes saw the handkerchief she started smiling immediately.																				
+			W#*		They got married and lived happily ever after.																				
+																									
+1			alpha		Once there lived a rich merchant with two beautiful daughters.																				
+			alpha		The merchant sent them to marry the kingdom's prince.																				
+			alpha		The younger sister was jealous of her older sister.																				
+			A_6		When her older sister was sleeping, she cut her eyes.																				
+			A_6		She then left her sister to die.																				
+			o		The younger sister arrived to the palace and met with the prince.																				
+			o		They got married.																				
+			J1		The older daughter did not die.																				
+			J1		She healed her wounds but kept horrible scars.																				
+			Pr2		The younger sister learned her older sister was alive.																				
+			Pr2		She demanded her be killed.																				
+			Pr2		She sent the guards to kill her.																				
+			T1		A kind fairy learned about the older sister.																				
+			T1		The fairy transformed the older sister so she wouldn't be recognized.																				
+			U		The fairy gave the horrible scars to the younger sister.																				
+			U		The guards found her and killed her.																				
+			W#*		The prince found the older sister and took her to palace.																				
+																									
+																									
+1			alpha		In a kingdom far away there was a town terrified by a dragon.																				
+			A14		One day the dragon killed the king.																				
+			B		The princess issued a call for help.																				
+			B		A humble soldier responded to the call.																				
+			C		The princess promised herself in marriage if the soldier killed the dragon.																				
+			depart		The soldier set off.																				
+			G5		The soldier followed the trail of blood left by the dragon.																				
+			I5		The soldier sneaked upon the dragon at night and killed him.																				
+			return		He returned to the palace.																				
+			w_0		The princess married him.																				
+																									
+1			alpha		In a foreign kingdom faraway lived a soldier.																				
+			alpha		He was under the orders of a queen.																				
+			a2		The queen desired a magical fairy.																				
+			B_2		She commanded the soldier to go capture a fairy for her.																				
+			depart		The soldier went to the forest.																				
+			Ki		There he met a fairy and convinced her to meet the queen.																				
+			Ki		The fairy accepted.																				
+			return		The soldier and the fairy returned.																				
+			W		The queen was very happy.																				
+			W		The queen married the soldier.																				
+																									
+																									
+1			alpha		There was once a witch that lived in a forest.																				
+			alpha		She would kidnap children from a nearby town.																				
+			A_1		She once kidnapped the last child in town.																				
+			B_4		The mayor approached a hunter and asked for his help.																				
+			C		The hunter agreed.																				
+			depart		He took a big lance and went to the forest.																				
+			H_1		He saw the witch and launched his lance at her.																				
+			I_1		He killed the witch in one strike.																				
+			K_4		He rescued the kid.																				
+			return		They both came back to town.																				
+			W		They lived happy.																				
+																									
+																									
+1			alpha		Once there lived a giant near a little village.																				
+			A_17		The giant wanted to kidnap a bride.																				
+			B_4		A traveling tailor came to town.																				
+			B_4		He met an old man who told him about the giant.																				
+			C		The tailor misspoke and said he could kill the giant.																				
+			depart		He still decided to go meet the giant.																				
+			K1		At night, he sewed the giant's eyes shut.																				
+			I5		When the giant woke up he could not see.																				
+			I5		The giant stumbled and fell through a cliff.																				
+			return		The tailor came back to the village.																				
+			w_0		Everybody was happy.																				
+																									
+1			alpha		A poor farmer lived in a farm.																				
+			a_5		He was did not have any food for the winter.																				
+			H_2		One day he saw a bear ruining his crops across a little river.																				
+			H_2		The farmer had nothing to loose.																				
+			H_2		He confronted the bear.																				
+			I_2		When the bear swam to get to him the weight of his wet fur weakened him.																				
+			I_2		The farmer pushed the bear into the river and the bear drowned.																				
+			K_1		The farmer now had food and pelts to go through the winter.																				
+																									
+1			alpha		A woman gave birth to a very hairy child.																				
+			A_9		The father did not accept the kid and when he grew up he devised a plan to get rid of him.																				
+			A_9		He sent the kid to a cave where a devil lived.																				
+			H_2		There, the devil challenged the kid to see who could run the fastest.																				
+			I_2		The kid told him to first try to catch his younger brother.																				
+			I_2		The kid pointed to a rabbit.																				
+			I_2		The rabbit dashed and the devil could not catch it.																				
+			K_1		The devil was ashamed and left.																				
+			return		The kid came back home safe and sound.																				
+			W		He soon wed a young girl and went to live with her family.																				
+																									
+1			alpha		Once there lived a beekeeper.																				
+			A_18		One night, a devil started tormenting the people of his town.																				
+			C		The beekeeper said he would find a solution.																				
+			H_3		That night, the beekeeper scattered beehives around town.																				
+			H_3		At midnight the devil appeared but was stung by the bees.																				
+			U		Then the beekeeper used his shovel to kill the devil.																				
+			W		Everybody was happy.																				
+																									
+1			alpha		There once lived a young shepherd who used to play the fiddle.																				
+			Epre_7		Once day, the shepherd playing his fiddle in the forest.																				
+			Epre_7		A witch asked him to teach her to play the fiddle.																				
+			Fpre_9		He taught the witch how to play.																				
+			Fpre_9		The witch gave him a magic egg.																				
+			a5		There was a bad winter.																				
+			a5		All the sheep died.																				
+			C		The shepherd remembered the magic egg and decided to incubate it.																				
+			K6		Out of the egg hatched a hen.																				
+			K6		The hen laid golden eggs.																				
+			W		The shepherd never had to worry about money again.																				
+																									
+1			alpha		There once lived a clever girl and a brave boy.																				
+			a_1		They were very poor and had no food.																				
+			B		A witch once invited them to her hut.																				
+			C		They were reluctant but then trusted the witch.																				
+			depart		They followed her into her hut.																				
+			M1		The witch ordered them to eat a lot of food.																				
+			N1		The boy did and fell asleep.																				
+			N_1		The girl didn't but pretended to fall sleep.																				
+			Q3		The girl saw the witch was about to eat them.																				
+			U		She woke her brother and he killed the witch.																				
+			return		They returned home safe with their stomachs full.																				
+																									
+0			alpha		There once was a family.																				
+			eta		A king wanted to steal their lands.																				
+			beta		One day the father went to the market.																				
+			A		The king kidnapped the father and threw him in jail.																				
+			depart		The son went to meet with the king.																				
+			H3		The king challenged him to a game of cards.																				
+			I3		The king lost.																				
+			K4		The king freed the father.																				
+			return		The father and the son returned home.																				
+			W		The son soon married a girl and was happy.																				
+																									
+0			alpha		Once there was a girl.																				
+			beta2		Her parents were away for work.																				
+			a6		She was hungry.																				
+			depart		She went to the forest.																				
+			D		There she found an apple tree.																				
+			D		She asked the tree for an apple.																				
+			D		The tree gave her a magic apple.																				
+			D7		The tree told her to not eat the apple.																				
+			E		The girl did not eat the apple.																				
+			F		The apple tree was happy and gave the girl apple seeds.																				
+			return		The girl went back home.																				
+			w		She and her parents planted the apple seeds, grew the trees and were prosperous.																				
+																									
+																									
+0			alpha		A boy and a girl once lived in a small town.																				
+			alpha		They were friends.																				
+			beta2		They were orphans.																				
+			lambda		They were very poor.																				
+			depart		The girl once went into the forest.																				
+			D2		A goblin saw the girl and asked her how she was doing.																				
+			E1		The girl was kind to the goblin and they talked all night long.																				
+			f1		The goblin gave the girl lots of riches.																				
+			return		The girl returned to town.																				
+			gamma		The boy was jealous of the girl’s riches.																				
+			D2		The goblin saw the boy and approached him.																				
+			E_1		The boy was repulsed by the goblin and was mean to him.																				
+			U		The goblin killed the boy as punishment.																				
+			return		The girl went to look for his friend.																				
+			return		She came back to town with his corpse.																				
+			W		The girl lived happily and she eventually married a good man from town.																				
+																									
+																									
+0			alpha		A king had two daughters.																				
+			beta2		The mother died.																				
+			a		The older was jealous of the younger.																				
+			a		The older learned that her sister drank the milk of a magic cow to keep beautiful.																				
+			F7		The older drank the milk from the magic cow.																				
+			E10		But she transformed into a cow herself.																				
+			Pr3		She was enraged.																				
+			Pr3		She chased her younger sister.																				
+			Rs3		But the younger sister was also transformed into a cow.																				
+			o		The older and younger sister went home.																				
+			o		The king wanted to kill them because he only saw cows.																				
+			Q1		The king recognized a mark on the younger’s cow body.																				
+			Ex1		The king killed the older sister thinking she was a cow.																				
+			W		The younger sister transformed back into a princess and married a prince.																				
+																									
+																									
+0			alpha		There once lived a soldier with his son.																				
+			alpha		The soldier trained his son to be like him.																				
+			gamma1		The villagers asked the soldier to leave town.																				
+			A5		While they were away, thieves robbed the town.																				
+			C		When the soldier knew he didn’t want to go back.																				
+			C		The son went back.																				
+			F1		His strength was with him.																				
+			H1		The son fought the thieves.																				
+			I1		He killed every one of them.																				
+			W		He married a nice girl from town and was happy.																				
+																									
+																									
+0			alpha		A king had twin daughters.																				
+			beta2		Their mother died at childbirth.																				
+			a		The daughters were very lonely.																				
+			depart		One day the daughters went to the forest.																				
+			D		There they found a trapped goblin.																				
+			D		The goblin asked them for help.																				
+			E_1		The older daughter ran away scared.																				
+			E		The younger daughter stayed and helped him.																				
+			F9		The goblin gave the girl a new appearance.																				
+			return		When the daughters returned, an evil prince had conquered their castle.																				
+			o		Nobody recognized her.																				
+			Ex1		The prince executed her sister.																				
+			W		He married the daughter and they were happy.																				
+																									
+0			alpha		There once lived a boy who was very light.																				
+			a1		He was very lonely.																				
+			depart		He was so light that one day he drifted away.																				
+			G1		He flow to another kingdom.																				
+			M1		In that kingdom, the king held a feast.																				
+			M1		The king wanted to see who could eat more than him.																				
+			N1		The boy ate three cows.																				
+			Q3		The king was impressed by his feat.																				
+			W*		The king married his daughter to the boy and made him a prince.																				
+																									
+0			alpha		A girl and her brother lived in the forest.																				
+			beta3		One day the brother went to the forest to pick up berries.																				
+			A11		A witch transformed him into a bear.																				
+			o		Later, the bear tried to eat the girl.																				
+			Q1		The girl recognized the a pattern in the bear’s fur.																				
+			Q4		The girl sang a song to the bear.																				
+			Q4		The bear recognized his sister.																				
+			U		The bear found the witch and killed her.																				
+			U		The spell was broken and brother and sister lived happily.																				
+																									
+0			alpha		A framer lived in a faraway land.																				
+			alpha		One day he went to the fields.																				
+			gamma2		He asked his wife to bring him lunch later.																				
+			gamma2		He told her to follow the trail with his footprints.																				
+			zeta1		A witch overheard the conversation.																				
+			eta3		The witch then erased the footprints and put her own on a path to her hut.																				
+			theta3		The woman followed the path with the footprints and got to the witch's hut.																				
+			A1		The witch kidnapped her.																				
+			C		When the farmer didn’t get his lunch he became concerned.																				
+			C		He knew about the evil witch.																				
+			T3		He dressed as a bear and went to meet the witch.																				
+			M3		The witch thought she could outsmart the bear.																				
+			M3		She asked him a riddle.																				
+			N3		The farmer solved the riddle.																				
+			Q4		The wife recognized her husband.																				
+			U		While the witch was busy she struck her in the head.																				
+			W		They continued their happy marriage.																				
+																									
+																									
+0			alpha		Once, there was a man and a woman who loved each other.																				
+			alpha		On the day of the wedding, a witch cast a spell on the husband.																				
+			Avii		The man forgot about his lover.																				
+			*D7		The woman implored the witch to bring back his memories.																				
+			D1		The witch asked for the woman’s eyes.																				
+			E1		The woman gave her eyes away.																				
+			F-		The witch had tricked the woman and just left.																				
+			B7		The woman was very sad and sang a sad song.																				
+			Q4		Then the man heard the song.																				
+			Q4		He remembered his lover.																				
+			w2		He loved her sacrifice and they got married immediately.																				
+																									
+																									
+0			alpha		The once lived a very poor family.																				
+			a5		They didn’t have any money.																				
+			depart		The kids were very clever and decided to go look for work.																				
+			D		They ran into a merchant who asked for their help.																				
+			E		They helped him.																				
+			J1		The merchant gave them new garments as a reward.																				
+			T4		They never had new garments so they made a mistake.																				
+			T4		They boy wore girl’s clothes and the girl wore boy’s clothes.																				
+			M12		They arrived at the king’s palace.																				
+			M12		They king demanded entertainment.																				
+			N12		When he saw the kids with unmatched garments he liked them.																				
+			N12		The king offered the kids to live in the castle with him.																				
+			K4		The king fed the kids and gave them riches.																				
+			Q4		A few days later parents saw them and asked them to go back home.																				
+			wo		They all lived happy ever after.																				
+																									
+																									
+3			alpha		Once there was a kind farmer.																				
+			alpha		He had a bull to help him plow.																				
+			alpha		He took good care of the bull.																				
+			A1		A wicked neighbor secretly stole the bull.																				
+			G4		The next day, the farmer was looking for his bull.																				
+			G4		He followed the footprints on the path.																				
+			Q4		The bull saw the farmer and ran to him.																				
+			M		The bull was locked in a pen.																				
+			N		But the bull was so strong that he broke out of the pen.																				
+			W		The farmer and the bull went back home.																				
+																									
+3			alpha		Once upon a time there was a terrible dragon.																				
+			A_1		He kidnapped the princess of a small kingdom.																				
+			B		The king issued a call for help.																				
+			B		A farmer and his friend responded to the call.																				
+			depart		The farmer went to the dragon’s den.																				
+			depart		His friend hide nearby.																				
+			H4		The dragon would not eat the farmer because he was too thin.																				
+			H4		The dragon asked the farmer to weight himself on some scales.																				
+			*I1		While the dragon was busy, the farmer’s friend killed him.																				
+			K4		They rescued the princess.																				
+			return		They returned to the palace.																				
+			w0		The king made the farmer a nobleman and his friend a soldier.																				
+																									
+3			alpha		Once upon a time, there was a farmer.																				
+			a1		He could not find a bride.																				
+			B_2		He decided to go rescue a captive princess.																				
+			depart		He took his bull and departed.																				
+			K1		After some time they arrived at the castle with a captive princess.																				
+			K1		The bull ram the castle until it crumbled down.																				
+			K1		He rescued the captive princess.																				
+			W		They married and lived happily.																				
+																									
+																									
+3			A		An evil king once kidnapped another kingdom’s princess.																				
+			B_4		The father asked his best soldier to rescue his daughter.																				
+			C		The soldier agreed.																				
+			depart		He took a big mace and parted to the evil king’s castle.																				
+			K_4		When he arrived, he flung his mace to the castle’s door.																				
+			K_4		The door smashed and he rescued the princess.																				
+			return		They both came back to the palace.																				
+			W		The king offered the princess to the soldier in marriage.																				
+			W		They married and lived happily.																				
+																									
+																									
+3			alpha		Once upon a time, on a remote village there lived a tanner.																				
+			alpha		A giant came to the village one day.																				
+			A_17		The giant threatened to eat everyone.																				
+			C		The tanner decided to go fight the giant.																				
+			depart		He grabbed a bunch of hides and set off.																				
+			H_2		The tanner told the giant to fight him.																				
+			H_2		He used the hides to protect himself.																				
+			I_2		Eventually the tanner bested the giant.																				
+			K_4		The giant fled the village and never returned.																				
+			w1		Everyone thanked the tanner and he married a local woman.																				
+																									
+3			alpha		A poor farmer lived in a small town.																				
+			a_5		There was no rain and the crops wouldn’t grow.																				
+			B_4		He ran out of food and was starving.																				
+			C		He decided to look for work elsewhere.																				
+			H3		He was roaming around when he saw a witch who controlled the rain.																				
+			H3		He challenged her to a game of cards.																				
+			I3		The farmer won all the games they played.																				
+			K_1		The witch promised to restore rain.																				
+			K_1		The crops grew again and the farmer was happy.																				
+																									
+3			alpha		This woman once found an orphan baby in the forest.																				
+			A_9		When she got back home, the woman's husband could not accept the baby.																				
+			A_9		When the baby grew into a smart boy he decided to get rid of him.																				
+			A_9		He expelled him from home.																				
+			depart		The boy left not knowing what to do.																				
+			D		He was sobbing loudly next to a lake when a spirit came out of the lake.																				
+			E		The spirit was pitiful of the boy.																				
+			F		The spirit gave the boy a magic cloak.																				
+			F		The boy thanked the spirit, took the cloak and left.																				
+			return		Some time later, pirates raided the boy’s home town.																				
+			return		The boy saw the smoke and ran.																				
+			M2		He saw his house in flames.																				
+			N2		He ran into the flames and rescued his family.																				
+			T2		They together rebuild the family house.																				
+			W1		The boy married and they lived there happily.																				
+																									
+3			alpha		An orphan boy lived in the streets.																				
+			alpha		He had only a piece of bread, a knapsack and a fiddle.																				
+			alpha		He was happy and liked to play the fiddle.																				
+			epsilon1		A nearby devil heard the fiddle one day.																				
+			epsilon1		The devil approached the boy and asked him to teach him how to play in exchange for a favor.																				
+			theta1		The boy taught the devil how to play the fiddle.																				
+			theta1		The boy and the devil talked all night long.																				
+			A_18		The boy learned that the devil was tormenting the princess of the kingdom.																				
+			C		The boy decided to ask the devil to stop.																				
+			T3		The devil was thankful and agreed.																				
+			wx		The princess was relieved and her father thankful.																				
+			wx		The boy married the princess and lived happy in the castle.																				
+																									
+3			alpha		There once was a boy who lived on the streets.																				
+			alpha		He had only a piece of bread to eat.																				
+			D		An old man asked him to share his piece of bread.																				
+			E		The boy shared his piece of bread with the old man.																				
+			F		The old man was a wizard in disguise.																				
+			Fpre_9		He rewarded the boy with a magic hat that allowed him to see the Grim Reaper.																				
+			A_18		Time passed and the was became a doctor.																				
+			A_18		The king's daughter had been cursed and was very ill.																				
+			C		The boy went to meet the princess.																				
+			F1_1		He took with him a deck of cards.																				
+			H_3		At night, he saw the Grim Reaper enter the princess' room.																				
+			H_3		He challenged him to a game of cards.																				
+			I_3		The boy won the game and asked the Grim Reaper to leave the princess alone as his reward.																				
+			K_4		The curse was lifted and the princess was healthy again.																				
+			W		The king was so happy that he married his daughter to the boy and made him the doctor of the court.																				
+																									
+3			alpha		There once lived a poor tanner.																				
+			a_1		He only had a piece of bread left to eat.																				
+			D		A fox came to him one day and told him that he could make him rich if he shared his last piece of bread.																				
+			E		The tanner shared his bread with the fox.																				
+			F		The fox gave the tanner new garments.																				
+			T1		The fox told the tanner how to act like a prince.																				
+			depart		Then, the fox took the tanner to the palace.																				
+			Q2		The king saw the tanner and thought he was a nice prince.																				
+			W		Then the tanner married the princess and moved to the palace.																				
+			return		Satisfied with her deed, the fox returned home.																				
+																									
+3			alpha		A long time ago, near the capital city, lived a family with their son.																				
+			alpha		A giant terrorized the region.																				
+			A9		The giant took over the family’s house and expelled them.																				
+			A9		The family and their son had to move away.																				
+			C		The boy grew up tall and strong.																				
+			C		One day, he decided to go fight the giant.																				
+			depart		He went back to his home.																				
+			H		The giant and the boy fought for a long time.																				
+			I		The boy was faster than the giant and managed to kill him.																				
+			W		When the king learned about the feat of the boy he married him to his daughter.																				
+																									
+																									
+3			alpha		A widow lived with his daughter in a farm.																				
+			lambda		The widow eventually married another man who had a daughter of her own.																				
+			A9		The stepsister despised the girl.																				
+			B5		One night, the stepfather took the girl to the forest and left her there to die.																				
+			D2		A goblin saw the girl and asked her how she was doing.																				
+			E1		The girl was kind to the goblin and they talked all night long.																				
+			F		The goblin thanked the girl for being so nice to him.																				
+			F		He told her that he would help her.																				
+			U		The goblin killed the stepfather.																				
+			U		The stepsister ran away.																				
+			return		The girl went back to her mother.																				
+			W		The girl and her mother lived happily and she eventually married a good lad from a nearby farm.																				
+																									
+																									
+3			alpha		There lived an old man who had become a widower.																				
+			beta2		Eventually, the father married an old widow who had a daughter of her own.																				
+			lambda		The woman's daughter was jealous of her stepsister.																				
+			A11		She tried poisoning her stepsister.																				
+			C		A fairy knew everything and warned the girl.																				
+			o		A nearby prince heard the story.																				
+			Ex		The prince killed the jealous girl.																				
+			W		He then married the other girl and they lived happily ever after.																				
+																									
+																									
+																									
+3			alpha		A family with two children lived in a farm.																				
+			beta3		The daughter was jealous of all the attention her younger brother always received.																				
+			beta3		One day she went to the forest to pick up berries.																				
+			gamma2		Her mother asked her to take her brother with her.																				
+			A14		Then the girl killed her brother and buried him.																				
+			Fvi		From the ground where the brother was buried a little shrub soon sprouted.																				
+			Fvi		A shepherd ran into the shrub, cut it and made a flute out of it.																				
+			B7		When he played the flute it sang a song.																				
+			Ex4		A prince that was about to marry the girl heard the song.																				
+			U		He expelled the girl from the kingdom.																				
+																									
+xxx			alpha		There once lived a tanner called Nikita.																				
+			alpha		One night he got lost.																				
+			alpha		He saw a light and walked to a tower.																				
+			gamma1		A girl called Alenka opened the door and let Nikita in to spend the night.																				
+			A		In the middle of the night, Baba Yaga tried to eat him.																				
+			H		But Nikita was very strong and fought the witch.																				
+			I1		Nikita won and killed the witch.																				
+			K7		Nikita rescued Alenka from the tower.																				
+			w1		Nikita married Alenka and they lived happy ever after.																				
+																									
+																									
+xxx			alpha		Nikita and Vasili were two soldiers on leave.																				
+			alpha		One night Nikita and Vasili got lost.																				
+			A8		Baba Yaga saw them and tried to eat Vasili.																				
+			C		Nikita pretended to sleep but he was awake.																				
+			C		Nikita saw Baba Yaga.																				
+			I		Nikita killed Baba Yaga.																				
+			L		The next morning Vasili found Baba Yaga dead.																				
+			L		He went to the king and claimed the reward.																				
+			Ex1		Nikita kept Baba Yaga’s heart.																				
+			U-		The king expelled Vasili from the kingdom.																				
+			w		The king married Nikita to his daughter.																				
+																									
+																									
+																									
+yyy			alpha		The once lived a very poor widow called Alenka.																				
+			a5		The parents didn't even have food to sustain their two sons Nikita and Vasili.																				
+			tfa		Alenka sang about having to abandon their children.																				
+			depart		Nikita heard her mother's song and decided to leave himself.																				
+			D9		When he was in the woods he ran into a boar that attacked him.																				
+			E9		Nikita was able to fend it off.																				
+			J1		The boar left deep scars on Nikita but he survived.																				
+			o		He made it back home.																				
+			o		There was a young man telling everyone that the boar that ruined the crops was gone.																				
+			L		Vasili claimed he had killed the boar.																				
+			Ex1		Nikita challenged Vasili.																				
+			Ex1		He show his scars and everybody believed him.																				
+			U		Vasili was expelled from the kingdom.																				
+			w1		Nikita was married to a good girl.																				
+																									
+																									
+																									
+																									
+1			alpha		Once upon a time, a family lived in an isolated mountain.																				
+			A15		The father kept his daughter Alenka locked in a room.																				
+			B1		Alenka was very miserable and cried day and night.																				
+			C		Nikita decided he had to free Alenka.																				
+			F5		One day, Nikita found the spare key to his sister's room.																				
+			H5		His father surprised Nikita as he was opening the door.																				
+			H5		He told Nikita, he'd let him free Alenka if he'd win a game of cards with him.																				
+			I3		Nikita was very skilled at card games and won.																				
+			K10		Nikita rescued Alenka and left.																				
+			w		The moves to a nearby town where he lived happy.																				
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+																									
+1			alpha		Alenka lived with her parents.																				
+			a4		She was beautiful but could not find a suitable husband.																				
+			B5		Her parents banished her from home until she could find a husband.																				
+			G2		Alenka walked for a very long time.																				
+			D7		She ran into Nikita who had no shoes.																				
+			E7		She gave her shoes to Nikita.																				
+			f9		Nikita was very grateful.																				
+			J1		Alenka walked until her feet bled.																				
+			o		She eventually reached a new kingdom.																				
+			M9		The people of the kingdom ordered Alenka to walk over hot coals.																				
+			N9		Her feet were numb.																				
+			N9		So she walked over the coals.																				
+			Q1		Nikita saw Alenka.																				
+			Q1		He went to fetch the prince of the kingdom and asked for his help.																				
+			T3		The prince saw Alenka and fell in love.																				
+			T3		He gave Alenka new garments and married her.																				
+			W#*		They moved to the palace and lived happily.																				
+																									
+																									
+																									
+																									
+																									
+																									
+1			alpha		Alenka lived with her parents.																				
+			beta2		The parents died of old age.																				
+			a5		Alenka was poor and hungry.																				
+			depart		She packed her last loaf of bread and left.																				
+			D1_3		Once in the forest, she ran into Misha.																				
+			D1_3		Misha asked for some food.																				
+			E1_3		Alenka shared her last piece of bread with Misha.																				
+			F9		The Misha was grateful.																				
+			F9		The Misha told the girl he would help her when needed.																				
+			M11		Later, Alenka found work in a nearby market.																				
+			M11		Her job was to separate little rocks from grains.																				
+			N12		Alenka was very skilled and Misha would come help her every night.																				
+			W		Alenka ended up marrying Nikita and they all were happy.																				
+																									
+																									
+																									
+																									
+																									
+1			alpha		There lived a girl called Alenka with her brother Nikita.																				
+			alpha		One day, Nikita went to work the fields.																				
+			gamma1		He told Alenka to not venture in the forest alone.																				
+			A1		Baba Yaga kidnapped Nikita.																				
+			B4		When Nikita wouldn't return Alenka became worried.																				
+			depart		Alenka decided to go look for Nikita.																				
+			K3		Alenka eventually found Baba Yaga.																				
+			K3		Baba Yaga was distracted.																				
+			K3		Alenka sneaked and poisoned Baba Yaga’s food.																				
+			return		They came back home safe.																				
+			wo		The people from the village rewarded them for killing Baba Yaga.																				
+																									
+																									
+																									
+1			alpha		Once there was a beautiful princess called Alenka.																				
+			a		For some unknown reason Alenka was very sad.																				
+			B1		Her father sent a call to figure out why she was always sad.																				
+			B1		Nikita heard about the call.																				
+			C		Nikita decided to go talk to Baba Yaga.																				
+			depart		He packed his things and departed.																				
+			H3		He found Baba Yaga and asked her about Alenka.																				
+			H3		Baba Yaga wanted to play some games of cards.																				
+			I3		Nikita won all of the games.																				
+			K5		Baba Yaga gave Nikita a magic handkerchief for Alenka.																				
+			return		He then went back to the palace.																				
+			Q2		When Alenka saw the handkerchief she started smiling immediately.																				
+			W#*		Nikita and Alenka got married and lived happily ever after.																				
+																									
+1			alpha		Once there lived a rich merchant with two sons called Nikita and Vasili.																				
+			alpha		The merchant sent them to marry princess Alenka.																				
+			alpha		Vasili was afraid of Nikita.																				
+			A_6		In the middle of the night, Vasili killed Nikita.																				
+			o		Vasili met Alenka and they got married.																				
+			J1		Nikita healed his wounds.																				
+			Pr2		Vasili learned Nikita was alive.																				
+			Pr2		Vasili sent the guards to kill Nikita.																				
+			K		Nikita killed the guards.																				
+			K		Then, Nikita killed Vasili.																				
+			W#*		Alenka married Nikita and they were happy.																				
+																									
+																									
+1			alpha		In a kingdom far away there was a town terrified by Baba Yaga.																				
+			A14		One day the dragon killed the king.																				
+			B		Princess Alenka issued a call for help.																				
+			B		Nikita responded to the call.																				
+			C		The princess promised herself in marriage if Nikita killed Baba Yaga.																				
+			depart		Nikita set off.																				
+			G5		Nikita found Baba Yaga’s hut.																				
+			I5		Nikita sneaked in and killed Baba Yaga.																				
+			return		Nikita returned to the palace.																				
+			w_0		The princess married him.																				
+																									
+1			alpha		In a foreign kingdom faraway lived Nikita.																				
+			alpha		He was under the orders of queen Alenka.																				
+			a2		Alenka desired a magical fairy.																				
+			B_2		Alenka commanded Nikita to go capture a fairy for her.																				
+			depart		Nikita went to the forest.																				
+			Ki		There Nikita met a fairy and convinced her to meet Alenka.																				
+			Ki		The fairy accepted.																				
+			return		Nikita and the fairy returned.																				
+			W		Alenka was very happy.																				
+			W		Alenka married Nikita and they were happy.																				
+																									
+																									
+1			alpha		There was once Baba Yaga that lived in a forest.																				
+			alpha		She would kidnap children from a nearby town.																				
+			A_1		She once kidnapped princess Alenka.																				
+			B_4		The king approached Nikita and asked for his help.																				
+			C		Nikita agreed.																				
+			depart		He took a big lance and went to the forest.																				
+			H_1		He saw Baba Yaga and launched his lance at her.																				
+			I_1		He killed Baba Yaga in one strike.																				
+			K_4		He rescued Alenka.																				
+			return		They both came back to town.																				
+			W		Alenka married Nikita.																				
+																									
+																									
+1			alpha		Once there lived Baba Yaga near a little village.																				
+			A_17		Baba Yaga wanted to kidnap Alenka.																				
+			B_4		A Nikita came to town.																				
+			B_4		He met an old man who told him about Baba Yaga.																				
+			C		Nikita misspoke and said he could kill Baba Yaga.																				
+			depart		He still decided to go meet Baba Yaga.																				
+			K1		At night, he sewed Baba Yaga's eyes shut.																				
+			I5		When Baba Yaga woke up he could not see.																				
+			I5		Baba Yaga stumbled and fell through a cliff.																				
+			return		Nikita came back to the village.																				
+			w_0		Everybody was happy.																				
+																									
+1			alpha		Nikita lived in a farm.																				
+			a_5		He was did not have any food for the winter.																				
+			H_2		One day he saw Baba Yaga ruining his crops across a little river.																				
+			H_2		Nikita had nothing to loose.																				
+			H_2		He confronted Baba Yaga.																				
+			I_2		When Baba Yaga swam to get to him she drowned.																				
+			K_1		Nikita now had food and riches to go through the winter.																				
+			K_1		The farmer now had food and pelts to go through the winter.																				
+																									
+																									
+1			alpha		Alenka gave birth to Nikita.																				
+			A_9		The father did not accept Nikita and when he grew up he devised a plan to get rid of him.																				
+			A_9		He sent Nikita to a cave where Baba Yaga lived.																				
+			H_2		There, Baba Yaga challenged Nikita to see who could run the fastest.																				
+			I_2		Nikita told him to first try to catch Misha.																				
+			I_2		Nikita pointed to a rabbit.																				
+			I_2		The rabbit dashed and Baba Yaga could not catch it.																				
+			K_1		Baba Yaga was ashamed and left.																				
+			return		Nikita came back home safe and sound.																				
+			W		He soon wed a young girl and went to live with her family.																				
+																									
+1			alpha		Once there lived Nikita.																				
+			A_18		One night, Baba Yaga started tormenting the people of his town.																				
+			C		Nikita said he would find a solution.																				
+			H_3		That night, Nikita scattered beehives around town.																				
+			H_3		At midnight Baba Yaga appeared but was stung by the bees.																				
+			U		Then Nikita used his shovel to kill Baba Yaga.																				
+			W		Everybody was happy.																				
+																									
+1			alpha		There once lived Nikita who used to play the fiddle.																				
+			Epre_7		Once day, Nikita playing his fiddle in the forest.																				
+			Epre_7		Baba Yaga asked him to teach her to play the fiddle.																				
+			Fpre_9		He taught Baba Yaga how to play.																				
+			Fpre_9		Baba Yaga gave him a magic egg.																				
+			a5		There was a bad winter.																				
+			a5		All the sheep died.																				
+			C		Nikita remembered the magic egg and decided to incubate it.																				
+			K6		Out of the egg hatched a hen.																				
+			K6		The hen laid golden eggs.																				
+			W		Nikita never had to worry about money again.																				
+																									
+1			alpha		There once lived Alenka and Nikita.																				
+			a_1		They were very poor and had no food.																				
+			B		Baba Yaga once invited them to her hut.																				
+			C		They were reluctant but then trusted Baba Yaga.																				
+			depart		They followed her into her hut.																				
+			M1		Baba Yaga ordered them to eat a lot of food.																				
+			N1		Nikita did and fell asleep.																				
+			N_1		Alenka didn't but pretended to fall sleep.																				
+			Q3		Alenka saw Baba Yaga was about to eat them.																				
+			U		She woke her brother and he killed Baba Yaga.																				
+			return		They returned home safe with their stomachs full.																				
+																									
+																									
+0			alpha		There once was a family.																				
+			eta		A king wanted to steal their lands.																				
+			beta		One day the father went to the market.																				
+			A		The king kidnapped the father and threw him in jail.																				
+			depart		The son went to meet with the king.																				
+			H3		The king challenged him to a game of cards.																				
+			I3		The king lost.																				
+			K4		The king freed the father.																				
+			return		The father and the son returned home.																				
+			W		The son soon married a girl and was happy.																				
+																									
+0			alpha		Once there was a girl.																				
+			beta2		Her parents were away for work.																				
+			a6		She was hungry.																				
+			depart		She went to the forest.																				
+			D		There she found an apple tree.																				
+			D		She asked the tree for an apple.																				
+			D		The tree gave her a magic apple.																				
+			D7		The tree told her to not eat the apple.																				
+			E		Alenka did not eat the apple.																				
+			F		The apple tree was happy and gave Alenka apple seeds.																				
+			return		Alenka went back home.																				
+			w		She and her parents planted the apple seeds, grew the trees and were prosperous.																				
+			w		She and her parents planted the apple seeds, grew the trees and were prosperous.																				
+																									
+																									
+																									
+																									
+0			alpha		There once lived a soldier with his son.																				
+			alpha		The soldier trained his son to be like him.																				
+			gamma1		The villagers asked the soldier to leave town.																				
+			A5		While they were away, thieves robbed the town.																				
+			C		When the soldier knew he didn’t want to go back.																				
+			C		The son went back.																				
+			F1		His strength was with him.																				
+			H1		The son fought the thieves.																				
+			I1		He killed every one of them.																				
+			W		He married a nice girl from town and was happy.																				
+																									
+																									
+0			alpha		A king had twin daughters.																				
+			beta2		Their mother died at childbirth.																				
+			a		The daughters were very lonely.																				
+			depart		One day the daughters went to the forest.																				
+			D		There they found a trapped goblin.																				
+			D		The goblin asked them for help.																				
+			E_1		The older daughter ran away scared.																				
+			E		The younger daughter stayed and helped him.																				
+			F9		The goblin gave Alenka a new appearance.																				
+			return		When the daughters returned, an evil prince had conquered their castle.																				
+			o		Nobody recognized her.																				
+			Ex1		The prince executed her sister.																				
+			W		He married the daughter and they were happy.																				
+																									
+0			alpha		There once lived a boy who was very light.																				
+			a1		He was very lonely.																				
+			depart		He was so light that one day he drifted away.																				
+			G1		He flow to another kingdom.																				
+			M1		In that kingdom, the king held a feast.																				
+			M1		The king wanted to see who could eat more than him.																				
+			N1		Nikita ate three cows.																				
+			Q3		The king was impressed by his feat.																				
+			W*		The king married his daughter to Nikita and made him a prince.																				
+																									
+0			alpha		Once, there was Nikita and Alenka who loved each other.																				
+			alpha		On the day of the wedding, Baba Yaga cast a spell on Nikita.																				
+			Avii		Nikita forgot about his lover.																				
+			*D7		Alenka implored Baba Yaga to bring back his memories.																				
+			D1		Baba Yaga asked for Alenka’s eyes.																				
+			E1		Alenka gave her eyes away.																				
+			F-		Baba Yaga had tricked Alenka and just left.																				
+			B7		Alenka was very sad and sang a sad song.																				
+			Q4		Then Nikita heard the song.																				
+			Q4		He remembered his lover.																				
+			w2		He loved her sacrifice and they got married immediately.																				
+																									
+0			alpha		Once, there was a man and a woman who loved each other.																				
+			alpha		On the day of the wedding, a witch cast a spell on the husband.																				
+			Avii		The man forgot about his lover.																				
+			*D7		The woman implored the witch to bring back his memories.																				
+			D1		The witch asked for the woman’s eyes.																				
+			E1		The woman gave her eyes away.																				
+			F-		The witch had tricked the woman and just left.																				
+			B7		The woman was very sad and sang a sad song.																				
+			Q4		Then the man heard the song.																				
+			Q4		He remembered his lover.																				
+			w2		He loved her sacrifice and they got married immediately.																				
+																									
+0			alpha		An old widower lived with his daughter Alenka.																				
+			lambda		The widower eventually married another woman who had a daughter called Misha.																				
+			A9		Misha despised Alenka.																				
+			A9		Misha asked her father to kill Alenka.																				
+			B5		The father took Alenka to the forest and left her there to die.																				
+			D2		Baba Yaga saw Alenka and asked her how she was doing.																				
+			E1		Alenka was kind to Baba Yaga and they talked all night long.																				
+			f1		Baba Yaga thanked Alenka for their conversation.																				
+			f1		As a token of appreciation, he gave her new clothes and jewelry.																				
+			return		The next morning, the father went back to the forest to retrieve Alenka's corpse.																				
+			return		He was very happy to see Alenka still alive and they went back to the farm.																				
+			gamma		When the stepmother saw the clothes and jewelry she got very excited.																				
+			delta		She asked her husband to take Misha to the forest.																				
+			B5		The husband took Misha to the forest and left her in the same spot.																				
+			D2		Baba Yaga saw Misha and approached her.																				
+			E_1		Misha was repulsed by Baba Yaga and was mean to her.																				
+			U		Baba Yaga killed Misha as punishment.																				
+			return		The next morning, the father went back to the forest to retrieve Misha.																				
+			return		He went back home with Misha's corpse.																				
+			W		When the mother saw dead Misha she died of sadness herself.																				
+			W		Alenka and her father lived happily and she eventually married Nikita.																				
+																									
+																									
