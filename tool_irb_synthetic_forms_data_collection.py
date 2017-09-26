@@ -31,7 +31,7 @@ for uid in data.keys():
     if c.get('c1','?') == 'false': e['reading_check'] += 1
     if c.get('c2','?') == 'true': e['reading_check'] += 1
     if c.get('c3','?') == 'false': e['reading_check'] += 1
-    if c.get('c4','?') == 'true': e['reading_check'] += 1
+    if c.get('c4','?') == 'false': e['reading_check'] += 1
     if c.get('c5','?') == 'true': e['reading_check'] += 1
     if c.get('c6','?') == 'true': e['reading_check'] += 1
     if 'form2' in data[uid]:
