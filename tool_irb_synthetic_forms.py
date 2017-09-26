@@ -350,22 +350,34 @@ TEMPLATE_HTML_FORM_3_OPTIONS = '''
       Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
       </td><td>
       <input type="radio" name="q%ID%-%CID%-1" id="q%ID%-%CID%-1-y" value="y"><label for="q%ID%-%CID%-1-y">Yes</label>
-      </td><td><input type="radio" name="q%ID%-%CID%-1" id="q%ID%-%CID%-1-n" value="n"><label for="q%ID%-%CID%-1-n">No</label>
+      </td><td>
+      <input type="radio" name="q%ID%-%CID%-1" id="q%ID%-%CID%-1-a" value="a"><label for="q%ID%-%CID%-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q%ID%-%CID%-1" id="q%ID%-%CID%-1-n" value="n"><label for="q%ID%-%CID%-1-n">No</label>
       </td></tr><tr><td>
       Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
       </td><td>
       <input type="radio" name="q%ID%-%CID%-2" id="q%ID%-%CID%-2-y" value="y"><label for="q%ID%-%CID%-2-y">Yes</label>
-      </td><td><input type="radio" name="q%ID%-%CID%-2" id="q%ID%-%CID%-2-n" value="n"><label for="q%ID%-%CID%-2-n">No</label>
+      </td><td>
+      <input type="radio" name="q%ID%-%CID%-2" id="q%ID%-%CID%-2-a" value="a"><label for="q%ID%-%CID%-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q%ID%-%CID%-2" id="q%ID%-%CID%-2-n" value="n"><label for="q%ID%-%CID%-2-n">No</label>
       </td></tr><tr><td>
       Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
       </td><td>
       <input type="radio" name="q%ID%-%CID%-3" id="q%ID%-%CID%-3-y" value="y"><label for="q%ID%-%CID%-3-y">Yes</label>
-      </td><td><input type="radio" name="q%ID%-%CID%-3" id="q%ID%-%CID%-3-n" value="n"><label for="q%ID%-%CID%-3-n">No</label>
+      </td><td>
+      <input type="radio" name="q%ID%-%CID%-3" id="q%ID%-%CID%-3-a" value="a"><label for="q%ID%-%CID%-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q%ID%-%CID%-3" id="q%ID%-%CID%-3-n" value="n"><label for="q%ID%-%CID%-3-n">No</label>
       </td></tr><tr><td>
       Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
       </td><td>
       <input type="radio" name="q%ID%-%CID%-4" id="q%ID%-%CID%-4-y" value="y"><label for="q%ID%-%CID%-4-y">Yes</label>
-      </td><td><input type="radio" name="q%ID%-%CID%-4" id="q%ID%-%CID%-4-n" value="n"><label for="q%ID%-%CID%-4-n">No</label>
+      </td><td>
+      <input type="radio" name="q%ID%-%CID%-4" id="q%ID%-%CID%-4-a" value="a"><label for="q%ID%-%CID%-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q%ID%-%CID%-4" id="q%ID%-%CID%-4-n" value="n"><label for="q%ID%-%CID%-4-n">No</label>
       </td></tr>
       <tr><td colspan="3">
       Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
