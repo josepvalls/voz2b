@@ -17,6 +17,7 @@ PORT = 80
 DATA_PATH = 'saved_data'
 address = 'localhost'
 address = ''
+TIMESTAMP_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 def get_message(path,uid=None):
     if uid is None:
@@ -41,7 +42,7 @@ def save_data(handler):
         postvars = urlparse.parse_qs(handler.rfile.read(content_length), keep_blank_values=1)
     else:
         postvars = {}
-    postvars['timestamp'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    postvars['timestamp'] = datetime.datetime.now().strftime(TIMESTAMP_FORMAT)
     postvars['client'] = handler.client_address
     if 'age' in postvars and postvars['age']:
         try:
