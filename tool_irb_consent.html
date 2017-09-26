@@ -22,6 +22,10 @@
     } );
     $('input:submit').addClass("ui-button ui-widget ui-widget-content ui-corner-all");
     $('input:text').addClass("ui-widget ui-widget-content ui-corner-all");
+    var today = new Date();
+    var date = (today.getMonth()+1)+'/'+today.getDate()+'/'+ today.getFullYear();
+    $('#datefield').val(date);
+
   });
   </script>
   <style type="text/css">
@@ -54,9 +58,9 @@
   <h2>Consent</h2>
   <p><strong>If you have questions:</strong> The researchers conducting this study are Josep Valls-Vargas, Santiago Ontañón and Jichen Zhu. Please contact us with any questions you have before continuing: <a href="mailto:jv384@drexel.edu">jv384@drexel.edu</a></p>
   <p><strong>Statement of Consent:</strong>I have read the above information, and have received answers to any questions I asked. I consent to take part in the study.</p>
-  Your Name: <input type="text" name="name" size="40"/>
+  Your Name (optional): <input type="text" name="name" size="40"/>
   <!--<br/>Your Signature: (enter your initials as an electronic signature) <input type="text" name="name" size="4" class="textbox">-->
-  Date: (mm/dd/yyyy) <input type="text" name="date" size="10" class="textbox">
+  Date: (mm/dd/yyyy) <input type="text" name="date" size="10" class="textbox" id="datefield">
   <p><small>Your name is only used as part of the consent process and will not be included in the data analysis for the study.</small></p>
   <h2>Pre-Questionnaire</h2>
   <p>Please fill the following questions to the best of your knowledge.</p>
