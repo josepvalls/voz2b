@@ -20,6 +20,7 @@ for f in os.listdir(tool_irb_synthetic_forms_httpserver.DATA_PATH):
     data[uid].append(evt)
 fields_consent = ['name','timestamp','age','edu','dustudent','native','competent']
 fields = ['status','total_time','datapoints']+fields_consent+['reading_check']
+statuses = ['DONE':0,'PEND':0]
 for uid in data.keys():
     e = {}
     if not 'form1' in data[uid]: continue
@@ -39,12 +40,15 @@ for uid in data.keys():
         c = json.load(open(tool_irb_synthetic_forms_httpserver.DATA_PATH + '/' + uid + '_form2'))
         c = flatten_form(c)
 
-        t_s = datetime.datetime.strptime(e['timestamp'],tool_irb_synthetic_forms_httpserver.TIMESTAMP_FORMAT)
+        t_s = datetime.datetime.strptime(e['timestamp'], tool_irb_synthetic_forms_httpserver.TIMESTAMP_FORMAT)
         t_e = datetime.datetime.strptime(c['timestamp'], tool_irb_synthetic_forms_httpserver.TIMESTAMP_FORMAT)
 
         e['total_time'] = 1.0 * (t_e-t_s).seconds / 60.0
+        e['total_time'] = "%.2f" % e['total_time']
     else:
-        e['status'] = 'PENDING'
+        e['status'] = 'PEND'
+        e['total_time'] = 'PEND'
+    statuses[e['status']]+=1
     e['datapoints'] = len(data[uid])
     ret.append(e)
 for j in fields:
@@ -54,3 +58,6 @@ for i in ret:
     for j in fields:
         print i.get(j,'?'),'\t',
     print
+print "Totals"
+print statuses
+
