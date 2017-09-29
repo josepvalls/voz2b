@@ -177,28 +177,36 @@ TEMPLATE_HTML = '''<!doctype html>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
+  function is_touch_device() {
+  return 'ontouchstart' in window        // works on most browsers 
+      || navigator.maxTouchPoints;       // works on IE10/11 and Surface
+  };
   $( document ).ready(function() {
-    $( function() {
-      $( "input:radio" ).checkboxradio({
-        icon: false
-      });
-    } );
-    $( function() {
-      $( document ).tooltip({
-        show: {
-          delay: 0
-        }
-      });
-    } );
-    $( function() {
-        $( "textarea.resizable" ).resizable({
-          handles: "se",
-          containment: "#questions",
-          minHeight: 40,
-          minWidth: 200
+    if(!is_touch_device()){
+        $( function() {
+          $( "input:radio" ).checkboxradio({
+            icon: false
+          });
+        } );
+        $( function() {
+          $( document ).tooltip({
+            show: {
+              delay: 0
+            }
+          });
+        } );
+        $( function() {
+            $( "textarea.resizable" ).resizable({
+              handles: "se",
+              containment: "#questions",
+              minHeight: 40,
+              minWidth: 200
+            });
         });
-    });
-    $('input:text, input:submit').addClass("ui-button ui-widget ui-widget-content ui-corner-all");
+        $('input:text, input:submit').addClass("ui-button ui-widget ui-widget-content ui-corner-all");
+    } else {
+        $( "#tooltips_note" ).remove();
+    }
     $('input:radio').change(function() {
       var formData = JSON.stringify($("#questions").serializeArray());
       console.log(formData);
@@ -246,7 +254,7 @@ TEMPLATE_HTML = '''<!doctype html>
   <p>In this page we will show you several short story snippets. 
   We will show you multiple variations of each story. The different variations share a common initial setup (<span class="initial">highlighted in blue</span>) but vary in that each has a different continuation (<span class="continuation">highlighted in purple</span>).
   We ask you to read each of them and rate each of the continuations in terms of how well they follows the initial setup and your overall satisfaction with the text.</p>
-  <p>Note that throughout this page, you will find pieces of <em title="This is an example of the additional explanations you may find throughout this page.">text in italics</em>. Feel free to hover your mouse cursor on them to obtain additional explanations.</p>
+  <p id="tooltips_note">Note that throughout this page, you will find pieces of <em title="This is an example of the additional explanations you may find throughout this page.">text in italics</em>. Feel free to hover your mouse cursor on them to obtain additional explanations.</p>
   <p>When you are finished, please click the <strong>Submit</strong> button at the bottom of the page to save your answers.</p>
     %FORM%
   <hr/>
