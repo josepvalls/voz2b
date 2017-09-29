@@ -20,7 +20,7 @@ for f in os.listdir(tool_irb_synthetic_forms_httpserver.DATA_PATH):
     data[uid].append(evt)
 fields_consent = ['name','timestamp','age','edu','dustudent','native','competent']
 fields = ['status','total_time','datapoints']+fields_consent+['reading_check']
-statuses = ['DONE':0,'PEND':0]
+statuses = {'DONE':0,'PEND':0}
 for uid in data.keys():
     e = {}
     if not 'form1' in data[uid]: continue
@@ -28,6 +28,7 @@ for uid in data.keys():
     c = flatten_form(c)
     for i in fields_consent:
         e[i]=c.get(i,'?')
+    if not e['name']: e['name'] = "NO NAME"
     e['reading_check'] = 0
     if c.get('c1','?') == 'false': e['reading_check'] += 1
     if c.get('c2','?') == 'true': e['reading_check'] += 1
