@@ -52,5 +52,5 @@ for j in fields:
 print
 for i in ret:
     for j in fields:
-        print i[j],'\t',
+        print i.get(j,'?'),'\t',
     print
