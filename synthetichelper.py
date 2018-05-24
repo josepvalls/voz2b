@@ -160,38 +160,6 @@ def story_stats(story_i,story_data,glue_for_sentences = ' '):
     #print anno_c_verbs,anno_c_rels
     return (raw_text,character_mentions,character_roles,story_data,functions)
 
-
-def story_stats(story_i,story_data,glue_for_sentences = ' '):
-    raw_text = ''
-    character_mentions = collections.defaultdict(list)
-    character_roles = collections.defaultdict(list)
-    anno_c_verbs = 0
-    anno_c_rels = 0
-    functions = []
-    for row in story_data:
-        print row
-        function, text, annotations, offset_start, offset_end = row
-        raw_text += text + glue_for_sentences
-        if functions and functions[-1][0] and function and functions[-1][0][0]==function[0]: # TODO check the function group instead of the first char
-            functions[-1] = (functions[-1][0],functions[-1][1],offset_end)
-        else:
-            functions.append((function,offset_start,offset_end))
-        for annotation in annotations:
-            anno_c_verbs+=1
-            for mention in [annotation[1],annotation[2]]:
-                if not mention: continue
-                anno_c_rels+=1
-                key, neg, o_start, o_end, extra = mention
-                character_mentions[key].append((raw_text[o_start:o_end],o_start,o_end))
-                if extra:
-                    character_roles[key].append(extra)
-    for key in character_mentions:
-        pass
-        #print str(story_i)+"\t"+key+"\t"+str(len(character_roles.get(key,['other'])))+"\t"+character_roles.get(key,['other'])[0]+"\t"+str(character_roles.get(key,''))+"\t"+str(len(character_mentions[key]))+"\t"+str(character_mentions[key])
-    #print anno_c_verbs,anno_c_rels
-    return (raw_text,character_mentions,character_roles,story_data,functions)
-
-
 def create_document_from_story_data(story_data,properties={}, annotate=True):
     import stanfordhelper
     raw_text, character_mentions, character_roles, story_data, functions = story_stats(properties['story_id'], story_data)
@@ -346,12 +314,35 @@ def generate_riu_files():
         f.write(script)
 
 
+def synthetic_story_stats(stories):
+    from nltk.tokenize import TreebankWordTokenizer
+    text_lens = []
+    function_lens = []
+    tokens_lens = []
+    for idx,story_data in enumerate(stories):
+        raw_text, character_mentions, character_roles, story_data, functions = story_stats(idx,story_data, glue_for_sentences = '\n')
+        text_lens.append(len(raw_text.split('\n')))
+        function_lens.append(len(functions))
+        tokens_lens.append(len(TreebankWordTokenizer().tokenize(raw_text.lower())))
+
+
+
+
+    print text_lens
+    print function_lens
+    print tokens_lens
+
+
 def main():
-    generate_riu_files()
-    return
+    if False:
+        generate_riu_files()
+        return
     #generate_tokenized_files()
     stories = get_data(do_segment=False, include_annotations=True)
     print len(stories)
+    if True:
+        synthetic_story_stats(stories)
+        return
 
     for story_i,story_data in enumerate(stories):
         print create_document_from_story_data(story_data,{'story_id':story_i})

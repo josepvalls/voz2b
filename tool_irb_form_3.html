@@ -1,0 +1,1962 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Evaluation of Automatic Story Generation Systems</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  function is_touch_device() {
+  return 'ontouchstart' in window        // works on most browsers 
+      || navigator.maxTouchPoints;       // works on IE10/11 and Surface
+  };
+  $( document ).ready(function() {
+    if(is_touch_device()){
+        $( function() {
+          $( "input:radio" ).checkboxradio({
+            icon: false
+          });
+        } );
+        $( function() {
+          $( document ).tooltip({
+            show: {
+              delay: 0
+            }
+          });
+        } );
+        $( function() {
+            $( "textarea.resizable" ).resizable({
+              handles: "se",
+              containment: "#questions",
+              minHeight: 40,
+              minWidth: 200
+            });
+        });
+        $('input:text, input:submit').addClass("ui-button ui-widget ui-widget-content ui-corner-all");
+    } else {
+        $( "#tooltips_note" ).remove();
+    }
+    $('input:radio').change(function() {
+      var formData = JSON.stringify($("#questions").serializeArray());
+      console.log(formData);
+      $.ajax({
+        type: "POST",
+        url: "/json",
+        data: formData,
+        dataType: "json",
+        contentType : "application/json"
+      });
+    });
+    $('textarea').blur(function() {
+      var formData = JSON.stringify($("#questions").serializeArray());
+      console.log(formData);
+      $.ajax({
+        type: "POST",
+        url: "/json",
+        data: formData,
+        dataType: "json",
+        contentType : "application/json"
+      });
+    });
+  });
+  </script>
+  <style type="text/css">
+    body { font-family: Arial,Helvetica,sans-serif; font-size: 1em; width: 50em; margin-left: auto; margin-right: auto;}
+    fieldset { margin-bottom: 1em;}
+    legend.continuation-title {font-size:1.5em;}
+    .ui-tooltip {background-color: #F0E68C;}
+    em, fieldset.rating label, label.rating {text-decoration-color: #9C911D; text-decoration-line: underline;}
+    em, fieldset.rating label, label.rating {-webkit-text-decoration: #9C911D underline wavy;}
+    li {border-bottom: 2px dashed #F0E68C;}
+    p.initial, p.continuation {padding: 0.5em;}
+    .initial { background-color: #AEBEE3;}
+    .continuation { background-color: #D0B2E3;}
+    p.continuation {margin-top: -1em;}
+    h2 small {font-style: italic;}
+    .ui-resizable-se { bottom: 17px;}
+    textarea.resizable {margin-top: 0.25em;}
+  </style>
+</head>
+<body>
+<form action="/form2" method="POST" id="questions">
+  <h1>Evaluation of Automatic Story Generation Systems</h1>
+  <p>In this page we will show you several short story snippets. 
+  We will show you multiple variations of each story. The different variations share a common initial setup (<span class="initial">highlighted in blue</span>) but vary in that each has a different continuation (<span class="continuation">highlighted in purple</span>).
+  We ask you to read each of them and rate each of the continuations in terms of how well they follows the initial setup and your overall satisfaction with the text.</p>
+  <p id="tooltips_note">Note that throughout this page, you will find pieces of <em title="This is an example of the additional explanations you may find throughout this page.">text in italics</em>. Feel free to hover your mouse cursor on them to obtain additional explanations.</p>
+  <p>When you are finished, please click the <strong>Submit</strong> button at the bottom of the page to save your answers.</p>
+    
+<input type="hidden" name="sources" value="">
+
+  <h2>Story 1 <small>Variation 1</small></h2>
+  <p class="initial">Once there lived a rich merchant with two beautiful daughters. The merchant sent them to marry the kingdom's prince.</p>
+  <p class="continuation">The younger sister was jealous of her older sister. When her older sister was sleeping, she cut her eyes. She then left her sister to die.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r1-1" id="r1-1-1" value="1"><label for="r1-1-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r1-1" id="r1-1-2" value="2"><label for="r1-1-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r1-1" id="r1-1-3" value="3"><label for="r1-1-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r1-1" id="r1-1-4" value="4"><label for="r1-1-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r1-1" id="r1-1-5" value="5"><label for="r1-1-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r1-1" id="r1-1-6" value="6"><label for="r1-1-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q1-1-1" id="q1-1-1-y" value="y"><label for="q1-1-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q1-1-1" id="q1-1-1-a" value="a"><label for="q1-1-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q1-1-1" id="q1-1-1-n" value="n"><label for="q1-1-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q1-1-2" id="q1-1-2-y" value="y"><label for="q1-1-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q1-1-2" id="q1-1-2-a" value="a"><label for="q1-1-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q1-1-2" id="q1-1-2-n" value="n"><label for="q1-1-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q1-1-3" id="q1-1-3-y" value="y"><label for="q1-1-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q1-1-3" id="q1-1-3-a" value="a"><label for="q1-1-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q1-1-3" id="q1-1-3-n" value="n"><label for="q1-1-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q1-1-4" id="q1-1-4-y" value="y"><label for="q1-1-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q1-1-4" id="q1-1-4-a" value="a"><label for="q1-1-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q1-1-4" id="q1-1-4-n" value="n"><label for="q1-1-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o1-1" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 1 <small>Variation 2</small></h2>
+  <p class="initial">Once there lived a rich merchant with two beautiful daughters. The merchant sent them to marry the kingdom's prince.</p>
+  <p class="continuation">The maidservant was jealous. The maidservant stole the merchant's daughter clothes and left her to be eaten by the wolves.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r1-2" id="r1-2-1" value="1"><label for="r1-2-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r1-2" id="r1-2-2" value="2"><label for="r1-2-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r1-2" id="r1-2-3" value="3"><label for="r1-2-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r1-2" id="r1-2-4" value="4"><label for="r1-2-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r1-2" id="r1-2-5" value="5"><label for="r1-2-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r1-2" id="r1-2-6" value="6"><label for="r1-2-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q1-2-1" id="q1-2-1-y" value="y"><label for="q1-2-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q1-2-1" id="q1-2-1-a" value="a"><label for="q1-2-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q1-2-1" id="q1-2-1-n" value="n"><label for="q1-2-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q1-2-2" id="q1-2-2-y" value="y"><label for="q1-2-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q1-2-2" id="q1-2-2-a" value="a"><label for="q1-2-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q1-2-2" id="q1-2-2-n" value="n"><label for="q1-2-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q1-2-3" id="q1-2-3-y" value="y"><label for="q1-2-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q1-2-3" id="q1-2-3-a" value="a"><label for="q1-2-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q1-2-3" id="q1-2-3-n" value="n"><label for="q1-2-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q1-2-4" id="q1-2-4-y" value="y"><label for="q1-2-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q1-2-4" id="q1-2-4-a" value="a"><label for="q1-2-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q1-2-4" id="q1-2-4-n" value="n"><label for="q1-2-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o1-2" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 1 <small>Variation 3</small></h2>
+  <p class="initial">Once there lived a rich merchant with two beautiful daughters. The merchant sent them to marry the kingdom's prince.</p>
+  <p class="continuation">She was jealous. She stole her older sister's clothes and left her older sister to be eaten by the wolves.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r1-3" id="r1-3-1" value="1"><label for="r1-3-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r1-3" id="r1-3-2" value="2"><label for="r1-3-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r1-3" id="r1-3-3" value="3"><label for="r1-3-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r1-3" id="r1-3-4" value="4"><label for="r1-3-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r1-3" id="r1-3-5" value="5"><label for="r1-3-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r1-3" id="r1-3-6" value="6"><label for="r1-3-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q1-3-1" id="q1-3-1-y" value="y"><label for="q1-3-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q1-3-1" id="q1-3-1-a" value="a"><label for="q1-3-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q1-3-1" id="q1-3-1-n" value="n"><label for="q1-3-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q1-3-2" id="q1-3-2-y" value="y"><label for="q1-3-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q1-3-2" id="q1-3-2-a" value="a"><label for="q1-3-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q1-3-2" id="q1-3-2-n" value="n"><label for="q1-3-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q1-3-3" id="q1-3-3-y" value="y"><label for="q1-3-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q1-3-3" id="q1-3-3-a" value="a"><label for="q1-3-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q1-3-3" id="q1-3-3-n" value="n"><label for="q1-3-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q1-3-4" id="q1-3-4-y" value="y"><label for="q1-3-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q1-3-4" id="q1-3-4-a" value="a"><label for="q1-3-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q1-3-4" id="q1-3-4-n" value="n"><label for="q1-3-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o1-3" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 1 <small>Variation 4</small></h2>
+  <p class="initial">Once there lived a rich merchant with two beautiful daughters. The merchant sent them to marry the kingdom's prince.</p>
+  <p class="continuation">The father kept his daughter had to the forest. The girl became a bull ate the father didn't take it into a bear.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r1-4" id="r1-4-1" value="1"><label for="r1-4-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r1-4" id="r1-4-2" value="2"><label for="r1-4-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r1-4" id="r1-4-3" value="3"><label for="r1-4-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r1-4" id="r1-4-4" value="4"><label for="r1-4-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r1-4" id="r1-4-5" value="5"><label for="r1-4-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r1-4" id="r1-4-6" value="6"><label for="r1-4-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q1-4-1" id="q1-4-1-y" value="y"><label for="q1-4-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q1-4-1" id="q1-4-1-a" value="a"><label for="q1-4-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q1-4-1" id="q1-4-1-n" value="n"><label for="q1-4-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q1-4-2" id="q1-4-2-y" value="y"><label for="q1-4-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q1-4-2" id="q1-4-2-a" value="a"><label for="q1-4-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q1-4-2" id="q1-4-2-n" value="n"><label for="q1-4-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q1-4-3" id="q1-4-3-y" value="y"><label for="q1-4-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q1-4-3" id="q1-4-3-a" value="a"><label for="q1-4-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q1-4-3" id="q1-4-3-n" value="n"><label for="q1-4-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q1-4-4" id="q1-4-4-y" value="y"><label for="q1-4-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q1-4-4" id="q1-4-4-a" value="a"><label for="q1-4-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q1-4-4" id="q1-4-4-n" value="n"><label for="q1-4-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o1-4" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+
+<input type="hidden" name="sources" value="">
+
+  <h2>Story 2 <small>Variation 1</small></h2>
+  <p class="initial">A woman was once kidnapped by a bear. The woman gave birth to a bearlet who was half-boy and half-bear. Eventually, the woman was able to escape and took the boy with her.</p>
+  <p class="continuation">When they got back home, the woman's husband could not accept the bearlet. He had a plan to get rid of the bearlet. He told the bearlet that he would only let him stay if he got rid of the water spirits in the lake. The bearlet left not knowing what to do.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r2-1" id="r2-1-1" value="1"><label for="r2-1-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r2-1" id="r2-1-2" value="2"><label for="r2-1-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r2-1" id="r2-1-3" value="3"><label for="r2-1-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r2-1" id="r2-1-4" value="4"><label for="r2-1-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r2-1" id="r2-1-5" value="5"><label for="r2-1-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r2-1" id="r2-1-6" value="6"><label for="r2-1-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q2-1-1" id="q2-1-1-y" value="y"><label for="q2-1-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q2-1-1" id="q2-1-1-a" value="a"><label for="q2-1-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q2-1-1" id="q2-1-1-n" value="n"><label for="q2-1-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q2-1-2" id="q2-1-2-y" value="y"><label for="q2-1-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q2-1-2" id="q2-1-2-a" value="a"><label for="q2-1-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q2-1-2" id="q2-1-2-n" value="n"><label for="q2-1-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q2-1-3" id="q2-1-3-y" value="y"><label for="q2-1-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q2-1-3" id="q2-1-3-a" value="a"><label for="q2-1-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q2-1-3" id="q2-1-3-n" value="n"><label for="q2-1-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q2-1-4" id="q2-1-4-y" value="y"><label for="q2-1-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q2-1-4" id="q2-1-4-a" value="a"><label for="q2-1-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q2-1-4" id="q2-1-4-n" value="n"><label for="q2-1-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o2-1" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 2 <small>Variation 2</small></h2>
+  <p class="initial">A woman was once kidnapped by a bear. The woman gave birth to a bearlet who was half-boy and half-bear. Eventually, the woman was able to escape and took the boy with her.</p>
+  <p class="continuation">The maidservant stole the merchant's daughter clothes and left her to be eaten by the wolves. A beautiful daughter challenged a maidservant to see who could scream the loudest. A maidservant and a beautiful daughter took turns yelling and screaming. A maidservant asked a beautiful daughter to close his eyes. Then, a maidservant smacked a beautiful daughter with a stick.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r2-2" id="r2-2-1" value="1"><label for="r2-2-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r2-2" id="r2-2-2" value="2"><label for="r2-2-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r2-2" id="r2-2-3" value="3"><label for="r2-2-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r2-2" id="r2-2-4" value="4"><label for="r2-2-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r2-2" id="r2-2-5" value="5"><label for="r2-2-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r2-2" id="r2-2-6" value="6"><label for="r2-2-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q2-2-1" id="q2-2-1-y" value="y"><label for="q2-2-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q2-2-1" id="q2-2-1-a" value="a"><label for="q2-2-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q2-2-1" id="q2-2-1-n" value="n"><label for="q2-2-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q2-2-2" id="q2-2-2-y" value="y"><label for="q2-2-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q2-2-2" id="q2-2-2-a" value="a"><label for="q2-2-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q2-2-2" id="q2-2-2-n" value="n"><label for="q2-2-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q2-2-3" id="q2-2-3-y" value="y"><label for="q2-2-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q2-2-3" id="q2-2-3-a" value="a"><label for="q2-2-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q2-2-3" id="q2-2-3-n" value="n"><label for="q2-2-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q2-2-4" id="q2-2-4-y" value="y"><label for="q2-2-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q2-2-4" id="q2-2-4-a" value="a"><label for="q2-2-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q2-2-4" id="q2-2-4-n" value="n"><label for="q2-2-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o2-2" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 2 <small>Variation 3</small></h2>
+  <p class="initial">A woman was once kidnapped by a bear. The woman gave birth to a bearlet who was half-boy and half-bear. Eventually, the woman was able to escape and took the boy with her.</p>
+  <p class="continuation">He had a plan to get rid of the bearlet. He told the bearlet that he would only let him stay if he got rid of the water spirits in the lake. The bearlet left not knowing what to do. A bear ambushed a bearlet but a bearlet was faster than him. A bear saw he could not win and asked a bearlet for forgiveness.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r2-3" id="r2-3-1" value="1"><label for="r2-3-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r2-3" id="r2-3-2" value="2"><label for="r2-3-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r2-3" id="r2-3-3" value="3"><label for="r2-3-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r2-3" id="r2-3-4" value="4"><label for="r2-3-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r2-3" id="r2-3-5" value="5"><label for="r2-3-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r2-3" id="r2-3-6" value="6"><label for="r2-3-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q2-3-1" id="q2-3-1-y" value="y"><label for="q2-3-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q2-3-1" id="q2-3-1-a" value="a"><label for="q2-3-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q2-3-1" id="q2-3-1-n" value="n"><label for="q2-3-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q2-3-2" id="q2-3-2-y" value="y"><label for="q2-3-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q2-3-2" id="q2-3-2-a" value="a"><label for="q2-3-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q2-3-2" id="q2-3-2-n" value="n"><label for="q2-3-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q2-3-3" id="q2-3-3-y" value="y"><label for="q2-3-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q2-3-3" id="q2-3-3-a" value="a"><label for="q2-3-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q2-3-3" id="q2-3-3-n" value="n"><label for="q2-3-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q2-3-4" id="q2-3-4-y" value="y"><label for="q2-3-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q2-3-4" id="q2-3-4-a" value="a"><label for="q2-3-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q2-3-4" id="q2-3-4-n" value="n"><label for="q2-3-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o2-3" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 2 <small>Variation 4</small></h2>
+  <p class="initial">A woman was once kidnapped by a bear. The woman gave birth to a bearlet who was half-boy and half-bear. Eventually, the woman was able to escape and took the boy with her.</p>
+  <p class="continuation">From home, the devil started tormenting the princess of a dragon set their house on. A nearby witch smelled the milk of bread and buried him.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r2-4" id="r2-4-1" value="1"><label for="r2-4-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r2-4" id="r2-4-2" value="2"><label for="r2-4-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r2-4" id="r2-4-3" value="3"><label for="r2-4-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r2-4" id="r2-4-4" value="4"><label for="r2-4-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r2-4" id="r2-4-5" value="5"><label for="r2-4-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r2-4" id="r2-4-6" value="6"><label for="r2-4-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q2-4-1" id="q2-4-1-y" value="y"><label for="q2-4-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q2-4-1" id="q2-4-1-a" value="a"><label for="q2-4-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q2-4-1" id="q2-4-1-n" value="n"><label for="q2-4-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q2-4-2" id="q2-4-2-y" value="y"><label for="q2-4-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q2-4-2" id="q2-4-2-a" value="a"><label for="q2-4-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q2-4-2" id="q2-4-2-n" value="n"><label for="q2-4-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q2-4-3" id="q2-4-3-y" value="y"><label for="q2-4-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q2-4-3" id="q2-4-3-a" value="a"><label for="q2-4-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q2-4-3" id="q2-4-3-n" value="n"><label for="q2-4-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q2-4-4" id="q2-4-4-y" value="y"><label for="q2-4-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q2-4-4" id="q2-4-4-a" value="a"><label for="q2-4-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q2-4-4" id="q2-4-4-n" value="n"><label for="q2-4-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o2-4" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+
+<input type="hidden" name="sources" value="">
+
+  <h2>Story 3 <small>Variation 1</small></h2>
+  <p class="initial">A soldier was given leave from his company. He had only a piece of bread, a knapsack and a fiddle. He was happy and left playing the fiddle. A nearby devil heard the fiddle. The devil approached the soldier and asked him to teach him how to play in exchange for a favor. The soldier taught the devil how to play but did not ask the devil for any favors. They parted ways.</p>
+  <p class="continuation">After some time, the devil was tormenting the princess of the kingdom. The king issued a call asking for help. The soldier answered the call and interviewed with the king. He assured the king he would be able to free the princess from her torments.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r3-1" id="r3-1-1" value="1"><label for="r3-1-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r3-1" id="r3-1-2" value="2"><label for="r3-1-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r3-1" id="r3-1-3" value="3"><label for="r3-1-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r3-1" id="r3-1-4" value="4"><label for="r3-1-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r3-1" id="r3-1-5" value="5"><label for="r3-1-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r3-1" id="r3-1-6" value="6"><label for="r3-1-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q3-1-1" id="q3-1-1-y" value="y"><label for="q3-1-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q3-1-1" id="q3-1-1-a" value="a"><label for="q3-1-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q3-1-1" id="q3-1-1-n" value="n"><label for="q3-1-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q3-1-2" id="q3-1-2-y" value="y"><label for="q3-1-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q3-1-2" id="q3-1-2-a" value="a"><label for="q3-1-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q3-1-2" id="q3-1-2-n" value="n"><label for="q3-1-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q3-1-3" id="q3-1-3-y" value="y"><label for="q3-1-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q3-1-3" id="q3-1-3-a" value="a"><label for="q3-1-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q3-1-3" id="q3-1-3-n" value="n"><label for="q3-1-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q3-1-4" id="q3-1-4-y" value="y"><label for="q3-1-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q3-1-4" id="q3-1-4-a" value="a"><label for="q3-1-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q3-1-4" id="q3-1-4-n" value="n"><label for="q3-1-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o3-1" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 3 <small>Variation 2</small></h2>
+  <p class="initial">A soldier was given leave from his company. He had only a piece of bread, a knapsack and a fiddle. He was happy and left playing the fiddle. A nearby devil heard the fiddle. The devil approached the soldier and asked him to teach him how to play in exchange for a favor. The soldier taught the devil how to play but did not ask the devil for any favors. They parted ways.</p>
+  <p class="continuation">A soldier came the next day but could not find A soldier. A soldier cursed A soldier and transformed him into a cat. Years passed and everyday the mother would sing to A soldier and tell him about his story.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r3-2" id="r3-2-1" value="1"><label for="r3-2-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r3-2" id="r3-2-2" value="2"><label for="r3-2-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r3-2" id="r3-2-3" value="3"><label for="r3-2-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r3-2" id="r3-2-4" value="4"><label for="r3-2-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r3-2" id="r3-2-5" value="5"><label for="r3-2-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r3-2" id="r3-2-6" value="6"><label for="r3-2-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q3-2-1" id="q3-2-1-y" value="y"><label for="q3-2-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q3-2-1" id="q3-2-1-a" value="a"><label for="q3-2-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q3-2-1" id="q3-2-1-n" value="n"><label for="q3-2-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q3-2-2" id="q3-2-2-y" value="y"><label for="q3-2-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q3-2-2" id="q3-2-2-a" value="a"><label for="q3-2-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q3-2-2" id="q3-2-2-n" value="n"><label for="q3-2-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q3-2-3" id="q3-2-3-y" value="y"><label for="q3-2-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q3-2-3" id="q3-2-3-a" value="a"><label for="q3-2-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q3-2-3" id="q3-2-3-n" value="n"><label for="q3-2-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q3-2-4" id="q3-2-4-y" value="y"><label for="q3-2-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q3-2-4" id="q3-2-4-a" value="a"><label for="q3-2-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q3-2-4" id="q3-2-4-n" value="n"><label for="q3-2-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o3-2" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 3 <small>Variation 3</small></h2>
+  <p class="initial">A soldier was given leave from his company. He had only a piece of bread, a knapsack and a fiddle. He was happy and left playing the fiddle. A nearby devil heard the fiddle. The devil approached the soldier and asked him to teach him how to play in exchange for a favor. The soldier taught the devil how to play but did not ask the devil for any favors. They parted ways.</p>
+  <p class="continuation">A soldier came the next day but could not find the boy. A soldier cursed the boy and transformed him into a cat. Years passed and A nearby devil would sing to the cat and tell him about his story.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r3-3" id="r3-3-1" value="1"><label for="r3-3-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r3-3" id="r3-3-2" value="2"><label for="r3-3-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r3-3" id="r3-3-3" value="3"><label for="r3-3-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r3-3" id="r3-3-4" value="4"><label for="r3-3-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r3-3" id="r3-3-5" value="5"><label for="r3-3-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r3-3" id="r3-3-6" value="6"><label for="r3-3-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q3-3-1" id="q3-3-1-y" value="y"><label for="q3-3-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q3-3-1" id="q3-3-1-a" value="a"><label for="q3-3-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q3-3-1" id="q3-3-1-n" value="n"><label for="q3-3-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q3-3-2" id="q3-3-2-y" value="y"><label for="q3-3-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q3-3-2" id="q3-3-2-a" value="a"><label for="q3-3-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q3-3-2" id="q3-3-2-n" value="n"><label for="q3-3-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q3-3-3" id="q3-3-3-y" value="y"><label for="q3-3-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q3-3-3" id="q3-3-3-a" value="a"><label for="q3-3-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q3-3-3" id="q3-3-3-n" value="n"><label for="q3-3-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q3-3-4" id="q3-3-4-y" value="y"><label for="q3-3-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q3-3-4" id="q3-3-4-a" value="a"><label for="q3-3-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q3-3-4" id="q3-3-4-n" value="n"><label for="q3-3-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o3-3" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 3 <small>Variation 4</small></h2>
+  <p class="initial">A soldier was given leave from his company. He had only a piece of bread, a knapsack and a fiddle. He was happy and left playing the fiddle. A nearby devil heard the fiddle. The devil approached the soldier and asked him to teach him how to play in exchange for a favor. The soldier taught the devil how to play but did not ask the devil for any favors. They parted ways.</p>
+  <p class="continuation">Baba Yaga saw them and tried it on fire but then the baby brother and the crops and when he devised a bad winter. The father did not accept the kid to meet with three heads saw them and buried him.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r3-4" id="r3-4-1" value="1"><label for="r3-4-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r3-4" id="r3-4-2" value="2"><label for="r3-4-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r3-4" id="r3-4-3" value="3"><label for="r3-4-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r3-4" id="r3-4-4" value="4"><label for="r3-4-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r3-4" id="r3-4-5" value="5"><label for="r3-4-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r3-4" id="r3-4-6" value="6"><label for="r3-4-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q3-4-1" id="q3-4-1-y" value="y"><label for="q3-4-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q3-4-1" id="q3-4-1-a" value="a"><label for="q3-4-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q3-4-1" id="q3-4-1-n" value="n"><label for="q3-4-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q3-4-2" id="q3-4-2-y" value="y"><label for="q3-4-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q3-4-2" id="q3-4-2-a" value="a"><label for="q3-4-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q3-4-2" id="q3-4-2-n" value="n"><label for="q3-4-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q3-4-3" id="q3-4-3-y" value="y"><label for="q3-4-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q3-4-3" id="q3-4-3-a" value="a"><label for="q3-4-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q3-4-3" id="q3-4-3-n" value="n"><label for="q3-4-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q3-4-4" id="q3-4-4-y" value="y"><label for="q3-4-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q3-4-4" id="q3-4-4-a" value="a"><label for="q3-4-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q3-4-4" id="q3-4-4-n" value="n"><label for="q3-4-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o3-4" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+
+<input type="hidden" name="sources" value="">
+
+  <h2>Story 4 <small>Variation 1</small></h2>
+  <p class="initial">Once upon a time there was a happy queen with a son and a daughter. In the kingdom lived a witch that was jealous of their happiness. The witch devised a plan to ruin their family. The witch visited them. She gave the prince a ring and told him that he would be happy as long as he married a girl who the ring would fit.</p>
+  <p class="continuation">Years passed but the boy could not find a girl who the ring would fit. One day, his sister saw the ring and tried it on. The ring fit perfectly and she couldn't take it off. He immediately asked her to marry him. The girl panicked and escaped the palace.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r4-1" id="r4-1-1" value="1"><label for="r4-1-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r4-1" id="r4-1-2" value="2"><label for="r4-1-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r4-1" id="r4-1-3" value="3"><label for="r4-1-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r4-1" id="r4-1-4" value="4"><label for="r4-1-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r4-1" id="r4-1-5" value="5"><label for="r4-1-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r4-1" id="r4-1-6" value="6"><label for="r4-1-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q4-1-1" id="q4-1-1-y" value="y"><label for="q4-1-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q4-1-1" id="q4-1-1-a" value="a"><label for="q4-1-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q4-1-1" id="q4-1-1-n" value="n"><label for="q4-1-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q4-1-2" id="q4-1-2-y" value="y"><label for="q4-1-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q4-1-2" id="q4-1-2-a" value="a"><label for="q4-1-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q4-1-2" id="q4-1-2-n" value="n"><label for="q4-1-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q4-1-3" id="q4-1-3-y" value="y"><label for="q4-1-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q4-1-3" id="q4-1-3-a" value="a"><label for="q4-1-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q4-1-3" id="q4-1-3-n" value="n"><label for="q4-1-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q4-1-4" id="q4-1-4-y" value="y"><label for="q4-1-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q4-1-4" id="q4-1-4-a" value="a"><label for="q4-1-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q4-1-4" id="q4-1-4-n" value="n"><label for="q4-1-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o4-1" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 4 <small>Variation 2</small></h2>
+  <p class="initial">Once upon a time there was a happy queen with a son and a daughter. In the kingdom lived a witch that was jealous of their happiness. The witch devised a plan to ruin their family. The witch visited them. She gave the prince a ring and told him that he would be happy as long as he married a girl who the ring would fit.</p>
+  <p class="continuation">The soldier accepted the king's orders and prepared to leave. The king issued a call for help. The king responded to the call. The king told The king he would make The king a nobleman is The king could rescue a bride.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r4-2" id="r4-2-1" value="1"><label for="r4-2-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r4-2" id="r4-2-2" value="2"><label for="r4-2-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r4-2" id="r4-2-3" value="3"><label for="r4-2-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r4-2" id="r4-2-4" value="4"><label for="r4-2-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r4-2" id="r4-2-5" value="5"><label for="r4-2-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r4-2" id="r4-2-6" value="6"><label for="r4-2-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q4-2-1" id="q4-2-1-y" value="y"><label for="q4-2-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q4-2-1" id="q4-2-1-a" value="a"><label for="q4-2-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q4-2-1" id="q4-2-1-n" value="n"><label for="q4-2-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q4-2-2" id="q4-2-2-y" value="y"><label for="q4-2-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q4-2-2" id="q4-2-2-a" value="a"><label for="q4-2-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q4-2-2" id="q4-2-2-n" value="n"><label for="q4-2-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q4-2-3" id="q4-2-3-y" value="y"><label for="q4-2-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q4-2-3" id="q4-2-3-a" value="a"><label for="q4-2-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q4-2-3" id="q4-2-3-n" value="n"><label for="q4-2-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q4-2-4" id="q4-2-4-y" value="y"><label for="q4-2-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q4-2-4" id="q4-2-4-a" value="a"><label for="q4-2-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q4-2-4" id="q4-2-4-n" value="n"><label for="q4-2-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o4-2" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 4 <small>Variation 3</small></h2>
+  <p class="initial">Once upon a time there was a happy queen with a son and a daughter. In the kingdom lived a witch that was jealous of their happiness. The witch devised a plan to ruin their family. The witch visited them. She gave the prince a ring and told him that he would be happy as long as he married a girl who the ring would fit.</p>
+  <p class="continuation">Their father threatened to marry them if he would not find a bride. The girl was terrified. She decided to try to find a bride for her brother.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r4-3" id="r4-3-1" value="1"><label for="r4-3-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r4-3" id="r4-3-2" value="2"><label for="r4-3-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r4-3" id="r4-3-3" value="3"><label for="r4-3-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r4-3" id="r4-3-4" value="4"><label for="r4-3-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r4-3" id="r4-3-5" value="5"><label for="r4-3-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r4-3" id="r4-3-6" value="6"><label for="r4-3-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q4-3-1" id="q4-3-1-y" value="y"><label for="q4-3-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q4-3-1" id="q4-3-1-a" value="a"><label for="q4-3-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q4-3-1" id="q4-3-1-n" value="n"><label for="q4-3-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q4-3-2" id="q4-3-2-y" value="y"><label for="q4-3-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q4-3-2" id="q4-3-2-a" value="a"><label for="q4-3-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q4-3-2" id="q4-3-2-n" value="n"><label for="q4-3-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q4-3-3" id="q4-3-3-y" value="y"><label for="q4-3-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q4-3-3" id="q4-3-3-a" value="a"><label for="q4-3-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q4-3-3" id="q4-3-3-n" value="n"><label for="q4-3-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q4-3-4" id="q4-3-4-y" value="y"><label for="q4-3-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q4-3-4" id="q4-3-4-a" value="a"><label for="q4-3-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q4-3-4" id="q4-3-4-n" value="n"><label for="q4-3-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o4-3" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 4 <small>Variation 4</small></h2>
+  <p class="initial">Once upon a time there was a happy queen with a son and a daughter. In the kingdom lived a witch that was jealous of their happiness. The witch devised a plan to ruin their family. The witch visited them. She gave the prince a ring and told him that he would be happy as long as he married a girl who the ring would fit.</p>
+  <p class="continuation">Once kidnapped princess had to get rid of her stepsister despised Alenka was no food. The stepmother.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r4-4" id="r4-4-1" value="1"><label for="r4-4-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r4-4" id="r4-4-2" value="2"><label for="r4-4-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r4-4" id="r4-4-3" value="3"><label for="r4-4-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r4-4" id="r4-4-4" value="4"><label for="r4-4-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r4-4" id="r4-4-5" value="5"><label for="r4-4-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r4-4" id="r4-4-6" value="6"><label for="r4-4-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q4-4-1" id="q4-4-1-y" value="y"><label for="q4-4-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q4-4-1" id="q4-4-1-a" value="a"><label for="q4-4-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q4-4-1" id="q4-4-1-n" value="n"><label for="q4-4-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q4-4-2" id="q4-4-2-y" value="y"><label for="q4-4-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q4-4-2" id="q4-4-2-a" value="a"><label for="q4-4-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q4-4-2" id="q4-4-2-n" value="n"><label for="q4-4-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q4-4-3" id="q4-4-3-y" value="y"><label for="q4-4-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q4-4-3" id="q4-4-3-a" value="a"><label for="q4-4-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q4-4-3" id="q4-4-3-n" value="n"><label for="q4-4-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q4-4-4" id="q4-4-4-y" value="y"><label for="q4-4-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q4-4-4" id="q4-4-4-a" value="a"><label for="q4-4-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q4-4-4" id="q4-4-4-n" value="n"><label for="q4-4-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o4-4" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+
+<input type="hidden" name="sources" value="">
+
+  <h2>Story 5 <small>Variation 1</small></h2>
+  <p class="initial">A poor mother lived in a little house with her two sons. There was famine and she could barely feed her sons. One day a hungry snake walked nearby. The snake looked through the window and saw the younger son unattended.</p>
+  <p class="continuation">The snake crawled in and took the younger son with her.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r5-1" id="r5-1-1" value="1"><label for="r5-1-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r5-1" id="r5-1-2" value="2"><label for="r5-1-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r5-1" id="r5-1-3" value="3"><label for="r5-1-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r5-1" id="r5-1-4" value="4"><label for="r5-1-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r5-1" id="r5-1-5" value="5"><label for="r5-1-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r5-1" id="r5-1-6" value="6"><label for="r5-1-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q5-1-1" id="q5-1-1-y" value="y"><label for="q5-1-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q5-1-1" id="q5-1-1-a" value="a"><label for="q5-1-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q5-1-1" id="q5-1-1-n" value="n"><label for="q5-1-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q5-1-2" id="q5-1-2-y" value="y"><label for="q5-1-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q5-1-2" id="q5-1-2-a" value="a"><label for="q5-1-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q5-1-2" id="q5-1-2-n" value="n"><label for="q5-1-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q5-1-3" id="q5-1-3-y" value="y"><label for="q5-1-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q5-1-3" id="q5-1-3-a" value="a"><label for="q5-1-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q5-1-3" id="q5-1-3-n" value="n"><label for="q5-1-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q5-1-4" id="q5-1-4-y" value="y"><label for="q5-1-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q5-1-4" id="q5-1-4-a" value="a"><label for="q5-1-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q5-1-4" id="q5-1-4-n" value="n"><label for="q5-1-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o5-1" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 5 <small>Variation 2</small></h2>
+  <p class="initial">A poor mother lived in a little house with her two sons. There was famine and she could barely feed her sons. One day a hungry snake walked nearby. The snake looked through the window and saw the younger son unattended.</p>
+  <p class="continuation">Her brother could not find a bride. Their father threatened to marry them if he would not find a bride. The girl was terrified.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r5-2" id="r5-2-1" value="1"><label for="r5-2-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r5-2" id="r5-2-2" value="2"><label for="r5-2-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r5-2" id="r5-2-3" value="3"><label for="r5-2-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r5-2" id="r5-2-4" value="4"><label for="r5-2-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r5-2" id="r5-2-5" value="5"><label for="r5-2-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r5-2" id="r5-2-6" value="6"><label for="r5-2-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q5-2-1" id="q5-2-1-y" value="y"><label for="q5-2-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q5-2-1" id="q5-2-1-a" value="a"><label for="q5-2-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q5-2-1" id="q5-2-1-n" value="n"><label for="q5-2-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q5-2-2" id="q5-2-2-y" value="y"><label for="q5-2-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q5-2-2" id="q5-2-2-a" value="a"><label for="q5-2-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q5-2-2" id="q5-2-2-n" value="n"><label for="q5-2-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q5-2-3" id="q5-2-3-y" value="y"><label for="q5-2-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q5-2-3" id="q5-2-3-a" value="a"><label for="q5-2-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q5-2-3" id="q5-2-3-n" value="n"><label for="q5-2-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q5-2-4" id="q5-2-4-y" value="y"><label for="q5-2-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q5-2-4" id="q5-2-4-a" value="a"><label for="q5-2-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q5-2-4" id="q5-2-4-n" value="n"><label for="q5-2-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o5-2" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 5 <small>Variation 3</small></h2>
+  <p class="initial">A poor mother lived in a little house with her two sons. There was famine and she could barely feed her sons. One day a hungry snake walked nearby. The snake looked through the window and saw the younger son unattended.</p>
+  <p class="continuation">The mother saw her younger son missing. She asked her older son to go look for his younger brother. The older brother was very responsible and agreed. He left the house and went into the woods.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r5-3" id="r5-3-1" value="1"><label for="r5-3-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r5-3" id="r5-3-2" value="2"><label for="r5-3-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r5-3" id="r5-3-3" value="3"><label for="r5-3-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r5-3" id="r5-3-4" value="4"><label for="r5-3-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r5-3" id="r5-3-5" value="5"><label for="r5-3-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r5-3" id="r5-3-6" value="6"><label for="r5-3-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q5-3-1" id="q5-3-1-y" value="y"><label for="q5-3-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q5-3-1" id="q5-3-1-a" value="a"><label for="q5-3-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q5-3-1" id="q5-3-1-n" value="n"><label for="q5-3-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q5-3-2" id="q5-3-2-y" value="y"><label for="q5-3-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q5-3-2" id="q5-3-2-a" value="a"><label for="q5-3-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q5-3-2" id="q5-3-2-n" value="n"><label for="q5-3-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q5-3-3" id="q5-3-3-y" value="y"><label for="q5-3-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q5-3-3" id="q5-3-3-a" value="a"><label for="q5-3-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q5-3-3" id="q5-3-3-n" value="n"><label for="q5-3-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q5-3-4" id="q5-3-4-y" value="y"><label for="q5-3-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q5-3-4" id="q5-3-4-a" value="a"><label for="q5-3-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q5-3-4" id="q5-3-4-n" value="n"><label for="q5-3-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o5-3" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 5 <small>Variation 4</small></h2>
+  <p class="initial">A poor mother lived in a little house with her two sons. There was famine and she could barely feed her sons. One day a hungry snake walked nearby. The snake looked through the window and saw the younger son unattended.</p>
+  <p class="continuation">A dragon kidnapped by the cow grew up he immediately asked her father and threw him. The girl once kidnapped the father and stepmother and escaped the baby brother unattended and threw him into the bull came to eat Vasili.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r5-4" id="r5-4-1" value="1"><label for="r5-4-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r5-4" id="r5-4-2" value="2"><label for="r5-4-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r5-4" id="r5-4-3" value="3"><label for="r5-4-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r5-4" id="r5-4-4" value="4"><label for="r5-4-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r5-4" id="r5-4-5" value="5"><label for="r5-4-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r5-4" id="r5-4-6" value="6"><label for="r5-4-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q5-4-1" id="q5-4-1-y" value="y"><label for="q5-4-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q5-4-1" id="q5-4-1-a" value="a"><label for="q5-4-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q5-4-1" id="q5-4-1-n" value="n"><label for="q5-4-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q5-4-2" id="q5-4-2-y" value="y"><label for="q5-4-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q5-4-2" id="q5-4-2-a" value="a"><label for="q5-4-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q5-4-2" id="q5-4-2-n" value="n"><label for="q5-4-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q5-4-3" id="q5-4-3-y" value="y"><label for="q5-4-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q5-4-3" id="q5-4-3-a" value="a"><label for="q5-4-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q5-4-3" id="q5-4-3-n" value="n"><label for="q5-4-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q5-4-4" id="q5-4-4-y" value="y"><label for="q5-4-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q5-4-4" id="q5-4-4-a" value="a"><label for="q5-4-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q5-4-4" id="q5-4-4-n" value="n"><label for="q5-4-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o5-4" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+
+<input type="hidden" name="sources" value="">
+
+  <h2>Story 6 <small>Variation 1</small></h2>
+  <p class="initial">An old couple lived in a hut with their adopted son. The boy had a magical bird that could control the weather. They used the bird's predictions to make it rain on their crops and were always prosperous. A jealous neighbor learned about the bird. The neighbor told the boy he needed to borrow the bird. But the boy wouldn't let him take it.</p>
+  <p class="continuation">The neighbor took the bird and locked it into a cage. A mouse nearby saw everything.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r6-1" id="r6-1-1" value="1"><label for="r6-1-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r6-1" id="r6-1-2" value="2"><label for="r6-1-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r6-1" id="r6-1-3" value="3"><label for="r6-1-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r6-1" id="r6-1-4" value="4"><label for="r6-1-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r6-1" id="r6-1-5" value="5"><label for="r6-1-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r6-1" id="r6-1-6" value="6"><label for="r6-1-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q6-1-1" id="q6-1-1-y" value="y"><label for="q6-1-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q6-1-1" id="q6-1-1-a" value="a"><label for="q6-1-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q6-1-1" id="q6-1-1-n" value="n"><label for="q6-1-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q6-1-2" id="q6-1-2-y" value="y"><label for="q6-1-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q6-1-2" id="q6-1-2-a" value="a"><label for="q6-1-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q6-1-2" id="q6-1-2-n" value="n"><label for="q6-1-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q6-1-3" id="q6-1-3-y" value="y"><label for="q6-1-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q6-1-3" id="q6-1-3-a" value="a"><label for="q6-1-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q6-1-3" id="q6-1-3-n" value="n"><label for="q6-1-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q6-1-4" id="q6-1-4-y" value="y"><label for="q6-1-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q6-1-4" id="q6-1-4-a" value="a"><label for="q6-1-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q6-1-4" id="q6-1-4-n" value="n"><label for="q6-1-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o6-1" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 6 <small>Variation 2</small></h2>
+  <p class="initial">An old couple lived in a hut with their adopted son. The boy had a magical bird that could control the weather. They used the bird's predictions to make it rain on their crops and were always prosperous. A jealous neighbor learned about the bird. The neighbor told the boy he needed to borrow the bird. But the boy wouldn't let him take it.</p>
+  <p class="continuation">The mouse came the next day but could not find the mouse. The mouse cursed the mouse and transformed him into a cat.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r6-2" id="r6-2-1" value="1"><label for="r6-2-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r6-2" id="r6-2-2" value="2"><label for="r6-2-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r6-2" id="r6-2-3" value="3"><label for="r6-2-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r6-2" id="r6-2-4" value="4"><label for="r6-2-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r6-2" id="r6-2-5" value="5"><label for="r6-2-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r6-2" id="r6-2-6" value="6"><label for="r6-2-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q6-2-1" id="q6-2-1-y" value="y"><label for="q6-2-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q6-2-1" id="q6-2-1-a" value="a"><label for="q6-2-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q6-2-1" id="q6-2-1-n" value="n"><label for="q6-2-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q6-2-2" id="q6-2-2-y" value="y"><label for="q6-2-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q6-2-2" id="q6-2-2-a" value="a"><label for="q6-2-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q6-2-2" id="q6-2-2-n" value="n"><label for="q6-2-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q6-2-3" id="q6-2-3-y" value="y"><label for="q6-2-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q6-2-3" id="q6-2-3-a" value="a"><label for="q6-2-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q6-2-3" id="q6-2-3-n" value="n"><label for="q6-2-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q6-2-4" id="q6-2-4-y" value="y"><label for="q6-2-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q6-2-4" id="q6-2-4-a" value="a"><label for="q6-2-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q6-2-4" id="q6-2-4-n" value="n"><label for="q6-2-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o6-2" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 6 <small>Variation 3</small></h2>
+  <p class="initial">An old couple lived in a hut with their adopted son. The boy had a magical bird that could control the weather. They used the bird's predictions to make it rain on their crops and were always prosperous. A jealous neighbor learned about the bird. The neighbor told the boy he needed to borrow the bird. But the boy wouldn't let him take it.</p>
+  <p class="continuation">A jealous neighbor came the next day but could not find the mouse. A jealous neighbor cursed the mouse and transformed him into a cat.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r6-3" id="r6-3-1" value="1"><label for="r6-3-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r6-3" id="r6-3-2" value="2"><label for="r6-3-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r6-3" id="r6-3-3" value="3"><label for="r6-3-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r6-3" id="r6-3-4" value="4"><label for="r6-3-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r6-3" id="r6-3-5" value="5"><label for="r6-3-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r6-3" id="r6-3-6" value="6"><label for="r6-3-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q6-3-1" id="q6-3-1-y" value="y"><label for="q6-3-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q6-3-1" id="q6-3-1-a" value="a"><label for="q6-3-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q6-3-1" id="q6-3-1-n" value="n"><label for="q6-3-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q6-3-2" id="q6-3-2-y" value="y"><label for="q6-3-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q6-3-2" id="q6-3-2-a" value="a"><label for="q6-3-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q6-3-2" id="q6-3-2-n" value="n"><label for="q6-3-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q6-3-3" id="q6-3-3-y" value="y"><label for="q6-3-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q6-3-3" id="q6-3-3-a" value="a"><label for="q6-3-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q6-3-3" id="q6-3-3-n" value="n"><label for="q6-3-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q6-3-4" id="q6-3-4-y" value="y"><label for="q6-3-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q6-3-4" id="q6-3-4-a" value="a"><label for="q6-3-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q6-3-4" id="q6-3-4-n" value="n"><label for="q6-3-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o6-3" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 6 <small>Variation 4</small></h2>
+  <p class="initial">An old couple lived in a hut with their adopted son. The boy had a magical bird that could control the weather. They used the bird's predictions to make it rain on their crops and were always prosperous. A jealous neighbor learned about the bird. The neighbor told the boy he needed to borrow the bird. But the boy wouldn't let him take it.</p>
+  <p class="continuation">The witch grabbed the family’s house and their fields. A wicked neighbor took over the bull came to eat every single child if his town.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r6-4" id="r6-4-1" value="1"><label for="r6-4-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r6-4" id="r6-4-2" value="2"><label for="r6-4-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r6-4" id="r6-4-3" value="3"><label for="r6-4-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r6-4" id="r6-4-4" value="4"><label for="r6-4-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r6-4" id="r6-4-5" value="5"><label for="r6-4-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r6-4" id="r6-4-6" value="6"><label for="r6-4-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q6-4-1" id="q6-4-1-y" value="y"><label for="q6-4-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q6-4-1" id="q6-4-1-a" value="a"><label for="q6-4-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q6-4-1" id="q6-4-1-n" value="n"><label for="q6-4-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q6-4-2" id="q6-4-2-y" value="y"><label for="q6-4-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q6-4-2" id="q6-4-2-a" value="a"><label for="q6-4-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q6-4-2" id="q6-4-2-n" value="n"><label for="q6-4-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q6-4-3" id="q6-4-3-y" value="y"><label for="q6-4-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q6-4-3" id="q6-4-3-a" value="a"><label for="q6-4-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q6-4-3" id="q6-4-3-n" value="n"><label for="q6-4-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q6-4-4" id="q6-4-4-y" value="y"><label for="q6-4-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q6-4-4" id="q6-4-4-a" value="a"><label for="q6-4-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q6-4-4" id="q6-4-4-n" value="n"><label for="q6-4-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o6-4" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+
+<input type="hidden" name="sources" value="">
+
+  <h2>Story 7 <small>Variation 1</small></h2>
+  <p class="initial">Once upon a time, in a land, far, far away. There lived a girl with her baby brother and her mother. One day, the mother went to the market. The mother told the girl to watch her brother. The girl started playing and soon forgot what her mother had asked her.</p>
+  <p class="continuation">A nearby witch smelled the baby brother and took him away.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r7-1" id="r7-1-1" value="1"><label for="r7-1-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r7-1" id="r7-1-2" value="2"><label for="r7-1-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r7-1" id="r7-1-3" value="3"><label for="r7-1-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r7-1" id="r7-1-4" value="4"><label for="r7-1-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r7-1" id="r7-1-5" value="5"><label for="r7-1-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r7-1" id="r7-1-6" value="6"><label for="r7-1-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q7-1-1" id="q7-1-1-y" value="y"><label for="q7-1-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q7-1-1" id="q7-1-1-a" value="a"><label for="q7-1-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q7-1-1" id="q7-1-1-n" value="n"><label for="q7-1-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q7-1-2" id="q7-1-2-y" value="y"><label for="q7-1-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q7-1-2" id="q7-1-2-a" value="a"><label for="q7-1-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q7-1-2" id="q7-1-2-n" value="n"><label for="q7-1-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q7-1-3" id="q7-1-3-y" value="y"><label for="q7-1-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q7-1-3" id="q7-1-3-a" value="a"><label for="q7-1-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q7-1-3" id="q7-1-3-n" value="n"><label for="q7-1-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q7-1-4" id="q7-1-4-y" value="y"><label for="q7-1-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q7-1-4" id="q7-1-4-a" value="a"><label for="q7-1-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q7-1-4" id="q7-1-4-n" value="n"><label for="q7-1-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o7-1" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 7 <small>Variation 2</small></h2>
+  <p class="initial">Once upon a time, in a land, far, far away. There lived a girl with her baby brother and her mother. One day, the mother went to the market. The mother told the girl to watch her brother. The girl started playing and soon forgot what her mother had asked her.</p>
+  <p class="continuation">After a while, the girl came back and realized her baby brother was missing. The girl suspected the witch may be behind.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r7-2" id="r7-2-1" value="1"><label for="r7-2-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r7-2" id="r7-2-2" value="2"><label for="r7-2-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r7-2" id="r7-2-3" value="3"><label for="r7-2-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r7-2" id="r7-2-4" value="4"><label for="r7-2-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r7-2" id="r7-2-5" value="5"><label for="r7-2-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r7-2" id="r7-2-6" value="6"><label for="r7-2-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q7-2-1" id="q7-2-1-y" value="y"><label for="q7-2-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q7-2-1" id="q7-2-1-a" value="a"><label for="q7-2-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q7-2-1" id="q7-2-1-n" value="n"><label for="q7-2-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q7-2-2" id="q7-2-2-y" value="y"><label for="q7-2-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q7-2-2" id="q7-2-2-a" value="a"><label for="q7-2-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q7-2-2" id="q7-2-2-n" value="n"><label for="q7-2-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q7-2-3" id="q7-2-3-y" value="y"><label for="q7-2-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q7-2-3" id="q7-2-3-a" value="a"><label for="q7-2-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q7-2-3" id="q7-2-3-n" value="n"><label for="q7-2-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q7-2-4" id="q7-2-4-y" value="y"><label for="q7-2-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q7-2-4" id="q7-2-4-a" value="a"><label for="q7-2-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q7-2-4" id="q7-2-4-n" value="n"><label for="q7-2-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o7-2" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 7 <small>Variation 3</small></h2>
+  <p class="initial">Once upon a time, in a land, far, far away. There lived a girl with her baby brother and her mother. One day, the mother went to the market. The mother told the girl to watch her brother. The girl started playing and soon forgot what her mother had asked her.</p>
+  <p class="continuation">The witch came the next day but could not find the girl. The witch cursed the girl and transformed him into a cat.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r7-3" id="r7-3-1" value="1"><label for="r7-3-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r7-3" id="r7-3-2" value="2"><label for="r7-3-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r7-3" id="r7-3-3" value="3"><label for="r7-3-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r7-3" id="r7-3-4" value="4"><label for="r7-3-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r7-3" id="r7-3-5" value="5"><label for="r7-3-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r7-3" id="r7-3-6" value="6"><label for="r7-3-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q7-3-1" id="q7-3-1-y" value="y"><label for="q7-3-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q7-3-1" id="q7-3-1-a" value="a"><label for="q7-3-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q7-3-1" id="q7-3-1-n" value="n"><label for="q7-3-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q7-3-2" id="q7-3-2-y" value="y"><label for="q7-3-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q7-3-2" id="q7-3-2-a" value="a"><label for="q7-3-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q7-3-2" id="q7-3-2-n" value="n"><label for="q7-3-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q7-3-3" id="q7-3-3-y" value="y"><label for="q7-3-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q7-3-3" id="q7-3-3-a" value="a"><label for="q7-3-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q7-3-3" id="q7-3-3-n" value="n"><label for="q7-3-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q7-3-4" id="q7-3-4-y" value="y"><label for="q7-3-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q7-3-4" id="q7-3-4-a" value="a"><label for="q7-3-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q7-3-4" id="q7-3-4-n" value="n"><label for="q7-3-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o7-3" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 7 <small>Variation 4</small></h2>
+  <p class="initial">Once upon a time, in a land, far, far away. There lived a girl with her baby brother and her mother. One day, the mother went to the market. The mother told the girl to watch her brother. The girl started playing and soon forgot what her mother had asked her.</p>
+  <p class="continuation">From home, the old mother hid the merchant's daughter had been ruined and her father kept his daughter Alenka.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r7-4" id="r7-4-1" value="1"><label for="r7-4-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r7-4" id="r7-4-2" value="2"><label for="r7-4-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r7-4" id="r7-4-3" value="3"><label for="r7-4-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r7-4" id="r7-4-4" value="4"><label for="r7-4-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r7-4" id="r7-4-5" value="5"><label for="r7-4-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r7-4" id="r7-4-6" value="6"><label for="r7-4-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q7-4-1" id="q7-4-1-y" value="y"><label for="q7-4-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q7-4-1" id="q7-4-1-a" value="a"><label for="q7-4-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q7-4-1" id="q7-4-1-n" value="n"><label for="q7-4-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q7-4-2" id="q7-4-2-y" value="y"><label for="q7-4-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q7-4-2" id="q7-4-2-a" value="a"><label for="q7-4-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q7-4-2" id="q7-4-2-n" value="n"><label for="q7-4-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q7-4-3" id="q7-4-3-y" value="y"><label for="q7-4-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q7-4-3" id="q7-4-3-a" value="a"><label for="q7-4-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q7-4-3" id="q7-4-3-n" value="n"><label for="q7-4-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q7-4-4" id="q7-4-4-y" value="y"><label for="q7-4-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q7-4-4" id="q7-4-4-a" value="a"><label for="q7-4-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q7-4-4" id="q7-4-4-n" value="n"><label for="q7-4-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o7-4" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+
+<input type="hidden" name="sources" value="">
+
+  <h2>Story 8 <small>Variation 1</small></h2>
+  <p class="initial">There once lived a poor and unlucky peasant.</p>
+  <p class="continuation">He never married and was very lonely.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r8-1" id="r8-1-1" value="1"><label for="r8-1-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r8-1" id="r8-1-2" value="2"><label for="r8-1-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r8-1" id="r8-1-3" value="3"><label for="r8-1-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r8-1" id="r8-1-4" value="4"><label for="r8-1-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r8-1" id="r8-1-5" value="5"><label for="r8-1-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r8-1" id="r8-1-6" value="6"><label for="r8-1-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q8-1-1" id="q8-1-1-y" value="y"><label for="q8-1-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q8-1-1" id="q8-1-1-a" value="a"><label for="q8-1-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q8-1-1" id="q8-1-1-n" value="n"><label for="q8-1-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q8-1-2" id="q8-1-2-y" value="y"><label for="q8-1-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q8-1-2" id="q8-1-2-a" value="a"><label for="q8-1-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q8-1-2" id="q8-1-2-n" value="n"><label for="q8-1-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q8-1-3" id="q8-1-3-y" value="y"><label for="q8-1-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q8-1-3" id="q8-1-3-a" value="a"><label for="q8-1-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q8-1-3" id="q8-1-3-n" value="n"><label for="q8-1-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q8-1-4" id="q8-1-4-y" value="y"><label for="q8-1-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q8-1-4" id="q8-1-4-a" value="a"><label for="q8-1-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q8-1-4" id="q8-1-4-n" value="n"><label for="q8-1-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o8-1" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 8 <small>Variation 2</small></h2>
+  <p class="initial">There once lived a poor and unlucky peasant.</p>
+  <p class="continuation">He wanted revenge and ran after the dragon but got lost.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r8-2" id="r8-2-1" value="1"><label for="r8-2-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r8-2" id="r8-2-2" value="2"><label for="r8-2-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r8-2" id="r8-2-3" value="3"><label for="r8-2-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r8-2" id="r8-2-4" value="4"><label for="r8-2-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r8-2" id="r8-2-5" value="5"><label for="r8-2-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r8-2" id="r8-2-6" value="6"><label for="r8-2-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q8-2-1" id="q8-2-1-y" value="y"><label for="q8-2-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q8-2-1" id="q8-2-1-a" value="a"><label for="q8-2-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q8-2-1" id="q8-2-1-n" value="n"><label for="q8-2-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q8-2-2" id="q8-2-2-y" value="y"><label for="q8-2-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q8-2-2" id="q8-2-2-a" value="a"><label for="q8-2-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q8-2-2" id="q8-2-2-n" value="n"><label for="q8-2-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q8-2-3" id="q8-2-3-y" value="y"><label for="q8-2-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q8-2-3" id="q8-2-3-a" value="a"><label for="q8-2-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q8-2-3" id="q8-2-3-n" value="n"><label for="q8-2-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q8-2-4" id="q8-2-4-y" value="y"><label for="q8-2-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q8-2-4" id="q8-2-4-a" value="a"><label for="q8-2-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q8-2-4" id="q8-2-4-n" value="n"><label for="q8-2-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o8-2" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 8 <small>Variation 3</small></h2>
+  <p class="initial">There once lived a poor and unlucky peasant.</p>
+  <p class="continuation">A poor and unlucky peasant wanted revenge and ran after the dragon but got lost.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r8-3" id="r8-3-1" value="1"><label for="r8-3-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r8-3" id="r8-3-2" value="2"><label for="r8-3-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r8-3" id="r8-3-3" value="3"><label for="r8-3-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r8-3" id="r8-3-4" value="4"><label for="r8-3-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r8-3" id="r8-3-5" value="5"><label for="r8-3-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r8-3" id="r8-3-6" value="6"><label for="r8-3-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q8-3-1" id="q8-3-1-y" value="y"><label for="q8-3-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q8-3-1" id="q8-3-1-a" value="a"><label for="q8-3-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q8-3-1" id="q8-3-1-n" value="n"><label for="q8-3-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q8-3-2" id="q8-3-2-y" value="y"><label for="q8-3-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q8-3-2" id="q8-3-2-a" value="a"><label for="q8-3-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q8-3-2" id="q8-3-2-n" value="n"><label for="q8-3-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q8-3-3" id="q8-3-3-y" value="y"><label for="q8-3-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q8-3-3" id="q8-3-3-a" value="a"><label for="q8-3-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q8-3-3" id="q8-3-3-n" value="n"><label for="q8-3-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q8-3-4" id="q8-3-4-y" value="y"><label for="q8-3-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q8-3-4" id="q8-3-4-a" value="a"><label for="q8-3-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q8-3-4" id="q8-3-4-n" value="n"><label for="q8-3-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o8-3" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 8 <small>Variation 4</small></h2>
+  <p class="initial">There once lived a poor and unlucky peasant.</p>
+  <p class="continuation">Time passed but could not find a suitable husband could not find her room. The family and ran away.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r8-4" id="r8-4-1" value="1"><label for="r8-4-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r8-4" id="r8-4-2" value="2"><label for="r8-4-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r8-4" id="r8-4-3" value="3"><label for="r8-4-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r8-4" id="r8-4-4" value="4"><label for="r8-4-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r8-4" id="r8-4-5" value="5"><label for="r8-4-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r8-4" id="r8-4-6" value="6"><label for="r8-4-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q8-4-1" id="q8-4-1-y" value="y"><label for="q8-4-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q8-4-1" id="q8-4-1-a" value="a"><label for="q8-4-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q8-4-1" id="q8-4-1-n" value="n"><label for="q8-4-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q8-4-2" id="q8-4-2-y" value="y"><label for="q8-4-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q8-4-2" id="q8-4-2-a" value="a"><label for="q8-4-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q8-4-2" id="q8-4-2-n" value="n"><label for="q8-4-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q8-4-3" id="q8-4-3-y" value="y"><label for="q8-4-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q8-4-3" id="q8-4-3-a" value="a"><label for="q8-4-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q8-4-3" id="q8-4-3-n" value="n"><label for="q8-4-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q8-4-4" id="q8-4-4-y" value="y"><label for="q8-4-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q8-4-4" id="q8-4-4-a" value="a"><label for="q8-4-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q8-4-4" id="q8-4-4-n" value="n"><label for="q8-4-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o8-4" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+
+<input type="hidden" name="sources" value="">
+
+  <h2>Story 9 <small>Variation 1</small></h2>
+  <p class="initial">An old couple lived with their daughter in a farm. The mother died of illness. The widower eventually married a widow that had a daughter of her own. The stepmother was always cruel to the poor girl. One night a group of pirates came to the farm. They spied the family through the windows.</p>
+  <p class="continuation">Once the family was asleep the pirates kidnapped the father and stepmother. The next morning, the girl and her stepsister couldn't find their parents. They decided to go look for them. They took separate ways.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r9-1" id="r9-1-1" value="1"><label for="r9-1-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r9-1" id="r9-1-2" value="2"><label for="r9-1-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r9-1" id="r9-1-3" value="3"><label for="r9-1-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r9-1" id="r9-1-4" value="4"><label for="r9-1-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r9-1" id="r9-1-5" value="5"><label for="r9-1-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r9-1" id="r9-1-6" value="6"><label for="r9-1-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q9-1-1" id="q9-1-1-y" value="y"><label for="q9-1-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q9-1-1" id="q9-1-1-a" value="a"><label for="q9-1-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q9-1-1" id="q9-1-1-n" value="n"><label for="q9-1-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q9-1-2" id="q9-1-2-y" value="y"><label for="q9-1-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q9-1-2" id="q9-1-2-a" value="a"><label for="q9-1-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q9-1-2" id="q9-1-2-n" value="n"><label for="q9-1-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q9-1-3" id="q9-1-3-y" value="y"><label for="q9-1-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q9-1-3" id="q9-1-3-a" value="a"><label for="q9-1-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q9-1-3" id="q9-1-3-n" value="n"><label for="q9-1-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q9-1-4" id="q9-1-4-y" value="y"><label for="q9-1-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q9-1-4" id="q9-1-4-a" value="a"><label for="q9-1-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q9-1-4" id="q9-1-4-n" value="n"><label for="q9-1-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o9-1" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 9 <small>Variation 2</small></h2>
+  <p class="initial">An old couple lived with their daughter in a farm. The mother died of illness. The widower eventually married a widow that had a daughter of her own. The stepmother was always cruel to the poor girl. One night a group of pirates came to the farm. They spied the family through the windows.</p>
+  <p class="continuation">The woman's daughter was jealous of her stepsister's beauty. She wanted to learn her secret. The woman's daughter followed the girl everyday. She learned that she drank the milk of a magic cow to keep beautiful. She plotted to steal the cow's milk all for herself.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r9-2" id="r9-2-1" value="1"><label for="r9-2-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r9-2" id="r9-2-2" value="2"><label for="r9-2-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r9-2" id="r9-2-3" value="3"><label for="r9-2-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r9-2" id="r9-2-4" value="4"><label for="r9-2-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r9-2" id="r9-2-5" value="5"><label for="r9-2-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r9-2" id="r9-2-6" value="6"><label for="r9-2-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q9-2-1" id="q9-2-1-y" value="y"><label for="q9-2-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q9-2-1" id="q9-2-1-a" value="a"><label for="q9-2-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q9-2-1" id="q9-2-1-n" value="n"><label for="q9-2-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q9-2-2" id="q9-2-2-y" value="y"><label for="q9-2-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q9-2-2" id="q9-2-2-a" value="a"><label for="q9-2-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q9-2-2" id="q9-2-2-n" value="n"><label for="q9-2-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q9-2-3" id="q9-2-3-y" value="y"><label for="q9-2-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q9-2-3" id="q9-2-3-a" value="a"><label for="q9-2-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q9-2-3" id="q9-2-3-n" value="n"><label for="q9-2-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q9-2-4" id="q9-2-4-y" value="y"><label for="q9-2-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q9-2-4" id="q9-2-4-a" value="a"><label for="q9-2-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q9-2-4" id="q9-2-4-n" value="n"><label for="q9-2-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o9-2" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 9 <small>Variation 3</small></h2>
+  <p class="initial">An old couple lived with their daughter in a farm. The mother died of illness. The widower eventually married a widow that had a daughter of her own. The stepmother was always cruel to the poor girl. One night a group of pirates came to the farm. They spied the family through the windows.</p>
+  <p class="continuation">The king kidnapped the father and threw him in jail.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r9-3" id="r9-3-1" value="1"><label for="r9-3-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r9-3" id="r9-3-2" value="2"><label for="r9-3-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r9-3" id="r9-3-3" value="3"><label for="r9-3-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r9-3" id="r9-3-4" value="4"><label for="r9-3-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r9-3" id="r9-3-5" value="5"><label for="r9-3-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r9-3" id="r9-3-6" value="6"><label for="r9-3-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q9-3-1" id="q9-3-1-y" value="y"><label for="q9-3-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q9-3-1" id="q9-3-1-a" value="a"><label for="q9-3-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q9-3-1" id="q9-3-1-n" value="n"><label for="q9-3-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q9-3-2" id="q9-3-2-y" value="y"><label for="q9-3-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q9-3-2" id="q9-3-2-a" value="a"><label for="q9-3-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q9-3-2" id="q9-3-2-n" value="n"><label for="q9-3-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q9-3-3" id="q9-3-3-y" value="y"><label for="q9-3-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q9-3-3" id="q9-3-3-a" value="a"><label for="q9-3-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q9-3-3" id="q9-3-3-n" value="n"><label for="q9-3-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q9-3-4" id="q9-3-4-y" value="y"><label for="q9-3-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q9-3-4" id="q9-3-4-a" value="a"><label for="q9-3-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q9-3-4" id="q9-3-4-n" value="n"><label for="q9-3-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o9-3" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+  <h2>Story 9 <small>Variation 4</small></h2>
+  <p class="initial">An old couple lived with their daughter in a farm. The mother died of illness. The widower eventually married a widow that had a daughter of her own. The stepmother was always cruel to the poor girl. One night a group of pirates came to the farm. They spied the family through the windows.</p>
+  <p class="continuation">The king's second birthday, she cut her in jail. The man forgot about his lover.</p>
+      How do you rate this story considering both the <span class="initial">story setup</span> and the <span class="continuation">continuation</span>?<br/>
+      <input type="radio" name="r9-4" id="r9-4-1" value="1"><label for="r9-4-1" title="The story makes no sense or there were major issues in the text that make it incomprehensible.">Awful</label>
+      <input type="radio" name="r9-4" id="r9-4-2" value="2"><label for="r9-4-2" title="The story makes little sense or issues in the text make it difficult to follow.">Bad</label>
+      <input type="radio" name="r9-4" id="r9-4-3" value="3"><label for="r9-4-3" title="There were major issues with the story and text.">Mediocre</label>
+      <input type="radio" name="r9-4" id="r9-4-4" value="4"><label for="r9-4-4" title="There were minor issues with the story and text.">Fair</label>
+      <input type="radio" name="r9-4" id="r9-4-5" value="5"><label for="r9-4-5" title="The story makes sense but there were minor issues in the text.">Good</label>
+      <input type="radio" name="r9-4" id="r9-4-6" value="6"><label for="r9-4-6" title="The story was well written and enjoyable.">Great</label>
+      <br/>
+
+      <table><tr><td>
+      Did the <span class="continuation">continuation</span> follow a reasonable <em title="The events described in the story.">plot</em> after the given initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q9-4-1" id="q9-4-1-y" value="y"><label for="q9-4-1-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q9-4-1" id="q9-4-1-a" value="a"><label for="q9-4-1-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q9-4-1" id="q9-4-1-n" value="n"><label for="q9-4-1-n">No</label>
+      </td></tr><tr><td>
+      Did the <em title="Persons or animals portrayed in the story.">characters</em> mentioned in the continuation match the ones in the initial <span class="initial">story setup</span>?
+      </td><td>
+      <input type="radio" name="q9-4-2" id="q9-4-2-y" value="y"><label for="q9-4-2-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q9-4-2" id="q9-4-2-a" value="a"><label for="q9-4-2-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q9-4-2" id="q9-4-2-n" value="n"><label for="q9-4-2-n">No</label>
+      </td></tr><tr><td>
+      Looking only at the <span class="continuation">continuation</span>, was there any <em title="Such as disagreements in gender/number between the nouns and pronouns.">mismatch</em> between the characters mentioned?
+      </td><td>
+      <input type="radio" name="q9-4-3" id="q9-4-3-y" value="y"><label for="q9-4-3-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q9-4-3" id="q9-4-3-a" value="a"><label for="q9-4-3-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q9-4-3" id="q9-4-3-n" value="n"><label for="q9-4-3-n">No</label>
+      </td></tr><tr><td>
+      Did you notice any <em title="Such as missing or extraneous words or punctuation.">grammar</em> issues in the text of the continuation?
+      </td><td>
+      <input type="radio" name="q9-4-4" id="q9-4-4-y" value="y"><label for="q9-4-4-y">Yes</label>
+      </td><td>
+      <input type="radio" name="q9-4-4" id="q9-4-4-a" value="a"><label for="q9-4-4-a">Almost</label>
+      </td><td>
+      <input type="radio" name="q9-4-4" id="q9-4-4-n" value="n"><label for="q9-4-4-n">No</label>
+      </td></tr>
+      <tr><td colspan="3">
+      Did you have any other issues or have any other comments you would like to share with us about this story?<br/>
+      <textarea name="o9-4" class="resizable ui-widget ui-state-default ui-corner-all"" rows="2" cols="30"></textarea>
+      </td></tr></table>
+
+ 
+
+  <hr/>
+  <p>Please review your answers, when you are finished, please click the <strong>Submit</strong> button below.</p>
+  <input type="hidden" name="form" value="f1"/>
+  <input type="hidden" name="uuid" value="%UUID%"/>
+  <input type="submit" name="submit" value="Submit"/>
+  <hr/>
+  <p>This research is conducted by a researcher who is a member of Drexel University.</p>
+</form>   
+</body>
+</html>
